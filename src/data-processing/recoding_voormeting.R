@@ -1,64 +1,28 @@
----
-title: 'Data Cleaning: Dutch Parliamentary Elections 2021 Pre-Wave'
-author: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Marloes Jansen, Nicolas Matthis, Kasper Welbers and Nienke Wolfers"
-output: pdf_document
-#  github_document:
-#    toc: yes
-editor_options: 
-  chunk_output_type: console
-always_allow_html: true
----
-
-
-```{r setup, include=FALSE}
-## include this at top of your RMarkdown file for pretty output
-## make sure to have the printr package installed: install.packages('printr')
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
-#library(printr)
-rm(list = ls())
-```
-
-# Scripts
-- [Required Packages &amp; Reproducibility](#required-packages-&amp;-reproducibility)
-- [Load Data](#load-data)
-- [Recode Block Background Variables](#black-background-variables)
-- [Recode Block A Voting Behavior](#recode-block-a-voting-behavior)
-- [Recode Block B Performance Politics in the Media](#recode-block-b-performance-politics-in-the-media)
-- [Recode Block C Issue Association](#recode-block-c-issue-association)
-- [Recode Block D Political Knowledge](#recode-block-d-political-knowledge)
-- [Recode Block E Political Background](#recode-block-e-political-background)
-- [Recode Block F Trust](#recode-block-f-trust)
-- [Recode Block G Evaluation of Government and Political Leaders](#recode-block-g-evaluation-of-government-and-political-leaders)
-- [Recode Block H Other Issues](#recode-block-h-other-issues)
-- [Recode Block I News Consumption](#recode-block-i-news-consumption)
-- [Merge &amp; Save Data](#merge-&amp;-save-data)
+#! /usr/bin/env Rscript
+#DESCRIPTION: Data Cleaning: Dutch Parliamentary Elections 2021 Pre-Wave
+#AUTHOR: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Marloes Jansen, Nicolas Matthis, Kasper Welbers and Nienke Wolfers"
+#DEPENDS: data/raw-private/qualtrics_raw_wave0.csv
+#CREATES: data/intermediate/VUElectionPanel2021_wave0.csv
 
 ## Required Packages &amp; Reproducibility
-```{r, message=FALSE, warning=F}
-rm(list=ls())
-
-renv::snapshot()
-
 library(tidyverse)
 library(sjlabelled)
-```
+library(here)
+
+input_fn = here("data/raw-private/qualtrics_raw_wave0.csv")
+output_fn = here("data/intermediate/VUElectionPanel2021_wave0.csv")
 
 ## Load Data
-Load the data downloaded from Qualtrics, and only keep those that have given consent to participate in the panel study.
-
-```{r}
-f <- "VU+VerkiezingsPanel+-+Voormeting_February+2,+2021_19.26.csv"
-col_names <- names(read_csv(f, n_max = 0))
-d <- read_csv(f, col_names = col_names, skip = 3) %>%
+# Load the data downloaded from Qualtrics, and only keep those that have given consent to participate in the panel study.
+col_names <- names(read_csv(input_fn, n_max = 0))
+d <- read_csv(input_fn, col_names = col_names, skip = 3) %>%
   remove_all_labels() %>% 
   tibble() %>%
   #only keep people that have given consent
   filter(consent1==1 & consent2==1) 
-rm(f, col_names)
-```
+rm(input_fn, col_names)
 
 ## Recode Block Background Variables
-```{r}
 BG <- d %>%
   mutate(gender = recode(gender, `2` = 0),
          age = ifelse(age <25, 1,
@@ -133,10 +97,8 @@ BG <- d %>%
          age, education,region, ethnicity, 
          postal_code = postal_code_1_TEXT,
          job, internet_use)
-```
 
 ## Recode Block A Voting Behavior
-```{r}
 A <- d %>%
   select(iisID, A1:A2, A2_otherparty = A2_14_TEXT,
          A2_DO_1:A2_DO_13, A3_DO_1:A3_DO_13) %>%
@@ -177,12 +139,10 @@ A3 <-  pivot_wider(A3, names_from = n, values_from = party,
 A <- left_join(A, A3, by = "iisID") %>%
   select(iisID, A1:A2_otherparty, order_A2, A3, order_A3, A3_1:A3_13)
 rm(A3)
-```
 
 ## Recode Block B Performance Politics in the Media
-```{r}
 d <-d %>%
-mutate(B2_1 = recode(B2_1,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
+  mutate(B2_1 = recode(B2_1,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
        B2_2 = recode(B2_2,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
        B2_3 = recode(B2_3,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
        B2_4 = recode(B2_4,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
@@ -226,10 +186,8 @@ B <- d %>%
   select(iisID, B1, B2_1:B2_13, order_B2)
 B <- left_join(B, B3, by = "iisID")
 rm(B3)
-```
 
 ## Recode Block C Issue Association
-```{r}
 C1_1 <- d %>%
   select(iisID, X1_C1_1_2,
          X2_C1_1_2, X3_C1_1_2, X4_C1_1_2, X5_C1_1_2,
@@ -655,10 +613,8 @@ C <- left_join(C, C2_1, by = "iisID")
 C <- left_join(C, C2_2, by = "iisID") %>%
   distinct(iisID, .keep_all = T)
 rm(C1_1, C1_1_txt, C1_2, C1_2_txt, C2_1, C2_2)
-```
 
 # Recode Block D Political Knowledge
-```{r}
 D <- d %>%
   select(iisID, D1_1, D1_2, D1_3, D1_4, 
          D1_timer_First.Click, D1_timer_Last.Click,
@@ -692,10 +648,8 @@ D <- d %>%
          D1_clicks = D1_timer_Click.Count + D2_timer_Click.Count +
            D3_timer_Click.Count) %>%
   select(iisID, D1, D1_time_secs, D1_clicks)
-```
 
 # Recode Block E Political Background
-```{r}
 E <- d %>%
   select(iisID, E1, E1_otherparty = E1_16_TEXT, 
          E1_DO_1:E1_DO_19, E2, E3_1:E3_13) %>%
@@ -711,10 +665,8 @@ E <- d %>%
                           E1_DO_15, E1_DO_16, E1_DO_17, E1_DO_18,
                           E1_DO_19, sep = "|")) %>%
   select(iisID, E1, E1_otherparty, order_E1, E2, E3_1:E3_13)
-```
 
 # Recode Block F Trust
-```{r}
 F <- d %>%
   mutate(order_F1 = paste(F1_DO_1, F1_DO_2, F1_DO_3, F1_DO_4,
                           F1_DO_5, F1_DO_6, F1_DO_7, F1_DO_8,
@@ -724,10 +676,8 @@ F <- d %>%
                           F2_DO_9, F2_DO_10, F2_DO_15, sep = "|")) %>%
   select(iisID, F1_1:F1_10, order_F1,
          F2_1:F2_10, F2_11 = F2_15, order_F2)
-```
 
 # Recode Block G Evaluation of Government and Political Leaders
-```{r}
 G <- d %>%
   select(iisID, G1_1:G1_5, G1_b, G_eval_leaders_1:G_eval_leaders_14,
          G2_DO_4:G2_DO_17,
@@ -783,19 +733,15 @@ G <- d %>%
          -G2_DO_8, -G2_DO_9, -G2_DO_10, -G2_DO_11,
          -G2_DO_12, -G2_DO_13, -G2_DO_14, -G2_DO_15,
          -G2_DO_16, -G2_DO_17)
-```
 
 # Recode Block H Other Issues
-```{r}
 H <- d %>%
   mutate(H4 = recode(H4, `8` = 999),
          order_H6 = paste(H6_DO_1,H6_DO_2,H6_DO_3, sep = "|"),
          H7 = recode(H7, `3` = 2, `4` = 3, `5` = 4))  %>%
     select(iisID, H3:H6_3, order_H6, H7)
-```
 
 # Recode Block I News Consumption
-```{r}
 I <- d %>%
   mutate(order_I8 = paste(I8_DO_1, I8_DO_4, I8_DO_5, I8_DO_6,
                           I8_DO_7, I8_DO_8, I8_DO_9, I8_DO_10,
@@ -820,10 +766,8 @@ I <- d %>%
 #  select(iisID, I11) %>%
 #  drop_na()
 #write_csv(twitter, "twitter_handles_VUElectionPanel2021.csv")
-```
 
 ## Merge &amp; Save Data
-```{r}
 df <- left_join(BG, A, by = "iisID")
 df <- left_join(df, B, by = "iisID")
 df <- left_join(df, C, by = "iisID")
@@ -841,10 +785,9 @@ df <- left_join(df, I, by = "iisID") %>%
   mutate(iisID = as_numeric(iisID)) %>%
   drop_na(iisID)
 
-write_csv(df, "pre_wave_VUElectionPanel2021.csv")
+write_csv(df, output_fn)
 
 
-haven::write_sav(df, "pre_wave_VUElectionPanel2021.sav")
+#haven::write_sav(df, "pre_wave_VUElectionPanel2021.sav")
 rm(A, B, C, D, E, F, G, H, I, BG, twitter)
-```
 
