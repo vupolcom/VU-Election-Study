@@ -1,6 +1,6 @@
 VU 2021 Election Study: Analysis of pre-wave
 ================
-Wouter van Atteveldt
+Wouter van Atteveldt, Mariken van der Velden, Nel Ruigrok
 
   - [Data](#data)
   - [Vote intention](#vote-intention)
