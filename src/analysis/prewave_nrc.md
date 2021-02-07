@@ -18,6 +18,11 @@ Wouter van Atteveldt, Mariken van der Velden, Nel Ruigrok
   - [Vote intention by media use](#vote-intention-by-media-use)
       - [Newspaper vs TV](#newspaper-vs-tv)
       - [“Old” vs “New”](#old-vs-new)
+  - [Trust in Insitutions](#trust-in-insitutions)
+      - [Trust in Media](#trust-in-media)
+  - [Corona](#corona)
+      - [Support for measures and Vaccination intention by media
+        use](#support-for-measures-and-vaccination-intention-by-media-use)
 
 # Data
 
@@ -116,6 +121,7 @@ plot(g)
 ## Data
 
 ``` r
+# TODO moved to lib
 library(glue)
 result = list()
 for (var in str_c("I", 1:7)) 
@@ -251,3 +257,115 @@ d %>% select(iisID, age, education, A2)  %>%
 ```
 
 ![](figures/wave0_legacy-1.png)<!-- -->
+
+# Trust in Insitutions
+
+``` r
+resp = d %>% select(iisID, age, education, A2)  %>% 
+  mutate(age=label(age, "age"), 
+         education=label(education, "education"), 
+         A2=recode_parties(label(A2, "A2")),
+         age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55"))  %>% 
+    filter(education!="Don't know", !is.na(A2), A2!="Weet niet") 
+  
+long_mc() %>% filter(question=="F2") %>% inner_join(resp) %>% 
+  mutate(A2=fct_reorder(A2, value, mean),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  group_by(A2, medium) %>% summarize(value=mean(value))  %>% 
+  ggplot(aes(x=A2, y=medium, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")   + ylab("Trust in ...") +
+  ggtitle("Trust in various institutions by vote intention", "(1=low, 10=high)")  + 
+  scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+```
+
+![](figures/wave0_trustinstitutions-1.png)<!-- -->
+
+## Trust in Media
+
+``` r
+long_mc() %>% filter(question=="I8") %>% inner_join(resp) %>% 
+  mutate(A2=fct_reorder(A2, value, mean),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  group_by(A2, medium) %>% summarize(value=mean(value))  %>% 
+  ggplot(aes(x=A2, y=medium, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")   + ylab("Trust in ...") +
+  ggtitle("Trust in various institutions by vote intention", "(1=low, 10=high)")  + 
+  scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+```
+
+![](figures/wave0_trustmedia-1.png)<!-- -->
+
+# Corona
+
+## Support for measures and Vaccination intention by media use
+
+``` r
+resp = d %>% select(iisID, age, education, A2, H3, H7)  %>% 
+  mutate(age=label(age, "age"), 
+         education=label(education, "education"), 
+         A2=recode_parties(label(A2, "A2")),
+         age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55"))  %>% 
+    filter(education!="Don't know", !is.na(A2), A2!="Weet niet") 
+
+x = newsuse %>% filter(question=="I1", 
+                       medium %in% c("Television", "Newspapers or opinion magazines")) %>%
+  pivot_wider(names_from="medium") %>% 
+  rename(Newspapers="Newspapers or opinion magazines") %>% 
+
+  select(-question) %>% inner_join(resp) %>% 
+    group_by(Television, Newspapers) %>% summarize(H3=5-mean(H3), H7=4-mean(H7)) 
+
+ggplot(x, aes(x=Television, y=Newspapers, label=round(H3, 1), fill=H3)) +
+  geom_tile()+ geom_text()+
+  #facet_wrap("party") +
+  ggtitle("Support for COVID measures by media use (traditional)", "(4=support for stricter measures, 0=no support for measures)")  + 
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_covid-1.png)<!-- -->
+
+``` r
+ggplot(x, aes(x=Television, y=Newspapers, label=round(H7, 1), fill=H7)) +
+  geom_tile()+ geom_text()+
+  #facet_wrap("party") +
+  ggtitle("Intention to get vaccination by media use (traditional)", "(3=Certainly, 0=Certainly not)")  + 
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_covid-2.png)<!-- -->
+
+``` r
+x = newsuse %>% filter(question=="I1", 
+                       medium %in% c("Social media", "News apps or push messages on your phone")) %>%
+  pivot_wider(names_from="medium") %>% 
+  rename(Social="Social media", Apps="News apps or push messages on your phone") %>% 
+
+  select(-question) %>% inner_join(resp) %>% 
+    group_by(Social, Apps) %>% summarize(H3=5-mean(H3), H7=4-mean(H7)) 
+
+ggplot(x, aes(x=Social, y=Apps, label=round(H3, 1), fill=H3)) +
+  geom_tile()+ geom_text()+
+  #facet_wrap("party") +
+  ggtitle("Support for COVID measures by media use ('new' media)", "(4=support for stricter measures, 0=no support for measures)")  + 
+  xlab("Social Media (FB, Twitter, ...)") + ylab("News apps") + 
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_covid-3.png)<!-- -->
+
+``` r
+ggplot(x, aes(x=Social, y=Apps, label=round(H7, 1), fill=H7)) +
+  geom_tile()+ geom_text()+
+  #facet_wrap("party") +
+  ggtitle("Intention to get vaccination by media use ('new' media)", "(3=Certainly, 0=Certainly not)")  + 
+  xlab("Social Media (FB, Twitter, ...)") + ylab("News apps") + 
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_covid-4.png)<!-- -->
