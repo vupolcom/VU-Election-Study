@@ -13,6 +13,11 @@ Wouter van Atteveldt, Mariken van der Velden, Nel Ruigrok
       - [Data](#data-1)
       - [Overall use of various media per
         age/education](#overall-use-of-various-media-per-ageeducation)
+      - [Vote intention per
+        age/education](#vote-intention-per-ageeducation)
+  - [Vote intention by media use](#vote-intention-by-media-use)
+      - [Newspaper vs TV](#newspaper-vs-tv)
+      - [“Old” vs “New”](#old-vs-new)
 
 # Data
 
@@ -118,7 +123,8 @@ for (var in str_c("I", 1:7))
     mutate(medium=label(as.numeric(str_remove(medium, glue("^{var}_"))), var)) %>% filter(!is.na(value))
 newsuse = bind_rows(result, .id="question") %>% mutate(medium=str_remove_all(medium, " \\(.*"))
 
-resp = d %>% select(iisID, age, education) %>% mutate(age=label(age, "age"), education=label(education, "education"))
+resp = d %>% select(iisID, age, education) %>% 
+  mutate(age=label(age, "age"), education=label(education, "education"))
 overall = newsuse %>% filter(question=="I1") %>% inner_join(resp) %>% 
   mutate(age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
                         age %in% c("55-64", ">64") ~ "55+",
@@ -139,3 +145,109 @@ news_agg %>% filter(education!="Don't know") %>% mutate(medium=fct_reorder(mediu
 ```
 
 ![](figures/wave0_mediause-1.png)<!-- -->
+
+## Vote intention per age/education
+
+``` r
+d %>% select(iisID, age, education, A2) %>% 
+  mutate(age=label(age, "age"), 
+         education=label(education, "education"), 
+         party=recode_parties(label(A2, "A2")),
+         age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55")) %>% 
+  filter(education!="Don't know", !is.na(party), party!="Weet niet") %>% 
+  group_by(age2, education, party) %>% summarize(n=n()) %>% mutate(zetels=n/sum(n)*100) %>% 
+  ggplot(aes(x=education, y=age2, label=round(zetels), fill=zetels)) +
+  geom_tile()+ geom_text()+
+  facet_wrap("party") + 
+  ggtitle("Vote intention per age and education group", "(in percentage of age/education group)")  + 
+  xlab("Education group (high=University/HBO, med=HAVO/MBO2+, low=MAVO/MBO1") + ylab("Age group") +
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_age-1.png)<!-- -->
+
+``` r
+d %>% select(iisID, age, education, A2) %>% 
+  mutate(age=label(age, "age"), 
+         education=label(education, "education"), 
+         party=recode_parties(label(A2, "A2")),
+         age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55")) %>% 
+  filter(education!="Don't know", !is.na(party), party!="Weet niet") %>% 
+  group_by(age2, education, party) %>% summarize(n=n()) %>% 
+  group_by(party) %>% mutate(zetels=n/sum(n)*100) %>% 
+  ggplot(aes(x=education, y=age2, label=round(zetels), fill=zetels)) +
+  geom_tile()+ geom_text()+
+  facet_wrap("party") + 
+  ggtitle("Vote intention per age and education group", "(in percentage of total support for party)")  + 
+  xlab("Education group (high=University/HBO, med=HAVO/MBO2+, low=MAVO/MBO1") + ylab("Age group") +
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_age2-1.png)<!-- -->
+
+# Vote intention by media use
+
+## Newspaper vs TV
+
+``` r
+n = newsuse %>% filter(question=="I1", medium %in% c("Television", "Newspapers or opinion magazines")) %>%
+  mutate(value=case_when(value<2~1, value<5~2, T~3)) %>% 
+  pivot_wider(names_from="medium") %>% rename(Newspaper=`Newspapers or opinion magazines`)
+
+d %>% select(iisID, age, education, A2)  %>% 
+  mutate(age=label(age, "age"), 
+         education=label(education, "education"), 
+         party=recode_parties(label(A2, "A2")),
+         age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55")) %>% 
+  inner_join(n) %>%   
+  filter(education!="Don't know", !is.na(party), party!="Weet niet") %>% 
+  group_by(Television, Newspaper, party) %>% summarize(n=n()) %>% 
+  #group_by(party) %>% 
+  mutate(zetels=n/sum(n)*100) %>% 
+  ggplot(aes(x=Television, y=Newspaper, label=round(zetels), fill=zetels)) +
+  geom_tile()+ geom_text()+
+  facet_wrap("party") +
+  ggtitle("Vote intention per use of TV and Newspaper", "(in percentage of medium users)")  + 
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_tv-1.png)<!-- -->
+
+## “Old” vs “New”
+
+``` r
+n = newsuse %>% filter(question=="I1", 
+                       medium %in% c("Television", "Newspapers or opinion magazines", "Social media", "News apps or push messages on your phone", "Online news sites")) %>%
+  pivot_wider(names_from="medium") %>% 
+  mutate(legacy=`Newspapers or opinion magazines`+Television,
+         social=`Online news sites` + `News apps or push messages on your phone` + `Social media`)  %>% 
+  select(iisID, legacy, social) %>% 
+  mutate(legacy=case_when(legacy<5~1, legacy<10~2, T~3),
+         social=case_when(social<5~1, social<10~2, T~3)) 
+  
+d %>% select(iisID, age, education, A2)  %>% 
+  mutate(age=label(age, "age"), 
+         education=label(education, "education"), 
+         party=recode_parties(label(A2, "A2")),
+         age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55")) %>% 
+  inner_join(n) %>%   
+  filter(education!="Don't know", !is.na(party), party!="Weet niet") %>% 
+  group_by(legacy, social, party) %>% summarize(n=n()) %>% 
+  group_by(party) %>% 
+  mutate(zetels=n/sum(n)*100) %>% 
+  ggplot(aes(x=legacy, y=social, label=round(zetels), fill=zetels)) +
+  geom_tile()+ geom_text()+
+  facet_wrap("party") +
+  ggtitle("Vote intention per use of legacy and social/online media", "(in percentage of total party support)")  + 
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_legacy-1.png)<!-- -->
