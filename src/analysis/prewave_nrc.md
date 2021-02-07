@@ -9,6 +9,10 @@ Wouter van Atteveldt, Mariken van der Velden, Nel Ruigrok
       - [Overall changes in voting](#overall-changes-in-voting)
       - [How do voters move between
         parties?](#how-do-voters-move-between-parties)
+  - [Media usage](#media-usage)
+      - [Data](#data-1)
+      - [Overall use of various media per
+        age/education](#overall-use-of-various-media-per-ageeducation)
 
 # Data
 
@@ -101,3 +105,37 @@ plot(g)
 ```
 
 ![](figures/wave0_move-1.png)<!-- -->
+
+# Media usage
+
+## Data
+
+``` r
+library(glue)
+result = list()
+for (var in str_c("I", 1:7)) 
+  result[[var]] = d %>% select(iisID, starts_with(var), -contains("_other")) %>% pivot_longer(-iisID, names_to="medium") %>% 
+    mutate(medium=label(as.numeric(str_remove(medium, glue("^{var}_"))), var)) %>% filter(!is.na(value))
+newsuse = bind_rows(result, .id="question") %>% mutate(medium=str_remove_all(medium, " \\(.*"))
+
+resp = d %>% select(iisID, age, education) %>% mutate(age=label(age, "age"), education=label(education, "education"))
+overall = newsuse %>% filter(question=="I1") %>% inner_join(resp) %>% 
+  mutate(age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
+                        age %in% c("55-64", ">64") ~ "55+",
+                        T ~ "35-55"))
+```
+
+## Overall use of various media per age/education
+
+``` r
+news_agg = overall %>% group_by(age2, education, medium) %>% summarize(value=mean(value), n=n())
+news_agg %>% filter(education!="Don't know") %>% mutate(medium=fct_reorder(medium, value)) %>% 
+  ggplot(aes(x=education, y=age2, label=round(value, 1), fill=value)) + 
+  geom_tile()+ geom_text()+
+  facet_wrap("medium") + 
+  ggtitle("Overall use of different media per age and education group", "(in days per week)")  + 
+  xlab("Education group (high=University/HBO, med=HAVO/MBO2+, low=MAVO/MBO1") + ylab("Age group") +
+  scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+![](figures/wave0_mediause-1.png)<!-- -->
