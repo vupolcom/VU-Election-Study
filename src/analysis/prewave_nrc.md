@@ -2,13 +2,19 @@ VU 2021 Election Study: Analysis of pre-wave
 ================
 Wouter van Atteveldt
 
+  - [Data](#data)
   - [Vote intention](#vote-intention)
       - [Overrepresentation E1 wrt actual distribution
         TK2017](#overrepresentation-e1-wrt-actual-distribution-tk2017)
-  - [Overall changes in voting](#overall-changes-in-voting)
-  - [How do voters move between
-    parties?](#how-do-voters-move-between-parties)
-      - [Mediagebruik](#mediagebruik)
+      - [Overall changes in voting](#overall-changes-in-voting)
+      - [How do voters move between
+        parties?](#how-do-voters-move-between-parties)
+
+# Data
+
+``` r
+d = read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
+```
 
 # Vote intention
 
@@ -52,7 +58,7 @@ rep %>% arrange(-abs(overrep)) %>% select(-A2)
 | GroenLinks   | 13.85 | 14 |  \-0.15 |
 | SGP          |  3.12 |  3 |    0.12 |
 
-# Overall changes in voting
+## Overall changes in voting
 
 ``` r
 rep %>% mutate(change=A2-E1) %>% select(party, E1, A2, change) %>% arrange(-abs(change))
@@ -75,7 +81,7 @@ rep %>% mutate(change=A2-E1) %>% select(party, E1, A2, change) %>% arrange(-abs(
 | CDA          | 12.18 | 12.0 | \-0.19 |
 | SGP          |  3.12 |  3.1 |   0.02 |
 
-# How do voters move between parties?
+## How do voters move between parties?
 
 ``` r
 library(igraph)
@@ -95,5 +101,3 @@ plot(g)
 ```
 
 ![](figures/wave0_move-1.png)<!-- -->
-
-## Mediagebruik

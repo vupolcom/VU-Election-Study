@@ -52,13 +52,13 @@ and misremembering by respondents (e.g. accidentally remembering their provincia
 rep %>% arrange(-abs(overrep)) %>% select(-A2)
 ```
 
-# Overall changes in voting
+## Overall changes in voting
 
 ```{r}
 rep %>% mutate(change=A2-E1) %>% select(party, E1, A2, change) %>% arrange(-abs(change))
 ```
 
-# How do voters move between parties?
+## How do voters move between parties?
 
 ```{r "wave0_move", fig.width=10, fig.height=10}
 library(igraph)
@@ -76,8 +76,5 @@ E(g)$arrow.size=E(g)$width/2
 
 plot(g)
 ```
-
-## Mediagebruik
-
 
 
