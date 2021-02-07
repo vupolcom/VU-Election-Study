@@ -1,0 +1,84 @@
+---
+title: 'VU 2021 Election Study: Analysis of pre-wave'
+author: "Wouter van Atteveldt"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.path='figures/')
+#library(printr)
+library(printr)
+options(digits = 2)
+library(here)
+source(here("src/lib/create_labels.R"))
+```
+
+
+```{r "Read Data", echo=F}
+library(tidyverse)
+library(here)
+d = read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
+```
+
+# Vote intention 
+
+
+
+```{r "Prepare data"}
+votes = d %>% select(iisID, A2, E1) %>% 
+  mutate(A2=recode_parties(label(A2, "A2")), E1=recode_parties(label(E1, "E1")))
+rep = votes %>% pivot_longer(A2:E1, names_to="when", values_to="party") %>% 
+  group_by(party, when) %>% summarize(n=n()) %>% ungroup() %>% 
+  pivot_wider(names_from="when", values_from="n") %>% 
+  filter(!is.na(party), !party %in% c("Niet", "Nieuw", "Weet niet")) %>% 
+  mutate(A2=A2/sum(A2)*150, E1=E1/sum(E1)*150) %>% 
+  left_join(read_csv(here("data/raw/tk2017.csv"))) %>% replace_na(list(tk=0)) %>% 
+  mutate(overrep=E1 - tk)
+```
+
+## Overrepresentation E1 wrt actual distribution TK2017
+
+Note: A mismatch between self-reported votes and actual distribution
+can be caused by unrepresentative sample (esp. since our data is unweighted)
+and misremembering by respondents (e.g. accidentally remembering their provincial vote)
+
+```{r}
+rep %>% arrange(-abs(overrep)) %>% select(-A2)
+```
+
+# Overall changes in voting
+
+```{r}
+rep %>% mutate(change=A2-E1) %>% select(party, E1, A2, change) %>% arrange(-abs(change))
+```
+
+# How do voters move between parties?
+
+```{r "wave0_move", fig.width=10, fig.height=10}
+library(igraph)
+gdf = votes %>% 
+  
+  filter(A2 != "Weet niet", E1 != "Weet niet") %>% 
+  group_by(A2, E1) %>% summarize(n=n()) %>% na.omit() %>% filter(A2 != E1)
+
+g = full_join(gdf, gdf, by=c("A2"="E1", "E1"="A2")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y) %>% select(E1, A2, n) %>% filter(n>0) %>% 
+  filter(n>5) %>% graph_from_data_frame()
+
+E(g)$width = 1+E(g)$n/10 
+E(g)$label = round((E(g)$n / 1783) * 150, 1)
+E(g)$arrow.size=E(g)$width/2
+
+plot(g)
+```
+
+## Mediagebruik
+
+
+
