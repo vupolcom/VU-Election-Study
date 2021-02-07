@@ -17,19 +17,18 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.path='figures/')
 library(printr)
 options(digits = 2)
 library(here)
+library(tidyverse)
 source(here("src/lib/create_labels.R"))
 ```
 
 
-```{r "Read Data", echo=F}
-library(tidyverse)
-library(here)
+# Data
+
+```{r "Read Data"}
 d = read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
 ```
 
 # Vote intention 
-
-
 
 ```{r "Prepare data"}
 votes = d %>% select(iisID, A2, E1) %>% 
