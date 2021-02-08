@@ -107,6 +107,7 @@ recode_parties = function(p) case_when(
 
 
 long_mc = function() {
+  d <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) 
   result = list()
   for (var in c("F2", str_c("I", 1:8))) 
     result[[var]] = d %>% select(iisID, starts_with(var), -contains("_other")) %>% pivot_longer(-iisID, names_to="medium") %>% 

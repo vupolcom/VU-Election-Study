@@ -1,0 +1,183 @@
+---
+title: 'VU 2021 Election Study: Pre-wave exploration of undecided voters'
+author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+params:
+  party: "Weet niet"
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/')
+library(printr)
+options(digits = 2)
+```
+
+```{r "Read Data"}
+library(here)
+library(tidyverse)
+source(here("src/lib/create_labels.R"))
+party = params$party
+d_raw <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))  %>% 
+  mutate(inc=recode_parties(label(A2, "A2"))==party) %>% filter(!is.na(inc))
+
+
+d = d_raw %>% 
+  select(iisID, inc,
+                 stemintentie = A2, 
+                 Gender = gender, 
+                 Leeftijd = age, 
+                 Onderwijsniveau = education, 
+                 Regio = region, 
+                 Etniciteit = ethnicity, 
+                 Werk = job, 
+                 Internetgebruik = internet_use, 
+                 vorige_stem=E1,
+                 covid_maatregelen=H3, 
+                 covid_vaccinatie=H7
+                 ) %>%
+  mutate(stemintentie = recode_parties(label(stemintentie, "A2")),
+         Werk = label(Werk, "job"),
+         Leeftijd = label(Leeftijd, "age"),
+         Onderwijsniveau = label(Onderwijsniveau, "education"),
+         Gender = label(Gender, "gender"),
+         Regio = label(Regio, "region"),
+         Internetgebruik = label(Internetgebruik, "internet_use"),
+         Etniciteit = label(Etniciteit, "ethnicity"),
+         vorige_stem = recode_parties(label(vorige_stem, "E1")),
+         covid_maatregelen=label(covid_maatregelen, "H3"),
+         covid_vaccinatie=label(covid_vaccinatie, "H7"))
+```
+
+Leeswijzer: alle figuren zijn staafdiagrammen waarbij de volle staaf de waarde is voor zwevende kiezers,
+en de omtrek de gemiddelde is van de populatie (in onze steekproef). 
+Voorbeeld: van de zwevende kiezers is ongeveer 70% man, tegenover ongeveer 50% voor de populatie. 
+
+(let wel: de gegevens zijn ongewogen, dus kunnen niet als een representatieve steekproef van de populatie gezien worden)
+
+# Demographics
+
+```{r wave0_demo}
+for (var in c("Gender", "Leeftijd", "Onderwijsniveau", "Regio", "Etniciteit")) {
+  tmp = d
+  tmp$target = tmp[[var]]
+  t = tmp %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+  print(ggplot() + geom_col(data=t %>% filter(inc), aes(x=target, y=perc, fill=target), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+  scale_y_continuous(labels = scales::percent) +
+      ggtitle(var))
+}
+```
+
+# Media Use
+
+```{r wave0_I1}
+long = long_mc() %>%  inner_join(d %>% select(iisID, inc))
+t = long %>% filter(question=="I1") %>% group_by(inc, medium) %>% summarize(value=mean(value))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+  scale_y_continuous(labels = scales::percent) +
+      ggtitle("Frequentie van mediagebruik")
+```
+
+```{r wave0_I2}
+t = long %>% filter(question=="I2") %>% group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+  scale_y_continuous(labels = scales::percent) +
+      ggtitle("Mediagebruik: kranten", "(Noot: other is meestal ingevuld als: geen/nee)")
+```
+
+```{r wave0_I3}
+t = long %>% filter(question=="I3") %>% group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("Mediagebruik: TV")
+```
+
+```{r wave0_I4}
+t = long %>% filter(question=="I4") %>% group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+  scale_y_continuous(labels = scales::percent) +
+      ggtitle("Mediagebruik: Online sites", "(Noot: top-3 other is geen (29), NOS (12), AD (6))")
+#d_raw %>% filter(inc, !is.na(I4_other_blogs)) %>% group_by(I4_other_blogs) %>% summarize(n=n()) %>% arrange(-n)
+#d_raw %>% filter(inc, !is.na(I4_other_sites)) %>% group_by(I4_other_sites) %>% summarize(n=n()) %>% arrange(-n)
+```
+
+```{r wave0_I5}
+t = long %>% filter(question=="I5") %>% mutate(medium=fct_infreq(medium)) %>% 
+  group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+t = t %>% select(-n) %>% pivot_wider(names_from=medium, values_from=perc, values_fill=0) %>% pivot_longer(-inc)
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(name, value), y=value, fill=name), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=name, y=value, color=name), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("Mediagebruik: Social", "(Noot: other is meestal 'geen')")+
+  scale_y_continuous(labels = scales::percent) 
+#d_raw %>% filter(inc, !is.na(I5_other)) %>% group_by(I5_other) %>% summarize(n=n()) %>% arrange(-n)
+```
+
+```{r wave0_I6}
+t = long %>% filter(question=="I6") %>% 
+  group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("Mediagebruik: Messaging apps", "(Noot:other is meestal 'geen')")+
+  scale_y_continuous(labels = scales::percent) 
+#d_raw %>% filter(inc, !is.na(I6_other)) %>% group_by(I6_other) %>% summarize(n=n()) %>% arrange(-n)
+```
+
+```{r wave0_I7}
+t = long %>% filter(question=="I7") %>% 
+  group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+  scale_y_continuous(labels = scales::percent) +
+      ggtitle("Mediagebruik: Mobile apps", "(Noot:other is meestal 'geen')")
+#d_raw %>% filter(inc, !is.na(I6_other)) %>% group_by(I6_other) %>% summarize(n=n()) %>% arrange(-n)
+```
+
+# Vertrouwen
+
+```{r wave0_trust}
+
+t = long %>% filter(question=="I8") %>% group_by(inc, medium) %>% summarize(value=mean(value))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("Vertrouwen in verschillende media")
+
+
+t = long %>% filter(question=="F2") %>% group_by(inc, medium) %>% summarize(value=mean(value))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("Vertrouwen in instituties")
+```
+
+# Corona
+
+```{r wave0_covid}
+for (var in c("covid_maatregelen", "covid_vaccinatie")) {
+  tmp = d
+  levels(tmp[[var]]) =str_sub(levels(tmp[[var]]), end=40)
+  tmp$target = tmp[[var]]#str_sub(tmp[[var]], end=40)
+  t = tmp %>% filter(!is.na(target)) %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+  print(ggplot() + geom_col(data=t %>% filter(inc), aes(x=target, y=perc, fill=target), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle(var))
+}
+```
+
+
+
