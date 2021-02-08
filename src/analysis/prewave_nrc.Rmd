@@ -1,6 +1,6 @@
 ---
 title: 'VU 2021 Election Study: Analysis of pre-wave'
-author: "Wouter van Atteveldt, Mariken van der Velden, Nel Ruigrok"
+author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
 output: 
   github_document:
     toc: yes

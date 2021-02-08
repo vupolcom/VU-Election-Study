@@ -14,6 +14,23 @@ lbl$job <- tibble(value = c(1:8),
                   label = c("Full-time employed", "Part-time employed", "Entrepreneur", "Unemployed and searching for a job", "Unemployed and not searching for a job or incapacitated", "Housewife/Househusband or else", "Retired", "Student or full-time education"), 
                   wording = c("Fulltime werkzaam", "Parttime werkzaam", "Werkzaam als zelfstandig ondernemer", "Werkloos en werkzoekend", "Werkloos en niet-werkzoekend /Arbeidsongeschikt", "Huisvrouw/huisman of anders", "Gepensioneerd of VUT", "Student/Leerling/Fulltime opleiding"))
 
+lbl$gender <- tibble(value = c(0, 1), 
+                     label = c("Male", "Female"), 
+                     wording = c("Man", "Vrouw"))
+
+lbl$region <- tibble(value = c(1:5),
+                     label = c("Three big cities (Amsterdam, Rotterdam, The Hague)", "West of the country", "North  of the country", "East  of the country", "South  of the country"), 
+                     wording = c("Een van de 3 grote steden of randgemeenten: Amsterdam (plus Diemen, Ouder-Amstel, Landsmeer, Amstelveen); Rotterdam (plus Schiedam, Capelle aan den IJssel, Krimpen aan den IJssel, Nederlek, Ridderkerk, Barendrecht, Albrandswaard; Den Haag (plus Leidschendam, Voorburg, Rijswijk, Wassenaar, Wateringen)", "Het westen:  Noord-Holland, Zuid-Holland en Utrecht (exclusief een van de 3 grote steden)", "Het noorden: Groningen, Friesland en Drenthe", "Het oosten: Overijssel, Gelderland en Flevoland", "Het zuiden: Zeeland, Noord-Brabant en Limburg"))
+
+lbl$ethnicity <- tibble(value = c(1:5,999), 
+                        label = c("Dutch origin", "First generation non-Western immigrant", "Second generation non-Western immigrant", "First generation Western immigrant", "Second generation Western immigrant", "No response"), 
+                        wording = c("Autochtoon", "Niet-westers allochtoon; 1e generatie", "Niet-westers allochtoon; 2e generatie", "Westers allochtoon; 1e generatie", "Westers allochtoon; 2e generatie", "Onbekend"))
+
+
+lbl$internet_use <- tibble(value = c(1:5),
+                           label = c("Much more for work", "More for work", "Equal for work and private reasons", "More for private reasons", "Much more for private reasons"), 
+                           wording = c("Veel vaker voor werk", "Iets vaker voor werk", "Ongeveer evenveel voor werk als om persoonlijke redenen", "Iets vaker voor persoonlijke reden", "Veel vaker voor persoonlijke redenen"))
+
 lbl$A2 <- tibble(value = c(1:15,999), 
             label = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party", "Other party", "I vote blanco","I don't know yet"), 
             wording = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij", "Andere partij", "Ik stem blanco","Weet ik niet nog niet"))

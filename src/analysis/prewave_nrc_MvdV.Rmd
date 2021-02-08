@@ -1,0 +1,55 @@
+---
+title: 'VU 2021 Election Study: Analysis of pre-wave'
+author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.path='figures/')
+#library(printr)
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+source(here("src/lib/create_labels.R"))
+```
+
+# Data
+
+```{r "Read Data"}
+d <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
+```
+
+
+```{r "Prepare data"}
+d %>% 
+  select(iisID, A2, gender, age, education, region,
+         ethnicity, job, internet_use, E1) %>%
+  mutate(A2=recode_parties(label(A2, "A2")),
+         E1=recode_parties(label(E1, "E1"))) %>%
+  group_by(A2) %>%
+  summarise(gender = round(mean(gender, na.rm = T),0),
+            age = round(mean(age, na.rm = T), 0),
+            education = round(median(education, na.rm = T),0),
+            region = round(median(region, na.rm = T),0),
+            ethnicity = round(median(ethnicity, na.rm = T),0),
+            job = round(mean(job, na.rm = T), 0),
+            internet_use = round(median(internet_use, na.rm = T),0),
+            E1 = mode(E1)) %>%
+  mutate(job = label(job, "job"),
+         age = label(age, "age"),
+         education = label(education, "education"),
+         gender = label(gender, "gender"),
+         region = label(region, "region"),
+         internet_use = label(internet_use, "internet_use"),
+         ethnicity = label(ethnicity, "ethnicity"))
+  
+
+```
