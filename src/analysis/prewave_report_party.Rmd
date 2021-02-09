@@ -36,7 +36,10 @@ d = d_raw %>%
                  Internetgebruik = internet_use, 
                  vorige_stem=E1,
                  covid_maatregelen=H3, 
-                 covid_vaccinatie=H7
+                 covid_vaccinatie=H7,
+                 pol_kennis=D1,
+                 linksrechts=E2,
+                 eu = H4
                  ) %>%
   mutate(stemintentie = recode_parties(label(stemintentie, "A2")),
          Werk = label(Werk, "job"),
@@ -49,6 +52,8 @@ d = d_raw %>%
          vorige_stem = recode_parties(label(vorige_stem, "E1")),
          covid_maatregelen=label(covid_maatregelen, "H3"),
          covid_vaccinatie=label(covid_vaccinatie, "H7"))
+long = long_mc() %>%  inner_join(d %>% select(iisID, inc))
+
 ```
 
 Leeswijzer: alle figuren zijn staafdiagrammen waarbij de volle staaf de waarde is voor zwevende kiezers,
@@ -60,7 +65,7 @@ Voorbeeld: van de zwevende kiezers is ongeveer 70% man, tegenover ongeveer 50% v
 # Demographics
 
 ```{r wave0_demo}
-for (var in c("Gender", "Leeftijd", "Onderwijsniveau", "Regio", "Etniciteit")) {
+for (var in c("Gender", "Leeftijd", "Onderwijsniveau", "Regio", "Etniciteit", "Werk")) {
   tmp = d
   tmp$target = tmp[[var]]
   t = tmp %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
@@ -72,15 +77,14 @@ for (var in c("Gender", "Leeftijd", "Onderwijsniveau", "Regio", "Etniciteit")) {
 }
 ```
 
+
 # Media Use
 
 ```{r wave0_I1}
-long = long_mc() %>%  inner_join(d %>% select(iisID, inc))
 t = long %>% filter(question=="I1") %>% group_by(inc, medium) %>% summarize(value=mean(value))
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
-  scale_y_continuous(labels = scales::percent) +
       ggtitle("Frequentie van mediagebruik")
 ```
 
@@ -146,6 +150,18 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=p
 #d_raw %>% filter(inc, !is.na(I6_other)) %>% group_by(I6_other) %>% summarize(n=n()) %>% arrange(-n)
 ```
 
+```{r wave0_I9}
+t = long %>% filter(question=="I9") %>% 
+  group_by(inc, medium) %>% summarize(value=mean(value)) %>% mutate(medium=str_sub(medium, end=45))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("News avoidance")
+long %>% filter(question=="I9") %>% group_by(inc, medium) %>% summarize(value=mean(value)) %>% mutate(inc=ifelse(inc, "zwevend", "gemiddeld")) %>% pivot_wider(names_from=inc) %>% mutate(diff=zwevend - gemiddeld) %>% arrange(-diff)
+
+#d_raw %>% filter(inc, !is.na(I6_other)) %>% group_by(I6_other) %>% summarize(n=n()) %>% arrange(-n)
+```
+
 # Vertrouwen
 
 ```{r wave0_trust}
@@ -156,12 +172,24 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
       ggtitle("Vertrouwen in verschillende media")
 
+t = long %>% filter(question=="F1") %>% group_by(inc, medium) %>% summarize(value=mean(value)) %>% mutate(medium=str_sub(medium, end=50))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+      ggtitle("Vertrouwen in politiek")
+long %>% filter(question=="F1") %>% group_by(inc, medium) %>% summarize(value=mean(value)) %>% mutate(inc=ifelse(inc, "zwevend", "gemiddeld")) %>% pivot_wider(names_from=inc) %>% mutate(diff=zwevend - gemiddeld) %>% arrange(-diff)
 
 t = long %>% filter(question=="F2") %>% group_by(inc, medium) %>% summarize(value=mean(value))
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
       ggtitle("Vertrouwen in instituties")
+
+t = long %>% filter(question=="H6", !is.na(medium)) %>% group_by(inc, medium) %>% summarize(value=mean(value)) %>% mutate(medium=str_sub(medium, end=30))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Score")+
+      ggtitle("Vertrouwen in toekomst, globalisering")
 ```
 
 # Corona
@@ -174,10 +202,64 @@ for (var in c("covid_maatregelen", "covid_vaccinatie")) {
   t = tmp %>% filter(!is.na(target)) %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
   print(ggplot() + geom_col(data=t %>% filter(inc), aes(x=target, y=perc, fill=target), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
-    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Percentage")+
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
       ggtitle(var))
 }
 ```
 
+# Politiek
+
+```{r wave0_politics}
+t = d %>% mutate(target=pol_kennis) %>% filter(!is.na(target)) %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=target, y=perc, fill=target), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
+      ggtitle("Politieke kennis (aantal vragen goed uit 12)")
+
+t = d %>% mutate(target=vorige_stem) %>% filter(!is.na(target)) %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(target, perc), y=perc, fill=target), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
+      ggtitle("Vorige stem")
+
+t = d %>% mutate(target=linksrechts) %>% filter(!is.na(target)) %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=target, y=perc, fill=target), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
+      ggtitle("Links/Rechts", "(0=links, 10=rechts)")
+
+t = d %>% mutate(target=eu) %>% filter(!is.na(target), target!=999) %>% group_by(inc, target) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=target, y=perc, fill=target), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=target, y=perc, color=target), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
+      ggtitle("EU", "(1=tegen, 7=voor)")
+```
+
+```{r wave0_politics2}
+t = long %>% filter(question=="G1") %>% group_by(inc, medium) %>% summarize(value=mean(value)) %>% mutate(medium=str_sub(medium, end=30))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Score")+
+      ggtitle("Tevredenheid met Kabinet")
+
+t = long %>% filter(question=="G2", !is.na(medium)) %>% group_by(inc, medium) %>% summarize(value=mean(value)) #%>% mutate(medium=str_sub(medium, end=30))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Score")+
+      ggtitle("Lijsttrekkers: Integriteit")
+
+t = long %>% filter(question=="G3", !is.na(medium)) %>% group_by(inc, medium) %>% summarize(value=mean(value)) #%>% mutate(medium=str_sub(medium, end=30))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Score")+
+      ggtitle("Lijsttrekkers: Sympathiek")
+
+
+t = long %>% filter(question=="G4", !is.na(medium)) %>% group_by(inc, medium) %>% summarize(value=mean(value)) #%>% mutate(medium=str_sub(medium, end=30))
+ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
+    geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
+    coord_flip()+guides(fill=F, color=F)+ggthemes::theme_base() + xlab("") +ylab("Score")+
+      ggtitle("Lijsttrekkers: Weet wat er speelt")
+```
 
 
