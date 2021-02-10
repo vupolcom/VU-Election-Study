@@ -1,0 +1,600 @@
+---
+title: 'Wat willen kiezers na 17 maart? - [Blog StukRoodVlees 10/2/2021](https://stukroodvlees.nl/wat-willen-kiezers-na-17-maart/)'
+author: 'Mariken van der Velden'
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+always_allow_html: true
+---
+
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+knitr::opts_chunk$set(message = FALSE, warning = FALSE,
+                      echo = FALSE, fig.align="center")
+#library(printr)
+rm(list = ls())
+library(tidyverse)
+library(scales)
+library(viridis)
+```
+
+Op 17 maart zijn er verkiezingen voor de Tweede Kamer. In de aanloop naar de verkiezingen, zullen dit jaar de campagnes veelal via de media gespeeld worden, omdat campagne voeren "in het land" door de huidige Corona maatregelen niet mogelijk is. Afgelopen dinsdag 8 februari was de aftrap hiervan. Het  het eerste lijsttrekkers debat vond plaats: [het Lijsttrekkersdebat over het Noorden](https://www.dvhn.nl/extra/Kijk-hier-live-Lijsttrekkersdebat-over-het-Noorden-met-Wilders-Klaver-Marijnissen-en-anderen-26478305.html). Naast over het voetlicht brengen waar de eigen partijen voor staan, waren er ook een aantal politieke partijen die samenwerking bepleiten. Rob Jetten van D66 begon bijvoorbeeld over samenwerking als het gaat om de [Lelylijn](https://www.lelylijn.nl/).
+
+Het benadrukken van samenwerken is ongewoon tijdens de Nederlandse campagneperioden. Waar coalitielanden zoals Duitsland een traditie hebben van de zogenoemde coalitiesignalen [here, here and here], waar politieke partijen aangeven met wie ze graag willen regeren, kent Nederland deze traditie niet. Sterker nog: in een uitzending van [De Wereld Draait Door](https://www.bnnvara.nl/dewerelddraaitdoor/videos/248604) tijdens de 2012 verkiezingscampagne, stelde Rutte dat de samenwerkingsvraag na de verkiezingen niet voor de verkiezingen op tafel moet komen te liggen, omdat de kiezer dan wordt overgeslagen.
+De uitspraak van Rutte staat haaks op wetenschappelijk onderzoek. Dat laat zien dat het duidelijk uitspreken van met wie je samen wil regeren, zorgt ervoor dat kiezers hun stem hierop kunnen aanpassen (zie bijvoorbeeld het onderzoek [hier](https://www.sciencedirect.com/science/article/pii/S0261379420300500?casa_token=VsGzhsmJrewAAAAA:QYCSj5r3L1bFcv_GiMmYxZ4q0tFGl9a7Qg_zjQWgVEQp9gVZ5hTGHzPLyXih5TmXvF5PpeG6ZQ#sec2)). Uit onderzoek van onder andere [Tom van der Meer](https://stukroodvlees.nl/author/tom-van-der-meer/) weten we ook dat ook Nederlandse kiezers vaak meerdere partijen sympathiek vinden en een (klein) groepje van partijen als stemkeuze overwegen. Deze strategie, voorzichtig geprobeerd door Jetten in het Lijsttrekkersdebat van het Noorden, is dus nog niet zo'n gek idee: coalitiepolitiek is in Nederland een essentieel onderdeel van de politiek. Spreek uit met wie je samenwerkt, dat helpt de kiezer in haar overwegingen!
+
+Als onderdeel van de verkiezingsstudie van [Politieke Communicatie onderzoeksgroep aan de Vrije Universiteit Amsterdam](https://fsw.vu.nl/en/departments/communication-science/research/political-communication-and-media-monitoring/index.aspx), brengen wij in kaart hoe Nederlanders denken over een nieuwe regering. De linkerzijde van Figuur 1 laat zien dat een relatieve meerheid van ongeveer 35% het liefst drie partijen in een nieuwe regering samen ziet. Slechts 13% van de mensen ziet idealiter een regering van vier partijen; afgaand op de peilingen geen onrealistisch scenario. Nog meer partijen die samen de regering moeten vormen is al helemaal niet in trek. In de rechterzijde van Figuur 1 zien we dat de drie traditionele regeringspartijen - de VVD, het CDA en de PvdA - het vaakst genoemd worden, maar ook D66, Groenlinks, SP en PVV worden door ruim 20% van de ondervraagden genoemd als een voorkeurscoalitiepartij.
+
+```{r "Voorkeuren voor een nieuwe regering", fig.width=8, fig.height=5}
+d <- read_csv("../../data/intermediate/VUElectionPanel2021_wave0.csv") 
+
+tmp <- d %>% 
+  select(A3_1:A3_5) %>%
+  pivot_longer(cols = everything(),
+               names_to = "id") %>%
+  mutate(id = recode(id, `A3_1` = "Party 1",
+                     `A3_2` = "Party 2", `A3_3` = "Party 3",
+                     `A3_4` = "Party 4", `A3_5` = "Party 5"),
+         value = recode(value, `1` = "CDA", `2` =  "ChristenUnie", 
+                        `3` = "D66", `4` = "Denk", `5` = "FvD",
+                        `6` = "GroenLinks", `7` = "PvdA", `8` ="PvdD",
+                        `9` = "PVV", `10` = "SGP", `11` = "SP", 
+                        `12` = "VVD", `13` = "50Plus")) %>%
+  drop_na(value) %>%
+  group_by(value) %>%
+  summarise(n = n(),
+            perc = round(n/dim(d)[1], 2)) %>%
+  mutate(id = "Welke partijen moeten de nieuwe regering vormen?")
+
+d %>% 
+  select(A3_1:A3_7) %>%
+  pivot_longer(cols = A3_1:A3_7,
+               names_to = "id") %>%
+  mutate(id = recode(id, `A3_1` = "1",
+                     `A3_2` = "2", `A3_3` = "3",
+                     `A3_4` = "4", `A3_5` = "5",
+                     `A3_6` = "6", `A3_7` = "7"),
+         value = recode(value, `1` = "CDA", `2` =  "ChristenUnie", 
+                        `3` = "D66", `4` = "Denk", `5` = "FvD",
+                        `6` = "GroenLinks", `7` = "PvdA", `8` ="PvdD",
+                        `9` = "PVV", `10` = "SGP", `11` = "SP", 
+                        `12` = "VVD", `13` = "50Plus")) %>%
+  drop_na() %>%
+  group_by(id) %>%
+  summarise(n = n(),
+            perc = round(n/dim(d)[1],2)) %>%
+  filter(id>2) %>%
+  ungroup() %>%
+  select(value = id, n, perc) %>%
+  mutate(id = "Hoeveel partijen moeten de nieuwe regering vormen?") %>%
+  add_case(tmp) %>%
+  ggplot(aes(x = perc, y = reorder(value, -perc))) +
+    geom_col(fill = "#440154FF", colour = "#440154FF", alpha = .2) +
+    facet_wrap(.~id, scales = "free") +
+    theme_minimal() +
+    labs(x = "", y = "") +
+    scale_x_continuous(labels=percent) +
+    theme(plot.title = element_text(hjust = 0.5),
+          legend.position="bottom",
+          legend.title = element_blank())
+rm(tmp)
+```
+
+```{r, results="hide"}
+tmp <- d %>% 
+  select(iisID, A2, A3_1:A3_5) %>%
+  pivot_longer(cols = A3_1:A3_5) %>%
+  mutate(value = na_if(value, 0)) %>%
+  drop_na(value) %>%
+  mutate(check = ifelse(A2 == value, 1, 0)) %>%
+  mutate(check = na_if(check, 0)) %>%
+  drop_na()
+table(tmp$check)
+rm(tmp)
+#Check: everyone that intends to voted for party also prefers it in coalition
+```
+
+```{r, fig.show="hide"}
+d %>%
+  select(iisID, A3_1:A3_5, F1_3, F1_8) %>%
+  pivot_longer(cols = A3_1:A3_5,
+               names_to = "choice",
+               values_to = "party_pref") %>%
+  pivot_longer(cols = F1_3:F1_8) %>%
+  mutate(name = recode(name, 
+                       `F1_3` = "Politici beloven meer dan ze waar kunnen maken",
+                       `F1_8` = "Compromissen sluiten is verraden van principes"),
+         party_pref = recode(party_pref,
+                             `1` = "CDA",
+                        `2` = "ChristenUnie", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD", 
+                        `6` = "GroenLinks", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV",
+                        `10`= "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50Plus")) %>%
+  drop_na(party_pref) %>%
+  group_by(name, party_pref) %>%
+  summarise(means = mean(value, na.rm=T),
+            stdev = sd(value, na.rm=T)) %>%
+  mutate(lower = means - (1.96 * stdev),
+         lower = ifelse(lower<1,1, lower),
+         upper = means + (1.96 * stdev),
+         upper = ifelse(upper>5, 5, upper)) %>%
+  ggplot(aes(y = reorder(party_pref, -means), x = means, group = name, 
+             colour = name, fill = name,
+             xmin = lower, xmax =upper)) +
+  geom_point(position = position_dodge(.8), size = 4) +
+  geom_crossbar(position = position_dodge(.8), alpha = .2) +
+  theme_minimal() +
+  scale_color_viridis(discrete = T) +
+  scale_fill_viridis(discrete = T) +
+  labs(x = "(0 (Helemaal mee oneens) - 5 (Helemaal mee eens)", y = "",
+       title = "Draagvlak Coalitiepolitiek ") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) 
+```
+
+Hoe realistisch zijn deze voorkeuren eigenlijk? Omdat er  geen grote middenpartijen meer zijn in het Nederlandse partijlandschap, zal het vormen van de regering na de verkiezing hoogstwaarschijnlijk niet gemakkelijk  gaan. Dit is overigens een trend die overal in Eurpa waargenomen wordt (voor meer informatie hierover, zie [dit boek](https://press.princeton.edu/books/hardcover/9780691194752/political-entrepreneurs) van collega's Catherine de Vries en Sarah Hobolt). Als we de coalitiepartijvoorkeuren van mensen afzetten tegen recente polls van [IPSOS politieke barometer](https://www.ipsos.com/nl-nl/politieke-barometer), dan laten de gele staven in Figuur 2 zien dat een minderheid van de ondervraagden een voorkeur voor een regering heeft die op dit moment een meerderheid in de peilingen heeft. Zo heeft bijvoorbeeld slechts zes procent van de 37 ondervraagden die de VVD in een nieuwe regering wil, een voorkeur voor een regering met de VVD die op dit moment een meerderheid heeft. Mensen die graag 50Plus, Partij van de Dieren of Forum voor Democratie in een nieuwe regering zouden willen, hebben een ideale regering voor zich die op dit moment niet op een meerderheid kan rekenen.
+
+```{r "Realistische voorkeuren"}
+polls <- tibble(party = 1:13,
+                polls = c(20,6,15,2,3,12,12,6,20,2,9,40,1))
+#https://www.ipsos.com/nl-nl/politieke-barometer
+
+d %>%
+  select(iisID, A3_1:A3_5) %>%
+
+  pivot_longer(cols = A3_1:A3_5,
+               values_to = "party") %>%
+  mutate(party = na_if(party, 0)) %>%
+  drop_na() %>%
+  left_join(y = polls, by = "party") %>%
+  group_by(iisID) %>%
+  summarise(seats = sum(polls),
+            party = paste(party, sep = "-")) %>%
+  mutate(real = ifelse(seats <=75, "Geen meerderheid volgens peilingen",
+                       "Meerderheid volgens peilingen"),
+         party = recode(party,
+                        `1` = "CDA",
+                        `2` = "ChristenUnie", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD", 
+                        `6` = "GroenLinks", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV",
+                        `10`= "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50Plus")) %>%
+  ungroup() %>%
+  group_by(party, real) %>%
+  summarise(n = n(),
+            perc = round(n/dim(d)[1], 2)) %>%
+  ggplot(aes(y = reorder(party, -perc), x = perc, 
+             fill = real, colour = real)) +
+  geom_col(position = position_dodge(),alpha = .2) +
+  theme_minimal() +
+  scale_fill_viridis(discrete = T) +
+  scale_colour_viridis(discrete = T) +
+  scale_x_continuous(labels=percent) +
+  labs(x = "", y = "", 
+       title = "Politieke partij moet in de nieuwe regering") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank())
+```
+
+Waar komen de voorkeuren voor een coalitiepartij vandaan? Politicologen hebben verschillende theorieën waarmee zij proberen te verklaren wie welk vakje rood kleurt in het stemhokje. Een belangrijke theorie om stemkeuze te verklaren gaat over ideologische afstand tussen partij en kiezer (voor het orgineel, zie [hier](https://www.amazon.com/Economic-Theory-Democracy-Anthony-Downs/dp/0060417501)). In Figuur 3 laat de lijn, die bijna perfect van linksonder naar rechtsboven in loopt, zien dat iemands ideologische positie sterk samenhangt met de ideologische positie van de partijen die degenen als voorkeurscoalitie aangeeft. Hoe donkerder paars de punten in de grafiek, des te meer ondervraagden zich op dat coordinaat bevinden. Figuur 3 laat ook zien dat de kwadranten linksonder en rechtsboven het dichts bevolkt zijn. Het lijkt er dus op dat ideologie zowel voor stemkeuze als coalitievoorkeur belangrijk is. 
+
+
+```{r}
+d %>%
+  select(iisID, A3_1:A3_5, E2:E3_13) %>%
+  pivot_longer(cols = A3_1:A3_5,
+               names_to = "choice",
+               values_to = "party_pref_coal")%>%
+  pivot_longer(cols = E3_1:E3_13) %>%
+  separate(name, c("name", "party"), "_", extra = "merge") %>%
+  mutate(check = ifelse(party_pref_coal == party, 1, 0)) %>%
+  filter(check == 1) %>% select(iisID, E2, party_pref_coal, E3 = value) %>%
+  group_by(iisID) %>%
+  summarise(self_rile = mean(E2, na.rm = T),
+            coal_rile = round(mean(E3, na.rm = T),0),
+            diffs = round(self_rile - coal_rile, 1)) %>%
+  ggplot(aes(x = self_rile, y = coal_rile)) +
+  geom_point(color = "#440154FF", alpha = .2, 
+             position = position_dodge(.8)) +
+  geom_smooth(color = "#440154FF", fill = "#440154FF") +
+  theme_minimal() +
+  labs(x = "Links-Rechts Zelfplaatsing", 
+       y = "Gemiddelde Ideologische Positie van Coalitie Partijen",
+       title = "Ideologie en coalitievoorkeur") +
+         #"Samenhang tussen Zelf-Plaatsing en \n Gemidelde Ideologische Positie van Coalitie Partijen: 0.63") +
+  geom_vline(xintercept = 5, size = .2, linetype = "dashed") +
+  geom_hline(yintercept = 5, size = .2, linetype = "dashed") +
+    annotate('text', x = 1.7, y = -0.5,
+             label="Zelf links, en linkse coalitievoorkeur (22%)",
+             size = 3) +
+   annotate('text', x = 8, y = -0.5,
+             label="Zelf rechts, maar linkse coalitievoorkeur (17%)",
+             size = 3) +
+  annotate('text', x = 1.7, y = 10.5,
+             label="Zelf links, maar rechtse coalitievoorkeur (12%)",
+           size = 3) +
+  annotate('text', x = 8, y = 10.5,
+             label="Zelf rechts, en rechtse coalitievoorkeur (21%)",
+           size = 3) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+Een andere belangrijke theorie over hoe mensen hun keuze in het stemhokje maken gaat over het evalueren van de prestaties van de regering (voor een overzicht van het toepassen van deze theoretische stroming, zie [hier](https://www.annualreviews.org/doi/abs/10.1146/annurev-polisci-032211-212920)). In Figuur 4 laat ik zien dat dit niet de beste verklaring is voor welke partijen men graag opnieuw in de regering ziet. De eerste gele balk geeft aan 95% van de mensen die de VVD als voorkeurspartij heeft varieert tussen redelijk tevreden (score hoger dan 5) en ietwat ontevereden (score van 3), gemiddeld beoordeeld deze groep de VVD als ontevreden (score van 4). Als je de VVD graag terugziet in de regering, maar er niet zelf op gaat stemmen (groene balk), beoordeel je de prestaties van de VVD gemiddeld niet positiever of negatiever dan mensen die niet op de VVD stemmen én de VVD niet terugwillen zien in de regering (paarse balk). De spreiding in de "groene groep" is wel groter: sommige vinden dat de VVD redelijk gepresteerd heeft (scores tussen 5 en 6), andere zijn een hele andere mening toegedaan (scores tussen de 1 en 2). Een vergelijkbaar patroon zien we de ChristenUnie. Voor het CDA en D66 laat Figuur 4 zien dat het helemaal niet uitmaakt of het de voorkeurspartij is, ze graag terugziet in de regering of geen van beide, je bent ongeveer even negatief over de prestaties van respectievelijk het CDA en D66. 
+
+```{r "Afstraffen en coalitievoorkeur"}
+d %>%
+  select(iisID, A2, A3_1:A3_5, G1_2:G1_5) %>%
+  filter(A2==12 | A2==1 | A2==2 | A2==3) %>%
+  mutate(check = ifelse(A2==12 & A3_1==12,1,
+                 ifelse(A2==12 & A3_2==12,1,
+                 ifelse(A2==12 & A3_3==12,1,
+                 ifelse(A2==12 & A3_4==12,1,
+                 ifelse(A2==12 & A3_5==12,1,
+                 ifelse(A2==1 & A3_1==1,1,
+                 ifelse(A2==1 & A3_2==1,1,
+                 ifelse(A2==1 & A3_3==1,1,
+                 ifelse(A2==1 & A3_4==1,1,
+                 ifelse(A2==1 & A3_5==1,1,
+                 ifelse(A2==2 & A3_1==2,1,
+                 ifelse(A2==2 & A3_2==2,1,
+                 ifelse(A2==2 & A3_3==2,1,
+                 ifelse(A2==2 & A3_4==2,1,
+                 ifelse(A2==2 & A3_5==2,1,
+                 ifelse(A2==3 & A3_1==3,1,
+                 ifelse(A2==3 & A3_2==3,1,
+                 ifelse(A2==3 & A3_3==3,1,
+                 ifelse(A2==3 & A3_4==3,1,
+                 ifelse(A2==3 & A3_5==3,1,
+                        0))))))))))))))))))))) %>%
+  pivot_longer(cols = A2:A3_5,
+               names_to = "choice",
+               values_to = "party_pref") %>%
+  mutate(pref_type = ifelse(choice == "A2", "Vote", "Coalition")) %>%
+  pivot_longer(cols = G1_2:G1_5) %>%
+  separate(name, c("name", "party"), "_", extra = "merge") %>%
+  filter(party_pref==12 | party_pref==1 | party_pref==2| 
+           party_pref == 3) %>%
+  mutate(tmp = ifelse(check == 1 & pref_type == "Coalition", 1,0))%>%
+  filter(tmp==0) %>%
+  select(-tmp) %>%
+  mutate(party = recode(party, `2` = 12, `3` = 1, `4` = 3, `5` = 2),
+         check = ifelse(party_pref == party & pref_type=="Vote", 1,
+                 ifelse(party_pref == party & pref_type=="Coalition", 
+                        2, 0))) %>%
+  drop_na(check) %>%
+  group_by(check, party) %>%
+  summarise(means = mean(value, na.rm=T),
+            stdev = sd(value, na.rm = T)) %>%
+  mutate(check = recode(check, 
+                        `0` = "Geen voorkeurs(coalitie)partij",
+                        `1` = "Voorkeurspartij",
+                        `2` = "Voorkeurscoalitiepartij"),
+         party = recode(party, `1` = "CDA", 
+                        `2` = "ChristenUnie", 
+                        `3` = "D66",
+                        `12` = "VVD")) %>%
+  ggplot(aes(y = party, x = means, group = check, 
+             colour = check, fill = check,
+             xmin = means - (1.96*stdev), xmax = means + (1.96*stdev))) +
+  geom_point(position = position_dodge(.8), size = 4) +
+  geom_crossbar(position = position_dodge(.8), alpha = .2) +
+  theme_minimal() +
+  geom_vline(xintercept = 5, size = .2, linetype = "dashed") +
+  scale_color_viridis(discrete = T) +
+  scale_fill_viridis(discrete = T) +
+  labs(x = "0 (ontevreden) - 10 (tevreden)", y = "",
+       title = "Hoe tevreden bent u met de prestaties van de regeringspartijen?") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) 
+```
+
+```{r, fig.show="hide"}
+d %>%
+  select(iisID, A2, A3_1:A3_5, G1_b) %>%
+  mutate(check = ifelse(A2==A3_1,1,
+                 ifelse(A2==A3_2,1,
+                 ifelse(A2==A3_3,1,
+                 ifelse(A2==A3_4,1,
+                 ifelse(A2==A3_5,1, 0)))))) %>%
+  pivot_longer(cols = A2:A3_5,
+               names_to = "choice",
+               values_to = "party_pref") %>%
+  mutate(pref_type = ifelse(choice == "A2", "Vote", "Coalition"),
+         tmp = ifelse(check == 1 & pref_type == "Coalition", 1,0)) %>%
+  filter(tmp==0) %>%
+  select(-tmp) %>%
+  filter(party_pref <=13) %>%
+  mutate(party_pref = recode(party_pref,
+                        `1` = "CDA",
+                        `2` = "ChristenUnie", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD", 
+                        `6` = "GroenLinks", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV",
+                        `10`= "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50Plus"),
+         check = ifelse(pref_type == "Vote", 1, 0)) %>%
+  drop_na() %>%
+  group_by(check, party_pref) %>%
+  summarise(means = mean(G1_b, na.rm=T),
+            stdev = sd(G1_b, na.rm = T)) %>%
+  mutate(check = recode(check, 
+                        `1` = "Voorkeurspartij",
+                        `0` = "Voorkeurscoalitiepartij"),
+         lower = means - (1.96 * stdev),
+         lower = ifelse(lower<0,0, lower),
+         upper = means + (1.96 * stdev),
+         upper = ifelse(upper>10, 10, upper)) %>%
+  ggplot(aes(y = reorder(party_pref, -means), x = means, group = check, 
+             colour = check, fill = check,
+             xmin = lower, xmax =upper)) +
+  geom_point(position = position_dodge(.8), size = 4) +
+  geom_crossbar(position = position_dodge(.8), alpha = .2) +
+  theme_minimal() +
+  geom_vline(xintercept = 5, size = .2, linetype = "dashed") +
+  scale_color_viridis(discrete = T) +
+  scale_fill_viridis(discrete = T) +
+  labs(x = "0 (Regering moest zeker aftreden) - 10 (Regering moest zeker aanblijven)",
+       y = "", title = "Draagvlak aftreden regering Rutte III") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) 
+
+```
+
+
+```{r, fig.width=15, fig.height=8, fig.show="hide"}
+tmp <- d %>%
+  select(iisID, A3_1:A3_5, C1_1_1:C1_1_13) %>%
+  pivot_longer(cols = A3_1:A3_5,
+               names_to = "choice",
+               values_to = "coal_pref") %>%
+  pivot_longer(cols = C1_1_1:C1_1_13) %>%
+  separate(name, c("name", "names"), "_", extra = "merge") %>%
+  separate(names, c("names", "party"), "_", extra = "merge") %>%
+  select(coal_pref, party, issue = value) %>%
+  filter(issue<=18) %>%
+  mutate(check = ifelse(coal_pref == party,"Coalitievoorkeurspartij",
+                        "Geen voorkeurspartij")) %>%
+  drop_na() %>%
+  group_by(party, issue, check) %>%
+  summarise(n = n())
+  
+tmpp <- tmp %>%
+  filter(check == "Geen voorkeurspartij") %>%
+  ungroup() %>%
+  group_by(party)%>%
+  top_n(1, n) %>%
+  ungroup() %>%
+  mutate(perc = round(n/28323,2))
+
+tmp %>%
+  filter(check != "Geen voorkeurspartij") %>%
+  ungroup() %>%
+  group_by(party)%>%
+  top_n(1, n) %>%
+  ungroup() %>%
+  mutate(perc = round(n/1609,2)) %>%
+  add_row(tmpp) %>%
+  mutate(party = recode(party,
+                        `1` = "CDA",
+                        `2` = "ChristenUnie", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD", 
+                        `6` = "GroenLinks", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV",
+                        `10`= "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50Plus"),
+         issue = recode(issue,
+                        `1` = "Asielzoekers en migranten", 
+                        `2` = "Mobiliteit en infrastructuur", 
+                        `3` = "Bestuurlijke vernieuwing",
+                        `4` = "Criminaliteitsbestrijding", 
+                        `5` = "Europese Unie en de Euro", 
+                        `6` = "Gezondheidszorg", 
+                        `7` = "Woningen", 
+                        `8` = "Klimaat, natuur, en milieu", 
+                        `9` = "Normen en waarden", 
+                        `10` = "Vrijheidsrechten", 
+                        `11` = "Ondernemingsklimaat", 
+                        `12` = "Onderwijs en wetenschap",
+                        `13` = "Ontwikkelingshulp",
+                        `14` = "Overheidsuitgaven en belastingen", 
+                        `15` = "Sociale zekerheid", 
+                        `16` = "Terreurbestrijding", 
+                        `17` = "Werk en inkomen",
+                        `18` = "Coronabeleid")) %>%
+  drop_na() %>%
+  ggplot(aes(y = reorder(issue, -perc), x = perc, fill = check)) +
+  geom_col(position = position_dodge()) +
+  theme_minimal() +
+  facet_grid(.~ party, scales = "free") +
+#  ggh4x::force_panelsizes(cols = c(2.5, 0.5, 0.5, 0.5)) +
+  scale_fill_viridis(discrete = T) +
+  scale_x_continuous(labels=percent) +
+  labs(x = "", y = "") +
+  geom_vline(xintercept = 5, size = .2, linetype = "dashed") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank(),
+        axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95)) 
+
+rm(tmpp, tmp)
+```
+Tot slot, een derde belangrijke verklaring van waarom mensen voor een partij stemmen is omdat ze de partij associëren met een bepaald onderwerp en het eens zijn met de positie van de partij op dit onderwerp. We zien ook regelmatig dat politici successen op bepaalde onderwerpen op eigen conto proberen te schrijven. Zo zagen we dat Wopke Hoekstra zich alvast te positioneren als de man die staat voor de familie [door te pleiten dat de scholen weer open moeten](https://nos.nl/video/2366487-hoekstra-kans-dat-scholen-opengaan-is-zeer-groot.html), en Sigrid Kaag herinnerde de kiezer weer dat D66 dé onderwijspartij is [door ook te stellen dat de scholen weer open moeten](https://www.nporadio1.nl/binnenland/29314-kabinet-wil-basisscholen-openen-op-8-februari-maar-kan-dat-veilig). 
+
+Wie associaeert welke partij met welk onderwerp? En maakt het uit of je die partij graag in de regering (terug) ziet? Over het algemeen zien we dat mensen die de partij graag in de regering zien (in het paars) en mensen die deze partij niet als voorkeurscoalitiepartij hebben (in het geel) niet verschillen: ze associeren dezelfde onderwerpen met de politieke partij en zijn het ook evenveel (on)eens met de positie van de partij op dit onderwerpen. Opvallend is dat dit voor twee partijen niet opgaat. Voor Denk en Forum voor Democratie zien we dat mensen die deze partij niet als voorkeurspartij voor een nieuwe regering hebben, zij het onderwerp asielzoekers en immigratie met de partij associeren. Als je Denk wél in de regering wil terugzien, heb je een positieve associate met het voorgestelde beleid over vrijheidsrechten, zoals  vrijheid van meningsuiting, discriminatieverbod, tolerantie. Voor Forum geldt dat als je de partij terug wil zien in de regering, je Forum vooral positief associeert met het coronabeleid dat zij voorstaan.
+
+```{r "Issues als verklaring", fig.width=15, fig.height=8}
+tmp <- d %>%
+  select(A3_1:A3_5, C1_1_1:C1_1_13, C2_1_1:C2_1_13) %>%
+  pivot_longer(cols = A3_1:A3_5,
+               names_to = "choice",
+               values_to = "coal_pref") %>%
+  pivot_longer(cols = C1_1_1:C1_1_13,
+               values_to = "issue") %>%
+  separate(name, c("name", "names"), "_", extra = "merge") %>%
+  separate(names, c("names", "party"), "_", extra = "merge") %>%
+  pivot_longer(cols = C2_1_1:C2_1_13,
+               values_to = "position",
+               names_to = "tmp") %>%
+  select(coal_pref, party, issue, position) %>%
+  filter(issue<=18) %>%
+  mutate(check = ifelse(coal_pref == party,"Coalitievoorkeurspartij",
+                        "Geen voorkeurspartij"),
+         position = na_if(position, 999)) %>%
+  drop_na(position) %>%
+  group_by(party, issue, check) %>%
+  summarise(n = n(),
+            pos_mean = round(mean(position, na.rm = T),0),
+            pos_sd = round(sd(position, na.rm=T),2))
+
+tmpp <- tmp %>%
+  filter(check == "Geen voorkeurspartij") %>%
+  ungroup() %>%
+  group_by(party)%>%
+  top_n(1, n) %>%
+  ungroup()
+
+tmp %>%
+  filter(check != "Geen voorkeurspartij") %>%
+  ungroup() %>%
+  group_by(party)%>%
+  top_n(1, n) %>%
+  ungroup() %>%
+  add_row(tmpp) %>%
+  mutate(party = recode(party,
+                        `1` = "CDA",
+                        `2` = "ChristenUnie", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD", 
+                        `6` = "GroenLinks", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV",
+                        `10`= "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50Plus"),
+         issue = recode(issue,
+                        `1` = "Asielzoekers en migranten", 
+                        `2` = "Mobiliteit en infrastructuur", 
+                        `3` = "Bestuurlijke vernieuwing",
+                        `4` = "Criminaliteitsbestrijding", 
+                        `5` = "Europese Unie en de Euro", 
+                        `6` = "Gezondheidszorg", 
+                        `7` = "Woningen", 
+                        `8` = "Klimaat, natuur, en milieu", 
+                        `9` = "Normen en waarden", 
+                        `10` = "Vrijheidsrechten", 
+                        `11` = "Ondernemingsklimaat", 
+                        `12` = "Onderwijs en wetenschap",
+                        `13` = "Ontwikkelingshulp",
+                        `14` = "Overheidsuitgaven en belastingen", 
+                        `15` = "Sociale zekerheid", 
+                        `16` = "Terreurbestrijding", 
+                        `17` = "Werk en inkomen",
+                        `18` = "Coronabeleid"),
+         lower = pos_mean - (1.96 * pos_sd),
+         lower = ifelse(lower<0,0, lower),
+         upper = pos_mean + (1.96 * pos_sd),
+         upper = ifelse(upper>10, 10, upper)) %>%
+  drop_na() %>%
+  ggplot(aes(y = reorder(issue, -pos_mean), x = pos_mean, fill = check,
+             colour = check, xmin = lower, xmax = upper)) +
+  geom_point(position = position_dodge(.8), size = 4) +
+  geom_crossbar(position = position_dodge(.8), alpha = .2) +
+  theme_minimal() +
+  facet_grid(.~ party, scales = "free") +
+  scale_fill_viridis(discrete = T) +
+  scale_colour_viridis(discrete = T) +
+  labs(x = "0 (helemaal mee oneens) - 10 (helemaal mee eens)", 
+       y = "Onderwerpen meest geassocieerd met politieke partij", 
+       title = "Positie van politieke partij op onderwerp ") +
+  geom_vline(xintercept = 5, size = .2, linetype = "dashed") +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank(),
+        axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95)) 
+rm(tmp, tmpp)
+```
+
+```{r,fig.show="hide"}
+d %>%
+  select(iisID, A2, A3_1:A3_5, E1) %>%
+  pivot_longer(cols = A3_1:A3_5,
+               values_to = "A3") %>%
+  mutate(switch = ifelse(E1==A2, 0, 1),
+         coal_old = ifelse(E1==A3, 1, 0),
+         coal_new = ifelse(A2==A3, 2, 0)) %>%
+  group_by(iisID, A2, E1) %>%
+  summarise(switch = mean(switch),
+            coal_old = sum(coal_old),
+            coal_new = sum(coal_new)) %>%
+  mutate(coal_old = ifelse(coal_old>=1,1,0),
+         coal_new = ifelse(coal_new>=1,2,0),
+         coal_pref = coal_old + coal_new,
+         value = ifelse(coal_pref == 0 & switch == 0, 117, 
+                 ifelse(coal_pref == 0 & switch == 1, 369,
+                 ifelse(coal_pref == 1 & switch == 0, 0,
+                 ifelse(coal_pref == 1 & switch == 1, 307,
+                 ifelse(coal_pref == 2 & switch == 0, 0, 
+                 ifelse(coal_pref == 2 & switch == 1, 350,
+                 ifelse(coal_pref == 3 & switch == 0, 964, 216))))))),
+         switch = recode(switch, `0` = "Niet veranderd van partijvoorkeur",
+                         `1` = "Veranderd van partijvoorkeur"),
+         coal = ifelse(coal_pref == 0, "Geen van de partijvoorkeuren",
+                ifelse(coal_pref == 1, "Partijkeuze 2017", 
+                ifelse(coal_pref == 2, "Partijvoorkeur 2021",
+                ifelse(coal_pref == 3, "Partijvoorkeur 2017 en 2021", "NA")))),
+         coal = factor(coal, levels = c("Geen van de partijvoorkeuren", 
+                                        "Partijkeuze 2017", 
+                                        "Partijvoorkeur 2021", 
+                                        "Partijvoorkeur 2017 en 2021")),
+         perc = round(value/dim(d)[1],2)) %>%
+  drop_na() %>%
+  ggplot(aes(x = switch, y = coal, fill = perc, label = percent(perc))) +
+  geom_tile() + geom_text() +
+  theme_minimal() +
+  scale_fill_gradient(low="white", high="#440154FF", guide=F) +
+  labs(x="", y ="", title = "Samenhang partijvoorkeur en coalitievoorkeur")
+
+```
+
+Of dit overzicht Mark Rutte overtuigd van het belang om coalitiepolitiek al in de campagnetijd mee te nemen weet ik niet, maar het laat wel zien dat elementen die belangrijk zijn voor politieke partijen ná de verkiezingen, zoals ideologische afstand van elkaar en ministersposten kunnen bezetten op onderwerpen die binnen het profiel van de partij vallen, óók voor de kierzer een overweging zijn bij de keuze voor een nieuwe regering. Dus, mijn oproep aan de campagnevoerende politici: wees niet bang je uit te spreken over mogelijke samenwerking. De kiezer weet dat dit onvermijdelijk is in het Nederlandse politieke landschap.
+
+### _Methodologische informatie_
+_De figuren in deze blog zijn gebaseerd op data van de eerste wave van verkiezingsstudie opgezet door de Politieke Communicatie onderzoeksgroep aan de Vrije Universiteit. Op dit moment zijn we nog bezig met het verzamelen van opvolgende waves (6 in totaal tot aan na de verkiezingen). Deze data zullen zodra ze beschikbaar zijn opengesteld worden. Mocht je meer willen weten, kan je [hier](https://www.dropbox.com/s/lyu6r949gtt0wk3/codebook.md?dl=0) alvast een kijkje nemen in het codeboek waarin de vragen van de eerste wave beschreven staan._
