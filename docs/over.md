@@ -25,7 +25,7 @@ Twitter: @vanatteveldt<br/>
 
 Wouter van Atteveldt is Universitair Hoofddocent Politieke Communicatie aan de Vrije Universiteit. Hij is gespecialiseerd in politieke communicatie en computationele communicatiewetenschap. In het bijzonder doet hij veel onderzoek naar automatische methodes van tekstanalyse en is hij voorvechter van open science. Hij is betrokken bij meerdere door NWO en EU gefinancierde onderzoeksprojecten, onder andere naar filter bubbels en nieuwsalgoritmes. Daarnaast heeft hij veelvuldig gepubliceerd over effecten van politieke communicatie en methodologische aspecten van computationeel onderzoek. 
 
-Van Atteveldt leidt de VU onderzoeksgroep Politieke Communicatie, is mede-oprichter van het Computational Communication Science Lab Amsterdam, mede-oprichter en oud-voorzitter van de divisie computationele methodes van de internationale wetenschappelijke vereniging ICA, en mede-oprichter en hoofdredacteur van het open access tijdschrift Computational Communication Research.
+Van Atteveldt leidt de VU onderzoeksgroep Politieke Communicatie (samen met Mariken van der Velden), is mede-oprichter van het Computational Communication Science Lab Amsterdam, mede-oprichter en oud-voorzitter van de divisie computationele methodes van de internationale wetenschappelijke vereniging ICA, en mede-oprichter en hoofdredacteur van het open access tijdschrift Computational Communication Research.
 
 ## dr. Andreu Casas
 
@@ -59,10 +59,11 @@ Daarnaast geeft zij diverse vakken aan de Master Media en Journalistiek van de E
 ## dr. Mariken van der Velden
 
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/73996237/Foto_Mariken_website.JPG?w=320&f=webp">
+Website:https://research.vu.nl/en/persons/mariken-van-der-velden <br/>
 Email: <a href="mailto:m.a.c.g.vander.velden@vu.nl">m.a.c.g.vander.velden@vu.nl</a><br/>
 Twitter: @MarikenVelden<br/>
 
-Ik ben universitair docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam en gelieerd aan het Hot Politics Lab van de Universiteit van Amsterdam. Ik ben gepromoveerd aan de afdeling politicologie van de Vrije Universiteit Amsterdam. Voordat ik opnieuw aan de Vrije Universiteit Amsterdam kwam werken, was ik als onderzoeker verbonden aan de afdelingen politicologie van de Universiteit van Oxford, de Universiteit Chapel Hill North Carolina, en de Universiteit van Zürich.
+Ik ben universitair docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam, gelieerd aan het [Hot Politics Lab](http://www.hotpolitics.eu/), en ben bestuurslid van de [Stichting KiezersOnderzoek Nederland](https://www.dpes.nl/en/). Mariken leidt de VU onderzoeksgroep Politieke Communicatie (samen met Wouter van Atteveldt). Ik ben gepromoveerd aan de afdeling politicologie van de Vrije Universiteit Amsterdam. Voordat ik opnieuw aan de Vrije Universiteit Amsterdam kwam werken, was ik als onderzoeker verbonden aan de afdelingen politicologie van de Universiteit van Oxford, de Universiteit Chapel Hill North Carolina, en de Universiteit van Zürich. Mariken is betrokken bij meerdere door NWO en EU gefinancierde onderzoeksprojecten, onder andere naar de legitimiteit van overheidscommunicatie tijdens de Corona pandemie.
 
 Ik ben gespecialiseerd in communicatie van politici, burgers’ politieke opvatting over de werking van de democratie, en computationele sociale wetenschappen. In mijn meeste recente onderzoek kijk ik naar hoe politici de onvermijdelijke compromissen aan het publiek verkondigen en wat politieke compromissen doen met het vertrouwen in en de legitimiteit van democratie met behulp van virtual-reality spellen, experimenten en computationele tekstanalyse.
 
