@@ -4,7 +4,7 @@ De resultaten op deze pagina komen voort uit de analyse van de Tweede Kamerverki
 
 # Informatie voor journalisten
 
-Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor een breder publiek toegankelijk te maken. Alle resultaten van ons onderzoek zullen (ook) op deze website worden gepubliceerd, maar uiteraard kunnen we daarmee wachten tot na publicatie in de media. Neem contact op met [Wouter van Atteveldt](mailto:wouter.van.atteveldt@vu.nl) (0642740725) of [Mariken van der Velden](mailto:m.a.c.g.vander.velden@vu.nl) voor meer informatie. 
+Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor een breder publiek toegankelijk te maken. Alle resultaten van ons onderzoek zullen (ook) op deze website worden gepubliceerd, maar uiteraard kunnen we daarmee wachten tot na publicatie in de media. Neem contact op met [Wouter van Atteveldt](mailto:wouter.van.atteveldt@vu.nl) (0642740725) of [Mariken van der Velden](mailto:m.a.c.g.vander.velden@vu.nl) (020-5982895) voor meer informatie. 
 
 # Het team
 
