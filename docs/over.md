@@ -8,7 +8,15 @@ Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor 
 
 # Het team
 
-## Wouter van Atteveldt
+## dr. Loes Aaldering
+<img width="100px" align="left" src="https://research.vu.nl/files-asset/100400066/foto_loes_website.jpg?w=320&f=webp">
+Email: [l.aaldering@vu.nl](mailto:l.aaldering@vu.nl) <br/>
+
+Loes Aaldering is universitair docent vergelijkende politiek aan de afdeling Bestuurswetenschap en Politicologie van de Vrije Universiteit Amsterdam. Ze is gepromoveerd aan de afdeling politicologie van de Universiteit van Amsterdam, waarna ze een paar jaar als postdoctoraal onderzoeker heeft gewerkt in de groep ‘politieke communicatie’ aan de afdeling communicatiewetenschap van de Universiteit Wenen. 
+
+Haar onderzoek richt zich voornamelijk op vraagstukken met betrekking tot gender en politiek, politiek leiderschap, politieke vertegenwoordiging en electoraal gedrag. Meer specifiek, ze bestudeert onder andere hoe politici in de media worden besproken in termen van hun leiderschapskwaliteiten; genderverschillen in de mediaberichtgeving over politici; leiderschapseffecten op kiezers; genderstereotypen; nepnieuws; nieuwsmijding en polarisatie.
+
+## dr. Wouter van Atteveldt
 
 <img width="100px" src="http://ccs.amsterdam/wp-content/uploads/2020/10/atteveldt-e1604596450550.png" align="left"> 
 Website: [http://vanatteveldt.com](http://vanatteveldt.com)<br/>
@@ -19,18 +27,7 @@ Wouter van Atteveldt is Universitair Hoofddocent Politieke Communicatie aan de V
 
 Van Atteveldt leidt de VU onderzoeksgroep Politieke Communicatie, is mede-oprichter van het Computational Communication Science Lab Amsterdam, mede-oprichter en oud-voorzitter van de divisie computationele methodes van de internationale wetenschappelijke vereniging ICA, en mede-oprichter en hoofdredacteur van het open access tijdschrift Computational Communication Research.
 
-## Nel Ruigrok
-
-<img width="100px" align="left" src="https://i.imgur.com/I62j3vM.png">
-Website: [https://nieuwsmonitor.org](https://nieuwsmonitor.org)<br/>
-Email: [nelruigrok@nieuwsmonitor.org](mailto:nelruigrok@nieuwsmonitor.org)<br/>
-Twitter: @nruigrok<br/>
-
-Nel Ruigrok promoveerde in 2005 op de berichtgeving van Nederlandse dagbladen tijdens de oorlog in Bosnië. Van 2005 tot 2008 was zij werkzaam als universitair docent communicatiewetenschap aan de Universiteit van Amsterdam. Sinds 2008 is zij eigenaar van LJS Media Research. Deze organisatie legt zich toe op onderzoek naar de invloed van de media op onze samenleving. Zij doet dit voor diverse organisaties zoals ministeries, semi-overheidsinstellingen en het bedrijfsleven. 
-
-Daarnaast geeft zij diverse vakken aan de Master Media en Journalistiek van de Erasmus Universiteit en geeft zij communicatie-advies in de vorm van rapportages, workshops en seminars. Ook geeft zij trainingen in het gebruik van R voor data-analyses.
-
-## Andreu Casas
+## dr. Andreu Casas
 
 <img width="100px" align="left" src="https://i.imgur.com/2ebdhcz.png">
 Website: [http://andreucasas.com/](http://andreucasas.com/)<br/>
@@ -41,25 +38,25 @@ Andreu Casas is universitair docent aan de afdeling Communicatiewetenschap van d
 
 Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare beleidsprocessen, en computationele sociale wetenschappen. Hij onderzoek hoe sociale bewegingen en belangengroepen de politieke agenda en het besluitvormingsproces beïnvloeden in de huidige mediaomgeving. Hij is gespecialiseerd in het toepassen van kunstmatige intelligentie om tekst en beelden te analyseren.
 
-## Kasper Welbers
+## prof. dr. Jan Kleinnijenhuis
 
-<img width="100px" align="left" src="https://i.imgur.com/9ojv9VP.png">
-Email: [k.welbers@vu.nl](mailto://k.welbers@vu.nl) <br/>
-Twitter: @KasperWelbers <br/>
+<img width="100px" align="left" src="https://i1.rgstatic.net/ii/profile.image/272606414766098-1442005842560_Q512/Jan_Kleinnijenhuis.jpg">
+Email: [j.kleinnijenhuis@vu.nl](mailto:j.kleinnijenhuis@vu.nl)
 
-Kasper Welbers is gepromoveerd bij de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam, waar hij na een onderzoekspositie bij de Universiteit van Leuven is teruggekeerd en momenteel werkzaam is als universitair docent. Zijn onderzoek is in brede zin gericht op het in kaart brengen van communicatiestromen van nieuwsberichten. Simpel gezegd, via welke kanalen komt nieuwe informatie bij de burger terecht, en welke mensen, organisaties en processen spelen een sleutelrol in dit communicatienetwerk?
+Jan Kleinnijenhuis is hoogleraar Politieke Communicatie aan de Vrije Universiteit Amsterdam. Zijn expertise is opinievorming bij politici, media en publiek, en de  invloed van dagbladen en televisie op politieke voorkeuren. Hij heeft onderzoek gedaan naar en gepubliceerd over verkiezingscampagnes in Nederland en Duitsland.
 
-Naast een inhoudelijk blik op het journalistieke werkveld, onderzoekt Kasper ook hoe middels nieuwe, computationele methodes deze communicatiestromen op grote schaal onderzocht kunnen worden. Meer recent heeft hij zijn onderzoek verbreed naar de rol die het vertrouwen van het publiek in verschillende mediakanalen speelt in dit communicatieprocess.
+## dr. Nel Ruigrok
 
-## Loes Aaldering
-<img width="100px" align="left" src="https://research.vu.nl/files-asset/100400066/foto_loes_website.jpg?w=320&f=webp">
-Email: [l.aaldering@vu.nl](mailto:l.aaldering@vu.nl) <br/>
+<img width="100px" align="left" src="https://i.imgur.com/I62j3vM.png">
+Website: [https://nieuwsmonitor.org](https://nieuwsmonitor.org)<br/>
+Email: [nelruigrok@nieuwsmonitor.org](mailto:nelruigrok@nieuwsmonitor.org)<br/>
+Twitter: @nruigrok<br/>
 
-Loes Aaldering is universitair docent vergelijkende politiek aan de afdeling Bestuurswetenschap en Politicologie van de Vrije Universiteit Amsterdam. Ze is gepromoveerd aan de afdeling politicologie van de Universiteit van Amsterdam, waarna ze een paar jaar als postdoctoraal onderzoeker heeft gewerkt in de groep ‘politieke communicatie’ aan de afdeling communicatiewetenschap van de Universiteit Wenen. 
+Nel Ruigrok promoveerde in 2005 op de berichtgeving van Nederlandse dagbladen tijdens de oorlog in Bosnië. Van 2005 tot 2008 was zij werkzaam als universitair docent communicatiewetenschap aan de Universiteit van Amsterdam. Sinds 2008 is zij eigenaar van LJS Media Research. Deze organisatie legt zich toe op onderzoek naar de invloed van de media op onze samenleving. Zij doet dit voor diverse organisaties zoals ministeries, semi-overheidsinstellingen en het bedrijfsleven. 
 
-Haar onderzoek richt zich voornamelijk op vraagstukken met betrekking tot gender en politiek, politiek leiderschap, politieke vertegenwoordiging en electoraal gedrag. Meer specifiek, ze bestudeert onder andere hoe politici in de media worden besproken in termen van hun leiderschapskwaliteiten; genderverschillen in de mediaberichtgeving over politici; leiderschapseffecten op kiezers; genderstereotypen; nepnieuws; nieuwsmijding en polarisatie.
+Daarnaast geeft zij diverse vakken aan de Master Media en Journalistiek van de Erasmus Universiteit en geeft zij communicatie-advies in de vorm van rapportages, workshops en seminars. Ook geeft zij trainingen in het gebruik van R voor data-analyses.
 
-## Mariken van der Velden
+## dr. Mariken van der Velden
 
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/73996237/Foto_Mariken_website.JPG?w=320&f=webp">
 Email: [m.a.c.g.vander.velden@vu.nl](mailto:m.a.c.g.vander.velden@vu.nl)<br/>
@@ -69,9 +66,12 @@ Ik ben universitair docent aan de afdeling Communicatiewetenschap van de Vrije U
 
 Ik ben gespecialiseerd in communicatie van politici, burgers’ politieke opvatting over de werking van de democratie, en computationele sociale wetenschappen. In mijn meeste recente onderzoek kijk ik naar hoe politici de onvermijdelijke compromissen aan het publiek verkondigen en wat politieke compromissen doen met het vertrouwen in en de legitimiteit van democratie met behulp van virtual-reality spellen, experimenten en computationele tekstanalyse.
 
-## Jan Kleinnijenhuis
+## dr. Kasper Welbers
 
-<img width="100px" align="left" src="https://i1.rgstatic.net/ii/profile.image/272606414766098-1442005842560_Q512/Jan_Kleinnijenhuis.jpg">
-Email: [j.kleinnijenhuis@vu.nl](mailto:j.kleinnijenhuis@vu.nl)
+<img width="100px" align="left" src="https://i.imgur.com/9ojv9VP.png">
+Email: [k.welbers@vu.nl](mailto://k.welbers@vu.nl) <br/>
+Twitter: @KasperWelbers <br/>
 
-Jan Kleinnijenhuis is hoogleraar Politieke Communicatie aan de Vrije Universiteit Amsterdam. Zijn expertise is opinievorming bij politici, media en publiek, en de  invloed van dagbladen en televisie op politieke voorkeuren. Hij heeft onderzoek gedaan naar en gepubliceerd over verkiezingscampagnes in Nederland en Duitsland.
+Kasper Welbers is gepromoveerd bij de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam, waar hij na een onderzoekspositie bij de Universiteit van Leuven is teruggekeerd en momenteel werkzaam is als universitair docent. Zijn onderzoek is in brede zin gericht op het in kaart brengen van communicatiestromen van nieuwsberichten. Simpel gezegd, via welke kanalen komt nieuwe informatie bij de burger terecht, en welke mensen, organisaties en processen spelen een sleutelrol in dit communicatienetwerk?
+
+Naast een inhoudelijk blik op het journalistieke werkveld, onderzoekt Kasper ook hoe middels nieuwe, computationele methodes deze communicatiestromen op grote schaal onderzocht kunnen worden. Meer recent heeft hij zijn onderzoek verbreed naar de rol die het vertrouwen van het publiek in verschillende mediakanalen speelt in dit communicatieprocess.
