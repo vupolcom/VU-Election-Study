@@ -9,6 +9,8 @@ Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor 
 # Het team
 
 ## Wouter van Atteveldt
+
+<img src="http://ccs.amsterdam/wp-content/uploads/2020/10/atteveldt-e1604596450550.png" align="left"> 
 Website: [http://vanatteveldt.com](http://vanatteveldt.com)<br/>
 Email: [wouter.van.atteveldt@vu.nl](mailto:wouter.van.atteveldt@vu.nl)<br/>
 Twitter: @vanatteveldt<br/>
