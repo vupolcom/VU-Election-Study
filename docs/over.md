@@ -1,1 +1,60 @@
-# Over ons
+# Over dit project
+
+De resultaten op deze pagina komen voort uit de analyse van de Tweede Kamerverkiezingen 2021 door de vakgroep Politieke Communicatie van de Vrije Universiteit Amsterdam. Voor dit onderzoek combineren we gegevens van een panel van respondenten met automatische en handmatige analyse van de media-inhoud. Het doel van het project is om te begrijpen hoe er op de traditionele en sociale media wordt gesproken over de verkiezingen, en welke effecten dit kan hebben op de stemvoorkeur en andere attitudes van de Nederlandse kiezer. Zie [data en methodes](methodes.md) voor meer informatie over de methode.
+
+# Informatie voor journalisten
+
+Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor een breder publiek toegankelijk te maken. Alle resultaten van ons onderzoek zullen (ook) op deze website worden gepubliceerd, maar uiteraard kunnen we daarmee wachten tot na publicatie in de media. Neem contact op met [Wouter van Atteveldt](mailto:wouter.van.atteveldt@vu.nl) (0642740725) of [Mariken van der Velden](mailto:m.a.c.g.vander.velden@vu.nl) voor meer informatie. 
+
+# Het team
+
+## Wouter van Atteveldt
+Website: [http://vanatteveldt.com](http://vanatteveldt.com)<br/>
+Email: [wouter.van.atteveldt@vu.nl](mailto:wouter.van.atteveldt@vu.nl)<br/>
+Twitter: @vanatteveldt<br/>
+
+Wouter van Atteveldt is Universitair Hoofddocent Politieke Communicatie aan de Vrije Universiteit. Hij is gespecialiseerd in politieke communicatie en computationele communicatiewetenschap. In het bijzonder doet hij veel onderzoek naar automatische methodes van tekstanalyse en is hij voorvechter van open science. Hij is betrokken bij meerdere door NWO en EU gefinancierde onderzoeksprojecten, onder andere naar filter bubbels en nieuwsalgoritmes. Daarnaast heeft hij veelvuldig gepubliceerd over effecten van politieke communicatie en methodologische aspecten van computationeel onderzoek. 
+
+Van Atteveldt leidt de VU onderzoeksgroep Politieke Communicatie, is mede-oprichter van het Computational Communication Science Lab Amsterdam, mede-oprichter en oud-voorzitter van de divisie computationele methodes van de internationale wetenschappelijke vereniging ICA, en mede-oprichter en hoofdredacteur van het open access tijdschrift Computational Communication Research.
+
+## Nel Ruigrok
+Website: https://nieuwsmonitor.org
+Email: nelruigrok@nieuwsmonitor.org
+Twitter: @nruigrok
+
+Nel Ruigrok is eigenaar van LJS MediaResearch. Deze organisatie legt zich toe op onderzoek naar de invloed van de media op onze samenleving. Zij doet dit voor diverse organisaties zoals ministeries, semi-overheidsinstellingen en het bedrijfsleven. Daarnaast geven de eigenaren communicatie-advies in de vorm van rapportages, workshops en seminars. Ook geven zij trainingen in het gebruik van R voor data-analyses.
+
+## Andreu Casas
+Website: http://andreucasas.com/
+Email: a.casassalleras@vu.nl
+Twitter: @CasAndreu
+
+Andreu Casas is universitair docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam en gelieerd aan het Centrum voor Sociale Media en Politiek van de New York University. Casas is  gepromoveerd aan de afdeling politicologie van de Universiteit van Washington. Voordat hij aan de Vrije Universiteit Amsterdam kwam werken, was hij een Moore Sloan onderzoeker aan het Centrum voor Data Science en het Centrum voor Sociale Media en Politiek van de New York University en een onderzoeker aan de Amsterdamse School voor Communicatie Onderzoek.
+
+Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare beleidsprocessen, en computationele sociale wetenschappen. Hij onderzoek hoe sociale bewegingen en belangengroepen de politieke agenda en het besluitvormingsproces beïnvloeden in de huidige mediaomgeving. Hij is gespecialiseerd in het toepassen van kunstmatige intelligentie om tekst en beelden te analyseren.
+
+## Kasper Welbers
+Email: k.welbers@vu.nl
+Twitter: @KasperWelbers
+
+Kasper Welbers is gepromoveerd bij de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam, waar hij na een onderzoekspositie bij de Universiteit van Leuven is teruggekeerd en momenteel werkzaam is als universitair docent. Zijn onderzoek is in brede zin gericht op het in kaart brengen van communicatiestromen van nieuwsberichten. Simpel gezegd, via welke kanalen komt nieuwe informatie bij de burger terecht, en welke mensen, organisaties en processen spelen een sleutelrol in dit communicatienetwerk?
+
+Naast een inhoudelijk blik op het journalistieke werkveld, onderzoekt Kasper ook hoe middels nieuwe, computationele methodes deze communicatiestromen op grote schaal onderzocht kunnen worden. Meer recent heeft hij zijn onderzoek verbreed naar de rol die het vertrouwen van het publiek in verschillende mediakanalen speelt in dit communicatieprocess.
+
+## Loes Aaldering
+Email: l.aaldering@vu.nl
+
+Loes Aaldering is universitair docent vergelijkende politiek aan de afdeling Bestuurswetenschap en Politicologie van de Vrije Universiteit Amsterdam. Ze is gepromoveerd aan de afdeling politicologie van de Universiteit van Amsterdam, waarna ze een paar jaar als postdoctoraal onderzoeker heeft gewerkt in de groep ‘politieke communicatie’ aan de afdeling communicatiewetenschap van de Universiteit Wenen. 
+
+Haar onderzoek richt zich voornamelijk op vraagstukken met betrekking tot gender en politiek, politiek leiderschap, politieke vertegenwoordiging en electoraal gedrag. Meer specifiek, ze bestudeert onder andere hoe politici in de media worden besproken in termen van hun leiderschapskwaliteiten; genderverschillen in de mediaberichtgeving over politici; leiderschapseffecten op kiezers; genderstereotypen; nepnieuws; nieuwsmijding en polarisatie.
+
+## Mariken van der Velden
+Email: m.a.c.g.vander.velden@vu.nl
+Twitter: @MarikenVelden
+
+Ik ben universitair docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam en gelieerd aan het Hot Politics Lab van de Universiteit van Amsterdam. Ik ben gepromoveerd aan de afdeling politicologie van de Vrije Universiteit Amsterdam. Voordat ik opnieuw aan de Vrije Universiteit Amsterdam kwam werken, was ik als onderzoeker verbonden aan de afdelingen politicologie van de Universiteit van Oxford, de Universiteit Chapel Hill North Carolina, en de Universiteit van Zürich.
+
+Ik ben gespecialiseerd in communicatie van politici, burgers’ politieke opvatting over de werking van de democratie, en computationele sociale wetenschappen. In mijn meeste recente onderzoek kijk ik naar hoe politici de onvermijdelijke compromissen aan het publiek verkondigen en wat politieke compromissen doen met het vertrouwen in en de legitimiteit van democratie met behulp van virtual-reality spellen, experimenten en computationele tekstanalyse.
+
+## Jan Kleinnijenhuis
+
