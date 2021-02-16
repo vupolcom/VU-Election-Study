@@ -19,8 +19,8 @@ Haar onderzoek richt zich voornamelijk op vraagstukken met betrekking tot gender
 ## dr. Wouter van Atteveldt
 
 <img width="100px" src="http://ccs.amsterdam/wp-content/uploads/2020/10/atteveldt-e1604596450550.png" align="left"> 
-Website: [http://vanatteveldt.com](http://vanatteveldt.com)<br/>
-Email: [wouter.van.atteveldt@vu.nl](mailto:wouter.van.atteveldt@vu.nl)<br/>
+Website: http://vanatteveldt.com <br/>
+Email: wouter.van.atteveldt@vu.nl <br/>
 Twitter: @vanatteveldt<br/>
 
 Wouter van Atteveldt is Universitair Hoofddocent Politieke Communicatie aan de Vrije Universiteit. Hij is gespecialiseerd in politieke communicatie en computationele communicatiewetenschap. In het bijzonder doet hij veel onderzoek naar automatische methodes van tekstanalyse en is hij voorvechter van open science. Hij is betrokken bij meerdere door NWO en EU gefinancierde onderzoeksprojecten, onder andere naar filter bubbels en nieuwsalgoritmes. Daarnaast heeft hij veelvuldig gepubliceerd over effecten van politieke communicatie en methodologische aspecten van computationeel onderzoek. 
