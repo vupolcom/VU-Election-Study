@@ -1,0 +1,216 @@
+---
+title: 'VU 2021 Election Study: Extra analysis of pre-wave voters'
+author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+```{r "Read Data"}
+library(here)
+library(tidyverse)
+source(here("src/lib/create_labels.R"))
+d_raw <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
+
+d = d_raw %>% 
+  select(iisID, 
+                 stemintentie = A2, 
+                 Gender = gender, 
+                 Leeftijd = age, 
+                 Onderwijsniveau = education, 
+                 Regio = region, 
+                 Etniciteit = ethnicity, 
+                 Werk = job, 
+                 Internetgebruik = internet_use, 
+                 vorige_stem=E1,
+                 covid_maatregelen=H3, 
+                 covid_vaccinatie=H7,
+                 pol_kennis=D1,
+                 linksrechts=E2,
+                 eu = H4
+                 ) %>%
+  mutate(stemintentie = recode_parties(label(stemintentie, "A2")),
+         Werk = label(Werk, "job"),
+         Leeftijd = label(Leeftijd, "age"),
+         Onderwijsniveau = label(Onderwijsniveau, "education"),
+         Gender = label(Gender, "gender"),
+         Regio = label(Regio, "region"),
+         Internetgebruik = label(Internetgebruik, "internet_use"),
+         Etniciteit = label(Etniciteit, "ethnicity"),
+         vorige_stem = recode_parties(label(vorige_stem, "E1")),
+         covid_maatregelen=label(covid_maatregelen, "H3"),
+         covid_vaccinatie=label(covid_vaccinatie, "H7"))
+long = long_mc()
+```
+
+```{r}
+x = long %>% filter(question=="I8") %>% inner_join(d)
+a = x %>% group_by(stemintentie, medium) %>% summarize(value=mean(value))  
+total = x %>% group_by(medium) %>% summarize(value=mean(value)) %>% add_column(stemintentie="Gem.")
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")   + ylab("Trust in ...") +
+  ggtitle("Trust in Media by vote intention", "(1=low, 10=high)")  + 
+  scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+```
+
+Duidelijk patroon met aflopend vertrouwen van mainstream media via kranten naar social media, en van middenpartijen naar extremere partijen en niet-stemmers. Hart van Nederland scoort relatief slecht behalve bij 50+, en Lubach scoort alleen bij GL voldoende. Denk heeft afwijkend patroon met relatief veel vertrouwen in FB en andere sociale media, en weinig vertrouwen in NOS. 
+
+
+```{r}
+x = long %>% filter(question=="F2") %>% inner_join(d)
+a = x %>% group_by(stemintentie, medium) %>% summarize(value=mean(value))  
+total = x %>% group_by(medium) %>% summarize(value=mean(value)) %>% add_column(stemintentie="Gem.")
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")   + ylab("Trust in ...") +
+  ggtitle("Trust in various institutions by vote intention", "(1=low, 10=high)")  + 
+  scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+```
+
+Ook hier zelfde patroon van afnemend vertrouwen van middenpartijen naar extremere partijen en niet-stemmers. SGP heeft relatief weinig vertrouwen in wetenschap en journalistiek. Denk heeft relatief veel vetrouwen in de EU. 
+
+```{r}
+x = long %>% filter(question=="I1") %>% inner_join(d)
+a = x %>% group_by(stemintentie, medium) %>% summarize(value=mean(value))  
+total = x %>% group_by(medium) %>% summarize(value=mean(value)) %>% add_column(stemintentie="Gem.")
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")  +ylab("") + 
+  ggtitle("Media category use by vote intention", "(In times per week)")  +   
+  scale_fill_gradient(low="white", high=scales::muted("green"), guide=F)
+```
+
+Niet-stemmers gebruiken duidelijk weinig media, en zwevende kiezers ook weinig (maar meer dan overtuigd PVV en PvdD stemmers). Denk en FvD stemmers gebruiken relatief veel verschillende media, waaronder social media en apps, maar juist weinig kranten of opinieladen. 
+
+Algemeen genomen zijn TV en online news sites de meest gebruikte media voor kiezers van alle partijen, met uitzondering van Denk (social media), SGP (online sites), en anders (kranten). 
+```{r}
+x = long %>% filter(question=="I1") %>% inner_join(d)
+total = x %>% group_by(medium) %>% summarize(value=mean(value)) 
+a = x %>% group_by(medium, stemintentie) %>% summarize(value=mean(value)) %>% 
+  inner_join(total, by="medium", suffix=c("", ".avg")) %>% mutate(value=value-value.avg, value.avg=NULL)
+#bind_rows(a, total %>% add_column(stemintentie="Gem."))
+a %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean), #%>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         #medium=fct_reorder(medium, value, max)) %>%
+          medium=fct_relevel(droplevels(medium), function(x) {print(x); rev(x[match(x, total$medium)])})) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")  +ylab("") + 
+  ggtitle("Media category use by vote intention", "(As difference from average, e.g. PVV voters watch television 0.3 times per week less than the average respondent)")  +   
+  scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=0)
+```
+
+Hier is iets duidelijker te zien hoe partijen afwijken in mediagebruik van het gemiddelde. SGP stemmers gebruiken weinig TV, D66 en 50+ stemmers veel kranten, en FvD en Denk stemmers veel social media. 
+
+```{r}
+nn = d %>% group_by(stemintentie) %>% summarize(total=n()) %>% filter(!is.na(stemintentie))
+
+a = long %>% filter(question=="I2", medium!="Other, namely:") %>% inner_join(d) %>% 
+  group_by(stemintentie, medium) %>% summarize(n=n()) %>% inner_join(nn) %>% 
+  mutate(value=n/total*100) 
+total = long %>% filter(question=="I2", medium!="Other, namely:") %>% inner_join(d) %>% 
+  group_by(medium) %>% summarize(n=n()) %>% mutate(value=n/nrow(d)*100) %>% add_column(stemintentie="Gem.")
+
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")  +ylab("") + 
+  ggtitle("Media category use by vote intention: Newspapers", "(In percentage within vote intention. Note: Multiple options possible so sum might be >100%)")  +   
+  scale_fill_gradient(low="white", high=scales::muted("green"), guide=F)
+```
+
+Gemiddeldes volgen algemene oplage redelijk. Veel CDAers bij lokale kranten, en Denk en PVV stemmers bij Telegraaf. 
+
+
+```{r}
+nn = d %>% group_by(stemintentie) %>% summarize(total=n()) %>% filter(!is.na(stemintentie))
+
+a = long %>% filter(question=="I3", medium!="Other, namely:", !str_detect(medium, "Own channels")) %>% inner_join(d) %>% 
+  group_by(stemintentie, medium) %>% summarize(n=n()) %>% inner_join(nn) %>% 
+  mutate(value=n/total*100) 
+total = long %>% filter(question=="I3", medium!="Other, namely:", !str_detect(medium, "Own channels")) %>% inner_join(d) %>% 
+  group_by(medium) %>% summarize(n=n()) %>% mutate(value=n/nrow(d)*100) %>% add_column(stemintentie="Gem.")
+
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")  +ylab("") + 
+  ggtitle("Media category use by vote intention: TV", "(In percentage within vote intention. Note: Multiple options possible so sum might be >100%)")  +   
+  scale_fill_gradient(low="white", high=scales::muted("green"), guide=F)
+```
+
+Vooral NOS journaal en perscos veel bekeken. GroenLinks (en anders) stemmers relatief weinig op NOS journaal. Denk stemmers afwezig bij M. Zowel D66 als GL relatief weinig bij RTL, en PVV, FvD en 50+ juist veel. 
+
+
+
+```{r}
+nn = d %>% group_by(stemintentie) %>% summarize(total=n()) %>% filter(!is.na(stemintentie))
+
+a = long %>% filter(question=="I5", medium!="Other, namely:") %>% inner_join(d) %>% 
+  group_by(stemintentie, medium) %>% summarize(n=n()) %>% inner_join(nn) %>% 
+  mutate(value=n/total*100) 
+total = long %>% filter(question=="I5", medium!="Other, namely:") %>% inner_join(d) %>% 
+  group_by(medium) %>% summarize(n=n()) %>% mutate(value=n/nrow(d)*100) %>% add_column(stemintentie="Gem.")
+
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")  +ylab("") + 
+  ggtitle("Media category use by vote intention: Social Media", "(In percentage within vote intention. Note: Multiple options possible so sum might be >100%)")  +   
+  scale_fill_gradient(low="white", high=scales::muted("green"), guide=F)
+```
+
+FB blijft duidelijk het grootst, alleen Denk stemmers zitten vaker op instagram en ook relatief vaan Telegram en Viber. FvD stemmers (en Denk stemmers) zitten relatief veel op youtube
+
+```{r}
+nn = d %>% group_by(stemintentie) %>% summarize(total=n()) %>% filter(!is.na(stemintentie))
+
+a = long %>% filter(question=="I7", medium!="Other, namely:") %>% inner_join(d) %>% 
+  group_by(stemintentie, medium) %>% summarize(n=n()) %>% inner_join(nn) %>% 
+  mutate(value=n/total*100) 
+total = long %>% filter(question=="I7", medium!="Other, namely:") %>% inner_join(d) %>% 
+  group_by(medium) %>% summarize(n=n()) %>% mutate(value=n/nrow(d)*100) %>% add_column(stemintentie="Gem.")
+
+bind_rows(a, total) %>% ungroup() %>% 
+    mutate(stemintentie=fct_reorder(stemintentie, value, mean) %>% fct_relevel("Gem.", after=Inf), #, "Niet", "Weet niet", "Anders"),
+         medium=fct_reorder(medium, value, mean)) %>% 
+  
+  ggplot(aes(x=stemintentie, y=medium, label=round(value), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")  +ylab("") + 
+  ggtitle("Media category use by vote intention: Phone Apps", "(In percentage within vote intention. Note: Multiple options possible so sum might be >100%)")  +   
+  scale_fill_gradient(low="white", high=scales::muted("green"), guide=F)
+```
+
+Vooral NOS en Nu. Ook zwevende kiezers gebruiken relatief veel apps.
