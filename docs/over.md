@@ -10,7 +10,7 @@ Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor 
 
 ## dr. Loes Aaldering
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/100400066/foto_loes_website.jpg?w=320&f=webp">
-Email: [l.aaldering@vu.nl](mailto:l.aaldering@vu.nl) <br/>
+Email: <a href="mailto:l.aaldering@vu.nl">l.aaldering@vu.nl</a> <br/>
 
 Loes Aaldering is universitair docent vergelijkende politiek aan de afdeling Bestuurswetenschap en Politicologie van de Vrije Universiteit Amsterdam. Ze is gepromoveerd aan de afdeling politicologie van de Universiteit van Amsterdam, waarna ze een paar jaar als postdoctoraal onderzoeker heeft gewerkt in de groep ‘politieke communicatie’ aan de afdeling communicatiewetenschap van de Universiteit Wenen. 
 
@@ -30,8 +30,8 @@ Van Atteveldt leidt de VU onderzoeksgroep Politieke Communicatie, is mede-oprich
 ## dr. Andreu Casas
 
 <img width="100px" align="left" src="https://i.imgur.com/2ebdhcz.png">
-Website: [http://andreucasas.com/](http://andreucasas.com/)<br/>
-Email: [a.casassalleras@vu.nl](mailto:a.casassalleras@vu.nl)<br/>
+Website: http://andreucasas.com/ <br/>
+Email: <a href="mailto:a.casassalleras@vu.nl">a.casassalleras@vu.nl</a><br/>
 Twitter: @CasAndreu
 
 Andreu Casas is universitair docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam en gelieerd aan het Centrum voor Sociale Media en Politiek van de New York University. Casas is  gepromoveerd aan de afdeling politicologie van de Universiteit van Washington. Voordat hij aan de Vrije Universiteit Amsterdam kwam werken, was hij een Moore Sloan onderzoeker aan het Centrum voor Data Science en het Centrum voor Sociale Media en Politiek van de New York University en een onderzoeker aan de Amsterdamse School voor Communicatie Onderzoek.
@@ -41,15 +41,15 @@ Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare bel
 ## prof. dr. Jan Kleinnijenhuis
 
 <img width="100px" align="left" src="https://i1.rgstatic.net/ii/profile.image/272606414766098-1442005842560_Q512/Jan_Kleinnijenhuis.jpg">
-Email: [j.kleinnijenhuis@vu.nl](mailto:j.kleinnijenhuis@vu.nl)
+Email: <a href="mailto:j.kleinnijenhuis@vu.nl">j.kleinnijenhuis@vu.nl</a>
 
 Jan Kleinnijenhuis is hoogleraar Politieke Communicatie aan de Vrije Universiteit Amsterdam. Zijn expertise is opinievorming bij politici, media en publiek, en de  invloed van dagbladen en televisie op politieke voorkeuren. Hij heeft onderzoek gedaan naar en gepubliceerd over verkiezingscampagnes in Nederland en Duitsland.
 
 ## dr. Nel Ruigrok
 
 <img width="100px" align="left" src="https://i.imgur.com/I62j3vM.png">
-Website: [https://nieuwsmonitor.org](https://nieuwsmonitor.org)<br/>
-Email: [nelruigrok@nieuwsmonitor.org](mailto:nelruigrok@nieuwsmonitor.org)<br/>
+Website: https://nieuwsmonitor.org <br/>
+Email: <a href="mailto:nelruigrok@nieuwsmonitor.org">nelruigrok@nieuwsmonitor.org</a><br/>
 Twitter: @nruigrok<br/>
 
 Nel Ruigrok promoveerde in 2005 op de berichtgeving van Nederlandse dagbladen tijdens de oorlog in Bosnië. Van 2005 tot 2008 was zij werkzaam als universitair docent communicatiewetenschap aan de Universiteit van Amsterdam. Sinds 2008 is zij eigenaar van LJS Media Research. Deze organisatie legt zich toe op onderzoek naar de invloed van de media op onze samenleving. Zij doet dit voor diverse organisaties zoals ministeries, semi-overheidsinstellingen en het bedrijfsleven. 
@@ -59,7 +59,7 @@ Daarnaast geeft zij diverse vakken aan de Master Media en Journalistiek van de E
 ## dr. Mariken van der Velden
 
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/73996237/Foto_Mariken_website.JPG?w=320&f=webp">
-Email: [m.a.c.g.vander.velden@vu.nl](mailto:m.a.c.g.vander.velden@vu.nl)<br/>
+Email: <a href="mailto:m.a.c.g.vander.velden@vu.nl">m.a.c.g.vander.velden@vu.nl</a><br/>
 Twitter: @MarikenVelden<br/>
 
 Ik ben universitair docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam en gelieerd aan het Hot Politics Lab van de Universiteit van Amsterdam. Ik ben gepromoveerd aan de afdeling politicologie van de Vrije Universiteit Amsterdam. Voordat ik opnieuw aan de Vrije Universiteit Amsterdam kwam werken, was ik als onderzoeker verbonden aan de afdelingen politicologie van de Universiteit van Oxford, de Universiteit Chapel Hill North Carolina, en de Universiteit van Zürich.
@@ -69,7 +69,7 @@ Ik ben gespecialiseerd in communicatie van politici, burgers’ politieke opvatt
 ## dr. Kasper Welbers
 
 <img width="100px" align="left" src="https://i.imgur.com/9ojv9VP.png">
-Email: [k.welbers@vu.nl](mailto://k.welbers@vu.nl) <br/>
+Email: <a href="k.welbers@vu.nl">k.welbers@vu.nl</a> <br/>
 Twitter: @KasperWelbers <br/>
 
 Kasper Welbers is gepromoveerd bij de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam, waar hij na een onderzoekspositie bij de Universiteit van Leuven is teruggekeerd en momenteel werkzaam is als universitair docent. Zijn onderzoek is in brede zin gericht op het in kaart brengen van communicatiestromen van nieuwsberichten. Simpel gezegd, via welke kanalen komt nieuwe informatie bij de burger terecht, en welke mensen, organisaties en processen spelen een sleutelrol in dit communicatienetwerk?
