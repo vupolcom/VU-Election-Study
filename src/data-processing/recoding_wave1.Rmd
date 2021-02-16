@@ -53,6 +53,18 @@ rm(f, col_names)
 ```
 
 
+## Recode Block Background Variables
+
+```{r}
+BG <- d %>%
+  mutate(wave = "wave 1",
+         start_date = StartDate,
+         end_date = EndDate,
+         duration_min = round(Duration..in.seconds./60,2)) %>%
+  select(iisID, wave, start_date, end_date, duration_min, 
+         progress = Progress)
+```
+
 ## Recode Block A Voting Behavior
 ```{r}
 A <- d %>%
@@ -179,7 +191,8 @@ I <- d %>%
 
 ## Merge &amp; Save Data
 ```{r}
-df <- left_join(A, B, by = "iisID")
+df <- left_join(BG, A, by = "iisID")
+df <- left_join(df, B, by = "iisID")
 df <- left_join(df, H, by = "iisID")
 df <- left_join(df, I, by = "iisID") %>%
   distinct(iisID, .keep_all = T) %>%
