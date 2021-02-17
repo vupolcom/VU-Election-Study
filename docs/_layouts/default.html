@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
+    <style>
+      #project_title a {color: inherit}
+      #project_tagline a {color: white}
+    </style>
 {% seo %}
   </head>
 
@@ -20,7 +23,7 @@
           {% endif %}
 
           <h1 id="project_title"><a href="/VU-Election-Study">{{ site.title | default: site.github.repository_name }}</a></h1>
-          <h2 id="project_tagline"><a href="/VU-Election-Study/methods">Data en Methodes</a> | <a href="/VU-Election-Study/about">Over het project</a> </h2>
+          <h2 id="project_tagline"><a href="/VU-Election-Study/reports/">Uitkomsten</a> | <a href="/VU-Election-Study/methods">Data en Methodes</a> | <a href="/VU-Election-Study/about">Over het project</a> </h2>
 
           {% if site.show_downloads %}
             <section id="downloads">
