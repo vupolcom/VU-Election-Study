@@ -1,0 +1,135 @@
+---
+title: 'VU 2021 Election Study: Respondents per media use categories'
+author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+```{r}
+#remotes::install_github("dill/emoGG")
+library("emoGG")
+library(tidyverse)
+library(here)
+source(here("src/lib/create_labels.R"))
+data = list()
+d <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))  %>% 
+  select(iisID, 
+         stemintentie = A2, 
+         Gender = gender, 
+         Leeftijd = age, 
+         Onderwijsniveau = education, 
+         Regio = region, 
+         Etniciteit = ethnicity, 
+         Werk = job, 
+         Internetgebruik = internet_use, 
+         vorige_stem=E1,
+         covid_maatregelen=H3, 
+         covid_vaccinatie=H7,
+         pol_kennis=D1,
+         linksrechts=E2,
+         eu = H4
+  ) %>%
+  mutate(stemintentie = recode_parties(label(stemintentie, "A2")),
+         Werk = label(Werk, "job"),
+         Leeftijd = label(Leeftijd, "age"),
+         Onderwijsniveau = label(Onderwijsniveau, "education"),
+         Gender = label(Gender, "gender"),
+         Regio = label(Regio, "region"),
+         Internetgebruik = label(Internetgebruik, "internet_use"),
+         Etniciteit = label(Etniciteit, "ethnicity"),
+         vorige_stem = recode_parties(label(vorige_stem, "E1")),
+         covid_maatregelen=label(covid_maatregelen, "H3"),
+         covid_vaccinatie=label(covid_vaccinatie, "H7"))
+
+m = long_mc() %>% filter(question =="I1") %>% select(-question) %>% pivot_wider(names_from = "medium") %>% 
+  rename(tv=Television,
+    newspaper=`Newspapers or opinion magazines (paper or online)`, 
+             radio=`Radio (including podcast and online)`, 
+             online=`Online news sites (such as nu.nl) or blogs`, 
+             social=`Social media (such as Facebook, Twitter)`, 
+             chat=`Messaging apps (such as Whatsapp, messenger)`,
+             interpersonal=`(Offline) conversations with people`,
+             apps=`News apps or push messages on your phone`,
+             search=`Search engines (such as Google or Bing)`)
+
+```
+
+
+# Use types
+
+We categorize users according to their most used source, 
+normalized with respect to how often each source is used on average. 
+Users that use mostly social media, messaging apps or search engines to find news are categorized as 'Social Media Users' (🐦). Users that mostly rely on (print) newspapers or radio are classified as 'Traditional Media Users' (📰),
+while users that mostly use online news sites or news apps are classified as 'online media users' (📱).
+Users that mostly use television are classified as TV users (📺). 
+Finally, users that use each media type less than average are seen as news avoiders (🚫).
+
+```{r}
+
+x = m %>% select(iisID, tv:search) %>% pivot_longer(-iisID, names_to="medium") %>% 
+  filter(medium %in% c("newspaper", "social", "apps", "online", "tv")) %>% 
+  group_by(medium) %>% mutate(value=(value-mean(value))/sd(value)) %>% 
+  arrange(iisID, -value) %>% group_by(iisID) %>%filter(row_number()==1) 
+
+x = x %>% mutate(cat2 = case_when(value<0 ~ "none",
+                              medium %in% c("social", "chat", "search") ~ "social",
+                              medium %in% c("newspaper", "radio") ~ "newspaper",
+                              medium %in% c("online", "app") ~ "online",
+                              medium == "tv" ~ "tv"))
+
+m2 = x %>% select(iisID, cat=cat2)
+m2 %>% group_by(cat) %>% na.omit() %>% summarize(perc=n()) %>% mutate(perc=perc/sum(perc))
+```
+
+# Demographics per user type
+
+```{r}
+
+x = m2 %>% select(iisID, cat) %>% inner_join(d) %>% select(iisID, cat, Gender, Leeftijd, Onderwijsniveau, pol_kennis, linksrechts) %>%
+  mutate(Female = as.numeric(Gender)-1, Gender=NULL,
+         Leeftijd=as.numeric(Leeftijd), 
+         Onderwijsniveau=ifelse(Onderwijsniveau=="Don't know", NA, 3-as.numeric(Onderwijsniveau)) ) %>% 
+  pivot_longer(Leeftijd:Female) %>%
+  group_by(cat, name) %>% summarize(value=mean(scales::rescale(value), na.rm=T))
+
+data$Demographics = x
+
+ggplot(mapping=aes(x=name, y=value, emoji=cat)) + ylim(0.2,.8) +
+  geom_emoji(data=filter(x, cat=="newspaper"), emoji="1f4f0") +
+  geom_emoji(data=filter(x, cat=="tv"), emoji="1f4fa") +
+  geom_emoji(data=filter(x, cat=="social"), emoji="1f426") +
+  geom_emoji(data=filter(x, cat=="online"), emoji="1f4f1") +
+  geom_emoji(data=filter(x, cat=="none"), emoji="1f6ab") +
+  coord_flip() + ggthemes::theme_hc() + ggtitle("Demographics per media user type", "(social, online, newspaper, tv, none)")
+```
+
+# Vote intention per user type
+
+```{r}
+x = m2 %>% select(iisID, cat) %>% inner_join(d) %>% select(iisID, cat, stemintentie) %>% group_by(cat, stemintentie) %>% summarize(n=n()) %>% mutate(n=n/sum(n)) 
+
+data$Stemintentie = x
+
+ggplot(mapping=aes(x=stemintentie, y=n)) +
+  geom_emoji(data=filter(x, cat=="newspaper"), emoji="1f4f0") +
+  geom_emoji(data=filter(x, cat=="tv"), emoji="1f4fa") +
+  geom_emoji(data=filter(x, cat=="social"), emoji="1f426") +
+  geom_emoji(data=filter(x, cat=="online"), emoji="1f4f1") +
+  geom_emoji(data=filter(x, cat=="none"), emoji="1f6ab") +
+  coord_flip() + ggthemes::theme_hc() + ggtitle("Vote intention per media user type", "(percentage within user type)")
+```
+
+
+```{r write-data}
+writexl::write_xlsx(data, here("src/analysis/categories.xlsx"))
+```
+

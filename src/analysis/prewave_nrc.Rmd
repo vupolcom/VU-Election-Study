@@ -12,12 +12,13 @@ editor_options:
 ```{r setup, include=FALSE}
 ## include this at top of your RMarkdown file for pretty output
 ## make sure to have the printr package installed: install.packages('printr')
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.path='figures/')
+knitr::opts_chunk$set(message = FALSE, warning = FALSE,echo=F, fig.path='figures/')
 #library(printr)
 library(printr)
 options(digits = 2)
 library(here)
 library(tidyverse)
+data = list()
 source(here("src/lib/create_labels.R"))
 ```
 
@@ -62,16 +63,17 @@ rep %>% mutate(change=A2-E1) %>% select(party, E1, A2, change) %>% arrange(-abs(
 
 ```{r "wave0_move", fig.width=10, fig.height=10}
 library(igraph)
-gdf = votes %>% 
-  
-  filter(A2 != "Weet niet", E1 != "Weet niet") %>% 
+ntot = votes %>% filter(A2 != "Weet niet", E1 != "Weet niet") %>% nrow()
+gdf = votes %>% filter(A2 != "Weet niet", E1 != "Weet niet") %>% 
   group_by(A2, E1) %>% summarize(n=n()) %>% na.omit() %>% filter(A2 != E1)
 
-g = full_join(gdf, gdf, by=c("A2"="E1", "E1"="A2")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y) %>% select(E1, A2, n) %>% filter(n>0) %>% 
-  filter(n>5) %>% graph_from_data_frame()
+gd = full_join(gdf, gdf, by=c("A2"="E1", "E1"="A2")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y, zetels=n/ntot * 150) %>% filter(n>0)
+g = gd %>% select(E1, A2, n, zetels) %>% filter(n>5) %>% graph_from_data_frame()
+
+data$netwerk_veranderingen = gd
 
 E(g)$width = 1+E(g)$n/10 
-E(g)$label = round((E(g)$n / 1783) * 150, 1)
+E(g)$label = round(E(g)$zetels, 1)
 E(g)$arrow.size=E(g)$width/2
 
 plot(g)
@@ -132,7 +134,7 @@ d %>% select(iisID, age, education, A2) %>%
 ```
 
 ```{r  wave0_age2}
-d %>% select(iisID, age, education, A2) %>% 
+dd = d %>% select(iisID, age, education, A2) %>% 
   mutate(age=label(age, "age"), 
          education=label(education, "education"), 
          party=recode_parties(label(A2, "A2")),
@@ -141,8 +143,11 @@ d %>% select(iisID, age, education, A2) %>%
                         T ~ "35-55")) %>% 
   filter(education!="Don't know", !is.na(party), party!="Weet niet") %>% 
   group_by(age2, education, party) %>% summarize(n=n()) %>% 
-  group_by(party) %>% mutate(zetels=n/sum(n)*100) %>% 
-  ggplot(aes(x=education, y=age2, label=round(zetels), fill=zetels)) +
+  group_by(party) %>% mutate(zetels=n/sum(n)*100)
+
+data[["Stemintentie v leeft. & opl."]] = dd
+
+ggplot(dd, aes(x=education, y=age2, label=round(zetels), fill=zetels)) +
   geom_tile()+ geom_text()+
   facet_wrap("party") + 
   ggtitle("Vote intention per age and education group", "(in percentage of total support for party)")  + 
@@ -222,15 +227,43 @@ resp = d %>% select(iisID, age, education, A2)  %>%
                         T ~ "35-55"))  %>% 
     filter(education!="Don't know", !is.na(A2), A2!="Weet niet") 
   
-long_mc() %>% filter(question=="F2") %>% inner_join(resp) %>% 
+dd= long_mc() %>% filter(question=="F2") %>% inner_join(resp) %>% 
+  mutate(institution=case_when(
+    medium == "science" ~ "Wetenschap",
+    medium == "the jurisprudence" ~ "Rechtspraak",
+    medium == "Dutch democracy" ~ "Democratie",
+    medium == "journalism" ~ "Journalistiek",
+    medium %in% c("banks", "big corporations") ~ "Bedrijfsleven",
+    T ~ "Politiek"
+  ))
+
+dd2 = dd %>% 
   mutate(A2=fct_reorder(A2, value, mean),
          medium=fct_reorder(medium, value, mean)) %>% 
-  group_by(A2, medium) %>% summarize(value=mean(value))  %>% 
-  ggplot(aes(x=A2, y=medium, label=round(value,1), fill=value)) + 
+  group_by(A2, medium) %>% summarize(value=mean(value))  
+
+data[["Vertrouwen in intituties"]] = dd2
+
+ggplot(dd2, aes(x=A2, y=medium, label=round(value,1), fill=value)) + 
   geom_tile() + geom_text()  + 
   xlab("Vote intention")   + ylab("Trust in ...") +
   ggtitle("Trust in various institutions by vote intention", "(1=low, 10=high)")  + 
   scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+
+dd3 = dd %>% 
+  mutate(A2=fct_reorder(A2, value, mean),
+         medium=fct_reorder(institution, value, mean)) %>% 
+  group_by(A2, institution) %>% summarize(value=mean(value)) 
+
+data[["Vertrouwen in intituties per groep"]] = dd3
+
+ggplot(dd3, aes(x=A2, y=institution, label=round(value,1), fill=value)) + 
+  geom_tile() + geom_text()  + 
+  xlab("Vote intention")   + ylab("Trust in ...") +
+  ggtitle("Trust in various institutions by vote intention", "(1=low, 10=high)")  + 
+  scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+
+
 ```
 
 ## Trust in Media
@@ -303,4 +336,8 @@ ggplot(x, aes(x=Social, y=Apps, label=round(H7, 1), fill=H7)) +
   ggtitle("Intention to get vaccination by media use ('new' media)", "(3=Certainly, 0=Certainly not)")  + 
   xlab("Social Media (FB, Twitter, ...)") + ylab("News apps") + 
   scale_fill_gradient(low="white", high="#3182bd", guide=F)
+```
+
+```{r write-data}
+writexl::write_xlsx(data, here("src/analysis/prewave_nrc.xlsx"))
 ```

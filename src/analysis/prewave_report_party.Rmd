@@ -6,20 +6,20 @@ output:
     toc: yes
 editor_options: 
   chunk_output_type: console
-params:
-  party: "Weet niet"
+
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/', fig.width = 10)
 library(printr)
 options(digits = 2)
+data = list()
 ```
 
 ```{r "Read Data"}
 library(here)
 library(tidyverse)
 source(here("src/lib/create_labels.R"))
-party = params$party
+party = "Weet niet"
 d_raw <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))  %>% 
   mutate(inc=recode_parties(label(A2, "A2"))==party) %>% filter(!is.na(inc))
 
@@ -74,6 +74,7 @@ for (var in c("Gender", "Leeftijd", "Onderwijsniveau", "Regio", "Etniciteit", "W
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
   scale_y_continuous(labels = scales::percent) +
       ggtitle(var))
+  data[[str_c("Zwevend ", var)]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% select(-n) %>% pivot_wider(names_from=inc, values_from=perc) %>% na.omit() 
 }
 ```
 
@@ -82,6 +83,8 @@ for (var in c("Gender", "Leeftijd", "Onderwijsniveau", "Regio", "Etniciteit", "W
 
 ```{r wave0_I1}
 t = long %>% filter(question=="I1") %>% group_by(inc, medium) %>% summarize(value=mean(value))
+data[[str_c("Mediagebruik")]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% pivot_wider(names_from=inc) %>% na.omit() 
+
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=value, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=value, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
@@ -90,6 +93,7 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=
 
 ```{r wave0_I2}
 t = long %>% filter(question=="I2") %>% group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+data[[str_c("Mediagebruik kranten")]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% select(-n) %>% pivot_wider(names_from=inc, values_from=perc) %>% na.omit() 
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
@@ -99,6 +103,7 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=p
 
 ```{r wave0_I3}
 t = long %>% filter(question=="I3") %>% group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+data[[str_c("Mediagebruik TV")]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% select(-n) %>% pivot_wider(names_from=inc, values_from=perc) %>% na.omit() 
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
@@ -107,6 +112,7 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=p
 
 ```{r wave0_I4}
 t = long %>% filter(question=="I4") %>% group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+data[[str_c("Mediagebruik Online")]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% select(-n) %>% pivot_wider(names_from=inc, values_from=perc) %>% na.omit() 
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
@@ -120,6 +126,7 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=p
 t = long %>% filter(question=="I5") %>% mutate(medium=fct_infreq(medium)) %>% 
   group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
 t = t %>% select(-n) %>% pivot_wider(names_from=medium, values_from=perc, values_fill=0) %>% pivot_longer(-inc)
+data[[str_c("Mediagebruik Social")]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% pivot_wider(names_from=inc) %>% na.omit() 
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(name, value), y=value, fill=name), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=name, y=value, color=name), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
@@ -142,6 +149,7 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=p
 ```{r wave0_I7}
 t = long %>% filter(question=="I7") %>% 
   group_by(inc, medium) %>% summarize(n=n()) %>% mutate(perc=n/sum(n))
+data[[str_c("Mediagebruik mobile apps")]] = t %>% mutate(inc=ifelse(inc, "Zwevend", "Niet-zwevend")) %>% select(-n) %>% pivot_wider(names_from=inc, values_from=perc) %>% na.omit() 
 ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, perc), y=perc, fill=medium), width=.75)+
     geom_col(data=t %>% filter(!inc), aes(x=medium, y=perc, color=medium), alpha=0) +
     coord_flip()+guides(fill=F, color=F)+ggthemes::theme_hc() + xlab("") +ylab("Percentage")+
@@ -262,4 +270,7 @@ ggplot() + geom_col(data=t %>% filter(inc), aes(x=fct_reorder(medium, value), y=
       ggtitle("Lijsttrekkers: Weet wat er speelt")
 ```
 
+```{r write-data}
+writexl::write_xlsx(data, here("src/analysis/zwevend.xlsx"))
+```
 
