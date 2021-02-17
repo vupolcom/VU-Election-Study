@@ -1,3 +1,8 @@
+---
+permalink: /about
+---
+
+
 # Over dit project
 
 De resultaten op deze pagina komen voort uit de analyse van de Tweede Kamerverkiezingen 2021 door de vakgroep Politieke Communicatie van de Vrije Universiteit Amsterdam. Voor dit onderzoek combineren we gegevens van een panel van respondenten met automatische en handmatige analyse van de media-inhoud. Het doel van het project is om te begrijpen hoe er op de traditionele en sociale media wordt gesproken over de verkiezingen, en welke effecten dit kan hebben op de stemvoorkeur en andere attitudes van de Nederlandse kiezer. Zie [data en methodes](methodes.md) voor meer informatie over de methode.
