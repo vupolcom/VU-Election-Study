@@ -1,5 +1,5 @@
 ---
-permalink: /methode
+permalink: /methods
 ---
 
 # Data en methode
