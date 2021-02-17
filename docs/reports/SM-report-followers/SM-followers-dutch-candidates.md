@@ -68,8 +68,7 @@ Although Thierry Baudet (FvD) and Kees van der Staaij (SGP) share the most follo
 Apart from the main patterns described above, we also observe some additional pairs of candidates to share a large chunk of followers. Around 36% of Wopke Hoektra's (CDA) followers also follow Sigird Kaag (D66); 34% of Kees van der Staaij's (SGP) followers also follow Gert-Jan Segers (CU); and 37% of Lilianne Ploumen's (PvdA) followers also follow Sigird Kaag (D66). 
 
 
-
-<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/docs/reports/SM-report-followers/SM-report-followers-shared-by-candidate-on-twitter.jpg">
+![Followers shared on Twitter](/VU-Election-Study/reports/SM-report-followers/SM-report-followers-shared-by-candidate-on-twitter.jpg)
 
 ## Who Has Gained the Most Followers Recently?
 
@@ -90,7 +89,8 @@ Ploumen (PvdA) has gone from 19.292 to 22.209 Facebook followers, for a +15% inc
 
 The three candidates with most Facebook followers by the end of 2020 were Geert Wilders (417.225), Mark Rutte (177.772), and Jesse Klaver (127.774). In 2021 Rutte (VVD) has increased his followership by 7%, whereas Wilders has only done so by 3% (probably due to a ceiling effect, he already has _a lot_ of followers), and Klaver (GL) by less than 1%.
 
-<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/docs/reports/SM-report-followers/SM-report-follower-increase-FB.jpg">
+
+![Follower increase on FB](/VU-Election-Study/reports/SM-report-followers/SM-report-follower-increase-FB.jpg)
 
 
 #### Instagram: Lilianne Ploumen (PvdA) is also going strong on Instagram
@@ -105,8 +105,7 @@ Sigird Kaag (D66) increased her number of Instagram followers by 21% (from 25.92
 
 The Prime Minister Instagram account of Mark Rutte has increased the numbers of followers by 10% (from 329.704 to 363.097), whereas Klaver (GL) has done so by 9% (from 65.965 to 71.689), Baudet (FvD) by 6% (from 111.301 to 117.436), and Wilders (PVV) by 3% (from 164.959 to 169.774). Actually, out of all candidates, Wilders (PVV) has increased his followership the least, which is surprising given his strong social media presence. 
 
-<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/docs/reports/SM-report-followers/SM-report-follower-increase-IG.jpg">
-
+![Follower increase on IG](/VU-Election-Study/reports/SM-report-followers/SM-report-follower-increase-IG.jpg)
 
 #### Twitter: A two peloton race
 
@@ -116,7 +115,8 @@ In terms of followership increase on Twitter, there seems to be two groups movin
 
 We don't observe any big increase in followership in the same way we observed on Instagram and Facebook, with a few increases > 20 and > 50%. 
 
-<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/docs/reports/SM-report-followers/SM-report-follower-increase-TW.jpg">
+
+![Follower increase on Twitter](/VU-Election-Study/reports/SM-report-followers/SM-report-follower-increase-TW.jpg)
 
 
 
