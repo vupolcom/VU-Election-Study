@@ -45,7 +45,7 @@ With the exception of Prime Minister Mark Rutte (VVD), the rest of the party lea
 Overall, we see Twitter to be the platform where these candidates have the most followers, with Facebook and Instagram taking second/third place depending on the candidate. This is to some extent puzzling, as Twitter is the one with the least Dutch users, 14% of the Dutch population compared to 60% and 32% for Facebook and Instagram. However, it is probably an indication that people are more likely to use Twitter for political engagement.
 
 
-<img src = "https://github.com/CasAndreu/vu_dutch_election2021/blob/main/plots/SM-report-followers-by-candidate-by-platform.jpg">
+<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/report/outreach/SM-report-followers/SM-report-followers-by-candidate-by-platform.jpg">
 
 
 ## Who Shares a Similar Audience on Twitter?
@@ -59,9 +59,9 @@ Jesse Klaver (GL) is the second candidate with the most Twitter followers (\~ 27
 
 
 
-<img src = "https://github.com/CasAndreu/vu_dutch_election2021/blob/main/plots/SM-report-followers-shared-by-candidate-on-twitter.jpg">
+<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/report/outreach/SM-report-followers/SM-report-followers-shared-by-candidate-on-twitter.jpg">
 
 ## Who Has Gained the Most Followers Recently?
-<img src = "https://github.com/CasAndreu/vu_dutch_election2021/blob/main/plots/SM-report-follower-increase-FB.jpg">
-<img src = "https://github.com/CasAndreu/vu_dutch_election2021/blob/main/plots/SM-report-follower-increase-TW.jpg">
-<img src = "https://github.com/CasAndreu/vu_dutch_election2021/blob/main/plots/SM-report-follower-increase-IG.jpg">
+<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/report/outreach/SM-report-followers/SM-report-follower-increase-FB.jpg">
+<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/report/outreach/SM-report-followers/SM-report-follower-increase-TW.jpg">
+<img src = "https://github.com/vupolcom/VU-Election-Study/blob/main/report/outreach/SM-report-followers/SM-report-follower-increase-IG.jpg">
