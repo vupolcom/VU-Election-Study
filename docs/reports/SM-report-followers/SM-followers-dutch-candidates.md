@@ -49,7 +49,6 @@ The rest of the party leaders running in this election have a small social media
 Overall, we see Twitter to be the platform where these candidates have the most followers, with Facebook and Instagram taking second/third place depending on the candidate. This is to some extent puzzling, as Twitter is the one with the least Dutch users, 14% of the Dutch population compared to 60% and 32% for Facebook and Instagram. However, it is probably an indication that people are more likely to use Twitter for political engagement.
 
 ![Followers per candidate](/VU-Election-Study/reports/SM-report-followers/SM-report-followers-by-candidate-by-platform.jpg)
-
 <a href="/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-followers-by-candidate-by-platform.csv" target="_blank">Download data</a>
 
 ## Who Shares a Similar Audience on Twitter?
@@ -75,6 +74,7 @@ Apart from the main patterns described above, we also observe some additional pa
 
 
 ![Followers shared on Twitter](/VU-Election-Study/reports/SM-report-followers/SM-report-followers-shared-by-candidate-on-twitter.jpg)
+<a href="/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-followers-shared-by-candidate-on-twitter.csv" target="_blank">Download data</a>
 
 ## Who Has Gained the Most Followers Recently?
 
@@ -97,6 +97,7 @@ The three candidates with most Facebook followers by the end of 2020 were Geert 
 
 
 ![Follower increase on FB](/VU-Election-Study/reports/SM-report-followers/SM-report-follower-increase-FB.jpg)
+<a href="/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-follower-increase-FB.csv" target="_blank">Download data</a>
 
 
 #### Instagram: Lilianne Ploumen (PvdA) is also going strong on Instagram
@@ -112,6 +113,8 @@ Sigird Kaag (D66) increased her number of Instagram followers by 21% (from 25.92
 The Prime Minister Instagram account of Mark Rutte has increased the numbers of followers by 10% (from 329.704 to 363.097), whereas Klaver (GL) has done so by 9% (from 65.965 to 71.689), Baudet (FvD) by 6% (from 111.301 to 117.436), and Wilders (PVV) by 3% (from 164.959 to 169.774). Actually, out of all candidates, Wilders (PVV) has increased his followership the least, which is surprising given his strong social media presence. 
 
 ![Follower increase on IG](/VU-Election-Study/reports/SM-report-followers/SM-report-follower-increase-IG.jpg)
+<a href="/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-follower-increase-IG.csv" target="_blank">Download data</a>
+
 
 #### Twitter: A two peloton race
 
@@ -123,6 +126,7 @@ We don't observe any big increase in followership in the same way we observed on
 
 
 ![Follower increase on Twitter](/VU-Election-Study/reports/SM-report-followers/SM-report-follower-increase-TW.jpg)
+<a href="/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-follower-increase-TW.csv" target="_blank">Download data</a>
 
 
 
