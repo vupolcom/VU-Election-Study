@@ -1,5 +1,9 @@
 # Social media followers of Dutch candidates to the 2021 Election
 
+#### [Andreu Casas](http://andreucasas.com/) 
+
+<sup>February 17, 2021 (Last edited: February 18, 2021)</sup>
+
 
 **People increasingly consume news and learn about politics on social media.**  A recent [Pew Research Report](https://www.journalism.org/2021/01/12/news-use-across-social-media-platforms-in-2020/) shows that 38% of the U.S. population get their news from Facebook (still the platform with the most active users in the country), 15% from Twitter, and 11% consume news from Instagram. A [2020 Digital News Report](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2020-06/DNR_2020_FINAL.pdf) from Reuters shows a similar scenario for the Netherlands. Whereas the Dutch population consuming news on TV has decreased from 80 to 67% in the last 5 years, in 2020 77% consume their news online (including social media): 28% from Facebook, 9% from Instagram, and 7% from Twitter. Although these are not yet very large numbers, there is a clear trend. This means that political candidates running for elections need to gradually increase their social media presence and audience in order to be successful at influencing and mobilizing voters. 
 
@@ -28,17 +32,17 @@ In particular, we touch on:
 
 #### Geert Wilders (PVV) is killing it
 
-He has the most followers of all candidates on Twitter (\~ 850.000), Facebook (\~ 430.000) and Instagram (\~ 170.000). According to the mentioned [2020 Digital News Report](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2020-06/DNR_2020_FINAL.pdf), 60% of the Dutch population uses Facebook, 32% Instagram and 14% Twitter, which roughly translates into 10, 5,5, and 2,5 million people respectively. If we put the two pieces of data together, we observe (methdological limitations aside) that about 10% of the users in these 3 social media platforms follow Geert Wilders. The leader of the PVV has become a social media _guru_ and these platforms allow him to easily communicate and spread their message to many.
+With the exception of Rutte's Prime Minister account, Geert Wilders (PVV) has the most followers of all candidates on Twitter (\~ 850.000), Facebook (\~ 430.000) and Instagram (\~ 170.000). According to the mentioned [2020 Digital News Report](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2020-06/DNR_2020_FINAL.pdf), 60% of the Dutch population uses Facebook, 32% Instagram and 14% Twitter, which roughly translates into 10, 5,5, and 2,5 million people respectively. If we put the two pieces of data together, we observe (methdological limitations aside) that about 10% of the users in these 3 social media platforms follow Geert Wilders. The leader of the PVV has become a social media _guru_ and these platforms allow him to easily communicate and spread their message to many.
 
 
 #### The candidates of other extreme parties (FvD and GL) also have a large social media audience
 
-Extreme parties on the right and on the left are known for having a younger voter, and so their voters are probably more likely to be on social media and to use these platform to consume news and engage in politics. In line with this train of thought, we observe the leader of GroenLinks (Jesse Klaver) to be second place in terms of Twitter (\~275.000) and Facebook followers (\~ 130.000), and fourth on Instagram followers (\~ 70.000). The FvD leader, Thierry Baudet, is third on Twitter (\~ 245.000) and Facebook followers (\~ 95.000), and second on Instgram audience (\~ 120.000). 
+Extreme parties on the right and on the left are known for having a younger voter, and so their voters are probably more likely to be on social media and to use these platform to consume news and engage in politics. In line with this train of thought, we observe the leader of GroenLinks (Jesse Klaver) to be third place in terms of Twitter (\~275.000) and Facebook followers (\~ 130.000), and fifth on Instagram followers (\~ 70.000). The FvD leader, Thierry Baudet, is fourth on Twitter (\~ 245.000) and Facebook followers (\~ 95.000), and third on Instgram audience (\~ 120.000). 
 
 
 #### All other candidates have a relatively small social media presence
 
-With the exception of Prime Minister Mark Rutte (VVD), the rest of the party leaders running in this election have a small social media audience, less than 90.000 followers in each platform. The candidate with the least number of followers is Liane den Haan (50+), with only about 3.000 followers on Twitter, 2.000 on Facebook, and 400 on Instagram. Although when compared to the average voter, the likely voters of this party are older and probably less likely to be on social media, [research](https://www.journalism.org/2021/01/12/news-use-across-social-media-platforms-in-2020/) shows high levels of social media usage even among those > 50 years. Hence, Liane den Haan, may be missing on a great opportunity to spread her word and support.
+The rest of the party leaders running in this election have a small social media audience, less than 90.000 followers in each platform. The candidate with the least number of followers is Liane den Haan (50+), with only about 3.000 followers on Twitter, 2.000 on Facebook, and 400 on Instagram. Although when compared to the average voter, the likely voters of this party are older and probably less likely to be on social media, [research](https://www.journalism.org/2021/01/12/news-use-across-social-media-platforms-in-2020/) shows high levels of social media usage even among those > 50 years. Hence, Liane den Haan, may be missing on a great opportunity to spread her word and support.
 
 #### And the Oscar goes to... Twitter
 
@@ -48,7 +52,7 @@ Overall, we see Twitter to be the platform where these candidates have the most 
 
 ## Who Shares a Similar Audience on Twitter?
 
-We used the Twitter API to collect (on Jan. 19, 2021) the list of followers of each of the 13 candidates. Then, for each possible pair of candidates, we checked the amount of users who follows both candidates. We report the findings in the figure below, which should be read as follows: _the percentages in each cell indicate the % of followers of the candidate on left, that also follows the candidate at the bottom_. The same type of analysis cannot be conducted with the data publicly available from Facebook and Instagram, so we had to stick to Twitter for this one. Here is what we learned.
+We used the Twitter API to collect (on Jan. 19, 2021) the list of followers of each of the 13 candidates. Then, for each possible pair of candidates, we checked the amount of users who follows both candidates. We report the findings in the figure below, which should be read as follows: _the percentages in each cell indicate the % of followers of the candidate on left, that also follows the candidate at the bottom_. The same type of analysis cannot be conducted with the data publicly available from Facebook and Instagram, so we had to stick to Twitter for this one. Here is what we learned. For this analysis, we use Mark Rutte's personal acocunt rather than his Prime Minister account.
 
 
 #### There is a big overlap between the followers of GL and all the other parties
@@ -72,9 +76,9 @@ Apart from the main patterns described above, we also observe some additional pa
 
 ## Who Has Gained the Most Followers Recently?
 
-We collected all the Facebook, Instagram, and Twitter messages sent by these party leaders in the last few months (stay tuned to our future analysis of these messages!). Every time we collected a Facebook and Instagram message, we got information about the number of followers of that candidate at the moment of sending the message, allowing us to track changes in followership in detail. Things are a little bit different with Twitter; instead, we collected the number of followers for all the accounts at 6 different points in time, ranging from Jan. 21 to Feb. 15. Here is what we learned about the amount of new followers these accounts have gained in the last couple of months.
+We collected all the Facebook, Instagram, and Twitter messages sent by these party leaders in the last few months (stay tuned to our future analysis of these messages!). Every time we collected a Facebook and Instagram message, we got information about the number of followers of that candidate at the moment of sending the message, allowing us to track changes in followership in detail. Things are a little bit different with Twitter; instead, we collected the number of followers for all the accounts at 6 different points in time, ranging from Jan. 21 to Feb. 15. Here is what we learned about the amount of new followers these accounts have gained in the last couple of months. For the subsequent analysis, we go back to using Mark Rutte's Prime Minister accounts, as he has not been active on his personal accounts/pages. 
 
-**Disclaimer (Feb. 17, 2021)**: **[A]** In this section we are currently missing Facebook data for 3 candidates: Farid Azarkan (DENK), Esther Ouwehand (PvdD), and Sigird Kaag (D66); Instagram data for 2 candidates: Farid Azarkan (DENK), Liane den Haan (50PLUS); and Twitter data for 1 candidate: Mark Rutte (VVD). We are working on addressing the issue and on adding them to the analysis below. **[B]** For the figures below, we use the Prime Minister Facebook and Twitter accounts for Mark Rutte, as he has not been active on his personal accounts/pages. 
+**Disclaimer (Feb. 18, 2021)**: **[A]** In this section we are currently missing Facebook data for 3 candidates: Farid Azarkan (DENK), Esther Ouwehand (PvdD), and Sigird Kaag (D66); Instagram data for 2 candidates: Farid Azarkan (DENK), Liane den Haan (50PLUS). We are working on addressing the issue and on adding them to the analysis below.
 
 #### Facebook: Wopke Hoekstra (CDA) is late to the game but catching up quickly
 
