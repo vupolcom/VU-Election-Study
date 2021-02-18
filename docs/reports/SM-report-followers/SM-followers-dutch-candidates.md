@@ -49,7 +49,7 @@ The rest of the party leaders running in this election have a small social media
 Overall, we see Twitter to be the platform where these candidates have the most followers, with Facebook and Instagram taking second/third place depending on the candidate. This is to some extent puzzling, as Twitter is the one with the least Dutch users, 14% of the Dutch population compared to 60% and 32% for Facebook and Instagram. However, it is probably an indication that people are more likely to use Twitter for political engagement.
 
 ![Followers per candidate](/VU-Election-Study/reports/SM-report-followers/SM-report-followers-by-candidate-by-platform.jpg)
-<a id="raw-url" href="https://github.com/vupolcom/VU-Election-Study/blob/main/docs/reports/SM-report-followers/data-plots/SM-report-followers-by-candidate-by-platform.csv">Download data</a>
+[Download data](/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-followers-by-candidate-by-platform.csv)
 
 
 ## Who Shares a Similar Audience on Twitter?
