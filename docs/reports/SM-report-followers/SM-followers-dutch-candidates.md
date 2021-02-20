@@ -73,8 +73,8 @@ Although Thierry Baudet (FvD) and Kees van der Staaij (SGP) share the most follo
 Apart from the main patterns described above, we also observe some additional pairs of candidates to share a large chunk of followers. Around 36% of Wopke Hoektra's (CDA) followers also follow Sigird Kaag (D66); 34% of Kees van der Staaij's (SGP) followers also follow Gert-Jan Segers (CU); and 37% of Lilianne Ploumen's (PvdA) followers also follow Sigird Kaag (D66). 
 
 
-![Followers shared on Twitter](/VU-Election-Study/reports/SM-report-followers/SM-report-followers-shared-by-candidate-on-twitter.jpg)
-<a href="/VU-Election-Study/reports/SM-report-followers/data-plots/SM-report-followers-shared-by-candidate-on-twitter.csv" target="_blank">Download data</a>
+![Followers shared on Twitter](SM-report-followers-shared-by-candidate-on-twitter.jpg)
+<a href="data-plots/SM-report-followers-shared-by-candidate-on-twitter.csv" target="_blank">Download data</a>
 
 ## Who Has Gained the Most Followers Recently?
 
