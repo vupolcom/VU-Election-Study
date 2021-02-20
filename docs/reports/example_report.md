@@ -11,10 +11,10 @@ Wouter van Atteveldt
 
 ## Option 1: Plot as normal, and use inline code for data
 
-![](../../docs/reports/figures/example-plot-1-1.png)<!-- --> Download
-data: \[[Example plot 1](figures/Example_plot_1.csv)\]
+![](figures/example-plot-1-1.png)<!-- --> Download data: \[[Example plot
+1](figures/Example_plot_1.csv)\]
 
 ## Option 2: Explicitly print both plot and export:
 
-![](../../docs/reports/figures/example-plot-2-1.png)<!-- -->Download
-data: [Example plot data](figures/Example_plot_data.csv)
+![](figures/example-plot-2-1.png)<!-- -->Download data: [Example plot
+data](figures/Example_plot_data.csv)

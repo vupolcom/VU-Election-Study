@@ -6,15 +6,12 @@ output:
     toc: yes
 editor_options: 
   chunk_output_type: console
-knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, output_dir = here::here("docs/reports")) })
-
 ---
 
 ```{r setup, echo=F}
 library(here)
 library(glue)
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='../../docs/reports/figures/', fig.width = 10)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/', fig.width = 10)
 ```
 
 ```{r init}
