@@ -7,16 +7,7 @@ Wouter van Atteveldt
   - [Option 2: Explicitly print both plot and
     export:](#option-2-explicitly-print-both-plot-and-export)
 
-``` r
-library(here)
-```
-
     ## here() starts at /home/wva/VU-Election-Study
-
-``` r
-library(glue)
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='../../docs/reports/figures/', fig.width = 10)
-```
 
 ## Option 1: Plot as normal, and use inline code for data
 
