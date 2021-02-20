@@ -66,7 +66,7 @@ lbl$F1 = tibble(value = c(1:10),
                            "De belangrijkste politieke beslissingen moeten worden genomen door het volk en niet door politici."))
 
 lbl$F2 = tibble(value=c(1:11),
-                label = c("the jurisprudence", "journalism", "the government", "the House of Representatives", "the European Union", "political parties", "politicians", "Dutch democracy", "science", "big corporations", "banks"),
+                label = c("The justice system", "Journalism", "The government", "The House of Representatives", "The European Union", "Political parties", "Politicians", "Dutch democracy", "Science", "Big corporations", "Banks"),
                 wording = c("de rechtspraak","de journalistiek", "de regering", "de Tweede Kamer", "de Europese Unie", "politieke partijen", "politici", "de Nederlandse democratie", "de wetenschap", "grote bedrijven", "banken"))
 
 lbl$H3 = tibble(value = c(1:5), 
@@ -145,14 +145,42 @@ recode_parties = function(p) case_when(
   p == "Other party" ~ "Anders",
   T ~ as.character(p))
 
-
-long_mc = function() {
-  d <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) 
+long_mc = function(d) {
   result = list()
   
   for (var in c("F1", "F2", str_c("G", 1:4), "H6", str_c("I", 1:9))) 
-    result[[var]] = d %>% select(iisID, starts_with(var), -contains("_other"), -G1_b) %>% pivot_longer(-iisID, names_to="medium") %>% 
-    mutate(medium=label(as.numeric(str_remove(medium, glue("^{var}_"))), var)) %>% filter(!is.na(value))
+    result[[var]] = d %>% select(iisID, starts_with(var), -contains("_other"), -G1_b) %>% pivot_longer(-iisID) %>% 
+    mutate(name=label(as.numeric(str_remove(name, glue("^{var}_"))), var)) %>% filter(!is.na(value))
   bind_rows(result, .id="question")
 }
 
+recode_wide = function(d) {
+  d %>% 
+    select(iisID, 
+           stemintentie = A2, 
+           Gender = gender, 
+           Leeftijd = age, 
+           Onderwijsniveau = education, 
+           Regio = region, 
+           Etniciteit = ethnicity, 
+           Werk = job, 
+           Internetgebruik = internet_use, 
+           vorige_stem=E1,
+           covid_maatregelen=H3, 
+           covid_vaccinatie=H7,
+           pol_kennis=D1,
+           linksrechts=E2,
+           eu = H4
+    ) %>%
+    mutate(stemintentie = recode_parties(label(stemintentie, "A2")),
+           Werk = label(Werk, "job"),
+           Leeftijd = label(Leeftijd, "age"),
+           Onderwijsniveau = label(Onderwijsniveau, "education"),
+           Gender = label(Gender, "gender"),
+           Regio = label(Regio, "region"),
+           Internetgebruik = label(Internetgebruik, "internet_use"),
+           Etniciteit = label(Etniciteit, "ethnicity"),
+           vorige_stem = recode_parties(label(vorige_stem, "E1")),
+           covid_maatregelen=label(covid_maatregelen, "H3"),
+           covid_vaccinatie=label(covid_vaccinatie, "H7"))
+}

@@ -14,7 +14,7 @@ knit: (function(inputFile, encoding) {
 ```{r setup}
 library(here)
 library(glue)
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='../../docs/figures/', fig.width = 10)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='../../docs/reports/figures/', fig.width = 10)
 ```
 
 ```{r init}

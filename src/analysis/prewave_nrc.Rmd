@@ -269,15 +269,18 @@ ggplot(dd3, aes(x=A2, y=institution, label=round(value,1), fill=value)) +
 ## Trust in Media
 
 ```{r wave0_trustmedia}
-long_mc() %>% filter(question=="I8") %>% inner_join(resp) %>% 
+dd = long_mc() %>% filter(question=="I8") %>% inner_join(resp) %>% 
   mutate(A2=fct_reorder(A2, value, mean),
          medium=fct_reorder(medium, value, mean)) %>% 
-  group_by(A2, medium) %>% summarize(value=mean(value))  %>% 
+  group_by(A2, medium) %>% summarize(value=mean(value)) 
+data[["Vertrouwing in media"]] = dd
+dd %>%
   ggplot(aes(x=A2, y=medium, label=round(value,1), fill=value)) + 
   geom_tile() + geom_text()  + 
   xlab("Vote intention")   + ylab("Trust in ...") +
   ggtitle("Trust in various institutions by vote intention", "(1=low, 10=high)")  + 
   scale_fill_gradient2(low="red", mid="white", high="green", guide=F, midpoint=5)
+
 ```
 
 # Corona
