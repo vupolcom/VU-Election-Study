@@ -62,50 +62,50 @@ create_table = function(long_data, compute_perc=FALSE) {
       name=fct_reorder(name, value, mean)
     )
 }
-color_table_plot = function(data, title, subtitle=NULL, digits=0) {
-  ggplot(data, aes(x=stemintentie, y=name, label=round(value, digits = digits), fill=value)) +
+color_table_plot = function(data, title, subtitle=NULL, digits=0, print=T, export=T) {
+  plot = ggplot(data, aes(x=stemintentie, y=name, label=round(value, digits = digits), fill=value)) +
     geom_tile()+ geom_text()+
     ggtitle(title, subtitle)  + 
     scale_fill_gradient(low="white", high="#3182bd", guide=F) +
     theme_nrc()
+  if (print) print(plot)
+  if (export) data %>% 
+    pivot_wider(names_from="stemintentie", names_sort=T) %>% 
+    export_data(title) %>% str_c("Download data: ", .) %>% cat()
+  if (print) invisible(plot) else plot
 }
 ```
 
 ```{r wave0-media-party, results='asis'}
 d = long_vote %>% filter(question=="I1") %>% create_table()
-print(color_table_plot(d, "Stemintentie en mediagebruik", digits=1))
-d %>% pivot_wider(names_from="stemintentie", names_sort=T) %>% 
-  export_data("Wave0: Stemintentie en mediagebruik", label=T) %>% cat()
+color_table_plot(d, "Wave 0: Stemintentie en mediagebruik", digits=1)
 ```
 
-```{r wave0-media-party-specific}
-pct_variables = c(I2="Kranten", I3="TV", I4="Online", I5="Social", I7="Apps")
+```{r wave0-media-party-specific, results='asis'}
+pct_variables = c(I2="Newspapers", I3="TV", I4="Online", I5="Social", I7="Apps")
 for (var in names(pct_variables)) {
-  label = paste("Stemintentie en", pct_variables[[var]])
+  label = paste("Wave 0: Vote intention and news: ", pct_variables[[var]])
   message(paste(var, label))
   d = long_vote %>% filter(question==var, name != "Other, namely:") %>% create_table(compute_perc = T)
-  #data_export[[label]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
-  print(color_table_plot(data=d, title = label, subtitle = "(Percentage van stemmers voor die party; meerdere keuzes mogelijk)"))
-  }
+  color_table_plot(data=d, title = label, subtitle = "(Percentage of voters for that party; multiple options possible)")
+}
 ```
 
 # Trust in Media
 
-```{r wave0-trust-media}
+```{r wave0-trust-media, results='asis'}
 d = long_vote %>% filter(question=="I8") %>% create_table()
-#data_export[["Vertrouwen in Media"]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
-color_table_plot(d, "Vertrouwen in Media", subtitle="(Cijfer van 1=laag tot 10=hoog)", digits=1)
+color_table_plot(d, "Wave 0: Trust in Media", subtitle="(Grade from 0=low tot 10=high)", digits=1)
 ```
 
 # Trust in Institutions
 
-```{r wave0-trust-institution}
+```{r wave0-trust-institution, results='asis'}
 d = long_vote %>% filter(question=="F2") %>% create_table()
-#data_export[["Vertrouwen in Instituties"]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
-color_table_plot(d, "Vertrouwen in Instituties", subtitle="(Cijfer van 1=laag tot 10=hoog)", digits=1)
+color_table_plot(d, "Wave 0: Trust in Instituties", subtitle="(Grade from 0=low tot 10=high)", digits=1)
 ```
 
-```{r wave0-trust-group}
+```{r wave0-trust-group, results='asis'}
 d = long_vote %>% filter(question=="F2") %>%
   mutate(name=case_when(
     name == "Science" ~ "Wetenschap",
@@ -115,22 +115,21 @@ d = long_vote %>% filter(question=="F2") %>%
     name %in% c("Banks", "Big corporations") ~ "Bedrijfsleven",
     T ~ "Politiek"
   ))%>% create_table()
-#data_export[["Vertrouwen gegroepeerd"]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
-color_table_plot(d, "Vertrouwen in Instituties (gegroepeerd)", 
-                 subtitle="(Cijfer van 1=laag tot 10=hoog)", digits=1)
+color_table_plot(d, "Wave 0: Trust in Institutions (grouped)", 
+                    subtitle="(Grade from 0=low tot 10=high)", digits=1)
 ```
 
-## Negativo's vs Positivo's
+## Trust in democracy
 
-If we categorize people by sufficient trust in democracy (>5.5) or not, what do we get?
-
-```{r wave0-democracy}
+```{r wave0-democracy, results='asis'}
 d = long_vote %>% filter(question=="F2", name == "Dutch democracy") %>% mutate(ok=value>5.5)
 x = d %>% group_by(ok, value) %>% summarize(n=n()) %>% ungroup() %>% mutate(perc=n/sum(n)*100)
 ggplot(x) + geom_col(aes(x=value, y=perc, fill=ok)) + scale_x_continuous(breaks=0:10) + 
   scale_fill_manual(values=c(scales::muted("red"), scales::muted("green")), guide=F) +
   theme_nrc() + ggtitle("Rapportcijfer voor Democratie")
+```
 
+```{r wave0-democracy2, results='asis'}
 dt = d %>% group_by(stemintentie, value) %>% summarize(n=n()) %>% mutate(perc=n/sum(n)*100)
 
 total = d %>% group_by(value) %>% summarize(n=n()) %>% mutate(perc=n/sum(n) * 100) %>% 
@@ -140,6 +139,5 @@ dt = bind_rows(dt, total) %>% select(stemintentie, name=value, value=perc) %>%
   mutate(stemintentie = factor(stemintentie, levels=parties),
          name=factor(as.character(name), levels=as.character(0:10)))
 
-color_table_plot(dt, "Welk cijfer krijgt de democratie?", subtitle="(Percentage van stemmers op een partij)")
-#data_export[["Rapportcijfer per partij"]] = dt
+color_table_plot(dt, "Wave 0: Trust in democracy", subtitle="(Percentage of voters for a party)")
 ```
