@@ -1,0 +1,145 @@
+---
+title: 'VU 2021 Election Study: Exploration of media use and vote intention before the campaign'
+author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+
+```{r "Read Data"}
+library(here)
+library(tidyverse)
+library(ggthemes)
+source(here("src/lib/create_labels.R"))
+d_raw <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
+resp = recode_wide(d_raw)
+long = long_mc(d_raw)
+long_vote = resp %>% select(iisID, stemintentie) %>% left_join(long)
+theme_nrc = function(...) theme_hc(...) + theme(axis.text.x = element_text(angle = 45, hjust = 1), axis.title.x=element_blank(), axis.title.y=element_blank())
+export_data = function(data, name, label=F) {
+  fn = name %>% str_replace_all("[^\\p{LETTER}\\p{DIGIT}]+", "_") %>% trimws() 
+  if (!str_ends(fn,".csv")) fn = str_c(fn, ".csv")
+  outfile = str_c(knitr::opts_chunk$get('fig.path'), fn)
+  message(outfile)
+  write_csv(data, outfile)
+  str_c(if (label) "Download data: " else "", glue("[{name}](figures/{fn})"))
+} 
+```
+
+# Media Use by Vote Intention
+
+
+```{r aux}
+# Overall ordering of parties by institutional trust
+parties = long_vote %>% filter(question=="F2") %>% group_by(stemintentie) %>% 
+  summarize(value=mean(value)) %>% arrange(value) %>% pull(stemintentie)
+parties = c("Niet", "Anders", setdiff(parties, c("Niet", "Anders")), "Gemiddeld")
+n_party = resp %>% group_by(stemintentie) %>% summarize(ntot=n()) %>% na.omit()
+ntotal = sum(n_party$ntot)
+add_zeroes= function(x) x %>% pivot_wider(values_fill=0) %>% pivot_longer(-stemintentie)
+
+# Helper functions
+create_table = function(long_data, compute_perc=FALSE) {
+  d = long_data %>% group_by(stemintentie, name) %>% summarize(n=n(), value=mean(value)) %>%
+    inner_join(n_party) %>% mutate(value=if (compute_perc) n/ntot*100 else value)
+  total = long_data %>% group_by(name) %>% summarize(n=n(), value=mean(value)) %>% 
+    mutate(value=if (compute_perc) n/ntotal*100 else value) %>% 
+    add_column(stemintentie="Gemiddeld") 
+  bind_rows(d, total) %>% select(stemintentie, name, value) %>% 
+    ungroup() %>% add_zeroes() %>% 
+    mutate(
+      stemintentie = factor(stemintentie, levels=parties),
+      name=fct_reorder(name, value, mean)
+    )
+}
+color_table_plot = function(data, title, subtitle=NULL, digits=0) {
+  ggplot(data, aes(x=stemintentie, y=name, label=round(value, digits = digits), fill=value)) +
+    geom_tile()+ geom_text()+
+    ggtitle(title, subtitle)  + 
+    scale_fill_gradient(low="white", high="#3182bd", guide=F) +
+    theme_nrc()
+}
+```
+
+```{r wave0-media-party, results='asis'}
+d = long_vote %>% filter(question=="I1") %>% create_table()
+print(color_table_plot(d, "Stemintentie en mediagebruik", digits=1))
+d %>% pivot_wider(names_from="stemintentie", names_sort=T) %>% 
+  export_data("Wave0: Stemintentie en mediagebruik", label=T) %>% cat()
+```
+
+```{r wave0-media-party-specific}
+pct_variables = c(I2="Kranten", I3="TV", I4="Online", I5="Social", I7="Apps")
+for (var in names(pct_variables)) {
+  label = paste("Stemintentie en", pct_variables[[var]])
+  message(paste(var, label))
+  d = long_vote %>% filter(question==var, name != "Other, namely:") %>% create_table(compute_perc = T)
+  #data_export[[label]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
+  print(color_table_plot(data=d, title = label, subtitle = "(Percentage van stemmers voor die party; meerdere keuzes mogelijk)"))
+  }
+```
+
+# Trust in Media
+
+```{r wave0-trust-media}
+d = long_vote %>% filter(question=="I8") %>% create_table()
+#data_export[["Vertrouwen in Media"]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
+color_table_plot(d, "Vertrouwen in Media", subtitle="(Cijfer van 1=laag tot 10=hoog)", digits=1)
+```
+
+# Trust in Institutions
+
+```{r wave0-trust-institution}
+d = long_vote %>% filter(question=="F2") %>% create_table()
+#data_export[["Vertrouwen in Instituties"]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
+color_table_plot(d, "Vertrouwen in Instituties", subtitle="(Cijfer van 1=laag tot 10=hoog)", digits=1)
+```
+
+```{r wave0-trust-group}
+d = long_vote %>% filter(question=="F2") %>%
+  mutate(name=case_when(
+    name == "Science" ~ "Wetenschap",
+    name == "The justice system" ~ "Rechtspraak",
+    name == "Dutch democracy" ~ "Democratie",
+    name == "Journalism" ~ "Journalistiek",
+    name %in% c("Banks", "Big corporations") ~ "Bedrijfsleven",
+    T ~ "Politiek"
+  ))%>% create_table()
+#data_export[["Vertrouwen gegroepeerd"]] = d %>% pivot_wider(names_from="stemintentie", names_sort=T) 
+color_table_plot(d, "Vertrouwen in Instituties (gegroepeerd)", 
+                 subtitle="(Cijfer van 1=laag tot 10=hoog)", digits=1)
+```
+
+## Negativo's vs Positivo's
+
+If we categorize people by sufficient trust in democracy (>5.5) or not, what do we get?
+
+```{r wave0-democracy}
+d = long_vote %>% filter(question=="F2", name == "Dutch democracy") %>% mutate(ok=value>5.5)
+x = d %>% group_by(ok, value) %>% summarize(n=n()) %>% ungroup() %>% mutate(perc=n/sum(n)*100)
+ggplot(x) + geom_col(aes(x=value, y=perc, fill=ok)) + scale_x_continuous(breaks=0:10) + 
+  scale_fill_manual(values=c(scales::muted("red"), scales::muted("green")), guide=F) +
+  theme_nrc() + ggtitle("Rapportcijfer voor Democratie")
+
+dt = d %>% group_by(stemintentie, value) %>% summarize(n=n()) %>% mutate(perc=n/sum(n)*100)
+
+total = d %>% group_by(value) %>% summarize(n=n()) %>% mutate(perc=n/sum(n) * 100) %>% 
+    add_column(stemintentie="Gemiddeld") 
+dt = bind_rows(dt, total) %>% select(stemintentie, name=value, value=perc) %>% 
+  ungroup() %>% add_zeroes() %>% 
+  mutate(stemintentie = factor(stemintentie, levels=parties),
+         name=factor(as.character(name), levels=as.character(0:10)))
+
+color_table_plot(dt, "Welk cijfer krijgt de democratie?", subtitle="(Percentage van stemmers op een partij)")
+#data_export[["Rapportcijfer per partij"]] = dt
+```
