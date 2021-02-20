@@ -15,15 +15,15 @@ library(here)
 
 ``` r
 library(glue)
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path=here('docs/reports/figures/'), fig.width = 10)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='../../docs/figures/', fig.width = 10)
 ```
 
 ## Option 1: Plot as normal, and use inline code for data
 
-![](/home/wva/VU-Election-Study/docs/reports/figures/example-plot-1-1.png)<!-- -->
-Download data: \[[Example plot 1](figures/Example_plot_1.csv)\]
+![](../../docs/figures/example-plot-1-1.png)<!-- --> Download data:
+\[[Example plot 1](figures/Example_plot_1.csv)\]
 
 ## Option 2: Explicitly print both plot and export:
 
-![](/home/wva/VU-Election-Study/docs/reports/figures/example-plot-2-1.png)<!-- -->Download
-data: [Example plot data](figures/Example_plot_data.csv)
+![](../../docs/figures/example-plot-2-1.png)<!-- -->Download data:
+[Example plot data](figures/Example_plot_data.csv)

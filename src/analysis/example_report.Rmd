@@ -1,0 +1,47 @@
+---
+title: 'VU 2021 Election Study: Example report'
+author: "Wouter van Atteveldt"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = here::here("docs/reports")) })
+
+---
+
+```{r setup}
+library(here)
+library(glue)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='../../docs/figures/', fig.width = 10)
+```
+
+```{r init}
+#' Save the csv into the figures folder and create a download link
+export_data = function(data, name) {
+  # normalize file name
+  fn = name %>% str_replace_all("[^\\p{LETTER}\\p{DIGIT}]+", "_") %>% trimws() 
+  if (!str_ends(fn,".csv")) fn = str_c(fn, ".csv")
+  outfile = str_c(knitr::opts_chunk$get('fig.path'), fn)
+  message(outfile)
+  write_csv(data, outfile)
+  glue("[{name}](figures/{fn})")
+} 
+library(tidyverse)
+d = tibble(x=1:10, y=1:10)
+```
+
+## Option 1: Plot as normal, and use inline code for data
+
+```{r example-plot-1}
+ggplot(d) + geom_point(aes(x,y))
+```
+Download data: [`r export_data(d, "Example plot 1")`]
+
+## Option 2: Explicitly print both plot and export:
+
+```{r example-plot-2, results='asis'}
+print(ggplot(d) + geom_point(aes(x,y)))
+cat(paste("Download data:", export_data(d, "Example plot data")))
+```
