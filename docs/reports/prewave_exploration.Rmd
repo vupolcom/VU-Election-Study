@@ -1,5 +1,5 @@
 ---
-title: 'VU 2021 Election Study: Exploration of media use and vote intention before the campaign'
+title: 'Exploration of media and trust before the campaign'
 author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
 output: 
   github_document:

@@ -1,5 +1,4 @@
-VU 2021 Election Study: Exploration of media use and vote intention
-before the campaign
+Exploration of media and trust before the campaign
 ================
 Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden
 
