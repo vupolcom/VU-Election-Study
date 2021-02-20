@@ -2,6 +2,11 @@ VU 2021 Election Study: Example report
 ================
 Wouter van Atteveldt
 
+  - [Option 1: Plot as normal, and use inline code for
+    data](#option-1-plot-as-normal-and-use-inline-code-for-data)
+  - [Option 2: Explicitly print both plot and
+    export:](#option-2-explicitly-print-both-plot-and-export)
+
 ``` r
 library(here)
 ```
@@ -11,25 +16,14 @@ library(here)
 ``` r
 library(glue)
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path=here('docs/reports/figures/'), fig.width = 10)
-library(printr)
 ```
 
-    ## Registered S3 method overwritten by 'printr':
-    ##   method                from     
-    ##   knit_print.data.frame rmarkdown
+## Option 1: Plot as normal, and use inline code for data
 
-``` r
-#' Save the csv into the figures folder and create a download link
-export_data = function(data, name) {
-  # normalize file name
-  fn = name %>% str_replace_all("\\P{LETTER}+", "_") %>% trimws() 
-  if (!str_ends(fn,".csv")) fn = str_c(fn, ".csv")
-  outfile = file.path(knitr::opts_chunk$get('fig.path'), fn)
-  message(outfile)
-  write_csv(data, outfile)
-  glue("[Download data: [{name}](figures/{fn})]")
-} 
-```
+![](/home/wva/VU-Election-Study/docs/reports/figures/example-plot-1-1.png)<!-- -->
+Download data: \[[Example plot 1](figures/Example_plot_1.csv)\]
 
-![](/home/wva/VU-Election-Study/docs/reports/figures/example-plot-1.png)<!-- -->\[Download
-data: [Example plot data](figures/Example_plot_data.csv)\]
+## Option 2: Explicitly print both plot and export:
+
+![](/home/wva/VU-Election-Study/docs/reports/figures/example-plot-2-1.png)<!-- -->Download
+data: [Example plot data](figures/Example_plot_data.csv)
