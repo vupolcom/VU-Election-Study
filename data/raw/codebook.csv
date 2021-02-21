@@ -1,0 +1,259 @@
+variable,long,rename,value,isna,label,wording
+age,0,,1,0,<24,18 - 110
+age,0,,2,0,25-34, 
+age,0,,3,0,35-44, 
+age,0,,4,0,45-54, 
+age,0,,5,0,55-64, 
+age,0,,6,0,>64, 
+education,0,,1,0,High,"WO-doctoraal of master of HBO-master, postdoctoraal; HBO of WO propedeuse, HBO (behalve HBO-master), WO-kandidaats of WO-bachelor"
+education,0,,2,0,Medium,"HAVO of VWO bovenbouw, HBS,  MMS; MBO 2, 3, 4 of MBO oude structuur voor 1998"
+education,0,,3,0,Low,"MAVO, HAVO of VWO (eerste drie jaar), ULO, MULO, VMBO (theoretisch of gemengd), voortgezet speciaal onderwijs; LBO, VBO, VMBO (kader- of beroepsgericht), MBO 1; Geen onderwijs, basisonderwijs, cursus inburgering, cursus Nederlandse taal"
+education,0,,999,1,Don't know,"Weet niet, Geen opgave"
+job,0,,1,0,Full-time employed,Fulltime werkzaam
+job,0,,2,0,Part-time employed,Parttime werkzaam
+job,0,,3,0,Entrepreneur,Werkzaam als zelfstandig ondernemer
+job,0,,4,0,Unemployed and searching for a job,Werkloos en werkzoekend
+job,0,,5,0,Unemployed and not searching for a job or incapacitated,Werkloos en niet-werkzoekend /Arbeidsongeschikt
+job,0,,6,0,Housewife/Househusband or else,Huisvrouw/huisman of anders
+job,0,,7,0,Retired,Gepensioneerd of VUT
+job,0,,8,0,Student or full-time education,Student/Leerling/Fulltime opleiding
+gender,0,,0,0,Male,Man
+gender,0,,1,0,Female,Vrouw
+region,0,,1,0,"Three big cities (Amsterdam, Rotterdam, The Hague)","Een van de 3 grote steden of randgemeenten: Amsterdam (plus Diemen, Ouder-Amstel, Landsmeer, Amstelveen); Rotterdam (plus Schiedam, Capelle aan den IJssel, Krimpen aan den IJssel, Nederlek, Ridderkerk, Barendrecht, Albrandswaard; Den Haag (plus Leidschendam, Voorburg, Rijswijk, Wassenaar, Wateringen)"
+region,0,,2,0,West of the country,"Het westen:  Noord-Holland, Zuid-Holland en Utrecht (exclusief een van de 3 grote steden)"
+region,0,,3,0,North  of the country,"Het noorden: Groningen, Friesland en Drenthe"
+region,0,,4,0,East  of the country,"Het oosten: Overijssel, Gelderland en Flevoland"
+region,0,,5,0,South  of the country,"Het zuiden: Zeeland, Noord-Brabant en Limburg"
+ethnicity,0,,1,0,Dutch origin,Autochtoon
+ethnicity,0,,2,0,First generation non-Western immigrant,Niet-westers allochtoon; 1e generatie
+ethnicity,0,,3,0,Second generation non-Western immigrant,Niet-westers allochtoon; 2e generatie
+ethnicity,0,,4,0,First generation Western immigrant,Westers allochtoon; 1e generatie
+ethnicity,0,,5,0,Second generation Western immigrant,Westers allochtoon; 2e generatie
+ethnicity,0,,999,1,No response,Onbekend
+internet_use,0,,1,0,Much more for work,Veel vaker voor werk
+internet_use,0,,2,0,More for work,Iets vaker voor werk
+internet_use,0,,3,0,Equal for work and private reasons,Ongeveer evenveel voor werk als om persoonlijke redenen
+internet_use,0,,4,0,More for private reasons,Iets vaker voor persoonlijke reden
+internet_use,0,,5,0,Much more for private reasons,Veel vaker voor persoonlijke redenen
+A2,0,vote,1,0,CDA,CDA
+A2,0,,2,0,ChristenUnie,ChristenUnie
+A2,0,,3,0,D66,D66
+A2,0,,4,0,Denk,Denk
+A2,0,,5,0,FvD,Forum voor Democratie
+A2,0,,6,0,GroenLinks,GroenLinks
+A2,0,,7,0,PvdA,PvdA
+A2,0,,8,0,PvdD,Partij voor de Dieren
+A2,0,,9,0,PVV,PVV
+A2,0,,10,0,SGP,SGP
+A2,0,,11,0,SP,SP
+A2,0,,12,0,VVD,VVD
+A2,0,,13,0,50+,50Plus Partij
+A2,0,,14,0,Other,Andere partij
+A2,0,,15,0,Not,Ik stem blanco
+A2,0,,999,0,Undecided,Weet ik niet nog niet
+B2,1,,1,0,CDA & Wopke Hoekstra,CDA & Wopke Hoekstra
+B2,1,,2,0,ChristenUnie & Gert-Jan Segers,ChristenUnie & Gert-Jan Segers
+B2,1,,3,0,D66 & Sigrid Kaag,D66 & Sigrid Kaag
+B2,1,,4,0,Denk & Farid Azarkan,Denk & Farid Azarkan
+B2,1,,5,0,Forum voor Democratie & Thierry Baudet,Forum voor Democratie & Thierry Baudet
+B2,1,,6,0,GroenLinks & Jesse Klaver,GroenLinks & Jesse Klaver
+B2,1,,7,0,PvdA & Lodewijk Asscher,PvdA & Lodewijk Asscher
+B2,1,,8,0,Partij voor de Dieren & Esther Ouwehand,Partij voor de Dieren & Esther Ouwehand
+B2,1,,9,0,PVV & Geert Wilders,PVV & Geert Wilders
+B2,1,,10,0,SGP  & Kees van der Staaij,SGP  & Kees van der Staaij
+B2,1,,11,0,SP & Lilian Marijnissen,SP & Lilian Marijnissen
+B2,1,,12,0,VVD & Mark Rutte,VVD & Mark Rutte
+B2,1,,13,0,50Plus Partij & Liane den Haan,50Plus Partij & Liane den Haan
+D1,0,polknow,,,,
+E1,0,vote_2017,1,0,CDA,CDA
+E1,0,,2,0,ChristenUnie,ChristenUnie
+E1,0,,3,0,D66,D66
+E1,0,,4,0,Denk,Denk
+E1,0,,5,0,FvD,Forum voor Democratie
+E1,0,,6,0,GroenLinks,GroenLinks
+E1,0,,7,0,PvdA,PvdA
+E1,0,,8,0,PvdD,Partij voor de Dieren
+E1,0,,9,0,PVV,PVV
+E1,0,,10,0,SGP,SGP
+E1,0,,11,0,SP,SP
+E1,0,,12,0,VVD,VVD
+E1,0,,13,0,50+,50Plus Partij
+E1,0,,14,0,Other party,Andere partij
+E1,0,,997,1,Unknown,Weet ik niet meer
+E1,0,,998,0,Not,Ik heb niet gestemd
+E1,0,,999,0,New,Ik mocht niet stemmen
+E2,0,rile_self,,,,
+F1,1,,1,0,Politicians don't care about the opinions of people like me.,Politici maken zich niet  druk om de mening van mensen zoals ik.
+F1,1,,2,0,The political parties are only interested in my vote and not in my opinion.,De politieke partijen zijn alleen maar geïnteresseerd in mijn stem en niet in mijn mening.
+F1,1,,3,0,"Against their better judgment, politicians promise more than they can deliver.",Tegen beter weten in beloven politici meer dan ze kunnen waarmaken.
+F1,1,,4,0,You become a member of parliament more by your political friends than by your skills.,Kamerlid word je eerder door je politieke vrienden dan door je bekwaamheden.
+F1,1,,5,0,Most politicians are skilled people who know what they are doing.,De meeste politici zijn bekwame mensen die weten wat ze doen.
+F1,1,,6,0,Politicians are able to solve the most important problems.,Politici zijn in staat om de belangrijkste problemen op te lossen.
+F1,1,,7,0,I feel well represented by Dutch politicians.,Ik voel mij goed vertegenwoordigd door Nederlandse politici.
+F1,1,,8,0,What in politics is called 'making compromises' is actually just betraying your principles.,"Wat men in de politiek ‘het sluiten van compromissen’ noemt, is eigenlijk gewoon het verraden van je principes."
+F1,1,,9,0,"A strong head of government is good for the Netherlands, even if he stretches the rules a bit to get things done.","Een sterke regeringsleider is goed voor Nederland, ook als deze de regels wat oprekt om dingen voor elkaar te krijgen."
+F1,1,,10,0,The most important political decisions should be made by the people and not by politicians.,De belangrijkste politieke beslissingen moeten worden genomen door het volk en niet door politici.
+F2,1,,1,0,The justice system,de rechtspraak
+F2,1,,2,0,Journalism,de journalistiek
+F2,1,,3,0,The government,de regering
+F2,1,,4,0,The House of Representatives,de Tweede Kamer
+F2,1,,5,0,The European Union,de Europese Unie
+F2,1,,6,0,Political parties,politieke partijen
+F2,1,,7,0,Politicians,politici
+F2,1,,8,0,Dutch democracy,de Nederlandse democratie
+F2,1,,9,0,Science,de wetenschap
+F2,1,,10,0,Big corporations,grote bedrijven
+F2,1,,11,0,Banks,banken
+G1,1,,1,0,How the current cabinet has governed the past 4 years,Hoe het huidige kabinet de afgelopen 4 jaar heeft geregeerd
+G1,1,,2,0,How the VVD has ruled the past 4 years,Hoe de VVD de afgelopen 4 jaar heeft geregeerd
+G1,1,,3,0,How the CDA has ruled the past 4 years,Hoe het CDA de afgelopen 4 jaar heeft geregeerd
+G1,1,,4,0,How D66 has ruled the past 4 years,Hoe D66 de afgelopen 4 jaar heeft geregeerd
+G1,1,,5,0,How the Christian Union has ruled in the past 4 years,Hoe de ChristenUnie de afgelopen 4 jaar heeft geregeerd
+G2,1,,1,0,Wopke Hoekstra,Wopke Hoekstra
+G2,1,,2,0,Gert-Jan Segers,Gert-Jan Segers
+G2,1,,3,0,Sigrid Kaag,Sigrid Kaag
+G2,1,,4,0,Farid Azarkan,Farid Azarkan
+G2,1,,5,0,Thierry Baudet,Thierry Baudet
+G2,1,,6,0,Jesse Klaver,Jesse Klaver
+G2,1,,7,0,Lodewijk Asscher,Lodewijk Asscher
+G2,1,,8,0,Esther Ouwehand,Esther Ouwehand
+G2,1,,9,0,Geert Wilders,Geert Wilders
+G2,1,,10,0,Kees van der Staaij,Kees van der Staaij
+G2,1,,11,0,Lilian Marijnissen,Lilian Marijnissen
+G2,1,,12,0,Mark Rutte,Mark Rutte
+G2,1,,13,0,Liane den Haan,Liane den Haan
+G3,1,,1,0,Wopke Hoekstra,Wopke Hoekstra
+G3,1,,2,0,Gert-Jan Segers,Gert-Jan Segers
+G3,1,,3,0,Sigrid Kaag,Sigrid Kaag
+G3,1,,4,0,Farid Azarkan,Farid Azarkan
+G3,1,,5,0,Thierry Baudet,Thierry Baudet
+G3,1,,6,0,Jesse Klaver,Jesse Klaver
+G3,1,,7,0,Lodewijk Asscher,Lodewijk Asscher
+G3,1,,8,0,Esther Ouwehand,Esther Ouwehand
+G3,1,,9,0,Geert Wilders,Geert Wilders
+G3,1,,10,0,Kees van der Staaij,Kees van der Staaij
+G3,1,,11,0,Lilian Marijnissen,Lilian Marijnissen
+G3,1,,12,0,Mark Rutte,Mark Rutte
+G3,1,,13,0,Liane den Haan,Liane den Haan
+G4,1,,1,0,Wopke Hoekstra,Wopke Hoekstra
+G4,1,,2,0,Gert-Jan Segers,Gert-Jan Segers
+G4,1,,3,0,Sigrid Kaag,Sigrid Kaag
+G4,1,,4,0,Farid Azarkan,Farid Azarkan
+G4,1,,5,0,Thierry Baudet,Thierry Baudet
+G4,1,,6,0,Jesse Klaver,Jesse Klaver
+G4,1,,7,0,Lodewijk Asscher,Lodewijk Asscher
+G4,1,,8,0,Esther Ouwehand,Esther Ouwehand
+G4,1,,9,0,Geert Wilders,Geert Wilders
+G4,1,,10,0,Kees van der Staaij,Kees van der Staaij
+G4,1,,11,0,Lilian Marijnissen,Lilian Marijnissen
+G4,1,,12,0,Mark Rutte,Mark Rutte
+G4,1,,13,0,Liane den Haan,Liane den Haan
+H3,0,corona_policy,1,0,"Much stricter measures to combat the virus (curfew, area ban).","Veel strengere maatregelen om het virus tegen te gaan (avondklok, gebiedsverbod)."
+H3,0,,2,0,Slightly stricter measures to prevent viruses.,Iets strengere maatregelen om virus tegen te gaan.
+H3,0,,3,0,The measures chosen by the government.,De maatregelen die de regering gekozen heeft.
+H3,0,,4,0,Slightly more flexible measures so that only the most vulnerable elderly are protected.,Iets soepelere maatregelen zodat alleen de meest kwetsbare ouderen afgeschermd worden.
+H3,0,,5,0,Much smoother measures to get the economy and nightlife going immediately.,Veel soepelere maatregelen om de economie en het uitgaansleven onmiddellijk op gang te brengen.
+H6,1,,1,0,Children who are born now get it better than we do.,Kinderen die nu geboren worden krijgen het beter dan wij.
+H6,1,,2,0,The arrival of asylum seekers and immigrants is good for the Netherlands.,De komst van asielzoekers en immigranten is goed voor Nederland.
+H6,1,,3,0,International trade is good for the Netherlands.,Internationale handel is goed voor Nederland.
+H7,0,vaccination,1,0,Definitely do it,Zeer zeker doen
+H7,0,,2,0,Do it,Doen
+H7,0,,3,0,Don't do it,Niet doen
+H7,0,,4,0,Definitely don't do it,Zeer zeker niet doen
+I1,1,,1,0,Television,Televisie
+I1,1,,2,0,Newspapers or opinion magazines (paper or online),Kranten of opiniebladen (op papier of online)
+I1,1,,3,0,Radio (including podcast and online),Radio (inclusief podcast en online)
+I1,1,,4,0,Online news sites (such as nu.nl) or blogs,Online nieuwssites (zoals nu.nl) of blogs
+I1,1,,5,0,"Social media (such as Facebook, Twitter)","Social media (bijvoorbeeld Facebook, Twitter)"
+I1,1,,6,0,"Messaging apps (such as Whatsapp, messenger)","Messaging apps (bijvoorbeeld Whatsapp, messenger)"
+I1,1,,7,0,(Offline) conversations with people,(Offline) gesprekken met mensen
+I1,1,,8,0,News apps or push messages on your phone,Nieuwsapps of pushberichten op uw telefoon
+I1,1,,9,0,Search engines (such as Google or Bing),Zoekmachines (zoals Google of Bing)
+I2,1,,1,0,de Telegraaf,de Telegraaf
+I2,1,,2,0,NRC Handelsblad,NRC Handelsblad
+I2,1,,3,0,Nrc.Next,Nrc.Next
+I2,1,,4,0,Algemeen Dagblad (AD),Algemeen Dagblad (AD)
+I2,1,,5,0,Trouw,Trouw
+I2,1,,6,0,de Volkskrant,de Volkskrant
+I2,1,,7,0,Metro,Metro
+I2,1,,8,0,A regional or local newspaper,Een regionale of lokale krant
+I2,1,,9,0,De Groene Amsterdammer,De Groene Amsterdammer
+I2,1,,10,0,HP/de Tijd,HP/de Tijd
+I2,1,,11,0,Elsevier,Elsevier
+I2,1,,12,0,Vrij Nederland,Vrij Nederland
+I2,1,,13,0,"Other, namely:","Anders, namelijk:"
+I3,1,,1,0,Press comnference of Rutte and De Jonge,Persconferentie Rutte en De Jonge
+I3,1,,2,0,NOS Journaal,NOS Journaal
+I3,1,,3,0,RTL Nieuws,RTL Nieuws
+I3,1,,4,0,Hart van Nederland,Hart van Nederland
+I3,1,,5,0,De Vooravond,De Vooravond
+I3,1,,6,0,M,M
+I3,1,,7,0,Nieuwsuur,Nieuwsuur
+I3,1,,8,0,EenVandaag,EenVandaag
+I3,1,,9,0,Op Eén,Op Eén
+I3,1,,10,0,Jinek,Jinek
+I3,1,,11,0,Beau,Beau
+I3,1,,12,0,WNL Opiniemakers,WNL Opiniemakers
+I3,1,,13,0,Zondag met Lubach,Zondag met Lubach
+I3,1,,14,0,Dit was het nieuws,Dit was het nieuws
+I3,1,,15,0,Own channels of politicians and opinion makers,Eigen kanalen van politici en opiniemakers
+I3,1,,16,0,"Other, namely:","Anders, namelijk:"
+I4,1,,1,0,Nu.nl,Nu.nl
+I4,1,,2,0,Geenstijl.nl,Geenstijl.nl
+I4,1,,3,0,GoogleNews,GoogleNews
+I4,1,,4,0,Blendle.com,Blendle.com
+I4,1,,5,0,Decorrespondent.nl,Decorrespondent.nl
+I4,1,,6,0,Tpo.nl,Tpo.nl
+I4,1,,7,0,Joop.nl,Joop.nl
+I4,1,,8,0,"Political blogs, namely:","Politieke blogs, namelijk:"
+I4,1,,9,0,"Other, namely:","Anders, namelijk:"
+I5,1,,1,0,Twitter,Twitter
+I5,1,,2,0,Facebook,Facebook
+I5,1,,3,0,Youtube,Youtube
+I5,1,,4,0,Instagram,Instagram
+I5,1,,5,0,Snapchat,Snapchat
+I5,1,,6,0,Viber,Viber
+I5,1,,7,0,Telegram,Telegram
+I5,1,,8,0,Google Hangouts,Google Hangouts
+I5,1,,9,0,Tumblr,Tumblr
+I5,1,,10,0,Reddit,Reddit
+I5,1,,11,0,"Other, namely:","Anders, namelijk:"
+I6,1,,1,0,Whatsapp,Whatsapp
+I6,1,,2,0,Viber,Viber
+I6,1,,3,0,Telegram,Telegram
+I6,1,,4,0,Signal,Signal
+I6,1,,5,0,Google Hangouts,Google Hangouts
+I6,1,,6,0,"Other, namely:","Anders, namelijk:"
+I7,1,,1,0,Nu,Nu
+I7,1,,2,0,NOS,NOS
+I7,1,,11,0,Teletekst,Teletekst
+I7,1,,3,0,Telegraaf,Telegraaf
+I7,1,,4,0,AD,AD
+I7,1,,5,0,NRC,NRC
+I7,1,,6,0,Volkskrant,Volkskrant
+I7,1,,7,0,News aggregator like feedly or flipboard,News aggregator zoals feedly of flipboard
+I7,1,,8,0,Apple News,Apple News
+I7,1,,9,0,Google News,Google News
+I7,1,,10,0,"Other, namely:","Anders, namelijk:"
+I8,1,,1,0,NOS journaal,NOS journaal
+I8,1,,2,0,RTL nieuws,RTL nieuws
+I8,1,,3,0,SBS (Hart van Nederland),SBS (Hart van Nederland)
+I8,1,,4,0,Zondag met Lubach,Zondag met Lubach
+I8,1,,5,0,NU.nl,NU.nl
+I8,1,,6,0,Algemeen Dagblad,Algemeen Dagblad
+I8,1,,7,0,De Telegraaf,De Telegraaf
+I8,1,,8,0,De Volkskrant,De Volkskrant
+I8,1,,9,0,NRC,NRC
+I8,1,,10,0,GeenStijl,GeenStijl
+I8,1,,11,0,De Correspondent,De Correspondent
+I8,1,,12,0,Twitter,Twitter
+I8,1,,13,0,Facebook,Facebook
+I9,1,,1,0,I feel exhausted by the amount of news coming at me,Ik voel me uitgeput door de hoeveelheid nieuws die op mij afkomt
+I9,1,,2,0,"If I follow the news, it has a negative effect on my mood","Als ik het nieuws volg, heeft dat een negatief effect op mijn humeur"
+I9,1,,3,0,I cannot trust that the news coming at me is truthful,Ik kan er niet op vertrouwen dat het nieuws dat op mij afkomt waarheidsgetrouw is
+I9,1,,4,0,The often explicit images in the news coming at me bother me,De vaak expliciete beelden in het nieuws dat op mij afkomt storen me
+I9,1,,5,0,"If I would talk about the news, I get in trouble with others and I prefer to avoid it","Als ik zou praten over het nieuws, krijg ik moeilijkheden met anderen en dat vermijd ik liever"
+I9,1,,6,0,The news takes up too much of my time,Het nieuws neemt te veel van mijn tijd in beslag
+I9,1,,7,0,"If I follow the news, it has a negative physical effect on me (e.g., I can't keep up with the news. Headaches, sleep problems, etc.)","Als ik het nieuws volg, heeft dat een negatief lichamelijk effect op mij (bijv. hoofdpijn, slaapproblemen, etc.)"
+I9,1,,8,0,I try to avoid political news,Ik probeer politiek nieuws te vermijden
+I9,1,,9,0,I try to avoid news about Corona,Ik probeer nieuws over Corona te vermijden
