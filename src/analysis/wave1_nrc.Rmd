@@ -1,0 +1,652 @@
+---
+title: 'VU 2021 Election Study: Media aandacht van politici en de waardering van kiezers'
+author: "Mariken van der Velden - rest will follow"
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      echo = FALSE, fig.align = "center",
+                        fig.path='figures/')
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+library(amcatr)
+library(viridis)
+source(here("src/lib/create_labels.R"))
+```
+
+# NRC Vragen 
+ - Welke politici waren in welke media? 
+ - Welke partij kreeg de meeste woorden? 
+ - Welke partij de meeste zendtijd?
+ - Wat vonden de kiezersgroepen van die optredens?  Waardering?
+ - Wat is ervan blijven hangen? Is er enig verschil in waardering tussen tv, kranten, socials?
+ - Wat vonden de zwevers ervan? Hebben ze al een keuze kunnen maken? En was een bepaald optreden daarbij belangrijk? Of hebben ze niet gekeken?
+
+
+# Politici in de Media
+
+```{r "Amcat data"}
+conn <- amcat.connect('http://vu.amcat.nl')
+
+cda <- amcat.hits(conn, queries = 'CDA#(CDA OR (Hoekstra AND (Wopke OR "min economische zaken, landbouw en innovatie" OR bewinds* OR minister* OR cda))) ', 
+                 labels = 'CDA', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+cu <- amcat.hits(conn, queries = 'CU#(ChristenUnie OR CU) OR (Segers AND (Gert-Jan OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "christenunie"))', 
+                 labels = 'CU', sets = 1340,
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+denk <- amcat.hits(conn, queries = 'Denk#((Denk OR denk) OR (Azarkan AND (Farid OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "denk")))', 
+                 labels = 'Denk', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+fvd <- amcat.hits(conn, queries = 'FvD#((Forum OR FvD) OR (Baudet AND (Thierry OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "forum")))', 
+                 labels = 'Fvd', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+gl <- amcat.hits(conn, queries = 'GL#((GroenLinks OR GL) OR (Klaver AND (Jesse OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "groenlinks")))', 
+                 labels = 'GL', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+pvda <- amcat.hits(conn, queries = 'PvdA#(PvdA OR (Ploumen AND (Lilianne OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "pvda" OR fractievoorzitter OR partijleider)))', 
+                 labels = 'PvdA', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+pvdd <- amcat.hits(conn, queries = 'PvdD#PvdD OR (Ouwehand AND (Esther OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "pvv" OR fractievoorzitter OR partijleider))', 
+                 labels = 'PvdD', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+pvv <- amcat.hits(conn, queries = 'PVV#PVV OR (Wilders AND (Geert OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "pvv" OR fractievoorzitter OR partijleider))', 
+                 labels = 'PVV', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+sgp <- amcat.hits(conn, queries = 'SGP#(SGP OR (Staaij AND (Kees OR "sgp" OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR fractievoorzitter OR partijleider)))', 
+                 labels = 'SGP', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+sp <- amcat.hits(conn, queries = 'SP#(SP OR (Marijnissen AND (Lilian OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "sp" OR fractievoorzitter OR partijleider)))', 
+                 labels = 'SP', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+vvd <- amcat.hits(conn, queries = 'VVD#VVD OR (Rutte AND (Mark OR "min algemene zaken" OR premier OR "minister president" OR "vvd" OR fractievoorzitter OR partijleider))', 
+                 labels = 'VVD', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+
+plus <- amcat.hits(conn, queries = '50Plus#(SGP OR (Haan AND (Lianne OR "50plus" OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR fractievoorzitter OR partijleider)))', 
+                 labels = '50+', sets = 1340, 
+                project = 2, col = c('date', "url"), start_date="2021-01-25")
+```
+
+```{r "visibility media", fig.height=10, fig.width=10}
+tmp <- unlist(str_split_fixed(cda$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+cda$medium <- tmp
+
+tmp <- unlist(str_split_fixed(cu$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+cu$medium <- tmp
+
+tmp <- unlist(str_split_fixed(denk$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+denk$medium <- tmp
+
+tmp <- unlist(str_split_fixed(fvd$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+fvd$medium <- tmp
+
+tmp <- unlist(str_split_fixed(gl$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+gl$medium <- tmp
+
+tmp <- unlist(str_split_fixed(pvda$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+pvda$medium <- tmp
+
+tmp <- unlist(str_split_fixed(pvdd$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+pvdd$medium <- tmp
+
+tmp <- unlist(str_split_fixed(pvv$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+pvv$medium <- tmp
+
+tmp <- unlist(str_split_fixed(sgp$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+sgp$medium <- tmp
+
+tmp <- unlist(str_split_fixed(sp$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+sp$medium <- tmp
+
+tmp <- unlist(str_split_fixed(vvd$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+vvd$medium <- tmp
+
+tmp <- unlist(str_split_fixed(plus$url, "\\.", 2))[,2]
+tmp <- unlist(str_split_fixed(tmp, ".nl", 2))[,1]
+plus$medium <- tmp
+
+media <- cda %>% add_row(cu) %>% add_row(denk) %>% add_row(fvd) %>% 
+  add_row(gl) %>% add_row(pvda) %>% add_row(pvdd) %>% add_row(pvv) %>% 
+  add_row(sgp) %>% add_row(sp) %>% add_row(vvd) %>% add_row(plus) %>%
+  drop_na(medium) %>%
+  mutate(date = as.Date(date))
+
+ggplot(media, aes(x = date, y = count, 
+                  group = query, color = medium)) +
+  geom_line() +
+  facet_grid(query~medium, scales = "free") +
+  theme_minimal() +
+  scale_fill_viridis_d() +  
+  labs(y = "", 
+       x = "",
+       title = "Zichtbaarheid",
+       subtitle = "Absolute aantallen (queries)") +
+  theme(axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
+        plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+```
+
+
+# Kiezersperspectief
+
+```{r "Read Data"}
+w0 <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
+w1 <- read_csv(here("data/intermediate/wave1.csv"))
+
+```
+
+## Wat vonden de kiezersgroepen van politici 's media optredens? 
+
+In het linker gedeelte van Figuur \ref{fig:algemeen} is te zien dat van alle lijsttrekkers is Mark Rutte (VVD) voor kiezers het meest zichtbaar in de media. 
+Hij wordt op de voet gevolgd door Geert Wilder (PVV), Wopke Hoekstra (CDA), en Thierry Baudet (FvD).
+Lijsttrekkers Gert-Jan Segers (CU), Kees van de Staaij (SGP), Esther Ouwehand (PvdD), Liane den Haan (50+), en Farid Azarkan (Denk) worden door de kiezers als zeer onopvallend aangemerkt.
+Dat is vooral voor regeringspartij CU opvallend, omdat regeringsparijen vaak opvallender zijn dan oppositiepartijen.
+
+In het rechter gedeelte van Figuur \ref{fig:algemeen} wordt weergegeven of de lijstrtekkers en hun politieke partij positief of negatieve media aandacht kregen in de ogen van de kiezer.
+De gemiddeldes laten zien dat als politici voor kiezers zichtbaar waren in de media, dat het dan meestal positief was - bijna alle politici krijgen een score van 5.5 of hoger.
+Dit geldt alleen niet voor Wilders, Azarkan en Baudet.
+Die vallen voornamelijk negatief op in het nieuws, aldus de kiezer.
+
+```{r "Media Performance Politiek - algemeen", fig.width=8, fig.cap="\\label{fig:algemeen}Figuur 1"}
+w1 %>%
+  select(B2_1:B2_13, B3_1:B3_13) %>%
+  pivot_longer(cols = B2_1:B2_13, 
+               names_to = "partij", 
+               values_to = "gezien") %>%
+  mutate(gezien = recode(gezien, `999` = 0),
+         partij = recode(partij,
+                        `B2_1` = "CDA & Wopke Hoekstra", 
+                        `B2_2` = "CU & Gert-Jan Segers", 
+                        `B2_3` = "D66 & Sigrid Kaag", 
+                        `B2_4` = "Denk & Farid Azarkan", 
+                        `B2_5` = "FvD & Thierry Baudet",
+                        `B2_6` = "GL & Jesse Klaver", 
+                        `B2_7` = "PvdA & Lilianne Ploumen", 
+                        `B2_8` = "PvdD & Esther Ouwehand", 
+                        `B2_9` = "PVV & Geert Wilders", 
+                        `B2_10` = "SGP  & Kees van der Staaij", 
+                        `B2_11` = "SP & Lilian Marijnissen", 
+                        `B2_12` = "VVD & Mark Rutte", 
+                        `B2_13` = "50+ & Liane den Haan")) %>%
+    pivot_longer(cols = B3_1:B3_13, values_to = "waardering") %>% 
+    mutate(name = recode(name,
+                        `B3_1` = "CDA & Wopke Hoekstra", 
+                        `B3_2` = "CU & Gert-Jan Segers", 
+                        `B3_3` = "D66 & Sigrid Kaag", 
+                        `B3_4` = "Denk & Farid Azarkan", 
+                        `B3_5` = "FvD & Thierry Baudet",
+                        `B3_6` = "GL & Jesse Klaver", 
+                        `B3_7` = "PvdA & Lilianne Ploumen", 
+                        `B3_8` = "PvdD & Esther Ouwehand", 
+                        `B3_9` = "PVV & Geert Wilders", 
+                        `B3_10` = "SGP  & Kees van der Staaij", 
+                        `B3_11` = "SP & Lilian Marijnissen", 
+                        `B3_12` = "VVD & Mark Rutte", 
+                        `B3_13` = "50+ & Liane den Haan"),
+           check = ifelse(name == partij, 1, 0),
+           waardering = na_if(waardering, 999)) %>%
+  filter(check==1) %>% select(partij, gezien, waardering) %>%
+  pivot_longer(cols = gezien:waardering) %>%
+  drop_na(value) %>%
+  group_by(partij, name) %>%
+  summarise(gem = round(mean(value, na.rm=T),2)) %>%
+  mutate(name = recode(name, 
+                       `gezien` = "Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)",
+                       `waardering` = "Waardering \n Erg negatief (0) - Erg Positief (10)"),
+         name = factor(name, 
+                       levels = c("Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)", "Waardering \n Erg negatief (0) - Erg Positief (10)"))) %>%
+  ggplot(aes(x = gem, y = reorder(partij, gem), label = gem)) +
+  geom_col(fill = "#21908CFF") +
+  geom_text(hjust = 0, nudge_x = 0.05, size = 2.5) +
+  facet_grid(.~name, scales = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Media Performance",
+       subtitle = "Gemiddelde van alle respondenten") +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+  
+```
+
+Wanneer we specifieker kijken naar wat mensen vinden van de lijstttrekkers in de media als a) je voor de partij stemt (paarse staven in onderstaande Figuur \ref{fig:kiezers}); b) je de partij graag in de nieuwe regering zien (blauwe staven in onderstaande Figuur \ref{fig:kiezers}); c) je nog een zwevende kiezer bentt (groene staven in onderstaande Figuur \ref{fig:kiezers}); en d) je niet gaat stemmen (gele staven in onderstaande Figuur \ref{fig:kiezers}).
+
+Voor de meeste politici geldt dat ongeacht of je op de partij stemt of deze partij graag in de nieuwe regering ziet, de lijsttrekker even (on)opvallend is (linkerzijde van Figuur \ref{fig:kiezers}).
+Het partoon wie opvalt en wie niet is vrijwel hetzelfde als het algemene partoon zoals beschreven bij bovenstaand figuur.
+
+Voor de niet-stemmers geldt dat voor hen alleen Rutte en Wilders enigszins opgevallen zijn in de media.
+Wanneer we kijken naar de waardering van de politici in de media, in de rechterzijde van Figuur \ref{fig:kiezers}, is het opvallend dat als niet-stemmers Van der Staaij in de media zagen, zij heel veel waardering voor hem hebben: het hoogste gemiddelde.
+Deze groep heeft weer een veel lagere waardering voor Rutte, als deze hem is opgevallen in de media.
+
+Voor de rest laat de rechterzijde van Figuur \ref{fig:kiezers} zien, dat de waardering tussen de vier type stemmersgroepen niet verschilt.
+Alle gemiddeldes, behalve die van Denk en FvD, schommelen rond de 5, wat aangeeft dat in alle vier type kiezersgroepen mensen de lijsttrekkers' media optredens zowel positief als negatief beoordelen.
+
+```{r "Media Performance Politiek - kiezersgroepen", fig.width=8, fig.height=7, fig.cap="\\label{fig:kiezers}Figuur 2"}
+w1 %>%
+  select(A1, A2, A3_1:A3_5, B2_1:B2_13, B3_1:B3_13) %>%
+  pivot_longer(cols = B2_1:B2_13, 
+               names_to = "partij", 
+               values_to = "gezien") %>%
+  mutate(gezien = recode(gezien, `999` = 0),
+         partij = recode(partij,
+                        `B2_1` = "CDA & Wopke Hoekstra", 
+                        `B2_2` = "CU & Gert-Jan Segers", 
+                        `B2_3` = "D66 & Sigrid Kaag", 
+                        `B2_4` = "Denk & Farid Azarkan", 
+                        `B2_5` = "FvD & Thierry Baudet",
+                        `B2_6` = "GL & Jesse Klaver", 
+                        `B2_7` = "PvdA & Lilianne Ploumen", 
+                        `B2_8` = "PvdD & Esther Ouwehand", 
+                        `B2_9` = "PVV & Geert Wilders", 
+                        `B2_10` = "SGP  & Kees van der Staaij", 
+                        `B2_11` = "SP & Lilian Marijnissen", 
+                        `B2_12` = "VVD & Mark Rutte", 
+                        `B2_13` = "50+ & Liane den Haan")) %>%
+    pivot_longer(cols = B3_1:B3_13, values_to = "waardering") %>% 
+    mutate(name = recode(name,
+                        `B3_1` = "CDA & Wopke Hoekstra", 
+                        `B3_2` = "CU & Gert-Jan Segers", 
+                        `B3_3` = "D66 & Sigrid Kaag", 
+                        `B3_4` = "Denk & Farid Azarkan", 
+                        `B3_5` = "FvD & Thierry Baudet",
+                        `B3_6` = "GL & Jesse Klaver", 
+                        `B3_7` = "PvdA & Lilianne Ploumen", 
+                        `B3_8` = "PvdD & Esther Ouwehand", 
+                        `B3_9` = "PVV & Geert Wilders", 
+                        `B3_10` = "SGP  & Kees van der Staaij", 
+                        `B3_11` = "SP & Lilian Marijnissen", 
+                        `B3_12` = "VVD & Mark Rutte", 
+                        `B3_13` = "50+ & Liane den Haan"),
+           check = ifelse(name == partij, 1, 0),
+           waardering = na_if(waardering, 999)) %>%
+  filter(check==1) %>% 
+  select(A1:A3_5, partij, gezien, waardering) %>%
+  pivot_longer(cols = A1:A3_5, 
+               names_to = "type") %>%
+  mutate(type = ifelse(type == "A1" & value == 0, "Niet stemmer",
+                ifelse(type == "A1" & value == 1, "Stemmer",
+                ifelse(type == "A1" & value == 998, "Zwevend",
+                ifelse(type == "A1" & value == 999, "Niet stemmer",
+                ifelse(type == "A2", "Partijvoorkeur", 
+                       "Coalitievoorkeur")))))) %>%
+  filter(type != "Stemmer") %>%
+  mutate(value = ifelse(type == "Coalitievoorkeur" & value == 0, NA,
+                 ifelse(type == "Partijvoorkeur" & value == 999, "Niet stemmer",
+                 ifelse(type == "Zwevend" & value == 998, "Zwevend",
+                 ifelse(type == "Niet Stemmer" & value == 0, "Niet Stemmer",
+                 ifelse(value == 1, "CDA & Wopke Hoekstra",
+                 ifelse(value == 2, "CU & Gert-Jan Segers",
+                 ifelse(value == 3, "D66 & Sigrid Kaag",
+                 ifelse(value == 4, "Denk & Farid Azarkan",
+                 ifelse(value == 5, "FvD & Thierry Baudet",
+                 ifelse(value == 6, "GL & Jesse Klaver",
+                 ifelse(value == 7, "PvdA & Lilianne Ploumen",
+                 ifelse(value == 8, "PvdD & Esther Ouwehand",
+                 ifelse(value == 9, "PVV & Geert Wilders",
+                 ifelse(value == 10, "SGP  & Kees van der Staaij",
+                 ifelse(value == 11, "SP & Lilian Marijnissen",
+                 ifelse(value == 12, "VVD & Mark Rutte",
+                 ifelse(value == 13, "50+ & Liane den Haan",
+                        "Other")))))))))))))))))) %>%
+  drop_na(value)  %>% select( -value) %>%
+  pivot_longer(cols = gezien:waardering) %>%
+  group_by(partij, type, name) %>%
+  summarise(gem = round(mean(value, na.rm=T),2)) %>%
+  mutate(name = recode(name, 
+                       `gezien` = "Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)",
+                       `waardering` = "Waardering \n Erg negatief (0) - Erg Positief (10)"),
+         name = factor(name, 
+                       levels = c("Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)", "Waardering \n Erg negatief (0) - Erg Positief (10)")),
+         type = factor(type, levels = c("Partijvoorkeur", "Coalitievoorkeur", 
+                                        "Zwevend", "Niet stemmer"))) %>%
+  ggplot(aes(x = gem, y = reorder(partij, gem), 
+             label = gem, fill = type)) +
+  geom_col(position = position_dodge()) +
+  #geom_text(size = 2.5,
+  #          position = position_dodge()) +
+  facet_grid(.~name, scales = "free") +
+  theme_minimal() +
+  scale_fill_viridis_d() +  
+  labs(y = "", 
+       x = "",
+       title = "Media Performance",
+       subtitle = "Gemiddelde per Kiezersgroep") +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="bottom",
+          legend.title = element_blank())
+  
+```
+
+Figuur \ref{fig:mediazicht} zoomt nog verder in op het mediagebruik (krant, socials en tv) van de verschillende kiezersgroepen.
+In het panel linksboven van Figuur \ref{fig:mediazicht} zien we hoe zichtbaar politici waren voor kiezers die nauwelijks (minder dan 3 dagen per week) de krant lazen in de afgelopen twee weken; middenboven en rechtsboven laat respectievelijk zien hoe zichtbaar politici waren voor kiezers die nauwelijks social media gebruiken en tv kijken.
+In de middelste rij van Figuur \ref{fig:mediazicht} zien we hoe zichtbaar politici waren voor kiezers die regelmatig (3-5 dagen per week) de media (krant, socials en tv) gebruiken.
+De onderste rij van Figuur \ref{fig:mediazicht} laat hetzelfde zien voor kiezers die vaak (meer dan 5 dagen per week) de media (krant, socials en tv) gebruiken.
+
+Het patroon is over de 9 verschillende panels grofweg hetzelfde: ongeacht mediatype en -gebruik is Rutte, gevolgd door Wilders, het meest zichtbaar en de lijsttrekkers Esther Ouwehand (PvdD) en Liane den Haan (50+) het minst.
+Wat we ook ongeacht mediatype en -gebruik zien is dat als je niet van plan bent om te gaan stemmen, de lijsttrekkers minder opvallend zijn dan voor de mensen die wel van plan zijn te gaan stemmen.
+
+Wat vooral opvalt is de zwevende kiezer die regelmatig tv gebruikt (midden-rechter panel van Figuur \ref{fig:mediazicht}). 
+Voor deze groep zijn alle politici behalve Rutte meer opvallend dan voor de mensen die al weten dat ze op die partij gaan stemmen dan wel de partij graag terug in de regering zien. 
+Dit zou erop kunnen wijzen, omdat we weten dat de meeste mensen tv gebruiken om informatie te krijgen over politieke actualiteiten, dat deze groep zich echt aan het opmaken is om hun keuze nu al te maken, met nog 3,5 week of campagnes te gaan.
+
+```{r "Media Performance Politiek - kiezersgroepen + mediatype", fig.width=8, fig.height=10, fig.cap="\\label{fig:mediazicht}Figuur 3"}
+tmp <- w1 %>%
+  select(A1, A2, A3_1:A3_5, B2_1:B2_13, B3_1:B3_13, 
+         I1_1, I1_2, I1_4, I1_5,I1_6, I1_8) %>%
+  pivot_longer(cols = B2_1:B2_13, 
+               names_to = "partij", 
+               values_to = "gezien") %>%
+  mutate(gezien = recode(gezien, `999` = 0),
+         partij = recode(partij,
+                        `B2_1` = "CDA & Wopke Hoekstra", 
+                        `B2_2` = "CU & Gert-Jan Segers", 
+                        `B2_3` = "D66 & Sigrid Kaag", 
+                        `B2_4` = "Denk & Farid Azarkan", 
+                        `B2_5` = "FvD & Thierry Baudet",
+                        `B2_6` = "GL & Jesse Klaver", 
+                        `B2_7` = "PvdA & Lilianne Ploumen", 
+                        `B2_8` = "PvdD & Esther Ouwehand", 
+                        `B2_9` = "PVV & Geert Wilders", 
+                        `B2_10` = "SGP  & Kees van der Staaij", 
+                        `B2_11` = "SP & Lilian Marijnissen", 
+                        `B2_12` = "VVD & Mark Rutte", 
+                        `B2_13` = "50+ & Liane den Haan")) %>%
+    pivot_longer(cols = B3_1:B3_13, values_to = "waardering") %>% 
+    mutate(name = recode(name,
+                        `B3_1` = "CDA & Wopke Hoekstra", 
+                        `B3_2` = "CU & Gert-Jan Segers", 
+                        `B3_3` = "D66 & Sigrid Kaag", 
+                        `B3_4` = "Denk & Farid Azarkan", 
+                        `B3_5` = "FvD & Thierry Baudet",
+                        `B3_6` = "GL & Jesse Klaver", 
+                        `B3_7` = "PvdA & Lilianne Ploumen", 
+                        `B3_8` = "PvdD & Esther Ouwehand", 
+                        `B3_9` = "PVV & Geert Wilders", 
+                        `B3_10` = "SGP  & Kees van der Staaij", 
+                        `B3_11` = "SP & Lilian Marijnissen", 
+                        `B3_12` = "VVD & Mark Rutte", 
+                        `B3_13` = "50+ & Liane den Haan"),
+           check = ifelse(name == partij, 1, 0),
+           waardering = na_if(waardering, 999)) %>%
+  filter(check==1) %>% 
+  select(A1:A3_5, partij, gezien, waardering, I1_1:I1_8) %>%
+  pivot_longer(cols = A1:A3_5, 
+               names_to = "type") %>%
+  mutate(type = ifelse(type == "A1" & value == 0, "Niet stemmer",
+                ifelse(type == "A1" & value == 1, "Stemmer",
+                ifelse(type == "A1" & value == 998, "Zwevend",
+                ifelse(type == "A1" & value == 999, "Niet stemmer",
+                ifelse(type == "A2", "Partijvoorkeur", 
+                       "Coalitievoorkeur")))))) %>%
+  filter(type != "Stemmer") %>%
+  mutate(value = ifelse(type == "Coalitievoorkeur" & value == 0, NA,
+                 ifelse(type == "Partijvoorkeur" & value == 999, "Niet stemmer",
+                 ifelse(type == "Zwevend" & value == 998, "Zwevend",
+                 ifelse(type == "Niet Stemmer" & value == 0, "Niet Stemmer",
+                 ifelse(value == 1, "CDA & Wopke Hoekstra",
+                 ifelse(value == 2, "CU & Gert-Jan Segers",
+                 ifelse(value == 3, "D66 & Sigrid Kaag",
+                 ifelse(value == 4, "Denk & Farid Azarkan",
+                 ifelse(value == 5, "FvD & Thierry Baudet",
+                 ifelse(value == 6, "GL & Jesse Klaver",
+                 ifelse(value == 7, "PvdA & Lilianne Ploumen",
+                 ifelse(value == 8, "PvdD & Esther Ouwehand",
+                 ifelse(value == 9, "PVV & Geert Wilders",
+                 ifelse(value == 10, "SGP  & Kees van der Staaij",
+                 ifelse(value == 11, "SP & Lilian Marijnissen",
+                 ifelse(value == 12, "VVD & Mark Rutte",
+                 ifelse(value == 13, "50+ & Liane den Haan",
+                        "Other")))))))))))))))))) %>%
+  drop_na(value)  %>% select( -value) %>%
+  pivot_longer(cols = I1_1:I1_8, names_to = "medium", values_to = "days") %>%
+  mutate(medium = recode(medium, `I1_1` = "TV", `I1_2` = "Krant", `I1_4` = "Krant",
+                         `I1_5` = "Socials", `I1_6` = "Socials", `I1_8` = "Socials"),
+         days = ifelse(days < 3, "Nauwelijks",
+                ifelse(days >= 3 & days <5, "Regelmatig",
+                ifelse(days >= 5, "Vaak", days)))) %>%
+  group_by(partij, type, medium, days) %>%
+  summarise(gezien = round(mean(gezien, na.rm=T),2),
+            waardering = round(mean(waardering, na.rm = T),2)) %>%
+  mutate(type = factor(type, levels = c("Partijvoorkeur", "Coalitievoorkeur", 
+                                        "Zwevend", "Niet stemmer"))) %>%
+  drop_na(days) 
+
+ggplot(tmp, aes(x = gezien, y = reorder(partij, gezien), 
+             fill = type)) +
+  geom_col(position = position_dodge()) +
+  facet_grid(days~medium, scales = "free") +
+  theme_minimal() +
+  scale_fill_viridis_d() +  
+  labs(y = "", 
+       x = "Nooit iets van vernomen (0) - Zeer opvallend (3)",
+       title = "Zichtbaarheid",
+       subtitle = "Gemiddelde per Kiezers & media groep") +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="bottom",
+          legend.title = element_blank())
+```
+
+Figuur \ref{fig:mediawaard} laat zien hoe de waardering voor de lijsttrekkers verschilt per mediatype en -gebruik voor de 4 type kiezersgroepen, zien we dat de niet-stemmers voornamelijk opvallen.
+Hoewel Figuren\ref{fig:algemeen}, \ref{fig:kiezers}, \ref{fig:mediazicht} steeds laat zien dat voor deze groep politici minder opvallen, als ze dan opvallen dan zijn het vooral de kleinere partijen en de christelijke partijen waar zij erg tevreden over zijn. 
+Dit is nog het duidelijkst te zien voor de groep niet-stemmers die regelmatig de krant leest (midden-linker panel van Figuur \ref{fig:mediawaard}), maar het is ook te zien voor degenen die vaak socials of tv gebruiken om iets te weten te komen over politieke actualiteiten.
+
+Voor de groep die vaak media grbruikt, zien we dat veel politici hoger gewaardeerd worden als ze in de media kwamen voor de zwevende kiezer dan voor de kiezers die op de betreffende partij zouden stemmen of de partij graag in de nieuwwe regering zien.
+Dit geldt bijvoorbeeld voor Wopke Hoekstra - voor het "schaatsincident" tenminste.
+
+
+```{r "Media Performance Politiek - kiezersgroepen + mediatype2", fig.width=8, fig.height=10, fig.cap="\\label{fig:mediawaard}Figuur 4"}
+ggplot(tmp, aes(x = waardering, y = reorder(partij, gezien), 
+             fill = type)) +
+  geom_col(position = position_dodge()) +
+  facet_grid(days~medium, scales = "free") +
+  theme_minimal() +
+  scale_fill_viridis_d() +  
+  labs(y = "", 
+       x = "Erg negatief (0) - Erg positief (10)",
+       title = "Waardering",
+       subtitle = "Gemiddelde per Kiezers & media groep") +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="bottom",
+          legend.title = element_blank())
+```
+
+In Figuur 5 kijken we naar het media gebruik van de zwevende kiezer, vergeleken met degenen die hun stem al zeggen bepaald.
+Kijkend naar geschreven media, waar zowel de geprinte krant, de websites als de niewsapps onder vallen, laat het linker panel van Figuur 5 zien dat zwevende kiezers geen Elsevier, Vrij Nederland of HP/de tijd lezen noch de websites van _Joop_ en _The Post Online_ bekijken.
+De zwevende kiezer maakt net zoals de "zekere kiezer" evenveel gebruik van de _nu.nl_ website en app.
+Ook lezen beide groepen even vaak lokale of regionale dagbladen.
+Zwevende kiezers maken vaker gebruik van _Blendle_ en lezen de _Groene Amsterdammer_ vaker.
+De "zekere kiezer" leest vaker traditionele kranten zoals _AD_, _de Volkskrant_, _NRC_, en _Trouw_. 
+_De Telegraaf_ wordt door beide groepen evenveel gelezen.
+
+Wat ook opvalt is dat de zwevende kiezer vaker dan de "zekere kiezer" andere kranten, blogs of apps gebruikt dan de meest voorkomenden.
+Let wel, dit is een zeer kleine groep kiezers.
+Kijkend naar wat deze zwevende kiezers dan aangeven voor andere geprinte kranten (`N = 11`), zeggen de respondenten ofwel Nu.nl ofwel geen kranten. 
+Dat eerste zegt iets over deze mensen hun mediageletterdheid, blijkaar wordt door sommige mensen nu.nl als een krant gezien.
+Voor andere blogs wordt [_de poldercast_](https://poldercast.buzzsprout.com/1565048/7539340), een engelse podcast serie over de TK2021 verkiezingen door twee zelfbenoemde _political nerds_.
+Voor andere sites gaat het om Jensen, Google, ad.nl, CNN, en the New York Times.
+Ter vergelijking, de zekere kiezer noemt Reformatorisch Dagblad en Parool als andere kranten; Jensen, mails van Wilders, MSN, RTL niews en websites van politieke partijen (SGP, SP, en VVD) als alternatieve nieuwsblogs; en voornamelijk regionale nieuwszenders als alternatieve websites.
+
+```{r "andere", results="hide"}
+tmp <- w1 %>%
+  mutate(zwevend = ifelse(A1==998 & A2==999, 1, 0)) %>%
+  select(zwevend, I2_other, I4_other_blogs, I4_other_sites) %>%
+  filter(zwevend == 1) %>%
+  mutate(check = ifelse(is.na(I2_other) & is.na(I4_other_sites) &
+                          is.na(I4_other_blogs),1,0)) %>%
+  filter(check == 0) %>% select(-check)
+
+table(tmp$I2_other)
+table(tmp$I4_other_blogs)
+table(tmp$I4_other_sites)
+
+tmp <- w1 %>%
+  mutate(zwevend = ifelse(A1==998 & A2==999, 1, 0)) %>%
+  select(zwevend, I2_other, I4_other_blogs, I4_other_sites) %>%
+  filter(zwevend == 0) %>%
+  mutate(check = ifelse(is.na(I2_other) & is.na(I4_other_sites) &
+                          is.na(I4_other_blogs),1,0)) %>%
+  filter(check == 0) %>% select(-check)
+
+table(tmp$I2_other)
+table(tmp$I4_other_blogs)
+table(tmp$I4_other_sites)
+```
+
+Kijkend naar het middelste panel van Figuur 5, zien we dat _Facebook_ het populairste sociale medium is, gevolgd door _Whatsapp_, voor zowel zwevende als "zekere" kiezers.
+_Twitter_ en _Instagram_ worden minder vaak gebruikt door de zwevende kiezer.
+_Youtube_ wordt door zowel zwevende als zekere kiezers als derde meeste gebruikt onder de sociale media opties. 
+Kijkend naar de TV opties in de rechterzijde van Figuur 5, zien we ook dat veel kiezers (zwevend of niet) kijken naar eigen kanalen van politici en opiniemakers.
+Ongeveer evenveel mensen geven aan dit als nieuwsbron te gebruiken als het _NOS journaal_.
+Zwevende kiezers kijken niet naar _Hart van Nederland_, en ook minder naar _M_, _Nieuwsuur_, _Eenvandaag_, _De Vooravond_, _Zondag met Lubach_, _Beau_ en _WNL opiniemakers_.
+Ze kijken meer dan de zekere kiezer naar _Jinek_ en _Dit was het nieuws_.
+
+```{r "Mediagebruik Zwevende Kiezers", fig.width=10, fig.height=8, fig.cap="\\label{fig:mediazweef}Figuur 5"}
+
+tmp <- w1 %>%
+  select(A1, A2, I2_1:I2_13,I3_1:I3_16, I4_1:I4_9,
+         I5_1:I5_11, I6_1:I6_6, I7_1:I7_10) %>%
+  pivot_longer(cols = I5_1:I6_6,
+               names_to = "type_socials", values_to = "used_socials") %>%
+  mutate(type_socials = recode(type_socials, `I5_1` = "Twitter", `I5_2` =  "Facebook", 
+                               `I5_3` = "Youtube",`I5_4` =  "Instagram", `I5_5` = "Snapchat",
+                               `I5_6` = "Viber",`I5_7` =  "Telegram", 
+                               `I5_8` = "Google Hangouts",`I5_9` =  "Tumblr", 
+                               `I5_10` = "Reddit", `I5_11` = "Andere socials", 
+                               `I6_1` = "Whatsapp",
+                               `I6_2` = "Viber", `I6_3` = "Telegram", `I6_4` ="Signal",
+                               `I6_5` ="Google Hangouts", `I6_6` ="Andere messaging app")) %>%
+  pivot_longer(cols = c(I2_1:I2_13, I4_1:I4_9, I7_1:I7_10),
+               names_to = "type_krant", values_to = "used_krant") %>%
+  mutate(type_krant = recode(type_krant, `I2_1` = "de Telegraaf", 
+                             `I2_2` = "NRC Handelsblad",
+                             `I2_3` = "Nrc.Next", `I2_4` = "Algemeen Dagblad (AD)",
+                             `I2_5` = "Trouw", `I2_6` = "de Volkskrant", 
+                             `I2_7` = "Metro",
+                             `I2_8` = "A regional or local newspaper",
+                             `I2_9` =  "De Groene Amsterdammer", 
+                             `I2_10` = "HP/de Tijd",
+                             `I2_11` = "Elsevier", `I2_12` = "Vrij Nederland", 
+                             `I2_13` = "Andere krant", `I4_1` = "Nu.nl", 
+                             `I4_2` = "Geenstijl.nl", `I4_3` ="GoogleNews", 
+                             `I4_4` = "Blendle.com", `I4_5` = "Decorrespondent.nl",
+                             `I4_6` = "Tpo.nl", `I4_7` = "Joop.nl", 
+                             `I4_8` = "Politieke blogs",
+                             `I4_9` = "Andere blogs", `I7_1` = "Nu app",
+                             `I7_2` = "NOS app", 
+                             `I7_12` =  "Teletekst app", `I7_3` = "Telegraaf app", 
+                             `I7_4` =  "AD app", `I7_5` = "NRC app", 
+                             `I7_6` =  "Volkskrant app",
+                             `I7_7` = "News aggregator like feedly or flipboard", 
+                             `I7_8` = "Apple News app", 
+                             `I7_9` = "Google News app", 
+                             `I7_10` = "Andere app")) %>%
+  pivot_longer(cols = I3_1:I3_16, names_to ="type_tv", values_to = "used_tv") %>%
+  mutate(type_tv = recode(type_tv, `I3_1` = "Persconferentie Rutte en De Jonge", 
+                          `I3_2` = "NOS Journaal", `I3_3` ="RTL Nieuws", 
+                          `I3_4` ="Hart van Nederland", `I3_5` = "De Vooravond",
+                          `I3_6` ="M", `I3_7` ="Nieuwsuur", `I3_8` ="EenVandaag", 
+                          `I3_9` ="Op Eén", `I3_10` ="Jinek", `I3_11` = "Beau", 
+                          `I3_12` = "WNL Opiniemakers", `I3_13` ="Zondag met Lubach", 
+                          `I3_14` ="Dit was het nieuws", 
+                          `I3_15` ="Eigen kanalen van politici en opiniemakers",
+                          `I3_16` = "Ander tv programma"),
+         check = ifelse(is.na(used_socials) & is.na(used_krant) & is.na(used_tv), 1,0)) %>%
+  filter(check == 0) %>% 
+  mutate(zwevend = ifelse(A1==998 & A2==999, 1, 0),
+         used_socials = replace_na(used_socials, 0),
+         used_krant = replace_na(used_krant, 0),
+         used_tv = replace_na(used_tv, 0)) %>%
+  select (zwevend, type_socials:used_tv)
+
+socials <- tmp %>%
+  group_by(zwevend, type_socials) %>%
+  summarise(n = n(),
+            id = "socials",
+            means = mean(used_socials, na.rm=T),
+            stdev = sd(used_socials, na.rm=T)) %>%
+  ungroup() %>%
+  mutate(perc = ifelse(zwevend ==1, round(n/157393,2),
+                       round(n/4672280, 2))) %>%
+  select(zwevend, type = type_socials, perc, means, stdev, id)
+
+krant <- tmp %>%
+  group_by(zwevend, type_krant) %>%
+  summarise(n = n(),
+            id = "geschreven media",
+            means = mean(used_krant, na.rm=T),
+            stdev = sd(used_krant, na.rm=T)) %>%
+  ungroup() %>%
+  mutate(perc = ifelse(zwevend == 1, round(n/157393,2),
+                       round(n/4672280, 2))) %>%
+  select(zwevend, type = type_krant, perc, means, stdev, id)
+
+tv <- tmp %>%
+  group_by(zwevend, type_tv) %>%
+  summarise(n = n(),
+            id = "tv",
+            means = mean(used_tv, na.rm=T),
+            stdev = sd(used_tv, na.rm=T)) %>%
+  ungroup() %>%
+  mutate(perc = ifelse(zwevend == 1, round(n/157393,2),
+                       round(n/4672280, 2))) %>%
+  select(zwevend, type = type_tv, means, stdev, perc, id)
+
+socials %>%
+  add_row(krant) %>%
+  add_row(tv) %>%
+  mutate(zwevend = recode(zwevend, `0` = "Stem bepaald", 
+                          `1` = "Zwevend")) %>%
+  ggplot(aes(y = reorder(type, means), x = means, fill = zwevend, 
+             group = zwevend)) +
+  geom_col(position = position_dodge()) +
+  facet_wrap(.~id, scales = "free") +
+  theme_minimal() +
+  scale_fill_viridis_d() +
+  labs(y = "", 
+       x = "",
+       title = "Media Gebruik",
+       subtitle = "% per Groep (meerdere opties waren toegestaan)") +
+  scale_x_continuous(labels = scales::percent) +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="bottom",
+          legend.title = element_blank())
+```
