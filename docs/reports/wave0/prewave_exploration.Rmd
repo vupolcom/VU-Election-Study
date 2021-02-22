@@ -118,7 +118,6 @@ while PVdA apd SP appeal more to the older and less educated voter.
 ## Demographics per intended party
 
 ```{r}
-resp$gender
 d = resp %>% select(iisID, age, education, gender, polknow, rile_self, vote) %>%
   filter(!is.na(vote)) %>% 
   mutate(age=(as.numeric(age) - 1)/6,
