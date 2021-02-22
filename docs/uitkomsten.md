@@ -1,9 +1,7 @@
 ---
+title: Uitkomsten en media-aandacht
 permalink: /reports/
 ---
-
-
-# Media-aandacht
 
 - 22 Februari: [Wat de kiezer leest, volgt, en kijke](https://www.nrc.nl/nieuws/2021/02/22/wat-de-kiezer-leest-volgt-en-kijkt-a4032777), NRC Handelsblad. Gebaseerd op:
   - Analyse: [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
