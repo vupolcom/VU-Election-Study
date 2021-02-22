@@ -1,8 +1,7 @@
 ---
+title: Data en methodes
 permalink: /methods
 ---
-
-# Data en methode
 
 Om in kaart te brengen hoe Nederlanders hun standpunten over politiek vormen, ondervragen wij een groep respondenten vanaf midden januari tot aan de verkiezingen van 17 maart. 
 Hiervoor werken wij samen met [Ipsos](https://www.ipsos.com/nl-nl).
