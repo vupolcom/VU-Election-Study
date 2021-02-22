@@ -1,9 +1,10 @@
-VU 2021 Election Study: Media aandacht van politici en de waardering van
-kiezers
-================
-Mariken van der Velden
+-   [Politici in de Media](#politici-in-de-media)
+-   [Kiezersperspectief](#kiezersperspectief)
+    -   [Wat vonden de kiezersgroepen van politici ’s media
+        optredens?](#wat-vonden-de-kiezersgroepen-van-politici-s-media-optredens)
 
-# Politici in de Media
+Politici in de Media
+====================
 
 Met de campagne in de stijgers, zullen we zien dat politici de komende
 meer en meer in de media verschijnen. Om te kijken waar welke politici
@@ -31,39 +32,25 @@ per avond genoemd worden – Note: het gaat om de ondertiteling die we
 hier analyseren. Dit patroon is anders voor WNL’s Goedemorgen Nederland
 (links in onderstaand figuur), waar we zien dat de VVD en het CDA aan
 het eind van januari het meeste aandacht kreeg. Meer recentelijk zijn
-dat 50PLus, SGP en de
-PVV.
+dat 50PLus, SGP en de PVV.
 
 <a name="visibility media"></a>
 
-<div class="figure" style="text-align: center">
-
 <img src="visibility media-1.png" alt="Politici's Zichtbaarheid in de Media"  />
-
 <p class="caption">
-
-Politici’s Zichtbaarheid in de
-Media
-
+Politici’s Zichtbaarheid in de Media
 </p>
-
-</div>
-
-<div class="figure" style="text-align: center">
 
 <img src="visibility media-2.png" alt="Politici's Zichtbaarheid in de Media"  />
-
 <p class="caption">
-
 Politici’s Zichtbaarheid in de Media
-
 </p>
 
-</div>
+Kiezersperspectief
+==================
 
-# Kiezersperspectief
-
-## Wat vonden de kiezersgroepen van politici ’s media optredens?
+Wat vonden de kiezersgroepen van politici ’s media optredens?
+-------------------------------------------------------------
 
 In het linker gedeelte van onderstaand figuur is te zien dat van alle
 lijsttrekkers is Mark Rutte (VVD) voor kiezers het meest zichtbaar in de
@@ -80,20 +67,12 @@ aandacht kregen in de ogen van de kiezer. De gemiddeldes laten zien dat
 als politici voor kiezers zichtbaar waren in de media, dat het dan
 meestal positief was - bijna alle politici krijgen een score van 5.5 of
 hoger. Dit geldt alleen niet voor Wilders, Azarkan en Baudet. Die vallen
-voornamelijk negatief op in het nieuws, aldus de
-kiezer.
-
-<div class="figure" style="text-align: center">
+voornamelijk negatief op in het nieuws, aldus de kiezer.
 
 <img src="Media Performance Politiek - algemeen-1.png" alt="Media Performance Politiek - algemeen"  />
-
 <p class="caption">
-
 Media Performance Politiek - algemeen
-
 </p>
-
-</div>
 
 Wanneer we specifieker kijken naar wat mensen vinden van de
 lijstttrekkers in de media als a) je voor de partij stemt (paarse staven
@@ -120,20 +99,12 @@ Voor de rest laat de rechterzijde van onderstaand figuur zien, dat de
 waardering tussen de vier type stemmersgroepen niet verschilt. Alle
 gemiddeldes, behalve die van Denk en FvD, schommelen rond de 5, wat
 aangeeft dat in alle vier type kiezersgroepen mensen de lijsttrekkers’
-media optredens zowel positief als negatief
-beoordelen.
-
-<div class="figure" style="text-align: center">
+media optredens zowel positief als negatief beoordelen.
 
 <img src="Media Performance Politiek - kiezersgroepen-1.png" alt="Media Performance Politiek - Kiezersgroepen"  />
-
 <p class="caption">
-
 Media Performance Politiek - Kiezersgroepen
-
 </p>
-
-</div>
 
 Onderstaand figuur zoomt nog verder in op het mediagebruik (krant,
 socials en tv) van de verschillende kiezersgroepen. In het panel
@@ -162,20 +133,12 @@ dat ze op die partij gaan stemmen dan wel de partij graag terug in de
 regering zien. Dit zou erop kunnen wijzen, omdat we weten dat de meeste
 mensen tv gebruiken om informatie te krijgen over politieke
 actualiteiten, dat deze groep zich echt aan het opmaken is om hun keuze
-nu al te maken, met nog 3,5 week of campagnes te
-gaan.
-
-<div class="figure" style="text-align: center">
+nu al te maken, met nog 3,5 week of campagnes te gaan.
 
 <img src="Media Performance Politiek - kiezersgroepen + mediatype-1.png" alt="Media Performance Politiek - kiezersgroepen + mediatype"  />
-
 <p class="caption">
-
 Media Performance Politiek - kiezersgroepen + mediatype
-
 </p>
-
-</div>
 
 Onderstaand figuur laat zien hoe de waardering voor de lijsttrekkers
 verschilt per mediatype en -gebruik voor de 4 type kiezersgroepen, zien
@@ -192,20 +155,12 @@ Voor de groep die vaak media grbruikt, zien we dat veel politici hoger
 gewaardeerd worden als ze in de media kwamen voor de zwevende kiezer dan
 voor de kiezers die op de betreffende partij zouden stemmen of de partij
 graag in de nieuwwe regering zien. Dit geldt bijvoorbeeld voor Wopke
-Hoekstra - voor het “schaatsincident”
-tenminste.
-
-<div class="figure" style="text-align: center">
+Hoekstra - voor het “schaatsincident” tenminste.
 
 <img src="Media Performance Politiek - kiezersgroepen + mediatype2-1.png" alt="\label{fig:mediawaard}Figuur 4"  />
-
 <p class="caption">
-
 Figuur 4
-
 </p>
-
-</div>
 
 In onderstaand figuur kijken we naar het media gebruik van de zwevende
 kiezer, vergeleken met degenen die hun stem al zeggen bepaald. Kijkend
@@ -248,17 +203,9 @@ evenveel mensen geven aan dit als nieuwsbron te gebruiken als het *NOS
 journaal*. Zwevende kiezers kijken niet naar *Hart van Nederland*, en
 ook minder naar *M*, *Nieuwsuur*, *Eenvandaag*, *De Vooravond*, *Zondag
 met Lubach*, *Beau* en *WNL opiniemakers*. Ze kijken meer dan de zekere
-kiezer naar *Jinek* en *Dit was het
-nieuws*.
-
-<div class="figure" style="text-align: center">
+kiezer naar *Jinek* en *Dit was het nieuws*.
 
 <img src="Mediagebruik Zwevende Kiezers-1.png" alt="Mediagebruik Zwevende Kiezers"  />
-
 <p class="caption">
-
 Mediagebruik Zwevende Kiezers
-
 </p>
-
-</div>

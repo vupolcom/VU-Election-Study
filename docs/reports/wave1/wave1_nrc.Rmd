@@ -1,13 +1,12 @@
 ---
 title: 'VU 2021 Election Study: Media aandacht van politici en de waardering van kiezers'
 author: "Mariken van der Velden"
+permalink: reports/wave1/
 output: 
-  github_document:
+  md_document:
     toc: yes
-editor_options: 
-  chunk_output_type: console
+preserve_yaml: yes
 ---
-
 
 ```{r setup, include=FALSE}
 ## include this at top of your RMarkdown file for pretty output
