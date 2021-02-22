@@ -5,7 +5,7 @@ permalink: reports/wave1/
 output: 
   md_document:
     toc: yes
-preserve_yaml: yes
+    preserve_yaml: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -22,6 +22,7 @@ library(here)
 library(tidyverse)
 library(amcatr)
 library(viridis)
+source(here("src/lib/data.R"))
 ```
 
 ```{r "Amcat data"}
@@ -207,7 +208,9 @@ media <- krant %>% ungroup() %>%
   add_row(ev) %>% add_row(gnl) %>% add_row(M) %>%
   add_row(nos) %>% add_row(nu) %>% add_row(op) %>% add_row(va)
 ```
+
 # Politici in de Media
+
 Met de campagne in de stijgers, zullen we zien dat politici de komende meer en meer in de media verschijnen.
 Om te kijken waar welke politici het meest zichtbaar zijn, kijken we naar de 5 grote Nederlandse kranten (AD, De Telegraaf, de Volkskrant, NRC en Trouw), en de TV programma's EenVandaag, M, Nieuwsuur, NOS Journaal, Op1 en de Vooravond.
 Het bovenste gedeelte van onderstaand figuur laat de zichtbaarheid in de kranten zien.
@@ -258,6 +261,7 @@ ggplot(aes(x = date, y = n, color = query, group = query)) +
           legend.title = element_blank())
 ```
 
+
 # Kiezersperspectief
 
 ```{r "Read Data"}
@@ -265,8 +269,6 @@ w0 <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
 w1 <- read_csv(here("data/intermediate/wave1.csv"))
 
 ```
-
-## Wat vonden de kiezersgroepen van politici 's media optredens? 
 
 In het linker gedeelte van onderstaand figuur is te zien dat van alle lijsttrekkers is Mark Rutte (VVD) voor kiezers het meest zichtbaar in de media. 
 Hij wordt op de voet gevolgd door Geert Wilder (PVV), Wopke Hoekstra (CDA), en Thierry Baudet (FvD).

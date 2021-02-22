@@ -1,7 +1,15 @@
+---
+title: 'VU 2021 Election Study: Media aandacht van politici en de waardering van kiezers'
+author: "Mariken van der Velden"
+permalink: reports/wave1/
+output: 
+  md_document:
+    toc: yes
+    preserve_yaml: yes
+---
+
 -   [Politici in de Media](#politici-in-de-media)
 -   [Kiezersperspectief](#kiezersperspectief)
-    -   [Wat vonden de kiezersgroepen van politici ’s media
-        optredens?](#wat-vonden-de-kiezersgroepen-van-politici-s-media-optredens)
 
 Politici in de Media
 ====================
@@ -48,9 +56,6 @@ Politici’s Zichtbaarheid in de Media
 
 Kiezersperspectief
 ==================
-
-Wat vonden de kiezersgroepen van politici ’s media optredens?
--------------------------------------------------------------
 
 In het linker gedeelte van onderstaand figuur is te zien dat van alle
 lijsttrekkers is Mark Rutte (VVD) voor kiezers het meest zichtbaar in de
