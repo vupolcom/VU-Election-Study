@@ -7,14 +7,12 @@ Wouter van Atteveldt
   - [Option 2: Explicitly print both plot and
     export:](#option-2-explicitly-print-both-plot-and-export)
 
-    ## here() starts at /home/wva/VU-Election-Study
-
 ## Option 1: Plot as normal, and use inline code for data
 
-![](figures/example-plot-1-1.png)<!-- --> Download data: \[[Example plot
-1](figures/Example_plot_1.csv)\]
+![](.example-plot-1-1.png)<!-- --> Download data: \[[Example plot
+1](.Example_plot_1.csv)\]
 
 ## Option 2: Explicitly print both plot and export:
 
-![](figures/example-plot-2-1.png)<!-- -->Download data: [Example plot
-data](figures/Example_plot_data.csv)
+![](.example-plot-2-1.png)<!-- -->Download data: [Example plot
+data](.Example_plot_data.csv)

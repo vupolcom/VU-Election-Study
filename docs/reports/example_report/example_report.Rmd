@@ -8,23 +8,14 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, echo=F}
+```{r setup, echo=F, message=F}
 library(here)
 library(glue)
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='figures/', fig.width = 10)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='.', fig.width = 10)
 ```
 
 ```{r init}
-#' Save the csv into the figures folder and create a download link
-export_data = function(data, name) {
-  # normalize file name
-  fn = name %>% str_replace_all("[^\\p{LETTER}\\p{DIGIT}]+", "_") %>% trimws() 
-  if (!str_ends(fn,".csv")) fn = str_c(fn, ".csv")
-  outfile = str_c(knitr::opts_chunk$get('fig.path'), fn)
-  message(outfile)
-  write_csv(data, outfile)
-  glue("[{name}](figures/{fn})")
-} 
+source(here("src/lib/data.R"))
 library(tidyverse)
 d = tibble(x=1:10, y=1:10)
 ```
