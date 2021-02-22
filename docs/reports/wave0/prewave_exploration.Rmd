@@ -19,6 +19,7 @@ This analysis is based on the first wave of our panel survey with in total 2.400
 We asked them what their vote intention is for this election, how they voted in the previous election,
 how well they trust various media and institutions, and what media they consumed in the past weeks. 
 
+
 ```{r "Read Data"}
 library(here)
 library(tidyverse)
@@ -31,6 +32,48 @@ long = extract_long(d_raw)
 long_vote = resp %>% select(iisID, vote) %>% inner_join(long)
 theme_nrc = function(...) ggthemes::theme_hc(...) + theme(axis.text.x = element_text(angle = 45, hjust = 1), axis.title.x=element_blank(), axis.title.y=element_blank())
 ```
+
+```{r aux}
+# Overall ordering of parties by institutional trust
+parties = long_vote %>% filter(variable=="F2") %>% group_by(vote) %>% 
+  summarize(value=mean(value)) %>% arrange(value) %>% pull(vote)
+parties = c("Not", "Other", setdiff(parties, c("Not", "Other")), "Average")
+n_party = resp %>% group_by(vote) %>% summarize(ntot=n()) %>% na.omit()
+ntotal = sum(n_party$ntot)
+add_zeroes= function(x) x %>% pivot_wider(values_fill=0) %>% pivot_longer(-vote)
+
+# Helper functions
+create_table = function(long_data, compute_perc=FALSE) {
+  d = long_data %>% group_by(vote, name) %>% summarize(n=n(), value=mean(value, na.rm=T)) %>%
+    inner_join(n_party) %>% mutate(value=if (compute_perc) n/ntot*100 else value)
+  total = long_data %>% group_by(name) %>% summarize(n=n(), value=mean(value, na.rm=T)) %>% 
+    mutate(value=if (compute_perc) n/ntotal*100 else value) %>% 
+    add_column(vote="Average") 
+  bind_rows(d, total) %>% select(vote, name, value) %>% 
+    ungroup() %>% add_zeroes() %>% 
+    mutate(
+      vote = factor(vote, levels=parties),
+      name=fct_reorder(name, value, mean)
+    )
+}
+color_table_plot = function(data, title, subtitle=NULL, digits=0, print=T, export=T) {
+  plot = ggplot(data, aes(x=vote, y=name, label=round(value, digits = digits), fill=value)) +
+    geom_tile()+ geom_text()+
+    ggtitle(title, subtitle)  + 
+    scale_fill_gradient(low="white", high="#3182bd", guide=F) +
+    theme_nrc()
+  if (print) print(plot)
+  if (export) data %>% 
+    pivot_wider(names_from="vote", names_sort=T) %>% 
+    export_data(title) %>% str_c("Download data: ", .) %>% cat()
+  if (print) invisible(plot) else plot
+}
+```
+
+# Demographics
+
+Let's start this exploration by a look at the demographics of the voters,
+especially age and education. 
 
 ## Media use by Age and Education
 
@@ -52,8 +95,6 @@ Unsurprisingly, print newspapers ad opinion magazines are mostly consumed by hig
 while younger voters prefer online news channels, especially the highly educated voters younger than 55.
 Social media and news apps are seen as a news source especially for young people, regardless of education. 
 
-# Political Shifts
-
 ## Vote intention per Age and Education
 
 ```{r}
@@ -73,6 +114,32 @@ On the right, the VVD mostly appeals to young and highly educated voters,
 while CDA and PVV are more popular with older and less highly educated voters.
 On the left, D66 and GroenLinks appeal to the young and educated class,
 while PVdA apd SP appeal more to the older and less educated voter. 
+
+## Demographics per intended party
+
+```{r}
+resp$gender
+d = resp %>% select(iisID, age, education, gender, polknow, rile_self, vote) %>%
+  filter(!is.na(vote)) %>% 
+  mutate(age=(as.numeric(age) - 1)/6,
+         education = (3-as.numeric(education)) / 2,
+         gender=2-as.numeric(gender),
+         polknow=polknow/10,
+         rile_self=rile_self/10) %>% rename(knowledge=polknow, male=gender, rightist=rile_self) %>%
+  pivot_longer(age:rightist) 
+total = d%>% group_by(name) %>% summarize(value=mean(value, na.rm=T)) %>%add_column(vote="Average")
+dt = d %>% group_by(vote, name) %>% summarize(value=mean(value, na.rm=T))
+bind_rows(dt, total) %>%
+  mutate(vote = factor(vote, levels=parties)) %>%
+color_table_plot("Mean Demographics per Vote Intention", subtitle="(All values rescaled from 0 to 1)", digits = 2)
+```
+
+The able above shows the "mean voter" for each party, where each demographic is rescaled to range from 0 to 1.
+Voters for centrist parties have on average  a bit more political knowledge,
+while the smaller parties D66, GroenLinks and Denk have the highest level of education.
+
+Interestingly, undecided voters are more likely to be male, younger, slightly better educated, but less knowledgeable about politics than the average voter. 
+
 
 Placing each party by the demographic of its mean voter, we get an alternative electoral compass:
 (color indicating average position of respondent on left-right scale)
@@ -118,43 +185,6 @@ Non-voters in 2017 also now consider SP and PvdD.
 Thus, while VVD and PVV do not compete directly, both do draw from the same pool of new and disgruntled voters. 
 
 ## Media Use by Vote Intention
-
-```{r aux}
-# Overall ordering of parties by institutional trust
-parties = long_vote %>% filter(variable=="F2") %>% group_by(vote) %>% 
-  summarize(value=mean(value)) %>% arrange(value) %>% pull(vote)
-parties = c("Niet", "Anders", setdiff(parties, c("Niet", "Anders")), "Gemiddeld")
-n_party = resp %>% group_by(vote) %>% summarize(ntot=n()) %>% na.omit()
-ntotal = sum(n_party$ntot)
-add_zeroes= function(x) x %>% pivot_wider(values_fill=0) %>% pivot_longer(-vote)
-
-# Helper functions
-create_table = function(long_data, compute_perc=FALSE) {
-  d = long_data %>% group_by(vote, name) %>% summarize(n=n(), value=mean(value, na.rm=T)) %>%
-    inner_join(n_party) %>% mutate(value=if (compute_perc) n/ntot*100 else value)
-  total = long_data %>% group_by(name) %>% summarize(n=n(), value=mean(value, na.rm=T)) %>% 
-    mutate(value=if (compute_perc) n/ntotal*100 else value) %>% 
-    add_column(vote="Gemiddeld") 
-  bind_rows(d, total) %>% select(vote, name, value) %>% 
-    ungroup() %>% add_zeroes() %>% 
-    mutate(
-      vote = factor(vote, levels=parties),
-      name=fct_reorder(name, value, mean)
-    )
-}
-color_table_plot = function(data, title, subtitle=NULL, digits=0, print=T, export=T) {
-  plot = ggplot(data, aes(x=vote, y=name, label=round(value, digits = digits), fill=value)) +
-    geom_tile()+ geom_text()+
-    ggtitle(title, subtitle)  + 
-    scale_fill_gradient(low="white", high="#3182bd", guide=F) +
-    theme_nrc()
-  if (print) print(plot)
-  if (export) data %>% 
-    pivot_wider(names_from="vote", names_sort=T) %>% 
-    export_data(title) %>% str_c("Download data: ", .) %>% cat()
-  if (print) invisible(plot) else plot
-}
-```
 
 ```{r wave0-media-party, results='asis'}
 d = long_vote %>% filter(variable=="I1") %>% create_table()
