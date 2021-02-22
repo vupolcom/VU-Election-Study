@@ -140,3 +140,5 @@ dmypy.json
 notebooks/data/*
 
 .DS_Store
+renv
+renv.lock
