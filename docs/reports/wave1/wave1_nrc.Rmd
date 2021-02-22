@@ -12,16 +12,16 @@ editor_options:
 ```{r setup, include=FALSE}
 ## include this at top of your RMarkdown file for pretty output
 ## make sure to have the printr package installed: install.packages('printr')
+rm(list = ls())
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
                       echo = FALSE, fig.align = "center",
-                        fig.path='figures/')
+                        fig.path='')
 library(printr)
 options(digits = 2)
 library(here)
 library(tidyverse)
 library(amcatr)
 library(viridis)
-source(here("src/lib/create_labels.R"))
 ```
 
 # NRC Vragen 
@@ -65,7 +65,8 @@ krant <- krant %>%
   mutate(date = as.Date(date)) %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "krant")
+  mutate(id = "krant") %>%
+  ungroup()
 ```
 
 ```{r}
@@ -206,7 +207,7 @@ op <- op %>%
   mutate(id = "tv") %>%
   ungroup()
 
-media <- media %>% ungroup() %>% 
+media <- krant %>% ungroup() %>% 
   add_row(ev) %>% add_row(gnl) %>% add_row(M) %>%
   add_row(nos) %>% add_row(nu) %>% add_row(op) %>% add_row(va)
 ```
@@ -214,7 +215,7 @@ media <- media %>% ungroup() %>%
 ```{r "visibility media", fig.height=10, fig.width=10}
 ggplot(media, aes(x = date, y = n, color = query, group = query)) +
   geom_line() +
-  facet_grid(medium~., scales = "free") +
+  facet_wrap(medium~., scales = "free", ncol=3) +
   theme_minimal() +
   scale_color_viridis_d() +  
   labs(y = "", 
@@ -227,7 +228,6 @@ ggplot(media, aes(x = date, y = n, color = query, group = query)) +
           legend.position="bottom",
           legend.title = element_blank())
 ```
-
 
 # Kiezersperspectief
 
