@@ -52,8 +52,6 @@ Demographics per intended party
 
 ![](unnamed-chunk-3-1.png)
 
-    ## Download data: [{Mean Demographics per Vote Intention}]({Mean_Demographics_per_Vote_Intention.csv})
-
 The able above shows the “mean voter” for each party, where each
 demographic is rescaled to range from 0 to 1. Voters for centrist
 parties have on average a bit more political knowledge, while the

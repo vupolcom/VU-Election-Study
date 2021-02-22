@@ -130,7 +130,9 @@ total = d%>% group_by(name) %>% summarize(value=mean(value, na.rm=T)) %>%add_col
 dt = d %>% group_by(vote, name) %>% summarize(value=mean(value, na.rm=T))
 bind_rows(dt, total) %>%
   mutate(vote = factor(vote, levels=parties)) %>%
-color_table_plot("Mean Demographics per Vote Intention", subtitle="(All values rescaled from 0 to 1)", digits = 2)
+color_table_plot("Mean Demographics per Vote Intention", 
+                 subtitle="(All values rescaled from 0 to 1)", 
+                 digits = 2, export = F)
 ```
 
 The able above shows the "mean voter" for each party, where each demographic is rescaled to range from 0 to 1.
