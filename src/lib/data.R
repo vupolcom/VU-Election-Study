@@ -9,7 +9,7 @@ export_data = function(data, name, label=F) {
   outfile = str_c(knitr::opts_chunk$get('fig.path'), fn)
   message(outfile)
   write_csv(data, outfile)
-  str_c(if (label) "Download data: " else "", glue("[{name}]({outfile})"))
+  str_c(if (label) "Download data: " else "", str_c("[{", name, "}]({", outfile, "})"))
 } 
 
 #' Load the codebook (variable names and labels)
@@ -58,6 +58,7 @@ extract_long = function(data) {
   data %>% 
     select(matches(regex)) %>% 
     pivot_longer(-iisID) %>%
+    filter(!is.na(value)) %>% 
     separate(name, into=c("variable", "option"), sep="_") %>% 
     mutate(option=as.numeric(option)) %>% 
     left_join(cb) %>% 
