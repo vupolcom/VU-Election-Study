@@ -1,19 +1,17 @@
 ---
+title:  Over dit project
 permalink: /about
 ---
 
-
-# Over dit project
-
 De resultaten op deze pagina komen voort uit de analyse van de Tweede Kamerverkiezingen 2021 door de vakgroep Politieke Communicatie van de Vrije Universiteit Amsterdam. Voor dit onderzoek combineren we gegevens van een panel van respondenten met automatische en handmatige analyse van de media-inhoud. Het doel van het project is om te begrijpen hoe er op de traditionele en sociale media wordt gesproken over de verkiezingen, en welke effecten dit kan hebben op de stemvoorkeur en andere attitudes van de Nederlandse kiezer. Zie [data en methodes](methode.md) voor meer informatie over de methode.
 
-# Informatie voor journalisten
+## Informatie voor journalisten
 
 Wij werken graag samen met journalisten om de resultaten van ons onderzoek voor een breder publiek toegankelijk te maken. Alle resultaten van ons onderzoek zullen (ook) op deze website worden gepubliceerd, maar uiteraard kunnen we daarmee wachten tot na publicatie in de media. Neem contact op met [Wouter van Atteveldt](mailto:wouter.van.atteveldt@vu.nl) (0642740725) of [Mariken van der Velden](mailto:m.a.c.g.vander.velden@vu.nl) (020-5982895) voor meer informatie. 
 
-# Het team
+## Het team
 
-## dr. Loes Aaldering
+### dr. Loes Aaldering
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/100400066/foto_loes_website.jpg?w=320&f=webp">
 Email: <a href="mailto:l.aaldering@vu.nl">l.aaldering@vu.nl</a> <br/>
 
@@ -21,7 +19,7 @@ Loes Aaldering is Universitair Docent vergelijkende politiek aan de afdeling Bes
 
 Haar onderzoek richt zich voornamelijk op vraagstukken met betrekking tot gender en politiek, politiek leiderschap, politieke vertegenwoordiging en electoraal gedrag. Meer specifiek, ze bestudeert onder andere hoe politici in de media worden besproken in termen van hun leiderschapskwaliteiten; genderverschillen in de mediaberichtgeving over politici; leiderschapseffecten op kiezers; genderstereotypen; nepnieuws; nieuwsmijding en polarisatie.
 
-## dr. Wouter van Atteveldt
+### dr. Wouter van Atteveldt
 
 <img width="100px" src="http://ccs.amsterdam/wp-content/uploads/2020/10/atteveldt-e1604596450550.png" align="left"> 
 Website: http://vanatteveldt.com <br/>
@@ -32,7 +30,7 @@ Wouter van Atteveldt is Universitair Hoofddocent Politieke Communicatie aan de V
 
 Van Atteveldt leidt de VU onderzoeksgroep Politieke Communicatie (samen met Mariken van der Velden), is mede-oprichter van het Computational Communication Science Lab Amsterdam, mede-oprichter en oud-voorzitter van de divisie computationele methodes van de internationale wetenschappelijke vereniging ICA, en mede-oprichter en hoofdredacteur van het open access tijdschrift Computational Communication Research.
 
-## dr. Andreu Casas
+### dr. Andreu Casas
 
 <img width="100px" align="left" src="https://i.imgur.com/2ebdhcz.png">
 Website: http://andreucasas.com/ <br/>
@@ -43,14 +41,14 @@ Andreu Casas is Universitair Docent aan de afdeling Communicatiewetenschap van d
 
 Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare beleidsprocessen, en computationele sociale wetenschappen. Hij onderzoek hoe sociale bewegingen en belangengroepen de politieke agenda en het besluitvormingsproces beïnvloeden in de huidige mediaomgeving. Hij is gespecialiseerd in het toepassen van kunstmatige intelligentie om tekst en beelden te analyseren.
 
-## prof. dr. Jan Kleinnijenhuis
+### prof. dr. Jan Kleinnijenhuis
 
 <img width="100px" align="left" src="https://i1.rgstatic.net/ii/profile.image/272606414766098-1442005842560_Q512/Jan_Kleinnijenhuis.jpg">
 Email: <a href="mailto:j.kleinnijenhuis@vu.nl">j.kleinnijenhuis@vu.nl</a>
 
 Jan Kleinnijenhuis is hoogleraar Politieke Communicatie aan de Vrije Universiteit Amsterdam. Zijn expertise is opinievorming bij politici, media en publiek, en de  invloed van dagbladen en televisie op politieke voorkeuren. Hij heeft onderzoek gedaan naar en gepubliceerd over verkiezingscampagnes in Nederland en Duitsland.
 
-## dr. Nel Ruigrok
+### dr. Nel Ruigrok
 
 <img width="100px" align="left" src="https://i.imgur.com/I62j3vM.png">
 Website: https://nieuwsmonitor.org <br/>
@@ -61,7 +59,7 @@ Nel Ruigrok promoveerde in 2005 op de berichtgeving van Nederlandse dagbladen ti
 
 Daarnaast geeft zij diverse vakken aan de Master Media en Journalistiek van de Erasmus Universiteit en geeft zij communicatie-advies in de vorm van rapportages, workshops en seminars. Ook geeft zij trainingen in het gebruik van R voor data-analyses.
 
-## dr. Mariken van der Velden
+### dr. Mariken van der Velden
 
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/73996237/Foto_Mariken_website.JPG?w=320&f=webp">
 Website:https://research.vu.nl/en/persons/mariken-van-der-velden <br/>
@@ -72,7 +70,7 @@ Mariken van der Velden is Universitair Docent Politieke Communicatie aan de afde
 
 Van der Velden is gespecialiseerd in communicatie van politici, burgers’ politieke opvatting over de werking van de democratie, en computationele sociale wetenschappen. Zij kijkt hierbij naar onderwerpen als polarisatie, gebruik van emoties in de politiek, en publieke opinie formatie. In haar meeste recente onderzoek onderzoekt zij hoe politici de onvermijdelijke compromissen aan het publiek verkondigen en wat politieke compromissen doen met het vertrouwen in en de legitimiteit van democratie met behulp van virtual-reality spellen, experimenten en computationele tekstanalyse. 
 
-## dr. Kasper Welbers
+### dr. Kasper Welbers
 
 <img width="100px" align="left" src="https://i.imgur.com/9ojv9VP.png">
 Email: <a href="k.welbers@vu.nl">k.welbers@vu.nl</a> <br/>
