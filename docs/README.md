@@ -1,4 +1,7 @@
-# Title
+---
+title: 'VU 2021 Election Study'
+permalink: reports/wave1/
+---
 
 Meer informatie:
 
