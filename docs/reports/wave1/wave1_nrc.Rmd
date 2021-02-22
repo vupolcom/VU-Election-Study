@@ -1,9 +1,7 @@
 ---
 title: 'VU 2021 Election Study: Media aandacht van politici en de waardering van kiezers'
 author: "Mariken van der Velden"
-output: 
-  github_document:
-    toc: yes
+output: pdf_document
 editor_options: 
   chunk_output_type: console
 ---
