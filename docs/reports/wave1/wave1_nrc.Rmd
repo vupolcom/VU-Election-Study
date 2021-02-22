@@ -16,6 +16,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE,
                       echo = FALSE, fig.align = "center",
                         fig.path='')
 library(kfigr) 
+library(glue)
 library(printr)
 options(digits = 2)
 library(here)
@@ -227,7 +228,7 @@ Het onderste gedeelte van onderstaand figuur laat zien dat voor de meeste tv-pro
 Dit patroon is anders voor WNL's Goedemorgen Nederland (links in onderstaand figuur), waar we zien dat de VVD en het CDA aan het eind van januari het meeste aandacht kreeg.
 Meer recentelijk zijn dat 50PLus, SGP en de PVV.
 
-```{r "visibility media", anchor = "figure", fig.height=10, fig.width=10, fig.cap="Politici's Zichtbaarheid in de Media"}
+```{r "visibility media", anchor = "figure", fig.height=10, fig.width=10, fig.cap="Figuur Politici's Zichtbaarheid in de Media"}
 media %>% filter(id == "krant") %>%
 ggplot(aes(x = date, y = n, color = query, group = query)) +
   geom_line() +
@@ -260,6 +261,7 @@ ggplot(aes(x = date, y = n, color = query, group = query)) +
           legend.position="none",
           legend.title = element_blank())
 ```
+Download data: [`r export_data(media, "Figuur Politici's Zichtbaarheid in de Media")`]
 
 
 # Kiezersperspectief
@@ -344,7 +346,7 @@ w1 %>%
   
 ```
 
-Wanneer we specifieker kijken naar wat mensen vinden van de lijstttrekkers in de media als a) je voor de partij stemt (paarse staven in onderstaand figuur); b) je de partij graag in de nieuwe regering zien (blauwe staven in onderstaand figuur); c) je nog een zwevende kiezer bentt (groene staven in onderstaande figuur); en d) je niet gaat stemmen (gele staven in onderstaand figuur).
+Wanneer we specifieker kijken naar wat mensen vinden van de lijstttrekkers in de media als a) je voor de partij stemt (paarse staven in onderstaand figuur); b) je de partij graag in de nieuwe regering zien (blauwe staven in onderstaand figuur); c) je nog een zwevende kiezer bent (groene staven in onderstaande figuur); en d) je niet gaat stemmen (gele staven in onderstaand figuur).
 
 Voor de meeste politici geldt dat ongeacht of je op de partij stemt of deze partij graag in de nieuwe regering ziet, de lijsttrekker even (on)opvallend is (linkerzijde van onderstaand figuur).
 Het partoon wie opvalt en wie niet is vrijwel hetzelfde als het algemene partoon zoals beschreven bij bovenstaand figuur.
@@ -356,8 +358,8 @@ Deze groep heeft weer een veel lagere waardering voor Rutte, als deze hem is opg
 Voor de rest laat de rechterzijde van onderstaand figuur zien, dat de waardering tussen de vier type stemmersgroepen niet verschilt.
 Alle gemiddeldes, behalve die van Denk en FvD, schommelen rond de 5, wat aangeeft dat in alle vier type kiezersgroepen mensen de lijsttrekkers' media optredens zowel positief als negatief beoordelen.
 
-```{r "Media Performance Politiek - kiezersgroepen", fig.width=8, fig.height=7, fig.cap="Media Performance Politiek - Kiezersgroepen"}
-w1 %>%
+```{r "Media Performance Politiek - kiezersgroepen", fig.width=8, fig.height=7, fig.cap="Figuur Media Performance Politiek - Kiezersgroepen"}
+f2 <- w1 %>%
   select(A1, A2, A3_1:A3_5, B2_1:B2_13, B3_1:B3_13) %>%
   pivot_longer(cols = B2_1:B2_13, 
                names_to = "partij", 
@@ -433,7 +435,9 @@ w1 %>%
          name = factor(name, 
                        levels = c("Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)", "Waardering \n Erg negatief (0) - Erg Positief (10)")),
          type = factor(type, levels = c("Partijvoorkeur", "Coalitievoorkeur", 
-                                        "Zwevend", "Niet stemmer"))) %>%
+                                        "Zwevend", "Niet stemmer"))) 
+
+f2 %>%
   ggplot(aes(x = gem, y = reorder(partij, gem), 
              label = gem, fill = type)) +
   geom_col(position = position_dodge()) +
@@ -452,6 +456,7 @@ w1 %>%
           legend.title = element_blank())
   
 ```
+Download data: [`r export_data(f2, "Figuur Media Performance Politiek - Kiezersgroepen")`]
 
 Onderstaand figuur zoomt nog verder in op het mediagebruik (krant, socials en tv) van de verschillende kiezersgroepen.
 In het panel linksboven van onderstaand figuur zien we hoe zichtbaar politici waren voor kiezers die nauwelijks (minder dan 3 dagen per week) de krant lazen in de afgelopen twee weken; middenboven en rechtsboven laat respectievelijk zien hoe zichtbaar politici waren voor kiezers die nauwelijks social media gebruiken en tv kijken.
@@ -465,7 +470,7 @@ Wat vooral opvalt is de zwevende kiezer die regelmatig tv gebruikt (midden-recht
 Voor deze groep zijn alle politici behalve Rutte meer opvallend dan voor de mensen die al weten dat ze op die partij gaan stemmen dan wel de partij graag terug in de regering zien. 
 Dit zou erop kunnen wijzen, omdat we weten dat de meeste mensen tv gebruiken om informatie te krijgen over politieke actualiteiten, dat deze groep zich echt aan het opmaken is om hun keuze nu al te maken, met nog 3,5 week of campagnes te gaan.
 
-```{r "Media Performance Politiek - kiezersgroepen + mediatype", fig.width=8, fig.height=10, fig.cap="Media Performance Politiek - kiezersgroepen + mediatype"}
+```{r "Media Performance Politiek - kiezersgroepen + mediatype", fig.width=8, fig.height=10, fig.cap="Figuur Media Performance Politiek - kiezersgroepen + mediatype"}
 tmp <- w1 %>%
   select(A1, A2, A3_1:A3_5, B2_1:B2_13, B3_1:B3_13, 
          I1_1, I1_2, I1_4, I1_5,I1_6, I1_8) %>%
@@ -563,6 +568,8 @@ ggplot(tmp, aes(x = gezien, y = reorder(partij, gezien),
           legend.title = element_blank())
 ```
 
+Download data: [`r export_data(tmp, "Figuur Media Performance Politiek - kiezersgroepen + mediatype")`]
+
 Onderstaand figuur laat zien hoe de waardering voor de lijsttrekkers verschilt per mediatype en -gebruik voor de 4 type kiezersgroepen, zien we dat de niet-stemmers voornamelijk opvallen.
 Hoewel de bovenstaande figuren steeds laat zien dat voor deze groep politici minder opvallen, als ze dan opvallen dan zijn het vooral de kleinere partijen en de christelijke partijen waar zij erg tevreden over zijn. 
 Dit is nog het duidelijkst te zien voor de groep niet-stemmers die regelmatig de krant leest (midden-linker panel van onderstaand figuur), maar het is ook te zien voor degenen die vaak socials of tv gebruiken om iets te weten te komen over politieke actualiteiten.
@@ -570,8 +577,7 @@ Dit is nog het duidelijkst te zien voor de groep niet-stemmers die regelmatig de
 Voor de groep die vaak media grbruikt, zien we dat veel politici hoger gewaardeerd worden als ze in de media kwamen voor de zwevende kiezer dan voor de kiezers die op de betreffende partij zouden stemmen of de partij graag in de nieuwwe regering zien.
 Dit geldt bijvoorbeeld voor Wopke Hoekstra - voor het "schaatsincident" tenminste.
 
-
-```{r "Media Performance Politiek - kiezersgroepen + mediatype2", fig.width=8, fig.height=10, fig.cap="\\label{fig:mediawaard}Figuur 4"}
+```{r "Media Performance Politiek - kiezersgroepen + mediatype2", fig.width=8, fig.height=10, fig.cap="Figuur Media Performance Politiek - kiezersgroepen + mediatype (2)"}
 ggplot(tmp, aes(x = waardering, y = reorder(partij, gezien), 
              fill = type)) +
   geom_col(position = position_dodge()) +
@@ -638,7 +644,7 @@ Ongeveer evenveel mensen geven aan dit als nieuwsbron te gebruiken als het _NOS 
 Zwevende kiezers kijken niet naar _Hart van Nederland_, en ook minder naar _M_, _Nieuwsuur_, _Eenvandaag_, _De Vooravond_, _Zondag met Lubach_, _Beau_ en _WNL opiniemakers_.
 Ze kijken meer dan de zekere kiezer naar _Jinek_ en _Dit was het nieuws_.
 
-```{r "Mediagebruik Zwevende Kiezers", fig.width=10, fig.height=8, fig.cap="Mediagebruik Zwevende Kiezers"}
+```{r "Mediagebruik Zwevende Kiezers", fig.width=10, fig.height=8, fig.cap="Figuur Mediagebruik Zwevende Kiezers"}
 
 tmp <- w1 %>%
   select(A1, A2, I2_1:I2_13,I3_1:I3_16, I4_1:I4_9,
@@ -729,11 +735,13 @@ tv <- tmp %>%
                        round(n/4672280, 2))) %>%
   select(zwevend, type = type_tv, means, stdev, perc, id)
 
-socials %>%
+f5 <- socials %>%
   add_row(krant) %>%
   add_row(tv) %>%
   mutate(zwevend = recode(zwevend, `0` = "Stem bepaald", 
-                          `1` = "Zwevend")) %>%
+                          `1` = "Zwevend"))
+
+f5 %>%
   ggplot(aes(y = reorder(type, means), x = means, fill = zwevend, 
              group = zwevend)) +
   geom_col(position = position_dodge()) +
@@ -750,3 +758,6 @@ socials %>%
           legend.position="bottom",
           legend.title = element_blank())
 ```
+
+Download data: [`r export_data(f5, "Figuur Mediagebruik Zwevende Kiezers")`]
+

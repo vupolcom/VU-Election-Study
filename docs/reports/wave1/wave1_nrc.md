@@ -44,15 +44,18 @@ dat 50PLus, SGP en de PVV.
 
 <a name="visibility media"></a>
 
-<img src="visibility media-1.png" alt="Politici's Zichtbaarheid in de Media"  />
+<img src="visibility media-1.png" alt="Figuur Politici's Zichtbaarheid in de Media"  />
 <p class="caption">
-Politici’s Zichtbaarheid in de Media
+Figuur Politici’s Zichtbaarheid in de Media
 </p>
 
-<img src="visibility media-2.png" alt="Politici's Zichtbaarheid in de Media"  />
+<img src="visibility media-2.png" alt="Figuur Politici's Zichtbaarheid in de Media"  />
 <p class="caption">
-Politici’s Zichtbaarheid in de Media
+Figuur Politici’s Zichtbaarheid in de Media
 </p>
+
+Download data: \[[Figuur Politici’s Zichtbaarheid in de
+Media](Figuur_Politici_s_Zichtbaarheid_in_de_Media.csv)\]
 
 Kiezersperspectief
 ==================
@@ -83,7 +86,7 @@ Wanneer we specifieker kijken naar wat mensen vinden van de
 lijstttrekkers in de media als a) je voor de partij stemt (paarse staven
 in onderstaand figuur); b) je de partij graag in de nieuwe regering zien
 (blauwe staven in onderstaand figuur); c) je nog een zwevende kiezer
-bentt (groene staven in onderstaande figuur); en d) je niet gaat stemmen
+bent (groene staven in onderstaande figuur); en d) je niet gaat stemmen
 (gele staven in onderstaand figuur).
 
 Voor de meeste politici geldt dat ongeacht of je op de partij stemt of
@@ -106,10 +109,13 @@ gemiddeldes, behalve die van Denk en FvD, schommelen rond de 5, wat
 aangeeft dat in alle vier type kiezersgroepen mensen de lijsttrekkers’
 media optredens zowel positief als negatief beoordelen.
 
-<img src="Media Performance Politiek - kiezersgroepen-1.png" alt="Media Performance Politiek - Kiezersgroepen"  />
+<img src="Media Performance Politiek - kiezersgroepen-1.png" alt="Figuur Media Performance Politiek - Kiezersgroepen"  />
 <p class="caption">
-Media Performance Politiek - Kiezersgroepen
+Figuur Media Performance Politiek - Kiezersgroepen
 </p>
+
+Download data: \[[Figuur Media Performance Politiek -
+Kiezersgroepen](Figuur_Media_Performance_Politiek_Kiezersgroepen.csv)\]
 
 Onderstaand figuur zoomt nog verder in op het mediagebruik (krant,
 socials en tv) van de verschillende kiezersgroepen. In het panel
@@ -140,10 +146,13 @@ mensen tv gebruiken om informatie te krijgen over politieke
 actualiteiten, dat deze groep zich echt aan het opmaken is om hun keuze
 nu al te maken, met nog 3,5 week of campagnes te gaan.
 
-<img src="Media Performance Politiek - kiezersgroepen + mediatype-1.png" alt="Media Performance Politiek - kiezersgroepen + mediatype"  />
+<img src="Media Performance Politiek - kiezersgroepen + mediatype-1.png" alt="Figuur Media Performance Politiek - kiezersgroepen + mediatype"  />
 <p class="caption">
-Media Performance Politiek - kiezersgroepen + mediatype
+Figuur Media Performance Politiek - kiezersgroepen + mediatype
 </p>
+
+Download data: \[[Figuur Media Performance Politiek - kiezersgroepen +
+mediatype](Figuur_Media_Performance_Politiek_kiezersgroepen_mediatype.csv)\]
 
 Onderstaand figuur laat zien hoe de waardering voor de lijsttrekkers
 verschilt per mediatype en -gebruik voor de 4 type kiezersgroepen, zien
@@ -162,9 +171,9 @@ voor de kiezers die op de betreffende partij zouden stemmen of de partij
 graag in de nieuwwe regering zien. Dit geldt bijvoorbeeld voor Wopke
 Hoekstra - voor het “schaatsincident” tenminste.
 
-<img src="Media Performance Politiek - kiezersgroepen + mediatype2-1.png" alt="\label{fig:mediawaard}Figuur 4"  />
+<img src="Media Performance Politiek - kiezersgroepen + mediatype2-1.png" alt="Figuur Media Performance Politiek - kiezersgroepen + mediatype (2)"  />
 <p class="caption">
-Figuur 4
+Figuur Media Performance Politiek - kiezersgroepen + mediatype (2)
 </p>
 
 In onderstaand figuur kijken we naar het media gebruik van de zwevende
@@ -210,7 +219,10 @@ ook minder naar *M*, *Nieuwsuur*, *Eenvandaag*, *De Vooravond*, *Zondag
 met Lubach*, *Beau* en *WNL opiniemakers*. Ze kijken meer dan de zekere
 kiezer naar *Jinek* en *Dit was het nieuws*.
 
-<img src="Mediagebruik Zwevende Kiezers-1.png" alt="Mediagebruik Zwevende Kiezers"  />
+<img src="Mediagebruik Zwevende Kiezers-1.png" alt="Figuur Mediagebruik Zwevende Kiezers"  />
 <p class="caption">
-Mediagebruik Zwevende Kiezers
+Figuur Mediagebruik Zwevende Kiezers
 </p>
+
+Download data: \[[Figuur Mediagebruik Zwevende
+Kiezers](Figuur_Mediagebruik_Zwevende_Kiezers.csv)\]

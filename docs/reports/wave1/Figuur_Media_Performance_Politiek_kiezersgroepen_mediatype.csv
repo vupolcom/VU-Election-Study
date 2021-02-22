@@ -1,0 +1,469 @@
+partij,type,medium,days,gezien,waardering
+50+ & Liane den Haan,Coalitievoorkeur,Krant,Nauwelijks,0.7,5.6
+50+ & Liane den Haan,Coalitievoorkeur,Krant,Regelmatig,0.83,5.66
+50+ & Liane den Haan,Coalitievoorkeur,Krant,Vaak,0.83,5.89
+50+ & Liane den Haan,Coalitievoorkeur,Socials,Nauwelijks,0.73,5.52
+50+ & Liane den Haan,Coalitievoorkeur,Socials,Regelmatig,0.84,5.63
+50+ & Liane den Haan,Coalitievoorkeur,Socials,Vaak,0.9,6.28
+50+ & Liane den Haan,Coalitievoorkeur,TV,Nauwelijks,0.55,5.78
+50+ & Liane den Haan,Coalitievoorkeur,TV,Regelmatig,0.8,6.16
+50+ & Liane den Haan,Coalitievoorkeur,TV,Vaak,0.85,5.63
+50+ & Liane den Haan,Niet stemmer,Krant,Nauwelijks,0.38,5.33
+50+ & Liane den Haan,Niet stemmer,Krant,Regelmatig,0.56,6
+50+ & Liane den Haan,Niet stemmer,Krant,Vaak,0.2,NaN
+50+ & Liane den Haan,Niet stemmer,Socials,Nauwelijks,0.32,5.44
+50+ & Liane den Haan,Niet stemmer,Socials,Regelmatig,0.52,5.5
+50+ & Liane den Haan,Niet stemmer,Socials,Vaak,0.67,6
+50+ & Liane den Haan,Niet stemmer,TV,Nauwelijks,0.37,5.67
+50+ & Liane den Haan,Niet stemmer,TV,Regelmatig,0.33,NaN
+50+ & Liane den Haan,Niet stemmer,TV,Vaak,0.46,5
+50+ & Liane den Haan,Partijvoorkeur,Krant,Nauwelijks,0.68,5.61
+50+ & Liane den Haan,Partijvoorkeur,Krant,Regelmatig,0.82,5.64
+50+ & Liane den Haan,Partijvoorkeur,Krant,Vaak,0.82,5.83
+50+ & Liane den Haan,Partijvoorkeur,Socials,Nauwelijks,0.71,5.51
+50+ & Liane den Haan,Partijvoorkeur,Socials,Regelmatig,0.82,5.58
+50+ & Liane den Haan,Partijvoorkeur,Socials,Vaak,0.88,6.22
+50+ & Liane den Haan,Partijvoorkeur,TV,Nauwelijks,0.53,5.81
+50+ & Liane den Haan,Partijvoorkeur,TV,Regelmatig,0.81,6.08
+50+ & Liane den Haan,Partijvoorkeur,TV,Vaak,0.83,5.61
+50+ & Liane den Haan,Zwevend,Krant,Nauwelijks,0.66,6.62
+50+ & Liane den Haan,Zwevend,Krant,Regelmatig,0.88,5.29
+50+ & Liane den Haan,Zwevend,Krant,Vaak,0.82,5.91
+50+ & Liane den Haan,Zwevend,Socials,Nauwelijks,0.73,6.15
+50+ & Liane den Haan,Zwevend,Socials,Regelmatig,0.89,5.45
+50+ & Liane den Haan,Zwevend,Socials,Vaak,0.65,7
+50+ & Liane den Haan,Zwevend,TV,Nauwelijks,0.43,NaN
+50+ & Liane den Haan,Zwevend,TV,Regelmatig,1.08,5
+50+ & Liane den Haan,Zwevend,TV,Vaak,0.78,6.58
+CDA & Wopke Hoekstra,Coalitievoorkeur,Krant,Nauwelijks,1.58,5.66
+CDA & Wopke Hoekstra,Coalitievoorkeur,Krant,Regelmatig,1.69,5.87
+CDA & Wopke Hoekstra,Coalitievoorkeur,Krant,Vaak,1.93,5.86
+CDA & Wopke Hoekstra,Coalitievoorkeur,Socials,Nauwelijks,1.71,5.72
+CDA & Wopke Hoekstra,Coalitievoorkeur,Socials,Regelmatig,1.73,5.98
+CDA & Wopke Hoekstra,Coalitievoorkeur,Socials,Vaak,1.83,5.85
+CDA & Wopke Hoekstra,Coalitievoorkeur,TV,Nauwelijks,1.31,5.16
+CDA & Wopke Hoekstra,Coalitievoorkeur,TV,Regelmatig,1.67,5.82
+CDA & Wopke Hoekstra,Coalitievoorkeur,TV,Vaak,1.9,5.91
+CDA & Wopke Hoekstra,Niet stemmer,Krant,Nauwelijks,0.86,5.62
+CDA & Wopke Hoekstra,Niet stemmer,Krant,Regelmatig,0.5,7.5
+CDA & Wopke Hoekstra,Niet stemmer,Krant,Vaak,0.47,6
+CDA & Wopke Hoekstra,Niet stemmer,Socials,Nauwelijks,0.78,5.95
+CDA & Wopke Hoekstra,Niet stemmer,Socials,Regelmatig,0.67,5
+CDA & Wopke Hoekstra,Niet stemmer,Socials,Vaak,0.47,6
+CDA & Wopke Hoekstra,Niet stemmer,TV,Nauwelijks,0.7,6.33
+CDA & Wopke Hoekstra,Niet stemmer,TV,Regelmatig,0.89,6.5
+CDA & Wopke Hoekstra,Niet stemmer,TV,Vaak,0.69,5
+CDA & Wopke Hoekstra,Partijvoorkeur,Krant,Nauwelijks,1.52,5.64
+CDA & Wopke Hoekstra,Partijvoorkeur,Krant,Regelmatig,1.64,5.86
+CDA & Wopke Hoekstra,Partijvoorkeur,Krant,Vaak,1.89,5.86
+CDA & Wopke Hoekstra,Partijvoorkeur,Socials,Nauwelijks,1.65,5.72
+CDA & Wopke Hoekstra,Partijvoorkeur,Socials,Regelmatig,1.67,5.93
+CDA & Wopke Hoekstra,Partijvoorkeur,Socials,Vaak,1.8,5.84
+CDA & Wopke Hoekstra,Partijvoorkeur,TV,Nauwelijks,1.25,5.08
+CDA & Wopke Hoekstra,Partijvoorkeur,TV,Regelmatig,1.63,5.78
+CDA & Wopke Hoekstra,Partijvoorkeur,TV,Vaak,1.85,5.93
+CDA & Wopke Hoekstra,Zwevend,Krant,Nauwelijks,1.25,5.74
+CDA & Wopke Hoekstra,Zwevend,Krant,Regelmatig,1.59,5.41
+CDA & Wopke Hoekstra,Zwevend,Krant,Vaak,1.78,6.27
+CDA & Wopke Hoekstra,Zwevend,Socials,Nauwelijks,1.38,5.84
+CDA & Wopke Hoekstra,Zwevend,Socials,Regelmatig,1.61,5.59
+CDA & Wopke Hoekstra,Zwevend,Socials,Vaak,1.63,6.13
+CDA & Wopke Hoekstra,Zwevend,TV,Nauwelijks,0.86,4.38
+CDA & Wopke Hoekstra,Zwevend,TV,Regelmatig,1.62,5.44
+CDA & Wopke Hoekstra,Zwevend,TV,Vaak,1.69,6.24
+CU & Gert-Jan Segers,Coalitievoorkeur,Krant,Nauwelijks,0.99,5.66
+CU & Gert-Jan Segers,Coalitievoorkeur,Krant,Regelmatig,1.18,5.87
+CU & Gert-Jan Segers,Coalitievoorkeur,Krant,Vaak,1.37,5.86
+CU & Gert-Jan Segers,Coalitievoorkeur,Socials,Nauwelijks,1.14,5.72
+CU & Gert-Jan Segers,Coalitievoorkeur,Socials,Regelmatig,1.16,5.98
+CU & Gert-Jan Segers,Coalitievoorkeur,Socials,Vaak,1.31,5.85
+CU & Gert-Jan Segers,Coalitievoorkeur,TV,Nauwelijks,0.76,5.16
+CU & Gert-Jan Segers,Coalitievoorkeur,TV,Regelmatig,1.06,5.82
+CU & Gert-Jan Segers,Coalitievoorkeur,TV,Vaak,1.35,5.91
+CU & Gert-Jan Segers,Niet stemmer,Krant,Nauwelijks,0.48,5.62
+CU & Gert-Jan Segers,Niet stemmer,Krant,Regelmatig,0.56,7.5
+CU & Gert-Jan Segers,Niet stemmer,Krant,Vaak,0.6,6
+CU & Gert-Jan Segers,Niet stemmer,Socials,Nauwelijks,0.51,5.95
+CU & Gert-Jan Segers,Niet stemmer,Socials,Regelmatig,0.57,5
+CU & Gert-Jan Segers,Niet stemmer,Socials,Vaak,0.4,6
+CU & Gert-Jan Segers,Niet stemmer,TV,Nauwelijks,0.48,6.33
+CU & Gert-Jan Segers,Niet stemmer,TV,Regelmatig,0.67,6.5
+CU & Gert-Jan Segers,Niet stemmer,TV,Vaak,0.46,5
+CU & Gert-Jan Segers,Partijvoorkeur,Krant,Nauwelijks,0.95,5.64
+CU & Gert-Jan Segers,Partijvoorkeur,Krant,Regelmatig,1.16,5.86
+CU & Gert-Jan Segers,Partijvoorkeur,Krant,Vaak,1.33,5.86
+CU & Gert-Jan Segers,Partijvoorkeur,Socials,Nauwelijks,1.1,5.72
+CU & Gert-Jan Segers,Partijvoorkeur,Socials,Regelmatig,1.13,5.93
+CU & Gert-Jan Segers,Partijvoorkeur,Socials,Vaak,1.28,5.84
+CU & Gert-Jan Segers,Partijvoorkeur,TV,Nauwelijks,0.73,5.08
+CU & Gert-Jan Segers,Partijvoorkeur,TV,Regelmatig,1.05,5.78
+CU & Gert-Jan Segers,Partijvoorkeur,TV,Vaak,1.3,5.93
+CU & Gert-Jan Segers,Zwevend,Krant,Nauwelijks,0.7,5.74
+CU & Gert-Jan Segers,Zwevend,Krant,Regelmatig,1.08,5.41
+CU & Gert-Jan Segers,Zwevend,Krant,Vaak,1.2,6.27
+CU & Gert-Jan Segers,Zwevend,Socials,Nauwelijks,0.84,5.84
+CU & Gert-Jan Segers,Zwevend,Socials,Regelmatig,0.96,5.59
+CU & Gert-Jan Segers,Zwevend,Socials,Vaak,1.12,6.13
+CU & Gert-Jan Segers,Zwevend,TV,Nauwelijks,0.51,4.38
+CU & Gert-Jan Segers,Zwevend,TV,Regelmatig,1.15,5.44
+CU & Gert-Jan Segers,Zwevend,TV,Vaak,1.01,6.24
+D66 & Sigrid Kaag,Coalitievoorkeur,Krant,Nauwelijks,1.27,5.6
+D66 & Sigrid Kaag,Coalitievoorkeur,Krant,Regelmatig,1.39,5.85
+D66 & Sigrid Kaag,Coalitievoorkeur,Krant,Vaak,1.6,5.71
+D66 & Sigrid Kaag,Coalitievoorkeur,Socials,Nauwelijks,1.38,5.6
+D66 & Sigrid Kaag,Coalitievoorkeur,Socials,Regelmatig,1.43,5.63
+D66 & Sigrid Kaag,Coalitievoorkeur,Socials,Vaak,1.57,5.99
+D66 & Sigrid Kaag,Coalitievoorkeur,TV,Nauwelijks,1.05,5.23
+D66 & Sigrid Kaag,Coalitievoorkeur,TV,Regelmatig,1.31,5.33
+D66 & Sigrid Kaag,Coalitievoorkeur,TV,Vaak,1.58,5.85
+D66 & Sigrid Kaag,Niet stemmer,Krant,Nauwelijks,0.71,5.12
+D66 & Sigrid Kaag,Niet stemmer,Krant,Regelmatig,0.94,6.4
+D66 & Sigrid Kaag,Niet stemmer,Krant,Vaak,0.47,6
+D66 & Sigrid Kaag,Niet stemmer,Socials,Nauwelijks,0.68,5.25
+D66 & Sigrid Kaag,Niet stemmer,Socials,Regelmatig,0.62,5
+D66 & Sigrid Kaag,Niet stemmer,Socials,Vaak,1.07,6.29
+D66 & Sigrid Kaag,Niet stemmer,TV,Nauwelijks,0.63,5
+D66 & Sigrid Kaag,Niet stemmer,TV,Regelmatig,0.89,6
+D66 & Sigrid Kaag,Niet stemmer,TV,Vaak,0.77,5.75
+D66 & Sigrid Kaag,Partijvoorkeur,Krant,Nauwelijks,1.2,5.49
+D66 & Sigrid Kaag,Partijvoorkeur,Krant,Regelmatig,1.37,5.75
+D66 & Sigrid Kaag,Partijvoorkeur,Krant,Vaak,1.55,5.61
+D66 & Sigrid Kaag,Partijvoorkeur,Socials,Nauwelijks,1.32,5.49
+D66 & Sigrid Kaag,Partijvoorkeur,Socials,Regelmatig,1.39,5.53
+D66 & Sigrid Kaag,Partijvoorkeur,Socials,Vaak,1.54,5.91
+D66 & Sigrid Kaag,Partijvoorkeur,TV,Nauwelijks,0.99,4.95
+D66 & Sigrid Kaag,Partijvoorkeur,TV,Regelmatig,1.3,5.29
+D66 & Sigrid Kaag,Partijvoorkeur,TV,Vaak,1.53,5.77
+D66 & Sigrid Kaag,Zwevend,Krant,Nauwelijks,0.97,5.23
+D66 & Sigrid Kaag,Zwevend,Krant,Regelmatig,1.39,5.23
+D66 & Sigrid Kaag,Zwevend,Krant,Vaak,1.51,5.61
+D66 & Sigrid Kaag,Zwevend,Socials,Nauwelijks,1.09,5.28
+D66 & Sigrid Kaag,Zwevend,Socials,Regelmatig,1.36,5.06
+D66 & Sigrid Kaag,Zwevend,Socials,Vaak,1.46,6
+D66 & Sigrid Kaag,Zwevend,TV,Nauwelijks,0.74,3.75
+D66 & Sigrid Kaag,Zwevend,TV,Regelmatig,1.58,5.31
+D66 & Sigrid Kaag,Zwevend,TV,Vaak,1.29,5.67
+Denk & Farid Azarkan,Coalitievoorkeur,Krant,Nauwelijks,0.91,3.71
+Denk & Farid Azarkan,Coalitievoorkeur,Krant,Regelmatig,1.06,4.39
+Denk & Farid Azarkan,Coalitievoorkeur,Krant,Vaak,1.21,3.88
+Denk & Farid Azarkan,Coalitievoorkeur,Socials,Nauwelijks,1.01,3.63
+Denk & Farid Azarkan,Coalitievoorkeur,Socials,Regelmatig,1.12,4.16
+Denk & Farid Azarkan,Coalitievoorkeur,Socials,Vaak,1.2,4.48
+Denk & Farid Azarkan,Coalitievoorkeur,TV,Nauwelijks,0.84,3.67
+Denk & Farid Azarkan,Coalitievoorkeur,TV,Regelmatig,1.02,3.99
+Denk & Farid Azarkan,Coalitievoorkeur,TV,Vaak,1.14,3.97
+Denk & Farid Azarkan,Niet stemmer,Krant,Nauwelijks,0.54,4.8
+Denk & Farid Azarkan,Niet stemmer,Krant,Regelmatig,1,5.25
+Denk & Farid Azarkan,Niet stemmer,Krant,Vaak,1.13,4.5
+Denk & Farid Azarkan,Niet stemmer,Socials,Nauwelijks,0.59,4.8
+Denk & Farid Azarkan,Niet stemmer,Socials,Regelmatig,0.9,6
+Denk & Farid Azarkan,Niet stemmer,Socials,Vaak,1.4,4.5
+Denk & Farid Azarkan,Niet stemmer,TV,Nauwelijks,0.52,4.67
+Denk & Farid Azarkan,Niet stemmer,TV,Regelmatig,0.78,5.33
+Denk & Farid Azarkan,Niet stemmer,TV,Vaak,1.08,4.5
+Denk & Farid Azarkan,Partijvoorkeur,Krant,Nauwelijks,0.87,3.64
+Denk & Farid Azarkan,Partijvoorkeur,Krant,Regelmatig,1.07,4.52
+Denk & Farid Azarkan,Partijvoorkeur,Krant,Vaak,1.19,4.01
+Denk & Farid Azarkan,Partijvoorkeur,Socials,Nauwelijks,0.97,3.58
+Denk & Farid Azarkan,Partijvoorkeur,Socials,Regelmatig,1.11,4.25
+Denk & Farid Azarkan,Partijvoorkeur,Socials,Vaak,1.19,4.76
+Denk & Farid Azarkan,Partijvoorkeur,TV,Nauwelijks,0.79,3.67
+Denk & Farid Azarkan,Partijvoorkeur,TV,Regelmatig,1.03,4.02
+Denk & Farid Azarkan,Partijvoorkeur,TV,Vaak,1.12,4.06
+Denk & Farid Azarkan,Zwevend,Krant,Nauwelijks,0.79,3.14
+Denk & Farid Azarkan,Zwevend,Krant,Regelmatig,1.18,4.07
+Denk & Farid Azarkan,Zwevend,Krant,Vaak,1.31,3.86
+Denk & Farid Azarkan,Zwevend,Socials,Nauwelijks,0.9,2.93
+Denk & Farid Azarkan,Zwevend,Socials,Regelmatig,1.2,4.32
+Denk & Farid Azarkan,Zwevend,Socials,Vaak,1.23,4.61
+Denk & Farid Azarkan,Zwevend,TV,Nauwelijks,0.63,3.5
+Denk & Farid Azarkan,Zwevend,TV,Regelmatig,1.31,3.1
+Denk & Farid Azarkan,Zwevend,TV,Vaak,1.09,3.9
+FvD & Thierry Baudet,Coalitievoorkeur,Krant,Nauwelijks,1.61,2.96
+FvD & Thierry Baudet,Coalitievoorkeur,Krant,Regelmatig,1.66,3.63
+FvD & Thierry Baudet,Coalitievoorkeur,Krant,Vaak,1.72,3.18
+FvD & Thierry Baudet,Coalitievoorkeur,Socials,Nauwelijks,1.63,2.86
+FvD & Thierry Baudet,Coalitievoorkeur,Socials,Regelmatig,1.71,3.78
+FvD & Thierry Baudet,Coalitievoorkeur,Socials,Vaak,1.77,3.79
+FvD & Thierry Baudet,Coalitievoorkeur,TV,Nauwelijks,1.59,3.25
+FvD & Thierry Baudet,Coalitievoorkeur,TV,Regelmatig,1.64,3.72
+FvD & Thierry Baudet,Coalitievoorkeur,TV,Vaak,1.7,3.03
+FvD & Thierry Baudet,Niet stemmer,Krant,Nauwelijks,1.02,3.48
+FvD & Thierry Baudet,Niet stemmer,Krant,Regelmatig,0.78,4
+FvD & Thierry Baudet,Niet stemmer,Krant,Vaak,1.33,5.75
+FvD & Thierry Baudet,Niet stemmer,Socials,Nauwelijks,0.95,3.62
+FvD & Thierry Baudet,Niet stemmer,Socials,Regelmatig,1.19,4
+FvD & Thierry Baudet,Niet stemmer,Socials,Vaak,1.27,6.5
+FvD & Thierry Baudet,Niet stemmer,TV,Nauwelijks,0.85,4
+FvD & Thierry Baudet,Niet stemmer,TV,Regelmatig,1,2
+FvD & Thierry Baudet,Niet stemmer,TV,Vaak,1.38,4.33
+FvD & Thierry Baudet,Partijvoorkeur,Krant,Nauwelijks,1.59,3.15
+FvD & Thierry Baudet,Partijvoorkeur,Krant,Regelmatig,1.65,3.8
+FvD & Thierry Baudet,Partijvoorkeur,Krant,Vaak,1.72,3.35
+FvD & Thierry Baudet,Partijvoorkeur,Socials,Nauwelijks,1.61,3.04
+FvD & Thierry Baudet,Partijvoorkeur,Socials,Regelmatig,1.7,3.89
+FvD & Thierry Baudet,Partijvoorkeur,Socials,Vaak,1.75,4.02
+FvD & Thierry Baudet,Partijvoorkeur,TV,Nauwelijks,1.55,3.49
+FvD & Thierry Baudet,Partijvoorkeur,TV,Regelmatig,1.59,3.86
+FvD & Thierry Baudet,Partijvoorkeur,TV,Vaak,1.7,3.19
+FvD & Thierry Baudet,Zwevend,Krant,Nauwelijks,1.46,3.43
+FvD & Thierry Baudet,Zwevend,Krant,Regelmatig,1.49,4.8
+FvD & Thierry Baudet,Zwevend,Krant,Vaak,1.69,4.26
+FvD & Thierry Baudet,Zwevend,Socials,Nauwelijks,1.51,3.59
+FvD & Thierry Baudet,Zwevend,Socials,Regelmatig,1.55,4.5
+FvD & Thierry Baudet,Zwevend,Socials,Vaak,1.6,4.81
+FvD & Thierry Baudet,Zwevend,TV,Nauwelijks,1.34,3
+FvD & Thierry Baudet,Zwevend,TV,Regelmatig,1.5,5
+FvD & Thierry Baudet,Zwevend,TV,Vaak,1.62,3.96
+GL & Jesse Klaver,Coalitievoorkeur,Krant,Nauwelijks,1.53,5.39
+GL & Jesse Klaver,Coalitievoorkeur,Krant,Regelmatig,1.6,5.55
+GL & Jesse Klaver,Coalitievoorkeur,Krant,Vaak,1.72,5.38
+GL & Jesse Klaver,Coalitievoorkeur,Socials,Nauwelijks,1.58,5.27
+GL & Jesse Klaver,Coalitievoorkeur,Socials,Regelmatig,1.66,5.5
+GL & Jesse Klaver,Coalitievoorkeur,Socials,Vaak,1.73,5.77
+GL & Jesse Klaver,Coalitievoorkeur,TV,Nauwelijks,1.38,5.2
+GL & Jesse Klaver,Coalitievoorkeur,TV,Regelmatig,1.58,5.52
+GL & Jesse Klaver,Coalitievoorkeur,TV,Vaak,1.72,5.45
+GL & Jesse Klaver,Niet stemmer,Krant,Nauwelijks,0.97,5.47
+GL & Jesse Klaver,Niet stemmer,Krant,Regelmatig,1.22,6.6
+GL & Jesse Klaver,Niet stemmer,Krant,Vaak,1.53,6.17
+GL & Jesse Klaver,Niet stemmer,Socials,Nauwelijks,1.02,5.73
+GL & Jesse Klaver,Niet stemmer,Socials,Regelmatig,1.14,6
+GL & Jesse Klaver,Niet stemmer,Socials,Vaak,1.67,6
+GL & Jesse Klaver,Niet stemmer,TV,Nauwelijks,0.89,5.83
+GL & Jesse Klaver,Niet stemmer,TV,Regelmatig,1.22,6
+GL & Jesse Klaver,Niet stemmer,TV,Vaak,1.46,5.71
+GL & Jesse Klaver,Partijvoorkeur,Krant,Nauwelijks,1.48,5.25
+GL & Jesse Klaver,Partijvoorkeur,Krant,Regelmatig,1.58,5.51
+GL & Jesse Klaver,Partijvoorkeur,Krant,Vaak,1.69,5.26
+GL & Jesse Klaver,Partijvoorkeur,Socials,Nauwelijks,1.54,5.13
+GL & Jesse Klaver,Partijvoorkeur,Socials,Regelmatig,1.62,5.41
+GL & Jesse Klaver,Partijvoorkeur,Socials,Vaak,1.71,5.72
+GL & Jesse Klaver,Partijvoorkeur,TV,Nauwelijks,1.32,5.06
+GL & Jesse Klaver,Partijvoorkeur,TV,Regelmatig,1.55,5.51
+GL & Jesse Klaver,Partijvoorkeur,TV,Vaak,1.68,5.32
+GL & Jesse Klaver,Zwevend,Krant,Nauwelijks,1.4,5.41
+GL & Jesse Klaver,Zwevend,Krant,Regelmatig,1.57,5.4
+GL & Jesse Klaver,Zwevend,Krant,Vaak,1.65,5.42
+GL & Jesse Klaver,Zwevend,Socials,Nauwelijks,1.45,5.31
+GL & Jesse Klaver,Zwevend,Socials,Regelmatig,1.62,5.49
+GL & Jesse Klaver,Zwevend,Socials,Vaak,1.58,5.66
+GL & Jesse Klaver,Zwevend,TV,Nauwelijks,1.23,4.8
+GL & Jesse Klaver,Zwevend,TV,Regelmatig,1.77,5.92
+GL & Jesse Klaver,Zwevend,TV,Vaak,1.54,5.5
+PvdA & Lilianne Ploumen,Coalitievoorkeur,Krant,Nauwelijks,1.34,6.1
+PvdA & Lilianne Ploumen,Coalitievoorkeur,Krant,Regelmatig,1.46,6.28
+PvdA & Lilianne Ploumen,Coalitievoorkeur,Krant,Vaak,1.65,6.14
+PvdA & Lilianne Ploumen,Coalitievoorkeur,Socials,Nauwelijks,1.47,6.15
+PvdA & Lilianne Ploumen,Coalitievoorkeur,Socials,Regelmatig,1.47,6.1
+PvdA & Lilianne Ploumen,Coalitievoorkeur,Socials,Vaak,1.56,6.17
+PvdA & Lilianne Ploumen,Coalitievoorkeur,TV,Nauwelijks,1.07,5.8
+PvdA & Lilianne Ploumen,Coalitievoorkeur,TV,Regelmatig,1.35,6.03
+PvdA & Lilianne Ploumen,Coalitievoorkeur,TV,Vaak,1.66,6.23
+PvdA & Lilianne Ploumen,Niet stemmer,Krant,Nauwelijks,0.54,4.86
+PvdA & Lilianne Ploumen,Niet stemmer,Krant,Regelmatig,0.72,7
+PvdA & Lilianne Ploumen,Niet stemmer,Krant,Vaak,0.53,4
+PvdA & Lilianne Ploumen,Niet stemmer,Socials,Nauwelijks,0.52,4.64
+PvdA & Lilianne Ploumen,Niet stemmer,Socials,Regelmatig,0.62,6
+PvdA & Lilianne Ploumen,Niet stemmer,Socials,Vaak,0.87,7
+PvdA & Lilianne Ploumen,Niet stemmer,TV,Nauwelijks,0.41,4
+PvdA & Lilianne Ploumen,Niet stemmer,TV,Regelmatig,0.67,5
+PvdA & Lilianne Ploumen,Niet stemmer,TV,Vaak,0.85,5.67
+PvdA & Lilianne Ploumen,Partijvoorkeur,Krant,Nauwelijks,1.28,5.96
+PvdA & Lilianne Ploumen,Partijvoorkeur,Krant,Regelmatig,1.42,6.24
+PvdA & Lilianne Ploumen,Partijvoorkeur,Krant,Vaak,1.59,6.02
+PvdA & Lilianne Ploumen,Partijvoorkeur,Socials,Nauwelijks,1.4,6.03
+PvdA & Lilianne Ploumen,Partijvoorkeur,Socials,Regelmatig,1.42,6
+PvdA & Lilianne Ploumen,Partijvoorkeur,Socials,Vaak,1.52,6.09
+PvdA & Lilianne Ploumen,Partijvoorkeur,TV,Nauwelijks,0.98,5.67
+PvdA & Lilianne Ploumen,Partijvoorkeur,TV,Regelmatig,1.32,5.97
+PvdA & Lilianne Ploumen,Partijvoorkeur,TV,Vaak,1.61,6.11
+PvdA & Lilianne Ploumen,Zwevend,Krant,Nauwelijks,1.18,5.64
+PvdA & Lilianne Ploumen,Zwevend,Krant,Regelmatig,1.35,5.81
+PvdA & Lilianne Ploumen,Zwevend,Krant,Vaak,1.48,5.97
+PvdA & Lilianne Ploumen,Zwevend,Socials,Nauwelijks,1.24,5.72
+PvdA & Lilianne Ploumen,Zwevend,Socials,Regelmatig,1.36,5.62
+PvdA & Lilianne Ploumen,Zwevend,Socials,Vaak,1.45,6.09
+PvdA & Lilianne Ploumen,Zwevend,TV,Nauwelijks,0.77,4.83
+PvdA & Lilianne Ploumen,Zwevend,TV,Regelmatig,1.58,5.62
+PvdA & Lilianne Ploumen,Zwevend,TV,Vaak,1.44,6
+PvdD & Esther Ouwehand,Coalitievoorkeur,Krant,Nauwelijks,0.7,5.66
+PvdD & Esther Ouwehand,Coalitievoorkeur,Krant,Regelmatig,0.84,5.87
+PvdD & Esther Ouwehand,Coalitievoorkeur,Krant,Vaak,0.86,5.86
+PvdD & Esther Ouwehand,Coalitievoorkeur,Socials,Nauwelijks,0.75,5.72
+PvdD & Esther Ouwehand,Coalitievoorkeur,Socials,Regelmatig,0.77,5.98
+PvdD & Esther Ouwehand,Coalitievoorkeur,Socials,Vaak,0.93,5.85
+PvdD & Esther Ouwehand,Coalitievoorkeur,TV,Nauwelijks,0.6,5.16
+PvdD & Esther Ouwehand,Coalitievoorkeur,TV,Regelmatig,0.78,5.82
+PvdD & Esther Ouwehand,Coalitievoorkeur,TV,Vaak,0.86,5.91
+PvdD & Esther Ouwehand,Niet stemmer,Krant,Nauwelijks,0.38,5.62
+PvdD & Esther Ouwehand,Niet stemmer,Krant,Regelmatig,0.78,7.5
+PvdD & Esther Ouwehand,Niet stemmer,Krant,Vaak,1,6
+PvdD & Esther Ouwehand,Niet stemmer,Socials,Nauwelijks,0.43,5.95
+PvdD & Esther Ouwehand,Niet stemmer,Socials,Regelmatig,0.9,5
+PvdD & Esther Ouwehand,Niet stemmer,Socials,Vaak,0.93,6
+PvdD & Esther Ouwehand,Niet stemmer,TV,Nauwelijks,0.37,6.33
+PvdD & Esther Ouwehand,Niet stemmer,TV,Regelmatig,0.67,6.5
+PvdD & Esther Ouwehand,Niet stemmer,TV,Vaak,0.85,5
+PvdD & Esther Ouwehand,Partijvoorkeur,Krant,Nauwelijks,0.68,5.64
+PvdD & Esther Ouwehand,Partijvoorkeur,Krant,Regelmatig,0.83,5.86
+PvdD & Esther Ouwehand,Partijvoorkeur,Krant,Vaak,0.86,5.86
+PvdD & Esther Ouwehand,Partijvoorkeur,Socials,Nauwelijks,0.73,5.72
+PvdD & Esther Ouwehand,Partijvoorkeur,Socials,Regelmatig,0.79,5.93
+PvdD & Esther Ouwehand,Partijvoorkeur,Socials,Vaak,0.94,5.84
+PvdD & Esther Ouwehand,Partijvoorkeur,TV,Nauwelijks,0.58,5.08
+PvdD & Esther Ouwehand,Partijvoorkeur,TV,Regelmatig,0.81,5.78
+PvdD & Esther Ouwehand,Partijvoorkeur,TV,Vaak,0.84,5.93
+PvdD & Esther Ouwehand,Zwevend,Krant,Nauwelijks,0.61,5.74
+PvdD & Esther Ouwehand,Zwevend,Krant,Regelmatig,0.9,5.41
+PvdD & Esther Ouwehand,Zwevend,Krant,Vaak,1.02,6.27
+PvdD & Esther Ouwehand,Zwevend,Socials,Nauwelijks,0.71,5.84
+PvdD & Esther Ouwehand,Zwevend,Socials,Regelmatig,0.84,5.59
+PvdD & Esther Ouwehand,Zwevend,Socials,Vaak,0.99,6.13
+PvdD & Esther Ouwehand,Zwevend,TV,Nauwelijks,0.49,4.38
+PvdD & Esther Ouwehand,Zwevend,TV,Regelmatig,1,5.44
+PvdD & Esther Ouwehand,Zwevend,TV,Vaak,0.85,6.24
+PVV & Geert Wilders,Coalitievoorkeur,Krant,Nauwelijks,1.84,4.53
+PVV & Geert Wilders,Coalitievoorkeur,Krant,Regelmatig,1.9,4.56
+PVV & Geert Wilders,Coalitievoorkeur,Krant,Vaak,1.99,4.01
+PVV & Geert Wilders,Coalitievoorkeur,Socials,Nauwelijks,1.86,4.2
+PVV & Geert Wilders,Coalitievoorkeur,Socials,Regelmatig,1.93,4.58
+PVV & Geert Wilders,Coalitievoorkeur,Socials,Vaak,2.04,4.52
+PVV & Geert Wilders,Coalitievoorkeur,TV,Nauwelijks,1.73,4.21
+PVV & Geert Wilders,Coalitievoorkeur,TV,Regelmatig,1.82,4.94
+PVV & Geert Wilders,Coalitievoorkeur,TV,Vaak,1.99,4.21
+PVV & Geert Wilders,Niet stemmer,Krant,Nauwelijks,1.29,5.19
+PVV & Geert Wilders,Niet stemmer,Krant,Regelmatig,1.11,6.2
+PVV & Geert Wilders,Niet stemmer,Krant,Vaak,1.6,6
+PVV & Geert Wilders,Niet stemmer,Socials,Nauwelijks,1.25,5.1
+PVV & Geert Wilders,Niet stemmer,Socials,Regelmatig,1.38,6.29
+PVV & Geert Wilders,Niet stemmer,Socials,Vaak,1.6,6.57
+PVV & Geert Wilders,Niet stemmer,TV,Nauwelijks,1.22,5.67
+PVV & Geert Wilders,Niet stemmer,TV,Regelmatig,1.33,4.67
+PVV & Geert Wilders,Niet stemmer,TV,Vaak,1.46,5.5
+PVV & Geert Wilders,Partijvoorkeur,Krant,Nauwelijks,1.82,4.66
+PVV & Geert Wilders,Partijvoorkeur,Krant,Regelmatig,1.88,4.73
+PVV & Geert Wilders,Partijvoorkeur,Krant,Vaak,1.98,4.21
+PVV & Geert Wilders,Partijvoorkeur,Socials,Nauwelijks,1.85,4.37
+PVV & Geert Wilders,Partijvoorkeur,Socials,Regelmatig,1.9,4.64
+PVV & Geert Wilders,Partijvoorkeur,Socials,Vaak,2.02,4.76
+PVV & Geert Wilders,Partijvoorkeur,TV,Nauwelijks,1.7,4.36
+PVV & Geert Wilders,Partijvoorkeur,TV,Regelmatig,1.81,4.97
+PVV & Geert Wilders,Partijvoorkeur,TV,Vaak,1.97,4.41
+PVV & Geert Wilders,Zwevend,Krant,Nauwelijks,1.76,5.15
+PVV & Geert Wilders,Zwevend,Krant,Regelmatig,1.88,5.18
+PVV & Geert Wilders,Zwevend,Krant,Vaak,1.99,4.98
+PVV & Geert Wilders,Zwevend,Socials,Nauwelijks,1.76,5.09
+PVV & Geert Wilders,Zwevend,Socials,Regelmatig,1.95,5.38
+PVV & Geert Wilders,Zwevend,Socials,Vaak,2.06,4.89
+PVV & Geert Wilders,Zwevend,TV,Nauwelijks,1.51,4.56
+PVV & Geert Wilders,Zwevend,TV,Regelmatig,1.96,4.69
+PVV & Geert Wilders,Zwevend,TV,Vaak,1.96,5.5
+SGP  & Kees van der Staaij,Coalitievoorkeur,Krant,Nauwelijks,0.78,5.62
+SGP  & Kees van der Staaij,Coalitievoorkeur,Krant,Regelmatig,0.97,5.85
+SGP  & Kees van der Staaij,Coalitievoorkeur,Krant,Vaak,1.05,5.55
+SGP  & Kees van der Staaij,Coalitievoorkeur,Socials,Nauwelijks,0.87,5.63
+SGP  & Kees van der Staaij,Coalitievoorkeur,Socials,Regelmatig,0.94,5.47
+SGP  & Kees van der Staaij,Coalitievoorkeur,Socials,Vaak,1.07,5.71
+SGP  & Kees van der Staaij,Coalitievoorkeur,TV,Nauwelijks,0.69,6.33
+SGP  & Kees van der Staaij,Coalitievoorkeur,TV,Regelmatig,0.89,5.33
+SGP  & Kees van der Staaij,Coalitievoorkeur,TV,Vaak,1.01,5.59
+SGP  & Kees van der Staaij,Niet stemmer,Krant,Nauwelijks,0.32,6
+SGP  & Kees van der Staaij,Niet stemmer,Krant,Regelmatig,0.72,8
+SGP  & Kees van der Staaij,Niet stemmer,Krant,Vaak,0.4,NaN
+SGP  & Kees van der Staaij,Niet stemmer,Socials,Nauwelijks,0.36,6
+SGP  & Kees van der Staaij,Niet stemmer,Socials,Regelmatig,0.38,NaN
+SGP  & Kees van der Staaij,Niet stemmer,Socials,Vaak,0.8,8
+SGP  & Kees van der Staaij,Niet stemmer,TV,Nauwelijks,0.48,6
+SGP  & Kees van der Staaij,Niet stemmer,TV,Regelmatig,0.22,NaN
+SGP  & Kees van der Staaij,Niet stemmer,TV,Vaak,0.38,8
+SGP  & Kees van der Staaij,Partijvoorkeur,Krant,Nauwelijks,0.76,5.6
+SGP  & Kees van der Staaij,Partijvoorkeur,Krant,Regelmatig,0.98,5.77
+SGP  & Kees van der Staaij,Partijvoorkeur,Krant,Vaak,1.04,5.68
+SGP  & Kees van der Staaij,Partijvoorkeur,Socials,Nauwelijks,0.86,5.66
+SGP  & Kees van der Staaij,Partijvoorkeur,Socials,Regelmatig,0.93,5.49
+SGP  & Kees van der Staaij,Partijvoorkeur,Socials,Vaak,1.07,5.8
+SGP  & Kees van der Staaij,Partijvoorkeur,TV,Nauwelijks,0.67,6.32
+SGP  & Kees van der Staaij,Partijvoorkeur,TV,Regelmatig,0.91,5.22
+SGP  & Kees van der Staaij,Partijvoorkeur,TV,Vaak,1,5.67
+SGP  & Kees van der Staaij,Zwevend,Krant,Nauwelijks,0.61,4.33
+SGP  & Kees van der Staaij,Zwevend,Krant,Regelmatig,0.92,5.29
+SGP  & Kees van der Staaij,Zwevend,Krant,Vaak,1.06,5.73
+SGP  & Kees van der Staaij,Zwevend,Socials,Nauwelijks,0.72,5.36
+SGP  & Kees van der Staaij,Zwevend,Socials,Regelmatig,0.91,5.31
+SGP  & Kees van der Staaij,Zwevend,Socials,Vaak,0.96,5.26
+SGP  & Kees van der Staaij,Zwevend,TV,Nauwelijks,0.43,2
+SGP  & Kees van der Staaij,Zwevend,TV,Regelmatig,1.19,4.43
+SGP  & Kees van der Staaij,Zwevend,TV,Vaak,0.84,6.18
+SP & Lilian Marijnissen,Coalitievoorkeur,Krant,Nauwelijks,1.38,5.97
+SP & Lilian Marijnissen,Coalitievoorkeur,Krant,Regelmatig,1.46,6.18
+SP & Lilian Marijnissen,Coalitievoorkeur,Krant,Vaak,1.6,5.99
+SP & Lilian Marijnissen,Coalitievoorkeur,Socials,Nauwelijks,1.46,5.99
+SP & Lilian Marijnissen,Coalitievoorkeur,Socials,Regelmatig,1.45,5.94
+SP & Lilian Marijnissen,Coalitievoorkeur,Socials,Vaak,1.57,6.14
+SP & Lilian Marijnissen,Coalitievoorkeur,TV,Nauwelijks,1.05,5.72
+SP & Lilian Marijnissen,Coalitievoorkeur,TV,Regelmatig,1.38,6.4
+SP & Lilian Marijnissen,Coalitievoorkeur,TV,Vaak,1.66,6.01
+SP & Lilian Marijnissen,Niet stemmer,Krant,Nauwelijks,0.86,5.31
+SP & Lilian Marijnissen,Niet stemmer,Krant,Regelmatig,0.78,6.25
+SP & Lilian Marijnissen,Niet stemmer,Krant,Vaak,0.8,5
+SP & Lilian Marijnissen,Niet stemmer,Socials,Nauwelijks,0.84,5.33
+SP & Lilian Marijnissen,Niet stemmer,Socials,Regelmatig,0.81,6
+SP & Lilian Marijnissen,Niet stemmer,Socials,Vaak,0.87,5
+SP & Lilian Marijnissen,Niet stemmer,TV,Nauwelijks,0.81,5.29
+SP & Lilian Marijnissen,Niet stemmer,TV,Regelmatig,0.89,6
+SP & Lilian Marijnissen,Niet stemmer,TV,Vaak,0.85,5.33
+SP & Lilian Marijnissen,Partijvoorkeur,Krant,Nauwelijks,1.3,5.94
+SP & Lilian Marijnissen,Partijvoorkeur,Krant,Regelmatig,1.43,6.2
+SP & Lilian Marijnissen,Partijvoorkeur,Krant,Vaak,1.56,5.92
+SP & Lilian Marijnissen,Partijvoorkeur,Socials,Nauwelijks,1.4,5.95
+SP & Lilian Marijnissen,Partijvoorkeur,Socials,Regelmatig,1.4,5.93
+SP & Lilian Marijnissen,Partijvoorkeur,Socials,Vaak,1.52,6.1
+SP & Lilian Marijnissen,Partijvoorkeur,TV,Nauwelijks,1,5.67
+SP & Lilian Marijnissen,Partijvoorkeur,TV,Regelmatig,1.35,6.39
+SP & Lilian Marijnissen,Partijvoorkeur,TV,Vaak,1.59,5.96
+SP & Lilian Marijnissen,Zwevend,Krant,Nauwelijks,1.1,5.94
+SP & Lilian Marijnissen,Zwevend,Krant,Regelmatig,1.31,5.56
+SP & Lilian Marijnissen,Zwevend,Krant,Vaak,1.49,5.97
+SP & Lilian Marijnissen,Zwevend,Socials,Nauwelijks,1.16,5.86
+SP & Lilian Marijnissen,Zwevend,Socials,Regelmatig,1.37,5.64
+SP & Lilian Marijnissen,Zwevend,Socials,Vaak,1.46,6.24
+SP & Lilian Marijnissen,Zwevend,TV,Nauwelijks,0.8,5.67
+SP & Lilian Marijnissen,Zwevend,TV,Regelmatig,1.62,5.92
+SP & Lilian Marijnissen,Zwevend,TV,Vaak,1.34,5.94
+VVD & Mark Rutte,Coalitievoorkeur,Krant,Nauwelijks,2.3,5.08
+VVD & Mark Rutte,Coalitievoorkeur,Krant,Regelmatig,2.26,5.43
+VVD & Mark Rutte,Coalitievoorkeur,Krant,Vaak,2.41,5.85
+VVD & Mark Rutte,Coalitievoorkeur,Socials,Nauwelijks,2.32,5.35
+VVD & Mark Rutte,Coalitievoorkeur,Socials,Regelmatig,2.31,5.64
+VVD & Mark Rutte,Coalitievoorkeur,Socials,Vaak,2.43,5.78
+VVD & Mark Rutte,Coalitievoorkeur,TV,Nauwelijks,2.22,4.93
+VVD & Mark Rutte,Coalitievoorkeur,TV,Regelmatig,2.25,5.7
+VVD & Mark Rutte,Coalitievoorkeur,TV,Vaak,2.4,5.59
+VVD & Mark Rutte,Niet stemmer,Krant,Nauwelijks,1.6,3.53
+VVD & Mark Rutte,Niet stemmer,Krant,Regelmatig,0.94,4.25
+VVD & Mark Rutte,Niet stemmer,Krant,Vaak,2.07,4.4
+VVD & Mark Rutte,Niet stemmer,Socials,Nauwelijks,1.59,3.48
+VVD & Mark Rutte,Niet stemmer,Socials,Regelmatig,1.52,5.6
+VVD & Mark Rutte,Niet stemmer,Socials,Vaak,1.27,3.83
+VVD & Mark Rutte,Niet stemmer,TV,Nauwelijks,1.37,2.5
+VVD & Mark Rutte,Niet stemmer,TV,Regelmatig,1.56,6
+VVD & Mark Rutte,Niet stemmer,TV,Vaak,1.92,4
+VVD & Mark Rutte,Partijvoorkeur,Krant,Nauwelijks,2.26,5.05
+VVD & Mark Rutte,Partijvoorkeur,Krant,Regelmatig,2.22,5.48
+VVD & Mark Rutte,Partijvoorkeur,Krant,Vaak,2.38,5.9
+VVD & Mark Rutte,Partijvoorkeur,Socials,Nauwelijks,2.28,5.33
+VVD & Mark Rutte,Partijvoorkeur,Socials,Regelmatig,2.27,5.66
+VVD & Mark Rutte,Partijvoorkeur,Socials,Vaak,2.39,5.9
+VVD & Mark Rutte,Partijvoorkeur,TV,Nauwelijks,2.16,4.71
+VVD & Mark Rutte,Partijvoorkeur,TV,Regelmatig,2.2,5.81
+VVD & Mark Rutte,Partijvoorkeur,TV,Vaak,2.38,5.65
+VVD & Mark Rutte,Zwevend,Krant,Nauwelijks,2.11,4.76
+VVD & Mark Rutte,Zwevend,Krant,Regelmatig,2.1,5.5
+VVD & Mark Rutte,Zwevend,Krant,Vaak,2.37,5.72
+VVD & Mark Rutte,Zwevend,Socials,Nauwelijks,2.08,4.94
+VVD & Mark Rutte,Zwevend,Socials,Regelmatig,2.36,5.48
+VVD & Mark Rutte,Zwevend,Socials,Vaak,2.38,6.25
+VVD & Mark Rutte,Zwevend,TV,Nauwelijks,1.86,4.21
+VVD & Mark Rutte,Zwevend,TV,Regelmatig,2.15,5.5
+VVD & Mark Rutte,Zwevend,TV,Vaak,2.34,5.62

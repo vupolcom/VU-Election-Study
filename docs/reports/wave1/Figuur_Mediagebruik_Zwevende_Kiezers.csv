@@ -1,0 +1,127 @@
+zwevend,type,perc,means,stdev,id
+Stem bepaald,Andere messaging app,0.06,0.33182077731639004,0.4708678139173224,socials
+Stem bepaald,Andere socials,0.06,0.30131357778746193,0.4588294168305071,socials
+Stem bepaald,Facebook,0.09,0.6680809230610029,0.4709026702281669,socials
+Stem bepaald,Google Hangouts,0.1,0.05090287208892917,0.2197996154550978,socials
+Stem bepaald,Instagram,0.06,0.3288452845351505,0.469794425681518,socials
+Stem bepaald,Reddit,0.05,0.06532686113505423,0.24710223424555292,socials
+Stem bepaald,Signal,0.05,0.06128032099215757,0.23984428635271382,socials
+Stem bepaald,Snapchat,0.05,0.07761408551922387,0.26756388315432894,socials
+Stem bepaald,Telegram,0.1,0.06664335418352167,0.24940358103401897,socials
+Stem bepaald,Tumblr,0.05,0.0068256444287401,0.08233519428988338,socials
+Stem bepaald,Twitter,0.06,0.33097438497215154,0.47056466075470477,socials
+Stem bepaald,Viber,0.1,0.03134328358208954,0.17424392822724322,socials
+Stem bepaald,Whatsapp,0.08,0.5830877785387764,0.4930487464685924,socials
+Stem bepaald,Youtube,0.06,0.3567851180538993,0.4790514145187953,socials
+Zwevend,Andere messaging app,0.06,0.3302752293577982,0.470336650540297,socials
+Zwevend,Andere socials,0.06,0.27809965237543455,0.44808636019344406,socials
+Zwevend,Facebook,0.11,0.7589260047145403,0.4277474064303787,socials
+Zwevend,Google Hangouts,0.1,0.03378983745040317,0.18069359095683496,socials
+Zwevend,Instagram,0.06,0.2348493272545313,0.4239281833407733,socials
+Zwevend,Reddit,0.05,0,0,socials
+Zwevend,Signal,0.05,0,0,socials
+Zwevend,Snapchat,0.05,0.06533844821185497,0.24713739798578788,socials
+Zwevend,Telegram,0.11,0.09531832952220484,0.29366296158782956,socials
+Zwevend,Tumblr,0.05,0,0,socials
+Zwevend,Twitter,0.06,0.17720102919789685,0.3818601012353566,socials
+Zwevend,Viber,0.1,0,0,socials
+Zwevend,Whatsapp,0.09,0.6127511423805033,0.48713898640604486,socials
+Zwevend,Youtube,0.07,0.39417693169092943,0.4886959840901535,socials
+Stem bepaald,A regional or local newspaper,0.04,0.5269536617782884,0.49927437744812986,geschreven media
+Stem bepaald,AD app,0.03,0.36580211335254564,0.4816559603628944,geschreven media
+Stem bepaald,Algemeen Dagblad (AD),0.04,0.5605947955390335,0.4963160458878661,geschreven media
+Stem bepaald,Andere app,0.03,0.27858367125120187,0.44830370246159373,geschreven media
+Stem bepaald,Andere blogs,0.04,0.4258234013327975,0.49446870352233424,geschreven media
+Stem bepaald,Andere krant,0.03,0.36229740200692884,0.4806656572091054,geschreven media
+Stem bepaald,Apple News app,0.03,0.029731275014293877,0.1698457207452288,geschreven media
+Stem bepaald,Blendle.com,0.03,0.056265307473356736,0.2304342900130706,geschreven media
+Stem bepaald,De Groene Amsterdammer,0.03,0.029676379750235,0.1696936472267008,geschreven media
+Stem bepaald,de Telegraaf,0.04,0.5217778539008308,0.49952692588799014,geschreven media
+Stem bepaald,de Volkskrant,0.03,0.3296902720784409,0.4701022155318657,geschreven media
+Stem bepaald,Decorrespondent.nl,0.03,0.06251898308145691,0.24209675951250384,geschreven media
+Stem bepaald,Elsevier,0.03,0.05627368874029693,0.23045042891780945,geschreven media
+Stem bepaald,Geenstijl.nl,0.03,0.13686502975839485,0.343706156737333,geschreven media
+Stem bepaald,Google News app,0.03,0.19597865489834057,0.39695365516747655,geschreven media
+Stem bepaald,GoogleNews,0.03,0.24961160769125162,0.43278979477268037,geschreven media
+Stem bepaald,HP/de Tijd,0.03,0.025193880042775705,0.1567142471223208,geschreven media
+Stem bepaald,Joop.nl,0.03,0.0498118736057004,0.21755699217807897,geschreven media
+Stem bepaald,Metro,0.03,0.11453905498923415,0.3184661138744277,geschreven media
+Stem bepaald,News aggregator like feedly or flipboard,0.03,0.027505308929113154,0.16355119174176364,geschreven media
+Stem bepaald,NOS app,0.04,0.5421724524076148,0.49821970463205334,geschreven media
+Stem bepaald,NRC app,0.03,0.06717265677735887,0.25032180644258833,geschreven media
+Stem bepaald,NRC Handelsblad,0.03,0.18697970961942315,0.38989671219953254,geschreven media
+Stem bepaald,Nrc.Next,0.03,0.09403970315100545,0.2918851184861477,geschreven media
+Stem bepaald,Nu app,0.04,0.509090909090909,0.49991877054394107,geschreven media
+Stem bepaald,Nu.nl,0.06,0.8333615280800881,0.3726534766406268,geschreven media
+Stem bepaald,Politieke blogs,0.03,0.04959883296863603,0.2171155900745294,geschreven media
+Stem bepaald,Telegraaf app,0.03,0.28051408615993,0.44925201068892434,geschreven media
+Stem bepaald,Teletekst app,0.03,0.19658561821003623,0.3974178084916531,geschreven media
+Stem bepaald,Tpo.nl,0.03,0.04312200657510472,0.20313257597667617,geschreven media
+Stem bepaald,Trouw,0.03,0.19585077179244859,0.39685567685738427,geschreven media
+Stem bepaald,Volkskrant app,0.03,0.11296312565390668,0.31654898228297995,geschreven media
+Stem bepaald,Vrij Nederland,0.03,0.01842662376153781,0.13448879679413017,geschreven media
+Zwevend,A regional or local newspaper,0.04,0.5757484124584216,0.494266238657769,geschreven media
+Zwevend,AD app,0.03,0.23357664233576642,0.4231513148338125,geschreven media
+Zwevend,Algemeen Dagblad (AD),0.04,0.4362858670468722,0.495968092648107,geschreven media
+Zwevend,Andere app,0.04,0.4657534246575342,0.49886850648926284,geschreven media
+Zwevend,Andere blogs,0.04,0.5780206435944141,0.49391275402801615,geschreven media
+Zwevend,Andere krant,0.04,0.4918625678119349,0.4999748755783476,geschreven media
+Zwevend,Apple News app,0.02,0,0,geschreven media
+Zwevend,Blendle.com,0.03,0.12722170252572498,0.3332601301465035,geschreven media
+Zwevend,De Groene Amsterdammer,0.03,0.18263205013428827,0.3864078185788699,geschreven media
+Zwevend,de Telegraaf,0.03,0.36721311475409835,0.4820917621282495,geschreven media
+Zwevend,de Volkskrant,0.03,0.18214285714285713,0.3860053052545048,geschreven media
+Zwevend,Decorrespondent.nl,0.03,0.06666666666666667,0.24947440050169375,geschreven media
+Zwevend,Elsevier,0.02,0,0,geschreven media
+Zwevend,Geenstijl.nl,0.02,0,0,geschreven media
+Zwevend,Google News app,0.03,0.1827956989247312,0.3865422389075356,geschreven media
+Zwevend,GoogleNews,0.03,0.12636469221835075,0.3322985202491313,geschreven media
+Zwevend,HP/de Tijd,0.02,0,0,geschreven media
+Zwevend,Joop.nl,0.02,0,0,geschreven media
+Zwevend,Metro,0.02,0,0,geschreven media
+Zwevend,News aggregator like feedly or flipboard,0.03,0.06614785992217899,0.24857060698240038,geschreven media
+Zwevend,NOS app,0.03,0.4051387078756284,0.49096457556764234,geschreven media
+Zwevend,NRC app,0.03,0.06666666666666667,0.24947440050169375,geschreven media
+Zwevend,NRC Handelsblad,0.03,0.06666666666666667,0.24947440050169375,geschreven media
+Zwevend,Nrc.Next,0.03,0.06666666666666667,0.24947440050169375,geschreven media
+Zwevend,Nu app,0.04,0.5561497326203209,0.4968762806746577,geschreven media
+Zwevend,Nu.nl,0.06,0.7955005624296962,0.4033580528630221,geschreven media
+Zwevend,Politieke blogs,0.03,0.128150765606596,0.33429698326950874,geschreven media
+Zwevend,Telegraaf app,0.03,0.2808176749948379,0.4494450113844502,geschreven media
+Zwevend,Teletekst app,0.03,0.3252291749701076,0.4685070981599613,geschreven media
+Zwevend,Tpo.nl,0.02,0,0,geschreven media
+Zwevend,Trouw,0.03,0.06666666666666667,0.24947440050169375,geschreven media
+Zwevend,Volkskrant app,0.03,0.18214285714285713,0.3860053052545048,geschreven media
+Zwevend,Vrij Nederland,0.02,0,0,geschreven media
+Stem bepaald,Ander tv programma,0.03,0.1787489047248485,0.3831430976546928,tv
+Stem bepaald,Beau,0.04,0.2636322974051783,0.4406034592592204,tv
+Stem bepaald,De Vooravond,0.05,0.5469125197275106,0.4977953450615586,tv
+Stem bepaald,Dit was het nieuws,0.03,0.07973765964791162,0.2708875448263269,tv
+Stem bepaald,EenVandaag,0.06,0.6700673426225019,0.47018914110998633,tv
+Stem bepaald,Eigen kanalen van politici en opiniemakers,0.11,0.9025685451661173,0.29654465319557166,tv
+Stem bepaald,Hart van Nederland,0.03,0.1633404857300192,0.3696772057569373,tv
+Stem bepaald,Jinek,0.04,0.35173507298343426,0.4775130290663462,tv
+Stem bepaald,M,0.07,0.7024669932558598,0.4571736787748649,tv
+Stem bepaald,Nieuwsuur,0.06,0.6591122251779855,0.4740084912089255,tv
+Stem bepaald,NOS Journaal,0.1,0.8678347079184651,0.33867074382206297,tv
+Stem bepaald,Op Eén,0.07,0.741389940230515,0.4378714925850108,tv
+Stem bepaald,Persconferentie Rutte en De Jonge,0.13,0.9412323614251189,0.2351894833345136,tv
+Stem bepaald,RTL Nieuws,0.06,0.6642293878439481,0.47225993238539377,tv
+Stem bepaald,WNL Opiniemakers,0.04,0.26006409889543863,0.43867056508382346,tv
+Stem bepaald,Zondag met Lubach,0.05,0.44761188798288004,0.4972490583959262,tv
+Zwevend,Ander tv programma,0.03,0.10720428052742213,0.3094023533375057,tv
+Zwevend,Beau,0.03,0.11067271651213258,0.31375736973540264,tv
+Zwevend,De Vooravond,0.05,0.48136798234861483,0.4996833536172541,tv
+Zwevend,Dit was het nieuws,0.03,0.11067271651213258,0.31375736973540264,tv
+Zwevend,EenVandaag,0.05,0.38429921907110565,0.48646248669340086,tv
+Zwevend,Eigen kanalen van politici en opiniemakers,0.14,0.9231311706629055,0.2663894681196797,tv
+Zwevend,Hart van Nederland,0.03,0,0,tv
+Zwevend,Jinek,0.05,0.5332699619771863,0.49892152383466143,tv
+Zwevend,M,0.06,0.5708955223880597,0.4949762898110804,tv
+Zwevend,Nieuwsuur,0.05,0.4892848243209569,0.49991631634802486,tv
+Zwevend,NOS Journaal,0.11,0.876917732877902,0.3285411262829077,tv
+Zwevend,Op Eén,0.09,0.7806503588691959,0.41382111839092056,tv
+Zwevend,Persconferentie Rutte en De Jonge,0.13,0.915083477259643,0.2787641208084642,tv
+Zwevend,RTL Nieuws,0.08,0.7296374573240123,0.44416514364370774,tv
+Zwevend,WNL Opiniemakers,0.03,0.10946341463414634,0.3122502200480121,tv
+Zwevend,Zondag met Lubach,0.04,0.27563052735014737,0.44686803847621615,tv

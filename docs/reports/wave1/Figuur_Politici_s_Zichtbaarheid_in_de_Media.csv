@@ -1,0 +1,1718 @@
+date,medium,query,n,id
+2021-01-25,AD,CDA,4,krant
+2021-01-25,AD,D66,2,krant
+2021-01-25,AD,FvD,1,krant
+2021-01-25,AD,GL,1,krant
+2021-01-25,AD,PvdA,1,krant
+2021-01-25,AD,SP,1,krant
+2021-01-25,AD,VVD,5,krant
+2021-01-25,NRC,CDA,2,krant
+2021-01-25,NRC,CU,1,krant
+2021-01-25,NRC,D66,4,krant
+2021-01-25,NRC,FvD,2,krant
+2021-01-25,NRC,GL,1,krant
+2021-01-25,NRC,PvdA,2,krant
+2021-01-25,NRC,SP,2,krant
+2021-01-25,NRC,VVD,4,krant
+2021-01-25,De Telegraaf,CDA,1,krant
+2021-01-25,De Telegraaf,D66,2,krant
+2021-01-25,De Telegraaf,FvD,2,krant
+2021-01-25,De Telegraaf,GL,2,krant
+2021-01-25,De Telegraaf,PvdA,3,krant
+2021-01-25,De Telegraaf,SP,2,krant
+2021-01-25,De Telegraaf,VVD,2,krant
+2021-01-25,Trouw,CDA,4,krant
+2021-01-25,Trouw,CU,1,krant
+2021-01-25,Trouw,D66,2,krant
+2021-01-25,Trouw,FvD,2,krant
+2021-01-25,Trouw,GL,5,krant
+2021-01-25,Trouw,PvdA,4,krant
+2021-01-25,Trouw,PVV,1,krant
+2021-01-25,Trouw,SP,2,krant
+2021-01-25,Trouw,VVD,6,krant
+2021-01-25,de Volkskrant,50Plus,1,krant
+2021-01-25,de Volkskrant,CDA,3,krant
+2021-01-25,de Volkskrant,CU,1,krant
+2021-01-25,de Volkskrant,D66,3,krant
+2021-01-25,de Volkskrant,FvD,2,krant
+2021-01-25,de Volkskrant,GL,2,krant
+2021-01-25,de Volkskrant,PvdA,2,krant
+2021-01-25,de Volkskrant,SP,1,krant
+2021-01-25,de Volkskrant,VVD,1,krant
+2021-01-26,AD,50Plus,2,krant
+2021-01-26,AD,CDA,4,krant
+2021-01-26,AD,CU,3,krant
+2021-01-26,AD,D66,2,krant
+2021-01-26,AD,FvD,3,krant
+2021-01-26,AD,GL,3,krant
+2021-01-26,AD,PvdA,2,krant
+2021-01-26,AD,PVV,3,krant
+2021-01-26,AD,SGP,2,krant
+2021-01-26,AD,SP,1,krant
+2021-01-26,AD,VVD,6,krant
+2021-01-26,NRC,50Plus,3,krant
+2021-01-26,NRC,CDA,4,krant
+2021-01-26,NRC,CU,2,krant
+2021-01-26,NRC,D66,2,krant
+2021-01-26,NRC,FvD,3,krant
+2021-01-26,NRC,GL,4,krant
+2021-01-26,NRC,PVV,2,krant
+2021-01-26,NRC,SGP,3,krant
+2021-01-26,NRC,SP,1,krant
+2021-01-26,NRC,VVD,4,krant
+2021-01-26,De Telegraaf,CDA,6,krant
+2021-01-26,De Telegraaf,D66,8,krant
+2021-01-26,De Telegraaf,FvD,8,krant
+2021-01-26,De Telegraaf,GL,10,krant
+2021-01-26,De Telegraaf,PvdA,4,krant
+2021-01-26,De Telegraaf,PVV,2,krant
+2021-01-26,De Telegraaf,SP,2,krant
+2021-01-26,De Telegraaf,VVD,12,krant
+2021-01-26,Trouw,CDA,2,krant
+2021-01-26,Trouw,D66,2,krant
+2021-01-26,Trouw,PvdA,1,krant
+2021-01-26,Trouw,SP,1,krant
+2021-01-26,Trouw,VVD,7,krant
+2021-01-26,de Volkskrant,CDA,4,krant
+2021-01-26,de Volkskrant,D66,1,krant
+2021-01-26,de Volkskrant,Denk,1,krant
+2021-01-26,de Volkskrant,PvdA,2,krant
+2021-01-26,de Volkskrant,SP,1,krant
+2021-01-26,de Volkskrant,VVD,5,krant
+2021-01-27,AD,50Plus,2,krant
+2021-01-27,AD,CDA,3,krant
+2021-01-27,AD,CU,1,krant
+2021-01-27,AD,D66,3,krant
+2021-01-27,AD,FvD,2,krant
+2021-01-27,AD,GL,3,krant
+2021-01-27,AD,PvdA,2,krant
+2021-01-27,AD,PVV,3,krant
+2021-01-27,AD,SGP,2,krant
+2021-01-27,AD,SP,1,krant
+2021-01-27,AD,VVD,4,krant
+2021-01-27,NRC,50Plus,1,krant
+2021-01-27,NRC,CDA,2,krant
+2021-01-27,NRC,CU,2,krant
+2021-01-27,NRC,D66,2,krant
+2021-01-27,NRC,FvD,3,krant
+2021-01-27,NRC,GL,2,krant
+2021-01-27,NRC,PVV,1,krant
+2021-01-27,NRC,SGP,1,krant
+2021-01-27,NRC,SP,2,krant
+2021-01-27,NRC,VVD,4,krant
+2021-01-27,De Telegraaf,50Plus,1,krant
+2021-01-27,De Telegraaf,CDA,4,krant
+2021-01-27,De Telegraaf,CU,2,krant
+2021-01-27,De Telegraaf,D66,4,krant
+2021-01-27,De Telegraaf,FvD,2,krant
+2021-01-27,De Telegraaf,GL,2,krant
+2021-01-27,De Telegraaf,PvdA,1,krant
+2021-01-27,De Telegraaf,PVV,2,krant
+2021-01-27,De Telegraaf,SGP,1,krant
+2021-01-27,De Telegraaf,SP,1,krant
+2021-01-27,De Telegraaf,VVD,3,krant
+2021-01-27,Trouw,50Plus,1,krant
+2021-01-27,Trouw,CDA,2,krant
+2021-01-27,Trouw,D66,3,krant
+2021-01-27,Trouw,FvD,4,krant
+2021-01-27,Trouw,GL,4,krant
+2021-01-27,Trouw,PvdA,3,krant
+2021-01-27,Trouw,PVV,1,krant
+2021-01-27,Trouw,SGP,1,krant
+2021-01-27,Trouw,SP,4,krant
+2021-01-27,Trouw,VVD,4,krant
+2021-01-27,de Volkskrant,50Plus,2,krant
+2021-01-27,de Volkskrant,CDA,5,krant
+2021-01-27,de Volkskrant,CU,2,krant
+2021-01-27,de Volkskrant,D66,2,krant
+2021-01-27,de Volkskrant,FvD,6,krant
+2021-01-27,de Volkskrant,GL,2,krant
+2021-01-27,de Volkskrant,PvdA,2,krant
+2021-01-27,de Volkskrant,PVV,2,krant
+2021-01-27,de Volkskrant,SGP,2,krant
+2021-01-27,de Volkskrant,SP,3,krant
+2021-01-27,de Volkskrant,VVD,2,krant
+2021-01-28,AD,CDA,1,krant
+2021-01-28,AD,CU,1,krant
+2021-01-28,AD,D66,3,krant
+2021-01-28,AD,GL,1,krant
+2021-01-28,AD,PVV,2,krant
+2021-01-28,AD,VVD,5,krant
+2021-01-28,NRC,50Plus,1,krant
+2021-01-28,NRC,CDA,10,krant
+2021-01-28,NRC,D66,1,krant
+2021-01-28,NRC,FvD,4,krant
+2021-01-28,NRC,GL,2,krant
+2021-01-28,NRC,PvdA,1,krant
+2021-01-28,NRC,SGP,1,krant
+2021-01-28,NRC,SP,4,krant
+2021-01-28,NRC,VVD,4,krant
+2021-01-28,De Telegraaf,50Plus,2,krant
+2021-01-28,De Telegraaf,CDA,2,krant
+2021-01-28,De Telegraaf,CU,2,krant
+2021-01-28,De Telegraaf,D66,5,krant
+2021-01-28,De Telegraaf,FvD,1,krant
+2021-01-28,De Telegraaf,GL,2,krant
+2021-01-28,De Telegraaf,PvdA,3,krant
+2021-01-28,De Telegraaf,SGP,2,krant
+2021-01-28,De Telegraaf,VVD,1,krant
+2021-01-28,Trouw,50Plus,1,krant
+2021-01-28,Trouw,CDA,2,krant
+2021-01-28,Trouw,CU,1,krant
+2021-01-28,Trouw,D66,2,krant
+2021-01-28,Trouw,FvD,1,krant
+2021-01-28,Trouw,GL,5,krant
+2021-01-28,Trouw,PvdA,1,krant
+2021-01-28,Trouw,PVV,1,krant
+2021-01-28,Trouw,SGP,1,krant
+2021-01-28,Trouw,VVD,2,krant
+2021-01-28,de Volkskrant,CDA,1,krant
+2021-01-28,de Volkskrant,PVV,1,krant
+2021-01-28,de Volkskrant,VVD,2,krant
+2021-01-29,AD,50Plus,1,krant
+2021-01-29,AD,CDA,5,krant
+2021-01-29,AD,D66,3,krant
+2021-01-29,AD,GL,7,krant
+2021-01-29,AD,PvdA,2,krant
+2021-01-29,AD,PVV,1,krant
+2021-01-29,AD,SGP,1,krant
+2021-01-29,AD,SP,1,krant
+2021-01-29,AD,VVD,2,krant
+2021-01-29,NRC,50Plus,1,krant
+2021-01-29,NRC,CDA,5,krant
+2021-01-29,NRC,CU,2,krant
+2021-01-29,NRC,D66,5,krant
+2021-01-29,NRC,FvD,5,krant
+2021-01-29,NRC,GL,4,krant
+2021-01-29,NRC,PvdA,3,krant
+2021-01-29,NRC,PVV,2,krant
+2021-01-29,NRC,SGP,1,krant
+2021-01-29,NRC,SP,1,krant
+2021-01-29,NRC,VVD,4,krant
+2021-01-29,De Telegraaf,50Plus,1,krant
+2021-01-29,De Telegraaf,CDA,8,krant
+2021-01-29,De Telegraaf,CU,2,krant
+2021-01-29,De Telegraaf,D66,4,krant
+2021-01-29,De Telegraaf,FvD,2,krant
+2021-01-29,De Telegraaf,GL,3,krant
+2021-01-29,De Telegraaf,PvdA,2,krant
+2021-01-29,De Telegraaf,PVV,2,krant
+2021-01-29,De Telegraaf,SGP,1,krant
+2021-01-29,De Telegraaf,SP,2,krant
+2021-01-29,Trouw,50Plus,1,krant
+2021-01-29,Trouw,CDA,3,krant
+2021-01-29,Trouw,CU,2,krant
+2021-01-29,Trouw,D66,1,krant
+2021-01-29,Trouw,FvD,2,krant
+2021-01-29,Trouw,GL,2,krant
+2021-01-29,Trouw,PvdA,1,krant
+2021-01-29,Trouw,SGP,1,krant
+2021-01-29,Trouw,VVD,2,krant
+2021-01-29,de Volkskrant,50Plus,2,krant
+2021-01-29,de Volkskrant,CDA,4,krant
+2021-01-29,de Volkskrant,D66,6,krant
+2021-01-29,de Volkskrant,FvD,2,krant
+2021-01-29,de Volkskrant,GL,2,krant
+2021-01-29,de Volkskrant,PvdA,3,krant
+2021-01-29,de Volkskrant,SGP,2,krant
+2021-01-29,de Volkskrant,SP,2,krant
+2021-01-29,de Volkskrant,VVD,5,krant
+2021-01-30,AD,50Plus,1,krant
+2021-01-30,AD,CDA,6,krant
+2021-01-30,AD,CU,1,krant
+2021-01-30,AD,D66,5,krant
+2021-01-30,AD,FvD,2,krant
+2021-01-30,AD,GL,1,krant
+2021-01-30,AD,PvdA,2,krant
+2021-01-30,AD,PVV,1,krant
+2021-01-30,AD,SGP,1,krant
+2021-01-30,AD,SP,1,krant
+2021-01-30,AD,VVD,6,krant
+2021-01-30,NRC,50Plus,1,krant
+2021-01-30,NRC,CDA,5,krant
+2021-01-30,NRC,CU,2,krant
+2021-01-30,NRC,D66,4,krant
+2021-01-30,NRC,FvD,9,krant
+2021-01-30,NRC,GL,3,krant
+2021-01-30,NRC,PvdA,4,krant
+2021-01-30,NRC,PVV,4,krant
+2021-01-30,NRC,SGP,1,krant
+2021-01-30,NRC,SP,3,krant
+2021-01-30,NRC,VVD,12,krant
+2021-01-30,De Telegraaf,CDA,4,krant
+2021-01-30,De Telegraaf,D66,1,krant
+2021-01-30,De Telegraaf,FvD,3,krant
+2021-01-30,De Telegraaf,GL,3,krant
+2021-01-30,De Telegraaf,PVV,1,krant
+2021-01-30,De Telegraaf,VVD,2,krant
+2021-01-30,Trouw,50Plus,2,krant
+2021-01-30,Trouw,CDA,7,krant
+2021-01-30,Trouw,D66,4,krant
+2021-01-30,Trouw,FvD,3,krant
+2021-01-30,Trouw,GL,3,krant
+2021-01-30,Trouw,PvdA,4,krant
+2021-01-30,Trouw,PVV,2,krant
+2021-01-30,Trouw,SGP,2,krant
+2021-01-30,Trouw,SP,2,krant
+2021-01-30,Trouw,VVD,7,krant
+2021-01-30,de Volkskrant,CDA,4,krant
+2021-01-30,de Volkskrant,CU,1,krant
+2021-01-30,de Volkskrant,FvD,3,krant
+2021-01-30,de Volkskrant,GL,1,krant
+2021-01-30,de Volkskrant,PvdA,1,krant
+2021-01-30,de Volkskrant,VVD,7,krant
+2021-02-01,AD,CDA,2,krant
+2021-02-01,AD,CU,2,krant
+2021-02-01,AD,D66,1,krant
+2021-02-01,AD,VVD,1,krant
+2021-02-01,NRC,CDA,3,krant
+2021-02-01,NRC,CU,2,krant
+2021-02-01,NRC,D66,3,krant
+2021-02-01,NRC,FvD,3,krant
+2021-02-01,NRC,PvdD,1,krant
+2021-02-01,NRC,SP,1,krant
+2021-02-01,NRC,VVD,5,krant
+2021-02-01,De Telegraaf,CDA,2,krant
+2021-02-01,De Telegraaf,D66,1,krant
+2021-02-01,De Telegraaf,VVD,4,krant
+2021-02-01,Trouw,50Plus,1,krant
+2021-02-01,Trouw,CDA,6,krant
+2021-02-01,Trouw,CU,3,krant
+2021-02-01,Trouw,D66,3,krant
+2021-02-01,Trouw,FvD,2,krant
+2021-02-01,Trouw,GL,3,krant
+2021-02-01,Trouw,PvdA,1,krant
+2021-02-01,Trouw,PVV,2,krant
+2021-02-01,Trouw,SGP,1,krant
+2021-02-01,Trouw,SP,2,krant
+2021-02-01,Trouw,VVD,4,krant
+2021-02-01,de Volkskrant,CDA,3,krant
+2021-02-01,de Volkskrant,CU,2,krant
+2021-02-01,de Volkskrant,D66,2,krant
+2021-02-01,de Volkskrant,FvD,1,krant
+2021-02-01,de Volkskrant,GL,1,krant
+2021-02-01,de Volkskrant,PvdA,1,krant
+2021-02-01,de Volkskrant,PVV,2,krant
+2021-02-01,de Volkskrant,VVD,7,krant
+2021-02-02,AD,50Plus,1,krant
+2021-02-02,AD,D66,1,krant
+2021-02-02,AD,PvdA,1,krant
+2021-02-02,AD,SP,2,krant
+2021-02-02,AD,VVD,1,krant
+2021-02-02,NRC,CDA,6,krant
+2021-02-02,NRC,CU,1,krant
+2021-02-02,NRC,D66,3,krant
+2021-02-02,NRC,FvD,2,krant
+2021-02-02,NRC,GL,1,krant
+2021-02-02,NRC,PvdA,1,krant
+2021-02-02,NRC,SP,2,krant
+2021-02-02,NRC,VVD,2,krant
+2021-02-02,De Telegraaf,50Plus,2,krant
+2021-02-02,De Telegraaf,CDA,8,krant
+2021-02-02,De Telegraaf,CU,2,krant
+2021-02-02,De Telegraaf,D66,4,krant
+2021-02-02,De Telegraaf,FvD,4,krant
+2021-02-02,De Telegraaf,GL,3,krant
+2021-02-02,De Telegraaf,PvdA,3,krant
+2021-02-02,De Telegraaf,PVV,1,krant
+2021-02-02,De Telegraaf,SGP,2,krant
+2021-02-02,De Telegraaf,SP,7,krant
+2021-02-02,De Telegraaf,VVD,5,krant
+2021-02-02,Trouw,50Plus,1,krant
+2021-02-02,Trouw,CDA,5,krant
+2021-02-02,Trouw,CU,1,krant
+2021-02-02,Trouw,D66,2,krant
+2021-02-02,Trouw,GL,3,krant
+2021-02-02,Trouw,PvdA,4,krant
+2021-02-02,Trouw,SGP,1,krant
+2021-02-02,Trouw,SP,2,krant
+2021-02-02,Trouw,VVD,3,krant
+2021-02-02,de Volkskrant,50Plus,1,krant
+2021-02-02,de Volkskrant,CDA,5,krant
+2021-02-02,de Volkskrant,D66,2,krant
+2021-02-02,de Volkskrant,FvD,2,krant
+2021-02-02,de Volkskrant,GL,4,krant
+2021-02-02,de Volkskrant,PvdA,2,krant
+2021-02-02,de Volkskrant,PVV,1,krant
+2021-02-02,de Volkskrant,SGP,1,krant
+2021-02-02,de Volkskrant,SP,1,krant
+2021-02-02,de Volkskrant,VVD,2,krant
+2021-02-03,AD,50Plus,1,krant
+2021-02-03,AD,CU,1,krant
+2021-02-03,AD,D66,1,krant
+2021-02-03,AD,GL,1,krant
+2021-02-03,AD,SGP,1,krant
+2021-02-03,AD,SP,1,krant
+2021-02-03,AD,VVD,3,krant
+2021-02-03,NRC,CDA,5,krant
+2021-02-03,NRC,CU,2,krant
+2021-02-03,NRC,FvD,2,krant
+2021-02-03,NRC,GL,1,krant
+2021-02-03,NRC,SP,1,krant
+2021-02-03,NRC,VVD,3,krant
+2021-02-03,De Telegraaf,CDA,7,krant
+2021-02-03,De Telegraaf,CU,1,krant
+2021-02-03,De Telegraaf,D66,2,krant
+2021-02-03,De Telegraaf,GL,4,krant
+2021-02-03,De Telegraaf,PvdA,4,krant
+2021-02-03,De Telegraaf,SP,1,krant
+2021-02-03,De Telegraaf,VVD,4,krant
+2021-02-03,Trouw,CDA,3,krant
+2021-02-03,Trouw,CU,2,krant
+2021-02-03,Trouw,D66,2,krant
+2021-02-03,Trouw,FvD,1,krant
+2021-02-03,Trouw,GL,4,krant
+2021-02-03,Trouw,PvdA,4,krant
+2021-02-03,Trouw,SP,3,krant
+2021-02-03,Trouw,VVD,6,krant
+2021-02-03,de Volkskrant,50Plus,2,krant
+2021-02-03,de Volkskrant,CDA,3,krant
+2021-02-03,de Volkskrant,CU,2,krant
+2021-02-03,de Volkskrant,D66,3,krant
+2021-02-03,de Volkskrant,FvD,3,krant
+2021-02-03,de Volkskrant,GL,2,krant
+2021-02-03,de Volkskrant,PvdA,5,krant
+2021-02-03,de Volkskrant,SGP,2,krant
+2021-02-03,de Volkskrant,SP,1,krant
+2021-02-03,de Volkskrant,VVD,5,krant
+2021-02-04,AD,CDA,3,krant
+2021-02-04,AD,D66,2,krant
+2021-02-04,AD,FvD,1,krant
+2021-02-04,AD,GL,1,krant
+2021-02-04,AD,PvdA,1,krant
+2021-02-04,AD,SP,1,krant
+2021-02-04,AD,VVD,4,krant
+2021-02-04,NRC,CDA,6,krant
+2021-02-04,NRC,CU,2,krant
+2021-02-04,NRC,D66,3,krant
+2021-02-04,NRC,Denk,1,krant
+2021-02-04,NRC,GL,1,krant
+2021-02-04,NRC,PvdA,2,krant
+2021-02-04,NRC,SP,3,krant
+2021-02-04,NRC,VVD,6,krant
+2021-02-04,De Telegraaf,50Plus,1,krant
+2021-02-04,De Telegraaf,CDA,4,krant
+2021-02-04,De Telegraaf,CU,1,krant
+2021-02-04,De Telegraaf,D66,3,krant
+2021-02-04,De Telegraaf,GL,1,krant
+2021-02-04,De Telegraaf,PvdA,1,krant
+2021-02-04,De Telegraaf,SGP,1,krant
+2021-02-04,De Telegraaf,SP,1,krant
+2021-02-04,De Telegraaf,VVD,3,krant
+2021-02-04,Trouw,CDA,3,krant
+2021-02-04,Trouw,D66,4,krant
+2021-02-04,Trouw,Denk,1,krant
+2021-02-04,Trouw,FvD,1,krant
+2021-02-04,Trouw,GL,2,krant
+2021-02-04,Trouw,PvdA,1,krant
+2021-02-04,Trouw,PvdD,1,krant
+2021-02-04,Trouw,PVV,2,krant
+2021-02-04,Trouw,SP,1,krant
+2021-02-04,Trouw,VVD,5,krant
+2021-02-04,de Volkskrant,CDA,4,krant
+2021-02-04,de Volkskrant,CU,4,krant
+2021-02-04,de Volkskrant,D66,6,krant
+2021-02-04,de Volkskrant,Denk,1,krant
+2021-02-04,de Volkskrant,FvD,4,krant
+2021-02-04,de Volkskrant,GL,7,krant
+2021-02-04,de Volkskrant,PvdA,4,krant
+2021-02-04,de Volkskrant,PVV,1,krant
+2021-02-04,de Volkskrant,SP,4,krant
+2021-02-04,de Volkskrant,VVD,5,krant
+2021-02-05,AD,CDA,3,krant
+2021-02-05,AD,D66,3,krant
+2021-02-05,AD,FvD,1,krant
+2021-02-05,AD,GL,2,krant
+2021-02-05,AD,PvdA,2,krant
+2021-02-05,AD,PVV,1,krant
+2021-02-05,AD,SP,3,krant
+2021-02-05,AD,VVD,6,krant
+2021-02-05,NRC,50Plus,5,krant
+2021-02-05,NRC,CDA,9,krant
+2021-02-05,NRC,CU,4,krant
+2021-02-05,NRC,D66,5,krant
+2021-02-05,NRC,FvD,5,krant
+2021-02-05,NRC,GL,2,krant
+2021-02-05,NRC,PvdA,5,krant
+2021-02-05,NRC,PVV,4,krant
+2021-02-05,NRC,SGP,3,krant
+2021-02-05,NRC,SP,1,krant
+2021-02-05,NRC,VVD,5,krant
+2021-02-05,De Telegraaf,CDA,3,krant
+2021-02-05,De Telegraaf,CU,4,krant
+2021-02-05,De Telegraaf,D66,3,krant
+2021-02-05,De Telegraaf,GL,7,krant
+2021-02-05,De Telegraaf,PvdA,2,krant
+2021-02-05,De Telegraaf,PVV,1,krant
+2021-02-05,De Telegraaf,SP,2,krant
+2021-02-05,De Telegraaf,VVD,3,krant
+2021-02-05,Trouw,CDA,3,krant
+2021-02-05,Trouw,D66,1,krant
+2021-02-05,Trouw,FvD,2,krant
+2021-02-05,Trouw,GL,1,krant
+2021-02-05,Trouw,PVV,1,krant
+2021-02-05,Trouw,SP,1,krant
+2021-02-05,Trouw,VVD,5,krant
+2021-02-05,de Volkskrant,50Plus,1,krant
+2021-02-05,de Volkskrant,CDA,3,krant
+2021-02-05,de Volkskrant,CU,1,krant
+2021-02-05,de Volkskrant,D66,5,krant
+2021-02-05,de Volkskrant,FvD,2,krant
+2021-02-05,de Volkskrant,GL,6,krant
+2021-02-05,de Volkskrant,PvdA,3,krant
+2021-02-05,de Volkskrant,PVV,3,krant
+2021-02-05,de Volkskrant,SP,2,krant
+2021-02-05,de Volkskrant,VVD,6,krant
+2021-02-06,AD,CDA,4,krant
+2021-02-06,AD,CU,1,krant
+2021-02-06,AD,D66,1,krant
+2021-02-06,AD,GL,1,krant
+2021-02-06,AD,PvdA,2,krant
+2021-02-06,AD,PVV,2,krant
+2021-02-06,AD,VVD,5,krant
+2021-02-06,NRC,50Plus,2,krant
+2021-02-06,NRC,CDA,5,krant
+2021-02-06,NRC,CU,4,krant
+2021-02-06,NRC,D66,7,krant
+2021-02-06,NRC,FvD,7,krant
+2021-02-06,NRC,GL,5,krant
+2021-02-06,NRC,PvdA,5,krant
+2021-02-06,NRC,SGP,2,krant
+2021-02-06,NRC,SP,5,krant
+2021-02-06,NRC,VVD,7,krant
+2021-02-06,De Telegraaf,CDA,2,krant
+2021-02-06,De Telegraaf,D66,2,krant
+2021-02-06,De Telegraaf,GL,2,krant
+2021-02-06,De Telegraaf,PvdA,2,krant
+2021-02-06,De Telegraaf,VVD,4,krant
+2021-02-06,Trouw,50Plus,1,krant
+2021-02-06,Trouw,CDA,5,krant
+2021-02-06,Trouw,CU,1,krant
+2021-02-06,Trouw,D66,3,krant
+2021-02-06,Trouw,FvD,1,krant
+2021-02-06,Trouw,PvdA,1,krant
+2021-02-06,Trouw,PVV,1,krant
+2021-02-06,Trouw,SGP,1,krant
+2021-02-06,Trouw,SP,1,krant
+2021-02-06,Trouw,VVD,10,krant
+2021-02-06,de Volkskrant,50Plus,3,krant
+2021-02-06,de Volkskrant,CDA,4,krant
+2021-02-06,de Volkskrant,CU,2,krant
+2021-02-06,de Volkskrant,D66,4,krant
+2021-02-06,de Volkskrant,Denk,1,krant
+2021-02-06,de Volkskrant,FvD,6,krant
+2021-02-06,de Volkskrant,GL,4,krant
+2021-02-06,de Volkskrant,PvdA,6,krant
+2021-02-06,de Volkskrant,PVV,2,krant
+2021-02-06,de Volkskrant,SGP,2,krant
+2021-02-06,de Volkskrant,SP,2,krant
+2021-02-06,de Volkskrant,VVD,7,krant
+2021-02-08,AD,CDA,2,krant
+2021-02-08,AD,CU,1,krant
+2021-02-08,AD,D66,1,krant
+2021-02-08,AD,FvD,1,krant
+2021-02-08,AD,GL,1,krant
+2021-02-08,AD,PvdA,2,krant
+2021-02-08,AD,VVD,1,krant
+2021-02-08,NRC,50Plus,1,krant
+2021-02-08,NRC,CDA,5,krant
+2021-02-08,NRC,CU,3,krant
+2021-02-08,NRC,D66,1,krant
+2021-02-08,NRC,FvD,1,krant
+2021-02-08,NRC,GL,3,krant
+2021-02-08,NRC,PvdA,2,krant
+2021-02-08,NRC,PVV,1,krant
+2021-02-08,NRC,SGP,1,krant
+2021-02-08,NRC,SP,2,krant
+2021-02-08,NRC,VVD,3,krant
+2021-02-08,De Telegraaf,CDA,1,krant
+2021-02-08,De Telegraaf,GL,1,krant
+2021-02-08,De Telegraaf,VVD,4,krant
+2021-02-08,Trouw,50Plus,1,krant
+2021-02-08,Trouw,CDA,2,krant
+2021-02-08,Trouw,CU,1,krant
+2021-02-08,Trouw,D66,2,krant
+2021-02-08,Trouw,GL,2,krant
+2021-02-08,Trouw,PvdA,1,krant
+2021-02-08,Trouw,SGP,1,krant
+2021-02-08,Trouw,SP,1,krant
+2021-02-08,Trouw,VVD,4,krant
+2021-02-08,de Volkskrant,CDA,5,krant
+2021-02-08,de Volkskrant,FvD,1,krant
+2021-02-08,de Volkskrant,GL,1,krant
+2021-02-08,de Volkskrant,PVV,2,krant
+2021-02-08,de Volkskrant,SP,1,krant
+2021-02-08,de Volkskrant,VVD,4,krant
+2021-02-09,AD,50Plus,1,krant
+2021-02-09,AD,CDA,5,krant
+2021-02-09,AD,CU,2,krant
+2021-02-09,AD,D66,2,krant
+2021-02-09,AD,Denk,1,krant
+2021-02-09,AD,PvdA,1,krant
+2021-02-09,AD,PVV,1,krant
+2021-02-09,AD,SGP,2,krant
+2021-02-09,AD,VVD,4,krant
+2021-02-09,NRC,50Plus,4,krant
+2021-02-09,NRC,CDA,14,krant
+2021-02-09,NRC,CU,3,krant
+2021-02-09,NRC,D66,6,krant
+2021-02-09,NRC,FvD,2,krant
+2021-02-09,NRC,GL,4,krant
+2021-02-09,NRC,PvdA,5,krant
+2021-02-09,NRC,PVV,4,krant
+2021-02-09,NRC,SGP,2,krant
+2021-02-09,NRC,SP,4,krant
+2021-02-09,NRC,VVD,4,krant
+2021-02-09,De Telegraaf,CDA,1,krant
+2021-02-09,De Telegraaf,CU,1,krant
+2021-02-09,De Telegraaf,D66,1,krant
+2021-02-09,De Telegraaf,GL,1,krant
+2021-02-09,De Telegraaf,PvdA,2,krant
+2021-02-09,De Telegraaf,SP,2,krant
+2021-02-09,De Telegraaf,VVD,6,krant
+2021-02-09,Trouw,CDA,5,krant
+2021-02-09,Trouw,CU,2,krant
+2021-02-09,Trouw,D66,3,krant
+2021-02-09,Trouw,FvD,1,krant
+2021-02-09,Trouw,GL,2,krant
+2021-02-09,Trouw,PvdA,2,krant
+2021-02-09,Trouw,PVV,2,krant
+2021-02-09,Trouw,SP,3,krant
+2021-02-09,Trouw,VVD,6,krant
+2021-02-09,de Volkskrant,50Plus,1,krant
+2021-02-09,de Volkskrant,CDA,3,krant
+2021-02-09,de Volkskrant,CU,1,krant
+2021-02-09,de Volkskrant,D66,4,krant
+2021-02-09,de Volkskrant,FvD,3,krant
+2021-02-09,de Volkskrant,GL,2,krant
+2021-02-09,de Volkskrant,PvdA,2,krant
+2021-02-09,de Volkskrant,PvdD,1,krant
+2021-02-09,de Volkskrant,PVV,2,krant
+2021-02-09,de Volkskrant,SGP,1,krant
+2021-02-09,de Volkskrant,SP,2,krant
+2021-02-09,de Volkskrant,VVD,3,krant
+2021-02-10,AD,CDA,1,krant
+2021-02-10,AD,D66,2,krant
+2021-02-10,AD,FvD,1,krant
+2021-02-10,AD,GL,3,krant
+2021-02-10,AD,PvdA,3,krant
+2021-02-10,AD,SP,2,krant
+2021-02-10,AD,VVD,2,krant
+2021-02-10,NRC,50Plus,1,krant
+2021-02-10,NRC,CDA,2,krant
+2021-02-10,NRC,CU,1,krant
+2021-02-10,NRC,D66,5,krant
+2021-02-10,NRC,FvD,2,krant
+2021-02-10,NRC,GL,1,krant
+2021-02-10,NRC,PvdA,3,krant
+2021-02-10,NRC,SGP,1,krant
+2021-02-10,NRC,SP,1,krant
+2021-02-10,NRC,VVD,4,krant
+2021-02-10,De Telegraaf,50Plus,2,krant
+2021-02-10,De Telegraaf,CDA,2,krant
+2021-02-10,De Telegraaf,CU,1,krant
+2021-02-10,De Telegraaf,D66,5,krant
+2021-02-10,De Telegraaf,Denk,1,krant
+2021-02-10,De Telegraaf,FvD,2,krant
+2021-02-10,De Telegraaf,GL,3,krant
+2021-02-10,De Telegraaf,PvdA,3,krant
+2021-02-10,De Telegraaf,PVV,2,krant
+2021-02-10,De Telegraaf,SGP,1,krant
+2021-02-10,De Telegraaf,SP,1,krant
+2021-02-10,De Telegraaf,VVD,3,krant
+2021-02-10,Trouw,50Plus,1,krant
+2021-02-10,Trouw,CDA,4,krant
+2021-02-10,Trouw,CU,2,krant
+2021-02-10,Trouw,D66,1,krant
+2021-02-10,Trouw,FvD,3,krant
+2021-02-10,Trouw,GL,4,krant
+2021-02-10,Trouw,PvdA,3,krant
+2021-02-10,Trouw,PVV,1,krant
+2021-02-10,Trouw,SGP,1,krant
+2021-02-10,Trouw,SP,4,krant
+2021-02-10,Trouw,VVD,4,krant
+2021-02-10,de Volkskrant,50Plus,3,krant
+2021-02-10,de Volkskrant,CDA,6,krant
+2021-02-10,de Volkskrant,CU,4,krant
+2021-02-10,de Volkskrant,D66,4,krant
+2021-02-10,de Volkskrant,FvD,6,krant
+2021-02-10,de Volkskrant,GL,5,krant
+2021-02-10,de Volkskrant,PvdA,4,krant
+2021-02-10,de Volkskrant,PVV,2,krant
+2021-02-10,de Volkskrant,SGP,3,krant
+2021-02-10,de Volkskrant,SP,3,krant
+2021-02-10,de Volkskrant,VVD,5,krant
+2021-02-11,AD,CDA,2,krant
+2021-02-11,AD,D66,3,krant
+2021-02-11,AD,FvD,1,krant
+2021-02-11,AD,GL,3,krant
+2021-02-11,AD,SP,2,krant
+2021-02-11,AD,VVD,2,krant
+2021-02-11,NRC,50Plus,2,krant
+2021-02-11,NRC,CDA,8,krant
+2021-02-11,NRC,CU,5,krant
+2021-02-11,NRC,D66,4,krant
+2021-02-11,NRC,FvD,3,krant
+2021-02-11,NRC,GL,3,krant
+2021-02-11,NRC,PvdA,3,krant
+2021-02-11,NRC,SGP,2,krant
+2021-02-11,NRC,SP,3,krant
+2021-02-11,NRC,VVD,7,krant
+2021-02-11,De Telegraaf,CDA,3,krant
+2021-02-11,De Telegraaf,D66,2,krant
+2021-02-11,De Telegraaf,FvD,3,krant
+2021-02-11,De Telegraaf,GL,3,krant
+2021-02-11,De Telegraaf,PvdA,1,krant
+2021-02-11,De Telegraaf,SP,2,krant
+2021-02-11,De Telegraaf,VVD,1,krant
+2021-02-11,Trouw,CDA,5,krant
+2021-02-11,Trouw,CU,2,krant
+2021-02-11,Trouw,D66,3,krant
+2021-02-11,Trouw,FvD,3,krant
+2021-02-11,Trouw,GL,2,krant
+2021-02-11,Trouw,PvdA,4,krant
+2021-02-11,Trouw,PVV,2,krant
+2021-02-11,Trouw,SP,2,krant
+2021-02-11,Trouw,VVD,2,krant
+2021-02-11,de Volkskrant,50Plus,1,krant
+2021-02-11,de Volkskrant,CDA,2,krant
+2021-02-11,de Volkskrant,D66,2,krant
+2021-02-11,de Volkskrant,GL,2,krant
+2021-02-11,de Volkskrant,PvdA,2,krant
+2021-02-11,de Volkskrant,PVV,1,krant
+2021-02-11,de Volkskrant,SGP,1,krant
+2021-02-11,de Volkskrant,SP,2,krant
+2021-02-11,de Volkskrant,VVD,3,krant
+2021-02-12,AD,CDA,3,krant
+2021-02-12,AD,CU,1,krant
+2021-02-12,AD,D66,2,krant
+2021-02-12,AD,FvD,3,krant
+2021-02-12,AD,GL,2,krant
+2021-02-12,AD,PvdA,2,krant
+2021-02-12,AD,SP,1,krant
+2021-02-12,AD,VVD,2,krant
+2021-02-12,NRC,50Plus,3,krant
+2021-02-12,NRC,CDA,4,krant
+2021-02-12,NRC,CU,1,krant
+2021-02-12,NRC,D66,4,krant
+2021-02-12,NRC,FvD,3,krant
+2021-02-12,NRC,GL,1,krant
+2021-02-12,NRC,PvdA,2,krant
+2021-02-12,NRC,PVV,2,krant
+2021-02-12,NRC,SGP,2,krant
+2021-02-12,NRC,SP,2,krant
+2021-02-12,NRC,VVD,2,krant
+2021-02-12,De Telegraaf,50Plus,1,krant
+2021-02-12,De Telegraaf,CDA,6,krant
+2021-02-12,De Telegraaf,CU,3,krant
+2021-02-12,De Telegraaf,D66,5,krant
+2021-02-12,De Telegraaf,FvD,1,krant
+2021-02-12,De Telegraaf,GL,3,krant
+2021-02-12,De Telegraaf,PvdA,5,krant
+2021-02-12,De Telegraaf,PVV,1,krant
+2021-02-12,De Telegraaf,SP,2,krant
+2021-02-12,De Telegraaf,VVD,3,krant
+2021-02-12,Trouw,CDA,5,krant
+2021-02-12,Trouw,CU,3,krant
+2021-02-12,Trouw,D66,4,krant
+2021-02-12,Trouw,FvD,3,krant
+2021-02-12,Trouw,GL,3,krant
+2021-02-12,Trouw,PvdA,3,krant
+2021-02-12,Trouw,SP,2,krant
+2021-02-12,Trouw,VVD,6,krant
+2021-02-12,de Volkskrant,50Plus,1,krant
+2021-02-12,de Volkskrant,CDA,5,krant
+2021-02-12,de Volkskrant,CU,1,krant
+2021-02-12,de Volkskrant,D66,1,krant
+2021-02-12,de Volkskrant,FvD,4,krant
+2021-02-12,de Volkskrant,GL,4,krant
+2021-02-12,de Volkskrant,PvdA,2,krant
+2021-02-12,de Volkskrant,PvdD,1,krant
+2021-02-12,de Volkskrant,PVV,1,krant
+2021-02-12,de Volkskrant,SGP,1,krant
+2021-02-12,de Volkskrant,SP,5,krant
+2021-02-12,de Volkskrant,VVD,3,krant
+2021-02-13,AD,CDA,4,krant
+2021-02-13,AD,CU,1,krant
+2021-02-13,AD,D66,2,krant
+2021-02-13,AD,FvD,1,krant
+2021-02-13,AD,GL,3,krant
+2021-02-13,AD,PvdA,4,krant
+2021-02-13,AD,SP,1,krant
+2021-02-13,AD,VVD,4,krant
+2021-02-13,NRC,CDA,9,krant
+2021-02-13,NRC,CU,3,krant
+2021-02-13,NRC,D66,8,krant
+2021-02-13,NRC,FvD,1,krant
+2021-02-13,NRC,GL,2,krant
+2021-02-13,NRC,PvdA,5,krant
+2021-02-13,NRC,PVV,4,krant
+2021-02-13,NRC,SP,5,krant
+2021-02-13,NRC,VVD,6,krant
+2021-02-13,De Telegraaf,50Plus,2,krant
+2021-02-13,De Telegraaf,CDA,4,krant
+2021-02-13,De Telegraaf,CU,2,krant
+2021-02-13,De Telegraaf,D66,4,krant
+2021-02-13,De Telegraaf,FvD,4,krant
+2021-02-13,De Telegraaf,GL,4,krant
+2021-02-13,De Telegraaf,PvdA,3,krant
+2021-02-13,De Telegraaf,PVV,1,krant
+2021-02-13,De Telegraaf,SGP,2,krant
+2021-02-13,De Telegraaf,SP,4,krant
+2021-02-13,De Telegraaf,VVD,3,krant
+2021-02-13,Trouw,50Plus,1,krant
+2021-02-13,Trouw,CDA,7,krant
+2021-02-13,Trouw,CU,1,krant
+2021-02-13,Trouw,D66,1,krant
+2021-02-13,Trouw,FvD,2,krant
+2021-02-13,Trouw,GL,5,krant
+2021-02-13,Trouw,PvdA,3,krant
+2021-02-13,Trouw,SGP,1,krant
+2021-02-13,Trouw,SP,2,krant
+2021-02-13,Trouw,VVD,3,krant
+2021-02-13,de Volkskrant,50Plus,2,krant
+2021-02-13,de Volkskrant,CDA,5,krant
+2021-02-13,de Volkskrant,CU,3,krant
+2021-02-13,de Volkskrant,D66,5,krant
+2021-02-13,de Volkskrant,FvD,4,krant
+2021-02-13,de Volkskrant,GL,4,krant
+2021-02-13,de Volkskrant,PvdA,3,krant
+2021-02-13,de Volkskrant,PVV,3,krant
+2021-02-13,de Volkskrant,SGP,1,krant
+2021-02-13,de Volkskrant,SP,4,krant
+2021-02-13,de Volkskrant,VVD,8,krant
+2021-02-15,AD,CDA,3,krant
+2021-02-15,AD,CU,1,krant
+2021-02-15,AD,D66,1,krant
+2021-02-15,AD,FvD,1,krant
+2021-02-15,AD,GL,1,krant
+2021-02-15,AD,PvdA,2,krant
+2021-02-15,AD,PVV,4,krant
+2021-02-15,AD,SP,1,krant
+2021-02-15,AD,VVD,3,krant
+2021-02-15,NRC,CDA,1,krant
+2021-02-15,NRC,D66,3,krant
+2021-02-15,NRC,PvdA,1,krant
+2021-02-15,NRC,PVV,1,krant
+2021-02-15,NRC,VVD,1,krant
+2021-02-15,De Telegraaf,CDA,1,krant
+2021-02-15,De Telegraaf,FvD,2,krant
+2021-02-15,De Telegraaf,PVV,3,krant
+2021-02-15,De Telegraaf,SP,1,krant
+2021-02-15,De Telegraaf,VVD,2,krant
+2021-02-15,Trouw,CDA,1,krant
+2021-02-15,Trouw,D66,2,krant
+2021-02-15,Trouw,FvD,1,krant
+2021-02-15,Trouw,PvdA,3,krant
+2021-02-15,Trouw,PVV,1,krant
+2021-02-15,Trouw,VVD,1,krant
+2021-02-15,de Volkskrant,CDA,1,krant
+2021-02-15,de Volkskrant,CU,1,krant
+2021-02-15,de Volkskrant,D66,2,krant
+2021-02-15,de Volkskrant,FvD,1,krant
+2021-02-15,de Volkskrant,GL,1,krant
+2021-02-15,de Volkskrant,PvdA,2,krant
+2021-02-15,de Volkskrant,SP,1,krant
+2021-02-15,de Volkskrant,VVD,6,krant
+2021-02-16,AD,CDA,2,krant
+2021-02-16,AD,CU,1,krant
+2021-02-16,AD,D66,2,krant
+2021-02-16,AD,FvD,2,krant
+2021-02-16,AD,GL,2,krant
+2021-02-16,AD,PvdA,3,krant
+2021-02-16,AD,PVV,2,krant
+2021-02-16,AD,SP,1,krant
+2021-02-16,AD,VVD,3,krant
+2021-02-16,NRC,CDA,6,krant
+2021-02-16,NRC,CU,2,krant
+2021-02-16,NRC,D66,1,krant
+2021-02-16,NRC,FvD,2,krant
+2021-02-16,NRC,PvdA,1,krant
+2021-02-16,NRC,PVV,1,krant
+2021-02-16,NRC,VVD,2,krant
+2021-02-16,De Telegraaf,50Plus,1,krant
+2021-02-16,De Telegraaf,CDA,3,krant
+2021-02-16,De Telegraaf,CU,4,krant
+2021-02-16,De Telegraaf,D66,4,krant
+2021-02-16,De Telegraaf,FvD,3,krant
+2021-02-16,De Telegraaf,GL,6,krant
+2021-02-16,De Telegraaf,PvdA,2,krant
+2021-02-16,De Telegraaf,PVV,4,krant
+2021-02-16,De Telegraaf,SGP,1,krant
+2021-02-16,De Telegraaf,SP,1,krant
+2021-02-16,De Telegraaf,VVD,5,krant
+2021-02-16,Trouw,CDA,3,krant
+2021-02-16,Trouw,CU,1,krant
+2021-02-16,Trouw,D66,2,krant
+2021-02-16,Trouw,Denk,1,krant
+2021-02-16,Trouw,GL,5,krant
+2021-02-16,Trouw,PvdA,3,krant
+2021-02-16,Trouw,PVV,2,krant
+2021-02-16,Trouw,SP,2,krant
+2021-02-16,Trouw,VVD,3,krant
+2021-02-16,de Volkskrant,CDA,6,krant
+2021-02-16,de Volkskrant,CU,3,krant
+2021-02-16,de Volkskrant,D66,2,krant
+2021-02-16,de Volkskrant,FvD,2,krant
+2021-02-16,de Volkskrant,GL,3,krant
+2021-02-16,de Volkskrant,PvdA,4,krant
+2021-02-16,de Volkskrant,PvdD,1,krant
+2021-02-16,de Volkskrant,PVV,3,krant
+2021-02-16,de Volkskrant,SP,3,krant
+2021-02-16,de Volkskrant,VVD,2,krant
+2021-02-17,AD,50Plus,1,krant
+2021-02-17,AD,CDA,2,krant
+2021-02-17,AD,GL,2,krant
+2021-02-17,AD,PvdA,2,krant
+2021-02-17,AD,PVV,1,krant
+2021-02-17,AD,SGP,1,krant
+2021-02-17,AD,SP,2,krant
+2021-02-17,AD,VVD,3,krant
+2021-02-17,NRC,50Plus,2,krant
+2021-02-17,NRC,CDA,4,krant
+2021-02-17,NRC,D66,3,krant
+2021-02-17,NRC,FvD,2,krant
+2021-02-17,NRC,GL,3,krant
+2021-02-17,NRC,PvdA,3,krant
+2021-02-17,NRC,PVV,2,krant
+2021-02-17,NRC,SGP,2,krant
+2021-02-17,NRC,SP,3,krant
+2021-02-17,NRC,VVD,5,krant
+2021-02-17,De Telegraaf,50Plus,1,krant
+2021-02-17,De Telegraaf,CDA,3,krant
+2021-02-17,De Telegraaf,CU,1,krant
+2021-02-17,De Telegraaf,D66,4,krant
+2021-02-17,De Telegraaf,FvD,1,krant
+2021-02-17,De Telegraaf,GL,1,krant
+2021-02-17,De Telegraaf,PvdA,5,krant
+2021-02-17,De Telegraaf,PVV,2,krant
+2021-02-17,De Telegraaf,SGP,1,krant
+2021-02-17,De Telegraaf,VVD,5,krant
+2021-02-17,Trouw,50Plus,2,krant
+2021-02-17,Trouw,CDA,4,krant
+2021-02-17,Trouw,CU,3,krant
+2021-02-17,Trouw,D66,4,krant
+2021-02-17,Trouw,FvD,4,krant
+2021-02-17,Trouw,GL,2,krant
+2021-02-17,Trouw,PvdA,2,krant
+2021-02-17,Trouw,PVV,3,krant
+2021-02-17,Trouw,SGP,2,krant
+2021-02-17,Trouw,SP,2,krant
+2021-02-17,Trouw,VVD,7,krant
+2021-02-17,de Volkskrant,50Plus,3,krant
+2021-02-17,de Volkskrant,CDA,2,krant
+2021-02-17,de Volkskrant,D66,2,krant
+2021-02-17,de Volkskrant,FvD,2,krant
+2021-02-17,de Volkskrant,PVV,1,krant
+2021-02-17,de Volkskrant,SGP,3,krant
+2021-02-17,de Volkskrant,VVD,6,krant
+2021-02-18,AD,CDA,2,krant
+2021-02-18,AD,CU,2,krant
+2021-02-18,AD,D66,4,krant
+2021-02-18,AD,FvD,2,krant
+2021-02-18,AD,GL,2,krant
+2021-02-18,AD,PvdA,1,krant
+2021-02-18,AD,SP,2,krant
+2021-02-18,AD,VVD,3,krant
+2021-02-18,NRC,CDA,5,krant
+2021-02-18,NRC,CU,3,krant
+2021-02-18,NRC,D66,3,krant
+2021-02-18,NRC,FvD,1,krant
+2021-02-18,NRC,GL,1,krant
+2021-02-18,NRC,PvdA,2,krant
+2021-02-18,NRC,PVV,1,krant
+2021-02-18,NRC,SP,2,krant
+2021-02-18,NRC,VVD,2,krant
+2021-02-18,De Telegraaf,CDA,6,krant
+2021-02-18,De Telegraaf,D66,2,krant
+2021-02-18,De Telegraaf,Denk,1,krant
+2021-02-18,De Telegraaf,FvD,3,krant
+2021-02-18,De Telegraaf,GL,6,krant
+2021-02-18,De Telegraaf,PvdA,4,krant
+2021-02-18,De Telegraaf,PvdD,1,krant
+2021-02-18,De Telegraaf,PVV,1,krant
+2021-02-18,De Telegraaf,SP,4,krant
+2021-02-18,De Telegraaf,VVD,3,krant
+2021-02-18,Trouw,50Plus,2,krant
+2021-02-18,Trouw,CDA,2,krant
+2021-02-18,Trouw,CU,3,krant
+2021-02-18,Trouw,D66,4,krant
+2021-02-18,Trouw,FvD,2,krant
+2021-02-18,Trouw,GL,3,krant
+2021-02-18,Trouw,PvdA,3,krant
+2021-02-18,Trouw,PVV,1,krant
+2021-02-18,Trouw,SGP,2,krant
+2021-02-18,Trouw,SP,2,krant
+2021-02-18,Trouw,VVD,5,krant
+2021-02-18,de Volkskrant,50Plus,2,krant
+2021-02-18,de Volkskrant,CDA,4,krant
+2021-02-18,de Volkskrant,CU,1,krant
+2021-02-18,de Volkskrant,D66,3,krant
+2021-02-18,de Volkskrant,FvD,2,krant
+2021-02-18,de Volkskrant,GL,3,krant
+2021-02-18,de Volkskrant,PvdA,5,krant
+2021-02-18,de Volkskrant,SGP,3,krant
+2021-02-18,de Volkskrant,SP,3,krant
+2021-02-18,de Volkskrant,VVD,5,krant
+2021-02-19,AD,50Plus,1,krant
+2021-02-19,AD,CDA,2,krant
+2021-02-19,AD,CU,1,krant
+2021-02-19,AD,D66,2,krant
+2021-02-19,AD,FvD,3,krant
+2021-02-19,AD,GL,4,krant
+2021-02-19,AD,PvdA,2,krant
+2021-02-19,AD,PVV,1,krant
+2021-02-19,AD,SGP,1,krant
+2021-02-19,AD,SP,2,krant
+2021-02-19,AD,VVD,3,krant
+2021-02-19,NRC,50Plus,3,krant
+2021-02-19,NRC,CDA,5,krant
+2021-02-19,NRC,CU,2,krant
+2021-02-19,NRC,D66,3,krant
+2021-02-19,NRC,FvD,4,krant
+2021-02-19,NRC,GL,2,krant
+2021-02-19,NRC,PvdA,5,krant
+2021-02-19,NRC,PVV,2,krant
+2021-02-19,NRC,SGP,3,krant
+2021-02-19,NRC,SP,3,krant
+2021-02-19,NRC,VVD,5,krant
+2021-02-19,De Telegraaf,50Plus,1,krant
+2021-02-19,De Telegraaf,CDA,2,krant
+2021-02-19,De Telegraaf,CU,1,krant
+2021-02-19,De Telegraaf,D66,3,krant
+2021-02-19,De Telegraaf,FvD,1,krant
+2021-02-19,De Telegraaf,GL,2,krant
+2021-02-19,De Telegraaf,PVV,1,krant
+2021-02-19,De Telegraaf,SGP,1,krant
+2021-02-19,De Telegraaf,SP,3,krant
+2021-02-19,De Telegraaf,VVD,3,krant
+2021-02-19,Trouw,50Plus,1,krant
+2021-02-19,Trouw,CDA,4,krant
+2021-02-19,Trouw,CU,2,krant
+2021-02-19,Trouw,D66,3,krant
+2021-02-19,Trouw,FvD,1,krant
+2021-02-19,Trouw,GL,4,krant
+2021-02-19,Trouw,PvdA,3,krant
+2021-02-19,Trouw,PvdD,1,krant
+2021-02-19,Trouw,SGP,1,krant
+2021-02-19,Trouw,SP,3,krant
+2021-02-19,Trouw,VVD,2,krant
+2021-02-19,de Volkskrant,50Plus,2,krant
+2021-02-19,de Volkskrant,CDA,8,krant
+2021-02-19,de Volkskrant,CU,6,krant
+2021-02-19,de Volkskrant,D66,6,krant
+2021-02-19,de Volkskrant,FvD,1,krant
+2021-02-19,de Volkskrant,GL,4,krant
+2021-02-19,de Volkskrant,PvdA,7,krant
+2021-02-19,de Volkskrant,PVV,2,krant
+2021-02-19,de Volkskrant,SGP,2,krant
+2021-02-19,de Volkskrant,SP,5,krant
+2021-02-19,de Volkskrant,VVD,5,krant
+2021-02-20,AD,50Plus,2,krant
+2021-02-20,AD,CDA,3,krant
+2021-02-20,AD,CU,1,krant
+2021-02-20,AD,D66,2,krant
+2021-02-20,AD,FvD,2,krant
+2021-02-20,AD,GL,2,krant
+2021-02-20,AD,PvdA,3,krant
+2021-02-20,AD,PVV,2,krant
+2021-02-20,AD,SGP,2,krant
+2021-02-20,AD,SP,2,krant
+2021-02-20,AD,VVD,2,krant
+2021-02-20,NRC,50Plus,4,krant
+2021-02-20,NRC,CDA,10,krant
+2021-02-20,NRC,CU,4,krant
+2021-02-20,NRC,D66,6,krant
+2021-02-20,NRC,FvD,5,krant
+2021-02-20,NRC,GL,5,krant
+2021-02-20,NRC,PvdA,9,krant
+2021-02-20,NRC,PVV,2,krant
+2021-02-20,NRC,SGP,3,krant
+2021-02-20,NRC,SP,3,krant
+2021-02-20,NRC,VVD,8,krant
+2021-02-20,De Telegraaf,CDA,6,krant
+2021-02-20,De Telegraaf,CU,1,krant
+2021-02-20,De Telegraaf,D66,3,krant
+2021-02-20,De Telegraaf,FvD,2,krant
+2021-02-20,De Telegraaf,GL,2,krant
+2021-02-20,De Telegraaf,PvdA,3,krant
+2021-02-20,De Telegraaf,SP,1,krant
+2021-02-20,De Telegraaf,VVD,3,krant
+2021-02-20,Trouw,50Plus,1,krant
+2021-02-20,Trouw,CDA,6,krant
+2021-02-20,Trouw,D66,3,krant
+2021-02-20,Trouw,GL,1,krant
+2021-02-20,Trouw,PvdA,3,krant
+2021-02-20,Trouw,SGP,1,krant
+2021-02-20,Trouw,VVD,6,krant
+2021-02-20,de Volkskrant,50Plus,2,krant
+2021-02-20,de Volkskrant,CDA,8,krant
+2021-02-20,de Volkskrant,CU,1,krant
+2021-02-20,de Volkskrant,D66,5,krant
+2021-02-20,de Volkskrant,Denk,1,krant
+2021-02-20,de Volkskrant,FvD,2,krant
+2021-02-20,de Volkskrant,GL,6,krant
+2021-02-20,de Volkskrant,PvdA,7,krant
+2021-02-20,de Volkskrant,PvdD,1,krant
+2021-02-20,de Volkskrant,PVV,1,krant
+2021-02-20,de Volkskrant,SGP,2,krant
+2021-02-20,de Volkskrant,SP,3,krant
+2021-02-20,de Volkskrant,VVD,7,krant
+2021-02-22,AD,50Plus,2,krant
+2021-02-22,AD,CDA,3,krant
+2021-02-22,AD,CU,1,krant
+2021-02-22,AD,D66,3,krant
+2021-02-22,AD,FvD,3,krant
+2021-02-22,AD,GL,3,krant
+2021-02-22,AD,PvdA,3,krant
+2021-02-22,AD,PvdD,1,krant
+2021-02-22,AD,SGP,2,krant
+2021-02-22,AD,SP,2,krant
+2021-02-22,AD,VVD,5,krant
+2021-02-22,De Telegraaf,CDA,1,krant
+2021-02-22,De Telegraaf,D66,2,krant
+2021-02-22,De Telegraaf,FvD,2,krant
+2021-02-22,De Telegraaf,GL,1,krant
+2021-02-22,De Telegraaf,PvdA,2,krant
+2021-02-22,De Telegraaf,PVV,1,krant
+2021-02-22,De Telegraaf,SP,2,krant
+2021-02-22,De Telegraaf,VVD,6,krant
+2021-02-22,Trouw,CDA,4,krant
+2021-02-22,Trouw,CU,1,krant
+2021-02-22,Trouw,D66,1,krant
+2021-02-22,Trouw,GL,1,krant
+2021-02-22,Trouw,PvdA,1,krant
+2021-02-22,Trouw,SP,1,krant
+2021-02-22,Trouw,VVD,3,krant
+2021-02-22,de Volkskrant,CDA,3,krant
+2021-02-22,de Volkskrant,D66,3,krant
+2021-02-22,de Volkskrant,FvD,5,krant
+2021-02-22,de Volkskrant,GL,5,krant
+2021-02-22,de Volkskrant,PvdA,4,krant
+2021-02-22,de Volkskrant,PVV,1,krant
+2021-02-22,de Volkskrant,SP,3,krant
+2021-02-22,de Volkskrant,VVD,6,krant
+2021-01-25,EenVandaag,Denk,1,tv
+2021-01-25,EenVandaag,FvD,1,tv
+2021-01-25,EenVandaag,GL,1,tv
+2021-01-25,EenVandaag,PvdD,1,tv
+2021-01-25,EenVandaag,PVV,1,tv
+2021-01-25,EenVandaag,VVD,1,tv
+2021-01-26,EenVandaag,CDA,1,tv
+2021-01-26,EenVandaag,Denk,1,tv
+2021-01-26,EenVandaag,FvD,1,tv
+2021-01-26,EenVandaag,PvdA,1,tv
+2021-01-26,EenVandaag,PvdD,1,tv
+2021-01-26,EenVandaag,PVV,1,tv
+2021-01-26,EenVandaag,VVD,1,tv
+2021-01-27,EenVandaag,Denk,1,tv
+2021-01-27,EenVandaag,PvdD,1,tv
+2021-01-27,EenVandaag,PVV,1,tv
+2021-01-27,EenVandaag,VVD,1,tv
+2021-01-28,EenVandaag,D66,1,tv
+2021-01-28,EenVandaag,Denk,1,tv
+2021-01-28,EenVandaag,PvdD,1,tv
+2021-01-29,EenVandaag,CDA,1,tv
+2021-01-29,EenVandaag,Denk,1,tv
+2021-01-29,EenVandaag,PvdD,1,tv
+2021-01-29,EenVandaag,VVD,1,tv
+2021-02-01,EenVandaag,Denk,1,tv
+2021-02-01,EenVandaag,PvdD,1,tv
+2021-02-01,EenVandaag,VVD,1,tv
+2021-02-04,EenVandaag,CDA,1,tv
+2021-02-04,EenVandaag,D66,1,tv
+2021-02-04,EenVandaag,Denk,1,tv
+2021-02-04,EenVandaag,GL,1,tv
+2021-02-04,EenVandaag,PvdD,1,tv
+2021-02-04,EenVandaag,PVV,1,tv
+2021-02-04,EenVandaag,SP,1,tv
+2021-02-04,EenVandaag,VVD,1,tv
+2021-02-05,EenVandaag,50Plus,1,tv
+2021-02-05,EenVandaag,CDA,1,tv
+2021-02-05,EenVandaag,CU,1,tv
+2021-02-05,EenVandaag,Denk,1,tv
+2021-02-05,EenVandaag,FvD,1,tv
+2021-02-05,EenVandaag,GL,1,tv
+2021-02-05,EenVandaag,PvdD,1,tv
+2021-02-05,EenVandaag,SGP,1,tv
+2021-02-05,EenVandaag,VVD,1,tv
+2021-02-06,EenVandaag,D66,1,tv
+2021-02-06,EenVandaag,Denk,1,tv
+2021-02-06,EenVandaag,PvdD,1,tv
+2021-02-06,EenVandaag,VVD,1,tv
+2021-02-08,EenVandaag,CDA,1,tv
+2021-02-08,EenVandaag,CU,1,tv
+2021-02-08,EenVandaag,D66,1,tv
+2021-02-08,EenVandaag,Denk,1,tv
+2021-02-08,EenVandaag,FvD,1,tv
+2021-02-08,EenVandaag,PvdD,1,tv
+2021-02-08,EenVandaag,PVV,1,tv
+2021-02-08,EenVandaag,VVD,1,tv
+2021-02-09,EenVandaag,Denk,1,tv
+2021-02-09,EenVandaag,FvD,1,tv
+2021-02-09,EenVandaag,PvdD,1,tv
+2021-02-11,EenVandaag,Denk,1,tv
+2021-02-11,EenVandaag,GL,1,tv
+2021-02-11,EenVandaag,PvdD,1,tv
+2021-02-12,EenVandaag,Denk,1,tv
+2021-02-12,EenVandaag,FvD,1,tv
+2021-02-12,EenVandaag,GL,1,tv
+2021-02-12,EenVandaag,PvdA,1,tv
+2021-02-12,EenVandaag,PvdD,1,tv
+2021-02-12,EenVandaag,SP,1,tv
+2021-02-12,EenVandaag,VVD,1,tv
+2021-02-13,EenVandaag,D66,1,tv
+2021-02-13,EenVandaag,Denk,1,tv
+2021-02-13,EenVandaag,PvdD,1,tv
+2021-02-16,EenVandaag,50Plus,1,tv
+2021-02-16,EenVandaag,CDA,1,tv
+2021-02-16,EenVandaag,D66,1,tv
+2021-02-16,EenVandaag,Denk,1,tv
+2021-02-16,EenVandaag,FvD,1,tv
+2021-02-16,EenVandaag,PvdA,1,tv
+2021-02-16,EenVandaag,PvdD,1,tv
+2021-02-16,EenVandaag,SGP,1,tv
+2021-02-16,EenVandaag,VVD,1,tv
+2021-02-17,EenVandaag,D66,1,tv
+2021-02-17,EenVandaag,Denk,1,tv
+2021-02-17,EenVandaag,PvdD,1,tv
+2021-02-17,EenVandaag,VVD,1,tv
+2021-02-19,EenVandaag,CDA,1,tv
+2021-02-19,EenVandaag,Denk,1,tv
+2021-02-19,EenVandaag,FvD,1,tv
+2021-02-19,EenVandaag,GL,1,tv
+2021-02-19,EenVandaag,PvdD,1,tv
+2021-02-19,EenVandaag,SGP,1,tv
+2021-02-19,EenVandaag,SP,1,tv
+2021-02-20,EenVandaag,Denk,1,tv
+2021-02-20,EenVandaag,GL,1,tv
+2021-02-20,EenVandaag,PvdD,1,tv
+2021-01-25,WNL Goedemorgen Nederland,D66,6,tv
+2021-01-25,WNL Goedemorgen Nederland,Denk,1,tv
+2021-01-25,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-01-25,WNL Goedemorgen Nederland,PVV,2,tv
+2021-01-26,WNL Goedemorgen Nederland,CDA,6,tv
+2021-01-26,WNL Goedemorgen Nederland,CU,1,tv
+2021-01-26,WNL Goedemorgen Nederland,Denk,1,tv
+2021-01-26,WNL Goedemorgen Nederland,FvD,3,tv
+2021-01-26,WNL Goedemorgen Nederland,GL,3,tv
+2021-01-26,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-01-26,WNL Goedemorgen Nederland,PVV,3,tv
+2021-01-26,WNL Goedemorgen Nederland,VVD,2,tv
+2021-01-27,WNL Goedemorgen Nederland,CDA,3,tv
+2021-01-27,WNL Goedemorgen Nederland,CU,6,tv
+2021-01-27,WNL Goedemorgen Nederland,Denk,1,tv
+2021-01-27,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-01-27,WNL Goedemorgen Nederland,PVV,1,tv
+2021-01-27,WNL Goedemorgen Nederland,VVD,3,tv
+2021-01-28,WNL Goedemorgen Nederland,CDA,1,tv
+2021-01-28,WNL Goedemorgen Nederland,Denk,1,tv
+2021-01-28,WNL Goedemorgen Nederland,PvdA,5,tv
+2021-01-28,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-01-28,WNL Goedemorgen Nederland,VVD,2,tv
+2021-01-29,WNL Goedemorgen Nederland,CDA,6,tv
+2021-01-29,WNL Goedemorgen Nederland,Denk,1,tv
+2021-01-29,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-01-29,WNL Goedemorgen Nederland,VVD,2,tv
+2021-02-01,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-01,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-01,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-01,WNL Goedemorgen Nederland,VVD,3,tv
+2021-02-02,WNL Goedemorgen Nederland,CDA,2,tv
+2021-02-02,WNL Goedemorgen Nederland,CU,1,tv
+2021-02-02,WNL Goedemorgen Nederland,D66,1,tv
+2021-02-02,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-02,WNL Goedemorgen Nederland,GL,1,tv
+2021-02-02,WNL Goedemorgen Nederland,PvdA,1,tv
+2021-02-02,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-02,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-02,WNL Goedemorgen Nederland,SP,2,tv
+2021-02-02,WNL Goedemorgen Nederland,VVD,1,tv
+2021-02-03,WNL Goedemorgen Nederland,50Plus,2,tv
+2021-02-03,WNL Goedemorgen Nederland,CDA,3,tv
+2021-02-03,WNL Goedemorgen Nederland,CU,2,tv
+2021-02-03,WNL Goedemorgen Nederland,D66,4,tv
+2021-02-03,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-03,WNL Goedemorgen Nederland,FvD,2,tv
+2021-02-03,WNL Goedemorgen Nederland,GL,2,tv
+2021-02-03,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-03,WNL Goedemorgen Nederland,PVV,3,tv
+2021-02-03,WNL Goedemorgen Nederland,SGP,2,tv
+2021-02-03,WNL Goedemorgen Nederland,VVD,1,tv
+2021-02-04,WNL Goedemorgen Nederland,50Plus,1,tv
+2021-02-04,WNL Goedemorgen Nederland,CDA,3,tv
+2021-02-04,WNL Goedemorgen Nederland,CU,1,tv
+2021-02-04,WNL Goedemorgen Nederland,D66,2,tv
+2021-02-04,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-04,WNL Goedemorgen Nederland,FvD,1,tv
+2021-02-04,WNL Goedemorgen Nederland,GL,3,tv
+2021-02-04,WNL Goedemorgen Nederland,PvdA,3,tv
+2021-02-04,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-04,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-04,WNL Goedemorgen Nederland,SGP,1,tv
+2021-02-04,WNL Goedemorgen Nederland,SP,4,tv
+2021-02-04,WNL Goedemorgen Nederland,VVD,2,tv
+2021-02-05,WNL Goedemorgen Nederland,D66,3,tv
+2021-02-05,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-05,WNL Goedemorgen Nederland,FvD,1,tv
+2021-02-05,WNL Goedemorgen Nederland,GL,1,tv
+2021-02-05,WNL Goedemorgen Nederland,PvdA,3,tv
+2021-02-05,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-05,WNL Goedemorgen Nederland,PVV,3,tv
+2021-02-05,WNL Goedemorgen Nederland,VVD,3,tv
+2021-02-10,WNL Goedemorgen Nederland,CDA,6,tv
+2021-02-10,WNL Goedemorgen Nederland,D66,3,tv
+2021-02-10,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-10,WNL Goedemorgen Nederland,FvD,6,tv
+2021-02-10,WNL Goedemorgen Nederland,GL,3,tv
+2021-02-10,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-10,WNL Goedemorgen Nederland,SP,1,tv
+2021-02-10,WNL Goedemorgen Nederland,VVD,1,tv
+2021-02-11,WNL Goedemorgen Nederland,CDA,2,tv
+2021-02-11,WNL Goedemorgen Nederland,D66,5,tv
+2021-02-11,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-11,WNL Goedemorgen Nederland,FvD,3,tv
+2021-02-11,WNL Goedemorgen Nederland,GL,1,tv
+2021-02-11,WNL Goedemorgen Nederland,PvdA,1,tv
+2021-02-11,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-11,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-11,WNL Goedemorgen Nederland,SP,1,tv
+2021-02-11,WNL Goedemorgen Nederland,VVD,2,tv
+2021-02-12,WNL Goedemorgen Nederland,CDA,6,tv
+2021-02-12,WNL Goedemorgen Nederland,CU,3,tv
+2021-02-12,WNL Goedemorgen Nederland,D66,3,tv
+2021-02-12,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-12,WNL Goedemorgen Nederland,FvD,2,tv
+2021-02-12,WNL Goedemorgen Nederland,PvdA,1,tv
+2021-02-12,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-12,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-12,WNL Goedemorgen Nederland,VVD,1,tv
+2021-02-15,WNL Goedemorgen Nederland,50Plus,2,tv
+2021-02-15,WNL Goedemorgen Nederland,CDA,1,tv
+2021-02-15,WNL Goedemorgen Nederland,D66,2,tv
+2021-02-15,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-15,WNL Goedemorgen Nederland,FvD,2,tv
+2021-02-15,WNL Goedemorgen Nederland,GL,2,tv
+2021-02-15,WNL Goedemorgen Nederland,PvdA,2,tv
+2021-02-15,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-15,WNL Goedemorgen Nederland,SGP,2,tv
+2021-02-15,WNL Goedemorgen Nederland,SP,1,tv
+2021-02-16,WNL Goedemorgen Nederland,50Plus,3,tv
+2021-02-16,WNL Goedemorgen Nederland,CU,1,tv
+2021-02-16,WNL Goedemorgen Nederland,D66,6,tv
+2021-02-16,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-16,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-16,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-16,WNL Goedemorgen Nederland,SGP,3,tv
+2021-02-16,WNL Goedemorgen Nederland,VVD,2,tv
+2021-02-17,WNL Goedemorgen Nederland,50Plus,2,tv
+2021-02-17,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-17,WNL Goedemorgen Nederland,FvD,2,tv
+2021-02-17,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-17,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-17,WNL Goedemorgen Nederland,SGP,2,tv
+2021-02-17,WNL Goedemorgen Nederland,SP,1,tv
+2021-02-17,WNL Goedemorgen Nederland,VVD,1,tv
+2021-02-18,WNL Goedemorgen Nederland,50Plus,1,tv
+2021-02-18,WNL Goedemorgen Nederland,CDA,2,tv
+2021-02-18,WNL Goedemorgen Nederland,D66,3,tv
+2021-02-18,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-18,WNL Goedemorgen Nederland,FvD,2,tv
+2021-02-18,WNL Goedemorgen Nederland,GL,2,tv
+2021-02-18,WNL Goedemorgen Nederland,PvdA,3,tv
+2021-02-18,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-18,WNL Goedemorgen Nederland,PVV,1,tv
+2021-02-18,WNL Goedemorgen Nederland,SGP,1,tv
+2021-02-18,WNL Goedemorgen Nederland,SP,1,tv
+2021-02-18,WNL Goedemorgen Nederland,VVD,2,tv
+2021-02-19,WNL Goedemorgen Nederland,Denk,1,tv
+2021-02-19,WNL Goedemorgen Nederland,FvD,1,tv
+2021-02-19,WNL Goedemorgen Nederland,GL,1,tv
+2021-02-19,WNL Goedemorgen Nederland,PvdA,1,tv
+2021-02-19,WNL Goedemorgen Nederland,PvdD,1,tv
+2021-02-19,WNL Goedemorgen Nederland,SP,1,tv
+2021-01-25,M,CU,1,tv
+2021-01-25,M,Denk,1,tv
+2021-01-25,M,GL,1,tv
+2021-01-25,M,PVV,1,tv
+2021-01-25,M,VVD,1,tv
+2021-01-26,M,50Plus,1,tv
+2021-01-26,M,CDA,1,tv
+2021-01-26,M,CU,1,tv
+2021-01-26,M,D66,1,tv
+2021-01-26,M,Denk,1,tv
+2021-01-26,M,FvD,1,tv
+2021-01-26,M,GL,1,tv
+2021-01-26,M,PvdA,1,tv
+2021-01-26,M,PVV,1,tv
+2021-01-26,M,SGP,1,tv
+2021-01-26,M,VVD,1,tv
+2021-01-27,M,D66,1,tv
+2021-01-27,M,Denk,1,tv
+2021-01-27,M,PVV,1,tv
+2021-01-27,M,VVD,1,tv
+2021-01-28,M,CDA,1,tv
+2021-01-28,M,D66,1,tv
+2021-01-28,M,Denk,1,tv
+2021-01-28,M,FvD,1,tv
+2021-01-28,M,GL,1,tv
+2021-01-28,M,PvdA,1,tv
+2021-01-28,M,PVV,1,tv
+2021-01-28,M,SP,1,tv
+2021-01-28,M,VVD,1,tv
+2021-01-29,M,CDA,1,tv
+2021-01-29,M,Denk,1,tv
+2021-01-29,M,GL,1,tv
+2021-01-29,M,PvdA,1,tv
+2021-01-29,M,VVD,1,tv
+2021-02-01,M,CDA,1,tv
+2021-02-01,M,CU,1,tv
+2021-02-01,M,D66,1,tv
+2021-02-01,M,Denk,1,tv
+2021-02-01,M,GL,1,tv
+2021-02-01,M,VVD,1,tv
+2021-02-02,M,Denk,1,tv
+2021-02-02,M,GL,1,tv
+2021-02-03,M,CDA,1,tv
+2021-02-03,M,Denk,1,tv
+2021-02-03,M,VVD,1,tv
+2021-02-04,M,CDA,1,tv
+2021-02-04,M,Denk,1,tv
+2021-02-04,M,GL,1,tv
+2021-02-04,M,PVV,1,tv
+2021-02-04,M,VVD,1,tv
+2021-02-05,M,CDA,1,tv
+2021-02-05,M,Denk,1,tv
+2021-02-05,M,PvdA,1,tv
+2021-02-05,M,VVD,1,tv
+2021-02-08,M,CDA,1,tv
+2021-02-08,M,Denk,1,tv
+2021-02-08,M,PvdA,1,tv
+2021-02-08,M,PVV,1,tv
+2021-02-08,M,VVD,1,tv
+2021-02-09,M,CDA,1,tv
+2021-02-09,M,D66,1,tv
+2021-02-09,M,Denk,1,tv
+2021-02-09,M,GL,1,tv
+2021-02-09,M,PVV,1,tv
+2021-02-09,M,VVD,1,tv
+2021-02-10,M,CDA,1,tv
+2021-02-10,M,CU,1,tv
+2021-02-10,M,D66,1,tv
+2021-02-10,M,Denk,1,tv
+2021-02-10,M,GL,1,tv
+2021-02-10,M,PvdA,1,tv
+2021-02-10,M,PvdD,1,tv
+2021-02-10,M,SP,1,tv
+2021-02-10,M,VVD,1,tv
+2021-02-11,M,CDA,1,tv
+2021-02-11,M,Denk,1,tv
+2021-02-11,M,FvD,1,tv
+2021-02-11,M,SP,1,tv
+2021-01-25,NOS journaal,50Plus,1,tv
+2021-01-25,NOS journaal,Denk,1,tv
+2021-01-25,NOS journaal,FvD,1,tv
+2021-01-25,NOS journaal,GL,1,tv
+2021-01-25,NOS journaal,PvdD,1,tv
+2021-01-25,NOS journaal,SGP,1,tv
+2021-01-25,NOS journaal,VVD,1,tv
+2021-01-26,NOS journaal,50Plus,1,tv
+2021-01-26,NOS journaal,GL,1,tv
+2021-01-26,NOS journaal,PvdD,1,tv
+2021-01-26,NOS journaal,PVV,1,tv
+2021-01-26,NOS journaal,SGP,1,tv
+2021-01-26,NOS journaal,SP,1,tv
+2021-01-26,NOS journaal,VVD,1,tv
+2021-01-27,NOS journaal,50Plus,1,tv
+2021-01-27,NOS journaal,GL,1,tv
+2021-01-27,NOS journaal,PvdD,1,tv
+2021-01-27,NOS journaal,PVV,1,tv
+2021-01-27,NOS journaal,SGP,1,tv
+2021-01-27,NOS journaal,VVD,1,tv
+2021-01-29,NOS journaal,50Plus,1,tv
+2021-01-29,NOS journaal,CDA,1,tv
+2021-01-29,NOS journaal,GL,1,tv
+2021-01-29,NOS journaal,PvdD,1,tv
+2021-01-29,NOS journaal,SGP,1,tv
+2021-01-29,NOS journaal,VVD,1,tv
+2021-02-02,NOS journaal,50Plus,1,tv
+2021-02-02,NOS journaal,GL,1,tv
+2021-02-02,NOS journaal,PvdD,1,tv
+2021-02-02,NOS journaal,SGP,1,tv
+2021-02-02,NOS journaal,VVD,1,tv
+2021-02-03,NOS journaal,50Plus,1,tv
+2021-02-03,NOS journaal,CU,1,tv
+2021-02-03,NOS journaal,GL,1,tv
+2021-02-03,NOS journaal,PvdD,1,tv
+2021-02-03,NOS journaal,SGP,1,tv
+2021-02-03,NOS journaal,VVD,1,tv
+2021-02-05,NOS journaal,50Plus,1,tv
+2021-02-05,NOS journaal,GL,1,tv
+2021-02-05,NOS journaal,PvdD,1,tv
+2021-02-05,NOS journaal,SGP,1,tv
+2021-02-05,NOS journaal,VVD,1,tv
+2021-02-06,NOS journaal,50Plus,1,tv
+2021-02-06,NOS journaal,GL,1,tv
+2021-02-06,NOS journaal,PvdD,1,tv
+2021-02-06,NOS journaal,SGP,1,tv
+2021-02-06,NOS journaal,VVD,1,tv
+2021-02-08,NOS journaal,50Plus,1,tv
+2021-02-08,NOS journaal,GL,1,tv
+2021-02-08,NOS journaal,PvdD,1,tv
+2021-02-08,NOS journaal,SGP,1,tv
+2021-02-08,NOS journaal,VVD,1,tv
+2021-02-09,NOS journaal,50Plus,1,tv
+2021-02-09,NOS journaal,FvD,1,tv
+2021-02-09,NOS journaal,GL,1,tv
+2021-02-09,NOS journaal,PvdD,1,tv
+2021-02-09,NOS journaal,SGP,1,tv
+2021-02-10,NOS journaal,50Plus,1,tv
+2021-02-10,NOS journaal,D66,1,tv
+2021-02-10,NOS journaal,GL,1,tv
+2021-02-10,NOS journaal,PvdD,1,tv
+2021-02-10,NOS journaal,PVV,1,tv
+2021-02-10,NOS journaal,SGP,1,tv
+2021-02-10,NOS journaal,VVD,1,tv
+2021-02-11,NOS journaal,50Plus,1,tv
+2021-02-11,NOS journaal,D66,1,tv
+2021-02-11,NOS journaal,GL,1,tv
+2021-02-11,NOS journaal,PvdD,1,tv
+2021-02-11,NOS journaal,SGP,1,tv
+2021-02-12,NOS journaal,50Plus,1,tv
+2021-02-12,NOS journaal,GL,1,tv
+2021-02-12,NOS journaal,PvdD,1,tv
+2021-02-12,NOS journaal,SGP,1,tv
+2021-02-12,NOS journaal,VVD,1,tv
+2021-02-13,NOS journaal,50Plus,1,tv
+2021-02-13,NOS journaal,D66,1,tv
+2021-02-13,NOS journaal,GL,1,tv
+2021-02-13,NOS journaal,PvdD,1,tv
+2021-02-13,NOS journaal,SGP,1,tv
+2021-02-16,NOS journaal,50Plus,1,tv
+2021-02-16,NOS journaal,GL,1,tv
+2021-02-16,NOS journaal,PvdD,1,tv
+2021-02-16,NOS journaal,SGP,1,tv
+2021-02-16,NOS journaal,VVD,1,tv
+2021-02-17,NOS journaal,50Plus,1,tv
+2021-02-17,NOS journaal,CDA,1,tv
+2021-02-17,NOS journaal,CU,1,tv
+2021-02-17,NOS journaal,D66,1,tv
+2021-02-17,NOS journaal,GL,1,tv
+2021-02-17,NOS journaal,PvdD,1,tv
+2021-02-17,NOS journaal,SGP,1,tv
+2021-02-17,NOS journaal,VVD,1,tv
+2021-02-19,NOS journaal,50Plus,1,tv
+2021-02-19,NOS journaal,CDA,1,tv
+2021-02-19,NOS journaal,D66,1,tv
+2021-02-19,NOS journaal,GL,1,tv
+2021-02-19,NOS journaal,PvdD,1,tv
+2021-02-19,NOS journaal,SGP,1,tv
+2021-02-19,NOS journaal,VVD,1,tv
+2021-02-20,NOS journaal,50Plus,1,tv
+2021-02-20,NOS journaal,D66,1,tv
+2021-02-20,NOS journaal,FvD,1,tv
+2021-02-20,NOS journaal,GL,1,tv
+2021-02-20,NOS journaal,PvdA,1,tv
+2021-02-20,NOS journaal,PvdD,1,tv
+2021-02-20,NOS journaal,SGP,1,tv
+2021-01-25,Nieuwsuur,CDA,1,tv
+2021-01-25,Nieuwsuur,CU,1,tv
+2021-01-25,Nieuwsuur,Denk,1,tv
+2021-01-25,Nieuwsuur,FvD,1,tv
+2021-01-25,Nieuwsuur,PvdD,1,tv
+2021-01-27,Nieuwsuur,CDA,1,tv
+2021-01-27,Nieuwsuur,Denk,1,tv
+2021-01-27,Nieuwsuur,PvdD,1,tv
+2021-01-27,Nieuwsuur,PVV,1,tv
+2021-01-27,Nieuwsuur,VVD,1,tv
+2021-01-28,Nieuwsuur,Denk,1,tv
+2021-01-28,Nieuwsuur,PvdD,1,tv
+2021-01-28,Nieuwsuur,VVD,1,tv
+2021-01-29,Nieuwsuur,CU,1,tv
+2021-01-29,Nieuwsuur,Denk,1,tv
+2021-01-29,Nieuwsuur,PvdD,1,tv
+2021-01-31,Nieuwsuur,CDA,1,tv
+2021-01-31,Nieuwsuur,Denk,1,tv
+2021-01-31,Nieuwsuur,PvdD,1,tv
+2021-02-01,Nieuwsuur,50Plus,1,tv
+2021-02-01,Nieuwsuur,Denk,1,tv
+2021-02-01,Nieuwsuur,PvdD,1,tv
+2021-02-01,Nieuwsuur,VVD,1,tv
+2021-02-02,Nieuwsuur,Denk,1,tv
+2021-02-02,Nieuwsuur,PvdD,1,tv
+2021-02-02,Nieuwsuur,VVD,1,tv
+2021-02-04,Nieuwsuur,Denk,1,tv
+2021-02-04,Nieuwsuur,FvD,1,tv
+2021-02-04,Nieuwsuur,PvdD,1,tv
+2021-02-04,Nieuwsuur,PVV,1,tv
+2021-02-04,Nieuwsuur,VVD,1,tv
+2021-02-05,Nieuwsuur,50Plus,1,tv
+2021-02-05,Nieuwsuur,CDA,1,tv
+2021-02-05,Nieuwsuur,D66,1,tv
+2021-02-05,Nieuwsuur,Denk,1,tv
+2021-02-05,Nieuwsuur,GL,1,tv
+2021-02-05,Nieuwsuur,PvdA,1,tv
+2021-02-05,Nieuwsuur,PvdD,1,tv
+2021-02-05,Nieuwsuur,SP,1,tv
+2021-02-05,Nieuwsuur,VVD,1,tv
+2021-02-06,Nieuwsuur,CDA,1,tv
+2021-02-06,Nieuwsuur,Denk,1,tv
+2021-02-06,Nieuwsuur,PvdD,1,tv
+2021-02-06,Nieuwsuur,VVD,1,tv
+2021-02-08,Nieuwsuur,D66,1,tv
+2021-02-08,Nieuwsuur,Denk,1,tv
+2021-02-08,Nieuwsuur,PvdD,1,tv
+2021-02-08,Nieuwsuur,PVV,1,tv
+2021-02-08,Nieuwsuur,SGP,1,tv
+2021-02-08,Nieuwsuur,VVD,1,tv
+2021-02-09,Nieuwsuur,Denk,1,tv
+2021-02-09,Nieuwsuur,FvD,1,tv
+2021-02-09,Nieuwsuur,PvdD,1,tv
+2021-02-10,Nieuwsuur,CDA,1,tv
+2021-02-10,Nieuwsuur,D66,1,tv
+2021-02-10,Nieuwsuur,Denk,1,tv
+2021-02-10,Nieuwsuur,FvD,1,tv
+2021-02-10,Nieuwsuur,GL,1,tv
+2021-02-10,Nieuwsuur,PvdD,1,tv
+2021-02-10,Nieuwsuur,PVV,1,tv
+2021-02-10,Nieuwsuur,VVD,1,tv
+2021-02-11,Nieuwsuur,Denk,1,tv
+2021-02-11,Nieuwsuur,PvdD,1,tv
+2021-02-11,Nieuwsuur,VVD,1,tv
+2021-02-12,Nieuwsuur,D66,1,tv
+2021-02-12,Nieuwsuur,Denk,1,tv
+2021-02-12,Nieuwsuur,PvdD,1,tv
+2021-02-13,Nieuwsuur,D66,1,tv
+2021-02-13,Nieuwsuur,Denk,1,tv
+2021-02-13,Nieuwsuur,FvD,1,tv
+2021-02-13,Nieuwsuur,PvdD,1,tv
+2021-02-14,Nieuwsuur,CDA,1,tv
+2021-02-14,Nieuwsuur,D66,1,tv
+2021-02-14,Nieuwsuur,Denk,1,tv
+2021-02-14,Nieuwsuur,GL,1,tv
+2021-02-14,Nieuwsuur,PvdD,1,tv
+2021-02-14,Nieuwsuur,VVD,1,tv
+2021-02-15,Nieuwsuur,CDA,1,tv
+2021-02-15,Nieuwsuur,Denk,1,tv
+2021-02-15,Nieuwsuur,PvdD,1,tv
+2021-02-15,Nieuwsuur,SP,1,tv
+2021-02-15,Nieuwsuur,VVD,1,tv
+2021-02-16,Nieuwsuur,D66,1,tv
+2021-02-16,Nieuwsuur,Denk,1,tv
+2021-02-16,Nieuwsuur,PvdD,1,tv
+2021-02-16,Nieuwsuur,PVV,1,tv
+2021-02-16,Nieuwsuur,VVD,1,tv
+2021-02-17,Nieuwsuur,Denk,1,tv
+2021-02-17,Nieuwsuur,GL,1,tv
+2021-02-17,Nieuwsuur,PvdD,1,tv
+2021-02-19,Nieuwsuur,Denk,1,tv
+2021-02-19,Nieuwsuur,PvdD,1,tv
+2021-02-19,Nieuwsuur,VVD,1,tv
+2021-02-20,Nieuwsuur,Denk,1,tv
+2021-02-20,Nieuwsuur,PvdD,1,tv
+2021-02-20,Nieuwsuur,VVD,1,tv
+2021-02-21,Nieuwsuur,CU,1,tv
+2021-02-21,Nieuwsuur,D66,1,tv
+2021-02-21,Nieuwsuur,Denk,1,tv
+2021-02-21,Nieuwsuur,PvdD,1,tv
+2021-01-25,Op1,50Plus,1,tv
+2021-01-25,Op1,CDA,1,tv
+2021-01-25,Op1,Denk,1,tv
+2021-01-25,Op1,PvdA,1,tv
+2021-01-27,Op1,GL,1,tv
+2021-01-27,Op1,VVD,1,tv
+2021-01-28,Op1,CDA,1,tv
+2021-01-28,Op1,VVD,1,tv
+2021-01-31,Op1,CDA,1,tv
+2021-01-31,Op1,FvD,1,tv
+2021-01-31,Op1,SP,1,tv
+2021-01-31,Op1,VVD,1,tv
+2021-02-01,Op1,VVD,1,tv
+2021-02-02,Op1,CDA,1,tv
+2021-02-02,Op1,D66,1,tv
+2021-02-02,Op1,FvD,1,tv
+2021-02-02,Op1,PvdA,1,tv
+2021-02-02,Op1,PVV,1,tv
+2021-02-02,Op1,VVD,1,tv
+2021-02-03,Op1,CDA,1,tv
+2021-02-03,Op1,PvdD,1,tv
+2021-02-04,Op1,CDA,1,tv
+2021-02-04,Op1,D66,1,tv
+2021-02-04,Op1,VVD,1,tv
+2021-02-05,Op1,PvdA,1,tv
+2021-02-05,Op1,VVD,1,tv
+2021-02-07,Op1,CDA,1,tv
+2021-02-07,Op1,VVD,1,tv
+2021-02-08,Op1,CDA,1,tv
+2021-02-08,Op1,D66,1,tv
+2021-02-08,Op1,PvdA,1,tv
+2021-02-08,Op1,PVV,1,tv
+2021-02-08,Op1,SP,1,tv
+2021-02-08,Op1,VVD,1,tv
+2021-02-09,Op1,CDA,1,tv
+2021-02-09,Op1,FvD,1,tv
+2021-02-09,Op1,VVD,1,tv
+2021-02-10,Op1,CDA,1,tv
+2021-02-10,Op1,FvD,1,tv
+2021-02-10,Op1,VVD,1,tv
+2021-02-11,Op1,50Plus,1,tv
+2021-02-11,Op1,PvdA,1,tv
+2021-02-11,Op1,SGP,1,tv
+2021-02-11,Op1,VVD,1,tv
+2021-02-14,Op1,CDA,1,tv
+2021-02-14,Op1,CU,1,tv
+2021-02-14,Op1,D66,1,tv
+2021-02-14,Op1,GL,1,tv
+2021-02-14,Op1,PvdA,1,tv
+2021-02-14,Op1,PvdD,1,tv
+2021-02-14,Op1,SP,1,tv
+2021-02-14,Op1,VVD,1,tv
+2021-02-15,Op1,PvdA,1,tv
+2021-02-15,Op1,PvdD,1,tv
+2021-02-16,Op1,CDA,1,tv
+2021-02-16,Op1,SGP,1,tv
+2021-02-17,Op1,CDA,1,tv
+2021-02-17,Op1,D66,1,tv
+2021-02-17,Op1,FvD,1,tv
+2021-02-17,Op1,PvdA,1,tv
+2021-02-17,Op1,PvdD,1,tv
+2021-02-17,Op1,SP,1,tv
+2021-02-19,Op1,CDA,1,tv
+2021-02-19,Op1,FvD,1,tv
+2021-02-21,Op1,CDA,1,tv
+2021-02-21,Op1,D66,1,tv
+2021-02-21,Op1,FvD,1,tv
+2021-02-21,Op1,GL,1,tv
+2021-02-21,Op1,PvdA,1,tv
+2021-02-21,Op1,PvdD,1,tv
+2021-02-21,Op1,SP,1,tv
+2021-02-15,de Vooravond,CU,1,tv
+2021-02-15,de Vooravond,D66,1,tv
+2021-02-15,de Vooravond,Denk,1,tv
+2021-02-15,de Vooravond,GL,1,tv
+2021-02-15,de Vooravond,PvdA,1,tv
+2021-02-15,de Vooravond,PvdD,1,tv
+2021-02-15,de Vooravond,PVV,1,tv
+2021-02-15,de Vooravond,SGP,1,tv
+2021-02-15,de Vooravond,SP,1,tv
+2021-02-15,de Vooravond,VVD,1,tv
+2021-02-16,de Vooravond,CU,1,tv
+2021-02-16,de Vooravond,Denk,1,tv
+2021-02-16,de Vooravond,PvdD,1,tv
+2021-02-16,de Vooravond,SGP,1,tv
+2021-02-16,de Vooravond,VVD,1,tv
+2021-02-17,de Vooravond,CU,1,tv
+2021-02-17,de Vooravond,D66,1,tv
+2021-02-17,de Vooravond,Denk,1,tv
+2021-02-17,de Vooravond,GL,1,tv
+2021-02-17,de Vooravond,PvdD,1,tv
+2021-02-17,de Vooravond,SGP,1,tv
+2021-02-17,de Vooravond,VVD,1,tv
+2021-02-19,de Vooravond,CDA,1,tv
+2021-02-19,de Vooravond,CU,1,tv
+2021-02-19,de Vooravond,Denk,1,tv
+2021-02-19,de Vooravond,FvD,1,tv
+2021-02-19,de Vooravond,PvdD,1,tv
+2021-02-19,de Vooravond,PVV,1,tv
+2021-02-19,de Vooravond,SGP,1,tv
+2021-02-19,de Vooravond,VVD,1,tv
