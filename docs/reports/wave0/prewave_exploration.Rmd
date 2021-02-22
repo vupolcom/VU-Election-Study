@@ -74,7 +74,7 @@ while CDA and PVV are more popular with older and less highly educated voters.
 On the left, D66 and GroenLinks appeal to the young and educated class,
 while PVdA apd SP appeal more to the older and less educated voter. 
 
-Placing each party by the demographic of its mean voter, we get an alternatieve electoral compass:
+Placing each party by the demographic of its mean voter, we get an alternative electoral compass:
 (color indicating average position of respondent on left-right scale)
 
 ```{r}
@@ -84,23 +84,22 @@ resp %>% select(iisID, age, education, vote, rile_self)  %>%
   mutate(education=3-as.numeric(education), age=as.numeric(age)) %>% 
   mutate(education = (education - mean(education)) / sd(education), age=(age - mean(age)) / sd(age)) %>% 
   group_by(vote) %>% summarize(n=n(), age=mean(age), education=mean(education), rile=mean(rile_self, na.rm=T)) %>% 
-  ggplot(aes(x=education, y=age, label=vote, color=rile)) + geom_label() + theme_void() + theme(axis.title = element_text()) +
-  scale_color_gradient2(low="red", mid="black", high="blue", midpoint=5)
-
+  ggplot(aes(x=education, y=age, label=vote, color=rile)) + geom_label() + theme_void() + 
+  theme(axis.title = element_text(), panel.grid.major = element_line(colour = "grey")) +
+  scale_x_continuous(breaks=0) +scale_y_continuous(breaks=0) +
+  scale_color_gradient(low="green", high="blue", guide=F)
 ```
 
+## Vote change
 
-```{r eval=F}
+```{r vote-change}
 library(igraph)
-resp
-ntot = votes %>% filter(A2 != "Weet niet", E1 != "Weet niet") %>% nrow()
-gdf = votes %>% filter(A2 != "Weet niet", E1 != "Weet niet") %>% 
-  group_by(A2, E1) %>% summarize(n=n()) %>% na.omit() %>% filter(A2 != E1)
+votes = resp %>% select(iisID, vote, vote_2017) %>% na.omit() %>% mutate(vote=as.character(vote), vote_2017=as.character(vote_2017))
+ntot =  nrow(votes)
+gdf = votes %>% filter(vote!="Undecided") %>% group_by(vote, vote_2017) %>% summarize(n=n()) %>% filter(vote != vote_2017)
 
-gd = full_join(gdf, gdf, by=c("A2"="E1", "E1"="A2")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y, zetels=n/ntot * 150) %>% filter(n>0)
-g = gd %>% select(E1, A2, n, zetels) %>% filter(n>5) %>% graph_from_data_frame()
-
-data$netwerk_veranderingen = gd
+gd = full_join(gdf, gdf, by=c("vote"="vote_2017", "vote_2017"="vote")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y, zetels=n/ntot * 150) %>% filter(n>0)
+g = gd %>% select(vote_2017, vote, n, zetels) %>% filter(n>5) %>% graph_from_data_frame()
 
 E(g)$width = 1+E(g)$n/10 
 E(g)$label = round(E(g)$zetels, 1)
@@ -109,9 +108,16 @@ E(g)$arrow.size=E(g)$width/2
 plot(g)
 ```
 
+The above shows changes between current vote intention and the self-reported previous vote
+(ignoring undecided voters). 
+Interestingly, PVV does not draw new voters from existing parties apart from the (imploded) 50+ and FvD,
+but mostly draws on voters that did not vote in the previous election, either from choice or because
+they were inelibible (i.e. new voters).
+VVD also draws from both groups and from 50+, while also drawing from the coalition parties CDA and D66.
+Non-voters in 2017 also now consider SP and PvdD. 
+Thus, while VVD and PVV do not compete directly, both do draw from the same pool of new and disgruntled voters. 
 
 ## Media Use by Vote Intention
-
 
 ```{r aux}
 # Overall ordering of parties by institutional trust
@@ -155,27 +161,20 @@ d = long_vote %>% filter(variable=="I1") %>% create_table()
 color_table_plot(d, "Wave 0: Vote intention and media use", digits=1, export=F)
 ```
 
-## Use of particular channels {.tabset}
+In the competition for voters the media play a crucial role. 
+The table above shows overall media use by current vote intention. 
+As seen before, TV is the most frequently used channel, followed by online nad print news.
+Overall, voters for the centrist parties consume more news, while non-voters and voters for especially PVV
+consume signifianctly less news in all channels.
+Both FvD and Denk voters rely more heavily on social media and especially less on print media. 
 
-```{r wave0-media-party-specific, results='asis'}
-pct_variables = c(I2="Newspapers", I3="TV", I4="Online", I5="Social", I7="Apps")
-for (var in names(pct_variables)) {
-  cat(str_c("\n\n### Use of ", pct_variables[[var]], "\n\n"))
-  label = paste("Wave 0: Vote intention and news: ", pct_variables[[var]])
-  message(paste(var, label))
-  d = long_vote %>% filter(variable==var, name != "Other, namely:", value != 0) %>% create_table(compute_perc = T)
-  color_table_plot(data=d, title = label, subtitle = "(Percentage of voters for that party; multiple options possible)")
-}
-```
+See the last part of this report for data on use of particular titles or sites within each category.
 
 # Trust
 
-## Trust in Media
-
-```{r wave0-trust-media, results='asis'}
-d = long_vote %>% filter(variable=="I8") %>% create_table()
-color_table_plot(d, "Wave 0: Trust in Media", subtitle="(Grade from 0=low tot 10=high)", digits=1)
-```
+One crucial question is whether people have trust in media and democracy. 
+We have asked respondents to rank their trust in a number of institutions on a scale of 0 to 10,
+and we also asked them to rank a list of specific media channels.
 
 ## Trust in Institutions
 
@@ -184,19 +183,23 @@ d = long_vote %>% filter(variable=="F2") %>% create_table()
 color_table_plot(d, "Wave 0: Trust in Instituties", subtitle="(Grade from 0=low tot 10=high)", digits=1)
 ```
 
-```{r wave0-trust-group, results='asis'}
-d = long_vote %>% filter(variable=="F2") %>%
-  mutate(name=case_when(
-    name == "Science" ~ "Wetenschap",
-    name == "The justice system" ~ "Rechtspraak",
-    name == "Dutch democracy" ~ "Democratie",
-    name == "Journalism" ~ "Journalistiek",
-    name %in% c("Banks", "Big corporations") ~ "Bedrijfsleven",
-    T ~ "Politiek"
-  ))%>% create_table()
-color_table_plot(d, "Wave 0: Trust in Institutions (grouped)", 
-                    subtitle="(Grade from 0=low tot 10=high)", digits=1)
+The table above shows the trust in a number of institutions.
+Most respondents have relatively high trust in science, the justice system, and democracy.
+When looking at journalism and specific political institutions, trust is lower,
+and trust in banks and corporations is even lower. 
+
+Looking at the trust of voters for the various parties, we see that again voters for the centrist parties have highest trust, while non-voters and voters for more fringe parties have less trust in media and politics, and non-voters also have very low trust in science. 
+
+## Trust in Media
+
+```{r wave0-trust-media, results='asis'}
+d = long_vote %>% filter(variable=="I8") %>% create_table()
+color_table_plot(d, "Wave 0: Trust in Media", subtitle="(Grade from 0=low tot 10=high)", digits=1)
 ```
+
+Looking at trust in specific channels, overall the TV news broadcasts and mainstream media channels such as nu.nl and AD score best, and social media score worst.
+We also see the same breakdown between high-trust centrist voters and low-trust fringe voters.
+Interestingly, Denk voters have relatively high trust in social media dn low trust in (Dutch) TV channels and newspapers. 
 
 ## Trust in democracy
 
@@ -219,4 +222,18 @@ dt = bind_rows(dt, total) %>% select(vote, name=value, value=perc) %>%
          name=factor(as.character(name), levels=as.character(0:10)))
 
 color_table_plot(dt, "Wave 0: Trust in democracy", subtitle="(Percentage of voters for a party)")
+```
+
+
+# Use of particular media titles / sites
+
+```{r wave0-media-party-specific, results='asis'}
+pct_variables = c(I2="Newspapers", I3="TV", I4="Online", I5="Social", I7="Apps")
+for (var in names(pct_variables)) {
+  cat(str_c("\n\n### Use of ", pct_variables[[var]], "\n\n"))
+  label = paste("Wave 0: Vote intention and news: ", pct_variables[[var]])
+  message(paste(var, label))
+  d = long_vote %>% filter(variable==var, name != "Other, namely:", value != 0) %>% create_table(compute_perc = T)
+  color_table_plot(data=d, title = label, subtitle = "(Percentage of voters for that party; multiple options possible)")
+}
 ```
