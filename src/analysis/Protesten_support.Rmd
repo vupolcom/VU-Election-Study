@@ -1,0 +1,153 @@
+---
+title: 'Outreach: Verzet tegen Corona'
+author: "Mariken van der Velden"
+output: pdf_document
+#  github_document:
+#    toc: yes
+editor_options: 
+  chunk_output_type: console
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+#library(printr)
+rm(list = ls())
+```
+
+
+```{r, message=FALSE, warning=F, echo=F}
+rm(list=ls())
+
+library(tidyverse)
+library(here)
+source(here("src/lib/create_labels.R"))
+```
+
+```{r, echo = FALSE, fig.show="hide"}
+w0 <- read_csv("../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
+  select(iisID, gender, age, education, region, postal_code, job, 
+         vote_w1 = A2) 
+
+w1 <- read_csv("../../data/intermediate/wave1.csv") 
+
+d <- left_join(w0, w1, by = "iisID") %>%
+  mutate(A2=recode_parties(label(A2, "A2")),
+         vote_w1 = recode_parties(label(vote_w1, "A2")),
+         vote_switch = ifelse(vote_w1 == A2, "Onveranderd", "Veranderd"))
+
+d %>%
+  group_by(vote_w1, A2) %>%
+  summarise(n = n()) %>%  
+  mutate(perc = round(n/sum(n),2)) %>%
+  ggplot(aes(x = A2, y = vote_w1, label = perc, fill = perc)) +
+  geom_tile() + geom_text() +
+  theme_minimal() +
+  labs(y = "Partijvoorkeur Januari", x = "Partijvoorkeur Februari",
+       title = "Veranderingen in partijvoorkeuren",
+       subtitle = "aantallen kiezers per cel") +
+  scale_fill_gradient(low="white", high="#3182bd", guide=F) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
+        legend.position="bottom",
+        legend.title = element_blank())
+
+```
+
+Kijkend naar de vraag _"Hoe staat u in het algemeen ten aanzien van bewegingen die zich verzetten tegen de Corona maatregelen?"_ zien we dat de meeste kiezers negatief staan tegenover de bewegingen die zich verzetten tegen de Corona maatregelen. Mensen die voornemens zijn Forum voor Democratie te stemmen dan wel niet te stemmen zijn echter het vaker eens met deze bewegingen.
+
+
+```{r, echo=F, fig.width=8}
+
+d %>%
+  mutate(verzet_corona = ifelse(H7a<=3,"Tegen",
+                         ifelse(H7a>=4 & H7a<=6, "Niet voor/ niet Tegen",
+                         ifelse(H7a>=7, "Voor", H7a)))) %>%
+  drop_na(verzet_corona) %>%
+  group_by(A2, verzet_corona) %>%
+  summarise(n = n()) %>%
+  mutate(perc = round(n/sum(n),2)) %>%
+  ggplot(aes(x = A2, y = verzet_corona, label = perc, fill = perc)) +
+  geom_tile() + geom_text() +
+  theme_minimal() +
+  labs(y = "", x = "Partijvoorkeur Februari",
+       title = "Mening over Verzet tegen Corona Maatregelen",
+       subtitle = "% van kiezers per partij") +
+  scale_fill_gradient(low="white", high="#3182bd", guide=F) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
+        legend.position="bottom",
+        legend.title = element_blank())
+```
+
+\pagebreak
+
+Kijkend naar de vraag _"De geweldloze manier waarop de bewegingen die zich verzetten tegen de Corona maatregelen protesteren spreekt mij aan."_ zien we dat ook Denk en PVV kiezers het eens zijn met de geweldloze manier van protesteren.
+
+```{r, echo=F, fig.width=8, fig.align="center"}
+d %>%
+  mutate(verzet_corona = ifelse(H7b<=3,"Tegen",
+                         ifelse(H7b>=4 & H7b<=6, "Niet voor/ niet Tegen",
+                         ifelse(H7b>=7, "Voor", H7b)))) %>%
+  drop_na(verzet_corona) %>%
+  group_by(A2, verzet_corona) %>%
+  summarise(n = n()) %>%
+  mutate(perc = round(n/sum(n),2)) %>%
+  ggplot(aes(x = A2, y = verzet_corona, label = perc, fill = perc)) +
+  geom_tile() + geom_text() +
+  theme_minimal() +
+  labs(y = "", x = "Partijvoorkeur Februari",
+       title = "Mening over Protest tegen Corona Maatregelen",
+       subtitle = "% van kiezers per partij") +
+  scale_fill_gradient(low="white", high="#3182bd", guide=F) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
+        legend.position="bottom",
+        legend.title = element_blank())
+
+```
+
+```{r, echo=F, fig.height=8}
+library(quanteda)
+
+d <- d %>%
+  mutate(A1 = ifelse(A1==1, "Stemmen", "Niet Stemmen")) 
+
+dfm(corpus(d, docid_field = "iisID",
+                  text_field = "A1_elab"),
+    groups = "A1", remove = stopwords('dutch'), 
+    remove_punct = TRUE) %>%
+  dfm_trim(min_termfreq = 10, verbose = FALSE) %>%
+  textplot_wordcloud(comparison = TRUE, color = c("#51127CFF", "#FEBA80FF"))
+
+
+library(quanteda.textstats)
+library(viridis)
+
+dfm(corpus(d, docid_field = "iisID",
+                  text_field = "A1_elab"),
+    groups = "A2", remove = stopwords('dutch'), 
+    remove_punct = TRUE) %>%
+  dfm_trim(min_termfreq = 10, verbose = FALSE) %>% 
+  textstat_frequency(groups = "A2") %>%
+  filter(frequency>2) %>%
+  ggplot(aes(x = frequency, y = reorder(feature, -frequency), color = group)) +
+  facet_wrap(.~group, scales = "free") +
+    geom_point(size = 2) + 
+  #scale_color_manual(values = c("#51127CFF", "#FEBA80FF")) +
+  scale_color_viridis_d() +
+  theme_minimal() +
+  labs(x = "Frequentie", y = "",
+       title = "Waarom ga je (niet) stemmen?") +
+    theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+
+```
+
