@@ -10,7 +10,7 @@ permalink: /reports/
   <i>NRC Handelsblad, 22 februari 2021</i>
 </div>
 
-<br/>
+<hr/>
 
 <div>
 <img width="200px" align="left" src="https://stukroodvlees.nl/wp-content/uploads/2021/02/unnamed-chunk-5-1.png">
