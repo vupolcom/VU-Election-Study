@@ -138,3 +138,5 @@ dmypy.json
 
 # Project specific
 notebooks/data/*
+
+.DS_Store
