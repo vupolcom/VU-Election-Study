@@ -1,7 +1,3 @@
----
-title: "VU Analyse Tweede Kamerverkiezingen 2021"
----
-
 Meer informatie:
 
 + [Uitkomsten](uitkomsten.md)
