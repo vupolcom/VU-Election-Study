@@ -78,7 +78,6 @@ Placing each party by the demographic of its mean voter, we get an alternatieve 
 (color indicating average position of respondent on left-right scale)
 
 ```{r}
-resp$age
 library(ggthemes)
 resp %>% select(iisID, age, education, vote, rile_self)  %>% 
   filter(!is.na(education), !is.na(vote)) %>% 
