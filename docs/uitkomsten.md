@@ -17,7 +17,7 @@ permalink: /reports/
   <h3><a href="https://stukroodvlees.nl/wat-willen-kiezers-na-17-maart/">Wat willen kiezers na 17 maart?</a></h3>
   <i>Stuk Rood Vlees, 10 februari 2021</i><br/>
   door <a href="https://github.com/vupolcom/about#dr-mariken-van-der-velden">Mariken van der Velden</a>
-
+</div>
 
 ## Analyses / Rapportages
 - [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
