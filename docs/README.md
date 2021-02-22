@@ -1,4 +1,6 @@
-# VU Analyse Tweede Kamerverkiezingen 2021
+---
+title: VU Analyse Tweede Kamerverkiezingen 2021
+---
 
 Meer informatie:
 
