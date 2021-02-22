@@ -1,6 +1,6 @@
 ---
 title: 'VU 2021 Election Study: Media aandacht van politici en de waardering van kiezers'
-author: "Mariken van der Velden - rest will follow"
+author: "Mariken van der Velden"
 output: 
   github_document:
     toc: yes
@@ -16,6 +16,7 @@ rm(list = ls())
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
                       echo = FALSE, fig.align = "center",
                         fig.path='')
+library(kfigr) 
 library(printr)
 options(digits = 2)
 library(here)
@@ -24,21 +25,13 @@ library(amcatr)
 library(viridis)
 ```
 
-# NRC Vragen 
- - Welke politici waren in welke media? 
- - Welke partij kreeg de meeste woorden? 
- - Welke partij de meeste zendtijd?
- - Wat vonden de kiezersgroepen van die optredens?  Waardering?
- - Wat is ervan blijven hangen? Is er enig verschil in waardering tussen tv, kranten, socials?
- - Wat vonden de zwevers ervan? Hebben ze al een keuze kunnen maken? En was een bepaald optreden daarbij belangrijk? Of hebben ze niet gekeken?
-
-# Politici in de Media
 ```{r "Amcat data"}
 conn <- amcat.connect('http://vu.amcat.nl')
 
 quer <- c('CDA#(CDA OR (Hoekstra AND (Wopke OR "min economische zaken, landbouw en innovatie" OR bewinds* OR minister* OR cda))) ',
           'CU#(ChristenUnie OR CU) OR (Segers AND (Gert-Jan OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "christenunie"))',
           'Denk#(Azarkan AND (Farid OR "tweede kamerleden" OR parlement* OR "tweede kamer*"))',
+          'D66#(Democraten66 OR D66) OR (Kaag AND (Sigrid OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "d66"))',
           'FvD#((Forum OR FvD) OR (Baudet AND (Thierry OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "forum")))',
           'GL#((GroenLinks OR GL) OR (Klaver AND (Jesse OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "groenlinks")))',
           'PvdA#(PvdA OR (Ploumen AND (Lilianne OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR "pvda" OR fractievoorzitter OR partijleider)))',
@@ -49,7 +42,7 @@ quer <- c('CDA#(CDA OR (Hoekstra AND (Wopke OR "min economische zaken, landbouw 
           'VVD#VVD OR (Rutte AND (Mark OR "min algemene zaken" OR premier OR "minister president" OR "vvd" OR fractievoorzitter OR partijleider))',
           '50Plus#(SGP OR (Haan AND (Lianne OR "50plus" OR "tweede kamerleden" OR parlement* OR "tweede kamer*" OR fractievoorzitter OR partijleider)))')
 
-labls <- c('CDA', 'CU', 'Denk', 'FvD', 'GL', 'PvdA', 'PvdD','PVV',
+labls <- c('CDA', 'CU', 'Denk', 'D66','FvD', 'GL', 'PvdA', 'PvdD','PVV',
            'SGP', 'SP', 'VVD', '50+')
 
 krant <- amcat.hits(conn, queries = quer, 
@@ -65,11 +58,15 @@ krant <- krant %>%
   mutate(date = as.Date(date)) %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "krant") %>%
+  mutate(id = "krant",
+         medium = recode(medium,
+                         `ad` = "AD",
+                         `nrc` = "NRC",
+                         `telegraaf` = "De Telegraaf",
+                         `volkskrant` = "de Volkskrant",
+                         `trouw` = "Trouw")) %>%
   ungroup()
-```
 
-```{r}
 ev <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2554, 
                 project = 75, col = c('date', "title"),
@@ -211,11 +208,28 @@ media <- krant %>% ungroup() %>%
   add_row(ev) %>% add_row(gnl) %>% add_row(M) %>%
   add_row(nos) %>% add_row(nu) %>% add_row(op) %>% add_row(va)
 ```
+# Politici in de Media
+Met de campagne in de stijgers, zullen we zien dat politici de komende meer en meer in de media verschijnen.
+Om te kijken waar welke politici het meest zichtbaar zijn, kijken we naar de 5 grote Nederlandse kranten (AD, De Telegraaf, de Volkskrant, NRC en Trouw), en de TV programma's EenVandaag, M, Nieuwsuur, NOS Journaal, Op1 en de Vooravond.
+Het bovenste gedeelte van onderstaand figuur laat de zichtbaarheid in de kranten zien.
+Van alle kranten krijgt 50Plus het meeste aandacht van de NRC.
+Dat geldt ook voor het CDA, D66, FvD, PVV en de SGP -- dus waarschijnlijk besteed de NRC het meeste aandacht aan politiek.
+Het CU wordt vaker genoemd in de Volkskrant en De Telegraaf noemt GL en Klaver het meeste.
 
-```{r "visibility media", fig.height=10, fig.width=10}
-ggplot(media, aes(x = date, y = n, color = query, group = query)) +
+Over de partijen heen, kunnen we stellen dan in de kranten AD, de Volkskrant en Trouw doet over de afgelopen 3 weken de VVD met Mark Rutte het het beste in termen van zichtbaarheid. 
+De PvdA is eind januari, gedurende de toeslagenaffaire en het aftreden van Asscher, veel te zien.
+In het NRC is begin januari het CDA de koploper in termen van zichtbsarheid. 
+In De Telegraaf doet ook GroenLinks mee in het krijgen van meer aandacht dan de andere partijen. 
+
+Het onderste gedeelte van onderstaand figuur laat zien dat voor de meeste tv-programma's de politieke partijen en hun lijsttrekker 1 keer per avond genoemd worden -- Note: het gaat om de ondertiteling die we hier analyseren. 
+Dit patroon is anders voor WNL's Goedemorgen Nederland (links in onderstaand figuur), waar we zien dat de VVD en het CDA aan het eind van januari het meeste aandacht kreeg.
+Meer recentelijk zijn dat 50PLus, SGP en de PVV.
+
+```{r "visibility media", anchor = "figure", fig.height=10, fig.width=10, fig.cap="Politici's Zichtbaarheid in de Media"}
+media %>% filter(id == "krant") %>%
+ggplot(aes(x = date, y = n, color = query, group = query)) +
   geom_line() +
-  facet_wrap(medium~., scales = "free", ncol=3) +
+  facet_grid(query~medium, scales = "free") +
   theme_minimal() +
   scale_color_viridis_d() +  
   labs(y = "", 
@@ -225,7 +239,23 @@ ggplot(media, aes(x = date, y = n, color = query, group = query)) +
   theme(axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
         plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
-          legend.position="bottom",
+          legend.position="none",
+          legend.title = element_blank())
+
+media %>% filter(id == "tv") %>%
+ggplot(aes(x = date, y = n, color = query, group = query)) +
+  geom_line() +
+  facet_grid(query~medium, scales = "free") +
+  theme_minimal() +
+  scale_color_viridis_d() +  
+  labs(y = "", 
+       x = "",
+       title = "Zichtbaarheid",
+       subtitle = "Absolute aantallen (queries)") +
+  theme(axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
+        plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
           legend.title = element_blank())
 ```
 
@@ -239,17 +269,17 @@ w1 <- read_csv(here("data/intermediate/wave1.csv"))
 
 ## Wat vonden de kiezersgroepen van politici 's media optredens? 
 
-In het linker gedeelte van Figuur \@ref{fig:algemeen} is te zien dat van alle lijsttrekkers is Mark Rutte (VVD) voor kiezers het meest zichtbaar in de media. 
+In het linker gedeelte van onderstaand figuur is te zien dat van alle lijsttrekkers is Mark Rutte (VVD) voor kiezers het meest zichtbaar in de media. 
 Hij wordt op de voet gevolgd door Geert Wilder (PVV), Wopke Hoekstra (CDA), en Thierry Baudet (FvD).
 Lijsttrekkers Gert-Jan Segers (CU), Kees van de Staaij (SGP), Esther Ouwehand (PvdD), Liane den Haan (50+), en Farid Azarkan (Denk) worden door de kiezers als zeer onopvallend aangemerkt.
 Dat is vooral voor regeringspartij CU opvallend, omdat regeringsparijen vaak opvallender zijn dan oppositiepartijen.
 
-In het rechter gedeelte van Figuur \@ref{fig:algemeen} wordt weergegeven of de lijstrtekkers en hun politieke partij positief of negatieve media aandacht kregen in de ogen van de kiezer.
+In het rechter gedeelte van onderstaand figuur wordt weergegeven of de lijstrtekkers en hun politieke partij positief of negatieve media aandacht kregen in de ogen van de kiezer.
 De gemiddeldes laten zien dat als politici voor kiezers zichtbaar waren in de media, dat het dan meestal positief was - bijna alle politici krijgen een score van 5.5 of hoger.
 Dit geldt alleen niet voor Wilders, Azarkan en Baudet.
 Die vallen voornamelijk negatief op in het nieuws, aldus de kiezer.
 
-```{r "Media Performance Politiek - algemeen", fig.width=8, fig.cap="\\label{fig:algemeen}Figuur 1"}
+```{r "Media Performance Politiek - algemeen", fig.width=8, fig.cap="Media Performance Politiek - algemeen"}
 w1 %>%
   select(B2_1:B2_13, B3_1:B3_13) %>%
   pivot_longer(cols = B2_1:B2_13, 
@@ -313,19 +343,19 @@ w1 %>%
   
 ```
 
-Wanneer we specifieker kijken naar wat mensen vinden van de lijstttrekkers in de media als a) je voor de partij stemt (paarse staven in onderstaande Figuur \@ref{fig:kiezers}); b) je de partij graag in de nieuwe regering zien (blauwe staven in onderstaande Figuur \@ref{fig:kiezers}); c) je nog een zwevende kiezer bentt (groene staven in onderstaande Figuur \@ref{fig:kiezers}); en d) je niet gaat stemmen (gele staven in onderstaande Figuur \@ref{fig:kiezers}).
+Wanneer we specifieker kijken naar wat mensen vinden van de lijstttrekkers in de media als a) je voor de partij stemt (paarse staven in onderstaand figuur); b) je de partij graag in de nieuwe regering zien (blauwe staven in onderstaand figuur); c) je nog een zwevende kiezer bentt (groene staven in onderstaande figuur); en d) je niet gaat stemmen (gele staven in onderstaand figuur).
 
-Voor de meeste politici geldt dat ongeacht of je op de partij stemt of deze partij graag in de nieuwe regering ziet, de lijsttrekker even (on)opvallend is (linkerzijde van Figuur \@ref{fig:kiezers}).
+Voor de meeste politici geldt dat ongeacht of je op de partij stemt of deze partij graag in de nieuwe regering ziet, de lijsttrekker even (on)opvallend is (linkerzijde van onderstaand figuur).
 Het partoon wie opvalt en wie niet is vrijwel hetzelfde als het algemene partoon zoals beschreven bij bovenstaand figuur.
 
 Voor de niet-stemmers geldt dat voor hen alleen Rutte en Wilders enigszins opgevallen zijn in de media.
-Wanneer we kijken naar de waardering van de politici in de media, in de rechterzijde van Figuur \@ref{fig:kiezers}, is het opvallend dat als niet-stemmers Van der Staaij in de media zagen, zij heel veel waardering voor hem hebben: het hoogste gemiddelde.
+Wanneer we kijken naar de waardering van de politici in de media, in de rechterzijde van onderstaand figuur, is het opvallend dat als niet-stemmers Van der Staaij in de media zagen, zij heel veel waardering voor hem hebben: het hoogste gemiddelde.
 Deze groep heeft weer een veel lagere waardering voor Rutte, als deze hem is opgevallen in de media.
 
-Voor de rest laat de rechterzijde van Figuur \@ref{fig:kiezers} zien, dat de waardering tussen de vier type stemmersgroepen niet verschilt.
+Voor de rest laat de rechterzijde van onderstaand figuur zien, dat de waardering tussen de vier type stemmersgroepen niet verschilt.
 Alle gemiddeldes, behalve die van Denk en FvD, schommelen rond de 5, wat aangeeft dat in alle vier type kiezersgroepen mensen de lijsttrekkers' media optredens zowel positief als negatief beoordelen.
 
-```{r "Media Performance Politiek - kiezersgroepen", fig.width=8, fig.height=7, fig.cap="\\label{fig:kiezers}Figuur 2"}
+```{r "Media Performance Politiek - kiezersgroepen", fig.width=8, fig.height=7, fig.cap="Media Performance Politiek - Kiezersgroepen"}
 w1 %>%
   select(A1, A2, A3_1:A3_5, B2_1:B2_13, B3_1:B3_13) %>%
   pivot_longer(cols = B2_1:B2_13, 
@@ -422,19 +452,19 @@ w1 %>%
   
 ```
 
-Figuur \@ref{fig:mediazicht} zoomt nog verder in op het mediagebruik (krant, socials en tv) van de verschillende kiezersgroepen.
-In het panel linksboven van Figuur \@ref{fig:mediazicht} zien we hoe zichtbaar politici waren voor kiezers die nauwelijks (minder dan 3 dagen per week) de krant lazen in de afgelopen twee weken; middenboven en rechtsboven laat respectievelijk zien hoe zichtbaar politici waren voor kiezers die nauwelijks social media gebruiken en tv kijken.
-In de middelste rij van Figuur \@ref{fig:mediazicht} zien we hoe zichtbaar politici waren voor kiezers die regelmatig (3-5 dagen per week) de media (krant, socials en tv) gebruiken.
-De onderste rij van Figuur \@ref{fig:mediazicht} laat hetzelfde zien voor kiezers die vaak (meer dan 5 dagen per week) de media (krant, socials en tv) gebruiken.
+Onderstaand figuur zoomt nog verder in op het mediagebruik (krant, socials en tv) van de verschillende kiezersgroepen.
+In het panel linksboven van onderstaand figuur zien we hoe zichtbaar politici waren voor kiezers die nauwelijks (minder dan 3 dagen per week) de krant lazen in de afgelopen twee weken; middenboven en rechtsboven laat respectievelijk zien hoe zichtbaar politici waren voor kiezers die nauwelijks social media gebruiken en tv kijken.
+In de middelste rij van onderstaand figuur zien we hoe zichtbaar politici waren voor kiezers die regelmatig (3-5 dagen per week) de media (krant, socials en tv) gebruiken.
+De onderste rij van onderstaand figuur laat hetzelfde zien voor kiezers die vaak (meer dan 5 dagen per week) de media (krant, socials en tv) gebruiken.
 
 Het patroon is over de 9 verschillende panels grofweg hetzelfde: ongeacht mediatype en -gebruik is Rutte, gevolgd door Wilders, het meest zichtbaar en de lijsttrekkers Esther Ouwehand (PvdD) en Liane den Haan (50+) het minst.
 Wat we ook ongeacht mediatype en -gebruik zien is dat als je niet van plan bent om te gaan stemmen, de lijsttrekkers minder opvallend zijn dan voor de mensen die wel van plan zijn te gaan stemmen.
 
-Wat vooral opvalt is de zwevende kiezer die regelmatig tv gebruikt (midden-rechter panel van Figuur \@ref{fig:mediazicht}). 
+Wat vooral opvalt is de zwevende kiezer die regelmatig tv gebruikt (midden-rechter panel van onderstaand figuur). 
 Voor deze groep zijn alle politici behalve Rutte meer opvallend dan voor de mensen die al weten dat ze op die partij gaan stemmen dan wel de partij graag terug in de regering zien. 
 Dit zou erop kunnen wijzen, omdat we weten dat de meeste mensen tv gebruiken om informatie te krijgen over politieke actualiteiten, dat deze groep zich echt aan het opmaken is om hun keuze nu al te maken, met nog 3,5 week of campagnes te gaan.
 
-```{r "Media Performance Politiek - kiezersgroepen + mediatype", fig.width=8, fig.height=10, fig.cap="\\label{fig:mediazicht}Figuur 3"}
+```{r "Media Performance Politiek - kiezersgroepen + mediatype", fig.width=8, fig.height=10, fig.cap="Media Performance Politiek - kiezersgroepen + mediatype"}
 tmp <- w1 %>%
   select(A1, A2, A3_1:A3_5, B2_1:B2_13, B3_1:B3_13, 
          I1_1, I1_2, I1_4, I1_5,I1_6, I1_8) %>%
@@ -532,9 +562,9 @@ ggplot(tmp, aes(x = gezien, y = reorder(partij, gezien),
           legend.title = element_blank())
 ```
 
-Figuur \@ref{fig:mediawaard} laat zien hoe de waardering voor de lijsttrekkers verschilt per mediatype en -gebruik voor de 4 type kiezersgroepen, zien we dat de niet-stemmers voornamelijk opvallen.
-Hoewel Figuren\@ref{fig:algemeen}, \@ref{fig:kiezers}, \@ref{fig:mediazicht} steeds laat zien dat voor deze groep politici minder opvallen, als ze dan opvallen dan zijn het vooral de kleinere partijen en de christelijke partijen waar zij erg tevreden over zijn. 
-Dit is nog het duidelijkst te zien voor de groep niet-stemmers die regelmatig de krant leest (midden-linker panel van Figuur \@ref{fig:mediawaard}), maar het is ook te zien voor degenen die vaak socials of tv gebruiken om iets te weten te komen over politieke actualiteiten.
+Onderstaand figuur laat zien hoe de waardering voor de lijsttrekkers verschilt per mediatype en -gebruik voor de 4 type kiezersgroepen, zien we dat de niet-stemmers voornamelijk opvallen.
+Hoewel de bovenstaande figuren steeds laat zien dat voor deze groep politici minder opvallen, als ze dan opvallen dan zijn het vooral de kleinere partijen en de christelijke partijen waar zij erg tevreden over zijn. 
+Dit is nog het duidelijkst te zien voor de groep niet-stemmers die regelmatig de krant leest (midden-linker panel van onderstaand figuur), maar het is ook te zien voor degenen die vaak socials of tv gebruiken om iets te weten te komen over politieke actualiteiten.
 
 Voor de groep die vaak media grbruikt, zien we dat veel politici hoger gewaardeerd worden als ze in de media kwamen voor de zwevende kiezer dan voor de kiezers die op de betreffende partij zouden stemmen of de partij graag in de nieuwwe regering zien.
 Dit geldt bijvoorbeeld voor Wopke Hoekstra - voor het "schaatsincident" tenminste.
@@ -557,8 +587,8 @@ ggplot(tmp, aes(x = waardering, y = reorder(partij, gezien),
           legend.title = element_blank())
 ```
 
-In Figuur \@ref{fig:mediazweef} kijken we naar het media gebruik van de zwevende kiezer, vergeleken met degenen die hun stem al zeggen bepaald.
-Kijkend naar geschreven media, waar zowel de geprinte krant, de websites als de niewsapps onder vallen, laat het linker panel van Figuur \@ref{fig:mediazweef} zien dat zwevende kiezers geen Elsevier, Vrij Nederland of HP/de tijd lezen noch de websites van _Joop_ en _The Post Online_ bekijken.
+In onderstaand figuur kijken we naar het media gebruik van de zwevende kiezer, vergeleken met degenen die hun stem al zeggen bepaald.
+Kijkend naar geschreven media, waar zowel de geprinte krant, de websites als de niewsapps onder vallen, laat het linker panel van onderstaand figuur zien dat zwevende kiezers geen Elsevier, Vrij Nederland of HP/de tijd lezen noch de websites van _Joop_ en _The Post Online_ bekijken.
 De zwevende kiezer maakt net zoals de "zekere kiezer" evenveel gebruik van de _nu.nl_ website en app.
 Ook lezen beide groepen even vaak lokale of regionale dagbladen.
 Zwevende kiezers maken vaker gebruik van _Blendle_ en lezen de _Groene Amsterdammer_ vaker.
@@ -599,15 +629,15 @@ table(tmp$I4_other_blogs)
 table(tmp$I4_other_sites)
 ```
 
-Kijkend naar het middelste panel van Figuur \@ref{fig:mediazweef}, zien we dat _Facebook_ het populairste sociale medium is, gevolgd door _Whatsapp_, voor zowel zwevende als "zekere" kiezers.
+Kijkend naar het middelste panel van onderstaand figuur, zien we dat _Facebook_ het populairste sociale medium is, gevolgd door _Whatsapp_, voor zowel zwevende als "zekere" kiezers.
 _Twitter_ en _Instagram_ worden minder vaak gebruikt door de zwevende kiezer.
 _Youtube_ wordt door zowel zwevende als zekere kiezers als derde meeste gebruikt onder de sociale media opties. 
-Kijkend naar de TV opties in de rechterzijde van Figuur \@ref{fig:mediazweef}, zien we ook dat veel kiezers (zwevend of niet) kijken naar eigen kanalen van politici en opiniemakers.
+Kijkend naar de TV opties in de rechterzijde van onderstaand figuur, zien we ook dat veel kiezers (zwevend of niet) kijken naar eigen kanalen van politici en opiniemakers.
 Ongeveer evenveel mensen geven aan dit als nieuwsbron te gebruiken als het _NOS journaal_.
 Zwevende kiezers kijken niet naar _Hart van Nederland_, en ook minder naar _M_, _Nieuwsuur_, _Eenvandaag_, _De Vooravond_, _Zondag met Lubach_, _Beau_ en _WNL opiniemakers_.
 Ze kijken meer dan de zekere kiezer naar _Jinek_ en _Dit was het nieuws_.
 
-```{r "Mediagebruik Zwevende Kiezers", fig.width=10, fig.height=8, fig.cap="\\label{fig:mediazweef}Figuur 5"}
+```{r "Mediagebruik Zwevende Kiezers", fig.width=10, fig.height=8, fig.cap="Mediagebruik Zwevende Kiezers"}
 
 tmp <- w1 %>%
   select(A1, A2, I2_1:I2_13,I3_1:I3_16, I4_1:I4_9,
