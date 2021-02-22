@@ -11,7 +11,7 @@ editor_options:
 ```{r setup, echo=F, message=F}
 library(here)
 library(glue)
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='.', fig.width = 10)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='', fig.width = 10)
 ```
 
 ```{r init}
