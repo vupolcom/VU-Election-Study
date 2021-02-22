@@ -5,7 +5,7 @@ permalink: /reports/
 
 ## Media-aandacht
 
-<table>
+<table class="reports">
   <tr>
     <td>
     <img width="200px" align="left" src="https://images.nrc.nl/kVf3c0AxIUWCtOgA5HP2-lbfrrc=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/02/data67813076-249536.jpg" />
