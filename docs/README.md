@@ -1,6 +1,6 @@
 ---
 title: 'VU 2021 Election Study'
-permalink: reports/wave1/
+permalink: /
 ---
 
 # Tweede Kamerverkiezingen 2021
