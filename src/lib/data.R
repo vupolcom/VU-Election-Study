@@ -25,7 +25,8 @@ get_codebook = function() {
 apply_value_labels = function(values, codebook, column=cur_column()) {
   cb = codebook %>% filter(variable == column)
   na_values = cb$value[cb$isna]
-  factor(ifelse(values %in% na_values, NA, cb$label[match(values, cb$value)] ))
+  factor(ifelse(values %in% na_values, NA, cb$label[match(values, cb$value)] ),
+         levels=cb$label[!cb$isna])
 }
 
 #' Extract the wide (i.e. simple respondent-level) data

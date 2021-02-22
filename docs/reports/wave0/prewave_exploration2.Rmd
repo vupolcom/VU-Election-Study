@@ -4,6 +4,7 @@ author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
 permalink: reports/prewave_exploration.html
 output: 
   md_document:
+    toc: yes
     preserve_yaml: yes
 ---
 
@@ -14,82 +15,18 @@ options(digits = 2)
 ```
 
 
-This report gives an overview of the political and media landscape at the start of the campaign for the Dutch 2021 Parliamentary Elections. 
-This analysis is based on the first wave of our panel survey with in total 2.400 respondents. 
-We asked them what their vote intention is for this election, how they voted in the previous election,
-how well they trust various media and institutions, and what media they consumed in the past weeks. 
-
 ```{r "Read Data"}
 library(here)
 library(tidyverse)
 source(here("src/lib/data.R"))
 d_raw <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
-resp = extract_wide(d_raw) %>%  mutate(age2=case_when(age %in% c("<24" ,"25-34") ~ "<35",
-                        age %in% c("55-64", ">64") ~ "55+",
-                        T ~ "35-55")) 
+resp = extract_wide(d_raw)
 long = extract_long(d_raw)
 long_vote = resp %>% select(iisID, vote) %>% inner_join(long)
 theme_nrc = function(...) ggthemes::theme_hc(...) + theme(axis.text.x = element_text(angle = 45, hjust = 1), axis.title.x=element_blank(), axis.title.y=element_blank())
 ```
 
-## Media use by Age and Education
-
-```{r}
-overall = long %>% filter(variable=="I1") %>% rename(medium=name) %>% inner_join(resp)
-news_agg = overall %>% group_by(age2, education, medium) %>% summarize(value=mean(value), n=n())
-news_agg %>% filter(education!="Don't know") %>% mutate(medium=fct_reorder(medium, value)) %>% 
-  ggplot(aes(x=education, y=age2, label=round(value, 1), fill=value)) + 
-  geom_tile()+ geom_text()+
-  facet_wrap("medium") + 
-  ggtitle("Overall use of different media per age and education group", "(in days per week)")  + 
-  xlab("Education group (high=University/HBO, med=HAVO/MBO2+, low=MAVO/MBO1") + ylab("Age group") +
-  scale_fill_gradient(low="white", high="#3182bd", guide=F)
-```
-
-As we can see, Television is the most widely consumed news channel for all age and education groups,
-but with a clear smaller share for respondents under 35, except for those in the lowest education group. 
-Unsurprisingly, print newspapers ad opinion magazines are mostly consumed by highly educated older voters,
-while younger voters prefer online news channels, especially the highly educated voters younger than 55.
-Social media and news apps are seen as a news source especially for young people, regardless of education. 
-
-# Political Shifts
-
-## Vote intention per Age and Education
-
-```{r}
-d = resp %>% select(iisID, age2, education, vote) %>% na.omit() %>% 
-  group_by(age2, education, vote) %>% summarize(n=n()) %>% group_by(vote) %>% mutate(zetels=n/sum(n)*100) 
-ggplot(d, aes(x=education, y=age2, label=round(zetels), fill=zetels)) +
-  geom_tile()+ geom_text()+
-  facet_wrap("vote") + 
-  ggtitle("Vote intention per age and education group", "(in percentage of age/education group)")  + 
-  xlab("Education group (high=University/HBO, med=HAVO/MBO2+, low=MAVO/MBO1") + ylab("Age group") +
-  scale_fill_gradient(low="white", high="#3182bd", guide=F)
-```
-
-The figure above shows how the age and education for the respondents planning to vote for each party.
-There are some clear patterns.
-On the right, the VVD mostly appeals to young and highly educated voters,
-while CDA and PVV are more popular with older and less highly educated voters.
-On the left, D66 and GroenLinks appeal to the young and educated class,
-while PVdA apd SP appeal more to the older and less educated voter. 
-
-Placing each party by the demographic of its mean voter, we get an alternatieve electoral compass:
-(color indicating average position of respondent on left-right scale)
-
-```{r}
-resp$age
-library(ggthemes)
-resp %>% select(iisID, age, education, vote, rile_self)  %>% 
-  filter(!is.na(education), !is.na(vote)) %>% 
-  mutate(education=3-as.numeric(education), age=as.numeric(age)) %>% 
-  mutate(education = (education - mean(education)) / sd(education), age=(age - mean(age)) / sd(age)) %>% 
-  group_by(vote) %>% summarize(n=n(), age=mean(age), education=mean(education), rile=mean(rile_self, na.rm=T)) %>% 
-  ggplot(aes(x=education, y=age, label=vote, color=rile)) + geom_label() + theme_void() + theme(axis.title = element_text()) +
-  scale_color_gradient2(low="red", mid="black", high="blue", midpoint=5)
-
-```
-
+# Current  Vote Intention
 
 ```{r eval=F}
 library(igraph)
@@ -110,6 +47,8 @@ E(g)$arrow.size=E(g)$width/2
 plot(g)
 ```
 
+
+## Demographics
 
 ## Media Use by Vote Intention
 
@@ -153,7 +92,7 @@ color_table_plot = function(data, title, subtitle=NULL, digits=0, print=T, expor
 
 ```{r wave0-media-party, results='asis'}
 d = long_vote %>% filter(variable=="I1") %>% create_table()
-color_table_plot(d, "Wave 0: Vote intention and media use", digits=1, export=F)
+color_table_plot(d, "Wave 0: Stemintentie en mediagebruik", digits=1, export=F)
 ```
 
 ## Use of particular channels {.tabset}
