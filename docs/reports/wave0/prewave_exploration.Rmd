@@ -1,7 +1,7 @@
 ---
 title: 'Exploration of media and trust before the campaign'
 author: "Wouter van Atteveldt, Nel Ruigrok, Mariken van der Velden"
-permalink: reports/wave0
+permalink: reports/wave0/
 output: 
   md_document:
     preserve_yaml: yes
