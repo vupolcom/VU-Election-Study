@@ -46,6 +46,7 @@ Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare bel
 
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/8988389/PeVa_IMG_8608_Fsw_communicatiewetenschappen_portretten_150pix_.jpg/">
 Email: <a href="mailto:a.m.j.van.hoof@vu.nl">a.m.j.van.hoof@vu.nl</a>
+
 Anita van Hoof is Universitair Docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam. 
 Haar onderzoek focust op journalistiek en het effect van nieuws op publieke opinie. 
 Zij is sinds 2002 betrokken bij het verkiezingsonderzoek van de VU, wat onder andere geleid heeft tot de boeken <a href="https://www.bol.com/nl/p/de-puinhopen-in-het-nieuws/1001004001844083/">De Puinhopen van Paars</a> en <a href="https://www.bol.com/nl/p/nederland-vijfstromenland/1001004005009216/">Nederland Vijfstromenland</a>. 
