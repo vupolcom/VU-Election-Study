@@ -34,8 +34,9 @@ corp <- corpus(d, text_field = "text", meta = c("twitter"))
 
 # Verspreiden van Informatie
 In onderstaande figuur is te zien welke woorden Mark Rutte (zowel persoonlijk als ambtsaccount), Wopke Hoekstra, Gert-Jan Segers en Sigrid Kaag sinds het begin van de verkiezingscampagne het meest voorkomen. 
-Hoe groter de woorden, hoe vaker 
-Duidelijk wordt dat op basis van deze woorden er 
+Rutte spreekt het meest over de coronacrisis en gerelateerde maatregelen waar "we" ons samen aan moeten houden.
+De overige lijstrekkers van partijen die de huidige demissionaire regering vormen spreken ook over de coronacrisis, maar gebruiken ook woorden van hoop -- mooie, nieuwe, #nudoorpakken.
+Duidelijk wordt dat op basis van deze woorden er geen aanleiding is om aan te nemen dat het hier om misinformatie gaat.
 
 ```{r "sharing on twitter - coalitiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
 dtm <- dfm(corp,
@@ -74,48 +75,58 @@ p2 <- textstat_frequency(dtm, groups = "twitter") %>%
 p1 + p2
 ```
 
+Kijkend naar de oppositiepartijen, zien we dat Farid Azarkan (\@F\_azarkan) van Denk veel berichten _retweet_.
+Verder valt op dat er veel over racisme, moties, het kabinet en discriminatie gepraat wordt.
+Nadere inspectie van de data laat zien dat het hier niet gaat over desinformatie, of informatie van misleidende aard.
+Klaver (\@jesseklaver) van GroenLinks heeft het voornamelijk over perspectief vooor jongeren en over een nieuwe toekomst van Nederland -- geen reden om aan te nemen dat het gaat over desinformatie, of informatie van misleidende aard.
+Hetzelfde geldt voor Lilian Marijnissen (\@MarijnissenL) van de SP, Ester Ouwehand (\@esterouwehand) van PvdD, Kees van der Staaij (\@keesvdstaaij) van de SGP, Liane den Haan (\@LiandedenHaan) van 50Plus, en Lilianne Ploumen (\@PloumenLilianne) van de PvdA.
+Kijken naar de woorde die Geert Wilders (\@geertwilderspvv) van de PVV het meest gebruikt, zien we woorden als vrijheid, avondklok, motie, 17 maart, en #corona(virus).
+Inspectie van de data laat veel kritiek op het (demissionaire) kabinet zien, en ideologisch sterk gekleurde informatie -- maar het lijkt meer op framing van bijv. het immigratiedebat dan echt bewuste misinformatie.
+Kijkend naar de woorden die Thierry Baudet (\@thierrybaudet) van FvD het meest gebruikt, en na inspectie van de data, zien we meerdere berichten met informatie die onjuist is. 
+Daarnaast zien we ook dat Baudet als enige samenzeerders retweet, zoals bijvoorbeeld \@wierdduk.
 
 ```{r "sharing on twitter - oppositiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
+#k <- kwic(corpus_subset(corp, twitter %in% c("thierrybaudet")), 'lockdown*', window = 7)
+#head(k, 15)
+#which(str_detect(d$text, "Ook Newsweek bevestigt dat"))
+
 p3 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>5,
+  filter(frequency>10,
          group == "F_azarkan" | group =="jesseklaver" | group =="MarijnissenL" ) %>%
   ggplot(aes(x = frequency, y = feature)) +
   geom_col(fill = "#21908CFF") +
   facet_grid(group~., scales = "free", space = "free") +
   theme_minimal() +
   labs(y = "", 
-       x = "",
-       title = "Meest Gebruikte Woorden") + 
+       x = "") + 
   theme(plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
 
 p4 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>5,
+  filter(frequency>10,
          group =="estherouwehand"| group =="keesvdstaaij" | group =="LianedenHaan" ) %>%
   ggplot(aes(x = frequency, y = feature)) +
   geom_col(fill = "#21908CFF") +
   facet_grid(group~., scales = "free", space = "free") +
   theme_minimal() +
   labs(y = "", 
-       x = "",
-       title = "Meest Gebruikte Woorden") + 
+       x = "") + 
   theme(plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
   
 p5 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>5,
+  filter(frequency>10,
          group =="PloumenLilianne"| group =="geertwilderspvv") %>%
   ggplot(aes(x = frequency, y = feature)) +
   geom_col(fill = "#21908CFF") +
   facet_grid(group~., scales = "free", space = "free") +
   theme_minimal() +
   labs(y = "", 
-       x = "",
-       title = "Meest Gebruikte Woorden") + 
+       x = "") + 
   theme(plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
@@ -128,19 +139,13 @@ p6 <- textstat_frequency(dtm, groups = "twitter") %>%
   facet_grid(group~., scales = "free", space = "free") +
   theme_minimal() +
   labs(y = "", 
-       x = "",
-       title = "Meest Gebruikte Woorden") + 
+       x = "") + 
   theme(plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
 
-p3 + p4 + p5 + p6 + plot_layout(ncol=2)
+p3 + p4
+p5 + p6
 ```
 
-```{r}
-
-k <- kwic(corp, '#*', window = 7)
-k_dtm <- dfm(k$keyword)
-textplot_wordcloud(k_dtm, min_count = 5, color = )
-```

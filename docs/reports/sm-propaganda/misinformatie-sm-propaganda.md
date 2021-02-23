@@ -15,18 +15,47 @@ Verspreiden van Informatie
 
 In onderstaande figuur is te zien welke woorden Mark Rutte (zowel
 persoonlijk als ambtsaccount), Wopke Hoekstra, Gert-Jan Segers en Sigrid
-Kaag sinds het begin van de verkiezingscampagne het meest voorkomen. Hoe
-groter de woorden, hoe vaker Duidelijk wordt dat op basis van deze
-woorden er
+Kaag sinds het begin van de verkiezingscampagne het meest voorkomen.
+Rutte spreekt het meest over de coronacrisis en gerelateerde maatregelen
+waar “we” ons samen aan moeten houden. De overige lijstrekkers van
+partijen die de huidige demissionaire regering vormen spreken ook over
+de coronacrisis, maar gebruiken ook woorden van hoop – mooie, nieuwe,
+\#nudoorpakken. Duidelijk wordt dat op basis van deze woorden er geen
+aanleiding is om aan te nemen dat het hier om misinformatie gaat.
 
 <img src="sharing on twitter - coalitiepartijen-1.png" alt="Regeringspartijleiders op Twitter"  />
 <p class="caption">
 Regeringspartijleiders op Twitter
 </p>
 
+Kijkend naar de oppositiepartijen, zien we dat Farid Azarkan
+(@F\_azarkan) van Denk veel berichten *retweet*. Verder valt op dat er
+veel over racisme, moties, het kabinet en discriminatie gepraat wordt.
+Nadere inspectie van de data laat zien dat het hier niet gaat over
+desinformatie, of informatie van misleidende aard. Klaver (@jesseklaver)
+van GroenLinks heeft het voornamelijk over perspectief vooor jongeren en
+over een nieuwe toekomst van Nederland – geen reden om aan te nemen dat
+het gaat over desinformatie, of informatie van misleidende aard.
+Hetzelfde geldt voor Lilian Marijnissen (@MarijnissenL) van de SP, Ester
+Ouwehand (@esterouwehand) van PvdD, Kees van der Staaij (@keesvdstaaij)
+van de SGP, Liane den Haan (@LiandedenHaan) van 50Plus, en Lilianne
+Ploumen (@PloumenLilianne) van de PvdA. Kijken naar de woorde die Geert
+Wilders (@geertwilderspvv) van de PVV het meest gebruikt, zien we
+woorden als vrijheid, avondklok, motie, 17 maart, en \#corona(virus).
+Inspectie van de data laat veel kritiek op het (demissionaire) kabinet
+zien, en ideologisch sterk gekleurde informatie – maar het lijkt meer op
+framing van bijv. het immigratiedebat dan echt bewuste misinformatie.
+Kijkend naar de woorden die Thierry Baudet (@thierrybaudet) van FvD het
+meest gebruikt, en na inspectie van de data, zien we meerdere berichten
+met informatie die onjuist is. Daarnaast zien we ook dat Baudet als
+enige samenzeerders retweet, zoals bijvoorbeeld @wierdduk.
+
 <img src="sharing on twitter - oppositiepartijen-1.png" alt="Regeringspartijleiders op Twitter"  />
 <p class="caption">
 Regeringspartijleiders op Twitter
 </p>
 
-<img src="unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+<img src="sharing on twitter - oppositiepartijen-2.png" alt="Regeringspartijleiders op Twitter"  />
+<p class="caption">
+Regeringspartijleiders op Twitter
+</p>
