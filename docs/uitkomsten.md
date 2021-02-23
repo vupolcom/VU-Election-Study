@@ -35,4 +35,4 @@ permalink: /reports/
 
 ## Analyses / Rapportages
 - [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
-- [Media use and Trust in politics](https://tk2021.vupolcom.nl/reports/prewave_exploration.html)
+- [Media use and Trust in politics](https://tk2021.vupolcom.nl/reports/wave0/)
