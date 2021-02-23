@@ -55,7 +55,7 @@ enige samenzeerders retweet, zoals bijvoorbeeld @wierdduk.
 Regeringspartijleiders op Twitter
 </p>
 
-<img src="sharing on twitter - oppositiepartijen-2.png" alt="Regeringspartijleiders op Twitter"  />
+<img src="sharing on twitter - oppositiepartijen2-1.png" alt="Regeringspartijleiders op Twitter (2)"  />
 <p class="caption">
-Regeringspartijleiders op Twitter
+Regeringspartijleiders op Twitter (2)
 </p>
