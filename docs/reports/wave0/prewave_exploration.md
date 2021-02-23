@@ -111,8 +111,8 @@ list of specific media channels.
 Trust in Institutions
 ---------------------
 
-![](wave0-trust-institution-1.png)Download data: [{Wave 0: Trust in
-Instituties}](%7BWave_0_Trust_in_Instituties.csv%7D)
+![](wave0-trust-institution-1.png)Download data: [Wave 0: Trust in
+Instituties](Wave_0_Trust_in_Instituties.csv)
 
 The table above shows the trust in a number of institutions. Most
 respondents have relatively high trust in science, the justice system,
@@ -128,8 +128,8 @@ and politics, and non-voters also have very low trust in science.
 Trust in Media
 --------------
 
-![](wave0-trust-media-1.png)Download data: [{Wave 0: Trust in
-Media}](%7BWave_0_Trust_in_Media.csv%7D)
+![](wave0-trust-media-1.png)Download data: [Wave 0: Trust in
+Media](Wave_0_Trust_in_Media.csv)
 
 Looking at trust in specific channels, overall the TV news broadcasts
 and mainstream media channels such as nu.nl and AD score best, and
@@ -143,37 +143,34 @@ Trust in democracy
 
 ![](wave0-democracy-1.png)
 
-![](wave0-democracy2-1.png)Download data: [{Wave 0: Trust in
-democracy}](%7BWave_0_Trust_in_democracy.csv%7D)
+![](wave0-democracy2-1.png)Download data: [Wave 0: Trust in
+democracy](Wave_0_Trust_in_democracy.csv)
 
 Use of particular media titles / sites
 ======================================
 
 ### Use of Newspapers
 
-![](wave0-media-party-specific-1.png)Download data: [{Wave 0: Vote
+![](wave0-media-party-specific-1.png)Download data: [Wave 0: Vote
 intention and news:
-Newspapers}](%7BWave_0_Vote_intention_and_news_Newspapers.csv%7D)
+Newspapers](Wave_0_Vote_intention_and_news_Newspapers.csv)
 
 ### Use of TV
 
-![](wave0-media-party-specific-2.png)Download data: [{Wave 0: Vote
-intention and news: TV}](%7BWave_0_Vote_intention_and_news_TV.csv%7D)
+![](wave0-media-party-specific-2.png)Download data: [Wave 0: Vote
+intention and news: TV](Wave_0_Vote_intention_and_news_TV.csv)
 
 ### Use of Online
 
-![](wave0-media-party-specific-3.png)Download data: [{Wave 0: Vote
-intention and news:
-Online}](%7BWave_0_Vote_intention_and_news_Online.csv%7D)
+![](wave0-media-party-specific-3.png)Download data: [Wave 0: Vote
+intention and news: Online](Wave_0_Vote_intention_and_news_Online.csv)
 
 ### Use of Social
 
-![](wave0-media-party-specific-4.png)Download data: [{Wave 0: Vote
-intention and news:
-Social}](%7BWave_0_Vote_intention_and_news_Social.csv%7D)
+![](wave0-media-party-specific-4.png)Download data: [Wave 0: Vote
+intention and news: Social](Wave_0_Vote_intention_and_news_Social.csv)
 
 ### Use of Apps
 
-![](wave0-media-party-specific-5.png)Download data: [{Wave 0: Vote
-intention and news:
-Apps}](%7BWave_0_Vote_intention_and_news_Apps.csv%7D)
+![](wave0-media-party-specific-5.png)Download data: [Wave 0: Vote
+intention and news: Apps](Wave_0_Vote_intention_and_news_Apps.csv)

@@ -9,7 +9,7 @@ export_data = function(data, name, label=F) {
   outfile = str_c(knitr::opts_chunk$get('fig.path'), fn)
   message(outfile)
   write_csv(data, outfile)
-  str_c(if (label) "Download data: " else "", str_c("[{", name, "}]({", outfile, "})"))
+  str_c(if (label) "Download data: " else "", str_c("[", name, "](", outfile, ")"))
 } 
 
 #' Load the codebook (variable names and labels)
