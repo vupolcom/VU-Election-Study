@@ -48,7 +48,7 @@ Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare bel
 Email: <a href="mailto:a.m.j.van.hoof@vu.nl">a.m.j.van.hoof@vu.nl</a>
 Anita van Hoof is Universitair Docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam. 
 Haar onderzoek focust op journalistiek en het effect van nieuws op publieke opinie. 
-Zij is sinds 2002 betrokken bij het verkiezingsonderzoek van de VU, wat onder andere geleid heeft tot de boeken [De Puinhopen van Paars](https://www.managementboek.nl/boek/9789013000672/de-puinhopen-in-het-nieuws-j-kleinnijenhuis) en [Nederland Vijfstromenland](https://www.bol.com/nl/p/nederland-vijfstromenland/1001004005009216/). 
+Zij is sinds 2002 betrokken bij het verkiezingsonderzoek van de VU, wat onder andere geleid heeft tot de boeken <a href="https://www.bol.com/nl/p/de-puinhopen-in-het-nieuws/1001004001844083/">De Puinhopen van Paars</a> en <a href="https://www.bol.com/nl/p/nederland-vijfstromenland/1001004005009216/">Nederland Vijfstromenland</a>. 
 
 ### prof. dr. Jan Kleinnijenhuis
 
