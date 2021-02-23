@@ -41,6 +41,15 @@ Andreu Casas is Universitair Docent aan de afdeling Communicatiewetenschap van d
 
 Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare beleidsprocessen, en computationele sociale wetenschappen. Hij onderzoek hoe sociale bewegingen en belangengroepen de politieke agenda en het besluitvormingsproces beïnvloeden in de huidige mediaomgeving. Hij is gespecialiseerd in het toepassen van kunstmatige intelligentie om tekst en beelden te analyseren.
 
+### dr. Anita van Hoof
+
+
+<img width="100px" align="left" src="https://research.vu.nl/files-asset/8988389/PeVa_IMG_8608_Fsw_communicatiewetenschappen_portretten_150pix_.jpg/">
+Email: <a href="mailto:a.m.j.van.hoof@vu.nl">a.m.j.van.hoof@vu.nl</a>
+Anita van Hoof is Universitair Docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam. 
+Haar onderzoek focust op journalistiek en het effect van nieuws op publieke opinie. 
+Zij is sinds 2002 betrokken bij het verkiezingsonderzoek van de VU, wat onder andere geleid heeft tot de boeken [De Puinhopen van Paars](https://www.managementboek.nl/boek/9789013000672/de-puinhopen-in-het-nieuws-j-kleinnijenhuis) en [Nederland Vijfstromenland](https://www.bol.com/nl/p/nederland-vijfstromenland/1001004005009216/). 
+
 ### prof. dr. Jan Kleinnijenhuis
 
 <img width="100px" align="left" src="https://i1.rgstatic.net/ii/profile.image/272606414766098-1442005842560_Q512/Jan_Kleinnijenhuis.jpg">
