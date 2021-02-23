@@ -28,6 +28,9 @@ aanleiding is om aan te nemen dat het hier om misinformatie gaat.
 Regeringspartijleiders op Twitter
 </p>
 
+Download data: \[[Politici’s meestgebruikte
+woorden](Politici_s_meestgebruikte_woorden.csv)\]
+
 Kijkend naar de oppositiepartijen, zien we dat Farid Azarkan
 (@F\_azarkan) van Denk veel berichten *retweet*. Verder valt op dat er
 veel over racisme, moties, het kabinet en discriminatie gepraat wordt.
@@ -55,7 +58,42 @@ enige samenzeerders retweet, zoals bijvoorbeeld @wierdduk.
 Regeringspartijleiders op Twitter
 </p>
 
+Download data: \[[Politici’s meestgebruikte
+woorden](Politici_s_meestgebruikte_woorden.csv)\]
+
 <img src="sharing on twitter - oppositiepartijen2-1.png" alt="Regeringspartijleiders op Twitter (2)"  />
 <p class="caption">
 Regeringspartijleiders op Twitter (2)
+</p>
+
+Download data: \[[Politici’s meestgebruikte
+woorden](Politici_s_meestgebruikte_woorden.csv)\]
+
+Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`) –
+een kanaal waarvan we weten dat er meer misinformatie circuleert – zien
+we dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor
+politieke informatie te gebruiken.
+
+<img src="kiezers en misinformatie-1.png" alt="Wie kijkt er naar eigen kanalen politici"  />
+<p class="caption">
+Wie kijkt er naar eigen kanalen politici
+</p>
+
+`N=21`
+
+<img src="kiezers en misinformatie2-1.png" alt="Wie kijkt er naar alternatieve blogs"  />
+<p class="caption">
+Wie kijkt er naar alternatieve blogs
+</p>
+
+<img src="kiezers en misinformatie3-1.png" alt="Wie gebruikt Whatsapp voor Politiek Nieuws"  />
+<p class="caption">
+Wie gebruikt Whatsapp voor Politiek Nieuws
+</p>
+
+`N=41`
+
+<img src="kiezers en misinformatie4-1.png" alt="Wie gebruikt Telegram voor Politiek Nieuws"  />
+<p class="caption">
+Wie gebruikt Telegram voor Politiek Nieuws
 </p>
