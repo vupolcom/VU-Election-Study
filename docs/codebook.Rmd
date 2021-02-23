@@ -2,8 +2,9 @@
 title: 'Codebook VU Panel Survey: Dutch Parliamentary Elections 2021'
 author: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Nicolas Mathis, and Kasper Welbers"
 output: 
-  github_document:
+  md_document:
     toc: yes
+    preserve_yaml: yes
 editor_options: 
   chunk_output_type: console
 always_allow_html: true
