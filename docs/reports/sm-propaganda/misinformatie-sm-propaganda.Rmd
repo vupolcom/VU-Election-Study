@@ -37,15 +37,15 @@ In onderstaande figuur is te zien welke woorden Mark Rutte (zowel persoonlijk al
 Hoe groter de woorden, hoe vaker 
 Duidelijk wordt dat op basis van deze woorden er 
 
-```{r "sharing on twitter - coalitiepartijen", fig.height=10, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
+```{r "sharing on twitter - coalitiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
 dtm <- dfm(corp,
            remove = stopwords("Dutch"), remove_punct = TRUE, 
            groups = "twitter") %>%
     dfm_trim(min_termfreq = 3)
 
-textstat_frequency(dtm, groups = "twitter") %>%
+p1 <- textstat_frequency(dtm, groups = "twitter") %>%
   filter(frequency>5,
-         group == "markrutte" | group ==  "MinPres"| group =="WBHoekstra" | group =="gertjansegers" | group =="SigridKaag") %>%
+         group == "markrutte" | group ==  "MinPres") %>%
   ggplot(aes(x = frequency, y = feature)) +
   geom_col(fill = "#21908CFF") +
   facet_grid(group~., scales = "free", space = "free") +
@@ -57,14 +57,43 @@ textstat_frequency(dtm, groups = "twitter") %>%
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
-  
+
+p2 <- textstat_frequency(dtm, groups = "twitter") %>%
+  filter(frequency>5, group =="WBHoekstra" | group =="gertjansegers" | group =="SigridKaag") %>%
+  ggplot(aes(x = frequency, y = feature)) +
+  geom_col(fill = "#21908CFF") +
+  facet_grid(group~., scales = "free", space = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "") + 
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())  
+
+p1 + p2
 ```
 
 
-```{r "sharing on twitter - oppositiepartijen", fig.height=10, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
-textstat_frequency(dtm, groups = "twitter") %>%
+```{r "sharing on twitter - oppositiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
+p3 <- textstat_frequency(dtm, groups = "twitter") %>%
   filter(frequency>5,
-         group == "F_azarkan" | group ==  "thierrybaudet"| group =="jesseklaver" | group =="MarijnissenL" | group =="estherouwehand"| group =="keesvdstaaij" | group =="LianedenHaan"| group =="PloumenLilianne" | group =="geertwilderspvv") %>%
+         group == "F_azarkan" | group =="jesseklaver" | group =="MarijnissenL" ) %>%
+  ggplot(aes(x = frequency, y = feature)) +
+  geom_col(fill = "#21908CFF") +
+  facet_grid(group~., scales = "free", space = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Meest Gebruikte Woorden") + 
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+
+p4 <- textstat_frequency(dtm, groups = "twitter") %>%
+  filter(frequency>5,
+         group =="estherouwehand"| group =="keesvdstaaij" | group =="LianedenHaan" ) %>%
   ggplot(aes(x = frequency, y = feature)) +
   geom_col(fill = "#21908CFF") +
   facet_grid(group~., scales = "free", space = "free") +
@@ -77,6 +106,36 @@ textstat_frequency(dtm, groups = "twitter") %>%
           legend.position="none",
           legend.title = element_blank())
   
+p5 <- textstat_frequency(dtm, groups = "twitter") %>%
+  filter(frequency>5,
+         group =="PloumenLilianne"| group =="geertwilderspvv") %>%
+  ggplot(aes(x = frequency, y = feature)) +
+  geom_col(fill = "#21908CFF") +
+  facet_grid(group~., scales = "free", space = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Meest Gebruikte Woorden") + 
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+
+p6 <- textstat_frequency(dtm, groups = "twitter") %>%
+  filter(frequency>15, group ==  "thierrybaudet") %>%
+  ggplot(aes(x = frequency, y = feature)) +
+  geom_col(fill = "#21908CFF") +
+  facet_grid(group~., scales = "free", space = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Meest Gebruikte Woorden") + 
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+
+p3 + p4 + p5 + p6 + plot_layout(ncol=2)
 ```
 
 ```{r}
