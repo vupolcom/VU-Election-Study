@@ -21,6 +21,7 @@ options(digits = 2)
 library(here)
 library(tidyverse)
 library(quanteda)
+library(patchwork)
 library(viridis)
 source(here("src/lib/data.R"))
 ```
@@ -31,29 +32,51 @@ d <- read_csv("../../../../../../Desktop/party-candidates-15aug2020-22feb2021.cs
 corp <- corpus(d, text_field = "text", meta = c("twitter"))
 ```
 
-```{r "sharing on twitter - coalitiepartijen"}
-dtm <- dfm(corpus_subset(corp, 
-                         twitter %in% c("markrutte", "gertjansegers",
-                                        "SigridKaag", "WBHoekstra", "MinPres")),
+# Verspreiden van Informatie
+In onderstaande figuur is te zien welke woorden Mark Rutte (zowel persoonlijk als ambtsaccount), Wopke Hoekstra, Gert-Jan Segers en Sigrid Kaag sinds het begin van de verkiezingscampagne het meest voorkomen. 
+Hoe groter de woorden, hoe vaker 
+Duidelijk wordt dat op basis van deze woorden er 
+
+```{r "sharing on twitter - coalitiepartijen", fig.height=10, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
+dtm <- dfm(corp,
            remove = stopwords("Dutch"), remove_punct = TRUE, 
            groups = "twitter") %>%
     dfm_trim(min_termfreq = 3)
-textplot_wordcloud(dtm, comparison = TRUE, min_count = 5,
-                   color = viridis)
+
+textstat_frequency(dtm, groups = "twitter") %>%
+  filter(frequency>5,
+         group == "markrutte" | group ==  "MinPres"| group =="WBHoekstra" | group =="gertjansegers" | group =="SigridKaag") %>%
+  ggplot(aes(x = frequency, y = feature)) +
+  geom_col(fill = "#21908CFF") +
+  facet_grid(group~., scales = "free", space = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Meest Gebruikte Woorden") + 
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+  
 ```
 
 
-```{r "sharing on twitter - oppositiepartijen"}
-dtm <- dfm(corpus_subset(corp, 
-                         twitter %in% c("F_azarkan", "thierrybaudet",
-                                        "jesseklaver", "MarijnissenL",
-                                        "LianedenHaan", "PloumenLilianne",
-                                        "geertwilderspvv")),
-           remove = stopwords("Dutch"), remove_punct = TRUE, 
-           groups = "twitter") %>%
-    dfm_trim(min_termfreq = 3)
-textplot_wordcloud(dtm, comparison = TRUE, min_count = 5,
-                   color = viridis)
+```{r "sharing on twitter - oppositiepartijen", fig.height=10, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
+textstat_frequency(dtm, groups = "twitter") %>%
+  filter(frequency>5,
+         group == "F_azarkan" | group ==  "thierrybaudet"| group =="jesseklaver" | group =="MarijnissenL" | group =="estherouwehand"| group =="keesvdstaaij" | group =="LianedenHaan"| group =="PloumenLilianne" | group =="geertwilderspvv") %>%
+  ggplot(aes(x = frequency, y = feature)) +
+  geom_col(fill = "#21908CFF") +
+  facet_grid(group~., scales = "free", space = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Meest Gebruikte Woorden") + 
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+  
 ```
 
 ```{r}
