@@ -1,0 +1,64 @@
+---
+title: 'VU 2021 Election Study: Misinformatie Twitter'
+author: "Mariken van der Velden & Andreu Casas"
+permalink: reports/sm-propaganda/
+output: 
+  md_document:
+    toc: yes
+    preserve_yaml: yes
+---
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+rm(list = ls())
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      echo = FALSE, fig.align = "center",
+                        fig.path='')
+library(glue)
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+library(quanteda)
+library(viridis)
+source(here("src/lib/data.R"))
+```
+
+```{r "load data"}
+d <- read_csv("../../../../../../Desktop/party-candidates-15aug2020-22feb2021.csv") %>% filter(day>"2021-01-15")
+
+corp <- corpus(d, text_field = "text", meta = c("twitter"))
+```
+
+```{r "sharing on twitter - coalitiepartijen"}
+dtm <- dfm(corpus_subset(corp, 
+                         twitter %in% c("markrutte", "gertjansegers",
+                                        "SigridKaag", "WBHoekstra", "MinPres")),
+           remove = stopwords("Dutch"), remove_punct = TRUE, 
+           groups = "twitter") %>%
+    dfm_trim(min_termfreq = 3)
+textplot_wordcloud(dtm, comparison = TRUE, min_count = 5,
+                   color = viridis)
+```
+
+
+```{r "sharing on twitter - oppositiepartijen"}
+dtm <- dfm(corpus_subset(corp, 
+                         twitter %in% c("F_azarkan", "thierrybaudet",
+                                        "jesseklaver", "MarijnissenL",
+                                        "LianedenHaan", "PloumenLilianne",
+                                        "geertwilderspvv")),
+           remove = stopwords("Dutch"), remove_punct = TRUE, 
+           groups = "twitter") %>%
+    dfm_trim(min_termfreq = 3)
+textplot_wordcloud(dtm, comparison = TRUE, min_count = 5,
+                   color = viridis)
+```
+
+```{r}
+
+k <- kwic(corp, '#*', window = 7)
+k_dtm <- dfm(k$keyword)
+textplot_wordcloud(k_dtm, min_count = 5, color = )
+```
