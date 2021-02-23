@@ -1,6 +1,6 @@
 ---
 title: VU Election Research 2021 Dutch Parliamentary Elections
-permalink: /en/
+permalink: en/
 ---
 
 From 1994 the research group Political Communication of the Vrije Universiteit has analysed the Dutch parliamentary election campaigns.
