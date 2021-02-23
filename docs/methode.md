@@ -12,6 +12,6 @@ In de opvolgende waves van het vragenlijstonderzoek worden alle respondenten uit
 Het aantal respondenten in de opvolgende waves varieert. 
 In de eerste opvolgende wave, dit waren 1.600 respondenten.
 
-In het [codeboek](../codebook.md) staan alle vragen die in de verschillende waves gesteld worden.
+In het [codeboek](codebook.html) staan alle vragen die in de verschillende waves gesteld worden.
 In iedere wave worden de respondenten ondervraagd naar hun stemkeuze, welke politieke partijen en politici hen opgevallen zijn in de media, alsmede hun media gebruik.
 Daarnaast worden in iedere wave enkele vragen over verschillende politieke onderwerpen gevraagd, zoals hoe mensen denken over protesten tav Corona, hoe men de toekomst van Nederland voor zich ziet, over welke onderwerpen mensen liever zwijgen, etc. 
