@@ -8,7 +8,17 @@ output:
     preserve_yaml: yes
 ---
 
-<img src="vertrouwen in geenstijl-1.png" alt="Wie vertrouwt GeenStijl"  />
+<img src="vertrouwen in geenstijl - laag-1.png" alt="Wie vertrouwt GeenStijl niet"  />
+<p class="caption">
+Wie vertrouwt GeenStijl niet
+</p>
+
+<img src="vertrouwen in geenstijl - medium-1.png" alt="Wie vertrouwt GeenStijl zozo"  />
+<p class="caption">
+Wie vertrouwt GeenStijl zozo
+</p>
+
+<img src="vertrouwen in geenstijl - hoog-1.png" alt="Wie vertrouwt GeenStijl"  />
 <p class="caption">
 Wie vertrouwt GeenStijl
 </p>
