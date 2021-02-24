@@ -411,7 +411,7 @@ df <- d %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/38, 2)) %>% drop_na(value)
 
 ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col(alpha = .6) +
+  geom_col(alpha = .6, color = "black") +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
