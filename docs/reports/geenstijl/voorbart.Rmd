@@ -73,7 +73,7 @@ d <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
          I8_10 = factor(I8_10, levels = c("Hoog", "Midden", "Laag")))
 
 ggplot(d, aes(x = perc, y = value, fill = value)) +
-  geom_col(alpha = .6, color = "black") +
+  geom_col(alpha = .6) +
  # geom_text(aes(label = value),
 #              position = position_stack(vjust = .5),
 #            size = 2) +
