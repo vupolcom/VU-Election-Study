@@ -70,13 +70,10 @@ d <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
   group_by(I8_10, id, value) %>% summarise(n = n()) %>% drop_na(I8_10) %>%
   mutate(perc = ifelse(I8_10 == "Hoog", n/128,
                 ifelse(I8_10 == "Midden", n/407, n/1410)),
-         I8_10 = factor(I8_10, levels = c("Hoog", "Midden", "Laag")))
+         I8_10 = factor(I8_10, levels = c("Weinig vertrouwen", "Medium vertrouwen", "Veel vertrouwen")))
 
 ggplot(d, aes(x = perc, y = value, fill = value)) +
   geom_col(alpha = .6) +
- # geom_text(aes(label = value),
-#              position = position_stack(vjust = .5),
-#            size = 2) +
   theme_minimal() +
   facet_grid(id~I8_10, scales = "free", space = "free") +
   labs(x = "", y = "",title = "Wie heeft er (geen) vertrouwen in GeenStijl") +
