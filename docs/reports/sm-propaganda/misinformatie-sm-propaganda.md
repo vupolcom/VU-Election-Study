@@ -9,7 +9,7 @@ output:
 ---
 
 -   [Verspreiden van Informatie](#verspreiden-van-informatie)
--   [Ontvangbaar voor misinformatie](#ontvangbaar-voor-misinformatie)
+-   [Ontvankelijk voor misinformatie](#ontvankelijk-voor-misinformatie)
 
 Verspreiden van Informatie
 ==========================
@@ -70,8 +70,8 @@ Regeringspartijleiders op Twitter (2)
 Download data: \[[Politici’s meestgebruikte
 woorden](Politici_s_meestgebruikte_woorden.csv)\]
 
-Ontvangbaar voor misinformatie
-==============================
+Ontvankelijk voor misinformatie
+===============================
 
 Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`) –
 een kanaal waarvan we weten dat er meer misinformatie circuleert – zien
@@ -139,10 +139,8 @@ Een vierde veel genoemd medium waar misinformatie circuleert is
 Telegram. Ook voor dit medium is er slechts een klein gedeelte van de
 kiezers (`N=41`) die hiervan gebruik maken als bron voor politieke
 informatie. Wat hier opvallend is, is dat de grootste groep van deze
-mensen van plan is om op de PVV te stemmen
-(`21% van 41 is ongeveer 8 mensen`).
-
-`N=41`
+mensen van plan is om op de PVV te stemmen. Note:
+`21% van 41 is ongeveer 8 mensen`.
 
 <img src="kiezers en misinformatie4-1.png" alt="Wie gebruikt Telegram voor Politiek Nieuws"  />
 <p class="caption">

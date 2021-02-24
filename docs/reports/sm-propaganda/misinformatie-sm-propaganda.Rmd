@@ -160,7 +160,7 @@ p5 + p6
 
 Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
 
-# Ontvangbaar voor misinformatie
+# Ontvankelijk voor misinformatie
 ```{r "data kiezers"}
 w0 <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
   select(iisID, gender, age, education, region, E1, E2, F2_1:F2_11)
@@ -366,9 +366,9 @@ Download data: [`r export_data(df, "Gebruik-whatsapp")`]
 
 Een vierde veel genoemd medium waar misinformatie circuleert is Telegram. 
 Ook voor dit medium is er slechts een klein gedeelte van de kiezers (`N=41`) die hiervan gebruik maken als bron voor politieke informatie.
-Wat hier opvallend is, is dat de grootste groep van deze mensen van plan is om op de PVV te stemmen  (`21% van 41 is ongeveer 8 mensen`).
+Wat hier opvallend is, is dat de grootste groep van deze mensen van plan is om op de PVV te stemmen.
+Note: `21% van 41 is ongeveer 8 mensen`.
 
-`N=41`
 ```{r "kiezers en misinformatie4", fig.height=10, fig.width=10, fig.cap="Wie gebruikt Telegram voor Politiek Nieuws"}
 df <- d %>%
   drop_na(I6_3) %>%
