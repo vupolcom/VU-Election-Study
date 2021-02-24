@@ -9,6 +9,7 @@ output:
 ---
 
 -   [Verspreiden van Informatie](#verspreiden-van-informatie)
+-   [Ontvangbaar voor misinformatie](#ontvangbaar-voor-misinformatie)
 
 Verspreiden van Informatie
 ==========================
@@ -69,10 +70,24 @@ Regeringspartijleiders op Twitter (2)
 Download data: \[[Politici’s meestgebruikte
 woorden](Politici_s_meestgebruikte_woorden.csv)\]
 
+Ontvangbaar voor misinformatie
+==============================
+
 Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`) –
 een kanaal waarvan we weten dat er meer misinformatie circuleert – zien
-we dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor
-politieke informatie te gebruiken.
+we in onderstaand figuur dat ongeveer evenveel mannen als vrouwen
+aangeven dit als bron voor politieke informatie te gebruiken – er is ook
+een gelijke spreiding over leeftijd. Daarnaast is deze groep het vaakst
+laagopgeleid, en woont bijna nooit in 1 van de 3 grote NL steden. Mensen
+die dit kanaal gebruiken om iets te weten te komen over politiek en
+actualiteiten zijn over het algemeen nog zwevende kiezers die wel van
+plan zijn om te gaan stemmen en zijn meestal niet links-georienteerd.
+Ook komen zij eigenlijk alleen tegen bekenden (familie en vrienden) uit
+voor hun mening over gevoelige politieke onderwerpen. In termen van
+vertrouwen, heeft de grootste groep veel vertrouwen in de wetenschap en
+zouden zich ook zeker laten vaccineren. Voor de overige instituties – Nl
+politiek, EU, journalistiek, democratie, en banken en grote bedrijven –
+geeft de grootste groep een 4-6 als rapportcijfer.
 
 <img src="kiezers en misinformatie-1.png" alt="Wie kijkt er naar eigen kanalen politici"  />
 <p class="caption">
@@ -81,7 +96,11 @@ Wie kijkt er naar eigen kanalen politici
 
 Download data: \[[Kijken-eigen-kanalen](Kijken_eigen_kanalen.csv)\]
 
-`N=21`
+Een ander veel genoemd medium waar misinformatie circuleert is
+alternatieve blogs. Er zijn aanzijnlijk minder kiezers (`N=21`) die
+hiervan gebruik maken als bron voor politieke informatie. In onderstaand
+figuur zien we een vergelijkbaar patroon – maar door het lage aantal
+mensen, zou dit een overinterpretatie van de data kunnen zijn.
 
 <img src="kiezers en misinformatie2-1.png" alt="Wie kijkt er naar alternatieve blogs"  />
 <p class="caption">
@@ -91,12 +110,37 @@ Wie kijkt er naar alternatieve blogs
 Download data:
 \[[Bekijken-alternatieve-blogs](Bekijken_alternatieve_blogs.csv)\]
 
+Een derde veel genoemd medium waar misinformatie circuleert is
+alternatieve blogs. Er is een aanzijnlijk gedeelte van de kiezers
+(`N=432`) die hiervan gebruik maken als bron voor politieke informatie.
+In onderstaand figuur zien we dat ongeveer evenveel mannen als vrouwen
+aangeven dit als bron voor politieke informatie te gebruiken – er is ook
+een gelijke spreiding over leeftijd. Daarnaast is deze groep het vaakst
+medium opgeleid (MBO), en woont het minst vaak in het noorden van NL of
+in 1 van de 3 grote NL steden. De grootste groep mensen die dit kanaal
+gebruiken om iets te weten te komen over politiek en actualiteiten zijn
+van plan om te gaan stemmen en dan meestal op de VVD en zijn meestal
+niet links-georienteerd. Ook komen zij eigenlijk alleen tegen bekenden
+(familie en vrienden) uit voor hun mening over gevoelige politieke
+onderwerpen. In termen van vertrouwen, heeft de grootste groep veel
+vertrouwen in de wetenschap en zouden zich ook zeker laten vaccineren.
+Voor de overige instituties – Nl politiek, EU, journalistiek,
+democratie, en banken en grote bedrijven – geeft de grootste groep een
+4-6 als rapportcijfer.
+
 <img src="kiezers en misinformatie3-1.png" alt="Wie gebruikt Whatsapp voor Politiek Nieuws"  />
 <p class="caption">
 Wie gebruikt Whatsapp voor Politiek Nieuws
 </p>
 
 Download data: \[[Gebruik-whatsapp](Gebruik_whatsapp.csv)\]
+
+Een vierde veel genoemd medium waar misinformatie circuleert is
+Telegram. Ook voor dit medium is er slechts een klein gedeelte van de
+kiezers (`N=41`) die hiervan gebruik maken als bron voor politieke
+informatie. Wat hier opvallend is, is dat de grootste groep van deze
+mensen van plan is om op de PVV te stemmen
+(`21% van 41 is ongeveer 8 mensen`).
 
 `N=41`
 

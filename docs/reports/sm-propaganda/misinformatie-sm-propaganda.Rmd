@@ -160,6 +160,7 @@ p5 + p6
 
 Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
 
+# Ontvangbaar voor misinformatie
 ```{r "data kiezers"}
 w0 <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
   select(iisID, gender, age, education, region, E1, E2, F2_1:F2_11)
@@ -170,7 +171,12 @@ w1 <- read_csv("../../../data/intermediate/wave1.csv") %>%
 d <- left_join(w1, w0, by = "iisID") 
 ```
 
-Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`) -- een kanaal waarvan we weten dat er meer misinformatie circuleert -- zien we dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor politieke informatie te gebruiken.
+Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`) -- een kanaal waarvan we weten dat er meer misinformatie circuleert -- zien we in onderstaand figuur dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor politieke informatie te gebruiken -- er is ook een gelijke spreiding over leeftijd.
+Daarnaast is deze groep het vaakst laagopgeleid, en woont bijna nooit in 1 van de 3 grote NL steden.
+Mensen die dit kanaal gebruiken om iets te weten te komen over politiek en actualiteiten zijn over het algemeen nog zwevende kiezers die wel van plan zijn om te gaan stemmen en zijn meestal niet links-georienteerd.
+Ook komen zij eigenlijk alleen tegen bekenden (familie en vrienden) uit voor hun mening over gevoelige politieke onderwerpen.
+In termen van vertrouwen, heeft de grootste groep veel vertrouwen in de wetenschap en zouden zich ook zeker laten vaccineren.
+Voor de overige instituties -- Nl politiek, EU, journalistiek, democratie, en banken en grote bedrijven -- geeft de grootste groep een 4-6 als rapportcijfer.
 
 ```{r "kiezers en misinformatie", fig.height=10, fig.width=10, fig.cap="Wie kijkt er naar eigen kanalen politici"}
 df <- d %>%
@@ -214,7 +220,7 @@ df <- d %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/893, 2)) %>% drop_na(value)
 
 ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col(alpha = .6) +
+  geom_col(alpha = .6, color = "black") +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -230,8 +236,10 @@ ggplot(df, aes(x = perc, y = id, fill = value)) +
 
 Download data: [`r export_data(df, "Kijken-eigen-kanalen")`]
 
+Een ander veel genoemd medium waar misinformatie circuleert is alternatieve blogs. 
+Er zijn aanzijnlijk minder kiezers (`N=21`) die hiervan gebruik maken als bron voor politieke informatie.
+In onderstaand figuur zien we een vergelijkbaar patroon -- maar door het lage aantal mensen, zou dit een overinterpretatie van de data kunnen zijn.
 
-`N=21`
 ```{r "kiezers en misinformatie2", fig.height=10, fig.width=10, fig.cap="Wie kijkt er naar alternatieve blogs"}
 df <- d %>%
   drop_na(I4_other_blogs) %>%
@@ -274,7 +282,7 @@ df <- d %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/21, 2)) %>% drop_na(value)
 
 ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col(alpha = .6) +
+  geom_col(alpha = .6, color = "black") +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -289,6 +297,14 @@ ggplot(df, aes(x = perc, y = id, fill = value)) +
 ```
 Download data: [`r export_data(df, "Bekijken-alternatieve-blogs")`]
 
+Een derde veel genoemd medium waar misinformatie circuleert is alternatieve blogs. 
+Er is een aanzijnlijk gedeelte van de kiezers (`N=432`) die hiervan gebruik maken als bron voor politieke informatie.
+In onderstaand figuur zien we dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor politieke informatie te gebruiken -- er is ook een gelijke spreiding over leeftijd.
+Daarnaast is deze groep het vaakst medium opgeleid (MBO), en woont het minst vaak in het noorden van NL of in 1 van de 3 grote NL steden.
+De grootste groep mensen die dit kanaal gebruiken om iets te weten te komen over politiek en actualiteiten zijn van plan om te gaan stemmen en dan meestal op de VVD en zijn meestal niet links-georienteerd.
+Ook komen zij eigenlijk alleen tegen bekenden (familie en vrienden) uit voor hun mening over gevoelige politieke onderwerpen.
+In termen van vertrouwen, heeft de grootste groep veel vertrouwen in de wetenschap en zouden zich ook zeker laten vaccineren.
+Voor de overige instituties -- Nl politiek, EU, journalistiek, democratie, en banken en grote bedrijven -- geeft de grootste groep een 4-6 als rapportcijfer.
 
 ```{r "kiezers en misinformatie3", fig.height=10, fig.width=10, fig.cap="Wie gebruikt Whatsapp voor Politiek Nieuws"}
 df <- d %>%
@@ -332,7 +348,7 @@ df <- d %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/432, 2)) %>% drop_na(value)
 
 ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col(alpha = .6) +
+  geom_col(alpha = .6, color = "black") +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -348,6 +364,9 @@ ggplot(df, aes(x = perc, y = id, fill = value)) +
 
 Download data: [`r export_data(df, "Gebruik-whatsapp")`]
 
+Een vierde veel genoemd medium waar misinformatie circuleert is Telegram. 
+Ook voor dit medium is er slechts een klein gedeelte van de kiezers (`N=41`) die hiervan gebruik maken als bron voor politieke informatie.
+Wat hier opvallend is, is dat de grootste groep van deze mensen van plan is om op de PVV te stemmen  (`21% van 41 is ongeveer 8 mensen`).
 
 `N=41`
 ```{r "kiezers en misinformatie4", fig.height=10, fig.width=10, fig.cap="Wie gebruikt Telegram voor Politiek Nieuws"}
