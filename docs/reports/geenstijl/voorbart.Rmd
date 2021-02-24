@@ -1,0 +1,90 @@
+---
+title: 'VU 2021 Election Study: Trust in GeenStijl'
+author: "Mariken van der Velden"
+permalink: reports/geenstijl/
+output: 
+  md_document:
+    toc: yes
+    preserve_yaml: yes
+---
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+rm(list = ls())
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      echo = FALSE, fig.align = "center",
+                        fig.path='')
+library(glue)
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+library(quanteda)
+library(patchwork)
+library(viridis)
+source(here("src/lib/data.R"))
+```
+
+```{r "vertrouwen in geenstijl", fig.height=15, fig.width=10, fig.cap="Wie vertrouwt GeenStijl"}
+d <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
+  select(I8_10, gender, age, education, region, A1, A2, E2, H7, F2_1:F2_11) %>%
+  mutate(gender = recode(gender, `0` = "male", `1` = "female"),
+         age = recode(age, `1` = "<24", 
+                      `2` = "25-34",  `3` = "35-44",  
+                      `4`= "45-54", `5` = "55-64", `6` = ">64"),
+         education = recode(education, `1` = "Hoog opgeleid", `2` = "Medium opgeleid", `3` = "Laag opgeleid", `999` = "Geen informatie"),
+         region = recode(region, `1` = "Een van de 3 grote steden", `2` = "Het westen", `3` = "Het noorden", `4` = "Het oosten", `5` = "Het zuiden"),
+         A1 = recode(A1, `1` = "Ja", `0` = "Nee", `998` = "Weet niet", `999` = "Nee"),
+         A2 = recode(A2, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
+         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen"),
+         F_pol = round((F2_3 + F2_4 + F2_6 + F2_7)/4,0),
+         F_bgb = round((F2_10 + F2_11)/2,0),
+         F2_2 = ifelse(F2_2 <4, "Weinig vertrouwen",
+                ifelse(F2_2 >=4 & F2_2 <7, "Medium vertrouwen", 
+                ifelse(F2_2 >=7, "Veel vertrouwen", F2_2))),
+         F_pol = ifelse(F_pol <4, "Weinig vertrouwen",
+                ifelse(F_pol >=4 & F_pol <7, "Medium vertrouwen", 
+                ifelse(F_pol >=7, "Veel vertrouwen", F_pol))),
+         F2_4 = ifelse(F2_4 <4, "Weinig vertrouwen",
+                ifelse(F2_4 >=4 & F2_4 <7, "Medium vertrouwen", 
+                ifelse(F2_4 >=7, "Veel vertrouwen", F2_4))),
+         F2_8 = ifelse(F2_8 <4, "Weinig vertrouwen",
+                ifelse(F2_8 >=4 & F2_8 <7, "Medium vertrouwen", 
+                ifelse(F2_8 >=7, "Veel vertrouwen", F2_8))),
+         F2_9 = ifelse(F2_9 <4, "Weinig vertrouwen",
+                ifelse(F2_9 >=4 & F2_9 <7, "Medium vertrouwen", 
+                ifelse(F2_9 >=7, "Veel vertrouwen", F2_9))),
+         F_bgb = ifelse(F_bgb <4, "Weinig vertrouwen",
+                ifelse(F_bgb >=4 & F_bgb <7, "Medium vertrouwen", 
+                ifelse(F_bgb >=7, "Veel vertrouwen", F_bgb))),
+         E2 = ifelse(E2 <4, "Links",
+                ifelse(E2 >=4 & E2 <7, "Midden", 
+                ifelse(E2 >=7, "Rechts", E2))),
+         I8_10 = ifelse(I8_10 <4, "Weinig vertrouwen",
+                ifelse(I8_10 >=4 & I8_10 <7, "Medium vertrouwen", 
+                ifelse(I8_10 >=7, "Veel vertrouwen", I8_10)))) %>%
+  pivot_longer(cols = c(gender:H7, F2_2, F_pol,F2_4, F2_8, F2_9, F_bgb)) %>%
+  select(I8_10, name, value) %>%
+  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding", `region` = "Regio", `F2_2` = "Vertrouwen journalistiek", `F_pol` = "Vertrouwen NL politiek", `F2_4` = "Vertrouwen EU", `F2_8` = "Vertrouwen democratie", `F2_9` = "Vertrouwen wetenschap", `F_bgb` = "Vertrouwen banken & grote bedrijven",`H1` = "Spiral of Silence", `H7` = "Vaccineren", `E2` = "Ideologie")) %>%
+  group_by(I8_10, id, value) %>% summarise(n = n()) %>% drop_na(I8_10) %>%
+  mutate(perc = ifelse(I8_10 == "Hoog", n/128,
+                ifelse(I8_10 == "Midden", n/407, n/1410)),
+         I8_10 = factor(I8_10, levels = c("Hoog", "Midden", "Laag")))
+
+ggplot(d, aes(x = perc, y = id, fill = value)) +
+  geom_col(alpha = .6, color = "black") +
+  geom_text(aes(label = value),
+              position = position_stack(vjust = .5),
+            size = 2) +
+  theme_minimal() +
+  facet_grid(I8_10~., scales = "free", space = "free") +
+  labs(x = "", y = "",title = "Wie heeft er (geen) vertrouwen in GeenStijl") +
+  scale_fill_viridis_d() +
+    scale_x_continuous(labels = scales::percent) +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+```
+Download data: [`r export_data(d, "Vertrouwen in GeenStijl")`]
