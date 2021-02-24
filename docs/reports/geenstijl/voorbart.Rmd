@@ -26,7 +26,7 @@ library(viridis)
 source(here("src/lib/data.R"))
 ```
 
-```{r "vertrouwen in geenstijl", fig.height=15, fig.width=10, fig.cap="Wie vertrouwt GeenStijl"}
+```{r "vertrouwen in geenstijl", fig.height=15, fig.width=20, fig.cap="Wie vertrouwt GeenStijl"}
 d <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
   select(I8_10, gender, age, education, region, A1, A2, E2, H7, F2_1:F2_11) %>%
   mutate(gender = recode(gender, `0` = "male", `1` = "female"),
