@@ -1,0 +1,60 @@
+id,value,n,perc
+Gender,female,21,0.55
+Gender,male,20,0.53
+Ideologie,Links,7,0.18
+Ideologie,Midden,16,0.42
+Ideologie,Rechts,11,0.29
+Leeftijd,<24,5,0.13
+Leeftijd,>64,9,0.24
+Leeftijd,25-34,10,0.26
+Leeftijd,35-44,7,0.18
+Leeftijd,45-54,6,0.16
+Leeftijd,55-64,4,0.11
+Opleiding,Hoog opgeleid,10,0.26
+Opleiding,Laag opgeleid,9,0.24
+Opleiding,Medium opgeleid,22,0.58
+Regio,Een van de 3 grote steden,8,0.21
+Regio,Het noorden,4,0.11
+Regio,Het oosten,11,0.29
+Regio,Het westen,9,0.24
+Regio,Het zuiden,9,0.24
+Spiral of Silence,Alleen tegen bekenden ,14,0.37
+Spiral of Silence,Houd mening voor me,16,0.42
+Spiral of Silence,Kom altijd voor mening uit,11,0.29
+Stemmen,Ja,37,0.97
+Stemmen,Nee,2,0.05
+Stemmen,Weet niet,2,0.05
+Stemvoorkeur,Blanco,1,0.03
+Stemvoorkeur,CDA,1,0.03
+Stemvoorkeur,CU,2,0.05
+Stemvoorkeur,D66,2,0.05
+Stemvoorkeur,Denk,1,0.03
+Stemvoorkeur,FvD,4,0.11
+Stemvoorkeur,GL,3,0.08
+Stemvoorkeur,PvdA,6,0.16
+Stemvoorkeur,PVV,8,0.21
+Stemvoorkeur,SP,2,0.05
+Stemvoorkeur,VVD,7,0.18
+Stemvoorkeur,Weet niet,4,0.11
+Vaccineren,Doen,16,0.42
+Vaccineren,Niet doen,6,0.16
+Vaccineren,Zeer zeker doen,12,0.32
+Vaccineren,Zeer zeker niet doen,7,0.18
+Vertrouwen banken & grote bedrijven,Medium vertrouwen,23,0.61
+Vertrouwen banken & grote bedrijven,Veel vertrouwen,4,0.11
+Vertrouwen banken & grote bedrijven,Weinig vertrouwen,7,0.18
+Vertrouwen democratie,Medium vertrouwen,14,0.37
+Vertrouwen democratie,Veel vertrouwen,13,0.34
+Vertrouwen democratie,Weinig vertrouwen,7,0.18
+Vertrouwen EU,Medium vertrouwen,17,0.45
+Vertrouwen EU,Veel vertrouwen,9,0.24
+Vertrouwen EU,Weinig vertrouwen,8,0.21
+Vertrouwen journalistiek,Medium vertrouwen,18,0.47
+Vertrouwen journalistiek,Veel vertrouwen,8,0.21
+Vertrouwen journalistiek,Weinig vertrouwen,8,0.21
+Vertrouwen NL politiek,Medium vertrouwen,20,0.53
+Vertrouwen NL politiek,Veel vertrouwen,6,0.16
+Vertrouwen NL politiek,Weinig vertrouwen,8,0.21
+Vertrouwen wetenschap,Medium vertrouwen,13,0.34
+Vertrouwen wetenschap,Veel vertrouwen,18,0.47
+Vertrouwen wetenschap,Weinig vertrouwen,3,0.08

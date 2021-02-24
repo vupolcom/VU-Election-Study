@@ -162,7 +162,7 @@ Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
 
 ```{r "data kiezers"}
 w0 <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
-  select(iisID, gender, age, education, region, E1, E2, F2_1:F2_10)
+  select(iisID, gender, age, education, region, E1, E2, F2_1:F2_11)
 w1 <- read_csv("../../../data/intermediate/wave1.csv") %>%
   select(iisID, A1, A2, H1:H7b,I1_1:I1_9, I3_15,I4_other_blogs, I4_other_sites,I5_1:I5_11, I6_1:I6_6,I7_other)
 
@@ -184,14 +184,37 @@ df <- d %>%
          A1 = recode(A1, `1` = "Ja", `0` = "Nee", `998` = "Weet niet", `999` = "Nee"),
          A2 = recode(A2, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
          H1 = recode(H1, `1` = "Houd mening voor me", `2` = "Alleen tegen bekenden ", `3` = "Kom altijd voor mening uit"),
-         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen")) %>%
-  pivot_longer(cols = c(A1:H1, H7, gender:region)) %>%
+         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen"),
+         F_pol = round((F2_3 + F2_4 + F2_6 + F2_7)/4,0),
+         F_bgb = round((F2_10 + F2_11)/2,0),
+         F2_2 = ifelse(F2_2 <4, "Weinig vertrouwen",
+                ifelse(F2_2 >=4 & F2_2 <7, "Medium vertrouwen", 
+                ifelse(F2_2 >=7, "Veel vertrouwen", F2_2))),
+         F_pol = ifelse(F_pol <4, "Weinig vertrouwen",
+                ifelse(F_pol >=4 & F_pol <7, "Medium vertrouwen", 
+                ifelse(F_pol >=7, "Veel vertrouwen", F_pol))),
+         F2_4 = ifelse(F2_4 <4, "Weinig vertrouwen",
+                ifelse(F2_4 >=4 & F2_4 <7, "Medium vertrouwen", 
+                ifelse(F2_4 >=7, "Veel vertrouwen", F2_4))),
+         F2_8 = ifelse(F2_8 <4, "Weinig vertrouwen",
+                ifelse(F2_8 >=4 & F2_8 <7, "Medium vertrouwen", 
+                ifelse(F2_8 >=7, "Veel vertrouwen", F2_8))),
+         F2_9 = ifelse(F2_9 <4, "Weinig vertrouwen",
+                ifelse(F2_9 >=4 & F2_9 <7, "Medium vertrouwen", 
+                ifelse(F2_9 >=7, "Veel vertrouwen", F2_9))),
+         F_bgb = ifelse(F_bgb <4, "Weinig vertrouwen",
+                ifelse(F_bgb >=4 & F_bgb <7, "Medium vertrouwen", 
+                ifelse(F_bgb >=7, "Veel vertrouwen", F_bgb))),
+         E2 = ifelse(E2 <4, "Links",
+                ifelse(E2 >=4 & E2 <7, "Midden", 
+                ifelse(E2 >=7, "Rechts", E2)))) %>%
+  pivot_longer(cols = c(A1:H1, H7, E2, F2_2, F_pol, F2_4, F2_8, F2_9, F_bgb, gender:region)) %>%
   select(name, value) %>%
-  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding",  `H1` = "Spiral of Silence", `H7` = "Vaccineren")) %>%
+  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding", `region` = "Regio", `F2_2` = "Vertrouwen journalistiek", `F_pol` = "Vertrouwen NL politiek", `F2_4` = "Vertrouwen EU", `F2_8` = "Vertrouwen democratie", `F2_9` = "Vertrouwen wetenschap", `F_bgb` = "Vertrouwen banken & grote bedrijven",`H1` = "Spiral of Silence", `H7` = "Vaccineren", `E2` = "Ideologie")) %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/893, 2)) %>% drop_na(value)
 
-p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
+ggplot(df, aes(x = perc, y = id, fill = value)) +
+  geom_col(alpha = .6) +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -203,30 +226,10 @@ p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
-
-df <- d %>%
-  drop_na(I3_15) %>%
-  pivot_longer(cols = c(E2, F2_2:F2_10)) %>%
-  select(name, value) %>%
-  mutate(id = recode(name,  `E2` = "ideologie",  `F2_2` = "Vertrouwen Regering", `F2_3` = "Vertrouwen Parlement", `F2_4` = "Vertrouwen EU", `F2_5` = "Vertrouwen Politieke Partijen", `F2_6` = "Vertrouwen Politici", `F2_7` = "Vertrouwen Democratie", `F2_8` = "Vertrouwen Wetenschap", `F2_9` = "Vertrouwen Grote Bedrijven", `F2_10` = "Vertrouwen Banken")) %>%
-  group_by(id, value) %>% summarise(n = n(), perc = round(n/893, 2)) %>% drop_na(value)
- 
-p2 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
-  geom_text(aes(label = value),
-              position = position_stack(vjust = .5),
-            size = 2) +
-  theme_minimal() +
-  labs(x = "", y = "") +
-  scale_fill_viridis_c("") +
-  scale_x_continuous(labels = scales::percent) +
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
-
-p1 / p2  
 ```
+
+Download data: [`r export_data(df, "Kijken-eigen-kanalen")`]
+
 
 `N=21`
 ```{r "kiezers en misinformatie2", fig.height=10, fig.width=10, fig.cap="Wie kijkt er naar alternatieve blogs"}
@@ -241,14 +244,37 @@ df <- d %>%
          A1 = recode(A1, `1` = "Ja", `0` = "Nee", `998` = "Weet niet", `999` = "Nee"),
          A2 = recode(A2, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
          H1 = recode(H1, `1` = "Houd mening voor me", `2` = "Alleen tegen bekenden ", `3` = "Kom altijd voor mening uit"),
-         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen")) %>%
-  pivot_longer(cols = c(A1:H1, H7, gender:region)) %>%
+         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen"),
+         F_pol = round((F2_3 + F2_4 + F2_6 + F2_7)/4,0),
+         F_bgb = round((F2_10 + F2_11)/2,0),
+         F2_2 = ifelse(F2_2 <4, "Weinig vertrouwen",
+                ifelse(F2_2 >=4 & F2_2 <7, "Medium vertrouwen", 
+                ifelse(F2_2 >=7, "Veel vertrouwen", F2_2))),
+         F_pol = ifelse(F_pol <4, "Weinig vertrouwen",
+                ifelse(F_pol >=4 & F_pol <7, "Medium vertrouwen", 
+                ifelse(F_pol >=7, "Veel vertrouwen", F_pol))),
+         F2_4 = ifelse(F2_4 <4, "Weinig vertrouwen",
+                ifelse(F2_4 >=4 & F2_4 <7, "Medium vertrouwen", 
+                ifelse(F2_4 >=7, "Veel vertrouwen", F2_4))),
+         F2_8 = ifelse(F2_8 <4, "Weinig vertrouwen",
+                ifelse(F2_8 >=4 & F2_8 <7, "Medium vertrouwen", 
+                ifelse(F2_8 >=7, "Veel vertrouwen", F2_8))),
+         F2_9 = ifelse(F2_9 <4, "Weinig vertrouwen",
+                ifelse(F2_9 >=4 & F2_9 <7, "Medium vertrouwen", 
+                ifelse(F2_9 >=7, "Veel vertrouwen", F2_9))),
+         F_bgb = ifelse(F_bgb <4, "Weinig vertrouwen",
+                ifelse(F_bgb >=4 & F_bgb <7, "Medium vertrouwen", 
+                ifelse(F_bgb >=7, "Veel vertrouwen", F_bgb))),
+         E2 = ifelse(E2 <4, "Links",
+                ifelse(E2 >=4 & E2 <7, "Midden", 
+                ifelse(E2 >=7, "Rechts", E2)))) %>%
+  pivot_longer(cols = c(A1:H1, H7, E2, F2_2, F_pol, F2_4, F2_8, F2_9, F_bgb, gender:region)) %>%
   select(name, value) %>%
-  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding",  `H1` = "Spiral of Silence", `H7` = "Vaccineren")) %>%
-  group_by(id, value) %>% summarise(n = n(), perc = round(n/22, 2)) %>% drop_na(value)
+  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding", `region` = "Regio", `F2_2` = "Vertrouwen journalistiek", `F_pol` = "Vertrouwen NL politiek", `F2_4` = "Vertrouwen EU", `F2_8` = "Vertrouwen democratie", `F2_9` = "Vertrouwen wetenschap", `F_bgb` = "Vertrouwen banken & grote bedrijven",`H1` = "Spiral of Silence", `H7` = "Vaccineren", `E2` = "Ideologie")) %>%
+  group_by(id, value) %>% summarise(n = n(), perc = round(n/21, 2)) %>% drop_na(value)
 
-p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
+ggplot(df, aes(x = perc, y = id, fill = value)) +
+  geom_col(alpha = .6) +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -260,30 +286,9 @@ p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
-
-df <- d %>%
-  drop_na(I4_other_blogs) %>%
-  pivot_longer(cols = c(E2, F2_2:F2_10)) %>%
-  select(name, value) %>%
-  mutate(id = recode(name,  `E2` = "ideologie",  `F2_2` = "Vertrouwen Regering", `F2_3` = "Vertrouwen Parlement", `F2_4` = "Vertrouwen EU", `F2_5` = "Vertrouwen Politieke Partijen", `F2_6` = "Vertrouwen Politici", `F2_7` = "Vertrouwen Democratie", `F2_8` = "Vertrouwen Wetenschap", `F2_9` = "Vertrouwen Grote Bedrijven", `F2_10` = "Vertrouwen Banken")) %>%
-  group_by(id, value) %>% summarise(n = n(), perc = round(n/22, 2)) %>% drop_na(value)
- 
-p2 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
-  geom_text(aes(label = value),
-              position = position_stack(vjust = .5),
-            size = 2) +
-  theme_minimal() +
-  labs(x = "", y = "") +
-  scale_x_continuous(labels = scales::percent) +
-  scale_fill_viridis_c("") +
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
-
-p1 / p2  
 ```
+Download data: [`r export_data(df, "Bekijken-alternatieve-blogs")`]
+
 
 ```{r "kiezers en misinformatie3", fig.height=10, fig.width=10, fig.cap="Wie gebruikt Whatsapp voor Politiek Nieuws"}
 df <- d %>%
@@ -297,14 +302,37 @@ df <- d %>%
          A1 = recode(A1, `1` = "Ja", `0` = "Nee", `998` = "Weet niet", `999` = "Nee"),
          A2 = recode(A2, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
          H1 = recode(H1, `1` = "Houd mening voor me", `2` = "Alleen tegen bekenden ", `3` = "Kom altijd voor mening uit"),
-         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen")) %>%
-  pivot_longer(cols = c(A1:H1, H7, gender:region)) %>%
+         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen"),
+         F_pol = round((F2_3 + F2_4 + F2_6 + F2_7)/4,0),
+         F_bgb = round((F2_10 + F2_11)/2,0),
+         F2_2 = ifelse(F2_2 <4, "Weinig vertrouwen",
+                ifelse(F2_2 >=4 & F2_2 <7, "Medium vertrouwen", 
+                ifelse(F2_2 >=7, "Veel vertrouwen", F2_2))),
+         F_pol = ifelse(F_pol <4, "Weinig vertrouwen",
+                ifelse(F_pol >=4 & F_pol <7, "Medium vertrouwen", 
+                ifelse(F_pol >=7, "Veel vertrouwen", F_pol))),
+         F2_4 = ifelse(F2_4 <4, "Weinig vertrouwen",
+                ifelse(F2_4 >=4 & F2_4 <7, "Medium vertrouwen", 
+                ifelse(F2_4 >=7, "Veel vertrouwen", F2_4))),
+         F2_8 = ifelse(F2_8 <4, "Weinig vertrouwen",
+                ifelse(F2_8 >=4 & F2_8 <7, "Medium vertrouwen", 
+                ifelse(F2_8 >=7, "Veel vertrouwen", F2_8))),
+         F2_9 = ifelse(F2_9 <4, "Weinig vertrouwen",
+                ifelse(F2_9 >=4 & F2_9 <7, "Medium vertrouwen", 
+                ifelse(F2_9 >=7, "Veel vertrouwen", F2_9))),
+         F_bgb = ifelse(F_bgb <4, "Weinig vertrouwen",
+                ifelse(F_bgb >=4 & F_bgb <7, "Medium vertrouwen", 
+                ifelse(F_bgb >=7, "Veel vertrouwen", F_bgb))),
+         E2 = ifelse(E2 <4, "Links",
+                ifelse(E2 >=4 & E2 <7, "Midden", 
+                ifelse(E2 >=7, "Rechts", E2)))) %>%
+  pivot_longer(cols = c(A1:H1, H7, E2, F2_2, F_pol, F2_4, F2_8, F2_9, F_bgb, gender:region)) %>%
   select(name, value) %>%
-  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding",  `H1` = "Spiral of Silence", `H7` = "Vaccineren")) %>%
+  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding", `region` = "Regio", `F2_2` = "Vertrouwen journalistiek", `F_pol` = "Vertrouwen NL politiek", `F2_4` = "Vertrouwen EU", `F2_8` = "Vertrouwen democratie", `F2_9` = "Vertrouwen wetenschap", `F_bgb` = "Vertrouwen banken & grote bedrijven",`H1` = "Spiral of Silence", `H7` = "Vaccineren", `E2` = "Ideologie")) %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/432, 2)) %>% drop_na(value)
 
-p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
+ggplot(df, aes(x = perc, y = id, fill = value)) +
+  geom_col(alpha = .6) +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -316,30 +344,10 @@ p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
-
-df <- d %>%
-  drop_na(I6_1) %>%
-  pivot_longer(cols = c(E2, F2_2:F2_10)) %>%
-  select(name, value) %>%
-  mutate(id = recode(name,  `E2` = "ideologie",  `F2_2` = "Vertrouwen Regering", `F2_3` = "Vertrouwen Parlement", `F2_4` = "Vertrouwen EU", `F2_5` = "Vertrouwen Politieke Partijen", `F2_6` = "Vertrouwen Politici", `F2_7` = "Vertrouwen Democratie", `F2_8` = "Vertrouwen Wetenschap", `F2_9` = "Vertrouwen Grote Bedrijven", `F2_10` = "Vertrouwen Banken")) %>%
-  group_by(id, value) %>% summarise(n = n(), perc = round(n/432, 2)) %>% drop_na(value)
- 
-p2 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
-  geom_text(aes(label = value),
-              position = position_stack(vjust = .5),
-            size = 2) +
-  theme_minimal() +
-  labs(x = "", y = "") +
-  scale_fill_viridis_c("") +
-    scale_x_continuous(labels = scales::percent) +
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
-
-p1 / p2  
 ```
+
+Download data: [`r export_data(df, "Gebruik-whatsapp")`]
+
 
 `N=41`
 ```{r "kiezers en misinformatie4", fig.height=10, fig.width=10, fig.cap="Wie gebruikt Telegram voor Politiek Nieuws"}
@@ -354,14 +362,37 @@ df <- d %>%
          A1 = recode(A1, `1` = "Ja", `0` = "Nee", `998` = "Weet niet", `999` = "Nee"),
          A2 = recode(A2, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
          H1 = recode(H1, `1` = "Houd mening voor me", `2` = "Alleen tegen bekenden ", `3` = "Kom altijd voor mening uit"),
-         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen")) %>%
-  pivot_longer(cols = c(A1:H1, H7, gender:region)) %>%
+         H7 = recode(H7, `1` = "Zeer zeker doen", `2` = "Doen", `3` = "Niet doen", `4` = "Zeer zeker niet doen"),
+         F_pol = round((F2_3 + F2_4 + F2_6 + F2_7)/4,0),
+         F_bgb = round((F2_10 + F2_11)/2,0),
+         F2_2 = ifelse(F2_2 <4, "Weinig vertrouwen",
+                ifelse(F2_2 >=4 & F2_2 <7, "Medium vertrouwen", 
+                ifelse(F2_2 >=7, "Veel vertrouwen", F2_2))),
+         F_pol = ifelse(F_pol <4, "Weinig vertrouwen",
+                ifelse(F_pol >=4 & F_pol <7, "Medium vertrouwen", 
+                ifelse(F_pol >=7, "Veel vertrouwen", F_pol))),
+         F2_4 = ifelse(F2_4 <4, "Weinig vertrouwen",
+                ifelse(F2_4 >=4 & F2_4 <7, "Medium vertrouwen", 
+                ifelse(F2_4 >=7, "Veel vertrouwen", F2_4))),
+         F2_8 = ifelse(F2_8 <4, "Weinig vertrouwen",
+                ifelse(F2_8 >=4 & F2_8 <7, "Medium vertrouwen", 
+                ifelse(F2_8 >=7, "Veel vertrouwen", F2_8))),
+         F2_9 = ifelse(F2_9 <4, "Weinig vertrouwen",
+                ifelse(F2_9 >=4 & F2_9 <7, "Medium vertrouwen", 
+                ifelse(F2_9 >=7, "Veel vertrouwen", F2_9))),
+         F_bgb = ifelse(F_bgb <4, "Weinig vertrouwen",
+                ifelse(F_bgb >=4 & F_bgb <7, "Medium vertrouwen", 
+                ifelse(F_bgb >=7, "Veel vertrouwen", F_bgb))),
+         E2 = ifelse(E2 <4, "Links",
+                ifelse(E2 >=4 & E2 <7, "Midden", 
+                ifelse(E2 >=7, "Rechts", E2)))) %>%
+  pivot_longer(cols = c(A1:H1, H7, E2, F2_2, F_pol, F2_4, F2_8, F2_9, F_bgb, gender:region)) %>%
   select(name, value) %>%
-  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding",  `H1` = "Spiral of Silence", `H7` = "Vaccineren")) %>%
+  mutate(id = recode(name, `A1` = "Stemmen", `A2` = "Stemvoorkeur", `gender` = "Gender",`age` = "Leeftijd",`education` = "Opleiding", `region` = "Regio", `F2_2` = "Vertrouwen journalistiek", `F_pol` = "Vertrouwen NL politiek", `F2_4` = "Vertrouwen EU", `F2_8` = "Vertrouwen democratie", `F2_9` = "Vertrouwen wetenschap", `F_bgb` = "Vertrouwen banken & grote bedrijven",`H1` = "Spiral of Silence", `H7` = "Vaccineren", `E2` = "Ideologie")) %>%
   group_by(id, value) %>% summarise(n = n(), perc = round(n/38, 2)) %>% drop_na(value)
 
-p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
+ggplot(df, aes(x = perc, y = id, fill = value)) +
+  geom_col(alpha = .6) +
   geom_text(aes(label = value),
               position = position_stack(vjust = .5),
             size = 2) +
@@ -373,27 +404,6 @@ p1 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
           plot.subtitle = element_text(hjust = 0.5),
           legend.position="none",
           legend.title = element_blank())
-
-df <- d %>%
-  drop_na(I6_3) %>%
-  pivot_longer(cols = c(E2, F2_2:F2_10)) %>%
-  select(name, value) %>%
-  mutate(id = recode(name,  `E2` = "ideologie",  `F2_2` = "Vertrouwen Regering", `F2_3` = "Vertrouwen Parlement", `F2_4` = "Vertrouwen EU", `F2_5` = "Vertrouwen Politieke Partijen", `F2_6` = "Vertrouwen Politici", `F2_7` = "Vertrouwen Democratie", `F2_8` = "Vertrouwen Wetenschap", `F2_9` = "Vertrouwen Grote Bedrijven", `F2_10` = "Vertrouwen Banken")) %>%
-  group_by(id, value) %>% summarise(n = n(), perc = round(n/38, 2)) %>% drop_na(value)
- 
-p2 <- ggplot(df, aes(x = perc, y = id, fill = value)) +
-  geom_col() +
-  geom_text(aes(label = value),
-              position = position_stack(vjust = .5),
-            size = 2) +
-  theme_minimal() +
-  labs(x = "", y = "") +
-  scale_fill_viridis_c("") +
-    scale_x_continuous(labels = scales::percent) +
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
-
-p1 / p2  
 ```
+
+Download data: [`r export_data(df, "Gebruik-telegram")`]

@@ -1,0 +1,65 @@
+id,value,n,perc
+Gender,female,224,0.52
+Gender,male,208,0.48
+Ideologie,Links,70,0.16
+Ideologie,Midden,176,0.41
+Ideologie,Rechts,127,0.29
+Leeftijd,<24,55,0.13
+Leeftijd,>64,67,0.16
+Leeftijd,25-34,95,0.22
+Leeftijd,35-44,62,0.14
+Leeftijd,45-54,79,0.18
+Leeftijd,55-64,74,0.17
+Opleiding,Geen informatie,2,0
+Opleiding,Hoog opgeleid,153,0.35
+Opleiding,Laag opgeleid,101,0.23
+Opleiding,Medium opgeleid,176,0.41
+Regio,Een van de 3 grote steden,72,0.17
+Regio,Het noorden,55,0.13
+Regio,Het oosten,78,0.18
+Regio,Het westen,123,0.28
+Regio,Het zuiden,104,0.24
+Spiral of Silence,Alleen tegen bekenden ,235,0.54
+Spiral of Silence,Houd mening voor me,89,0.21
+Spiral of Silence,Kom altijd voor mening uit,108,0.25
+Stemmen,Ja,380,0.88
+Stemmen,Nee,8,0.02
+Stemmen,Weet niet,44,0.1
+Stemvoorkeur,50Plus,10,0.02
+Stemvoorkeur,Andere,5,0.01
+Stemvoorkeur,Blanco,2,0
+Stemvoorkeur,CDA,29,0.07
+Stemvoorkeur,CU,12,0.03
+Stemvoorkeur,D66,29,0.07
+Stemvoorkeur,Denk,8,0.02
+Stemvoorkeur,FvD,16,0.04
+Stemvoorkeur,GL,26,0.06
+Stemvoorkeur,PvD,14,0.03
+Stemvoorkeur,PvdA,36,0.08
+Stemvoorkeur,PVV,63,0.15
+Stemvoorkeur,SGP,4,0.01
+Stemvoorkeur,SP,26,0.06
+Stemvoorkeur,VVD,88,0.2
+Stemvoorkeur,Weet niet,64,0.15
+Vaccineren,Doen,107,0.25
+Vaccineren,Niet doen,49,0.11
+Vaccineren,Zeer zeker doen,236,0.55
+Vaccineren,Zeer zeker niet doen,40,0.09
+Vertrouwen banken & grote bedrijven,Medium vertrouwen,220,0.51
+Vertrouwen banken & grote bedrijven,Veel vertrouwen,42,0.1
+Vertrouwen banken & grote bedrijven,Weinig vertrouwen,101,0.23
+Vertrouwen democratie,Medium vertrouwen,136,0.31
+Vertrouwen democratie,Veel vertrouwen,145,0.34
+Vertrouwen democratie,Weinig vertrouwen,82,0.19
+Vertrouwen EU,Medium vertrouwen,162,0.38
+Vertrouwen EU,Veel vertrouwen,110,0.25
+Vertrouwen EU,Weinig vertrouwen,91,0.21
+Vertrouwen journalistiek,Medium vertrouwen,145,0.34
+Vertrouwen journalistiek,Veel vertrouwen,110,0.25
+Vertrouwen journalistiek,Weinig vertrouwen,108,0.25
+Vertrouwen NL politiek,Medium vertrouwen,188,0.44
+Vertrouwen NL politiek,Veel vertrouwen,73,0.17
+Vertrouwen NL politiek,Weinig vertrouwen,102,0.24
+Vertrouwen wetenschap,Medium vertrouwen,107,0.25
+Vertrouwen wetenschap,Veel vertrouwen,219,0.51
+Vertrouwen wetenschap,Weinig vertrouwen,37,0.09

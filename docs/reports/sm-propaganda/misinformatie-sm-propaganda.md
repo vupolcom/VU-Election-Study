@@ -79,6 +79,8 @@ politieke informatie te gebruiken.
 Wie kijkt er naar eigen kanalen politici
 </p>
 
+Download data: \[[Kijken-eigen-kanalen](Kijken_eigen_kanalen.csv)\]
+
 `N=21`
 
 <img src="kiezers en misinformatie2-1.png" alt="Wie kijkt er naar alternatieve blogs"  />
@@ -86,10 +88,15 @@ Wie kijkt er naar eigen kanalen politici
 Wie kijkt er naar alternatieve blogs
 </p>
 
+Download data:
+\[[Bekijken-alternatieve-blogs](Bekijken_alternatieve_blogs.csv)\]
+
 <img src="kiezers en misinformatie3-1.png" alt="Wie gebruikt Whatsapp voor Politiek Nieuws"  />
 <p class="caption">
 Wie gebruikt Whatsapp voor Politiek Nieuws
 </p>
+
+Download data: \[[Gebruik-whatsapp](Gebruik_whatsapp.csv)\]
 
 `N=41`
 
@@ -97,3 +104,5 @@ Wie gebruikt Whatsapp voor Politiek Nieuws
 <p class="caption">
 Wie gebruikt Telegram voor Politiek Nieuws
 </p>
+
+Download data: \[[Gebruik-telegram](Gebruik_telegram.csv)\]

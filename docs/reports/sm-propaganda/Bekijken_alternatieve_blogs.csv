@@ -1,0 +1,59 @@
+id,value,n,perc
+Gender,female,9,0.43
+Gender,male,12,0.57
+Ideologie,Links,5,0.24
+Ideologie,Midden,8,0.38
+Ideologie,Rechts,6,0.29
+Leeftijd,<24,5,0.24
+Leeftijd,>64,6,0.29
+Leeftijd,25-34,1,0.05
+Leeftijd,35-44,1,0.05
+Leeftijd,45-54,3,0.14
+Leeftijd,55-64,5,0.24
+Opleiding,Geen informatie,1,0.05
+Opleiding,Hoog opgeleid,7,0.33
+Opleiding,Laag opgeleid,11,0.52
+Opleiding,Medium opgeleid,2,0.1
+Regio,Een van de 3 grote steden,1,0.05
+Regio,Het noorden,4,0.19
+Regio,Het oosten,6,0.29
+Regio,Het westen,6,0.29
+Regio,Het zuiden,4,0.19
+Spiral of Silence,Alleen tegen bekenden ,10,0.48
+Spiral of Silence,Houd mening voor me,3,0.14
+Spiral of Silence,Kom altijd voor mening uit,8,0.38
+Stemmen,Ja,19,0.9
+Stemmen,Weet niet,2,0.1
+Stemvoorkeur,50Plus,1,0.05
+Stemvoorkeur,CDA,1,0.05
+Stemvoorkeur,CU,2,0.1
+Stemvoorkeur,FvD,1,0.05
+Stemvoorkeur,GL,1,0.05
+Stemvoorkeur,PvD,1,0.05
+Stemvoorkeur,PVV,1,0.05
+Stemvoorkeur,SGP,1,0.05
+Stemvoorkeur,SP,1,0.05
+Stemvoorkeur,VVD,1,0.05
+Stemvoorkeur,Weet niet,10,0.48
+Vaccineren,Doen,4,0.19
+Vaccineren,Niet doen,3,0.14
+Vaccineren,Zeer zeker doen,12,0.57
+Vaccineren,Zeer zeker niet doen,2,0.1
+Vertrouwen banken & grote bedrijven,Medium vertrouwen,13,0.62
+Vertrouwen banken & grote bedrijven,Veel vertrouwen,1,0.05
+Vertrouwen banken & grote bedrijven,Weinig vertrouwen,4,0.19
+Vertrouwen democratie,Medium vertrouwen,6,0.29
+Vertrouwen democratie,Veel vertrouwen,8,0.38
+Vertrouwen democratie,Weinig vertrouwen,4,0.19
+Vertrouwen EU,Medium vertrouwen,7,0.33
+Vertrouwen EU,Veel vertrouwen,5,0.24
+Vertrouwen EU,Weinig vertrouwen,6,0.29
+Vertrouwen journalistiek,Medium vertrouwen,7,0.33
+Vertrouwen journalistiek,Veel vertrouwen,5,0.24
+Vertrouwen journalistiek,Weinig vertrouwen,6,0.29
+Vertrouwen NL politiek,Medium vertrouwen,9,0.43
+Vertrouwen NL politiek,Veel vertrouwen,4,0.19
+Vertrouwen NL politiek,Weinig vertrouwen,5,0.24
+Vertrouwen wetenschap,Medium vertrouwen,3,0.14
+Vertrouwen wetenschap,Veel vertrouwen,13,0.62
+Vertrouwen wetenschap,Weinig vertrouwen,2,0.1
