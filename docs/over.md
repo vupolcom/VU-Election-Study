@@ -42,14 +42,20 @@ Andreu Casas is Universitair Docent aan de afdeling Communicatiewetenschap van d
 Zijn onderzoek gaat in de breedste zin over politieke communicatie, openbare beleidsprocessen, en computationele sociale wetenschappen. Hij onderzoek hoe sociale bewegingen en belangengroepen de politieke agenda en het besluitvormingsproces beïnvloeden in de huidige mediaomgeving. Hij is gespecialiseerd in het toepassen van kunstmatige intelligentie om tekst en beelden te analyseren.
 
 ### dr. Anita van Hoof
-
-
 <img width="100px" align="left" src="https://research.vu.nl/files-asset/8988389/PeVa_IMG_8608_Fsw_communicatiewetenschappen_portretten_150pix_.jpg/">
 Email: <a href="mailto:a.m.j.van.hoof@vu.nl">a.m.j.van.hoof@vu.nl</a>
 
 Anita van Hoof is Universitair Docent aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam. 
 Haar onderzoek focust op journalistiek en het effect van nieuws op publieke opinie. 
 Zij is sinds 2002 betrokken bij het verkiezingsonderzoek van de VU, wat onder andere geleid heeft tot de boeken <a href="https://www.bol.com/nl/p/de-puinhopen-in-het-nieuws/1001004001844083/">De Puinhopen van Paars</a> en <a href="https://www.bol.com/nl/p/nederland-vijfstromenland/1001004005009216/">Nederland Vijfstromenland</a>. 
+
+### Marloes Jansen, MSc.
+<img width="100px" align="left" src="https://twitter.com/MarloesJ1990/photo>
+Email: <a href="mailto:m.g.m.jansen@vu.nl">m.g.m.jansen@vu.nl</a> <br/>
+
+Marloes Jansen is lecturer aan de afdeling Communicatiewetenschap van de Vrije Universiteit Amsterdam en promovenda bij de afdeling Media, Culture \& Heritage van Newcastle University (VK), waar ze haar proefschrift over communicatiestrategieën van politici via Twitter aan het afronden is. Hiervoor was Jansen werkzaam als docent en onderzoeker bij de afdeling Media \& Communication Design van Northumbria University (VK) en daarvoor bij de afdeling Communicatiewetenschap van Universiteit Twente, waar ze haar mastertitel heeft behaald (cum laude).   Haar onderzoek focust op politieke en publieke communicatie. Ze is vooral geïnteresseerd in genderverschillen in communicatie van politici via sociale media; genderverschillen in mediaberichtgeving over politici; communicatiestrategieën van overheidsorganisaties en de digitalisering van overheidsdiensten. Ze maakt vaak gebruik van een combinatie van kwalitatieve en kwantitatieve onderzoeksmethoden, zoals thematische analyses, inhoudsanalyses en enquêtes.
+
+
 
 ### prof. dr. Jan Kleinnijenhuis
 
