@@ -27,151 +27,158 @@ source(here("src/lib/data.R"))
 ```
 
 ```{r "load data"}
-d <- read_csv("../../../../../../Desktop/party-candidates-15aug2020-22feb2021.csv") %>% filter(day>"2021-01-15")
+#d <- read_csv("../../../../../../Desktop/party-candidates-15aug2020-22feb2021.csv") %>% filter(day>"2021-01-15")
 
-corp <- corpus(d, text_field = "text", meta = c("twitter"))
+#corp <- corpus(d, text_field = "text", meta = c("twitter"))
 ```
 
+```{r, eval=F}
 # Verspreiden van Informatie
-In onderstaande figuur is te zien welke woorden Mark Rutte (zowel persoonlijk als ambtsaccount), Wopke Hoekstra, Gert-Jan Segers en Sigrid Kaag sinds het begin van de verkiezingscampagne het meest voorkomen. 
-Rutte spreekt het meest over de coronacrisis en gerelateerde maatregelen waar "we" ons samen aan moeten houden.
-De overige lijstrekkers van partijen die de huidige demissionaire regering vormen spreken ook over de coronacrisis, maar gebruiken ook woorden van hoop -- mooie, nieuwe, #nudoorpakken.
-Duidelijk wordt dat op basis van deze woorden er geen aanleiding is om aan te nemen dat het hier om misinformatie gaat.
-
-```{r "sharing on twitter - coalitiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
-dtm <- dfm(corp,
-           remove = stopwords("Dutch"), remove_punct = TRUE, 
-           groups = "twitter") %>%
-    dfm_trim(min_termfreq = 3)
-
-p1 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>5,
-         group == "markrutte" | group ==  "MinPres") %>%
-  ggplot(aes(x = frequency, y = feature)) +
-  geom_col(fill = "#21908CFF") +
-  facet_grid(group~., scales = "free", space = "free") +
-  theme_minimal() +
-  labs(y = "", 
-       x = "",
-       title = "Meest Gebruikte Woorden") + 
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
-
-p2 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>5, group =="WBHoekstra" | group =="gertjansegers" | group =="SigridKaag") %>%
-  ggplot(aes(x = frequency, y = feature)) +
-  geom_col(fill = "#21908CFF") +
-  facet_grid(group~., scales = "free", space = "free") +
-  theme_minimal() +
-  labs(y = "", 
-       x = "") + 
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())  
-
-p1 + p2
-
-df <- textstat_frequency(dtm, groups = "twitter")
+#In onderstaande figuur is te zien welke woorden Mark Rutte (zowel persoonlijk als ambtsaccount), Wopke Hoekstra, Gert-Jan Segers en Sigrid Kaag sinds het begin van de verkiezingscampagne het meest voorkomen. 
+#Rutte spreekt het meest over de coronacrisis en gerelateerde maatregelen waar "we" ons samen aan moeten houden.
+#De overige lijstrekkers van partijen die de huidige demissionaire regering vormen spreken ook over de coronacrisis, maar gebruiken ook woorden van hoop -- mooie, nieuwe, #nudoorpakken.
+#Duidelijk wordt dat op basis van deze woorden er geen aanleiding is om aan te nemen dat het hier om misinformatie gaat.
 ```
 
-Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
+```{r "sharing on twitter - coalitiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter", eval = F}
+#dtm <- dfm(corp,
+#           remove = stopwords("Dutch"), remove_punct = TRUE, 
+#           groups = "twitter") %>%
+#    dfm_trim(min_termfreq = 3)
 
-Kijkend naar de oppositiepartijen, zien we dat Farid Azarkan (\@F\_azarkan) van Denk veel berichten _retweet_.
-Verder valt op dat er veel over racisme, moties, het kabinet en discriminatie gepraat wordt.
-Nadere inspectie van de data laat zien dat het hier niet gaat over desinformatie, of informatie van misleidende aard.
-Klaver (\@jesseklaver) van GroenLinks heeft het voornamelijk over perspectief vooor jongeren en over een nieuwe toekomst van Nederland -- geen reden om aan te nemen dat het gaat over desinformatie, of informatie van misleidende aard.
-Hetzelfde geldt voor Lilian Marijnissen (\@MarijnissenL) van de SP, Ester Ouwehand (\@esterouwehand) van PvdD, Kees van der Staaij (\@keesvdstaaij) van de SGP, Liane den Haan (\@LiandedenHaan) van 50Plus, en Lilianne Ploumen (\@PloumenLilianne) van de PvdA.
-Kijken naar de woorde die Geert Wilders (\@geertwilderspvv) van de PVV het meest gebruikt, zien we woorden als vrijheid, avondklok, motie, 17 maart, en #corona(virus).
-Inspectie van de data laat veel kritiek op het (demissionaire) kabinet zien, en ideologisch sterk gekleurde informatie -- maar het lijkt meer op framing van bijv. het immigratiedebat dan echt bewuste misinformatie.
-Kijkend naar de woorden die Thierry Baudet (\@thierrybaudet) van FvD het meest gebruikt, en na inspectie van de data, zien we meerdere berichten met informatie die onjuist is. 
-Daarnaast zien we ook dat Baudet als enige samenzeerders retweet, zoals bijvoorbeeld \@wierdduk.
+#p1 <- textstat_frequency(dtm, groups = "twitter") %>%
+#  filter(frequency>5,
+#         group == "markrutte" | group ==  "MinPres") %>%
+#  ggplot(aes(x = frequency, y = feature)) +
+#  geom_col(fill = "#21908CFF") +
+#  facet_grid(group~., scales = "free", space = "free") +
+#  theme_minimal() +
+#  labs(y = "", 
+#       x = "",
+#       title = "Meest Gebruikte Woorden") + 
+#  theme(plot.title = element_text(hjust = 0.5),
+#          plot.subtitle = element_text(hjust = 0.5),
+#          legend.position="none",
+#          legend.title = element_blank())
+
+#p2 <- textstat_frequency(dtm, groups = "twitter") %>%
+#  filter(frequency>5, group =="WBHoekstra" | group =="gertjansegers" | group =="SigridKaag") %>%
+#  ggplot(aes(x = frequency, y = feature)) +
+#  geom_col(fill = "#21908CFF") +
+#  facet_grid(group~., scales = "free", space = "free") +
+#  theme_minimal() +
+#  labs(y = "", 
+#       x = "") + 
+#  theme(plot.title = element_text(hjust = 0.5),
+#          plot.subtitle = element_text(hjust = 0.5),
+#          legend.position="none",
+#          legend.title = element_blank())  
+
+#p1 + p2
+
+#df <- textstat_frequency(dtm, groups = "twitter")
+```
+
+```{r}
+#Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
+
+#Kijkend naar de oppositiepartijen, zien we dat Farid Azarkan (\@F\_azarkan) van Denk veel berichten _retweet_.
+#Verder valt op dat er veel over racisme, moties, het kabinet en discriminatie gepraat wordt.
+#Nadere inspectie van de data laat zien dat het hier niet gaat over desinformatie, of informatie van misleidende aard.
+#Klaver (\@jesseklaver) van GroenLinks heeft het voornamelijk over perspectief vooor jongeren en over een nieuwe toekomst van Nederland -- geen reden om aan te nemen dat het gaat over desinformatie, of informatie van misleidende aard.
+#Hetzelfde geldt voor Lilian Marijnissen (\@MarijnissenL) van de SP, Ester Ouwehand (\@esterouwehand) van PvdD, Kees van der Staaij (\@keesvdstaaij) van de SGP, Liane den Haan (\@LiandedenHaan) van 50Plus, en Lilianne Ploumen (\@PloumenLilianne) van de PvdA.
+#Kijken naar de woorde die Geert Wilders (\@geertwilderspvv) van de PVV het meest gebruikt, zien we woorden als vrijheid, avondklok, motie, 17 maart, en #corona(virus).
+#Inspectie van de data laat veel kritiek op het (demissionaire) kabinet zien, en ideologisch sterk gekleurde informatie -- maar het lijkt meer op framing van bijv. het immigratiedebat dan echt bewuste misinformatie.
+#Kijkend naar de woorden die Thierry Baudet (\@thierrybaudet) van FvD het meest gebruikt, en na inspectie van de data, zien we meerdere berichten met informatie die onjuist is. 
+#Daarnaast zien we ook dat Baudet als enige samenzeerders retweet, zoals bijvoorbeeld \@wierdduk.
+```
 
 ```{r "sharing on twitter - oppositiepartijen", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter"}
 #k <- kwic(corpus_subset(corp, twitter %in% c("thierrybaudet")), 'lockdown*', window = 7)
 #head(k, 15)
 #which(str_detect(d$text, "Ook Newsweek bevestigt dat"))
 
-p3 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>10,
-         group == "F_azarkan" | group =="jesseklaver" | group =="MarijnissenL" ) %>%
-  ggplot(aes(x = frequency, y = feature)) +
-  geom_col(fill = "#21908CFF") +
-  facet_grid(group~., scales = "free", space = "free") +
-  theme_minimal() +
-  labs(y = "", 
-       x = "") + 
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
+#p3 <- textstat_frequency(dtm, groups = "twitter") %>%
+#  filter(frequency>10,
+#         group == "F_azarkan" | group =="jesseklaver" | group =="MarijnissenL" ) %>%
+#  ggplot(aes(x = frequency, y = feature)) +
+#  geom_col(fill = "#21908CFF") +
+#  facet_grid(group~., scales = "free", space = "free") +
+#  theme_minimal() +
+#  labs(y = "", 
+#       x = "") + 
+#  theme(plot.title = element_text(hjust = 0.5),
+#          plot.subtitle = element_text(hjust = 0.5),
+#          legend.position="none",
+#          legend.title = element_blank())
 
-p4 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>10,
-         group =="estherouwehand"| group =="keesvdstaaij" | group =="LianedenHaan" ) %>%
-  ggplot(aes(x = frequency, y = feature)) +
-  geom_col(fill = "#21908CFF") +
-  facet_grid(group~., scales = "free", space = "free") +
-  theme_minimal() +
-  labs(y = "", 
-       x = "") + 
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
+#p4 <- textstat_frequency(dtm, groups = "twitter") %>%
+#  filter(frequency>10,
+#         group =="estherouwehand"| group =="keesvdstaaij" | group =="LianedenHaan" ) %>%
+#  ggplot(aes(x = frequency, y = feature)) +
+#  geom_col(fill = "#21908CFF") +
+#  facet_grid(group~., scales = "free", space = "free") +
+#  theme_minimal() +
+#  labs(y = "", 
+#       x = "") + 
+#  theme(plot.title = element_text(hjust = 0.5),
+#          plot.subtitle = element_text(hjust = 0.5),
+#          legend.position="none",
+#          legend.title = element_blank())
   
-p5 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>10,
-         group =="PloumenLilianne"| group =="geertwilderspvv") %>%
-  ggplot(aes(x = frequency, y = feature)) +
-  geom_col(fill = "#21908CFF") +
-  facet_grid(group~., scales = "free", space = "free") +
-  theme_minimal() +
-  labs(y = "", 
-       x = "") + 
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
+#p5 <- textstat_frequency(dtm, groups = "twitter") %>%
+#  filter(frequency>10,
+#         group =="PloumenLilianne"| group =="geertwilderspvv") %>%
+#  ggplot(aes(x = frequency, y = feature)) +
+#  geom_col(fill = "#21908CFF") +
+#  facet_grid(group~., scales = "free", space = "free") +
+#  theme_minimal() +
+#  labs(y = "", 
+#       x = "") + 
+#  theme(plot.title = element_text(hjust = 0.5),
+#          plot.subtitle = element_text(hjust = 0.5),
+#          legend.position="none",
+#          legend.title = element_blank())
 
-p6 <- textstat_frequency(dtm, groups = "twitter") %>%
-  filter(frequency>15, group ==  "thierrybaudet") %>%
-  ggplot(aes(x = frequency, y = feature)) +
-  geom_col(fill = "#21908CFF") +
-  facet_grid(group~., scales = "free", space = "free") +
-  theme_minimal() +
-  labs(y = "", 
-       x = "") + 
-  theme(plot.title = element_text(hjust = 0.5),
-          plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
-          legend.title = element_blank())
+#p6 <- textstat_frequency(dtm, groups = "twitter") %>%
+#  filter(frequency>15, group ==  "thierrybaudet") %>%
+#  ggplot(aes(x = frequency, y = feature)) +
+#  geom_col(fill = "#21908CFF") +
+#  facet_grid(group~., scales = "free", space = "free") +
+#  theme_minimal() +
+#  labs(y = "", 
+#       x = "") + 
+#  theme(plot.title = element_text(hjust = 0.5),
+#          plot.subtitle = element_text(hjust = 0.5),
+#          legend.position="none",
+#          legend.title = element_blank())
 
-p3 + p4
+#p3 + p4
 ```
 
-Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
 
 ```{r "sharing on twitter - oppositiepartijen2", fig.height=15, fig.width=10, fig.cap="Regeringspartijleiders op Twitter (2)"}
-p5 + p6
+#p5 + p6
 ```
-
-Download data: [`r export_data(df, "Politici's meestgebruikte woorden")`]
 
 # Ontvankelijk voor misinformatie
 ```{r "data kiezers"}
 w0 <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%
   select(iisID, gender, age, education, region, E1, E2, F2_1:F2_11)
 w1 <- read_csv("../../../data/intermediate/wave1.csv") %>%
-  select(iisID, A1, A2, H1:H7b,I1_1:I1_9, I3_15,I4_other_blogs, I4_other_sites,I5_1:I5_11, I6_1:I6_6,I7_other)
+  select(iisID, A1, A2, H1:H7b,I1_1:I1_9, I3_15,I4_other_blogs, I4_other_sites,I5_1:I5_11, I6_1:I6_6,I7_other,B2_1:B2_13, B3_1:B3_13)
 
 
 d <- left_join(w1, w0, by = "iisID") 
 ```
+Wetenschappelijk onderzoek laat zien dat misinformatie en geruchten welig tiert op het internet (bijv. [hier](https://www.pnas.org/content/113/3/554/), [hier](https://dl.acm.org/doi/abs/10.1145/1963405.1963499?casa_token=2n8dEq5JVSMAAAAA:5kD7AoBIdYU5yXyLzWeLk2daWitkAjYkn0yB3Ew2ZX45yJMPsxjLO9hQ5xGwN1xCXU4Kaz8SOWZN), [hier](https://www.tandfonline.com/doi/full/10.1080/21670811.2019.1623701?casa_token=8jbKXtXivQMAAAAA%3AN2FCPCjWecX4ZdCLP2JbJtZ0_mhAsoDl9Brhyfpy4b-_zomDFWCVbHrcoaaDGdQKTNEdkgY-lpew), [hier](https://www.sciencedirect.com/science/article/pii/S0277953619305465), en [hier](https://journals.sagepub.com/doi/full/10.1177/0894439314555329)). 
+Hoe minder journalistieke controle op platforms, hoe meer eigenaarschap, en daarmee vrijheid, de eigenaar van het platform kan nemen. 
+Voorbeelden hiervan zij de [recente afsluiting van Lange Frans' YouTube account](https://www.ad.nl/show/youtube-verdedigt-verwijderen-account-lange-frans-richtlijnen-meermaals-geschonden~a5606d7d/) en [Jensen zijn besluit om YouTube te verlaten nadat zijn shows gecencureerd werden](https://www.mediacourant.nl/2020/11/robert-jensen-verlaat-youtube-vanwege-toenemende-censuur/), maar ook heeft [Whatsapp haar beleid ten opzichte van informatie delen aangepast om verspreiding van geruchten tegen te gaan](https://www.theguardian.com/technology/2020/apr/07/whatsapp-to-impose-new-limit-on-forwarding-to-fight-fake-news).
+Experts waarschuwen dat [Signal en Telegram de nieuwe hotspots van misinformatie worden ](https://www.nytimes.com/2021/02/03/technology/personaltech/telegram-signal-misinformation.html).
+Ondanks vele waarschuwingen, geeft een redelijk gedeelte van de mensen aan social media en messaging apps als politici's eigen kanalen, alternatieve blogs, Whatsapp en Telegram te gebruiken voor hun nieuwsconsumptie.
+**Wie zijn deze mensen?**
 
-Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`) -- een kanaal waarvan we weten dat er meer misinformatie circuleert -- zien we in onderstaand figuur dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor politieke informatie te gebruiken -- er is ook een gelijke spreiding over leeftijd.
+Kijkend naar wie er naar politici hun eigen kanalen kijken (`N==893`)  zien we in onderstaand figuur dat ongeveer evenveel mannen als vrouwen aangeven dit als bron voor politieke informatie te gebruiken -- er is ook een gelijke spreiding over leeftijd.
 Daarnaast is deze groep het vaakst laagopgeleid, en woont bijna nooit in 1 van de 3 grote NL steden.
 Mensen die dit kanaal gebruiken om iets te weten te komen over politiek en actualiteiten zijn over het algemeen nog zwevende kiezers die wel van plan zijn om te gaan stemmen en zijn meestal niet links-georienteerd.
 Ook komen zij eigenlijk alleen tegen bekenden (familie en vrienden) uit voor hun mening over gevoelige politieke onderwerpen.
@@ -235,6 +242,124 @@ ggplot(df, aes(x = perc, y = id, fill = value)) +
 ```
 
 Download data: [`r export_data(df, "Kijken-eigen-kanalen")`]
+
+Kijkend naar welke politici opvallen voor deze groep (zie linkerkant van onderstaand Figuur), zien we dat de meeste politici gemiddeld opvallend in het nieuws zijn.
+Alleen de CU en Gert-Jan Segers, de PvdD en Esther Ouwehand zijn nauwelijks opvallend.
+Beide hebben wel een eigen Insta channel, maar geen eigen youtube kanaal.
+Verrassend genoeg is Baudet gemiddeld nog steeds het meest negatief opgevallen (zie waardering in de rechterzijde van onderstaande figuur), zelfs voor de group die politici's eigen kanalen gebruikt om voor nieuws over politieke activiteiten.
+Andere politici die een "onvoldoende rapportcijfer" krijgen voor hun media optredens zijn Geert Wilders, Farid Azarkan, Esther Ouwehand en Jesse Klaver.
+De rest "slaagt" met de hakken over de sloot: magere zesjes.
+
+```{r "kiezers en misinformatie: welke politici vallen op", fig.height=10, fig.width=10, fig.cap="Welke politici vallen op"}
+df <- d %>%
+  drop_na(I3_15) %>%
+  select(B2_1:B3_13) %>%
+  pivot_longer(cols = B2_1:B2_13,
+               names_to = "partij", values_to = "Zichtbaarheid") %>%
+  mutate(partij = recode(partij, `B2_1` = "CDA & Wopke Hoekstra", 
+                        `B2_2` = "CU & Gert-Jan Segers", 
+                        `B2_3` = "D66 & Sigrid Kaag", 
+                        `B2_4` = "Denk & Farid Azarkan", 
+                        `B2_5` = "FvD & Thierry Baudet",
+                        `B2_6` = "GL & Jesse Klaver", 
+                        `B2_7` = "PvdA & Lilianne Ploumen", 
+                        `B2_8` = "PvdD & Esther Ouwehand", 
+                        `B2_9` = "PVV & Geert Wilders", 
+                        `B2_10` = "SGP  & Kees van der Staaij", 
+                        `B2_11` = "SP & Lilian Marijnissen", 
+                        `B2_12` = "VVD & Mark Rutte", 
+                        `B2_13` = "50+ & Liane den Haan",
+                        `B3_1` = "CDA & Wopke Hoekstra", 
+                        `B3_2` = "CU & Gert-Jan Segers", 
+                        `B3_3` = "D66 & Sigrid Kaag", 
+                        `B3_4` = "Denk & Farid Azarkan", 
+                        `B3_5` = "FvD & Thierry Baudet",
+                        `B3_6` = "GL & Jesse Klaver", 
+                        `B3_7` = "PvdA & Lilianne Ploumen", 
+                        `B3_8` = "PvdD & Esther Ouwehand", 
+                        `B3_9` = "PVV & Geert Wilders", 
+                        `B3_10` = "SGP  & Kees van der Staaij", 
+                        `B3_11` = "SP & Lilian Marijnissen", 
+                        `B3_12` = "VVD & Mark Rutte", 
+                        `B3_13` = "50+ & Liane den Haan"),
+         Zichtbaarheid = na_if(Zichtbaarheid, 999)) %>%
+  drop_na(Zichtbaarheid) %>%
+  pivot_longer(cols = B3_1:B3_13, values_to = "Waardering") %>%
+  mutate(name = recode(name, `B3_1` = "CDA & Wopke Hoekstra", 
+                        `B3_2` = "CU & Gert-Jan Segers", 
+                        `B3_3` = "D66 & Sigrid Kaag", 
+                        `B3_4` = "Denk & Farid Azarkan", 
+                        `B3_5` = "FvD & Thierry Baudet",
+                        `B3_6` = "GL & Jesse Klaver", 
+                        `B3_7` = "PvdA & Lilianne Ploumen", 
+                        `B3_8` = "PvdD & Esther Ouwehand", 
+                        `B3_9` = "PVV & Geert Wilders", 
+                        `B3_10` = "SGP  & Kees van der Staaij", 
+                        `B3_11` = "SP & Lilian Marijnissen", 
+                        `B3_12` = "VVD & Mark Rutte", 
+                        `B3_13` = "50+ & Liane den Haan"),
+         Waardering = na_if(Waardering, 999),
+         check = ifelse(name == partij, 1, 0)) %>%
+  drop_na(Waardering) %>%
+  filter(check == 1) %>%
+  select(partij, Zichtbaarheid, Waardering) %>%
+  pivot_longer(cols = Zichtbaarheid:Waardering) %>%
+  group_by(partij, name) %>%
+  summarise(gem = round(mean(value),1))
+
+df %>%
+  mutate(name = recode(name, 
+                       `Zichtbaarheid` = "Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)",
+                       `Waardering` = "Waardering \n Erg negatief (0) - Erg Positief (10)"),
+         name = factor(name, 
+                       levels = c("Zichtbaarheid \n Nooit iets van vernomen (0) - Zeer opvallend (3)", "Waardering \n Erg negatief (0) - Erg Positief (10)"))) %>%
+  ggplot(aes(x = gem, y = reorder(partij, gem), label = gem)) +
+  geom_col(fill = "#21908CFF") +
+  geom_text(hjust = 0, nudge_x = 0.05, size = 2.5) +
+  facet_grid(.~name, scales = "free") +
+  theme_minimal() +
+  labs(y = "", 
+       x = "",
+       title = "Media Performance",
+       subtitle = "Gemiddelde van respondenten die naar eigen kanalen kijken") +
+  theme(plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="none",
+          legend.title = element_blank())
+```
+
+Download data: [`r export_data(df, "Kijken-eigen-kanalen2")`]
+
+Kijkend naar de uitwisselingen van partijvoorkeuren van de groep mensen die politici's eigen kanalen bekijken sinds het begin van de januari van deze maand -- net voordat de campagnes begonnen -- zien we dat de meeste mensen die nog zwevend waren in januari, naar de VVD, PVV en in mindere mate de PvdA trekken. 
+Slechts een klein gedeelte van deze groep schuift naar FvD.
+
+```{r "kiezers en misinformatie: verschuivingen in zeteks", fig.height=10, fig.width=10, fig.cap="Veranderingen van stemvoorkeur in zetels"}
+w0 <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%     drop_na(I3_15) %>%
+  select(iisID, A2_0 = A2)
+w1 <- read_csv("../../../data/intermediate/wave1.csv") %>%
+    drop_na(I3_15) %>%
+  select(iisID, A2_1 = A2)
+
+votes <- left_join(w1, w0, by = "iisID") %>%
+  mutate(A2_1 = recode(A2_1, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
+         A2_0 = recode(A2_0, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
+         A2_0 = replace_na(A2_0, "Weet niet"))
+
+library(igraph)
+ntot <- votes %>% nrow()
+gdf <- votes %>%
+  group_by(A2_1, A2_0) %>% summarize(n=n()) %>% na.omit() %>% filter(A2_1 != A2_0)
+
+gd <- full_join(gdf, gdf, by=c("A2_1"="A2_0", "A2_0"="A2_1")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y, zetels=n/ntot * 150) %>% filter(n>0)
+g <- gd %>% select(A2_0, A2_1, n, zetels) %>% filter(zetels>1) %>% graph_from_data_frame()
+
+E(g)$width = 1+E(g)$n/10 
+E(g)$label = round(E(g)$zetels, 1)
+E(g)$arrow.size=E(g)$width/2
+
+plot(g)
+```
+Download data: [`r export_data(votes, "Kijken-eigen-kanalen3")`]
 
 Een ander veel genoemd medium waar misinformatie circuleert is alternatieve blogs. 
 Er zijn aanzijnlijk minder kiezers (`N=21`) die hiervan gebruik maken als bron voor politieke informatie.
@@ -426,3 +551,4 @@ ggplot(df, aes(x = perc, y = id, fill = value)) +
 ```
 
 Download data: [`r export_data(df, "Gebruik-telegram")`]
+
