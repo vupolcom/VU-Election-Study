@@ -13,7 +13,8 @@ update_set = function(conn, query, fromproject, fromset,
                       toset, toproject=69, startdate = "2021-01-01") {
   ids = amcat.articles(conn, toproject, toset, columns = NULL)$id
   h = amcat.hits(conn,  sets=fromset, project=fromproject, 
-                 queries=query, labels="relevant", start_date="2021-01-01")
+                 queries=query, labels="relevant", start_date=startdate)
+  if (nrow(h) == 0) return()
   to_add = setdiff(h$id, ids)
   amcat.add.articles.to.set(conn, toproject, articleset=toset, articles=to_add)
 }
@@ -26,9 +27,12 @@ lijsttrekkers =partijen %>% pull(lijsttrekker) %>% na.omit() %>% tolower() %>% s
 query = str_c(lijsttrekkers, alias, partijnamen, sep = " ")
 
 conn = amcat.connect("http://vu.amcat.nl")
-
+startdate = Sys.Date() - 7
 for (i in 1:nrow(sets)) {
   s = sets[i, ]
   message(glue("[{s$label}] Updating set {s$toset} from {s$fromproject}:{s$fromset}"))
-  update_set(conn, query, s$fromproject, s$fromset, s$toset)
+  update_set(conn, query, s$fromproject, s$fromset, s$toset, startdate = startdate)
 }
+
+
+
