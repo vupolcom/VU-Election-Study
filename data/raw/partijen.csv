@@ -1,0 +1,14 @@
+partij,zoekterm,alias,lijsttrekker,fucntie,query
+CDA,CDA,,Wopke Hoekstra,minister,(CDA OR (Hoekstra AND (Wopke OR bewinds* OR minister* OR cda))) 
+CU,CU,christenunie,Gert-Jan Segers,kamerlid,"(ChristenUnie OR CU) OR (Segers AND (Gert-Jan OR parlement* OR ""tweede kamer*"" OR ""christenunie""))"
+Denk,,,Farid Azarkan,kamerlid,"(Azarkan AND (Farid OR parlement* OR ""tweede kamer*""))"
+D66,D66,,Sigrid Kaag,kamerlid,"(D66) OR (Kaag AND (Sigrid OR parlement* OR ""tweede kamer*"" OR ""d66""))"
+FvD,FvD,“forum voor democratie”,Thierry Baudet,kamerlid,"((“forum voor democratie” OR FvD) OR (Baudet AND (Thierry OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR ""forum"")))"
+GL,GL,groenlinks,Jesse Klaver,kamerlid,"((GroenLinks OR GL) OR (Klaver AND (Jesse OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR ""groenlinks"")))"
+PvdA,PvdA,“partij voor de arbeid”,Lillianne Ploumen,kamerlid,"(PvdA OR (Ploumen AND (Lilianne OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR ""pvda"" OR fractievoorzitter OR partijleider)))"
+PvdD,PvdD,“partij voor de dieren”,Esther Ouwehand,kamerlid,"PvdD OR (Ouwehand AND (Esther OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR ""pvv"" OR fractievoorzitter OR partijleider))"
+PVV,PVV,,geert wilders,kamerlid,"PVV OR (Wilders AND (Geert OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR ""pvv"" OR fractievoorzitter OR partijleider))"
+SGP,SGP,,kees van der staaij,kamerlid,"(SGP OR (Staaij AND (Kees OR ""sgp"" OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR fractievoorzitter OR partijleider)))"
+SP,SP,,lilian marijnissen,kamerlid,"(SP OR (Marijnissen AND (Lilian OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR ""sp"" OR fractievoorzitter OR partijleider)))"
+VVD,VVD,,mark rutte,premier,"VVD OR (Rutte AND (Mark OR ""min algemene zaken"" OR premier OR ""minister president"" OR ""vvd"" OR fractievoorzitter OR partijleider))"
+50Plus,,,lianne haan,kamerlid,"((Haan AND (Lianne OR ""50plus"" OR ""tweede kamerleden"" OR parlement* OR ""tweede kamer*"" OR fractievoorzitter OR partijleider)))"
