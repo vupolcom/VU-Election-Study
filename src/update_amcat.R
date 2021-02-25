@@ -1,8 +1,10 @@
 library(amcatr)
 library(glue)
 library(here)
-library(tidyverse)
+library(readr)
+library(dplyr)
 
+clean = function(x) x %>% str_replace_all("[“”]", '"')
 partijen = read_csv(here("data/raw/partijen.csv")) %>% mutate(across(everything(), clean))
 sets = read_csv(here("data/raw/amcat_sets.csv"))
 
@@ -18,18 +20,12 @@ update_set = function(conn, query, fromproject, fromset,
 
 
 ### Build query from partijen.csv
-clean = function(x) x %>% str_replace_all("[“”]", '"')
-partijen = p %>% pull(zoekterm) %>% na.omit() %>% tolower() %>% str_c(collapse = " ")
-alias = p %>% pull(alias) %>% na.omit() %>% tolower() %>% str_c(collapse = " ")
-lijsttrekkers =p %>% pull(lijsttrekker) %>% na.omit() %>% tolower() %>% str_c('"', ., '"', collapse = " ") 
+partijnamen = partijen %>% pull(zoekterm) %>% na.omit() %>% tolower() %>% str_c(collapse = " ")
+alias = partijen %>% pull(alias) %>% na.omit() %>% tolower() %>% str_c(collapse = " ")
+lijsttrekkers =partijen %>% pull(lijsttrekker) %>% na.omit() %>% tolower() %>% str_c('"', ., '"', collapse = " ") 
+query = str_c(lijsttrekkers, alias, partijnamen, sep = " ")
 
-cat(glue("({functies}) NOT ({lijsttrekkers} {alias} {partijen})"))
-query = str_c(lijsttrekkers, alias, partijen, sep = " ")
-
-library(amcatr)
 conn = amcat.connect("http://vu.amcat.nl")
-
-update_set(conn, query, 2, 1340, 2562)
 
 for (i in 1:nrow(sets)) {
   s = sets[i, ]
