@@ -2,10 +2,6 @@
 title: 'VU 2021 Election Study: Wilders (PVV) and Baudet's (FdV) social media activity, followers, and engagement
 author: "Andreu Casas"
 permalink: reports/SM-report02-wilders-baudet/
-output: 
-  md_document:
-    toc: yes
-    preserve_yaml: yes
 ---
 
 <sup>February 25, 2021</sup>
