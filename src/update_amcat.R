@@ -1,3 +1,5 @@
+#!/usr/bin/Rscript
+
 library(amcatr)
 library(glue)
 library(here)
