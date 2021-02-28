@@ -4,8 +4,8 @@ library(here)
 library(readr)
 library(dplyr)
 
-clean = function(x) x %>% str_replace_all("[“”]", '"')
-partijen = read_csv(here("data/raw/partijen.csv")) %>% mutate(across(everything(), clean))
+source(here("src/lib/amcatlib.R"))
+
 sets = read_csv(here("data/raw/amcat_sets.csv"))
 
 #' Add articles from fromset matching query to toset that are not yet present
@@ -19,14 +19,10 @@ update_set = function(conn, query, fromproject, fromset,
   amcat.add.articles.to.set(conn, toproject, articleset=toset, articles=to_add)
 }
 
+parties = get_party_queries()
+query = str_c(parties$party_query, ' OR "', parties$lijsttrekker, '"', collapse = " OR ")
 
-### Build query from partijen.csv
-partijnamen = partijen %>% pull(zoekterm) %>% na.omit() %>% tolower() %>% str_c(collapse = " ")
-alias = partijen %>% pull(alias) %>% na.omit() %>% tolower() %>% str_c(collapse = " ")
-lijsttrekkers =partijen %>% pull(lijsttrekker) %>% na.omit() %>% tolower() %>% str_c('"', ., '"', collapse = " ") 
-query = str_c(lijsttrekkers, alias, partijnamen, sep = " ")
-
-conn = amcat.connect("http://vu.amcat.nl")
+conn = amcat.connect("https://vu.amcat.nl")
 startdate = Sys.Date() - 7
 for (i in 1:nrow(sets)) {
   s = sets[i, ]
