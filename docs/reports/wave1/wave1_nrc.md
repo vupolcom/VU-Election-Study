@@ -10,9 +10,12 @@ output:
 
 -   [Politici in de Media](#politici-in-de-media)
 -   [Kiezersperspectief](#kiezersperspectief)
+    -   [Zwevende kiezers](#zwevende-kiezers)
 
 Politici in de Media
 ====================
+
+**NOTE: NIEUWE FIGUREN, OUDE TEKST**
 
 Met de campagne in de stijgers, zullen we zien dat politici de komende
 meer en meer in de media verschijnen. Om te kijken waar welke politici
@@ -226,3 +229,18 @@ Figuur Mediagebruik Zwevende Kiezers
 
 Download data: \[[Figuur Mediagebruik Zwevende
 Kiezers](Figuur_Mediagebruik_Zwevende_Kiezers.csv)\]
+
+Zwevende kiezers
+----------------
+
+Kijkend naar hoe kiezers’ partij voorkeur tov eind januari, zien we dat
+de twee grote winnaars van de zwevende kiezers de VVD en de PVV zijn. De
+PvdA lijkt een goede derde.
+
+<img src="Verschuivingen in zetels-1.png" alt="Veranderingen van stemvoorkeur in zetels"  />
+<p class="caption">
+Veranderingen van stemvoorkeur in zetels
+</p>
+
+Download data: \[[Figuur Verschuivingen in
+Zetels](Figuur_Verschuivingen_in_Zetels.csv)\]

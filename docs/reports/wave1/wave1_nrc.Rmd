@@ -65,8 +65,19 @@ krant <- krant %>%
                          `nrc` = "NRC",
                          `telegraaf` = "De Telegraaf",
                          `volkskrant` = "de Volkskrant",
-                         `trouw` = "Trouw")) %>%
+                         `trouw` = "Trouw"),
+         id2 = paste(date, query, sep = ".")) %>%
   ungroup()
+
+df <- expand_grid(date = seq(as.Date("2021/01/25"), 
+                             as.Date("2021/02/27"), by = "day"),
+                  query = c("50Plus", "CDA", "CU", "D66", "Denk", "FvD", "GL",
+                            "PvdA", "PvdD", "PVV", "SGP", "SP", 
+                            "VVD")) %>%
+  mutate(id2 = paste(date, query, sep = "."))
+
+krant <- left_join(df, krant, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 ev <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2554, 
@@ -85,7 +96,11 @@ ev <- ev %>%
          medium = "EenVandaag") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv")
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = "."))
+
+ev <- left_join(df, ev, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 gnl <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2553, 
@@ -104,7 +119,11 @@ gnl <- gnl %>%
          medium = "WNL Goedemorgen Nederland") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv")
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = "."))
+
+gnl <- left_join(df, gnl, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 nos <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2552, 
@@ -129,7 +148,11 @@ nos <- nos %>%
          medium = "NOS journaal") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv")
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = "."))
+
+nos <- left_join(df, nos, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 nu <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2551, 
@@ -148,7 +171,11 @@ nu <- nu %>%
          medium = "Nieuwsuur") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv")
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = "."))
+
+nu <- left_join(df, nu, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 va <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2550, 
@@ -173,9 +200,12 @@ va <- va %>%
          medium = "de Vooravond") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv") %>%
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = ".")) %>%
   ungroup()
 
+va <- left_join(df, va, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 M <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2549, 
@@ -189,9 +219,12 @@ M <- M %>%
          medium = "M") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv") %>%
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = ".")) %>%
   ungroup()
 
+M <- left_join(df, M, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 op <- amcat.hits(conn, queries = quer, 
                  labels = labls, sets = 2548, 
@@ -202,15 +235,22 @@ op <- op %>%
          medium = "Op1") %>%
   group_by(date, medium, query) %>%
   summarise(n = n()) %>%
-  mutate(id = "tv") %>%
+  mutate(id = "tv",
+         id2 = paste(date, query, sep = ".")) %>%
   ungroup()
+
+op <- left_join(df, op, by = "id2") %>%
+  mutate(n = replace_na(n, 0))
 
 media <- krant %>% ungroup() %>% 
   add_row(ev) %>% add_row(gnl) %>% add_row(M) %>%
-  add_row(nos) %>% add_row(nu) %>% add_row(op) %>% add_row(va)
+  add_row(nos) %>% add_row(nu) %>% add_row(op) %>% add_row(va) %>%
+  select(date = date.x, query = query.x, medium, n, id)
 ```
 
 # Politici in de Media
+
+**NOTE: NIEUWE FIGUREN, OUDE TEKST**
 
 Met de campagne in de stijgers, zullen we zien dat politici de komende meer en meer in de media verschijnen.
 Om te kijken waar welke politici het meest zichtbaar zijn, kijken we naar de 5 grote Nederlandse kranten (AD, De Telegraaf, de Volkskrant, NRC en Trouw), en de TV programma's EenVandaag, M, Nieuwsuur, NOS Journaal, Op1 en de Vooravond.
@@ -230,35 +270,35 @@ Meer recentelijk zijn dat 50PLus, SGP en de PVV.
 
 ```{r "visibility media", anchor = "figure", fig.height=10, fig.width=10, fig.cap="Figuur Politici's Zichtbaarheid in de Media"}
 media %>% filter(id == "krant") %>%
-ggplot(aes(x = date, y = n, color = query, group = query)) +
+ggplot(aes(x = date, y = n, color = medium, group = medium)) +
   geom_line() +
-  facet_grid(query~medium, scales = "free") +
+  facet_wrap(query~., scales = "free", nrow = 5) +
   theme_minimal() +
   scale_color_viridis_d() +  
   labs(y = "", 
        x = "",
-       title = "Zichtbaarheid",
+       title = "Zichtbaarheid Partijleiders in Kranten",
        subtitle = "Absolute aantallen (queries)") +
   theme(axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
         plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
+          legend.position="bottom",
           legend.title = element_blank())
 
 media %>% filter(id == "tv") %>%
-ggplot(aes(x = date, y = n, color = query, group = query)) +
+ggplot(aes(x = date, y = n, color = medium, group = medium)) +
   geom_line() +
-  facet_grid(query~medium, scales = "free") +
+  facet_wrap(query~., scales = "free", nrow = 5) +
   theme_minimal() +
   scale_color_viridis_d() +  
   labs(y = "", 
        x = "",
-       title = "Zichtbaarheid",
+       title = "Zichtbaarheid Partijleiders op TV",
        subtitle = "Absolute aantallen (queries)") +
   theme(axis.text.x = element_text(angle=60, hjust=0.95, vjust=.95),
         plot.title = element_text(hjust = 0.5),
           plot.subtitle = element_text(hjust = 0.5),
-          legend.position="none",
+          legend.position="bottom",
           legend.title = element_blank())
 ```
 Download data: [`r export_data(media, "Figuur Politici's Zichtbaarheid in de Media")`]
@@ -761,3 +801,36 @@ f5 %>%
 
 Download data: [`r export_data(f5, "Figuur Mediagebruik Zwevende Kiezers")`]
 
+
+## Zwevende kiezers
+Kijkend naar hoe kiezers' partij voorkeur tov eind januari, zien we dat de twee grote winnaars van de zwevende kiezers de VVD en de PVV zijn. 
+De PvdA lijkt een goede derde.
+
+```{r "Verschuivingen in zetels", fig.height=10, fig.width=10, fig.cap="Veranderingen van stemvoorkeur in zetels"}
+w0 <- read_csv("../../../data/intermediate/VUElectionPanel2021_wave0.csv") %>%     drop_na(I3_15) %>%
+  select(iisID, A2_0 = A2)
+w1 <- read_csv("../../../data/intermediate/wave1.csv") %>%
+    drop_na(I3_15) %>%
+  select(iisID, A2_1 = A2)
+
+votes <- left_join(w1, w0, by = "iisID") %>%
+  mutate(A2_1 = recode(A2_1, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
+         A2_0 = recode(A2_0, `1` = "CDA", `2` = "CU", `3` = "D66", `4` = "Denk", `5` = "FvD", `6` = "GL", `7` = "PvdA", `8` = "PvD", `9` = "PVV", `10` = "SGP", `11` = "SP", `12` = "VVD", `13` = "50Plus",`14` =  "Andere", `15` = "Blanco",`999` = "Weet niet"),
+         A2_0 = replace_na(A2_0, "Weet niet"))
+
+library(igraph)
+ntot <- votes %>% nrow()
+gdf <- votes %>%
+  group_by(A2_1, A2_0) %>% summarize(n=n()) %>% na.omit() %>% filter(A2_1 != A2_0)
+
+gd <- full_join(gdf, gdf, by=c("A2_1"="A2_0", "A2_0"="A2_1")) %>% replace_na(list("n.x"=0, "n.y"=0)) %>% mutate(n=n.x - n.y, zetels=n/ntot * 150) %>% filter(n>0)
+g <- gd %>% select(A2_0, A2_1, n, zetels) %>% filter(zetels>1) %>% graph_from_data_frame()
+
+E(g)$width = 1+E(g)$n/10 
+E(g)$label = round(E(g)$zetels, 1)
+E(g)$arrow.size=E(g)$width/2
+
+plot(g)
+```
+
+Download data: [`r export_data(gd, "Figuur Verschuivingen in Zetels")`]
