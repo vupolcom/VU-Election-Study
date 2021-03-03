@@ -67,7 +67,8 @@ df <- d %>%
                        `pre-wave` = "Midden - Eind Jan.",
                        `wave 1` = "Begin - Midden Feb.",
                        `wave 2` = "Midden - Eind Feb."),
-         wave = factor(wave, levels = c("Midden - Eind Jan.","Begin - Midden Feb.", "Midden - Eind Feb.")))
+         wave = factor(wave, levels = c("Midden - Eind Jan.","Begin - Midden Feb.", "Midden - Eind Feb."))) %>%
+  filter(H7 == "Niet Vaccineren")
 
 df %>%
   ggplot(aes(x = wave, y = percent, colour = H7, group = H7)) +
@@ -79,13 +80,13 @@ df %>%
   geom_hline(yintercept = 0.79, size = .2, linetype = "dashed", colour = "darkgrey") +
   labs(y = "", 
        x = "",
-       title = "Bereidheid tot Vaccineren",
+       title = "Wie wil zich niet laten vaccineren?",
        subtitle = "Percentage per Partijvoorkeur") +
   theme(axis.text.x = element_text(angle=60, 
                                    hjust=0.95, vjust=.95),
         plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
-        legend.position="bottom",
+        legend.position="none",
         legend.title = element_blank())
 ```
 Download data: [`r export_data(df, "Figuur Bereidheid tot Vaccineren")`]
