@@ -1,0 +1,208 @@
+---
+title: 'VU 2021 Election Study: Vaccinatiebereidheid'
+author: "Mariken van der Velden"
+permalink: reports/vaccinatie/
+output: 
+  md_document:
+    toc: yes
+    preserve_yaml: yes
+---
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+rm(list = ls())
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      echo = FALSE, fig.align = "center",
+                        fig.path='')
+library(kfigr) 
+library(glue)
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+library(amcatr)
+library(viridis)
+source(here("src/lib/data.R"))
+```
+
+```{r "vaccinatiebereidheid", fig.height=10, fig.width=10, fig.cap="Figuur Vaccinatiebereidheid"}
+w0 <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) %>%
+  select(iisID, wave,start_date, A2, H7)
+w1 <- read_csv(here("data/intermediate/wave1.csv")) %>%
+  select(iisID, wave, start_date, A2, H7)
+w2 <- read_csv(here("data/intermediate/wave2.csv")) %>%
+  select(iisID, wave, start_date, A2, H7)
+
+d <- w0 %>% add_case(w1) %>% add_case(w2) %>%
+  mutate(A2 = recode(A2, `1` = "CDA", 
+                        `2` = "CU", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD",
+                        `6` = "GL", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV", 
+                        `10` = "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50+",
+                        `14` = "Anders",
+                        `15` = "Weet niet",
+                        `999` = "Weet niet"),
+         A2 = replace_na(A2, "Weet niet"),
+         H7 = recode(H7, `1` = "Vaccineren", 
+                     `2` = "Vaccineren", 
+                     `3` = "Niet Vaccineren", 
+                     `4` = "Niet Vaccineren")) %>%
+  drop_na(H7)
+
+df <- d %>%
+  group_by(wave, A2, H7) %>%
+  summarise(value = n()) %>%
+  ungroup() %>% group_by(wave, A2) %>%
+  mutate(percent = round(value/sum(value),2),
+         wave = recode(wave, 
+                       `pre-wave` = "Midden - Eind Jan.",
+                       `wave 1` = "Begin - Midden Feb.",
+                       `wave 2` = "Midden - Eind Feb."),
+         wave = factor(wave, levels = c("Midden - Eind Jan.","Begin - Midden Feb.", "Midden - Eind Feb.")))
+
+df %>%
+  ggplot(aes(x = wave, y = percent, colour = H7, group = H7)) +
+  geom_point() + geom_line() + 
+  facet_grid(.~A2, scales = "free") + 
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  scale_color_viridis_d() +  
+  geom_hline(yintercept = 0.79, size = .2, linetype = "dashed", colour = "darkgrey") +
+  labs(y = "", 
+       x = "",
+       title = "Bereidheid tot Vaccineren",
+       subtitle = "Percentage per Partijvoorkeur") +
+  theme(axis.text.x = element_text(angle=60, 
+                                   hjust=0.95, vjust=.95),
+        plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank())
+```
+Download data: [`r export_data(df, "Figuur Bereidheid tot Vaccineren")`]
+
+
+```{r "vaccinatiebereidheid2", fig.height=10, fig.width=10, fig.cap="Figuur Vaccinatiebereidheid"}
+w0 <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) %>%
+  select(iisID, A2_w0 = A2, H7_w0 = H7)
+w1 <- read_csv(here("data/intermediate/wave1.csv")) %>%
+  select(iisID, A2_w1 = A2, H7_w1 = H7)
+w2 <- read_csv(here("data/intermediate/wave2.csv")) %>%
+  select(iisID, A2_w2 = A2, H7_w2 = H7)
+
+d <- left_join(w1, w0, by = "iisID")
+d <- left_join(w2, d, by = "iisID") %>%
+  mutate(A2_w0 = recode(A2_w0, `1` = "CDA", 
+                        `2` = "CU", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD",
+                        `6` = "GL", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV", 
+                        `10` = "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50+",
+                        `14` = "Anders",
+                        `15` = "Weet niet",
+                        `999` = "Weet niet"),
+         A2_w0 = replace_na(A2_w0, "Weet niet"),
+         H7_w0 = recode(H7_w0, `1` = "Vaccineren", 
+                     `2` = "Vaccineren", 
+                     `3` = "Niet Vaccineren", 
+                     `4` = "Niet Vaccineren"),
+         A2_w1 = recode(A2_w0, `1` = "CDA", 
+                        `2` = "CU", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD",
+                        `6` = "GL", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV", 
+                        `10` = "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50+",
+                        `14` = "Anders",
+                        `15` = "Weet niet",
+                        `999` = "Weet niet"),
+         A2_w1 = replace_na(A2_w1, "Weet niet"),
+         H7_w1 = recode(H7_w1, `1` = "Vaccineren", 
+                     `2` = "Vaccineren", 
+                     `3` = "Niet Vaccineren", 
+                     `4` = "Niet Vaccineren"),
+         A2_w2 = recode(A2_w2, `1` = "CDA", 
+                        `2` = "CU", 
+                        `3` = "D66", 
+                        `4` = "Denk", 
+                        `5` = "FvD",
+                        `6` = "GL", 
+                        `7` = "PvdA", 
+                        `8` = "PvdD", 
+                        `9` = "PVV", 
+                        `10` = "SGP", 
+                        `11` = "SP", 
+                        `12` = "VVD", 
+                        `13` = "50+",
+                        `14` = "Anders",
+                        `15` = "Weet niet",
+                        `999` = "Weet niet"),
+         A2_w2 = replace_na(A2_w2, "Weet niet"),
+         H7_w2 = recode(H7_w2, `1` = "Vaccineren", 
+                     `2` = "Vaccineren", 
+                     `3` = "Niet Vaccineren", 
+                     `4` = "Niet Vaccineren"),
+         zwevend = ifelse(A2_w0 == A2_w1 & A2_w0 == A2_w2, 
+                          "Stabiele voorkeur", "Zwevende kiezer")) %>%
+  drop_na()
+
+d <- d %>%
+  pivot_longer(cols = c(H7_w0, H7_w1, H7_w2), 
+               values_to = "vaccineren", names_to = "wave") %>%
+  pivot_longer(cols = c(A2_w0, A2_w1, A2_w2),
+               values_to = "partij") %>%
+  mutate(wave = recode(wave,
+                       `H7_w0` = "Midden - Eind Jan.",
+                       `H7_w1` = "Begin - Midden Feb.",
+                       `H7_w2` = "Midden - Eind Feb."),
+         wave = factor(wave, levels = c("Midden - Eind Jan.","Begin - Midden Feb.", "Midden - Eind Feb.")))
+
+df <- d %>%
+  group_by(wave, partij, vaccineren, zwevend) %>%
+  summarise(value = n()) %>%
+  ungroup() %>% group_by(wave, partij) %>%
+  mutate(percent = round(value/sum(value),2)) %>%
+  filter(vaccineren == "Niet Vaccineren")
+
+df %>%
+  ggplot(aes(x = wave, y = percent, colour = zwevend, group = zwevend)) +
+  geom_point() + geom_line() + 
+  facet_grid(.~partij, scales = "free") + 
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  scale_color_viridis_d() +  
+  geom_hline(yintercept = 0.21, size = .2, linetype = "dashed", colour = "darkgrey") +
+  labs(y = "", 
+       x = "",
+       title = "Wie wil zich niet laten vaccineren?",
+       subtitle = "Percentage per Partijvoorkeur") +
+  theme(axis.text.x = element_text(angle=60, 
+                                   hjust=0.95, vjust=.95),
+        plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank())
+```
+Download data: [`r export_data(df, "Figuur Bereidheid tot Vaccineren - Zwevende Kiezers")`]
