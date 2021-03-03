@@ -77,7 +77,7 @@ df %>%
   scale_y_continuous(labels = scales::percent) +
   theme_minimal() +
   scale_color_viridis_d() +  
-  geom_hline(yintercept = 0.79, size = .2, linetype = "dashed", colour = "darkgrey") +
+  geom_hline(yintercept = 0.21, size = .2, linetype = "dashed", colour = "darkgrey") +
   labs(y = "", 
        x = "",
        title = "Wie wil zich niet laten vaccineren?",
