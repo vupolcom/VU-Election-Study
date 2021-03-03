@@ -26,7 +26,7 @@ library(viridis)
 source(here("src/lib/data.R"))
 ```
 
-```{r "vaccinatiebereidheid", fig.height=10, fig.width=10, fig.cap="Figuur Vaccinatiebereidheid"}
+```{r "vaccinatiebereidheid", fig.height=6, fig.width=10, fig.cap="Figuur Vaccinatiebereidheid"}
 w0 <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) %>%
   select(iisID, wave,start_date, A2, H7)
 w1 <- read_csv(here("data/intermediate/wave1.csv")) %>%
@@ -91,7 +91,7 @@ df %>%
 Download data: [`r export_data(df, "Figuur Bereidheid tot Vaccineren")`]
 
 
-```{r "vaccinatiebereidheid2", fig.height=10, fig.width=10, fig.cap="Figuur Vaccinatiebereidheid"}
+```{r "vaccinatiebereidheid2", fig.height=6, fig.width=10, fig.cap="Figuur Vaccinatiebereidheid"}
 w0 <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) %>%
   select(iisID, A2_w0 = A2, H7_w0 = H7)
 w1 <- read_csv(here("data/intermediate/wave1.csv")) %>%
