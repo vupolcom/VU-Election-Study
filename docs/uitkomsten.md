@@ -14,8 +14,8 @@ permalink: /reports/
     </td>
       <td>
       <h3><a href="ttps://www.npo3.nl/propaganda/04-03-2021/KN_1725474/POMS_KN_16454883">Propaganda in partij-journaals?</a></h3> 
-      <i>Propaganda, 04 Maart 2021</i>
-        door <a href="https://github.com/vupolcom/about#dr-mariken-van-der-velden">Mariken van der Velden</a>
+      <i>Propaganda, 04 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about#dr-mariken-van-der-velden">Mariken van der Velden</a>
     </td>
      </tr>
   <tr>
