@@ -21,11 +21,23 @@ update_set = function(conn, query, fromproject, fromset,
   amcat.add.articles.to.set(conn, toproject, articleset=toset, articles=to_add)
 }
 
+args = commandArgs(trailingOnly=TRUE)
+
+if (length(args) == 0) {
+   startdate = Sys.Date() - days
+} else {
+   startdate = as.Date(args[1])
+}
+
+message(glue("Getting articles from {startdate}"))
+
+
+
 parties = get_party_queries()
 query = str_c(parties$party_query, ' OR "', parties$lijsttrekker, '"', collapse = " OR ")
 
 conn = amcat.connect("https://vu.amcat.nl")
-startdate = Sys.Date() - 7
+
 for (i in 1:nrow(sets)) {
   s = sets[i, ]
   message(glue("[{s$label}] Updating set {s$toset} from {s$fromproject}:{s$fromset}"))
