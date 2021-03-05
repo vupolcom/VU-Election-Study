@@ -14,7 +14,7 @@ permalink: /reports/
     </td>
   <td>
       <a href="https://www.npo3.nl/propaganda/04-03-2021/KN_1725474/POMS_KN_16454883">
-        <img width="200px" align="left" src="https://images.nrc.nl/kVf3c0AxIUWCtOgA5HP2-lbfrrc=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/02/data67813076-249536.jpg" />
+        <img width="200px" align="left" src="https://pbs.twimg.com/profile_images/1351497342516649984/_IC68I6H.jpg" />
       </a>
     </td>
     </tr>
