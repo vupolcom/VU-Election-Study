@@ -1,5 +1,7 @@
+
 library(tidyverse)
 library(here)
+library(glue)
 
 query_party = function(partij, alias) {
   case_when(partij == "Denk" ~ alias,

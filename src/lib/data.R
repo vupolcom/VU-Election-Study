@@ -66,3 +66,21 @@ extract_long = function(data) {
     mutate(variable=factor(variable)) %>% 
     select(iisID, variable, option, name, value)
 }
+
+#' Extract the longitudinal data (vote intention, media use) 
+#' @param data A list with one (cleaned/raw) data frame per wave
+#' @return a long data frame of wave x respondent x variable
+extract_waves = function(data) {
+  
+  prepare_wave = function(w) {
+    ld = extract_long(w) %>% filter(str_detect(variable, "^I")) %>% select(-option)
+    wd = extract_wide(w) %>% select(iisID, vote, vaccination) %>% pivot_longer(-iisID, names_to="variable", values_to="name") %>% add_column(value=1)
+    bind_rows(ld,wd)
+  }
+  purrr::map(data, prepare_wave) %>% bind_rows(.id="wave")
+}
+  #purrr::map(data, function(x) tibble(variable=colnames(x))) %>% bind_rows(.id="wave") %>% add_column(one=1) %>% 
+  #  pivot_wider(names_from="wave", values_from="one", values_fill=0) %>% 
+  #  mutate(x=w0+w1+w2) %>% filter(x>1) %>% 
+  #  left_join(get_codebook()) %>%
+  #  View()

@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 
+data/tmp
 data/raw-private
 .doit.db
 env/
@@ -142,3 +143,4 @@ notebooks/data/*
 .DS_Store
 renv
 renv.lock
+

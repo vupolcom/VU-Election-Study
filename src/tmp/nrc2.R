@@ -8,7 +8,7 @@ source(here("src/lib/amcatlib.R"))
 period = function(date) {
   case_when(date < "2021-01-13" ~ "pre",
           date < "2021-01-28" ~ "w0",
-          date < "2021-02-11" ~ "w1",
+          date < "2021-02-16" ~ "w1",
           T ~ "w2")
 }
 queries = get_party_queries()
@@ -48,9 +48,69 @@ ggplot(hpp, aes(x=period, y=value, color=party)) + geom_line() +
   ggthemes::theme_hc() + theme(legend.position = "none")
 
 
-#w0 = read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv"))
-#w1 = read_csv(here("data/intermediate/wave1.csv"))
-#w0 %>% group_by(lubridate::floor_date(start_date, "day")) %>% summarize(n=n())
-#w1 %>% group_by(lubridate::floor_date(start_date, "day")) %>% summarize(n=n())
+data = list(w0 = read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")),
+            w1 = read_csv(here("data/intermediate/wave1.csv")),
+            w2 = read_csv(here("data/intermediate/wave2.csv"))
+)
 
+resp = extract_wide(data$w0)
+w = extract_waves(data)
+
+votes = bind_rows(
+  w %>% filter(variable == "vote") %>% select(wave, iisID, name),
+  resp %>% select(iisID, vote_2017) %>% rename(name = vote_2017) %>% add_column(wave="k17")
+)
+
+
+
+parties = c("Not", "New", "Undecided", "Other", "PVV", "FvD", "SGP", "SP", "Denk", "PvdD", "50+", "PvdA", "GroenLinks", "D66", "CDA", "ChristenUnie", "VVD", "Average")  
+
+votes = votes %>% na.omit() %>% mutate(waveno=as.numeric(as.factor(wave)), nxt= waveno+1)# %>% mutate(name=ifelse(name %in% c("Not", "Undecided"), "Not/Undecided", name)) 
+changes = votes %>% inner_join(votes, by=c("iisID", "nxt"="waveno"), suffix=c("", ".to")) %>% rename(to=name.to) %>% 
+  group_by(wave, wave.to, name, to) %>% summarize(n=n()) %>% group_by(wave) %>% mutate(ntot=sum(n), perc=n/ntot, seat=perc*150) %>% ungroup()
+
+undecided_to = changes %>% filter(name %in%  c("Not", "Undecided")) %>% group_by(wave, to) %>% summarize(n=sum(n), seat=sum(seat))%>% select(-n) %>% 
+  pivot_wider(values_fill=0, names_from=wave, values_from=seat) %>% pivot_longer(-to, values_to="seat", names_to="wave")
+
+undecided_from = changes %>% filter(to %in%  c("Not", "Undecided")) %>% group_by(wave,name) %>% summarize(n=sum(n), seat=sum(seat))%>% select(-n) %>% 
+  pivot_wider(values_fill=0, names_from=wave, values_from=seat) %>% pivot_longer(-name, values_to="seat", names_to="wave")
+
+d = bind_rows(
+  undecided_to %>% rename(party=to) %>% add_column(type="Undecided voters went to"),
+  undecided_from %>% rename(party=name) %>% add_column(type="New undecided voters from")) %>% 
+  filter(party != "Undecided", wave != "k17") %>% mutate(party=factor(party, levels=parties))
+
+setdiff(levels(droplevels(d$party)), parties)
+
+ggplot(d, aes(x=wave, y=party, fill=seat, label=round(seat, 1))) + geom_tile(color="white", lwd=2) + geom_text(color="white") +
+  facet_grid(cols=vars(type)) +
+  scale_fill_gradient(low="#d0e0f0", high="#01529d", guide=F) + 
+  ggthemes::theme_hc() + theme(panel.grid.major.y = element_blank())
+
+
+edges = changes %>% na.omit() %>% 
+  filter(seat > 2) %>% 
+  filter(name %in% c("Not", "Undecided") | to %in% c("Not", "Undecided")) %>%
+  mutate(
+    weight=ifelse(name == to, 99999, seat),
+    style=ifelse(name != "Undecided" & name == to, "invis", glue("setlinewidth({seat})")),
+    flabel=glue('"{wave}_{name}" -> "{wave.to}_{to}" [label="{round(seat,1)}",weight={weight},style="{style}"];'))
+nodes =  edges %>% select(wave, name) %>% bind_rows(edges %>% select(wave=wave.to, name=to)) %>% unique() %>% 
+  mutate(nlabel=glue('"{wave}_{name}" [label="{name}"];'))
+                             
+graph = c("digraph G{",
+          "rankdir=LR; nodesep=.5;",
+          nodes %>% pull(nlabel),
+          edges %>% pull(flabel), 
+          "}")
+system("dot -Tpng > /tmp/test.png", input = graph)
+
+cat(graph[2])
+writeLines(graph, file("/tmp/test.dot"))
+
+votes %>% group_by(wave, name) %>% summarize(n=n()) %>% mutate(ntot=sum(n), seat=n/ntot*150) %>% select(wave, name, seat) %>% pivot_wider(names_from=wave, values_from=seat) %>% write_csv("/tmp/votes.csv")
+
+data$w0 %>% group_by(lubridate::floor_date(start_date, "day")) %>% summarize(n=n())
+data$w1 %>% group_by(lubridate::floor_date(start_date, "day")) %>% summarize(n=n())
+data$w2 %>% group_by(lubridate::floor_date(start_date, "day")) %>% summarize(n=n())
 
