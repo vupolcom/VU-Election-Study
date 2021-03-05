@@ -5357,24 +5357,6 @@ Where do undecided voters go to?
 </tbody>
 </table>
 
-    ## # A tibble: 90 x 9
-    ## # Groups:   wave [2]
-    ##    wave  party         n type            period      perc  ntot colval party2   
-    ##    <chr> <chr>     <dbl> <fct>           <chr>      <dbl> <int>  <dbl> <fct>    
-    ##  1 w0    CDA          24 Undecided vote… Early Feb… 1.50   2395  1.50  CDA      
-    ##  2 w0    Christen…    19 Undecided vote… Early Feb… 1.19   2395  1.19  Christen…
-    ##  3 w0    D66          19 Undecided vote… Early Feb… 1.19   2395  1.19  D66      
-    ##  4 w0    Denk          2 Undecided vote… Early Feb… 0.125  2395  0.125 Denk     
-    ##  5 w0    FvD          11 Undecided vote… Early Feb… 0.689  2395  0.689 FvD      
-    ##  6 w0    GroenLin…    28 Undecided vote… Early Feb… 1.75   2395  1.75  GroenLin…
-    ##  7 w0    PvdA         26 Undecided vote… Early Feb… 1.63   2395  1.63  PvdA     
-    ##  8 w0    PvdD         15 Undecided vote… Early Feb… 0.939  2395  0.939 PvdD     
-    ##  9 w0    PVV          39 Undecided vote… Early Feb… 2.44   2395  2.44  PVV      
-    ## 10 w0    SGP           6 Undecided vote… Early Feb… 0.376  2395  0.376 SGP      
-    ## # … with 80 more rows
-
-![](undecideds-1.png)
-
 \[Download data: \`export\_data(d, “Undecided Voters”)\]
 
 On the left hand side, the figure above shows where undecided voters go

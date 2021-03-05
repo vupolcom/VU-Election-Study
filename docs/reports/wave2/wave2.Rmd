@@ -283,7 +283,7 @@ d2 = d2 %>% left_join(totals) %>% filter(party!="Undecided") %>% mutate(
   colval=ifelse(type=="Net Change", perc*3, perc), 
   type=fct_rev(type),
   party2=fct_rev(factor(party, levels=parties)))
-d2
+
 ggplot(d2, aes(x=period, y=party, fill=colval, label=round(perc, 1))) + geom_tile(color="white", lwd=2) + geom_text(color="white") +
   facet_grid(cols=vars(type)) +
   scale_fill_gradient2(low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + 
