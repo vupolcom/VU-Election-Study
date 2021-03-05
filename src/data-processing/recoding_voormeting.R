@@ -5,23 +5,35 @@
 #CREATES: data/intermediate/VUElectionPanel2021_wave0.csv
 
 ## Required Packages &amp; Reproducibility
+rm(list = ls())
+
 library(tidyverse)
 library(sjlabelled)
 library(here)
+library(qualtRics)
 
-input_fn = here("data/raw-private/qualtrics_raw_wave0.csv")
+#input_fn = here("data/raw-private/qualtrics_raw_wave0.csv")
 output_fn = here("data/intermediate/VUElectionPanel2021_wave0.csv")
 
 ## Load Data
 # Load the data downloaded from Qualtrics, and only keep those that have given consent to participate in the panel study.
-col_names <- names(read_csv(input_fn, n_max = 0))
-d <- read_csv(input_fn, col_names = col_names, skip = 3) %>%
+#col_names <- names(read_csv(input_fn, n_max = 0))
+#d <- read_csv(input_fn, col_names = col_names, skip = 3) %>%
+#  remove_all_labels() %>% 
+#  tibble() %>%
+  #only keep people that have given consent
+#  filter(consent1==1 & consent2==1) 
+#rm(input_fn, col_names)
+
+input_fn <- fetch_survey(surveyID = "SV_39R4hSWxAJNBKHb", 
+                         verbose = TRUE, force_request = T,
+                         label = FALSE, convert = FALSE)
+d <- input_fn %>%
   remove_all_labels() %>% 
   tibble() %>%
   #only keep people that have given consent
   filter(consent1==1 & consent2==1) 
-rm(input_fn, col_names)
-
+rm(input_fn)
 ## Recode Block Background Variables
 BG <- d %>%
   mutate(gender = recode(gender, `2` = 0),
@@ -161,14 +173,19 @@ d <-d %>%
                           B2_DO_13, sep = "|"))
 
 B3 <- d %>%
-  select(iisID, X1_B3_3:X13_B2_4) %>%
-  pivot_longer(cols = X1_B3_3:X13_B2_4,
+  select(iisID, X1_B3_3, X2_B3_3, X3_B3_3, X4_B3_3, X5_B3_3,
+         X6_B3_3, X7_B3_3, X8_B3_3, X9_B3_3, X10_B3_3,
+         X11_B3_3, X12_B3_3, X13_B3_3,
+         X1_B3_4, X2_B3_4, X3_B3_4, X4_B3_4, X5_B3_4,
+         X6_B3_4, X7_B3_4, X8_B3_4, X9_B3_4, X10_B3_4,
+         X11_B3_4, X12_B3_4, X13_B3_4) %>%
+  pivot_longer(cols = X1_B3_3:X13_B3_4,
                names_to = "variable") %>%
   separate(variable, c("variable", "question"), "_", extra = "merge")  %>%
   group_by(variable) %>%
   mutate(row = row_number()) %>%
   pivot_wider(names_from = question, values_from = value) %>%
-  unite("B3", B3_3:B2_4, remove = T, na.rm = T) %>%
+  unite("B3", B3_3:B3_4, remove = T, na.rm = T) %>%
   mutate(B3 = ifelse(B3 == "", "999", B3),
          B3 = as.numeric(B3)) 
   
@@ -179,8 +196,7 @@ B3 <- B3 %>%
   select(iisID, B3_1 = X1,
          B3_2 = X1, B3_3 = X3, B3_4 = X4, B3_5 = X5,
          B3_6 = X6, B3_7 = X7, B3_8 = X1, B3_9 = X9,
-         B3_10 = X10, B3_11 = X11, B3_12 = X12, B3_13 = X13) %>%
-  distinct(iisID, .keep_all = TRUE)
+         B3_10 = X10, B3_11 = X11, B3_12 = X12, B3_13 = X13) 
 
 B <- d %>%
   select(iisID, B1, B2_1:B2_13, order_B2)
