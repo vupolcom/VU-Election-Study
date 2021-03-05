@@ -34,6 +34,7 @@ d <- input_fn %>%
   #only keep people that have given consent
   filter(consent1==1 & consent2==1) 
 rm(input_fn)
+
 ## Recode Block Background Variables
 BG <- d %>%
   mutate(gender = recode(gender, `2` = 0),
@@ -109,11 +110,13 @@ BG <- d %>%
          age, education,region, ethnicity, 
          postal_code = postal_code_1_TEXT,
          job, internet_use)
+  
+  filter(check == 0) %>% select(-check)
 
 ## Recode Block A Voting Behavior
 A <- d %>%
   select(iisID, A1:A2, A2_otherparty = A2_14_TEXT,
-         A2_DO_1:A2_DO_13, A3_DO_1:A3_DO_13) %>%
+         A2_DO_1:A2_DO_13, A3_DO_1:A3_DO_13, progress = Progress) %>%
   mutate(A1 = recode(A1,
                      `2` = 0,
                      `3` = 998,
@@ -148,8 +151,12 @@ A3 <-  pivot_wider(A3, names_from = n, values_from = party,
   mutate(A3 = paste(A3_1, A3_2, A3_3, A3_4, A3_5,
                     A3_6, A3_7, A3_8, A3_9, A3_10, 
                     A3_11, A3_12, A3_13, sep = "|"))
+
 A <- left_join(A, A3, by = "iisID") %>%
-  select(iisID, A1:A2_otherparty, order_A2, A3, order_A3, A3_1:A3_13)
+  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>%
+  select(iisID, A1:A2_otherparty, order_A2, A3, order_A3, A3_1:A3_13) 
+
 rm(A3)
 
 ## Recode Block B Performance Politics in the Media
@@ -199,8 +206,10 @@ B3 <- B3 %>%
          B3_10 = X10, B3_11 = X11, B3_12 = X12, B3_13 = X13) 
 
 B <- d %>%
-  select(iisID, B1, B2_1:B2_13, order_B2)
-B <- left_join(B, B3, by = "iisID")
+  select(iisID, B1, B2_1:B2_13, order_B2, progress = Progress)
+B <- left_join(B, B3, by = "iisID") %>%
+  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% select(-check)
 rm(B3)
 
 ## Recode Block C Issue Association
@@ -566,7 +575,7 @@ C2_1 <- d %>%
          C2_1_13 = as.numeric(C2_1_13))
 
 C2_2 <- d %>%
-  select(iisID, X1_C2_2_2,
+  select(iisID,X1_C2_2_2,
          X2_C2_2_2, X3_C2_2_2, X4_C2_2_2, X5_C2_2_2,
          X6_C2_2_2, X7_C2_2_2, X8_C2_2_2, X9_C2_2_2,
          X10_C2_2_2,X11_C2_2_2, X12_C2_2_2, X13_C2_2_2,
@@ -577,7 +586,7 @@ C2_2 <- d %>%
          X1_C2_2_4,
          X2_C2_2_4, X3_C2_2_4, X4_C2_2_4, X5_C2_2_4,
          X6_C2_2_4, X7_C2_2_4, X8_C2_2_4, X9_C2_2_4,
-         X10_C2_2_4,X11_C2_2_4, X12_C2_2_4, X13_C2_2_4) %>%
+         X10_C2_2_4,X11_C2_2_4, X12_C2_2_4, X13_C2_2_4, progress = Progress) %>%
   unite("C2_2_1", c(X1_C2_2_2, X1_C2_2_3, X1_C2_2_4),remove = T, na.rm = T) %>%
   unite("C2_2_2", c(X2_C2_2_2, X2_C2_2_3, X2_C2_2_4),remove = T, na.rm = T) %>%
   unite("C2_2_3", c(X3_C2_2_2, X3_C2_2_3, X3_C2_2_4),remove = T, na.rm = T) %>%
@@ -627,7 +636,8 @@ C <- left_join(C, C1_2, by = "iisID")
 C <- left_join(C, C1_2_txt, by = "iisID")
 C <- left_join(C, C2_1, by = "iisID")
 C <- left_join(C, C2_2, by = "iisID") %>%
-  distinct(iisID, .keep_all = T)
+mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% select(-check)
 rm(C1_1, C1_1_txt, C1_2, C1_2_txt, C2_1, C2_2)
 
 # Recode Block D Political Knowledge
@@ -640,7 +650,7 @@ D <- d %>%
          D2_timer_Click.Count, D2_timer_Page.Submit,
          D3_1, D3_2, D3_3, D3_4, 
          D3_timer_First.Click, D3_timer_Last.Click,
-         D3_timer_Click.Count, D3_timer_Page.Submit) %>%
+         D3_timer_Click.Count, D3_timer_Page.Submit, progress = Progress) %>%
   mutate(D1_1 = ifelse(D1_1 == 6, 1, 0),
          D1_2 = ifelse(D1_2 == 29,1, 0),
          D1_3 = ifelse(D1_3 == 7, 1, 0),
@@ -663,12 +673,16 @@ D <- d %>%
          D1_time_secs = D1_time + D2_time + D3_time,
          D1_clicks = D1_timer_Click.Count + D2_timer_Click.Count +
            D3_timer_Click.Count) %>%
-  select(iisID, D1, D1_time_secs, D1_clicks)
+  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% 
+  select(iisID, D1, D1_time_secs, D1_clicks) 
+
+length(which(duplicated(D$iisID)))
 
 # Recode Block E Political Background
 E <- d %>%
   select(iisID, E1, E1_otherparty = E1_16_TEXT, 
-         E1_DO_1:E1_DO_19, E2, E3_1:E3_13) %>%
+         E1_DO_1:E1_DO_19, E2, E3_1:E3_13, progress=Progress) %>%
   mutate(E1 = recode(E1,
                      `1` = 1, `4` = 2, `5` = 3, `6` = 4,
                      `7` = 5, `8` = 6, `9` = 7, `10` = 8,
@@ -680,8 +694,11 @@ E <- d %>%
                           E1_DO_11, E1_DO_12, E1_DO_13, E1_DO_14, 
                           E1_DO_15, E1_DO_16, E1_DO_17, E1_DO_18,
                           E1_DO_19, sep = "|")) %>%
+  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% 
   select(iisID, E1, E1_otherparty, order_E1, E2, E3_1:E3_13)
 
+length(which(duplicated(E$iisID)))
 # Recode Block F Trust
 F <- d %>%
   mutate(order_F1 = paste(F1_DO_1, F1_DO_2, F1_DO_3, F1_DO_4,
@@ -690,8 +707,13 @@ F <- d %>%
          order_F2 = paste(F2_DO_1, F2_DO_2, F2_DO_3, F2_DO_4,
                           F2_DO_5, F2_DO_6, F2_DO_7, F2_DO_8,
                           F2_DO_9, F2_DO_10, F2_DO_15, sep = "|")) %>%
+  mutate(check = ifelse(duplicated(iisID) & Progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% 
   select(iisID, F1_1:F1_10, order_F1,
          F2_1:F2_10, F2_11 = F2_15, order_F2)
+
+length(which(duplicated(F$iisID)))
+  
 
 # Recode Block G Evaluation of Government and Political Leaders
 G <- d %>%
@@ -711,7 +733,7 @@ G <- d %>%
          G4_4 = G4_7, G4_5 = G4_8, G4_6 = G4_9,
          G4_7 = G4_10, G4_8 = G4_11, G4_9 = G4_12,
          G4_10 = G4_13, G4_11 = G4_14, G4_12 = G4_15,
-         G4_13 = G4_16, G4_14 = G4_17) %>%
+         G4_13 = G4_16, G4_14 = G4_17, progress = Progress) %>%
   mutate(G_eval_leaders_1 = recode(G_eval_leaders_1, `1` = 1, `4` = 0),
          G_eval_leaders_2 = recode(G_eval_leaders_2, `1` = 1, `4` = 0),
          G_eval_leaders_3 = recode(G_eval_leaders_3, `1` = 1, `4` = 0),
@@ -745,6 +767,8 @@ G <- d %>%
          G4_7 = G4_7*2, G4_8 = G4_8*2, G4_9 = G4_9*2,
          G4_10 = G4_10*2, G4_11 = G4_11*2, G4_12 = G4_12*2,
          G4_13 = G4_13*2, G4_14 = G4_14*2) %>%
+  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% 
   select(-G2_DO_4, -G2_DO_5, -G2_DO_6, -G2_DO_7,
          -G2_DO_8, -G2_DO_9, -G2_DO_10, -G2_DO_11,
          -G2_DO_12, -G2_DO_13, -G2_DO_14, -G2_DO_15,
@@ -755,7 +779,9 @@ H <- d %>%
   mutate(H4 = recode(H4, `8` = 999),
          order_H6 = paste(H6_DO_1,H6_DO_2,H6_DO_3, sep = "|"),
          H7 = recode(H7, `3` = 2, `4` = 3, `5` = 4))  %>%
-    select(iisID, H3:H6_3, order_H6, H7)
+  mutate(check = ifelse(duplicated(iisID) & Progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% 
+  select(iisID, H3:H6_3, order_H6, H7)
 
 # Recode Block I News Consumption
 I <- d %>%
@@ -763,6 +789,8 @@ I <- d %>%
                           I8_DO_7, I8_DO_8, I8_DO_9, I8_DO_10,
                           I8_DO_11, I8_DO_12, I8_DO_13, I8_DO_14,
                           I8_DO_15, sep = "I")) %>%
+  mutate(check = ifelse(duplicated(iisID) & Progress <= 100, 1, 0)) %>%
+  filter(check == 0) %>% 
   select(iisID, I1_1:I1_9, I2_1:I2_13, I2_other = I2_13_TEXT,
          I3_1:I3_14, I3_15 = I3_17,I3_16 = I3_15, I3_other = I3_15_TEXT,
          I4_1:I4_8, I4_9 = I4_15, I4_other_blogs = I4_8_TEXT,
@@ -777,14 +805,13 @@ I <- d %>%
          I8_12 = I8_14, I8_13 = I8_15, order_I8,
          I9_1:I9_9,
          I10, I11) 
-
 #twitter <- I %>%
 #  select(iisID, I11) %>%
 #  drop_na()
 #write_csv(twitter, "twitter_handles_VUElectionPanel2021.csv")
 
 ## Merge &amp; Save Data
-df <- left_join(BG, A, by = "iisID")
+df <- inner_join(BG, A, by = "iisID")
 df <- left_join(df, B, by = "iisID")
 df <- left_join(df, C, by = "iisID")
 df <- left_join(df, D, by = "iisID")
@@ -793,8 +820,7 @@ df <- left_join(df, F, by = "iisID")
 df <- left_join(df, G, by = "iisID")
 df <- left_join(df, H, by = "iisID")
 df <- left_join(df, I, by = "iisID") %>%
-  distinct(iisID, .keep_all = T) %>%
-  drop_na(A1) %>%
+  #distinct(iisID, .keep_all = T) %>%
   select(-I10, -I11) %>%
   filter(iisID !="007",
          iisID !="009") %>%
@@ -802,7 +828,6 @@ df <- left_join(df, I, by = "iisID") %>%
   drop_na(iisID)
 
 write_csv(df, output_fn)
-
 
 #haven::write_sav(df, "pre_wave_VUElectionPanel2021.sav")
 rm(A, B, C, D, E, F, G, H, I, BG, twitter)
