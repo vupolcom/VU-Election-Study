@@ -61,10 +61,10 @@ Does notice depend on alignment of repondent?
 alignment](Media_performance_by_alignment.csv)\]
 
 Notice of parties (visibility) does not really depend on the ideological
-alignment of the respondent. Interestingly, evaluation of their media
-performance does differ: rightist voters are overall more critical of
-rightist parties (especially FvD, PVV), while leftist voters are a bit
-more critical of GL.
+alignment of the respondent. Evaluation of their media performance does
+differ: leftist voters are overall more critical of rightist parties.
+Rightist voters were a bit more critical of GL, SP, D66 and PvdA, but
+this has mostly converged.
 
 The Undecided Voter
 ===================
