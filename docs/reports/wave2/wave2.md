@@ -149,15 +149,6 @@ probably as a result of being older.
 Where do undecided voters go to and come from?
 ----------------------------------------------
 
-    ## # A tibble: 4 x 5
-    ## # Groups:   wave [2]
-    ##   wave  party     n type                     period        
-    ##   <chr> <fct> <int> <chr>                    <chr>         
-    ## 1 w0    Denk      1 Undecided voters went to Early February
-    ## 2 w1    Denk      2 Undecided voters went to Late February 
-    ## 3 w0    Denk      2 Undecided came from      Early February
-    ## 4 w1    Denk      1 Undecided came from      Late February
-
 ![](undecideds-1.png)
 
 \[Download data: [Undecided Voters](Undecided_Voters.csv)\]

@@ -156,7 +156,7 @@ d2 = d %>% group_by(wave, variable, varlabel, name) %>% summarize(value = mean(v
 
 d2 %>% ggplot(aes(x=wave, y=name, fill=fillcolor, label=round(value,1))) + 
   geom_tile(color="white", lwd=1) + facet_grid(cols=vars(varlabel)) + theme_nrc() + 
-  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), high="#01529d", guide=F) + geom_text() + 
+  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + geom_text(color="white") + 
     #scale_fill_gradient2(low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + 
 
   ggtitle("Did respondents notice the parties / leaders?", "(Noticed from 0 (not at all) to 3 (a lot); positive negative from 0 to 10")
@@ -185,16 +185,16 @@ d3 = d %>% inner_join(r2) %>% filter(!is.na(rile)) %>% group_by(wave, variable, 
   mutate(name=fct_rev(factor(name, levels=parties)))
 
 d3 %>% filter(variable=="B2") %>% 
-  ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile() + facet_grid(cols=vars(rile)) + theme_nrc() + 
-  geom_text() + scale_fill_gradient(low="white", high="#01529d", guide = F) + 
+  ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile(color="white", lwd=1) + facet_grid(cols=vars(rile)) + theme_nrc() + 
+  geom_text(color="white") + scale_fill_gradient(low="#e0e0e0", high="#01529d", guide = F) + 
   ggtitle("Notice of parties by alignment", "(Does respondent self-report as left or right? Values 0 (not noticed) to 3 (noticed a lot))")
 
 ```
 ```{r notice-lire1}
 d3 %>% filter(variable=="B3") %>% 
-  ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile() + facet_grid(cols=vars(rile)) + theme_nrc() + 
+  ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile(color="white", lwd=1) + facet_grid(cols=vars(rile)) + theme_nrc() + 
   geom_text() +# scale_fill_gradient2(low="red", mid="white", high="green", midpoint = 5.5, guide = F) +
-  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), high="#01529d", guide=F) + geom_text() + 
+  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + geom_text(color="white") + 
   ggtitle("Evaluation of media performence by alignment", "(Does respondent self-report as left or right? Values 0 to 10)")
 ```
 
@@ -341,8 +341,6 @@ d = bind_rows(
   undecided_from %>% rename(party=name) %>% add_column(type="Undecided came from")) %>%
   #tibble(wave="w0", party="Denk", n=0, type="Undecided came from"))  %>% 
   mutate(period=case_when(wave == "w0" ~ "Early February", T ~ "Late February"))
-
-d %>% filter(party == "Denk")
 
 change = d %>% ungroup() %>% select(party, wave, period, type, n) %>% pivot_wider(names_from=type, values_from=n) %>% 
   left_join(totals) %>% 
