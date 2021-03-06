@@ -62,15 +62,14 @@ if (file.exists(tmp)) {
 } else {
   conn = amcat.connect("https://vu.amcat.nl")
   meta_print = amcat.articles(conn, project=69, articleset=2562, columns = c("date", "publisher")) %>%
-    as_tibble() %>%  add_column(mtype="print")
+    as_tibble() %>%  add_column(mtype="Newspapers")
   meta_online = amcat.articles(conn, project=69, articleset=2564, columns = c("date", "publisher")) %>%
-    as_tibble() %>%  add_column(mtype="online") %>% filter(publisher != "Nieuwsuur") %>% mutate(publisher="nos.nl")
+    as_tibble() %>%  add_column(mtype="Online (nos.nl/nu.nl)") %>% filter(publisher %in% c("NOS nieuws", "NU.nl"))
   meta_tv = amcat.articles(conn, project=69, articleset=2579, columns = c("date", "publisher")) %>% 
-    as_tibble() %>% add_column(mtype="tv")
+    as_tibble() %>% add_column(mtype="TV")
   meta = bind_rows(meta_print, meta_online, meta_tv) %>% mutate(id=as.numeric(id)) %>% mutate(period=period(date))
   write_rds(meta, tmp)
 }
-
 tmp = here("data/tmp/wave2_media_visibility.rmd")
 if (file.exists(tmp)) {
   d = read_rds(tmp)
@@ -92,78 +91,99 @@ hpp = d %>% group_by(period, party, mtype) %>% summarize(n=n(), .groups="drop") 
   inner_join(totals) %>%
   mutate(perc=n/ntot, period = as.numeric(as.factor(period)), party=factor(party, levels=parties))
 
-hpp %>% filter(mtype == "print") %>% 
-ggplot(aes(x=period, y=perc, color=party)) + geom_line() + 
-  facet_wrap("party") + 
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave: Newspapers", "(as percentage of all political news)") +
-  scale_x_continuous(breaks=1:4, labels=c("1 Jan", "15 Jan", "1 Feb", "15 Feb")) + theme_nrc() +
-  theme(legend.position = "none")
-```
-
-No large shifts in visibility in the newspapers. VVD and coalition parties VDA and D66 are most visible. Groenlinks, SP, and FvD are increasing in visibility,
-while PvdA remains mostly constant. 
-
-```{r visibility-tv}
-hpp %>% filter(mtype == "tv") %>% 
-ggplot(aes(x=period, y=perc, color=party)) + geom_line() + 
-  facet_wrap("party") + 
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave: NPO", "(as percentage of all political news)") +
-  scale_x_continuous(breaks=1:4, labels=c("1 Jan", "15 Jan", "1 Feb", "15 Feb")) + theme_nrc() +
-  theme(legend.position = "none")
-```
-
-On television (subtitles of NPO news and current affairs shows) we see the same overall pattern, but while D66 and VVD make gains, PvdA, GroenLinks, SP and CU all lose visibility.
-In contrast, PVV and especially FvD gain visibility. 
-
-```{r visibility-nosnl}
-hpp %>% filter(mtype == "online") %>% 
-ggplot(aes(x=period, y=perc, color=party)) + geom_line() + 
-  facet_wrap("party") + 
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave: NOS.nl (inc. liveblogs)", "(as percentage of all political news)") +
-  scale_x_continuous(breaks=1:4, labels=c("1 Jan", "15 Jan", "1 Feb", "15 Feb")) + theme_nrc() +
-  theme(legend.position = "none")
-
-```
-
-Here we do see a clear shift, with D66 even overtaking VVD and CDA, while the other leftist parties lose some of their gains. 
-PVV and the Smaller parties get more visibility, but GL, and FvD actually become less visible. 
-
-## Visibility and engagement on social media
-
-```{r visibility-sm}
 sm = read_csv(here("data/raw/messages-shares-likes-mentions-all-leaders-1jan2021-03march2021.csv"))%>% 
   mutate(party=str_match(name, "\\((.*)\\)")[,2],
               variable=str_remove(variable, "Number of ")) %>% 
   select(platform, variable, party, date=day_only, value)
+
 sma = sm %>% mutate(period=period(date),
-              variable2=ifelse(variable=="Messages", "messages", "engagement")
-              ) %>% group_by(period, variable2, party) %>% summarize(value=sum(value)) %>% mutate(perc=value/sum(value))
-sma %>% filter(variable2=="messages") %>% 
-  ggplot(aes(x=as.numeric(as.factor(period)), y=perc, color=party)) + geom_line() + facet_wrap("party")+ 
+              mtype=ifelse(variable=="Messages", "Social Media (activity)", "Social Media (engagement)")
+              ) %>%
+  group_by(period, mtype, party) %>% summarize(n=sum(value)) %>% 
+  mutate(perc=n/sum(n)) %>% ungroup() %>% 
+  mutate(period=as.numeric(as.factor(period)), 
+         party=case_when(party == "50PLUS" ~ "50Plus", party == "DENK" ~ "Denk", T~ party),
+         party=factor(party, levels=parties))
+
+hpp2=bind_rows(hpp, sma)
+
+mtypes = c("Newspapers"=1,"TV"=1, "Online (nos.nl/nu.nl)"=1, "Social Media (activity)"=2, "Social Media (engagement)"=2)
+hpp2 %>% mutate(mtype=fct_relevel(mtype, names(mtypes))) %>% 
+ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() + 
+  facet_wrap("party", nrow = 3) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-  xlab(NULL) + ylab(NULL) + ggtitle("Social Media Activity of parties per wave", "(# of messages on FB, IG, TW as percentage of all messages)") +
+  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave", "(as percentage of all political news)") +
   scale_x_continuous(breaks=1:4, labels=c("1 Jan", "15 Jan", "1 Feb", "15 Feb")) + theme_nrc() +
-  theme(legend.position = "none")
+  theme(legend.title = element_blank(), legend.position = c(1, 0), legend.justification = c("right", "bottom")) +
+  scale_linetype_manual(values=c("TV"=1, "Newspapers"=1, "Online (nos.nl/nu.nl)"=1, 
+                                 "Social Media (activity)"=2, "Social Media (engagement)"=2))
 ```
 
-```{r engagement-sm}
-sma %>% filter(variable2=="engagement") %>% 
-  ggplot(aes(x=as.numeric(as.factor(period)), y=perc, color=party)) + geom_line() + facet_wrap("party")+ 
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-  xlab(NULL) + ylab(NULL) + ggtitle("Social Media Engagement with parties per wave", "(Shares, likes, mentions of FB, IG, TW posts as percentage of all shares/likes/mentions)") +
-  scale_x_continuous(breaks=1:4, labels=c("1 Jan", "15 Jan", "1 Feb", "15 Feb")) + theme_nrc() +
-  theme(legend.position = "none")
-```
+Overall visibility on traditional media (including online) favours coalition parties VVD, VDA, D66 followed by the main opposition parties.
+Over time, Forum become much more visible on these media. PvdA, GL, and SP become  more visible in the newspapers, but less so on TV. 
+In contrast, PVV, VVD and FvD (and to a lesser extend D66) are much more visible on television. 
 
-These two graphs show a very clear picture: although all parties are active on social media, FvD wins hands down in terms of their activity,
+Social media also show a very clear picture: 
+although many parties are somewhat active on social media, FvD wins hands down in terms of their activity,
 and FvD and PVV are the only parties with substantial engagement on social media (likes, shares, mentions)
 
 # Does the voter take notice?
 
-[TODO]
+
+```{r notice}
+d = w %>% filter(variable %in% c("B2", "B3")) %>%  mutate(name=str_remove(name, " *&.*")) %>% 
+  mutate(name = case_when(name == "50Plus Partij" ~ "50+",
+                          name == "Forum voor Democratie" ~ "FvD",
+                          name == "Partij voor de Dieren" ~ "PvdD",
+                          T ~ name),
+         value = case_when(value == 999 & variable == "B2" ~ 0, 
+                           value == 999 & variable == "B3" ~ NA_real_, 
+                           T ~ value),
+         varlabel=case_when(variable == "B2" ~ "Noticed",
+                            T ~ "Positive / Negatibve"),
+         name=case_when(name == "ChristenUnie" ~ "CU", 
+                        name == "GroenLinks" ~ "GL",
+                        name == "50+" ~ "50Plus",
+                               T~name))
+
+d2 = d %>% group_by(wave, variable, varlabel, name) %>% summarize(value = mean(value, na.rm=T)) %>%
+  mutate(fillcolor = case_when(variable == "B2" ~ 5.5+value,  T ~ value),
+         name=fct_rev(factor(name, levels=parties)))
+
+d2 %>% ggplot(aes(x=wave, y=name, fill=fillcolor, label=round(value,1))) + 
+  geom_tile(color="white", lwd=1) + facet_grid(cols=vars(varlabel)) + theme_nrc() + 
+  scale_fill_gradient2(midpoint=5.5, low="red", high="blue") + geom_text() + 
+  ggtitle("Did respondents notice the parties / leaders?", "(Noticed from 0 (not at all) to 3 (a lot); positive negative from 0 to 10")
+```
+[Download data: `r export_data(d2, "Media performance according to respondents")`]
+
+## Does notice depend on alignment of repondent?
+
+```{r notice-lire}
+r2 = resp %>% select(iisID, rile_self, vote) %>% 
+  mutate(rile=case_when(is.na(rile_self) ~ NA_character_, rile_self < 5 ~ "links", rile_self > 6 ~ "rechts", T ~ "midden"))
+
+d3 = d %>% inner_join(r2) %>% filter(!is.na(rile)) %>% group_by(wave, variable, name, rile) %>% summarize(value = mean(value, na.rm=T)) %>% 
+  mutate(name=fct_rev(factor(name, levels=parties)))
+
+d3 %>% filter(variable=="B2") %>% 
+  ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile() + facet_grid(cols=vars(rile)) + theme_nrc() + 
+  geom_text() + scale_fill_gradient(low="white", high="blue", guide = F) + 
+  ggtitle("Notice of parties by alignment", "(Does respondent self-report as left or right? Values 0 (not noticed) to 3 (noticed a lot))")
+
+```
+```{r notice-lire1}
+d3 %>% filter(variable=="B3") %>% 
+  ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile() + facet_grid(cols=vars(rile)) + theme_nrc() + 
+  geom_text() + scale_fill_gradient2(low="red", mid="white", high="green", midpoint = 5.5, guide = F) + 
+  ggtitle("Evaluation of media performence by alignment", "(Does respondent self-report as left or right? Values 0 to 10)")
+```
+
+[Download data: `r export_data(d3, "Media performance by alignment")`]
+
+Notice of parties (visibility) does not really depend on the ideological alignment of the respondent.
+Interestingly, evaluation of their media performance does differ: rightist voters are overall more critical of rightist parties (especially FvD, PVV), while leftist voters are a bit more critical of GL. 
+
 
 # The Undecided Voter
 
@@ -173,10 +193,19 @@ The number of undecided voters (and non-voters) is becoming smaller as the elect
 w0u = votes %>% filter(name == "Undecided", wave == "w0") %>% pull(iisID)
 w1u = votes %>% filter(name == "Undecided", wave == "w1") %>% pull(iisID)
 w2u = votes %>% filter(name == "Undecided", wave == "w2") %>% pull(iisID)
+w2v = votes %>% filter(wave == "w2") %>% pull(iisID)
 
+
+still_undecided = length(intersect(w0u, w2u)) / length(intersect(w0u, w2v))
+newly_undecided = length(setdiff(w2u, w0u)) / length(w2u) 
+
+perc = function(x) glue("{round(x*100)}%")
 votes  %>% group_by(wave, name) %>% summarize(n=n())%>% mutate(wave=wave_label(wave), perc=n/sum(n)*100) %>% filter(name %in% c("Undecided", "Not")) %>% select(-n) %>% pivot_wider(names_from=wave, values_from=perc)
-
 ```
+
+Very importantly, the group of undecided voters is also changing. 
+Of the undecided voters at the start, only `r perc(1-still_undecided)` is still undecided.
+Conversely, of the current undecided voters, `r perc(newly_undecided)` did have a preference at the start. 
 
 ## Media use of undecided voters
 
@@ -193,56 +222,81 @@ d = w %>% mutate(zwevend=fct_rev(ifelse(iisID %in% w0u, "Undecided", "Decided"))
                         T ~ "DROP")) %>% 
   filter(name != "DROP") %>% group_by(zwevend, wave, name) %>% summarize(value=mean(value)) 
 ggplot(d, aes(x=as.numeric(as.factor(wave)), colour=name, y=value)) + geom_line() + facet_grid(cols=vars(zwevend)) + 
-  theme_nrc()  + ggtitle("Media use of (un)decided voters", "(in frequency of use per week, 0-7)") +
+  theme_nrc()  + ggtitle("Media use of *originally* (un)decided voters", "(in frequency of use per week, 0-7)") +
   scale_x_continuous(breaks=c(1,2,3), labels=c("Wave 1\n(Late Jan.)", "Wave 2\n(Early Feb.)", "Wave 3\n(Late Feb.)"))
 
+#TODO: van zwevers in p0-p2
 ```
 
-[Download data: `r export_data(d, "Media use of (un)decided voters")`]
+[Download data: `r export_data(d, "Media use of originally (un)decided voters")`]
 
 These results are quite striking: much more than the voters that had already made up their mind,
 these undecided voters started consuming more media, both newspapers and TV,
 and at the end of February even consume more news. 
+
+```{r undecided-media2}
+zwevers = w %>% filter(variable=="vote") %>% mutate(zwevend=fct_rev(ifelse(name=="Undecided", "Undecided", "Decided"))) %>% select(wave, iisID, zwevend)
+
+#d = w %>% filter(variable == "I1") %>% inner_join(zwevers) %>%
+d = w %>% filter(iisID %in% c(w2v)) %>% mutate(zwevend=fct_rev(ifelse(iisID %in% w2u, "Undecided", "Decided"))) %>% filter(variable == "I1") %>% 
+  mutate(name=case_when(name == "Television" ~ "TV",
+                        name == "Newspapers or opinion magazines (paper or online)" ~ "Newspapers",
+                        name == "Online news sites (such as nu.nl) or blogs" ~ "Online",
+                        name == "Social media (such as Facebook, Twitter)" ~ "Social",
+                        T ~ "DROP")) %>% 
+  filter(name != "DROP") %>% group_by(zwevend, wave, name) %>% summarize(value=mean(value)) 
+ggplot(d, aes(x=as.numeric(as.factor(wave)), colour=name, y=value)) + geom_line() + facet_grid(cols=vars(zwevend)) + 
+  theme_nrc()  + ggtitle("Media use of *currently* (un)decided voters", "(in frequency of use per week, 0-7)") +
+  scale_x_continuous(breaks=c(1,2,3), labels=c("Wave 1\n(Late Jan.)", "Wave 2\n(Early Feb.)", "Wave 3\n(Late Feb.)"))
+```
+
+[Download data: `r export_data(d, "Media use of currently (un)decided voters")`]
+
+If we look at *currently* undecided voters, the picture is strikingly different. 
+This group (85% of which did have a preference at the start) actually consume less media across the board,
+even as the other respondents are increasing their (political) media use. 
 
 ## Who are the undecided voters?
 
 As undecided voters make up their mind, and other voters start doubting their choices, the group of undecided voters changes.
 Let's look at some of the demographics:
 
-### Education of undecided voters per wave
-
-```{r undecided-education}
-undecideds = w %>% filter(variable == "vote", name=="Undecided") %>% select(wave, iisID) %>% inner_join(resp)
-undecideds %>% group_by(wave, education) %>% summarize(n=n()) %>% na.omit() %>% mutate(perc=n/sum(n)*100) %>% select(-n) %>% pivot_wider(names_from=wave, values_from=perc)
-```
-
-A small shift from medium to lower education. 
-
-### Age of undecided voters per wave
-
-```{r undecided-age}
-undecideds %>% group_by(wave, age) %>% summarize(n=n()) %>% na.omit() %>% mutate(perc=n/sum(n)*100) %>% select(-n) %>% pivot_wider(names_from=wave, values_from=perc)
-```
-
-Here is a clear shift: where the undecided voters at the start of the campaign were relatively young,
-by late February the group is older, with almost a quarter being 65 or older
-and much fewer being younger than 25. 
-
-
-### Other demographics of undecided voters per wave
-
 ```{r undecided-demo}
-undecideds %>% mutate(education=2-as.numeric(education), age=as.numeric(age)) %>% 
-   group_by(wave) %>% summarize(rile_self=mean(rile_self, na.rm=T), polknow=mean(polknow, na.rm=T), education=mean(education, na.rm=T), age=mean(age, na.rm=T)) %>%
-  pivot_longer(-wave, names_to="Measure") %>% pivot_wider(names_from=wave)
+scale = function(x) scales::rescale(as.numeric(x))
+r2 = resp %>% mutate(education=1-scale(education), 
+         age=scale(age), 
+         gender=scale(gender),
+         leftright=scale(rile_self),
+         polknowledge=scale(polknow)) %>% select(iisID, education, age, gender, leftright, polknowledge)
+
+
+
+undecideds = w %>% filter(variable == "vote", name=="Undecided") %>% 
+  select(wave, iisID) %>% inner_join(r2)
+
+d = bind_rows(undecideds, totals) %>% 
+   group_by(wave) %>% summarize(leftright=mean(leftright, na.rm=T), 
+                                polknowledge=mean(polknowledge, na.rm=T), 
+                                education=mean(education, na.rm=T), 
+                                age=mean(age, na.rm=T), 
+                                gender=mean(gender, na.rm=T)) %>%
+   pivot_longer(-wave, names_to="measure") %>%
+  mutate(wave=fct_relevel(wave, c("w0", "w1", "w2", "All respondents")))
+
+ggplot(d, aes(x=wave, y=measure, fill=value, label=round(value*100))) +
+  geom_tile(lwd=1, color="white") + geom_text(color="white") + theme_nrc() + scale_fill_gradient(guide=F) +
+  ggtitle("Demographics of undecided voters per wave", 
+          "(rescaled to 0-100, gender is percentage female, leftright is 0=left, 100=right)")
 ```
 
-The top rows shows the self-placement on a left-right scale, which shows that the group of undecided voters has shifted mostly towards the mean of left-right placement of 5.4. 
-Interestingly, even though the group has a lower overall education, they score better on political knowledge, probably as a result of being older. 
+The table above shows average score on left-right self placement, political knowledge, education, age, and gender.
+This shows a clear shift in who those voters are:
+The original undecided voters were younger, more often male, higher educated and slighyly more leftist than average.
+In constrast, the current undecided voters are centrist and older than the average respondent. 
+Interestingly, even though this group has a lower overall education, they score better on political knowledge, probably as a result of being older. 
 
-(The bottom rows show education and age as a numeric value, mirroring the shift towards an older and slightly less educated group of voters. )
 
-## Where do undecided voters go to?
+## Where do undecided voters go to and come from?
 
 ```{r undecideds}
 parties = c("Undecided", "VVD", "PVV", "CDA", "D66", "GroenLinks", "SP", "PvdA", "ChristenUnie", "PvdD", "50+", "SGP", "Denk", "FvD", "Other", "Not")
@@ -266,11 +320,13 @@ totals = votes %>% group_by(wave) %>% summarize(ntot=n())
 
 d = bind_rows(
   undecided_to %>% rename(party=to) %>% add_column(type="Undecided voters went to"),
-  undecided_from %>% rename(party=name) %>% add_column(type="Undecided came from"),
-  tibble(wave="w0", party="Denk", n=0, type="Undecided came from"))  %>% 
+  undecided_from %>% rename(party=name) %>% add_column(type="Undecided came from")) %>%
+  #tibble(wave="w0", party="Denk", n=0, type="Undecided came from"))  %>% 
   mutate(period=case_when(wave == "w0" ~ "Early February", T ~ "Late February"))
 
-change = d %>% select(party, wave, period, type, n) %>% pivot_wider(names_from=type, values_from=n) %>% 
+d %>% filter(party == "Denk")
+
+change = d %>% ungroup() %>% select(party, wave, period, type, n) %>% pivot_wider(names_from=type, values_from=n) %>% 
   left_join(totals) %>% 
   mutate(change=`Undecided voters went to` - `Undecided came from`,
          perc=change/ntot*100) %>% 
