@@ -73,7 +73,7 @@ extract_long = function(data) {
 extract_waves = function(data) {
   
   prepare_wave = function(w) {
-    ld = extract_long(w) %>% filter(str_detect(variable, "^I")) %>% select(-option)
+    ld = extract_long(w) %>% filter(str_detect(variable, "^I|^B")) %>% select(-option)
     wd = extract_wide(w) %>% select(iisID, vote, vaccination) %>% pivot_longer(-iisID, names_to="variable", values_to="name") %>% add_column(value=1)
     bind_rows(ld,wd)
   }
