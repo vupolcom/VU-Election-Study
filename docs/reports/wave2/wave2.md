@@ -35,6 +35,23 @@ Does the voter take notice?
 ![](notice-1.png) \[Download data: [Media performance according to
 respondents](Media_performance_according_to_respondents.csv)\]
 
+Looking at whether respondents noticed the various parties, overall we
+see that VVD, PVV and FvD are most noticed. The latter two are
+interesting since they are less visible in the mainstream media. So,
+either they are more noticeable when they are present, or the notice is
+(also) based on social media presence.
+
+Most parties are not evaluated particularly positive or negative, with a
+clear exception for PVV, FvD and Denk, whose media performance is
+evaluated very negatively by the respondents. This confirms the
+possibility that PVV and FvD are more noticeable when present, but
+clearly mostly in a negative way.
+
+Looking at change over time, we see that PvdA and GL become less
+noticeable, matching their decreasing visibility on TV. PvdA is
+evaluated clearly more positively, while VVD, CDA and D66 are evaluated
+slightly more negatively.
+
 Does notice depend on alignment of repondent?
 ---------------------------------------------
 
@@ -81,7 +98,7 @@ the election draws near:
 </table>
 
 Very importantly, the group of undecided voters is also changing. Of the
-undecided voters at the start, only 86% is still undecided. Conversely,
+undecided voters at the start, only 14% is still undecided. Conversely,
 of the current undecided voters, 82% did have a preference at the start.
 
 Media use of undecided voters

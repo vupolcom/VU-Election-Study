@@ -156,10 +156,24 @@ d2 = d %>% group_by(wave, variable, varlabel, name) %>% summarize(value = mean(v
 
 d2 %>% ggplot(aes(x=wave, y=name, fill=fillcolor, label=round(value,1))) + 
   geom_tile(color="white", lwd=1) + facet_grid(cols=vars(varlabel)) + theme_nrc() + 
-  scale_fill_gradient2(midpoint=5.5, low="red", high="blue") + geom_text() + 
+  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), high="#01529d", guide=F) + geom_text() + 
+    #scale_fill_gradient2(low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + 
+
   ggtitle("Did respondents notice the parties / leaders?", "(Noticed from 0 (not at all) to 3 (a lot); positive negative from 0 to 10")
+
 ```
 [Download data: `r export_data(d2, "Media performance according to respondents")`]
+
+Looking at whether respondents noticed the various parties, overall we see that VVD, PVV and FvD are most noticed.
+The latter two are interesting since they are less visible in the mainstream media.
+So, either they are more noticeable when they are present, or the notice is (also) based on social media presence. 
+
+Most parties are not evaluated particularly positive or negative, with a clear exception for PVV, FvD and Denk,
+whose media performance is evaluated very negatively by the respondents. 
+This confirms the possibility that PVV and FvD are more noticeable when present, but clearly mostly in a negative way.
+
+Looking at change over time, we see that PvdA and GL become less noticeable, matching their decreasing visibility on TV.
+PvdA is evaluated clearly more positively, while VVD, CDA and D66 are evaluated slightly more negatively. 
 
 ## Does notice depend on alignment of repondent?
 
@@ -172,14 +186,15 @@ d3 = d %>% inner_join(r2) %>% filter(!is.na(rile)) %>% group_by(wave, variable, 
 
 d3 %>% filter(variable=="B2") %>% 
   ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile() + facet_grid(cols=vars(rile)) + theme_nrc() + 
-  geom_text() + scale_fill_gradient(low="white", high="blue", guide = F) + 
+  geom_text() + scale_fill_gradient(low="white", high="#01529d", guide = F) + 
   ggtitle("Notice of parties by alignment", "(Does respondent self-report as left or right? Values 0 (not noticed) to 3 (noticed a lot))")
 
 ```
 ```{r notice-lire1}
 d3 %>% filter(variable=="B3") %>% 
   ggplot(aes(x=wave, y=name, fill=value, label=round(value,1))) + geom_tile() + facet_grid(cols=vars(rile)) + theme_nrc() + 
-  geom_text() + scale_fill_gradient2(low="red", mid="white", high="green", midpoint = 5.5, guide = F) + 
+  geom_text() +# scale_fill_gradient2(low="red", mid="white", high="green", midpoint = 5.5, guide = F) +
+  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), high="#01529d", guide=F) + geom_text() + 
   ggtitle("Evaluation of media performence by alignment", "(Does respondent self-report as left or right? Values 0 to 10)")
 ```
 
@@ -208,7 +223,7 @@ votes  %>% group_by(wave, name) %>% summarize(n=n())%>% mutate(wave=wave_label(w
 ```
 
 Very importantly, the group of undecided voters is also changing. 
-Of the undecided voters at the start, only `r perc(1-still_undecided)` is still undecided.
+Of the undecided voters at the start, only `r perc(still_undecided)` is still undecided.
 Conversely, of the current undecided voters, `r perc(newly_undecided)` did have a preference at the start. 
 
 ## Media use of undecided voters
@@ -273,12 +288,11 @@ r2 = resp %>% mutate(education=1-scale(education),
          leftright=scale(rile_self),
          polknowledge=scale(polknow)) %>% select(iisID, education, age, gender, leftright, polknowledge)
 
-
-
 undecideds = w %>% filter(variable == "vote", name=="Undecided") %>% 
   select(wave, iisID) %>% inner_join(r2)
+demo_totals = r2 %>% add_column(wave="All respondents")
 
-d = bind_rows(undecideds, totals) %>% 
+d = bind_rows(undecideds, demo_totals) %>% 
    group_by(wave) %>% summarize(leftright=mean(leftright, na.rm=T), 
                                 polknowledge=mean(polknowledge, na.rm=T), 
                                 education=mean(education, na.rm=T), 
