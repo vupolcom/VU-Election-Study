@@ -119,6 +119,10 @@ ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() +
                                  "Social Media (activity)"=2, "Social Media (engagement)"=2))
 ```
 
+[Download data: `r export_data(hpp2, "Visibility of parties in the media")`]
+
+
+
 Overall visibility on traditional media (including online) favours coalition parties VVD, VDA, D66 followed by the main opposition parties.
 Over time, Forum become much more visible on these media. PvdA, GL, and SP become  more visible in the newspapers, but less so on TV. 
 In contrast, PVV, VVD and FvD (and to a lesser extend D66) are much more visible on television. 

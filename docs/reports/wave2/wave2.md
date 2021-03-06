@@ -14,6 +14,9 @@ Visibility of parties
 
 ![](visibility-newspapers-1.png)
 
+\[Download data: [Visibility of parties in the
+media](Visibility_of_parties_in_the_media.csv)\]
+
 Overall visibility on traditional media (including online) favours
 coalition parties VVD, VDA, D66 followed by the main opposition parties.
 Over time, Forum become much more visible on these media. PvdA, GL, and
