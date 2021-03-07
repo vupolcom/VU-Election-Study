@@ -1,14 +1,19 @@
 variable,long,rename,value,isna,label,wording
-age,0,,1,0,<24,18 - 110
-age,0,,2,0,25-34, 
-age,0,,3,0,35-44, 
-age,0,,4,0,45-54, 
-age,0,,5,0,55-64, 
-age,0,,6,0,>64, 
-education,0,,1,0,High,"WO-doctoraal of master of HBO-master, postdoctoraal; HBO of WO propedeuse, HBO (behalve HBO-master), WO-kandidaats of WO-bachelor"
-education,0,,2,0,Medium,"HAVO of VWO bovenbouw, HBS,  MMS; MBO 2, 3, 4 of MBO oude structuur voor 1998"
-education,0,,3,0,Low,"MAVO, HAVO of VWO (eerste drie jaar), ULO, MULO, VMBO (theoretisch of gemengd), voortgezet speciaal onderwijs; LBO, VBO, VMBO (kader- of beroepsgericht), MBO 1; Geen onderwijs, basisonderwijs, cursus inburgering, cursus Nederlandse taal"
-education,0,,999,1,Don't know,"Weet niet, Geen opgave"
+age,0,,,,,
+agegroup,0,,1,0,<24,18 - 110
+agegroup,0,,2,0,25-34, 
+agegroup,0,,3,0,35-44, 
+agegroup,0,,4,0,45-54, 
+agegroup,0,,5,0,55-64, 
+agegroup,0,,6,0,>64, 
+education,0,,1,0,Elementary,"Geen onderwijs, basisonderwijs, cursus inburgering, cursus Nederlandse taal "
+education,0,,2,0,"VMBO, MBO 1","LBO, VBO, VMBO (kader- of beroepsgericht), MBO 1"
+education,0,,3,0,VMBO-T,"MAVO, HAVO of VWO (eerste drie jaar), ULO, MULO, VMBO (theoretisch of gemengd), voortgezet speciaal onderwijs; LBO, VBO, VMBO (kader- of beroepsgericht), MBO 1; Geen onderwijs, basisonderwijs, cursus inburgering, cursus Nederlandse taal"
+education,0,,4,0,MBO 2-4,"MBO 2, 3, 4 of MBO oude structuur voor 1998"
+education,0,,5,0,HAVO/VWO,"HAVO of VWO bovenbouw, HBS, MMS"
+education,0,,6,0,Bachelor,"HBO of WO propedeuse, HBO (behalve HBO-master), WO-kandidaats of WO-bachelor "
+education,0,,7,0,Master,"WO-doctoraal of master of HBO-master, postdoctoraal; HBO of WO propedeuse, HBO (behalve HBO-master), WO-kandidaats of WO-bachelor"
+education,0,,999,1,Don’t know,"Weet niet, Geen opgave"
 job,0,,1,0,Full-time employed,Fulltime werkzaam
 job,0,,2,0,Part-time employed,Parttime werkzaam
 job,0,,3,0,Entrepreneur,Werkzaam als zelfstandig ondernemer

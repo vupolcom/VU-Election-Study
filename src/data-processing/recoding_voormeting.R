@@ -1,7 +1,7 @@
 #! /usr/bin/env Rscript
 #DESCRIPTION: Data Cleaning: Dutch Parliamentary Elections 2021 Pre-Wave
 #AUTHOR: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Marloes Jansen, Nicolas Matthis, Kasper Welbers and Nienke Wolfers"
-#DEPENDS: data/raw-private/qualtrics_raw_wave0.csv
+#DEPENDS: data/raw-private/qualtrics_api_key.txt
 #CREATES: data/intermediate/VUElectionPanel2021_wave0.csv
 
 ## Required Packages &amp; Reproducibility
@@ -12,47 +12,41 @@ library(sjlabelled)
 library(here)
 library(qualtRics)
 
-#input_fn = here("data/raw-private/qualtrics_raw_wave0.csv")
+input_fn = here("data/raw-private/qualtrics_api_key.txt")
 output_fn = here("data/intermediate/VUElectionPanel2021_wave0.csv")
 
-## Load Data
-# Load the data downloaded from Qualtrics, and only keep those that have given consent to participate in the panel study.
-#col_names <- names(read_csv(input_fn, n_max = 0))
-#d <- read_csv(input_fn, col_names = col_names, skip = 3) %>%
-#  remove_all_labels() %>% 
-#  tibble() %>%
-  #only keep people that have given consent
-#  filter(consent1==1 & consent2==1) 
-#rm(input_fn, col_names)
-
-input_fn <- fetch_survey(surveyID = "SV_39R4hSWxAJNBKHb", 
+## Load Data from qualtrics using the API key from data/raw-private
+API = read_file(input_fn) %>% trimws()
+qualtrics_api_credentials(api_key = API,  base_url = "fra1.qualtrics.com")
+d <- fetch_survey(surveyID = "SV_39R4hSWxAJNBKHb", 
                          verbose = TRUE, force_request = T,
                          label = FALSE, convert = FALSE)
-d <- input_fn %>%
+
+#only keep people that have given consent
+
+d <- d %>%
   remove_all_labels() %>% 
   tibble() %>%
-  #only keep people that have given consent
   filter(consent1==1 & consent2==1) 
-rm(input_fn)
 
+# Some respondents have duplicate rows due to an error in launching the survey
+# For those people, we take the latest non-missing value for each column
+first_non_missing = function(x) na.omit(x)[1]
+d = d %>% arrange(iisID, desc(RecordedDate)) %>% group_by(iisID) %>% 
+  group_by(iisID) %>% summarize(across(everything(), first_non_missing))
+table(d$age, useNA = "always")
 ## Recode Block Background Variables
 BG <- d %>%
   mutate(gender = recode(gender, `2` = 0),
-         age = ifelse(age <25, 1,
-               ifelse(age >24 & age <35, 2,
-               ifelse(age >34 & age <45, 3,
-               ifelse(age >44 & age <55, 4,
-               ifelse(age >54 & age <65, 5,
-               ifelse(age >64, 6, 999)))))),
-         education = recode(education, 
-                            `1` = 1, 
-                            `2` = 1,
-                            `3` = 2,
-                            `4` = 2,
-                            `5` = 3,
-                            `6` = 3,
-                            `7` = 3,
-                            `8` = 999),
+         agegroup = case_when(
+           is.na(age) ~ NA_real_,
+           age <25 ~ 1,
+           age <35 ~ 2,
+           age <45 ~ 3,
+           age <55 ~ 4,
+           age <65 ~ 5,
+           T ~ 6),
+         education = ifelse(education == 8, 999, 8 - education),
          region = recode(region,
                          `1` = 1,
                          `5` = 2,
@@ -107,7 +101,7 @@ BG <- d %>%
                     ifelse(country_birth==13, 2,
                            999)))))))))))))))))))))))))))))))) %>%
   select(wave,start_date, end_date, duration_min, progress = Progress, iisID, gender, 
-         age, education,region, ethnicity, 
+         age, agegroup, education, region, ethnicity, 
          postal_code = postal_code_1_TEXT,
          job, internet_use)
   
@@ -825,7 +819,9 @@ df <- left_join(df, I, by = "iisID") %>%
   filter(iisID !="007",
          iisID !="009") %>%
   mutate(iisID = as_numeric(iisID)) %>%
-  drop_na(iisID)
+  drop_na(iisID) 
+
+rename(df, vote=A2, vote_otherparty=A2_otherparty, polknow=D1, vote_2017=E1, rile_self=E2)
 
 write_csv(df, output_fn)
 
