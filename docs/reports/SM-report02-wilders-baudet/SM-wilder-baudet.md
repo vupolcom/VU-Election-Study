@@ -5,11 +5,11 @@ permalink: /reports/SM-report02-wilders-baudet/
 ---
 
 
-<sup>February 25, 2021</sup>
+<sup>February 25, 2021 (Last edited: March 7)</sup>
 
-In a [previous data report](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html) we observed the leaders of the two right-wing populist parties in the Netherlands, Geert Wilders (PVV) and Thierry Baudet (FvD), to be the candidates with the strongest social media presence, with the exception of Mark Rutte's (VVD) Prime Minister official account. Wilders (PVV) has \~ 850.000 followers on Twitter, \~ 430.000 on Facebook, and \~ 170.000 on Instagram, and Baudet (FvD) has \~ 250.000 on Twitter, \~ 95.000 on Facebook, and \~120.000 on Instagram. Most of the other party leaders running in the upcoming March 17th election don't even hit the 100.000 follower mark for any of these three platforms. Social media is gaining relevance as a battle ground for elections and political discussions more broadly, and the right-wing populist parties seem to dominate the scene in the Netherlands. In this report we dig deeper into the social media dynamics of these two candidates. 
+In a [previous data report](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html) we observed the leaders of the two right-wing populist parties in the Netherlands, Geert Wilders (PVV) and Thierry Baudet (FvD), to be the candidates with the strongest social media presence, with the exception of Mark Rutte's (VVD) Prime Minister official account. Wilders (PVV) has \~ 850.000 followers on Twitter, \~ 430.000 on Facebook, and \~ 170.000 on Instagram, and Baudet (FvD) has \~ 250.000 on Twitter, \~ 95.000 on Facebook, and \~120.000 on Instagram. Most of the other party leaders running in the upcoming March 17th election don't even hit the 100.000 follower mark for any of these three platforms. Social media is gaining relevance as a battle ground for elections and political discussions more broadly, and the right-wing populist parties seem to dominate the scene in the Netherlands. In this report we dig deeper into the social media dynamics of these two candidates.
 
-In this report we explore the <ins>Twitter</ins>, <ins>Facebook</ins> and <ins>Instagram</ins> activity of Geert Wilders (PVV) and Thierry Baudet (FdV) and provide descriptive data about:
+In this report we explore the <ins>Twitter</ins>, <ins>Facebook</ins> and <ins>Instagram</ins> activity of Geert Wilders (PVV) and Thierry Baudet (FdV). For comparision, we also explore the activity of Mark Rutte's Prime Minister accounts, as well as Jesse Klaver's (GL). In particular, we explore:
   * How active they are in these three social media platforms
   * How much other users engage with (share and like) their messages
   * What issues do these candidates discuss on social media
@@ -20,59 +20,61 @@ In this report we explore the <ins>Twitter</ins>, <ins>Facebook</ins> and <ins>I
 
 We have collected all the messages they posted on these three social media platforms for about 6 months: from August 15th 2020 to February 22nd 2021. 
 
-![Figure 1](SM-report02-number-messages-reactions.jpg)
+![Figure 1](SM-report02-number-messages-reactions-UPD.jpg)
 
-Takeaways [see top three plots in Figure 1]:
+Takeaways:
   * Twitter is the platform they use most often (1.007 tweets by Wilders and  2.599 by Baudet), followed by Facebook (672 Wilders, 314 Baudet), and then by Instagram (151 Wilders, 212 Baudet).
-  * Baudet is twice as active on Twitter compared to Wilders, but Wilders is twice as active on Facebook. The are similarly active on Instagram.
+  * Baudet is twice as active on Twitter compared to Wilders, but Wilders is twice as active on Facebook. They are similarly active on Instagram.
+  * Both Wilders and Baudet are substantially more active on social media than the other two candidates with also large number of followers (Rutte and Klaver). For example, during this time period Baudet sent about 6.5 times the number of Facebook messages that Rutte sent.
 
 
 ## How often other users share and like their messages?
 
-We have also collected data about how often other users shared and liked the messages we gathered during this time period. There is no Instagram equivalent to sharing, so we don't take into account this Instagram dimension in the analysis.
+We have also collected data about how often other users shared and liked the messages we gathered during this time period. 
 
-![Figure 2](SM-report02-std-shares-likes.jpg)
+<sup>Note: For Twitter, we only take into account the shares and likes for original messages (and not retweets). There is no Instagram equivalent to sharing, so we don't take into account this Instagram dimension in the analysis. </sup>
+
+![Figure 2](SM-report02-std-shares-likes-UPD.jpg)
 
 Takeaways:
-  * In absolute terms, Baudet had a larger number of shares on Twitter (868.546 v. 463.420 for Wilders) but Wilders bit him on Facebook (415.031 v. 118.156 for Baudet) [see three middle plots in Figure 1].
-  * In absolute terms, Baudet had a larger number of likes on Twitter (1.518.302 v. 708.032 for Wilders) and Facebook (2.015.888 v. 541.801 for Wilders), but Wilders had a slightly larger number on Instagram (1.320.162 v. 1.140.877) [see three bottom plots in Figure 1].
-  * We observed however that these two candidates didn't send the same number of messages on these platforms, which may be driving the two previous takeaways (the candidate posting more has more chances to get more shares/likes). When we look at number of shares/likes per post, Wilders bits Baudet on the three platforms. This can be a reflection of Wilders having more followers in all these platforms. But it also reflects a stronger ability to spread his message around [see Figure 2].
-  * When looking at the number of shares/likes per post, we actually observe these two candidates to have the most engagement in the platforms they have the least number of followers. For example, although they both have more Twitter than Facebook followers (and they both sent more messages on Twitter than on Facebook), on average their Facebook messages are shared more often (618 times for Wilders, 376 for Baudet) than their tweets (466 times for Wilders, 338 for Baudet). We observe the same pattern when looking at likes. This may be related to their loyal and engaged supporters to be more likely to be active Facebook (rather than Twitter) users. 
+  * Wilders had a larger number of shares both on Facebook (415.031 v. 118.156 Baudet) and Twitter (461.250 v. 169.509 for Baudet), despite Baudet being substantially more active on Twitter. 
+  * A similar patterns emerges for the number of likes on Facebook and Twitter (Wilders outperforms Baudet), but on Instagram Baudet shows slightly higher numbers than Wilders.
+  * Wilders and Baudet achieve substantially higher engagement rates than Rutte and Klaver on Twitter and Facebook. They are all much more similary active (and get a much more similar amount of likes) on Instagra, although Baudet and Wilders still come on top.
+  * When accounting for the fact that some of these candidates are more active than others (and so end up with more opportunities to get shares/likes than others), we still see a very similar picture. In terms of shares and likes per post, Wilders comes first, Baudet second, and then Rutte and Klaver. With one interesting exception: Rutte outperforms all candidates on Instagram likes.
+
 
 ## How much do they rely on their core (Twitter) supporters to spread their message around?
 
-For Twitter, we can get detailed data as to which particular user shared the messages sent by Wilders and Baudet. We used the data to explore the pool of Wilders and Baudet's retweeters. First, for those who retweeted at least one tweet, we calculated (a) the percentage of all messages from each candidate that each user retweeted [two top plots in Figure 3]; and (b) for what percentage of the retweets are the most active users responsible [bottom plot in Figure 3]. The analysis helps us understand whether these party leaders rely on a small group of engaged users, _versus_ a large crowd, to spread their word.
+For Twitter, we can get detailed data as to which particular user shared the messages sent by Wilders and Baudet. We used this data to explore the pool of retweeters of Wilders, Baudet, Rutte, and Klaver. For those who retweeted at least one tweet from a given candidate, we calculated for what percentage of all the retweets of that candidate they are responsible. In the figure below we sorted the retweeters (x-axis) from most to least active, and in the y-axis we looked at the cumulative number of retweets for a given candidate. The figure indicates for what percentage of the retweets the most active e.g. 1% or 10% (etc.) of retweeters are responsible for.
 
-![Figure 3](SM-report02-rt-distribution.png)
+![Figure 3](SM-report02-cum-rt-UPD.jpg)
 
 Takeaways:
-  * For both candidates we see that most of their followers shared < 10% of their tweets, with the largest group sharing only < 1% of them [two top plots in Figure 3].
-  * For both candidates we also observe a few highly engaged followers, sharing > 50% and even > 90% of their tweets [two top plots in Figure 3].
-  * The most active users (the ones in the top 25% in terms of number of retweets) account for around 78% of Wilders's retweets, and 80% of Baudet's; indicating that both candidates do indeed rely on a small engaged group of users to get their word around.
+  * We see Baudet and Wilders to heavily rely on a small but very active subset of their followers to spread their message around. For example, their 20% most active retweeters are responsible for close to 80%.
+  * We observe a substantial different story for Klaver and Rutte. The 20% most active Klaver's retweeters account for about 65% of the retweets, and the 20% most active Rutter's retweeters account for 50% of the shares. This indicates that Klaver and Rutte rely on a much broader base to spread their message.
 
 
 ## What issues do they discuss?
 
-We looked at some of the words Wilders and Baudet use most often in their Twitter, Facebook, and Instagram posts. Then we calculated the percentage of message containing each of these workds [see Figure 4].
+We looked at some of the words these four candidates use most often in their Twitter, Facebook, and Instagram posts. Then we calculated the percentage of message containing each of these words.
 
-![Figure 4](SM-report02-topfeatures.jpg)
+![Figure 4](SM-report02-topfeatures-UPD.jpg)
 
 Takeaways:
-  * They love to mention the country. The word _nederland_ appears in \~ 16% of Wilders' messages, and on 8% of Baudet's. The word _land_ is also mention quite often by both (in \~ 5% of the posts).
-  * They often pick fights with Rutte (\~ 13% Wilders' tweets, \~ 4% Baudet) and the Kabinet (\~5% Wilders, \~ 4% Baudet).
-  * They both often mention coron-related words (e.g. _zorg_, _zorgmedewerkers_, _corona_, _lockdown_), although Baudet seems to do so at a slightly higher rate.
-  * They both touch on immigration: \~ 4% of Wilders' tweets mention _islam_, and \~ 3% of Baudet's tweets use the word _immigratie_. 
+  * The corona crisis takes on a substantial number of messages of all candidates
+  * Wilders and Baudet touch on immigration (\~ 4% of Wilders' tweets mention _islam_, and \~ 3% of Baudet's tweets use the word _immigratie_)
+  * Baudet focuses more than Wilders on criticizing the government for how they managed the corona crisis
+  * Rutte takes on a managerial role, often using social media to communicate about corona and government measures
+  * Klaver touches on many issues, including human rights and climate change
+
 
 
 ## What issues get more traction on social media?
 
 We also looked into how often the posts containing those words are shared on Twitter and Facebook.
 
-![Figure 5](SM-report02-topfeatures-sharing.jpg)
+![Figure 5](SM-report02-topfeatures-sharing-UPD.jpg)
 
-Takeaways:
-  * For Wilders, the tweets mentioning violence (_geweld_) are the ones shared the most (703 times on average). The Facebook posts on _geweld_ also do fairly well (shared 750 times on average). Tweets and Facebook posts mentioning Rutte are also shared at a very high rate in both platforms. Although _islam_ was only mentioned in 4% of Wilders' posts, both the tweets and Facebook posts on this topic are shared at a very high rate (569 times on Twitter and 630 times on Facebook on average)
-  * For Baudet, the tweets mentioning the government and the coronavirus crisis (_lockdown_, _corona_, _kabinet_, and _rutte_) are the ones that are shared the most. Messages mentioning _immigratie_ get a decent amount of shares on Twitter but do not do very well on Facebook. 
 
 
 
