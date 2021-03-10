@@ -6,6 +6,18 @@ permalink: /reports/
 ## Media-aandacht
 
 <table class="reports">
+<tr>
+   <td>
+      <a href="https://www.nrc.nl/nieuws/2021/03/10/wilders-en-baudet-groot-op-sociale-media-dankzij-harde-kern-van-fans-a4035031">
+        <img width="200px" align="left" src="https://images.nrc.nl/wkVC-fA9GfnWBic4P90EYfI9zok=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/03/data68392921-678269.jpg" />
+      </a>
+    </td>
+      <td>
+      <h3><a href="https://www.nrc.nl/nieuws/2021/03/10/wilders-en-baudet-groot-op-sociale-media-dankzij-harde-kern-van-fans-a4035031"> Wilders en Baudet groot op sociale media dankzij harde kern van fans</a></h3> 
+      <i>NRC, Handelsblad 10 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Andreu Casas en Mariken van der Velden</a>
+         </td>
+     </tr>
   <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/09/aan-de-talkshowtafels-schoven-het-afgelopen-coronajaar-vooral-journalisten-aan-a4034821">
@@ -18,7 +30,6 @@ permalink: /reports/
         met <a href="https://github.com/vupolcom/about">Nel Ruigrok</a>
          </td>
      </tr>
-
   <tr>
    <td>
       <a href="https://www.groene.nl/artikel/teruggebracht-tot-tweestrijd?utm_source=De+Groene+Amsterdammer&utm_campaign=0c6464378a-Dagelijks-2021-03-10&utm_medium=email&utm_term=0_853cea572a-0c6464378a-70907053">
