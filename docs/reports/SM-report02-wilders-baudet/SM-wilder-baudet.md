@@ -78,8 +78,11 @@ We also looked into how often the posts containing those words are shared on Twi
 
 ![Figure 5](SM-report02-topfeatures-sharing-UPD.jpg)
 <a href="data-plots/SM-report02-topfeatures-sharing-pvv-UPD.csv" target="_blank">Download data Wilders</a>
+
 <a href="data-plots/SM-report02-topfeatures-sharing-fvd-UPD.csv" target="_blank">Download data Baudet</a>
+
 <a href="data-plots/SM-report02-topfeatures-sharing-vvd-UPD.csv" target="_blank">Download data Rutte</a>
+
 <a href="data-plots/SM-report02-topfeatures-sharing-gl-UPD.csv" target="_blank">Download data Klaver</a>
 
 
