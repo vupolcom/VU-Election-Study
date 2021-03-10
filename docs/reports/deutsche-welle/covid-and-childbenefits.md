@@ -1,5 +1,5 @@
 ---
-title: 'VU 2021 Election Study: Issues of COVID-19 and Childs Benefits Affaire in Dutch Elections'
+title: 'VU 2021 Election Study: Issues of COVID-19 and Childs Benefits Scandal in Dutch Elections'
 author: "Mariken van der Velden"
 permalink: reports/deutsche-welle/
 output: 
@@ -8,21 +8,25 @@ output:
     preserve_yaml: yes
 ---
 
--   [Child Benefits in the Dutch
-    Elections](#child-benefits-in-the-dutch-elections)
+-   [Child Benefits Scandal in the Dutch
+    Elections](#child-benefits-scandal-in-the-dutch-elections)
 -   [Covid-19 in the Dutch Elections](#covid-19-in-the-dutch-elections)
 
-Child Benefits in the Dutch Elections
-=====================================
+Child Benefits Scandal in the Dutch Elections
+=============================================
 
-<img src="Child-Benefits-Party-1.png" alt="Should the Cabinet Fall over the Child Benefits Affaire?"  />
+On average 33% of the respondents thought that the government had to
+step down over the child benefits scandal (visualized by the dashed line
+in the figure below).
+
+<img src="Child-Benefits-Party-1.png" alt="Should the Cabinet Fall over the Child Benefits Scandal?"  />
 <p class="caption">
-Should the Cabinet Fall over the Child Benefits Affaire?
+Should the Cabinet Fall over the Child Benefits Scandal?
 </p>
 
-<img src="Child-Benefits-Rutte-1.png" alt="Should the Cabinet Fall over the Child Benefits Affaire?"  />
+<img src="Child-Benefits-Rutte-1.png" alt="Should the Cabinet Fall over the Child Benefits Scandal?"  />
 <p class="caption">
-Should the Cabinet Fall over the Child Benefits Affaire?
+Should the Cabinet Fall over the Child Benefits Scandal?
 </p>
 
 Covid-19 in the Dutch Elections

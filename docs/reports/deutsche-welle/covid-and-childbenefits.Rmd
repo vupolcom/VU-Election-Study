@@ -1,5 +1,5 @@
 ---
-title: 'VU 2021 Election Study: Issues of COVID-19 and Childs Benefits Affaire in Dutch Elections'
+title: 'VU 2021 Election Study: Issues of COVID-19 and Childs Benefits Scandal in Dutch Elections'
 author: "Mariken van der Velden"
 permalink: reports/deutsche-welle/
 output: 
@@ -53,12 +53,15 @@ d <- left_join(d, bg, by = "iisID") %>%
                             `9` = 5)) 
  
 ```
-# Child Benefits in the Dutch Elections
-```{r "Child-Benefits-Party", fig.height=10, fig.width=10, fig.cap="Should the Cabinet Fall over the Child Benefits Affaire?"}
+# Child Benefits Scandal in the Dutch Elections
+On average 33% of the respondents thought that the government had to step down over the child benefits scandal (visualized by the dashed line in the figure below).
+
+
+```{r "Child-Benefits-Party", fig.height=10, fig.width=10, fig.cap="Should the Cabinet Fall over the Child Benefits Scandal?"}
 d %>%
-  mutate(G1_b = ifelse(G1_b < 4, "No: Government shouldn't have fallen",
+  mutate(G1_b = ifelse(G1_b < 4, "Yes: Government had to step down",
                 ifelse(G1_b > 3 & G1_b <7, "Neutral",
-                ifelse(G1_b > 6 & G1_b < 11, "Yes: Government had to step down",
+                ifelse(G1_b > 6 & G1_b < 11, "No: Government shouldn't have fallen",
                 G1_b))),
          G1_b = factor(G1_b, 
                        levels = c("No: Government shouldn't have fallen",
@@ -75,7 +78,7 @@ d %>%
   scale_x_continuous(labels = scales::percent) +
   labs(y = "", 
        x = " Government had to step down (0) - Government shouldn't have fallen (10)",
-       title = "Childs Benefits Affaire: Is the Government to Blame?",
+       title = "Childs Benefits Scandal: Is the Government to Blame?",
        subtitle = "Mean per Party Preference") +
   scale_color_viridis_d() +
   theme(plot.title = element_text(hjust = 0.5),
@@ -85,11 +88,11 @@ d %>%
   guides(color=guide_legend(nrow=1,byrow=TRUE))
 ```
 
-```{r "Child-Benefits-Rutte", fig.height=10, fig.width=10, fig.cap="Should the Cabinet Fall over the Child Benefits Affaire?"}
+```{r "Child-Benefits-Rutte", fig.height=10, fig.width=10, fig.cap="Should the Cabinet Fall over the Child Benefits Scandal?"}
 d %>%
-  mutate(G1_b = ifelse(G1_b < 4, "No: Government shouldn't have fallen",
+  mutate(G1_b = ifelse(G1_b < 4, "Yes: Government had to step down",
                 ifelse(G1_b > 3 & G1_b <7, "Neutral",
-                ifelse(G1_b > 6 & G1_b < 11, "Yes: Government had to step down",
+                ifelse(G1_b > 6 & G1_b < 11, "No: Government shouldn't have fallen",
                 G1_b))),
          G1_b = factor(G1_b, 
                        levels = c("No: Government shouldn't have fallen",
@@ -110,7 +113,7 @@ d %>%
   scale_x_continuous(labels = scales::percent) +
   labs(y = "", 
        x = " Government had to step down (0) - Government shouldn't have fallen (10)",
-       title = "Childs Benefits Affaire: Is the Government to Blame?",
+       title = "Childs Benefits Scandal: Is the Government to Blame?",
        subtitle = "Mean per group") +
   scale_color_viridis_d() +
   theme(plot.title = element_text(hjust = 0.5),
