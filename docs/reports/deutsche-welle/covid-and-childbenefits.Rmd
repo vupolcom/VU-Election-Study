@@ -23,9 +23,9 @@ library(viridis)
 ```
 
 ```{r "data"}
-bg <- read_csv("data/intermediate/VUElectionPanel2021_wave0.csv") %>%
-  select(iisID, age, gender, education, region, vote_jan = A2, rutte_jan = B3_12, G1_b)
-d <- read_csv("data/intermediate/wave2.csv") %>%
+bg <- read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")) %>%
+  select(iisID, age, gender, education, region, G1_b)
+d <- read_csv(here("data/intermediate/wave2.csv")) %>%
   select(iisID, H_corona_1:H_corona_11, H_corona2, A2, B2_12, B3_12)
 
 d <- left_join(d, bg, by = "iisID") %>%
@@ -53,7 +53,74 @@ d <- left_join(d, bg, by = "iisID") %>%
                             `9` = 5)) 
  
 ```
+# Child Benefits in the Dutch Elections
+```{r "Child-Benefits-Party", fig.height=10, fig.width=10, fig.cap="Should the Cabinet Fall over the Child Benefits Affaire?"}
+d %>%
+  mutate(G1_b = ifelse(G1_b < 4, "No: Government shouldn't have fallen",
+                ifelse(G1_b > 3 & G1_b <7, "Neutral",
+                ifelse(G1_b > 6 & G1_b < 11, "Yes: Government had to step down",
+                G1_b))),
+         G1_b = factor(G1_b, 
+                       levels = c("No: Government shouldn't have fallen",
+                                  "Neutral", 
+                                  "Yes: Government had to step down"))) %>%
+  drop_na(A2, G1_b) %>%
+  group_by(A2, G1_b) %>%
+  summarise(n = n()) %>%
+  mutate(percent = round(n/sum(n),2)) %>%
+  ggplot(aes(y = A2, x = percent, color = G1_b)) +
+  geom_point() +
+  theme_minimal() +
+  geom_vline(xintercept = .33, size = .3, linetype = "dashed") +
+  scale_x_continuous(labels = scales::percent) +
+  labs(y = "", 
+       x = " Government had to step down (0) - Government shouldn't have fallen (10)",
+       title = "Childs Benefits Affaire: Is the Government to Blame?",
+       subtitle = "Mean per Party Preference") +
+  scale_color_viridis_d() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) +
+  guides(color=guide_legend(nrow=1,byrow=TRUE))
+```
 
+```{r "Child-Benefits-Rutte", fig.height=10, fig.width=10, fig.cap="Should the Cabinet Fall over the Child Benefits Affaire?"}
+d %>%
+  mutate(G1_b = ifelse(G1_b < 4, "No: Government shouldn't have fallen",
+                ifelse(G1_b > 3 & G1_b <7, "Neutral",
+                ifelse(G1_b > 6 & G1_b < 11, "Yes: Government had to step down",
+                G1_b))),
+         G1_b = factor(G1_b, 
+                       levels = c("No: Government shouldn't have fallen",
+                                  "Neutral", 
+                                  "Yes: Government had to step down")),
+         B3_12 = ifelse(B3_12 < 4, "Negative Evaluation of Rutte",
+                 ifelse(B3_12 > 3 & B3_12 <7, "Neutral Evaluation of Rutte",
+                 ifelse(B3_12 > 6 & B3_12 < 11, "Positive Evaluation of Rutte",
+                 ifelse(B3_12 == 999, NA, B3_12))))) %>%
+  drop_na(B3_12, G1_b) %>%
+  group_by(B3_12, G1_b) %>%
+  summarise(n = n()) %>%
+  mutate(percent = round(n/sum(n),2)) %>%
+  ggplot(aes(y = G1_b, x = percent, color = B3_12)) +
+  geom_point() +
+  theme_minimal() +
+  geom_vline(xintercept = .33, size = .3, linetype = "dashed") +
+  scale_x_continuous(labels = scales::percent) +
+  labs(y = "", 
+       x = " Government had to step down (0) - Government shouldn't have fallen (10)",
+       title = "Childs Benefits Affaire: Is the Government to Blame?",
+       subtitle = "Mean per group") +
+  scale_color_viridis_d() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) +
+  guides(color=guide_legend(nrow=1,byrow=TRUE))
+```
+
+# Covid-19 in the Dutch Elections
 ```{r "Support-Corona-Measures-Party", fig.height=10, fig.width=10, fig.cap="Support Corona Measures"}
 d %>%
    drop_na(A2) %>%
@@ -118,4 +185,10 @@ d %>%
         legend.position="bottom",
         legend.title = element_blank()) +
   guides(color=guide_legend(nrow=3,byrow=TRUE))
+```
+
+```{r}
+d %>%
+  group_by(A2) %>%
+  summarise(aan_houden = mean(H_corona2, na.rm = T))
 ```
