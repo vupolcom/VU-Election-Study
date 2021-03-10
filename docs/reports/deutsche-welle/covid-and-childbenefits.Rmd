@@ -218,7 +218,7 @@ ggplot(df, aes(y = name, x = value, color = B3_12)) +
 
 Download data: [`r export_data(df, "Figure Support Corona Measures - Rutte")`]
 
-```{r}
+```{r, eval = F}
 d %>%
   group_by(A2) %>%
   summarise(aan_houden = mean(H_corona2, na.rm = T))
