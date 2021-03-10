@@ -21,6 +21,7 @@ In this report we explore the <ins>Twitter</ins>, <ins>Facebook</ins> and <ins>I
 We have collected all the messages they posted on these three social media platforms for about 6 months: from August 15th 2020 to February 22nd 2021. 
 
 ![Figure 1](SM-report02-number-messages-reactions-UPD.jpg)
+<a href="data-plots/SM-report02-number-messages-reactions-UPD.csv" target="_blank">Download data</a>
 
 Takeaways:
   * Twitter is the platform they use most often (1.007 tweets by Wilders and  2.599 by Baudet), followed by Facebook (672 Wilders, 314 Baudet), and then by Instagram (151 Wilders, 212 Baudet).
@@ -35,6 +36,7 @@ We have also collected data about how often other users shared and liked the mes
 <sup>Note: For Twitter, we only take into account the shares and likes for original messages (and not retweets). There is no Instagram equivalent to sharing, so we don't take into account this Instagram dimension in the analysis. </sup>
 
 ![Figure 2](SM-report02-std-shares-likes-UPD.jpg)
+<a href="data-plots/SM-report02-std-shares-likes-UPD.csv" target="_blank">Download data</a>
 
 Takeaways:
   * Wilders had a larger number of shares both on Facebook (415.031 v. 118.156 Baudet) and Twitter (461.250 v. 169.509 for Baudet), despite Baudet being substantially more active on Twitter. 
@@ -48,6 +50,7 @@ Takeaways:
 For Twitter, we can get detailed data as to which particular user shared the messages sent by Wilders and Baudet. We used this data to explore the pool of retweeters of Wilders, Baudet, Rutte, and Klaver. For those who retweeted at least one tweet from a given candidate, we calculated for what percentage of all the retweets of that candidate they are responsible. In the figure below we sorted the retweeters (x-axis) from most to least active, and in the y-axis we looked at the cumulative number of retweets for a given candidate. The figure indicates for what percentage of the retweets the most active e.g. 1% or 10% (etc.) of retweeters are responsible for.
 
 ![Figure 3](SM-report02-cum-rt-UPD.jpg)
+<a href="data-plots/SM-report02-cum-rt-UPD.csv" target="_blank">Download data</a>
 
 Takeaways:
   * We see Baudet and Wilders to heavily rely on a small but very active subset of their followers to spread their message around. For example, their 20% most active retweeters are responsible for close to 80%.
@@ -74,6 +77,10 @@ Takeaways:
 We also looked into how often the posts containing those words are shared on Twitter and Facebook.
 
 ![Figure 5](SM-report02-topfeatures-sharing-UPD.jpg)
+<a href="data-plots/SM-report02-topfeatures-sharing-pvv-UPD.csv" target="_blank">Download data Wilders</a>
+<a href="data-plots/SM-report02-topfeatures-sharing-fvd-UPD.csv" target="_blank">Download data Baudet</a>
+<a href="data-plots/SM-report02-topfeatures-sharing-vvd-UPD.csv" target="_blank">Download data Rutte</a>
+<a href="data-plots/SM-report02-topfeatures-sharing-gl-UPD.csv" target="_blank">Download data Klaver</a>
 
 
 
