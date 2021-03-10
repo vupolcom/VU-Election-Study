@@ -8,6 +8,19 @@ permalink: /reports/
 <table class="reports">
   <tr>
    <td>
+      <a href="https://www.nrc.nl/nieuws/2021/03/09/aan-de-talkshowtafels-schoven-het-afgelopen-coronajaar-vooral-journalisten-aan-a4034821">
+        <img width="200px" align="left" src="https://images.nrc.nl/_YPc_wwDHjM6zzqugt_zYbW_Aiw=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/03/data68359411-bc4b0d.jpg" />
+      </a>
+    </td>
+      <td>
+      <h3><a href="https://www.nrc.nl/nieuws/2021/03/09/aan-de-talkshowtafels-schoven-het-afgelopen-coronajaar-vooral-journalisten-aan-a4034821"> Aan de talkshowtafels schoven het afgelopen coronajaar vooral journalisten aan</a></h3> 
+      <i>NRC, Handelsblad 10 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Nel Ruigrok</a>
+         </td>
+     </tr>
+
+  <tr>
+   <td>
       <a href="https://www.groene.nl/artikel/teruggebracht-tot-tweestrijd?utm_source=De+Groene+Amsterdammer&utm_campaign=0c6464378a-Dagelijks-2021-03-10&utm_medium=email&utm_term=0_853cea572a-0c6464378a-70907053">
         <img width="200px" align="left" src="https://www.groene.nl/uploads/image/file/000/027/018/large_ANP-428740944.jpg" />
       </a>
