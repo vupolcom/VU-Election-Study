@@ -50,15 +50,16 @@ Covid-19 in the Dutch Elections
 
 The most important issue in the elections of 2021 is Covid-19. Accross
 the board, people do support the Corona measures (average of 7.3 on a
-scale from 0-10), visualized by the dashed line in the figure below. The
-figure below also shows some variations over parties and between
-measures. On average, there’s least support for the curfew and for
-opening shops, bars, and restaurants accross all parties. Moreover,
-between parties, if you intend to vote Baudet’s party (FvD), Wilders’
-party (PVV) or Denk, you’re least supportive of the Corona measures. If
-you intend to vote for any of the other parties, you are quite
-supportive of the measures, with unsurpisingly people voting for the
-elderly party (50+) to be most supportive.
+scale from 0-10), visualized by the dashed line in the figure below. 77%
+of the Dutch populatation support the Corona measures. The figure below
+also shows some variations over parties and between measures. On
+average, there’s least support for the curfew and for opening shops,
+bars, and restaurants accross all parties. Moreover, between parties, if
+you intend to vote Baudet’s party (FvD), Wilders’ party (PVV) or Denk,
+you’re least supportive of the Corona measures. If you intend to vote
+for any of the other parties, you are quite supportive of the measures,
+with unsurpisingly people voting for the elderly party (50+) to be most
+supportive.
 
 <img src="Support-Corona-Measures-Party-1.png" alt="Support Corona Measures"  />
 <p class="caption">
