@@ -1,0 +1,121 @@
+---
+title: 'VU 2021 Election Study: Issues of COVID-19 and Childs Benefits Affaire in Dutch Elections'
+author: "Mariken van der Velden"
+permalink: reports/deutsche-welle/
+output: 
+  md_document:
+    toc: yes
+    preserve_yaml: yes
+---
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+rm(list = ls())
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      echo = FALSE, fig.align = "center",
+                        fig.path='')
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+library(viridis)
+```
+
+```{r "data"}
+bg <- read_csv("data/intermediate/VUElectionPanel2021_wave0.csv") %>%
+  select(iisID, age, gender, education, region, vote_jan = A2, rutte_jan = B3_12, G1_b)
+d <- read_csv("data/intermediate/wave2.csv") %>%
+  select(iisID, H_corona_1:H_corona_11, H_corona2, A2, B2_12, B3_12)
+
+d <- left_join(d, bg, by = "iisID") %>%
+  mutate(A2 = recode(A2, 
+                     `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `14` = "Don't Know", 
+                     `15` = "Don't Know",
+                     `999` = "Don't Know"),
+         H_corona2 = recode(H_corona2,
+                            `6` = 2,
+                            `7` = 3,
+                            `8` = 4,
+                            `9` = 5)) 
+ 
+```
+
+```{r "Support-Corona-Measures-Party", fig.height=10, fig.width=10, fig.cap="Support Corona Measures"}
+d %>%
+   drop_na(A2) %>%
+  group_by(A2) %>%
+  summarise(`Work from home` = mean(H_corona_1, na.rm = T),
+            `Washing hands` = mean(H_corona_2, na.rm = T),
+            `Social distancing` = mean(H_corona_3, na.rm = T),
+            `Wearing Mask` = mean(H_corona_6, na.rm = T),
+            `Testing if symptomatic` = mean(H_corona_7, na.rm = T),
+            `Staying home after testing yourself or anyone in household`  = mean(H_corona_8, na.rm = T),
+            `Quarantaine after traveling` = mean(H_corona_9, na.rm = T),
+            `Curfew` = mean(H_corona_10, na.rm = T),
+            `Shops, bars, and restaurants open` = mean(H_corona_11, na.rm = T)) %>%
+  pivot_longer(cols = `Work from home`:`Shops, bars, and restaurants open`) %>%
+  mutate(means = mean(value, na.rm = T)) %>%
+  ggplot(aes(y = A2, x = value, color = name)) +
+  geom_point() +
+  theme_minimal() +
+  geom_vline(xintercept = 7.3, size = .3, linetype = "dashed") +
+  labs(y = "", 
+       x = "Fully disagree (0) - Fully agree (10)",
+       title = "Support for Corona Measures",
+       subtitle = "Mean per Party Preference") +
+  scale_color_viridis_d() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) +
+  guides(color=guide_legend(nrow=4,byrow=TRUE))
+```
+
+```{r "Support-Corona-Measures-Rutte", fig.height=10, fig.width=10, fig.cap="Support Corona Measures"}
+d %>%
+  mutate(B3_12 = ifelse(B3_12 < 4, "Negative Evaluation of Rutte",
+                 ifelse(B3_12 > 3 & B3_12 <7, "Neutral Evaluation of Rutte",
+                 ifelse(B3_12 > 6 & B3_12 < 11, "Positive Evaluation of Rutte",
+                 ifelse(B3_12 == 999, NA, B3_12))))) %>%
+  drop_na() %>%
+  group_by(B3_12) %>%
+  summarise(`Work from home` = mean(H_corona_1, na.rm = T),
+            `Washing hands` = mean(H_corona_2, na.rm = T),
+            `Social distancing` = mean(H_corona_3, na.rm = T),
+            `Wearing Mask` = mean(H_corona_6, na.rm = T),
+            `Testing if symptomatic` = mean(H_corona_7, na.rm = T),
+            `Staying home after testing yourself or anyone in household`  = mean(H_corona_8, na.rm = T),
+            `Quarantaine after traveling` = mean(H_corona_9, na.rm = T),
+            `Curfew` = mean(H_corona_10, na.rm = T),
+            `Shops, bars, and restaurants open` = mean(H_corona_11, na.rm = T)) %>%
+  pivot_longer(cols = `Work from home`:`Shops, bars, and restaurants open`) %>%
+  mutate(means = mean(value, na.rm = T)) %>%
+  ggplot(aes(y = name, x = value, color = B3_12)) +
+  geom_point() +
+  theme_minimal() +
+  geom_vline(xintercept = 7.3, size = .3, linetype = "dashed") +
+  labs(y = "", 
+       x = "Fully disagree (0) - Fully agree (10)",
+       title = "Support for Corona Measures",
+       subtitle = "Mean per group") +
+  scale_color_viridis_d() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) +
+  guides(color=guide_legend(nrow=3,byrow=TRUE))
+```
