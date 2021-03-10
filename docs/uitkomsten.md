@@ -16,7 +16,7 @@ permalink: /reports/
       <h3><a href="https://www.groene.nl/artikel/teruggebracht-tot-tweestrijd?utm_source=De+Groene+Amsterdammer&utm_campaign=0c6464378a-Dagelijks-2021-03-10&utm_medium=email&utm_term=0_853cea572a-0c6464378a-70907053">
 Hoe de media onze stem beïnvloeden. Teruggebracht tot tweestrijd</a></h3> 
       <i>Groene Amsterdammer, 10 Maart 2021</i><br/>
-        met <a href="https://tk2021.vupolcom.nl/about"> en Loes Aaldering <a href="https://tk2021.vupolcom.nl/about> Mariken van der Velden</a>
+        met <a href="https://tk2021.vupolcom.nl/about"> Loes Aaldering </a> en <a href="https://tk2021.vupolcom.nl/about> Mariken van der Velden</a>
     </td>
      </tr>
   <tr>
