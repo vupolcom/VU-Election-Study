@@ -19,7 +19,7 @@ d <- fetch_survey(surveyID = "SV_a92jPqJ9B5EQMSx",
                   label = FALSE, convert = FALSE)
 
 # drop missing & admin iisID and merge  duplicates (!)
-d = d %>% filter(!is.na(iisID), !str_detect(iisID, "admin")) %>% mutate(iisID = as.numeric(iisID))
+d = d %>% filter(!is.na(iisID), !str_detect(iisID, "admin"), !is.na(A1)) %>% mutate(iisID = as.numeric(iisID))
 first_non_missing = function(x) na.omit(x)[1]
 d = d %>% arrange(iisID, desc(RecordedDate)) %>% group_by(iisID) %>% 
   group_by(iisID) %>% summarize(across(everything(), first_non_missing))
@@ -99,7 +99,6 @@ d <-d %>%
                           B2_DO_9, B2_DO_10, B2_DO_11, B2_DO_12, 
                           B2_DO_13, sep = "|"))
 
-colnames(d)
 B3 <- d %>%
   select(iisID, matches("^\\d+_B3_\\d+$")) %>%
   pivot_longer(cols = `1_B3_3`:`13_B3_4`,
@@ -124,8 +123,6 @@ B <- d %>%
   select(iisID, B2_1:B2_13, order_B2) %>% 
   left_join(B3, by = "iisID")
 
-colnames(d)
-
 #TODO: recode H
 
 I <- d %>%
@@ -138,14 +135,9 @@ I <- d %>%
          I7_1:I7_10, I7_other = I7_10_TEXT) 
 
 ## Merge & Save Data
-df = BG %>%
+df <- BG %>%
   left_join(A, by = "iisID") %>% 
   left_join(B, by = "iisID") %>%
-  left_join(I, by = "iisID") 
-  #distinct(iisID, .keep_all = T) %>% <<< WHY IS THIS NEEDED?
-  # drop_na(A1) %>% <<< Do we realy want this?
-  #filter(iisID !="007",
-  #       iisID !="009") %>%
-  
-  
+  left_join(I, by = "iisID")
+
 write_csv(df, output_fn)
