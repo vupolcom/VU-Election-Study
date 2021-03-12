@@ -9,6 +9,12 @@ library(sjlabelled)
 library(here)
 library(qualtRics)
 
+# TODO: fix other waves :(
+#w0 = "SV_39R4hSWxAJNBKHb"
+#w1 = "SV_1X34g6PWhWjj6hD"
+#w2 = "SV_byf8IHLmuTHe00l"
+#w3 = "SV_a92jPqJ9B5EQMSx"
+
 input_fn = here("data/raw-private/qualtrics_api_key.txt")
 output_fn = here("data/intermediate/wave3.csv")
 
