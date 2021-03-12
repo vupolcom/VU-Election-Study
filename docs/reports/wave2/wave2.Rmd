@@ -246,7 +246,6 @@ ggplot(d, aes(x=as.numeric(as.factor(wave)), colour=name, y=value)) + geom_line(
   theme_nrc()  + ggtitle("Media use of *originally* (un)decided voters", "(in frequency of use per week, 0-7)") +
   scale_x_continuous(breaks=c(1,2,3), labels=c("Wave 1\n(Late Jan.)", "Wave 2\n(Early Feb.)", "Wave 3\n(Late Feb.)"))
 
-#TODO: van zwevers in p0-p2
 ```
 
 [Download data: `r export_data(d, "Media use of originally (un)decided voters")`]
@@ -283,10 +282,10 @@ As undecided voters make up their mind, and other voters start doubting their ch
 Let's look at some of the demographics:
 
 ```{r undecided-demo}
-scale = function(x) scales::rescale(as.numeric(x))
-r2 = resp %>% mutate(education=1-scale(education), 
-         age=scale(age), 
-         gender=scale(gender),
+scale = function(x) scales::rescale(as.numeric(x), to=c(0, 100))
+r2 = resp %>% mutate(education=scale(education), 
+         #age=scale(age), 
+         gender=ifelse(gender=="Male", 0, 100),
          leftright=scale(rile_self),
          polknowledge=scale(polknow)) %>% select(iisID, education, age, gender, leftright, polknowledge)
 
@@ -303,17 +302,17 @@ d = bind_rows(undecideds, demo_totals) %>%
    pivot_longer(-wave, names_to="measure") %>%
   mutate(wave=fct_relevel(wave, c("w0", "w1", "w2", "All respondents")))
 
-ggplot(d, aes(x=wave, y=measure, fill=value, label=round(value*100))) +
+ggplot(d, aes(x=wave, y=measure, fill=value, label=round(value))) +
   geom_tile(lwd=1, color="white") + geom_text(color="white") + theme_nrc() + scale_fill_gradient(guide=F) +
   ggtitle("Demographics of undecided voters per wave", 
-          "(rescaled to 0-100, gender is percentage female, leftright is 0=left, 100=right)")
+          "(polknowledge, education are 0=low, 100=high, gender is percentage female, leftright is 0=left, 100=right)")
 ```
 
 The table above shows average score on left-right self placement, political knowledge, education, age, and gender.
 This shows a clear shift in who those voters are:
 The original undecided voters were younger, more often male, higher educated and slighyly more leftist than average.
 In constrast, the current undecided voters are centrist and older than the average respondent. 
-Interestingly, even though this group has a lower overall education, they score better on political knowledge, probably as a result of being older. 
+Interestingly, even though this group has a slightly lower overall education, they score better on political knowledge, probably as a result of being older. 
 
 
 ## Where do undecided voters go to and come from?

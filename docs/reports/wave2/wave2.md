@@ -98,8 +98,8 @@ the election draws near:
 </table>
 
 Very importantly, the group of undecided voters is also changing. Of the
-undecided voters at the start, only 14% is still undecided. Conversely,
-of the current undecided voters, 82% did have a preference at the start.
+undecided voters at the start, only 13% is still undecided. Conversely,
+of the current undecided voters, 83% did have a preference at the start.
 
 Media use of undecided voters
 -----------------------------
@@ -143,8 +143,8 @@ shift in who those voters are: The original undecided voters were
 younger, more often male, higher educated and slighyly more leftist than
 average. In constrast, the current undecided voters are centrist and
 older than the average respondent. Interestingly, even though this group
-has a lower overall education, they score better on political knowledge,
-probably as a result of being older.
+has a slightly lower overall education, they score better on political
+knowledge, probably as a result of being older.
 
 Where do undecided voters go to and come from?
 ----------------------------------------------
