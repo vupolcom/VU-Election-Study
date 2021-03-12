@@ -24,7 +24,8 @@ source(here("src/lib/data.R"))
 source(here("src/lib/amcatlib.R"))
 data = list(w0 = read_csv(here("data/intermediate/VUElectionPanel2021_wave0.csv")),
             w1 = read_csv(here("data/intermediate/wave1.csv")),
-            w2 = read_csv(here("data/intermediate/wave2.csv"))
+            w2 = read_csv(here("data/intermediate/wave2.csv")),
+            w3 = read_csv(here("data/intermediate/wave3.csv"))
 )
 
 resp = extract_wide(data$w0)
@@ -33,7 +34,9 @@ votes = bind_rows(
   w %>% filter(variable == "vote") %>% select(wave, iisID, name),
   #resp %>% select(iisID, vote_2017) %>% rename(name = vote_2017) %>% add_column(wave="k17")
 )
-wave_label= function(wave) case_when(wave == "w0" ~ "January", wave == "w1" ~ "Early February", wave =="w2" ~ "Late February")
+
+table(w$wave)
+wave_label= function(wave) case_when(wave == "w0" ~ "January", wave == "w1" ~ "Early February", wave =="w2" ~ "Late February", "w3" ~ "Early March")
 
 theme_nrc = function(...) {
   ggthemes::theme_hc(...) + 
@@ -49,14 +52,20 @@ theme_nrc = function(...) {
 ```{r media-data}
 period = function(date) {
   case_when(date < "2021-01-13" ~ "pre",
-          date < "2021-01-28" ~ "w0",
+          date < "2021-02-01" ~ "w0",
           date < "2021-02-16" ~ "w1",
-         # date < "2021-02-28" ~ "w2",
-          T ~ "w2")
+          date < "2021-03-01" ~ "w2",
+          T ~ "w3")
 }
+#data$w0 %>% group_by(lubridate::floor_date(start_date, 'day')) %>% summarize(w0=n()) %>% 
+#  full_join(data$w1 %>% group_by(lubridate::floor_date(start_date, 'day')) %>% summarize(w1=n())) %>% 
+#  full_join(data$w2 %>% group_by(lubridate::floor_date(start_date, 'day')) %>% summarize(w2=n())) %>% 
+#  full_join(data$w3 %>% group_by(lubridate::floor_date(start_date, 'day')) %>% summarize(w3=n())) %>%
+#  View()
+
 queries = get_party_queries()
 
-tmp = here("data/tmp/wave2_meta.rmd")
+tmp = here("data/tmp/wave3_meta.rmd")
 if (file.exists(tmp)) {
   meta = read_rds(tmp)
 } else {
@@ -91,7 +100,7 @@ hpp = d %>% group_by(period, party, mtype) %>% summarize(n=n(), .groups="drop") 
   inner_join(totals) %>%
   mutate(perc=n/ntot, period = as.numeric(as.factor(period)), party=factor(party, levels=parties))
 
-sm = read_csv(here("data/raw/messages-shares-likes-mentions-all-leaders-1jan2021-03march2021.csv"))%>% 
+sm = read_csv(here("data/raw/messages-shares-likes-mentions-all-leaders-1jan2021-11march2021.csv"))%>% 
   mutate(party=str_match(name, "\\((.*)\\)")[,2],
               variable=str_remove(variable, "Number of ")) %>% 
   select(platform, variable, party, date=day_only, value)
@@ -106,14 +115,14 @@ sma = sm %>% mutate(period=period(date),
          party=factor(party, levels=parties))
 
 hpp2=bind_rows(hpp, sma)
-
+table(d$period)
 mtypes = c("Newspapers"=1,"TV"=1, "Online (nos.nl/nu.nl)"=1, "Social Media (activity)"=2, "Social Media (engagement)"=2)
 hpp2 %>% mutate(mtype=fct_relevel(mtype, names(mtypes))) %>% 
 ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() + 
   facet_wrap("party", nrow = 3) + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave", "(as percentage of all political news)") +
-  scale_x_continuous(breaks=1:4, labels=c("1 Jan", "15 Jan", "1 Feb", "15 Feb")) + theme_nrc() +
+  scale_x_continuous(breaks=c(1, 3, 4.5), labels=c("Jan", "Feb", "Mar")) + theme_nrc() +
   theme(legend.title = element_blank(), legend.position = c(1, 0), legend.justification = c("right", "bottom")) +
   scale_linetype_manual(values=c("TV"=1, "Newspapers"=1, "Online (nos.nl/nu.nl)"=1, 
                                  "Social Media (activity)"=2, "Social Media (engagement)"=2))
@@ -121,7 +130,7 @@ ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() +
 
 [Download data: `r export_data(hpp2, "Visibility of parties in the media")`]
 
-
+*TV is INCOMPLETE, IGNORE THE LAST DATAPOINT!*
 
 Overall visibility on traditional media (including online) favours coalition parties VVD, VDA, D66 followed by the main opposition parties.
 Over time, Forum become much more visible on these media. PvdA, GL, and SP become  more visible in the newspapers, but less so on TV. 
@@ -180,6 +189,10 @@ PvdA is evaluated clearly more positively, while VVD, CDA and D66 are evaluated 
 ```{r notice-lire}
 r2 = resp %>% select(iisID, rile_self, vote) %>% 
   mutate(rile=case_when(is.na(rile_self) ~ NA_character_, rile_self < 5 ~ "links", rile_self > 6 ~ "rechts", T ~ "midden"))
+
+table(w$wave, w$iisID %in% resp$iisID)
+
+w %>% filter(wave == "w2") %>% with(table(iisID))
 
 d3 = d %>% inner_join(r2) %>% filter(!is.na(rile)) %>% group_by(wave, variable, name, rile) %>% summarize(value = mean(value, na.rm=T)) %>% 
   mutate(name=fct_rev(factor(name, levels=parties)))
