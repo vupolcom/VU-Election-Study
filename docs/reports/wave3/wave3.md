@@ -19,15 +19,21 @@ media](Visibility_of_parties_in_the_media.csv)\]
 
 Overall visibility on traditional media (including online) favours
 coalition parties VVD, VDA, D66 followed by the main opposition parties.
-Over time, Forum become much more visible on these media. PvdA, GL, and
-SP become more visible in the newspapers, but less so on TV. In
-contrast, PVV, VVD and FvD (and to a lesser extend D66) are much more
-visible on television.
+This overall pattern is especially striking on TV, where these parties
+are each mentioned in about 60% of news and current affairs shows. Over
+time, CDA and D66 gradually increase their share across all media, while
+VVD remains mostly constant.
 
-Social media also show a very clear picture: although many parties are
-somewhat active on social media, FvD wins hands down in terms of their
-activity, and FvD and PVV are the only parties with substantial
-engagement on social media (likes, shares, mentions)
+In the final weeks, most parties increase in visiblity, especially on
+TV, as their are more opportunities for all party leaders to appear on
+TV.
+
+Forum starts out with low visibility, but quickly climbs to being
+mentioned in 20-40% of all political news. Social media also show a very
+clear picture: although many parties are somewhat active on social
+media, FvD wins hands down in terms of their activity, and FvD and PVV
+are the only parties with substantial engagement on social media (likes,
+shares, mentions)
 
 Does the voter take notice?
 ===========================
@@ -48,9 +54,13 @@ possibility that PVV and FvD are more noticeable when present, but
 clearly mostly in a negative way.
 
 Looking at change over time, we see that PvdA and GL become less
-noticeable, matching their decreasing visibility on TV. PvdA is
-evaluated clearly more positively, while VVD, CDA and D66 are evaluated
-slightly more negatively.
+noticeable, matching their decreasing visibility on TV. D66 and CDA on
+the other hand are increasingly noticed.
+
+PvdA and 50+ are evaluated more positively in February, but loses this
+edge in the final weeks. CDA gradually decreases in favourability from
+5.8 at the start of the campaign to 5.2 near the end. The other parties
+remain fairly constant.
 
 Does notice depend on alignment of repondent?
 ---------------------------------------------
@@ -61,10 +71,11 @@ Does notice depend on alignment of repondent?
 alignment](Media_performance_by_alignment.csv)\]
 
 Notice of parties (visibility) does not really depend on the ideological
-alignment of the respondent. Evaluation of their media performance does
-differ: leftist voters are overall more critical of rightist parties.
-Rightist voters were a bit more critical of GL, SP, D66 and PvdA, but
-this has mostly converged.
+alignment of the respondent.
+
+Evaluation of their media performance does differ: leftist voters are
+overall more critical of rightist parties, especially of PVV and FvD,
+while rightist voters are more critical of GL, SP, D66 and PvdA
 
 The Undecided Voter
 ===================
@@ -113,23 +124,24 @@ undecided at the start of the campaign, how did their media use change?
 
 ![](undecided-media-1.png)
 
-\[Download data: [Media use of originally (un)decided
-voters](Media_use_of_originally_un_decided_voters.csv)\]
+\[Download data: [Media use of (un)decided
+voters](Media_use_of_un_decided_voters.csv)\]
 
-These results are quite striking: much more than the voters that had
-already made up their mind, these undecided voters started consuming
-more media, both newspapers and TV, and at the end of February even
-consume more news.
-
-![](undecided-media2-1.png)
-
-\[Download data: [Media use of currently (un)decided
-voters](Media_use_of_currently_un_decided_voters.csv)\]
-
-If we look at *currently* undecided voters, the picture is strikingly
-different. This group (85% of which did have a preference at the start)
-actually consume less media across the board, even as the other
-respondents are increasing their (political) media use.
+This figure shows the TV, online, newspaper, and social media
+consumption of voters over time, split into four groups: + *Decided*
+voters are voters who had a party preference both now and at the start
+of the campaign. This group uses more media than the other groups,
+although there is a drop in all media use in the last weeks, possibly
+because of campaign fatigue or the improved weather. + *Newly undecided*
+are voters who had a preference at the start of the campaign, but are
+now undecided. This is the smallest group, and they show the largest
+drop in TV and social media consumption at the end. + *Once undecided*
+are voters who were undecided at the start of the campaign, but who now
+have a party preference. These voters started using more newspaper and
+TV content, with a drop in the last period. They resemble the decided
+voters group most strongly. + *Still undecided* are voters who were
+undecided at the start of the campaign, and still did not make up their
+mind. These voters used less media than the rest across the board.
 
 Who are the undecided voters?
 -----------------------------
@@ -160,16 +172,15 @@ On the left hand side, the figure above shows where undecided voters go
 to when they make up their mind. Similarly, the middle columns show
 where new undecided voters go to. Finally, the rightmost two columns
 show the difference between the two: was a party able to attract more
-undecided voters they lost?
+undecided voters they lost? All cells are expressed as virtual seats,
+that is, as a percentage of total respondents in that wave multiplied by
+150.
 
-The first thing that is very striking is that many party both attract a
-substantial number of undecided voters, while at the same time losing
-voters that become undecided.
-
-Looking at which parties gain or lose from undecided voters, overall
-most parties make net gains as the number of undecided voters goes down.
-VVD, Groenlinks and PvdA and CU are mostly able to profit in early
-February, with the latter three even making a net loss later that month.
-Apparently, many voters started doubting their choice for these parties.
-In contrast, CDA and D66 but also PvdD and FvD actually profited most in
-the second half of February.
+We see that there is a lot of exchange between non-voters and undecided
+voters, with slightly more non-voters becoming undecided. Overall, many
+parties were able to profit from the undecided voters in early February
+(w0-w1), corresponding the the relatively large drop of undecided voters
+in that period. After that period, CDA, PvdA and GL were less attractive
+to undecided voters, while PVV became more attractive. VVD was very
+attractive to undecided voters in both early February and early March,
+while in late February relatively more VVD voters became undecided.

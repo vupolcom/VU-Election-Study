@@ -1,97 +1,97 @@
 party,wave,type,n,period
-CDA,w0,Undecided voters went to,12,w0
-CDA,w0,Undecided came from,2,w0
-CDA,w1,Undecided voters went to,6,w1
-CDA,w1,Undecided came from,4,w1
-CDA,w2,Undecided voters went to,4,w2
-CDA,w2,Undecided came from,3,w2
-ChristenUnie,w0,Undecided voters went to,8,w0
-ChristenUnie,w0,Undecided came from,2,w0
-ChristenUnie,w1,Undecided voters went to,3,w1
-ChristenUnie,w1,Undecided came from,0,w1
-ChristenUnie,w2,Undecided voters went to,1,w2
-ChristenUnie,w2,Undecided came from,2,w2
-D66,w0,Undecided voters went to,6,w0
-D66,w0,Undecided came from,2,w0
-D66,w1,Undecided voters went to,4,w1
-D66,w1,Undecided came from,1,w1
-D66,w2,Undecided voters went to,4,w2
-D66,w2,Undecided came from,1,w2
-Denk,w0,Undecided voters went to,3,w0
-Denk,w0,Undecided came from,0,w0
-Denk,w1,Undecided voters went to,1,w1
-Denk,w1,Undecided came from,1,w1
-Denk,w2,Undecided voters went to,0,w2
-Denk,w2,Undecided came from,0,w2
-FvD,w0,Undecided voters went to,10,w0
-FvD,w0,Undecided came from,7,w0
-FvD,w1,Undecided voters went to,4,w1
-FvD,w1,Undecided came from,0,w1
-FvD,w2,Undecided voters went to,1,w2
-FvD,w2,Undecided came from,1,w2
-GroenLinks,w0,Undecided voters went to,8,w0
-GroenLinks,w0,Undecided came from,2,w0
-GroenLinks,w1,Undecided voters went to,5,w1
-GroenLinks,w1,Undecided came from,4,w1
-GroenLinks,w2,Undecided voters went to,3,w2
-GroenLinks,w2,Undecided came from,3,w2
-PvdA,w0,Undecided voters went to,14,w0
-PvdA,w0,Undecided came from,5,w0
-PvdA,w1,Undecided voters went to,4,w1
-PvdA,w1,Undecided came from,3,w1
-PvdA,w2,Undecided voters went to,4,w2
-PvdA,w2,Undecided came from,3,w2
-PvdD,w0,Undecided voters went to,6,w0
-PvdD,w0,Undecided came from,1,w0
-PvdD,w1,Undecided voters went to,6,w1
-PvdD,w1,Undecided came from,3,w1
-PvdD,w2,Undecided voters went to,5,w2
-PvdD,w2,Undecided came from,5,w2
-PVV,w0,Undecided voters went to,10,w0
-PVV,w0,Undecided came from,9,w0
-PVV,w1,Undecided voters went to,8,w1
-PVV,w1,Undecided came from,0,w1
-PVV,w2,Undecided voters went to,9,w2
-PVV,w2,Undecided came from,4,w2
-SGP,w0,Undecided voters went to,1,w0
-SGP,w0,Undecided came from,0,w0
-SGP,w1,Undecided voters went to,2,w1
-SGP,w1,Undecided came from,0,w1
-SGP,w2,Undecided voters went to,0,w2
-SGP,w2,Undecided came from,1,w2
-SP,w0,Undecided voters went to,15,w0
-SP,w0,Undecided came from,9,w0
-SP,w1,Undecided voters went to,8,w1
-SP,w1,Undecided came from,6,w1
-SP,w2,Undecided voters went to,5,w2
-SP,w2,Undecided came from,5,w2
-VVD,w0,Undecided voters went to,20,w0
-VVD,w0,Undecided came from,9,w0
-VVD,w1,Undecided voters went to,6,w1
-VVD,w1,Undecided came from,9,w1
-VVD,w2,Undecided voters went to,13,w2
-VVD,w2,Undecided came from,4,w2
-50+,w0,Undecided voters went to,3,w0
-50+,w0,Undecided came from,5,w0
-50+,w1,Undecided voters went to,3,w1
-50+,w1,Undecided came from,1,w1
-50+,w2,Undecided voters went to,5,w2
-50+,w2,Undecided came from,2,w2
-Other,w0,Undecided voters went to,3,w0
-Other,w0,Undecided came from,4,w0
-Other,w1,Undecided voters went to,6,w1
-Other,w1,Undecided came from,1,w1
-Other,w2,Undecided voters went to,8,w2
-Other,w2,Undecided came from,4,w2
-Not,w0,Undecided voters went to,22,w0
-Not,w0,Undecided came from,21,w0
-Not,w1,Undecided voters went to,13,w1
-Not,w1,Undecided came from,17,w1
-Not,w2,Undecided voters went to,13,w2
-Not,w2,Undecided came from,11,w2
-Undecided,w0,Undecided voters went to,200,w0
-Undecided,w0,Undecided came from,201,w0
-Undecided,w1,Undecided voters went to,137,w1
-Undecided,w1,Undecided came from,133,w1
-Undecided,w2,Undecided voters went to,105,w2
-Undecided,w2,Undecided came from,107,w2
+CDA,w0,Undecided voters went to,12,w0-w1
+CDA,w0,Undecided came from,2,w0-w1
+CDA,w1,Undecided voters went to,6,w1-w2
+CDA,w1,Undecided came from,4,w1-w2
+CDA,w2,Undecided voters went to,4,w2-w3
+CDA,w2,Undecided came from,3,w2-w3
+ChristenUnie,w0,Undecided voters went to,8,w0-w1
+ChristenUnie,w0,Undecided came from,2,w0-w1
+ChristenUnie,w1,Undecided voters went to,3,w1-w2
+ChristenUnie,w1,Undecided came from,0,w1-w2
+ChristenUnie,w2,Undecided voters went to,1,w2-w3
+ChristenUnie,w2,Undecided came from,2,w2-w3
+D66,w0,Undecided voters went to,6,w0-w1
+D66,w0,Undecided came from,2,w0-w1
+D66,w1,Undecided voters went to,4,w1-w2
+D66,w1,Undecided came from,1,w1-w2
+D66,w2,Undecided voters went to,4,w2-w3
+D66,w2,Undecided came from,1,w2-w3
+Denk,w0,Undecided voters went to,3,w0-w1
+Denk,w0,Undecided came from,0,w0-w1
+Denk,w1,Undecided voters went to,1,w1-w2
+Denk,w1,Undecided came from,1,w1-w2
+Denk,w2,Undecided voters went to,0,w2-w3
+Denk,w2,Undecided came from,0,w2-w3
+FvD,w0,Undecided voters went to,10,w0-w1
+FvD,w0,Undecided came from,7,w0-w1
+FvD,w1,Undecided voters went to,4,w1-w2
+FvD,w1,Undecided came from,0,w1-w2
+FvD,w2,Undecided voters went to,1,w2-w3
+FvD,w2,Undecided came from,1,w2-w3
+GroenLinks,w0,Undecided voters went to,8,w0-w1
+GroenLinks,w0,Undecided came from,2,w0-w1
+GroenLinks,w1,Undecided voters went to,5,w1-w2
+GroenLinks,w1,Undecided came from,4,w1-w2
+GroenLinks,w2,Undecided voters went to,3,w2-w3
+GroenLinks,w2,Undecided came from,3,w2-w3
+PvdA,w0,Undecided voters went to,14,w0-w1
+PvdA,w0,Undecided came from,5,w0-w1
+PvdA,w1,Undecided voters went to,4,w1-w2
+PvdA,w1,Undecided came from,3,w1-w2
+PvdA,w2,Undecided voters went to,4,w2-w3
+PvdA,w2,Undecided came from,3,w2-w3
+PvdD,w0,Undecided voters went to,6,w0-w1
+PvdD,w0,Undecided came from,1,w0-w1
+PvdD,w1,Undecided voters went to,6,w1-w2
+PvdD,w1,Undecided came from,3,w1-w2
+PvdD,w2,Undecided voters went to,5,w2-w3
+PvdD,w2,Undecided came from,5,w2-w3
+PVV,w0,Undecided voters went to,10,w0-w1
+PVV,w0,Undecided came from,9,w0-w1
+PVV,w1,Undecided voters went to,8,w1-w2
+PVV,w1,Undecided came from,0,w1-w2
+PVV,w2,Undecided voters went to,9,w2-w3
+PVV,w2,Undecided came from,4,w2-w3
+SGP,w0,Undecided voters went to,1,w0-w1
+SGP,w0,Undecided came from,0,w0-w1
+SGP,w1,Undecided voters went to,2,w1-w2
+SGP,w1,Undecided came from,0,w1-w2
+SGP,w2,Undecided voters went to,0,w2-w3
+SGP,w2,Undecided came from,1,w2-w3
+SP,w0,Undecided voters went to,15,w0-w1
+SP,w0,Undecided came from,9,w0-w1
+SP,w1,Undecided voters went to,8,w1-w2
+SP,w1,Undecided came from,6,w1-w2
+SP,w2,Undecided voters went to,5,w2-w3
+SP,w2,Undecided came from,5,w2-w3
+VVD,w0,Undecided voters went to,20,w0-w1
+VVD,w0,Undecided came from,9,w0-w1
+VVD,w1,Undecided voters went to,6,w1-w2
+VVD,w1,Undecided came from,9,w1-w2
+VVD,w2,Undecided voters went to,13,w2-w3
+VVD,w2,Undecided came from,4,w2-w3
+50+,w0,Undecided voters went to,3,w0-w1
+50+,w0,Undecided came from,5,w0-w1
+50+,w1,Undecided voters went to,3,w1-w2
+50+,w1,Undecided came from,1,w1-w2
+50+,w2,Undecided voters went to,5,w2-w3
+50+,w2,Undecided came from,2,w2-w3
+Other,w0,Undecided voters went to,3,w0-w1
+Other,w0,Undecided came from,4,w0-w1
+Other,w1,Undecided voters went to,6,w1-w2
+Other,w1,Undecided came from,1,w1-w2
+Other,w2,Undecided voters went to,8,w2-w3
+Other,w2,Undecided came from,4,w2-w3
+Not,w0,Undecided voters went to,22,w0-w1
+Not,w0,Undecided came from,21,w0-w1
+Not,w1,Undecided voters went to,13,w1-w2
+Not,w1,Undecided came from,17,w1-w2
+Not,w2,Undecided voters went to,13,w2-w3
+Not,w2,Undecided came from,11,w2-w3
+Undecided,w0,Undecided voters went to,200,w0-w1
+Undecided,w0,Undecided came from,201,w0-w1
+Undecided,w1,Undecided voters went to,137,w1-w2
+Undecided,w1,Undecided came from,133,w1-w2
+Undecided,w2,Undecided voters went to,105,w2-w3
+Undecided,w2,Undecided came from,107,w2-w3

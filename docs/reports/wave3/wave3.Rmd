@@ -128,10 +128,14 @@ ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() +
 
 [Download data: `r export_data(hpp2, "Visibility of parties in the media")`]
 
-Overall visibility on traditional media (including online) favours coalition parties VVD, VDA, D66 followed by the main opposition parties.
-Over time, Forum become much more visible on these media. PvdA, GL, and SP become  more visible in the newspapers, but less so on TV. 
-In contrast, PVV, VVD and FvD (and to a lesser extend D66) are much more visible on television. 
+Overall visibility on traditional media (including online) favours coalition parties VVD, VDA, D66 followed by the main opposition parties. This overall pattern is especially striking on TV, where these parties are each mentioned
+in about 60% of news and current affairs shows. 
+Over time, CDA and D66 gradually increase their share across all media, while VVD remains mostly constant. 
 
+In the final weeks, most parties increase in visiblity, especially on TV, as their are more opportunities
+for all party leaders to appear on TV. 
+
+Forum starts out with low visibility, but quickly climbs to being mentioned in 20-40% of all political news.
 Social media also show a very clear picture: 
 although many parties are somewhat active on social media, FvD wins hands down in terms of their activity,
 and FvD and PVV are the only parties with substantial engagement on social media (likes, shares, mentions)
@@ -178,7 +182,9 @@ whose media performance is evaluated very negatively by the respondents.
 This confirms the possibility that PVV and FvD are more noticeable when present, but clearly mostly in a negative way.
 
 Looking at change over time, we see that PvdA and GL become less noticeable, matching their decreasing visibility on TV.
-PvdA is evaluated clearly more positively, while VVD, CDA and D66 are evaluated slightly more negatively. 
+D66 and CDA on the other hand are increasingly noticed. 
+
+PvdA and 50+ are evaluated more positively in February, but loses this edge in the final weeks. CDA gradually decreases in favourability from 5.8 at the start of the campaign to 5.2 near the end. The other parties remain fairly constant. 
 
 ## Does notice depend on alignment of repondent?
 
@@ -207,9 +213,10 @@ d3 %>% filter(variable=="B3") %>%
 [Download data: `r export_data(d3, "Media performance by alignment")`]
 
 Notice of parties (visibility) does not really depend on the ideological alignment of the respondent.
+
 Evaluation of their media performance does differ: 
-leftist voters are overall more critical of rightist parties.
-Rightist voters were a bit more critical of GL, SP, D66 and PvdA, but this has mostly converged.
+leftist voters are overall more critical of rightist parties, especially of PVV and FvD,
+while rightist voters are more critical of GL, SP, D66 and PvdA
 
 
 # The Undecided Voter
@@ -240,45 +247,48 @@ If we look at the group of voters that were undecided at the start of the campai
 how did their media use change?
 
 ```{r undecided-media}
-d = w %>% mutate(zwevend=fct_rev(ifelse(iisID %in% w0u, "Undecided", "Decided"))) %>% filter(variable == "I1") %>% 
+pctz = function(x) str_c("(", round(length(x)/length(w3v)*100), "%)")
+
+still = pctz(intersect(w0u, w3u)) 
+once = pctz(setdiff(intersect(w3v, w0u), w3u))
+newly = pctz(setdiff(w3u, w0u)) 
+decided = pctz(setdiff(w3v, c(w0u, w3u)))
+
+
+d = w %>% filter(iisID %in% w3v) %>% 
+  mutate(zwevend=case_when(iisID %in% w0u & iisID %in% w3u ~ glue("Still Undecided {still}") , 
+                                   iisID %in% w0u ~ glue("Once undecided {once}"),
+                                   iisID %in% w3u ~ glue("Newly undecided {newly}"),
+                                   T ~ glue("Decided {decided}"))) %>% 
+  filter(variable == "I1") %>% 
   mutate(name=case_when(name == "Television" ~ "TV",
                         name == "Newspapers or opinion magazines (paper or online)" ~ "Newspapers",
                         name == "Online news sites (such as nu.nl) or blogs" ~ "Online",
                         name == "Social media (such as Facebook, Twitter)" ~ "Social",
                         T ~ "DROP")) %>% 
   filter(name != "DROP") %>% group_by(zwevend, wave, name) %>% summarize(value=mean(value)) 
+
+
 ggplot(d, aes(x=as.numeric(as.factor(wave)), colour=name, y=value)) + geom_line() + facet_grid(cols=vars(zwevend)) + 
   theme_nrc()  + ggtitle("Media use of *originally* (un)decided voters", "(in frequency of use per week, 0-7)") +
   scale_x_continuous(breaks=c(1,2,3), labels=c("Wave 1\n(Late Jan.)", "Wave 2\n(Early Feb.)", "Wave 3\n(Late Feb.)"))
 ```
 
-[Download data: `r export_data(d, "Media use of originally (un)decided voters")`]
+[Download data: `r export_data(d, "Media use of (un)decided voters")`]
 
-These results are quite striking: much more than the voters that had already made up their mind,
-these undecided voters started consuming more media, both newspapers and TV,
-and at the end of February even consume more news. 
+This figure shows the TV, online, newspaper, and social media consumption of voters over time,
+split into four groups: 
+ + *Decided* voters are voters who had a party preference both now and at the start of the campaign. This group
+ uses more media than the other groups, although there is a drop in all media use in the last weeks,
+ possibly because of campaign fatigue or the improved weather. 
+ + *Newly undecided* are voters who had a preference at the start of the campaign, but are now undecided.
+ This is the smallest group, and they show the largest drop in TV and social media consumption at the end. 
+ + *Once undecided* are  voters who were undecided at the start of the campaign, but who now have a party preference.
+ These voters started using more newspaper and TV content, with a drop in the last period.
+ They resemble the decided voters group most strongly. 
+ + *Still undecided* are voters who were undecided at the start of the campaign, and still did not make up their mind. 
+ These voters used less media than the rest across the board.
 
-```{r undecided-media2}
-zwevers = w %>% filter(variable=="vote") %>% mutate(zwevend=fct_rev(ifelse(name=="Undecided", "Undecided", "Decided"))) %>% select(wave, iisID, zwevend)
-
-#d = w %>% filter(variable == "I1") %>% inner_join(zwevers) %>%
-d = w %>% filter(iisID %in% c(w3v)) %>% mutate(zwevend=fct_rev(ifelse(iisID %in% w3u, "Undecided", "Decided"))) %>% filter(variable == "I1") %>% 
-  mutate(name=case_when(name == "Television" ~ "TV",
-                        name == "Newspapers or opinion magazines (paper or online)" ~ "Newspapers",
-                        name == "Online news sites (such as nu.nl) or blogs" ~ "Online",
-                        name == "Social media (such as Facebook, Twitter)" ~ "Social",
-                        T ~ "DROP")) %>% 
-  filter(name != "DROP") %>% group_by(zwevend, wave, name) %>% summarize(value=mean(value)) 
-ggplot(d, aes(x=as.numeric(as.factor(wave)), colour=name, y=value)) + geom_line() + facet_grid(cols=vars(zwevend)) + 
-  theme_nrc()  + ggtitle("Media use of *currently* (un)decided voters", "(in frequency of use per week, 0-7)") +
-  scale_x_continuous(breaks=c(1,2,3), labels=c("Wave 1\n(Late Jan.)", "Wave 2\n(Early Feb.)", "Wave 3\n(Late Feb.)"))
-```
-
-[Download data: `r export_data(d, "Media use of currently (un)decided voters")`]
-
-If we look at *currently* undecided voters, the picture is strikingly different. 
-This group (85% of which did have a preference at the start) actually consume less media across the board,
-even as the other respondents are increasing their (political) media use. 
 
 ## Who are the undecided voters?
 
@@ -347,7 +357,7 @@ all = full_join(d %>% select(party) %>% unique(),
           d %>% select(wave) %>% unique(), by=character()) %>%
   full_join(d %>% select(type) %>% unique(), by=character()) 
 
-d = left_join(all, d) %>% mutate(n=replace_na(n, 0), period=wave) 
+d = left_join(all, d) %>% mutate(n=replace_na(n, 0), period=str_c(wave, "-w", as.numeric(str_remove(wave, "w"))+1))
 
   #tibble(wave="w0", party="Denk", n=0, type="Undecided came from"))  %>% 
   #mutate(period=wave)#case_when(wave == "w0" ~ "Early February", wave == "w1" ~ "Late February", wave == "w2" ~ "Early March"))
@@ -379,11 +389,11 @@ On the left hand side, the figure above shows where undecided voters go to when 
 Similarly, the middle columns show where new undecided voters go to. 
 Finally, the rightmost two columns show the difference between the two: 
 was a party able to attract more undecided voters they lost? 
+All cells are expressed as virtual seats, that is, as a percentage of total respondents in that wave multiplied by 150. 
 
-The first thing that is very striking is that many party both attract a substantial number of undecided voters, while at the same time losing voters that become undecided. 
-
-Looking at which parties gain or lose from undecided voters, overall most parties make net gains as the number of undecided voters goes down.
-VVD, Groenlinks and PvdA and CU are mostly able to profit in early February, with the latter three even making a net loss later that month.
-Apparently, many voters started doubting their choice for these parties.
-In contrast, CDA and D66 but also PvdD and FvD actually profited most in the second half of February. 
+We see that there is a lot of exchange between non-voters and undecided voters, with slightly more non-voters becoming undecided.
+Overall, many parties were able to profit from the undecided voters in early February (w0-w1), 
+corresponding the the relatively large drop of undecided voters in that period. 
+After that period, CDA, PvdA and GL were less attractive to undecided voters, while PVV became more attractive.
+VVD was very attractive to undecided voters in both early February and early March, while in late February relatively more VVD voters became undecided. 
 
