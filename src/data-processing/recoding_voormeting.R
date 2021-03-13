@@ -651,8 +651,6 @@ df <- M %>%
   inner_join(I, by = "iisID") %>%
   inner_join(I_trust, by = "iisID")
 
-df =  rename(df, polknow=D1, vote_2017=E1, rile_self=E2)
-
 output_fn = here("data/intermediate/wave0.csv")
 message("Writing output file", output_fn)
 write_csv(df, output_fn)

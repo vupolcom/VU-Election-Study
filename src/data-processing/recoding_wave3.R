@@ -10,13 +10,13 @@ library(here)
 source(here("src/lib/data.R"))
 output_fn = here("data/intermediate/wave3.csv")
 
-d3 = load_survey(survey_id="SV_a92jPqJ9B5EQMSx")
+d3 = load_survey(survey_id="SV_a92jPqJ9B5EQMSx") %>% select(-I3_14_TEXT)
 
 # Regular blocks
 M = clean_meta(d3) %>% add_column(wave="wave 3", .after = 'iisID')
 A = clean_A(d3)
 B = clean_B(d3)
-I = clean_I(d3)
+I = clean_I(d3) 
 
 
 df = M %>%
