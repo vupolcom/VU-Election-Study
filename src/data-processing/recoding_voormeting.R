@@ -7,8 +7,9 @@
 library(tidyverse)
 library(here)
 
+source(here("src/lib/data.R"))
+
 d0 = load_survey(survey_id="SV_39R4hSWxAJNBKHb")
-colnames(d3)
 M = clean_meta(d0) %>% add_column(wave="pre-wave", .after = 'iisID')
 A = clean_A(d0)
 B = clean_B(d0)
@@ -516,7 +517,7 @@ D <- d0 %>%
          D3_4 = ifelse(D3_4 == 4, 1, 0),
          D3_sum = D3_1 + D3_2 + D3_3 + D3_4,
          D3_time = D3_timer_Last.Click - D3_timer_First.Click,
-         polknow = D1_sum + D2_sum + D3_sum,
+         D1 = D1_sum + D2_sum + D3_sum,
          D1_time_secs = D1_time + D2_time + D3_time,
          D1_clicks = D1_timer_Click.Count + D2_timer_Click.Count +
            D3_timer_Click.Count) %>%
@@ -649,25 +650,10 @@ df <- M %>%
   inner_join(H, by = "iisID") %>%
   inner_join(I, by = "iisID") %>%
   inner_join(I_trust, by = "iisID")
-  
-  
-  df <- left_join(df, B, by = "iisID")
-df <- left_join(df, C, by = "iisID")
-df <- left_join(df, D, by = "iisID")
-df <- left_join(df, E, by = "iisID")
-df <- left_join(df, F, by = "iisID")
-df <- left_join(df, G, by = "iisID")
-df <- left_join(df, H, by = "iisID")
-df <- left_join(df, I, by = "iisID") %>%
-  #distinct(iisID, .keep_all = T) %>%
-  select(-I10, -I11) %>%
-  filter(iisID !="007",
-         iisID !="009") %>%
-  mutate(iisID = as_numeric(iisID)) %>%
-  drop_na(iisID) 
 
 df =  rename(df, polknow=D1, vote_2017=E1, rile_self=E2)
 
-write_csv(df, here("data/intermediate/wave0.csv"))
-
+output_fn = here("data/intermediate/wave0.csv")
+message("Writing output file", output_fn)
+write_csv(df, output_fn)
 

@@ -140,7 +140,7 @@ clean_meta = function(d) {
 
 #' Recode Block A Voting Behavior
 clean_A = function(d) {
-  A = d %>% filter(Progress==100) %>%
+  A = d %>%
     select(iisID, A1:A2, A2_otherparty = A2_14_TEXT,
            matches("A[23]_DO_\\d+")) %>%
     mutate(A1 = recode(A1,
@@ -198,13 +198,15 @@ clean_B = function(d) {
 }
 
 clean_I = function(d) {
-  d %>% select(iisID, matches("^I[1-7]")) %>% rename(
+  I = d %>% select(iisID, matches("^I[1-7]")) %>% rename(
     I2_other = I2_13_TEXT,
     I3_other = I3_15_TEXT,
     I4_other_blogs = I4_8_TEXT,
     I4_other_sites = I4_15_TEXT,
     I5_other = I5_11_TEXT,
-    I6_other = I6_6_TEXT,
-    I7_other = I7_10_TEXT
+    I6_other = I6_6_TEXT
   )
+  if ("I7_10_TEXT" %in% colnames(I)) I = rename(I, I7_other = I7_10_TEXT)
+  if ("I7_11_TEXT" %in% colnames(I)) I = rename(I, I7_other = I7_11_TEXT)
+  I
 }

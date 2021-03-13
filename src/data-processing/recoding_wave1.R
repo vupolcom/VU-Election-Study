@@ -4,6 +4,9 @@
 #DEPENDS: data/raw-private/qualtrics_api_key.txt
 #CREATES: data/intermediate/wave1.csv
 
+library(tidyverse)
+library(here)
+source(here("src/lib/data.R"))
 d1 = load_survey(survey_id="SV_1X34g6PWhWjj6hD")
 
 # Regular blocks
@@ -24,4 +27,6 @@ df = M %>%
   left_join(I, by="iisID") 
 
 # TODO: other issues
-write_csv(df, here("data/intermediate/wave1.csv"))
+output_fn = here("data/intermediate/wave1.csv")
+message("Writing output file", output_fn)
+write_csv(df, output_fn)

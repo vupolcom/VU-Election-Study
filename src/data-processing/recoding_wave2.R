@@ -5,6 +5,9 @@
 #CREATES: data/intermediate/wave2.csv
 
 
+library(tidyverse)
+library(here)
+source(here("src/lib/data.R"))
 d2 = load_survey(survey_id="SV_byf8IHLmuTHe00l")
 
 # Regular blocks
@@ -28,4 +31,7 @@ df = M %>%
   left_join(I, by="iisID") 
 
 # TODO: other issues
-write_csv(df, here("data/intermediate/wave2.csv"))
+output_fn = here("data/intermediate/wave2.csv")
+message("Writing output file", output_fn)
+write_csv(df, output_fn)
+

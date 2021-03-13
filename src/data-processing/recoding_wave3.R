@@ -7,6 +7,7 @@
 library(tidyverse)
 library(here)
 
+source(here("src/lib/data.R"))
 output_fn = here("data/intermediate/wave3.csv")
 
 d3 = load_survey(survey_id="SV_a92jPqJ9B5EQMSx")
@@ -24,4 +25,6 @@ df = M %>%
   left_join(I, by="iisID") 
 
 # TODO: other issues
-write_csv(df, here("data/intermediate/wave3.csv"))
+output_fn = here("data/intermediate/wave3.csv")
+message("Writing output file", output_fn)
+write_csv(df, output_fn)
