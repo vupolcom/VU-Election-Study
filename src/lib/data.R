@@ -1,3 +1,5 @@
+library(glue)
+
 #' Save data as csv and return (md) download link
 #' @param name: Human-readable name (will be sanitized to .csv file name)
 #' @param data: Data frame to save
@@ -84,3 +86,112 @@ extract_waves = function(data) {
   #  mutate(x=w0+w1+w2) %>% filter(x>1) %>% 
   #  left_join(get_codebook()) %>%
   #  View()
+
+
+load_survey = function(survey_id) {
+
+  ## Load Data from qualtrics using the API key from data/raw-private
+  api_key_fn = here("data/raw-private/qualtrics_api_key.txt")
+  API = read_file(api_key_fn) %>% trimws()
+  qualtrics_api_credentials(api_key = API,  base_url = "fra1.qualtrics.com")
+  d <- fetch_survey(surveyID = survey_id, 
+                    verbose = TRUE, force_request = T,
+                    label = FALSE, convert = FALSE)
+  
+  if (!"consent1" %in% colnames(d) & "constent1" %in% colnames(d)) d = d %>% rename(consent1=constent1)
+  
+  #only keep people that have given consent, are not admin or 007/009, and have filled in A1
+  d <- d %>%
+    remove_all_labels() %>% 
+    as_tibble() %>%
+    filter(consent1==1 & consent2==1,
+           !is.na(iisID),
+           !str_detect(iisID, "admin|Loes|Mariken"),
+           !iisID %in% c("007", "009"),
+           !is.na(A1)
+        
+           ) %>%
+    mutate(iisID = as.numeric(iisID))
+  if (any(is.na(d$iisID))) stop("iisID still contains NA values after cleaning")
+  
+  if (nrow(d) != length(unique(d$iisID))) {
+    # Some respondents have duplicate rows due to an error in launching the survey
+    # For those people, we take the latest non-missing value for each column
+    message(glue("Merging {nrow(d) - length(unique(d$iisID))} duplicates..."))
+    first_non_missing = function(x) na.omit(x)[1]
+    d = d %>% arrange(iisID, desc(RecordedDate)) %>% group_by(iisID) %>% 
+      group_by(iisID) %>% summarize(across(everything(), first_non_missing))
+  }
+  d
+}
+
+#' Clean the metavariables present in each survey (start, duration, etc)
+clean_meta = function(d) {
+  d %>%
+    mutate(start_date = StartDate,
+           end_date = EndDate,
+           duration_min = round(Duration..in.seconds./60,2)) %>%
+    select(iisID, start_date, end_date, duration_min, 
+           progress = Progress)
+}
+
+#' Recode Block A Voting Behavior
+clean_A = function(d) {
+  A = d %>% filter(Progress==100) %>%
+    select(iisID, A1:A2, A2_otherparty = A2_14_TEXT,
+           matches("A[23]_DO_\\d+")) %>%
+    mutate(A1 = recode(A1,
+                       `2` = 0,
+                       `3` = 998,
+                       `4` = 999),
+           A2 = recode(A2,
+                       `16` = 999)) %>%
+    unite(order_A2, matches("A2_DO_\\d+"), sep="|") %>%
+    unite(order_A3, matches("A3_DO_\\d+"), sep="|") 
+  
+  
+  A3 <- d %>%
+    select(iisID, matches("A3_\\d+")) %>%
+    pivot_longer(-iisID, names_to = "variable") %>%
+    drop_na(value) %>%
+    separate(variable, c("variable", "party"), "_", extra = "merge")  %>%
+    group_by(iisID) %>%
+    summarise(n = row_number(),
+              party = party) %>%
+    ungroup() %>%
+    mutate(n = paste("A3", n, sep="_"),
+           n = factor(n),
+           party = as.integer(party)) %>%
+    pivot_wider(names_from = n, values_from = party, 
+                values_fill = 0) %>%
+    unite("A3", matches("A3_\\d+"), sep="|", remove=FALSE)
+  
+  left_join(A, A3, by = "iisID") %>%
+    select(iisID, A1:A2_otherparty, order_A2, A3, order_A3, matches("A3_\\d+")) 
+}
+
+clean_B = function(d) {
+  B = d %>% filter(iisID == 557707) %>% mutate(across(matches("B2_\\d+"), 
+                      ~recode(., `1` = 999, `2` = 1, `24` = 2,`25` = 3))
+               ) %>%
+  unite(order_B2, matches("B2_DO_\\d+"), sep="|") %>%
+  select(iisID, B1, B2_1:B2_13, order_B2)
+
+  # meaning of X1_B3_3 etc: performance of party X1, filled in either in variable _3 or _4
+  B3 <- d %>%  filter(iisID == 557707)  %>% select(iisID, matches("^X\\d+_B3_\\d+$")) %>%
+    pivot_longer(cols = -iisID, names_to = "variable") %>%
+    separate(variable, c("variable", "question"), "_", extra = "merge")  %>%
+    pivot_wider(names_from = question, values_from = value) %>%
+    mutate(B3=case_when(
+      !is.na(B3_3) ~ B3_3,
+      !is.na(B3_4) ~ B3_4,
+      T ~ 999)) %>% 
+    select(-B3_3, -B3_4) %>%
+    mutate(variable = str_c("B3_", str_remove_all(variable, "X"))) %>%
+    pivot_wider(names_from = variable, values_from = B3) 
+  
+  
+  left_join(B, B3, by = "iisID") 
+    
+}
+

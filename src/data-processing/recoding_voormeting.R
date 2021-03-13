@@ -12,29 +12,12 @@ library(sjlabelled)
 library(here)
 library(qualtRics)
 
-input_fn = here("data/raw-private/qualtrics_api_key.txt")
-output_fn = here("data/intermediate/VUElectionPanel2021_wave0.csv")
+d = load_survey(survey_id="SV_39R4hSWxAJNBKHb")
+colnames(d3)
+M = clean_meta(d) %>% add_column(wave="pre-wave", .after = 'iisID')
+A = clean_A(d)
+B = clean_B(d)
 
-## Load Data from qualtrics using the API key from data/raw-private
-API = read_file(input_fn) %>% trimws()
-qualtrics_api_credentials(api_key = API,  base_url = "fra1.qualtrics.com")
-d <- fetch_survey(surveyID = "SV_39R4hSWxAJNBKHb", 
-                         verbose = TRUE, force_request = T,
-                         label = FALSE, convert = FALSE)
-
-#only keep people that have given consent
-
-d <- d %>%
-  remove_all_labels() %>% 
-  tibble() %>%
-  filter(consent1==1 & consent2==1) 
-
-# Some respondents have duplicate rows due to an error in launching the survey
-# For those people, we take the latest non-missing value for each column
-first_non_missing = function(x) na.omit(x)[1]
-d = d %>% arrange(iisID, desc(RecordedDate)) %>% group_by(iisID) %>% 
-  group_by(iisID) %>% summarize(across(everything(), first_non_missing))
-table(d$age, useNA = "always")
 ## Recode Block Background Variables
 BG <- d %>%
   mutate(gender = recode(gender, `2` = 0),
@@ -63,148 +46,22 @@ BG <- d %>%
                       `8` = 6,
                       `9` = 7,
                       `10` = 8),
-         wave = "pre-wave",
-         start_date = StartDate,
-         end_date = EndDate,
-         duration_min = round(Duration..in.seconds./60,2),
-         ethnicity = ifelse(country_birth==1 & country_father==1 & 
-                             country_mother==1, 1,
-                    ifelse(country_birth==1 & country_father== 5, 3,
-                    ifelse(country_birth==1 & country_father== 6, 3,
-                    ifelse(country_birth==1 & country_father== 7, 3,
-                    ifelse(country_birth==1 & country_father== 8, 3,
-                    ifelse(country_birth==1 & country_father== 13, 3,
-                    ifelse(country_birth==1 & country_mother== 5, 3,
-                    ifelse(country_birth==1 & country_mother== 6, 3,
-                    ifelse(country_birth==1 & country_mother== 7, 3,
-                    ifelse(country_birth==1 & country_mother== 8, 3,
-                    ifelse(country_birth==1 & country_mother== 13, 3,
-                    ifelse(country_birth==1 & country_father== 4, 5,
-                    ifelse(country_birth==1 & country_father== 9, 5,
-                    ifelse(country_birth==1 & country_father== 10, 5,
-                    ifelse(country_birth==1 & country_father== 11, 5,
-                    ifelse(country_birth==1 & country_father== 12, 5,
-                    ifelse(country_birth==1 & country_mother== 4, 5,
-                    ifelse(country_birth==1 & country_mother== 9, 5,
-                    ifelse(country_birth==1 & country_mother== 10, 5,
-                    ifelse(country_birth==1 & country_mother== 11, 5,
-                    ifelse(country_birth==1 & country_mother== 12, 5,
-                    ifelse(country_birth==4, 4,
-                    ifelse(country_birth==9, 4,
-                    ifelse(country_birth==10, 4,
-                    ifelse(country_birth==11, 4,
-                    ifelse(country_birth==12, 4,
-                    ifelse(country_birth==5, 2,
-                    ifelse(country_birth==6, 2,
-                    ifelse(country_birth==7, 2,
-                    ifelse(country_birth==8, 2,
-                    ifelse(country_birth==13, 2,
-                           999)))))))))))))))))))))))))))))))) %>%
-  select(wave,start_date, end_date, duration_min, progress = Progress, iisID, gender, 
+         ethnicity = case_when(
+           country_birth==1 & country_father==1 & country_mother==1 ~ 1,
+           country_birth==1 & country_father %in% c(5,6,7,8,13) ~ 3,
+           country_birth==1 & country_mother %in% c(5,6,7,8,13) ~ 3,
+           country_birth==1 & country_father %in% c(4,9,10,11,12) ~ 5,
+           country_birth==1 & country_mother %in% c(4,9,10,11,12) ~ 5,
+           country_birth %in% c(4,9,10,11,12) ~ 4,
+           country_birth %in% c(5,6,7,8,13) ~ 2,
+           T ~ 999)
+  ) %>%
+  select(iisID, gender, 
          age, agegroup, education, region, ethnicity, 
          postal_code = postal_code_1_TEXT,
          job, internet_use)
   
-  filter(check == 0) %>% select(-check)
 
-## Recode Block A Voting Behavior
-A <- d %>%
-  select(iisID, A1:A2, A2_otherparty = A2_14_TEXT,
-         A2_DO_1:A2_DO_13, A3_DO_1:A3_DO_13, progress = Progress) %>%
-  mutate(A1 = recode(A1,
-                     `2` = 0,
-                     `3` = 998,
-                     `4` = 999),
-         A2 = recode(A2,
-                     `16` = 999),
-         order_A2 = paste(A2_DO_1, A2_DO_2, A2_DO_3, A2_DO_4,
-                          A2_DO_5, A2_DO_6, A2_DO_7, A2_DO_8,
-                          A2_DO_9, A2_DO_10, A2_DO_11, 
-                          A2_DO_12, A2_DO_13, sep = "|"),
-         order_A3 = paste(A3_DO_1, A3_DO_2, A3_DO_3, A3_DO_4,
-                          A3_DO_5, A3_DO_6, A3_DO_7, A3_DO_8,
-                          A3_DO_9, A3_DO_10, A3_DO_11, 
-                          A3_DO_12, A3_DO_13, sep = "|"))
-  
-A3 <- d %>%
-  select(iisID, A3_1:A3_13) %>%
-  pivot_longer(cols = A3_1:A3_13,
-               names_to = "variable") %>%
-  drop_na(value) %>%
-  separate(variable, c("variable", "party"), "_", extra = "merge")  %>%
-  group_by(iisID) %>%
-  summarise(n = row_number(),
-            party = party) %>%
-  ungroup() %>%
-  mutate(n = paste("A3", n, sep="_"),
-         n = factor(n),
-         party = as.integer(party))
-
-A3 <-  pivot_wider(A3, names_from = n, values_from = party, 
-                    values_fill = 0) %>%
-  mutate(A3 = paste(A3_1, A3_2, A3_3, A3_4, A3_5,
-                    A3_6, A3_7, A3_8, A3_9, A3_10, 
-                    A3_11, A3_12, A3_13, sep = "|"))
-
-A <- left_join(A, A3, by = "iisID") %>%
-  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
-  filter(check == 0) %>%
-  select(iisID, A1:A2_otherparty, order_A2, A3, order_A3, A3_1:A3_13) 
-
-rm(A3)
-
-## Recode Block B Performance Politics in the Media
-d <-d %>%
-  mutate(B2_1 = recode(B2_1,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_2 = recode(B2_2,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_3 = recode(B2_3,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_4 = recode(B2_4,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_5 = recode(B2_5,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_6 = recode(B2_6,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_7 = recode(B2_7,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_8 = recode(B2_8,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_9 = recode(B2_9,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_10 = recode(B2_10,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_11 = recode(B2_11,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_12 = recode(B2_12,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       B2_13 = recode(B2_13,`1` = 999, `2` = 1, `24` = 2,`25` = 3),
-       order_B2 = paste(B2_DO_1, B2_DO_2, B2_DO_3, B2_DO_4, 
-                          B2_DO_5, B2_DO_6, B2_DO_7, B2_DO_8, 
-                          B2_DO_9, B2_DO_10, B2_DO_11, B2_DO_12, 
-                          B2_DO_13, sep = "|"))
-
-B3 <- d %>%
-  select(iisID, X1_B3_3, X2_B3_3, X3_B3_3, X4_B3_3, X5_B3_3,
-         X6_B3_3, X7_B3_3, X8_B3_3, X9_B3_3, X10_B3_3,
-         X11_B3_3, X12_B3_3, X13_B3_3,
-         X1_B3_4, X2_B3_4, X3_B3_4, X4_B3_4, X5_B3_4,
-         X6_B3_4, X7_B3_4, X8_B3_4, X9_B3_4, X10_B3_4,
-         X11_B3_4, X12_B3_4, X13_B3_4) %>%
-  pivot_longer(cols = X1_B3_3:X13_B3_4,
-               names_to = "variable") %>%
-  separate(variable, c("variable", "question"), "_", extra = "merge")  %>%
-  group_by(variable) %>%
-  mutate(row = row_number()) %>%
-  pivot_wider(names_from = question, values_from = value) %>%
-  unite("B3", B3_3:B3_4, remove = T, na.rm = T) %>%
-  mutate(B3 = ifelse(B3 == "", "999", B3),
-         B3 = as.numeric(B3)) 
-  
-B3 <- B3 %>%
-  group_by(variable) %>%
-  mutate(row = row_number()) %>%
-  pivot_wider(names_from = variable, values_from = B3) %>%
-  select(iisID, B3_1 = X1,
-         B3_2 = X1, B3_3 = X3, B3_4 = X4, B3_5 = X5,
-         B3_6 = X6, B3_7 = X7, B3_8 = X1, B3_9 = X9,
-         B3_10 = X10, B3_11 = X11, B3_12 = X12, B3_13 = X13) 
-
-B <- d %>%
-  select(iisID, B1, B2_1:B2_13, order_B2, progress = Progress)
-B <- left_join(B, B3, by = "iisID") %>%
-  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
-  filter(check == 0) %>% select(-check)
-rm(B3)
 
 ## Recode Block C Issue Association
 C1_1 <- d %>%
