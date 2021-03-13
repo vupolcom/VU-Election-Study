@@ -1,7 +1,7 @@
 ---
 title: 'Media Visibility and Electoral shifts'
 author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas"
-permalink: reports/wave2/
+permalink: reports/wave3/
 output: 
   md_document:
     preserve_yaml: yes
@@ -114,7 +114,6 @@ sma = sm %>% mutate(period=period(date),
          party=factor(party, levels=parties))
 
 hpp2=bind_rows(hpp, sma)
-table(d$period)
 mtypes = c("Newspapers"=1,"TV"=1, "Online (nos.nl/nu.nl)"=1, "Social Media (activity)"=2, "Social Media (engagement)"=2)
 hpp2 %>% mutate(mtype=fct_relevel(mtype, names(mtypes))) %>% 
 ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() + 

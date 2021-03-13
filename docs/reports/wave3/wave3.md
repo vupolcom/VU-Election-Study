@@ -1,7 +1,7 @@
 ---
 title: 'Media Visibility and Electoral shifts'
 author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas"
-permalink: reports/wave2/
+permalink: reports/wave3/
 output: 
   md_document:
     preserve_yaml: yes
@@ -12,26 +12,7 @@ editor_options:
 Visibility of parties
 =====================
 
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">pre</th>
-<th style="text-align: right;">w0</th>
-<th style="text-align: right;">w1</th>
-<th style="text-align: right;">w2</th>
-<th style="text-align: right;">w3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1321</td>
-<td style="text-align: right;">3708</td>
-<td style="text-align: right;">2826</td>
-<td style="text-align: right;">2997</td>
-<td style="text-align: right;">4408</td>
-</tr>
-</tbody>
-</table>
+![](visibility-newspapers-1.png)
 
 \[Download data: [Visibility of parties in the
 media](Visibility_of_parties_in_the_media.csv)\]
