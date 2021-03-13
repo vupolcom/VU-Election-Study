@@ -178,7 +178,7 @@ clean_B = function(d) {
   select(iisID, B1, B2_1:B2_13, order_B2)
 
   # meaning of X1_B3_3 etc: performance of party X1, filled in either in variable _3 or _4
-  B3 <- d %>%  filter(iisID == 557707)  %>% select(iisID, matches("^X\\d+_B3_\\d+$")) %>%
+  B3 <- d %>%  select(iisID, matches("^X\\d+_B3_\\d+$")) %>%
     pivot_longer(cols = -iisID, names_to = "variable") %>%
     separate(variable, c("variable", "question"), "_", extra = "merge")  %>%
     pivot_wider(names_from = question, values_from = value) %>%
