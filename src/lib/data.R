@@ -171,7 +171,7 @@ clean_A = function(d) {
 }
 
 clean_B = function(d) {
-  B = d %>% filter(iisID == 557707) %>% mutate(across(matches("B2_\\d+"), 
+  B = d %>% mutate(across(matches("B2_\\d+"), 
                       ~recode(., `1` = 999, `2` = 1, `24` = 2,`25` = 3))
                ) %>%
   unite(order_B2, matches("B2_DO_\\d+"), sep="|") %>%
@@ -194,4 +194,3 @@ clean_B = function(d) {
   left_join(B, B3, by = "iisID") 
     
 }
-
