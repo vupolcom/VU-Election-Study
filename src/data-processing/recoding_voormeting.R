@@ -4,22 +4,18 @@
 #DEPENDS: data/raw-private/qualtrics_api_key.txt
 #CREATES: data/intermediate/VUElectionPanel2021_wave0.csv
 
-## Required Packages &amp; Reproducibility
-rm(list = ls())
-
 library(tidyverse)
-library(sjlabelled)
 library(here)
-library(qualtRics)
 
-d = load_survey(survey_id="SV_39R4hSWxAJNBKHb")
+d0 = load_survey(survey_id="SV_39R4hSWxAJNBKHb")
 colnames(d3)
-M = clean_meta(d) %>% add_column(wave="pre-wave", .after = 'iisID')
-A = clean_A(d)
-B = clean_B(d)
+M = clean_meta(d0) %>% add_column(wave="pre-wave", .after = 'iisID')
+A = clean_A(d0)
+B = clean_B(d0)
+I = clean_I(d0)
 
 ## Recode Block Background Variables
-BG <- d %>%
+BG <- d0 %>%
   mutate(gender = recode(gender, `2` = 0),
          agegroup = case_when(
            is.na(age) ~ NA_real_,
@@ -64,7 +60,7 @@ BG <- d %>%
 
 
 ## Recode Block C Issue Association
-C1_1 <- d %>%
+C1_1 <- d0 %>%
   select(iisID, X1_C1_1_2,
          X2_C1_1_2, X3_C1_1_2, X4_C1_1_2, X5_C1_1_2,
          X6_C1_1_2, X7_C1_1_2, X8_C1_1_2, X9_C1_1_2,
@@ -173,7 +169,7 @@ C1_1 <- d %>%
                        `32` = 13,`33` = 14, `34` = 15, `35` = 16,
                        `36` = 17,`37` = 18, `38` = 19, `40` = 20))
 
-C1_1_txt <- d %>%
+C1_1_txt <- d0 %>%
   select(X1_C1_1_2_38_TEXT, X2_C1_1_2_38_TEXT, X3_C1_1_2_38_TEXT,
          X4_C1_1_2_38_TEXT, X5_C1_1_2_38_TEXT, X6_C1_1_2_38_TEXT,
          X7_C1_1_2_38_TEXT, X8_C1_1_2_38_TEXT, X9_C1_1_2_38_TEXT,
@@ -216,7 +212,7 @@ C1_1_txt <- d %>%
   unite("C1_1_13_text", c(X13_C1_1_2_38_TEXT, X13_C1_1_3_38_TEXT,
                          X13_C1_1_4_38_TEXT),remove = T, na.rm = T)
 
-C1_2 <- d %>%
+C1_2 <- d0 %>%
   select(iisID, X1_C1_2_2,
          X2_C1_2_2, X3_C1_2_2, X4_C1_2_2, X5_C1_2_2,
          X6_C1_2_2, X7_C1_2_2, X8_C1_2_2, X9_C1_2_2,
@@ -325,7 +321,7 @@ C1_2 <- d %>%
                        `32` = 13,`33` = 14, `34` = 15, `35` = 16,
                        `36` = 17,`37` = 18, `38` = 19, `40` = 20))
 
-C1_2_txt <- d %>%
+C1_2_txt <- d0 %>%
   select(X1_C1_2_2_38_TEXT, X2_C1_2_2_38_TEXT, X3_C1_2_2_38_TEXT,
          X4_C1_2_2_38_TEXT, X5_C1_2_2_38_TEXT, X6_C1_2_2_38_TEXT,
          X7_C1_2_2_38_TEXT, X8_C1_2_2_38_TEXT, X9_C1_2_2_38_TEXT,
@@ -368,7 +364,7 @@ C1_2_txt <- d %>%
   unite("C1_2_13_text", c(X13_C1_2_2_38_TEXT, X13_C1_2_3_38_TEXT,
                          X13_C1_2_4_38_TEXT),remove = T, na.rm = T)
 
-C2_1 <- d %>%
+C2_1 <- d0 %>%
   select(iisID, X1_C2_1_2,
          X2_C2_1_2, X3_C2_1_2, X4_C2_1_2, X5_C2_1_2,
          X6_C2_1_2, X7_C2_1_2, X8_C2_1_2, X9_C2_1_2,
@@ -425,7 +421,7 @@ C2_1 <- d %>%
          C2_1_13 = ifelse(C2_1_13 == "", "999", C2_1_13),
          C2_1_13 = as.numeric(C2_1_13))
 
-C2_2 <- d %>%
+C2_2 <- d0 %>%
   select(iisID,X1_C2_2_2,
          X2_C2_2_2, X3_C2_2_2, X4_C2_2_2, X5_C2_2_2,
          X6_C2_2_2, X7_C2_2_2, X8_C2_2_2, X9_C2_2_2,
@@ -492,7 +488,7 @@ mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
 rm(C1_1, C1_1_txt, C1_2, C1_2_txt, C2_1, C2_2)
 
 # Recode Block D Political Knowledge
-D <- d %>%
+D <- d0 %>%
   select(iisID, D1_1, D1_2, D1_3, D1_4, 
          D1_timer_First.Click, D1_timer_Last.Click,
          D1_timer_Click.Count, D1_timer_Page.Submit,
@@ -520,7 +516,7 @@ D <- d %>%
          D3_4 = ifelse(D3_4 == 4, 1, 0),
          D3_sum = D3_1 + D3_2 + D3_3 + D3_4,
          D3_time = D3_timer_Last.Click - D3_timer_First.Click,
-         D1 = D1_sum + D2_sum + D3_sum,
+         polknow = D1_sum + D2_sum + D3_sum,
          D1_time_secs = D1_time + D2_time + D3_time,
          D1_clicks = D1_timer_Click.Count + D2_timer_Click.Count +
            D3_timer_Click.Count) %>%
@@ -528,10 +524,8 @@ D <- d %>%
   filter(check == 0) %>% 
   select(iisID, D1, D1_time_secs, D1_clicks) 
 
-length(which(duplicated(D$iisID)))
-
 # Recode Block E Political Background
-E <- d %>%
+E <- d0 %>%
   select(iisID, E1, E1_otherparty = E1_16_TEXT, 
          E1_DO_1:E1_DO_19, E2, E3_1:E3_13, progress=Progress) %>%
   mutate(E1 = recode(E1,
@@ -549,9 +543,8 @@ E <- d %>%
   filter(check == 0) %>% 
   select(iisID, E1, E1_otherparty, order_E1, E2, E3_1:E3_13)
 
-length(which(duplicated(E$iisID)))
 # Recode Block F Trust
-F <- d %>%
+F <- d0 %>%
   mutate(order_F1 = paste(F1_DO_1, F1_DO_2, F1_DO_3, F1_DO_4,
                           F1_DO_5, F1_DO_6, F1_DO_7, F1_DO_8,
                           F1_DO_9, F1_DO_10, sep ="|"),
@@ -567,7 +560,7 @@ length(which(duplicated(F$iisID)))
   
 
 # Recode Block G Evaluation of Government and Political Leaders
-G <- d %>%
+G <- d0 %>%
   select(iisID, G1_1:G1_5, G1_b, G_eval_leaders_1:G_eval_leaders_14,
          G2_DO_4:G2_DO_17,
          G2_1 = G2_4, G2_2 = G2_5, G2_3 = G2_6,
@@ -626,7 +619,7 @@ G <- d %>%
          -G2_DO_16, -G2_DO_17)
 
 # Recode Block H Other Issues
-H <- d %>%
+H <- d0 %>%
   mutate(H4 = recode(H4, `8` = 999),
          order_H6 = paste(H6_DO_1,H6_DO_2,H6_DO_3, sep = "|"),
          H7 = recode(H7, `3` = 2, `4` = 3, `5` = 4))  %>%
@@ -635,35 +628,30 @@ H <- d %>%
   select(iisID, H3:H6_3, order_H6, H7)
 
 # Recode Block I News Consumption
-I <- d %>%
-  mutate(order_I8 = paste(I8_DO_1, I8_DO_4, I8_DO_5, I8_DO_6,
-                          I8_DO_7, I8_DO_8, I8_DO_9, I8_DO_10,
-                          I8_DO_11, I8_DO_12, I8_DO_13, I8_DO_14,
-                          I8_DO_15, sep = "I")) %>%
-  mutate(check = ifelse(duplicated(iisID) & Progress <= 100, 1, 0)) %>%
-  filter(check == 0) %>% 
-  select(iisID, I1_1:I1_9, I2_1:I2_13, I2_other = I2_13_TEXT,
-         I3_1:I3_14, I3_15 = I3_17,I3_16 = I3_15, I3_other = I3_15_TEXT,
-         I4_1:I4_8, I4_9 = I4_15, I4_other_blogs = I4_8_TEXT,
-         I4_other_sites = I4_15_TEXT,
-         I5_1:I5_11, I5_other = I5_11_TEXT,
-         I6_1:I6_6, I6_other = I6_6_TEXT,
-         I7_1:I7_9, I7_other = I7_10_TEXT,
-         I8_1, I8_2 = I8_4, I8_3 = I8_5,
+I_trust <- d0 %>% unite(order_I8, I8_DO_1:I8_DO_15, sep="|") %>%
+  select(iisID, I8_1, I8_2 = I8_4, I8_3 = I8_5,
          I8_4 = I8_6, I8_5 = I8_7, I8_6 = I8_8,
          I8_7 = I8_9, I8_8 = I8_10, I8_9 = I8_11,
          I8_10 = I8_12, I8_11 = I8_13, 
          I8_12 = I8_14, I8_13 = I8_15, order_I8,
-         I9_1:I9_9,
-         I10, I11) 
-#twitter <- I %>%
-#  select(iisID, I11) %>%
-#  drop_na()
-#write_csv(twitter, "twitter_handles_VUElectionPanel2021.csv")
+         I9_1:I9_9) 
 
 ## Merge &amp; Save Data
-df <- inner_join(BG, A, by = "iisID")
-df <- left_join(df, B, by = "iisID")
+df <- M %>% 
+  inner_join(BG, by = "iisID") %>%
+  inner_join(A, by = "iisID") %>%
+  inner_join(B, by = "iisID") %>%
+  inner_join(C, by = "iisID") %>%
+  inner_join(D, by = "iisID") %>%
+  inner_join(E, by = "iisID") %>%
+  inner_join(F, by = "iisID") %>%
+  inner_join(G, by = "iisID") %>%
+  inner_join(H, by = "iisID") %>%
+  inner_join(I, by = "iisID") %>%
+  inner_join(I_trust, by = "iisID")
+  
+  
+  df <- left_join(df, B, by = "iisID")
 df <- left_join(df, C, by = "iisID")
 df <- left_join(df, D, by = "iisID")
 df <- left_join(df, E, by = "iisID")
@@ -678,10 +666,8 @@ df <- left_join(df, I, by = "iisID") %>%
   mutate(iisID = as_numeric(iisID)) %>%
   drop_na(iisID) 
 
-rename(df, vote=A2, vote_otherparty=A2_otherparty, polknow=D1, vote_2017=E1, rile_self=E2)
+df =  rename(df, polknow=D1, vote_2017=E1, rile_self=E2)
 
-write_csv(df, output_fn)
+write_csv(df, here("data/intermediate/wave0.csv"))
 
-#haven::write_sav(df, "pre_wave_VUElectionPanel2021.sav")
-rm(A, B, C, D, E, F, G, H, I, BG, twitter)
 

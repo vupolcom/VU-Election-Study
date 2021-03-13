@@ -1,3 +1,6 @@
+library(tidyverse)
+library(sjlabelled)
+library(qualtRics)
 library(glue)
 
 #' Save data as csv and return (md) download link
@@ -175,9 +178,9 @@ clean_B = function(d) {
                       ~recode(., `1` = 999, `2` = 1, `24` = 2,`25` = 3))
                ) %>%
   unite(order_B2, matches("B2_DO_\\d+"), sep="|") %>%
-  select(iisID, B1, B2_1:B2_13, order_B2)
+  select(iisID, B2_1:B2_13, order_B2)
 
-  # meaning of X1_B3_3 etc: performance of party X1, filled in either in variable _3 or _4
+  d## meaning of X1_B3_3 etc: performance of party X1, filled in either in variable _3 or _4
   B3 <- d %>%  select(iisID, matches("^X\\d+_B3_\\d+$")) %>%
     pivot_longer(cols = -iisID, names_to = "variable") %>%
     separate(variable, c("variable", "question"), "_", extra = "merge")  %>%
@@ -192,5 +195,16 @@ clean_B = function(d) {
   
   
   left_join(B, B3, by = "iisID") 
-    
+}
+
+clean_I = function(d) {
+  d %>% select(iisID, matches("^I[1-7]")) %>% rename(
+    I2_other = I2_13_TEXT,
+    I3_other = I3_15_TEXT,
+    I4_other_blogs = I4_8_TEXT,
+    I4_other_sites = I4_15_TEXT,
+    I5_other = I5_11_TEXT,
+    I6_other = I6_6_TEXT,
+    I7_other = I7_10_TEXT
+  )
 }

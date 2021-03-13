@@ -1,27 +1,27 @@
 #! /usr/bin/env Rscript
-#DESCRIPTION: Data Cleaning: Dutch Parliamentary Elections 2021 Pre-Wave
+#DESCRIPTION: Data Cleaning: Dutch Parliamentary Elections 2021 Wave 1
 #AUTHOR: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Marloes Jansen, Nicolas Matthis, Kasper Welbers and Nienke Wolfers"
 #DEPENDS: data/raw-private/qualtrics_api_key.txt
-#CREATES: data/intermediate/VUElectionPanel2021_wave3.csv
+#CREATES: data/intermediate/wave1.csv
 
-library(tidyverse)
-library(here)
-
-output_fn = here("data/intermediate/wave3.csv")
-
-d3 = load_survey(survey_id="SV_a92jPqJ9B5EQMSx")
+d1 = load_survey(survey_id="SV_1X34g6PWhWjj6hD")
 
 # Regular blocks
-M = clean_meta(d3) %>% add_column(wave="wave 3", .after = 'iisID')
-A = clean_A(d3)
-B = clean_B(d3)
-I = clean_I(d3)
+M = clean_meta(d1) %>% add_column(wave="wave 1", .after = 'iisID')
+A = clean_A(d1)
+B = clean_B(d1)
+I = clean_I(d1)
 
+# Other issues
+H <- d1 %>%
+  select(iisID, H1, H2, H7, H7a, H7b:H10) %>%
+  mutate(H7 = recode(H7, `3` = 2, `4` = 3, `5` = 4)) 
 
 df = M %>%
   left_join(A, by="iisID") %>%
   left_join(B, by="iisID") %>%
+  left_join(H, by="iisID") %>%
   left_join(I, by="iisID") 
 
 # TODO: other issues
-write_csv(df, here("data/intermediate/wave3.csv"))
+write_csv(df, here("data/intermediate/wave1.csv"))
