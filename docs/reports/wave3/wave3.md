@@ -96,14 +96,14 @@ the election draws near:
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Not</td>
-<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">1.3</td>
 <td style="text-align: right;">1.7</td>
 <td style="text-align: right;">1.2</td>
 <td style="text-align: right;">1.4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Undecided</td>
-<td style="text-align: right;">24.8</td>
+<td style="text-align: right;">23.5</td>
 <td style="text-align: right;">16.9</td>
 <td style="text-align: right;">14.4</td>
 <td style="text-align: right;">12.5</td>
@@ -112,8 +112,8 @@ the election draws near:
 </table>
 
 Very importantly, the group of undecided voters is also changing. Of the
-undecided voters at the start, only 42% is still undecided. Conversely,
-of the current undecided voters, 30% did have a preference at the start.
+undecided voters at the start, only 41% is still undecided. Conversely,
+of the current undecided voters, 35% did have a preference at the start.
 
 Media use of undecided voters
 -----------------------------
