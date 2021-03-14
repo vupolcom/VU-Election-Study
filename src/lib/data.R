@@ -173,6 +173,7 @@ clean_A = function(d) {
     select(iisID, A1:A2_otherparty, order_A2, A3, order_A3, matches("A3_\\d+")) 
 }
 
+#' Recode Block B: Performance Politics in the Media
 clean_B = function(d) {
   B = d %>% mutate(across(matches("B2_\\d+"), 
                       ~recode(., `1` = 999, `2` = 1, `24` = 2,`25` = 3))
@@ -195,6 +196,55 @@ clean_B = function(d) {
   
   
   left_join(B, B3, by = "iisID") 
+}
+
+#' Recode Block C Issue Association
+clean_C = function(d) {
+  # Recode numerical answers to question blocks C1 and C2
+  # Variable names are coded <party>_<variable:C1 or C2>_<choice:1st or 2nd>_<screen:2,3,4>
+  C12 = d0 %>% select(iisID, matches("X\\d+_C[12]_[12]_[234]$")) %>% 
+    pivot_longer(-iisID) %>% 
+    separate(name, into=c("party", "variable", "choice", "screen"))  %>%
+    # Participants fill in either _2, _3, or _4 depending on earlier choice
+    # so pivot wide, pick first non-missing value, drop columns
+    pivot_wider(names_from="screen") %>%
+    mutate(value = case_when(!is.na(`2`) ~ `2`,
+                             !is.na(`3`) ~ `3`,
+                             T ~ `4`)) %>% 
+    select(-`2`, -`3`, -`4`) %>%
+    filter(!is.na(value)) %>% 
+    # Convert value for question C1 from 20-38 to 1-19 and 40->20
+    mutate(value=case_when(variable=="C1" & value == 40 ~ 20,
+                           variable=="C1" ~ value - 19,
+                           T ~ value),
+           # Create output variable name <variable>_<choice>_<party> and pivot wider
+           party=as.numeric(str_remove(party, "X")),
+           name=glue("{variable}_{choice}_{party}")) %>% 
+    arrange(variable, choice, party) %>%
+    select(iisID, name, value) %>% 
+    pivot_wider()
+  
+  # Extract 'other' text from C1 answer value 38
+  # <party>_<variable:C1 or C2>_<choice:1st or 2nd>_<screen:2,3,4>_38_TEXT
+  C1_TEXT = d0 %>% select(iisID, matches("X\\d+_C1_[12]_[234]_38_TEXT$")) %>% 
+    pivot_longer(-iisID) %>% 
+    separate(name, into=c("party", "variable", "choice", "screen", "answer", "text"), sep = "_") %>%
+    # As above, participants fill in either _2, _3, or _4 depending on earlier choice
+    # so pivot wide, pick first non-missing value, drop columns
+    pivot_wider(names_from="screen") %>%
+    mutate(value = case_when(!is.na(`2`) ~ `2`,
+                             !is.na(`3`) ~ `3`,
+                             T ~ `4`)) %>% 
+    select(-`2`, -`3`, -`4`) %>% 
+    filter(!is.na(value)) %>% 
+    # Create output variable name C1_<choice>_<party>_text and pivot
+    mutate(party=as.numeric(str_remove(party, "X")),
+           name=glue("{variable}_{choice}_{party}_text")) %>% 
+    arrange(variable, choice, party) %>%
+    select(iisID, name, value) %>% 
+    pivot_wider()
+  # Join together and return
+  full_join(C12, C1_TEXT, by="iisID")
 }
 
 clean_I = function(d) {
