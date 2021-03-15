@@ -8,6 +8,20 @@ permalink: /reports/
 <table class="reports">
 <tr>
    <td>
+      <a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/">
+        <img width="200px" align="left" src="https://stukroodvlees.nl/wp-content/uploads/2021/03/graph1-1-320x190.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/"> 
+Media-aandacht voor vrouwelijke lijsttrekkers</a></h3> 
+      <i>Stuk Rood Vlees, 15 Maart 2021</i><br/>
+        door <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+         </td>
+     </tr>
+
+<tr>
+   <td>
       <a href="https://www.dw.com/en/dutch-elections-how-covid-19-salvaged-mark-ruttes-bid-amid-scandal/a-56812885r">
         <img width="200px" align="left" src="https://static.dw.com/image/56832191_303.jpg" />
       </a>
