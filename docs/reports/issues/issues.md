@@ -14,7 +14,7 @@ of minder aandacht in het nieuws? Deze vraag is belangrijk omdat de
 meeste mensen hun informatie over wat er speelt en waar partijen voor
 staan, direct of indirect baseren op het nieuws. Partijen die een sterke
 reputatie hebben op onderwerpen die in het nieuws centraal komen te
-staan winnen vaak bij de eerstvolgende verkiezingen winnen. Een partij
+staan, winnen vaak bij de eerstvolgende verkiezingen. Wanneer een partij 
 een sterke reputatie heeft op een onderwerp, is die partij als het ware
 ‘eigenaar’ van dat onderwerp. Dat geldt voor linkse partijen bij sociale
 zekerheid, voor rechtse partijen bij het ondernemingsklimaat, en voor
@@ -22,7 +22,7 @@ anti-immigratiepartijen bij de toestroom van immigranten.
 
 Het verloop van de onderwerpen die op de journalistieke nieuwsagenda
 wordt in Tabel 1 samengevat. De aandachtsverdeling in het politieke
-nieuws over verschillende onderwerpen in de eerste drie maanden van 2021
+nieuws over verschillende onderwerpen in de eerste drie maanden van 2021,
 wordt langs dezelfde meetlat gelegd als de aandachtsverdeling in de
 eerste maanden van de coronacrisis (februari-mei 2020) en die in de
 maanden voorafgaande aan de Tweede Kamerverkiezingen van 2017. Tabel 1
@@ -44,42 +44,49 @@ bestrijding van de pandemie (‘coronabestrijding’) – en van virussen en
 maatregelen die ook in 2017 genoemd werden. In 2020 gaat het over de
 verspreiding van corona. Vrees laat beseffen dat maatregelen nodig zijn.
 Dat vergroot de steun voor de regering, en dus de premierbonus voor de
-VVD – het “rally behind the flag” effect. In 2021 is de aandacht
+VVD – het 'rally behind the flag' effect. In 2021 is de aandacht
 verschoven naar de bestrijding van corona. Over afzonderlijke
 bestrijdingsmaatregelen valt altijd te twisten. CDA-minister De Jonge
 krijgt het zwaar. Tabel 1 laat zien dat met de verkiezingen en het
-voorjaar in het vooruitzicht het oud nieuws wordt: de media-aandacht
-voor de coronaverspreiding daalt van 13.0% in januari tot 8.4% in maart,
-de aandacht voor coronaverspreiding van 20.6% naar 12.8%. Het gevaar
+voorjaar in het vooruitzicht nieuws over corona enigszins 'oud nieuws' wordt: de media-aandacht
+voor de coronaverspreiding daalt van 13,0% in januari tot 8,4% in maart,
+de aandacht voor coronaverspreiding van 20,6% naar 12,8%. Het gevaar
 lijkt minder groot, het wordt weer drukker op de weg, en het wordt de
 vraag of Rutte zijn premierbonus als leider in bange tijden kan
-vasthouden. Voor ‘gezondheidszorg’, een onderwerp dat sterk samenhangt
+vasthouden.
+
+Voor ‘gezondheidszorg’, een onderwerp dat sterk samenhangt
 met de coronacrisis, geldt iets soortgelijks. In maart is de aandacht
 voor dit onderwerp duidelijk lager ten opzichte van februari en januari.
 Het aantal ziekenhuisopnames met corona patiënten is tamelijk stabiel –
 tenminste van code zwart is geen sprake geweest – en de gezondheidszorg
 als zodanig is geen allesbepalend thema in het politieke nieuws in
-maart. Duidelijke stijgers zijn er ook. Het thema ‘onderwijs en
+maart.
+
+Duidelijke stijgers zijn er ook. Het thema ‘onderwijs en
 wetenschap’ krijgt in maart veel meer aandacht dan in de voorafgaande
 maanden. Het onderwerp ‘klimaat en milieu’ krijgt nu zelfs meer aandacht
-dan in 2017 – van 5.4% in 2017 naar 8.7% in de afgelopen anderhalve
+dan in 2017 – van 5,4% in 2017 naar 8,7% in de afgelopen anderhalve
 week. Dat biedt kansen aan GroenLinks en D66 om nog in de buurt te komen
 van hun zetelaantallen in 2017, en aan de radicalere Partij van de
 Dieren om de winst te behouden. De premierbonus voor de VVD wordt
 onzeker omdat VVD-kiezers door klimaatnieuws weer een oor krijgen voor
 de boodschap van partijen zoals Ja21 en de FvD over ongewenste
 klimaatmaatregelen: landschapsbederf, bossen kappen voor biogas, hoge
-energiekosten. En de winnaar is het thema ‘ondernemingsklimaat’. Dit
+energiekosten.
+
+En de winnaar is het thema ‘ondernemingsklimaat’. Dit
 onderwerp krijgt in maart de meeste aandacht in het nieuws. Het thema
 omvat nieuws over het bedrijfsleven, de economie, maar ook
 steunmaatregelen en steunpakketten die de overheid heeft ingesteld om de
 gevolgen van de coronacrisis te bestrijden. Daarvan kan de VVD wel
 profiteren. Het CDA kan het verlies ten opzichte van 2017 nog beperken
-als de kiezers de “diepe zakken” van Hoekstra niet vergeten zijn. Alle
+als de kiezers de 'diepe zakken' van Hoekstra niet vergeten zijn. Alle
 steunmaatregelen leiden tot een grotere overheidsschuld, een
 traditioneel anathema voor beide partijen, maar dat is geen
-campagnethema geworden. Opvallend is ook de aandacht voor de issues
-‘verbreiding criminaliteit’ en ‘sociale zekerheid’. De grote aandacht in
+campagnethema geworden.
+
+Opvallend is ook de aandacht voor de issues ‘verbreiding criminaliteit’ en ‘sociale zekerheid’. De grote aandacht in
 januari voor de verbreiding van criminaliteit in januari betrof de
 rellen die uitbraken na invoering van de avondklok. De aandacht in
 januari voor sociale zekerheid betrof het aftreden van het kabinet naar
@@ -97,19 +104,23 @@ hebben de media dat in hun eigen berichtgeving slechts ten dele
 overgenomen.
 
 Het immigratie- en integratiethema is qua aandacht nog lang niet terug
-op het niveau van 2017. De kiezers die toen van de PVV naar de VVD
-getrokken werden met “pleur op” en met de uitzetting van de Turkse
+op het niveau van 2017. De kiezers werden toen van de PVV naar de VVD
+getrokken met 'pleur op' en met de uitzetting van de Turkse
 minister Kaja met politiepaarden en politiehonden in het weekend voor de
-verkiezingen kunnen nu thuisblijven, of toch weer terugkeren naar de PVV
+verkiezingen. Zij kunnen nu thuisblijven, of toch weer terugkeren naar de PVV
 – ook al blijkt dat niet uit opinipeilingen. Door politieke
 versplintering – BIJ1, leiderschapsstrijd Denk – lijkt het vele nieuws
 over \#BlackLivesMatter-beweging en eerder over \#MeToo vooralsnog geen
-politieke vertaling te krijgen. In de coronamaanden is het Europese
+politieke vertaling te krijgen. 
+
+In de coronamaanden is het Europese
 beleid geen nieuwsthema geworden. Het Europees MedicijnAgentschap dat
 met zoveel trots naar Amsterdam gehaald was bleef buiten schot. Dat
-Israel, het VK en de VS voortvarender waren bleef losstaand nieuws. Dat
+Israël, het VK en de VS voortvarender waren bleef losstaand nieuws. Dat
 bleef zo in de afgelopen weken, waarin D66 en Volt Europese samenwerking
-op de nieuwsagenda brachten. De tabel laat onderwerpen zien die weinig
+op de nieuwsagenda brachten. 
+
+De tabel laat onderwerpen zien die weinig
 aandacht krijgen. Over ‘terreurbestrijding’ en ‘ontwikkelingshulp’ wordt
 nauwelijks bericht. Ook thema’s als ‘bestuurlijke vernieuwing’, ‘normen
 en waarden’, overheidsfinanciën (‘begrotingssaldo’ en
@@ -157,11 +168,11 @@ reputatie op het onderwerp klimaat en milieu. Voor hen is het dus
 gunstig dat dit thema toch doorbreekt op de nieuwsagenda. D66 had bij de
 eerste golf van het panelonderzoek (waar deze gegevens op gebaseerd
 zijn) niet een heel uitgesproken profiel. D66 profileert zich
-uitdrukkelijk als ‘groene’ partij, maar zal vermoedelijk eerder kiezers
+uitdrukkelijk als ‘groene’ partij, maar zal vermoedelijk ook kiezers
 trekken omdat zij een redelijk sterke reputatie heeft behouden als de
 onderwijspartij. Voor de rechtse partijen PVV en FvD geldt dat zij een
 duidelijke (maar omstreden) reputatie hebben op de thema’s ‘asielzoekers
-en migranten’ (of immigratie) en de ‘Europese Unie’.. Sociale zekerheid
+en migranten’ (of immigratie) en de ‘Europese Unie’. Sociale zekerheid
 is het thema dat ‘eigendom’ is van de linkse partijen als de PvdA en de
 SP. ‘Sociale zekerheid’ en werk of werkgelegenheid zijn niet de meest
 besproken onderwerpen. Het is voor deze partijen daarom des te
@@ -172,7 +183,7 @@ goed gevuld wordt. De tabel laat daarom in een oogopslag zien dat de
 belangrijkste tegenstelling in de Nederlandse politiek niet die tussen
 sociaal-economisch links (SP en PvdA) en rechts (VVD) is, maar dat
 voorstanders en tegenstanders van immigratie en klimaatmaatregelen
-(Denk, PvdD versus PVV,FvD) de uiteinden van het politiek spectrum zijn
+(Denk, PvdD versus PVV, FvD) de uiteinden van het politiek spectrum zijn
 gaan vormen. Mede door interne ruzies zijn de meeste kiezers het oneens
 met alle standpunten van Denk aan de ene kant en FvD aan de andere kant.
 
@@ -191,7 +202,7 @@ overzichtelijkheid zijn alleen die partijen geselecteerd met enige
 aandacht voor issuestandpunten. Wat allereerst opvalt is dat in de
 meeste zinnen waarin een onderwerp wordt benoemd, dit onderwerp niet
 direct (althans niet binnen de zin) gekoppeld wordt aan een partij. In
-de laatste kolommen, is te zien dat in 91%, resp 94 % van de zinnen
+de laatste kolommen, is te zien dat in 91%, respectievelijk 94% van de zinnen
 waarin het gaat over de gezondheidszorg, respectievelijk de bestrijding
 van criminaliteit er geen politieke partij voorkomt. Dit zijn de
 terreinen waarop Ernst Kuipers, Diederik Gommers, Andy Kraag en tal van
@@ -213,11 +224,11 @@ vestigen op de voor haar belangrijke thema’s als ‘sociale zekerheid’ en
 
 De thema’s bovenaan de tabel, ‘begrotingssaldo’, ‘sociale zekerheid’,
 ‘normen en waarden’ en ‘immigratie en integratie’ worden het vaakst door
-politieke partijen zelf naar voren gebracht (in zo’n 20 tot 25 % van de
+politieke partijen zelf naar voren gebracht (in zo’n 20 tot 25% van de
 zinnen over die onderwerpen in de geselecteerde politieke artikelen).
-Maar het meest opvallende van deze tabel is dat we zien dat als we
+Maar het meest opvallende van deze tabel is dat als we
 inzoomen op de standpunten waarmee politieke partijen zelf aan het woord
-komen in het nieuws, de aloude ‘rechtse’ en ‘linkse’ issues
+komen in het nieuws, we zien dat de aloude ‘rechtse’ en ‘linkse’ issues
 (‘begrotingssaldo’ en ‘sociale zekerheid’) de boventoon voeren, gevolgd
 door de normen en waarden die christelijke partijen voorop stellen –
 maar waarmee nu de FvD zich, veelal negatief, in de kijker speelt. De
