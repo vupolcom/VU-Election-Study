@@ -1,5 +1,5 @@
 ---
-title: 'Campagne komt los van Corona'
+title: 'Campagne komt los van Corona: Klimaat en ondernemingsklimaat heroveren de nieuwsagenda'
 author: "Anita van Hoof & Jan Kleinnijenhuis"
 permalink: reports/issues/
 output: 
@@ -8,9 +8,6 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
-
-Klimaat en ondernemingsklimaat heroveren de nieuwsagenda
---------------------------------------------------------
 
 Welke onderwerpen krijgen in de context van de verkiezingscampagne meer
 of minder aandacht in het nieuws? Deze vraag is belangrijk omdat de
@@ -227,3 +224,5 @@ maar waarmee nu de FvD zich, veelal negatief, in de kijker speelt. De
 voorzichtige conclusie is dus dat dagbladen, televisie en online media
 bij veel onderwerpen te rade gaan bij andere bronnen dan de politieke
 partijen met hun eigen onderwerpen.
+
+[Download de gegevens](reports/issues/vu_k21_issues.xlsx)

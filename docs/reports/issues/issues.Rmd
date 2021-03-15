@@ -30,9 +30,11 @@ data %>% pivot_longer(-Onderwerp) %>%
              label=value, fill=value)) + 
   geom_tile() + geom_text() +
   ggthemes::theme_hc() + ylab(NULL) + xlab("Periode") + 
-  scale_fill_gradient(low="white", high=scales::muted("green"), guide=F) + 
+  scale_fill_gradient(low="#F2F2F2", high=scales::muted("green"), guide=F) + 
   scale_x_discrete(position="top") + 
-  ggtitle("Tabel 1. Aandacht voor onderwerpen in het nieuws", "(kolompercentages)")
+  ggtitle("Tabel 1. Aandacht voor onderwerpen in het nieuws", "(kolompercentages)") +
+  theme(panel.background = element_rect(fill = "#F2F2F2"),
+        plot.background = element_rect(fill = "#F2F2F2"))
 ```
 
 
@@ -58,10 +60,11 @@ data %>% pivot_longer(-Onderwerp) %>%
              label=value, fill=value)) + 
   geom_tile() + geom_text() +
   ggthemes::theme_hc() + ylab(NULL) + xlab("Periode") + 
-  scale_fill_gradient2(low=scales::muted("red"), mid="white",midpoint=0, high=scales::muted("green"), guide=F) + 
+  scale_fill_gradient2(low=scales::muted("red"), mid="#F2F2F2",midpoint=0, high=scales::muted("green"), guide=F) + 
   scale_x_discrete(position="top") + 
-  ggtitle("Tabel 2. De reputatie van politieke partijen op onderwerpen")
-
+  ggtitle("Tabel 2. De reputatie van politieke partijen op onderwerpen")+
+  theme(panel.background = element_rect(fill = "#F2F2F2"),
+        plot.background = element_rect(fill = "#F2F2F2"))
 ```
 
 Tabel 2 hierboven laat de opbouw van de premierbonus voor de VVD duidelijk zien. De VVD spring eruit als de partij die in de loop van 2020 een sterke reputatie heeft opgebouwd op het thema ‘coronabeleid’ – duidelijk de meest helgroene cel in de tabel. Zij heeft ook een sterke reputatie op de thema’s ‘ondernemingsklimaat’ en ‘overheidsuitgaven en belasting’. Die eerste twee thema’s zijn ook de dominante thema’s in het nieuws. Goed voor de VVD dus, en in mindere mate ook voor het CDA. De partijen Groenlinks en de Partij voor de Dieren hebben een sterke reputatie op het onderwerp klimaat en milieu. Voor hen is het dus gunstig dat dit thema toch doorbreekt op de nieuwsagenda.  D66 had bij de eerste golf van het panelonderzoek (waar deze gegevens op gebaseerd zijn) niet een heel uitgesproken profiel. D66 profileert zich uitdrukkelijk als ‘groene’ partij, maar zal vermoedelijk eerder kiezers trekken omdat zij een redelijk sterke reputatie heeft behouden als de onderwijspartij. Voor de rechtse partijen PVV en FvD geldt dat zij een duidelijke (maar omstreden) reputatie hebben op de thema’s ‘asielzoekers en migranten’ (of immigratie) en de ‘Europese Unie’.. Sociale zekerheid is het thema dat ‘eigendom’ is van de linkse partijen als de PvdA en de SP. ‘Sociale zekerheid’ en werk of werkgelegenheid zijn niet de meest besproken onderwerpen. Het is voor deze partijen daarom des te belangrijker dat deze onderwerpen in maart in aandacht stijgen. 
@@ -73,10 +76,10 @@ In tabel 2 zijn onderwerpen en partijen zo geordend, dat de diagonaal goed gevul
 ```{r relatie}
 data = readxl::read_xlsx(fn, sheet = "Relatie", na = "-") %>% 
   mutate(Onderwerp=str_to_title(Onderwerp) %>% str_replace_all(" En", " en"))
-pal = scales::seq_gradient_pal(low="white", high=scales::muted("red"))
+pal = scales::seq_gradient_pal(low="#F2F2F2", high=scales::muted("red"))
 data %>% pivot_longer(-Onderwerp) %>% 
-  mutate(fill=case_when(Onderwerp=="Anders" | name == "Anders" ~ "white",
-                        is.na(value) ~ "white", 
+  mutate(fill=case_when(Onderwerp=="Anders" | name == "Anders" ~ "#F2F2F2",
+                        is.na(value) ~ "#F2F2F2", 
                         T ~ pal(value/10)),
          label=replace_na(value, "-")) %>%
   
@@ -89,7 +92,9 @@ data %>% pivot_longer(-Onderwerp) %>%
   scale_fill_identity(na.value="white", guide=F) + 
   scale_x_discrete(position="top") + 
   geom_hline(yintercept=1.5) + geom_vline(xintercept=10.5) +
-  ggtitle("Tabel 3. Relatie tussen onderwerpen en partijen in het nieuws")
+  ggtitle("Tabel 3. Relatie tussen onderwerpen en partijen in het nieuws")+
+  theme(panel.background = element_rect(fill = "#F2F2F2"),
+        plot.background = element_rect(fill = "#F2F2F2"))
 ```
 
 In het voorgaande hebben we besproken welke onderwerpen meer en minder aandacht kregen in het nieuws en waarom dit voor bepaalde partijen gunstig is. Daarmee is nog niet gezegd dat die partijen ook in het nieuws zelf met die onderwerpen aan het woord komen. In de derde tabel kijken we naar nieuwsfragmenten – zinnen – waarin wordt weergegeven wat het standpunt van een politieke partij over een onderwerp is. Voor de overzichtelijkheid zijn alleen die partijen geselecteerd met enige aandacht voor issuestandpunten. 
