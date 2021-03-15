@@ -147,7 +147,7 @@ waarden – uitsluitend FvD maakt zich op dat punt onmogelijk. Helrood kan
 toch kiezers opleveren, omdat kritiek van tegenstanders voor trouwe
 kiezers het signaal is dat het nodig blijft hun partij te steunen.
 
-### TABEL 2
+![](reputatie-1.png)
 
 Tabel 2 hierboven laat de opbouw van de premierbonus voor de VVD
 duidelijk zien. De VVD spring eruit als de partij die in de loop van
@@ -183,7 +183,7 @@ met alle standpunten van Denk aan de ene kant en FvD aan de andere kant.
 Issuestandpunten van partijen in het nieuws
 -------------------------------------------
 
-### TABEL 3
+![](relatie-1.png)
 
 In het voorgaande hebben we besproken welke onderwerpen meer en minder
 aandacht kregen in het nieuws en waarom dit voor bepaalde partijen

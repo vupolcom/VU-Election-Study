@@ -26,8 +26,7 @@ Welke onderwerpen krijgen in de context van de verkiezingscampagne meer of minde
 Het verloop van de onderwerpen die op de journalistieke nieuwsagenda wordt in Tabel 1 samengevat. De aandachtsverdeling in het  politieke nieuws over verschillende onderwerpen in de eerste drie maanden van 2021 wordt langs dezelfde meetlat gelegd als de aandachtsverdeling in de eerste maanden van de coronacrisis (februari-mei 2020) en die in de maanden voorafgaande aan de Tweede Kamerverkiezingen van 2017. Tabel 1 is gebaseerd op nieuwsprogramma’s van de publieke omroep (Goedemorgen Nl, EenVandaag, De Vooravond, M, het NOS Journaal van 20:00 uur, Nieuwsuur en Op1), online nieuwsmedia (Nu.nl, Nieuwsuur, NOS nieuws en NOS liveblog), en van vijf landelijke dagbladen (het Algemeen Dagblad, het NRC Handelsblad, De Telegraaf, Trouw en de Volkskrant). De vergelijking met 2020 en 2021 is gebaseerd op dagbladen. De rangordening van onderwerpen in de tabel is gebaseerd op de media-aandacht begin maart (van 1 tot 11 maart). 
 
 ```{r data}
-data = readxl::read_xlsx(fn, sheet = "Aandacht voor onderwerpen")
-ondewerpen =  data$Onderwerp
+data = readxl::read_xlsx(fn, sheet = "Aandacht voor onderwerpen") %>% mutate(Onderwerp=str_to_title(Onderwerp) %>% str_replace_all(" En", " en"))
 data %>% pivot_longer(-Onderwerp) %>% 
   ggplot(aes(x=fct_relevel(name, setdiff(colnames(data), "Onderwerp")), 
              y=fct_relevel(Onderwerp, rev(data$Onderwerp)), 
@@ -54,8 +53,19 @@ De tabel laat onderwerpen zien die weinig aandacht krijgen. Over ‘terreurbestr
 
 De bovenstaande interpretaties zijn gebaseerd op onderzoek om te achterhalen welke partijen begin januari 2021 eigenaar waren van welk onderwerp. Dat is onderzocht met een representatief VU panelsurveyonderzoek uitgevoerd door IPSOS onder meer dan 2000 Nederlanders. Aan kiezers is gevraagd waaraan ze dachten bij elk van de politieke partijen – bijvoorbeeld bij de PVV aan immigratie en integratie. Bij onderwerpen waarmee een partij voor een kiezer op het netvlies stond, is doorgevraagd of de kiezer het eens of juist oneens was met het standpunt van de partij. In tabel 2 wordt met een fletse of juist helle kleur weergegeven welk onderwerp kiezers bij welke partij op het netvlies krijgen. Met een groene of juist rode kleur is aangegeven of kiezers instemmend of afwijzend staan ten opzichte van die partijstandpunten. Flets levert doorgaans geen kiezers op. Helgroen doorgaans minder dan gehoopt, omdat kiezers het dan vaak ook eens zijn met concurrerende partijen die hetzelfde populaire standpunt innemen.  Bij de gezondheidszorg hebben de SP en de PVV de sterkste reputatie, maar omdat er geen enkele partij is waarmee ze het oneens zijn bij gezondheidszorg (de gehele rij voor gezondheidszorg is groen), kunnen die partijen daar toch minder van profiteren dan gehoopt. Hetzelfde geldt voor de ChristenUnie en het CDA met betrekking tot normen en waarden – uitsluitend FvD maakt zich op dat punt onmogelijk.  Helrood kan toch kiezers opleveren, omdat kritiek van tegenstanders voor trouwe kiezers het signaal is dat het nodig blijft hun partij te steunen. 
 
-### TABEL 2
+```{r reputatie}
+data = readxl::read_xlsx(fn, sheet = "Reputatie van partijen") %>% mutate(Onderwerp=str_to_title(Onderwerp) %>% str_replace_all(" En", " en"))
+data %>% pivot_longer(-Onderwerp) %>% 
+   ggplot(aes(x=fct_relevel(name, setdiff(colnames(data), "Onderwerp")), 
+             y=fct_relevel(Onderwerp, rev(data$Onderwerp)), 
+             label=value, fill=value)) + 
+  geom_tile() + geom_text() +
+  ggthemes::theme_hc() + ylab(NULL) + xlab("Periode") + 
+  scale_fill_gradient2(low=scales::muted("red"), mid="white",midpoint=0, high=scales::muted("green"), guide=F) + 
+  scale_x_discrete(position="top") + 
+  ggtitle("Tabel 2. De reputatie van politieke partijen op onderwerpen")
 
+```
 
 Tabel 2 hierboven laat de opbouw van de premierbonus voor de VVD duidelijk zien. De VVD spring eruit als de partij die in de loop van 2020 een sterke reputatie heeft opgebouwd op het thema ‘coronabeleid’ – duidelijk de meest helgroene cel in de tabel. Zij heeft ook een sterke reputatie op de thema’s ‘ondernemingsklimaat’ en ‘overheidsuitgaven en belasting’. Die eerste twee thema’s zijn ook de dominante thema’s in het nieuws. Goed voor de VVD dus, en in mindere mate ook voor het CDA. De partijen Groenlinks en de Partij voor de Dieren hebben een sterke reputatie op het onderwerp klimaat en milieu. Voor hen is het dus gunstig dat dit thema toch doorbreekt op de nieuwsagenda.  D66 had bij de eerste golf van het panelonderzoek (waar deze gegevens op gebaseerd zijn) niet een heel uitgesproken profiel. D66 profileert zich uitdrukkelijk als ‘groene’ partij, maar zal vermoedelijk eerder kiezers trekken omdat zij een redelijk sterke reputatie heeft behouden als de onderwijspartij. Voor de rechtse partijen PVV en FvD geldt dat zij een duidelijke (maar omstreden) reputatie hebben op de thema’s ‘asielzoekers en migranten’ (of immigratie) en de ‘Europese Unie’.. Sociale zekerheid is het thema dat ‘eigendom’ is van de linkse partijen als de PvdA en de SP. ‘Sociale zekerheid’ en werk of werkgelegenheid zijn niet de meest besproken onderwerpen. Het is voor deze partijen daarom des te belangrijker dat deze onderwerpen in maart in aandacht stijgen. 
 
@@ -63,7 +73,27 @@ In tabel 2 zijn onderwerpen en partijen zo geordend, dat de diagonaal goed gevul
 
 ## Issuestandpunten van partijen in het nieuws
 
-### TABEL 3
+```{r relatie}
+data = readxl::read_xlsx(fn, sheet = "Relatie", na = "-") %>% 
+  mutate(Onderwerp=str_to_title(Onderwerp) %>% str_replace_all(" En", " en"))
+pal = scales::seq_gradient_pal(low="white", high=scales::muted("red"))
+data %>% pivot_longer(-Onderwerp) %>% 
+  mutate(fill=case_when(Onderwerp=="Anders" | name == "Anders" ~ "white",
+                        is.na(value) ~ "white", 
+                        T ~ pal(value/10)),
+         label=replace_na(value, "-")) %>%
+  
+   ggplot(aes(x=fct_relevel(name, setdiff(colnames(data), "Onderwerp")), 
+             y=fct_relevel(Onderwerp, rev(data$Onderwerp)), 
+             label=label, fill=fill)) + 
+  geom_tile() + geom_text() +
+  ggthemes::theme_hc() + ylab(NULL) + xlab("Periode") + 
+  #scale_fill_gradient2(low=scales::muted("red"), mid="white",midpoint=0, high=scales::muted("green"), na.value="white", guide=F) +
+  scale_fill_identity(na.value="white", guide=F) + 
+  scale_x_discrete(position="top") + 
+  geom_hline(yintercept=1.5) + geom_vline(xintercept=10.5) +
+  ggtitle("Tabel 3. Relatie tussen onderwerpen en partijen in het nieuws")
+```
 
 In het voorgaande hebben we besproken welke onderwerpen meer en minder aandacht kregen in het nieuws en waarom dit voor bepaalde partijen gunstig is. Daarmee is nog niet gezegd dat die partijen ook in het nieuws zelf met die onderwerpen aan het woord komen. In de derde tabel kijken we naar nieuwsfragmenten – zinnen – waarin wordt weergegeven wat het standpunt van een politieke partij over een onderwerp is. Voor de overzichtelijkheid zijn alleen die partijen geselecteerd met enige aandacht voor issuestandpunten. 
 Wat allereerst opvalt is dat in de meeste zinnen waarin een onderwerp wordt benoemd, dit onderwerp niet direct (althans niet binnen de zin) gekoppeld wordt aan een partij. In de laatste kolommen, is te zien dat in 91%, resp 94 % van de zinnen waarin het gaat over de gezondheidszorg, respectievelijk de bestrijding van criminaliteit er geen politieke partij voorkomt. Dit zijn de terreinen waarop Ernst Kuipers, Diederik Gommers, Andy Kraag en tal van anderen tot nationale helden zijn uitgegroeid. 
