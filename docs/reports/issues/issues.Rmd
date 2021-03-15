@@ -3,7 +3,6 @@ title: 'Campagne komt los van Corona'
 author: "Anita van Hoof & Jan Kleinnijenhuis"
 permalink: reports/issues/
 output: 
-#  github_document:
   md_document:
     preserve_yaml: yes
 editor_options: 
