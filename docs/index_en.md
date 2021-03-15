@@ -9,12 +9,9 @@ For this, we combine a representative panel survey of 2.400 adult Dutch responde
 Using linkage analaysis, we can analyse whether consumption of specific media contents can predict shifts in attitudes,
 including vote intention and trust in media and democracy.
 
-Data reports (in English):
+For results, see our [Data reports](reports/index.md) (mostly in English)
 
-- [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
-- [Media use and Trust in politics](https://tk2021.vupolcom.nl/reports/wave0/)
-
-More information (mostly in Dutch):
+Other information (mostly in Dutch):
 
 + [Results and media](uitkomsten.md)
 + [About us](over.md)
