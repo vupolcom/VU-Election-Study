@@ -69,11 +69,7 @@ maanden. Het onderwerp ‘klimaat en milieu’ krijgt nu zelfs meer aandacht
 dan in 2017 – van 5,4% in 2017 naar 8,7% in de afgelopen anderhalve
 week. Dat biedt kansen aan GroenLinks en D66 om nog in de buurt te komen
 van hun zetelaantallen in 2017, en aan de radicalere Partij van de
-Dieren om de winst te behouden. De premierbonus voor de VVD wordt
-onzeker omdat VVD-kiezers door klimaatnieuws weer een oor krijgen voor
-de boodschap van partijen zoals Ja21 en de FvD over ongewenste
-klimaatmaatregelen: landschapsbederf, bossen kappen voor biogas, hoge
-energiekosten.
+Dieren om de winst te behouden. Bij de verkiezingen van 2017 kon GroenLinks winnen met klimaatdoelen. Maar door de gele hesjesbeweging werd bij de Provinciale Statenverkiezingen van 2019 Forum voor Democratie alweer de grootste door de kosten en opbrengsten van klimaatmaatregelen ter discussie te stellen. De premierbonus voor de VVD wordt onzeker als VVD-kiezers door klimaatnieuws opnieuw een luisterend oor krijgen voor de boodschap van partijen zoals Ja21 en de FvD over landschapsbederf, het kappen van bos voor biogas, en hoge energiekosten als gevolg van klimaatregelen.
 
 En de winnaar is het thema ‘ondernemingsklimaat’. Dit
 onderwerp krijgt in maart de meeste aandacht in het nieuws. Het thema
@@ -106,9 +102,9 @@ overgenomen.
 Het immigratie- en integratiethema is qua aandacht nog lang niet terug
 op het niveau van 2017. De kiezers werden toen van de PVV naar de VVD
 getrokken met 'pleur op' en met de uitzetting van de Turkse
-minister Kaja met politiepaarden en politiehonden in het weekend voor de
+minister Kaya met politiepaarden en politiehonden in het weekend voor de
 verkiezingen. Zij kunnen nu thuisblijven, of toch weer terugkeren naar de PVV
-– ook al blijkt dat niet uit opinipeilingen. Door politieke
+– ook al zijn zulke kiezers ondervertegenwoordigd in opinipeilingen. Door politieke
 versplintering – BIJ1, leiderschapsstrijd Denk – lijkt het vele nieuws
 over \#BlackLivesMatter-beweging en eerder over \#MeToo vooralsnog geen
 politieke vertaling te krijgen. 
@@ -118,7 +114,7 @@ beleid geen nieuwsthema geworden. Het Europees MedicijnAgentschap dat
 met zoveel trots naar Amsterdam gehaald was bleef buiten schot. Dat
 Israël, het VK en de VS voortvarender waren bleef losstaand nieuws. Dat
 bleef zo in de afgelopen weken, waarin D66 en Volt Europese samenwerking
-op de nieuwsagenda brachten. 
+terugbrachten op de nieuwsagenda. 
 
 De tabel laat onderwerpen zien die weinig
 aandacht krijgen. Over ‘terreurbestrijding’ en ‘ontwikkelingshulp’ wordt
@@ -235,5 +231,7 @@ maar waarmee nu de FvD zich, veelal negatief, in de kijker speelt. De
 voorzichtige conclusie is dus dat dagbladen, televisie en online media
 bij veel onderwerpen te rade gaan bij andere bronnen dan de politieke
 partijen met hun eigen onderwerpen.
+
+Dat de premierbonus voor de VVD verschrompelt valt niet met zekerheid te voorspellen. Dit zijn de eerste verkiezingen waarin politieke partijen zo massaal en veelvuldig inzetten op sociale media. Voor Nederland is de hoeveelheid televisiespotjes ongekend. Onbekend is wat boodschappen over nieuw leiderschap doen voor D66, of idyllische schaatsscenes voor het CDA. Of wat de vraag "waarom stem jij VVD?” doet voor de VVD. Met alle antwoorden goed.
 
 [Download de gegevens](reports/issues/vu_k21_issues.xlsx)
