@@ -19,7 +19,7 @@ export_data = function(data, name, label=F) {
 
 #' Load the codebook (variable names and labels)
 get_codebook = function() {
-  read_csv(here("data/raw/codebook.csv"), col_types="clcnlcc")
+  read_csv(here("data/raw/codebook.csv"), col_types="cncnlcc")
 }
 
 #' Apply value labels from codebook (e.g. to be used in mutate(across))
@@ -56,13 +56,13 @@ extract_wide = function(data) {
 #' @return A data frame with columns iisID, variable, option, name, and value
 extract_long = function(data) {
   cb = get_codebook() %>% 
-    filter(long) %>% 
+    filter(long==1) %>% 
     select(variable, option=value, name=label) %>% 
     mutate(name = factor(name))
   longcols = cb %>% pull(variable) %>% unique()
   regex = str_c("iisID|(", str_c(longcols, collapse="|"), ")_\\d+")
   data %>% 
-    select(matches(regex)) %>% 
+    select(matches(regex)) %>% select(!matches("TEXT")) %>% 
     pivot_longer(-iisID) %>%
     filter(!is.na(value)) %>% 
     separate(name, into=c("variable", "option"), sep="_") %>% 

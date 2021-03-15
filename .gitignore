@@ -144,3 +144,4 @@ notebooks/data/*
 renv
 renv.lock
 
+.~lock.*

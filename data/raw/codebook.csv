@@ -82,6 +82,27 @@ B3,1,,10,0,SGP  & Kees van der Staaij,SGP  & Kees van der Staaij
 B3,1,,11,0,SP & Lilian Marijnissen,SP & Lilian Marijnissen
 B3,1,,12,0,VVD & Mark Rutte,VVD & Mark Rutte
 B3,1,,13,0,50Plus Partij & Liane den Haan,50Plus Partij & Liane den Haan
+C1,2,,1,,Asylum seekers and migrants,Asielzoekers en migranten
+C1,2,,2,,Mobility and infrastructure,"Mobiliteit en infrastructuur (o.a. vliegverkeer, wegennet, Nederland distributieland)"
+C1,2,,3,,Administrative renewal,"Bestuurlijke vernieuwing (o.a. gekozen premier, referenda)"
+C1,2,,4,,Crime fighting,"Criminaliteitsbestrijding (o.a. drugslabs, bedreigingen, wapenbezit)"
+C1,2,,5,,European Union and Euro,Europese Unie en de Euro
+C1,2,,6,,Health care,"Gezondheidszorg (o.a. beloning zorg, wachtlijsten, eigen risico)"
+C1,2,,7,,Housing ,"Woningen (o.a. starterswoningen, huurprijs, hypotheekrente)"
+C1,2,,8,,"Climate, nature, and environment","Klimaat, natuur, en milieu (o.a. biodiversiteit, stikstofneerslag, kringlooplandbouw)"
+C1,2,,9,,Norms and values,"Normen en waarden (o.a. respect, saamhorigheid, bescherming leven)"
+C1,2,,10,,Freedom rights,"Vrijheidsrechten (o.a. vrijheid van meningsuiting, discriminatieverbod, tolerantie)"
+C1,2,,11,,Business environment,"Ondernemingsklimaat (o.a. exportbevordering, intensieve landbouw, steunmaatregelen)"
+C1,2,,12,,Education and science,"Onderwijs en wetenschap (o.a. niveau rekenen en taal, Nederland kennisland)"
+C1,2,,13,,Development aid,Ontwikkelingshulp
+C1,2,,14,,Government spending and taxes,"Overheidsuitgaven en belastingen (o.a. betaalbaarheid, stijging of bezuiniging)"
+C1,2,,15,,Social security,"Sociale zekerheid (o.a. bestaanszekerheid, uitkeringen, pensioenopbouw)"
+C1,2,,16,,Counter-terrorism,Terreurbestrijding
+C1,2,,17,,Work and income,"Werk en inkomen (o.a. rechten flexwerkers, inkomensgelijkheid)"
+C1,2,,18,,Corona policy,Coronabeleid
+C1,2,,19,,Different issue,Een ander onderwerp
+C1,2,,20,,No (second) important issue,Geen belangrijkste (tweede) onderwerp
+C2,2,,,,,
 D1,0,polknow,,,,
 E1,0,vote_2017,1,0,CDA,CDA
 E1,0,,2,0,ChristenUnie,ChristenUnie
