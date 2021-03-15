@@ -23,7 +23,7 @@ Dutch elections: How COVID-19 salvaged Mark Rutte's bid amid scandal</a></h3>
 <tr>
    <td>
       <a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
-        <img width="200px" align="left" src="https://images.nrc.nl/U4c77vKxN-pk8__ncwRp9WcQOHs=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68479023-d3d283.jpg" />
+        <img width="200px" align="left" src="https://images.fd.nl/qN2riJ4m0ZtKBfrKiZMnlt7HgCk.jpg?auto=format&w=1280&q=45&dpr=2" />
       </a>
     </td>
        <td>
