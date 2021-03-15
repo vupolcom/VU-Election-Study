@@ -177,11 +177,60 @@ Campagne komt los van Corona: <br/> Klimaat en ondernemingsklimaat heroveren de 
           <i><a href="https://github.com/vupolcom/about">Anita van Hoof, Jan Kleinnijenhuis</a></i>
        </td>
   </tr>
+   
+  <tr> 
+   <td>
+      <a href="https://tk2021.vupolcom.nl/reports/wave3/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/wave3/visibility-newspapers-1.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/wave3/"> 
+Media Visibility and Electoral shifts: <br/> Analysis of waves 1-3</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Wouter van Atteveldt, Mariken van der Velden, Andreu Casas</a></i>
+       </td>
+  </tr>
+  
+   <tr> 
+   <td>
+      <a href="https://tk2021.vupolcom.nl/reports/deutsche-welle/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/deutsche-welle/Child-Benefits-Party-1.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/deutsche-welle/"> 
+COVID, Child Care Benefit Scandal and Support for Rutte</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Mariken van der Velden</a></i>
+       </td>
+  </tr>
+   
+   <tr> 
+   <td>
+      <a href="https://tk2021.vupolcom.nl/reports/sm-propaganda/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/sm-propaganda/kiezers%20en%20misinformatie-1.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/sm-propaganda/"> 
+Misinformatie op Twitter [in Dutch]</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Mariken van der Velden & Andreu Casas</a></i>
+       </td>
+  </tr>
+   
+   <tr> 
+   <td>
+      <a href="https://tk2021.vupolcom.nl/reports/sm-propaganda/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/sm-propaganda/kiezers%20en%20misinformatie-1.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/sm-propaganda/"> 
+Misinformatie op Twitter [in Dutch]</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Mariken van der Velden & Andreu Casas</a></i>
+       </td>
+  </tr>
 </table>
 
-- [Media Visibility and Electoral shifts](https://tk2021.vupolcom.nl/reports/wave3/)
-- [COVID, Child Care Benefit Scandal and Support for Rutte](https://tk2021.vupolcom.nl/reports/deutsche-welle/)
-- [Voters' Use of Politicians' Own Channels](https://tk2021.vupolcom.nl/reports/sm-propaganda/)
 - [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
 - [Media use and Trust in politics](https://tk2021.vupolcom.nl/reports/wave0/)
 - [Wilder and Baudet: Social Media Activity, Followers, and Engagement](https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/)
