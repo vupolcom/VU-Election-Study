@@ -8,7 +8,47 @@ permalink: /reports/
 <table class="reports">
 <tr>
    <td>
-      <a href="https://www.nrc.nl/nieuws/2021/03/10/wilders-en-baudet-groot-op-sociale-media-dankzij-harde-kern-van-fans-a4035031">
+      <a href="https://www.dw.com/en/dutch-elections-how-covid-19-salvaged-mark-ruttes-bid-amid-scandal/a-56812885r">
+        <img width="200px" align="left" src="https://static.dw.com/image/56832191_303.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.dw.com/en/dutch-elections-how-covid-19-salvaged-mark-ruttes-bid-amid-scandal/a-56812885r"> 
+Dutch elections: How COVID-19 salvaged Mark Rutte's bid amid scandal</a></h3> 
+      <i>Deutsche Welle, 14 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
+         </td>
+     </tr>
+
+<tr>
+   <td>
+      <a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
+        <img width="200px" align="left" src="https://images.nrc.nl/U4c77vKxN-pk8__ncwRp9WcQOHs=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68479023-d3d283.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker"> 
+Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a></h3> 
+      <i>FD, 13 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+         </td>
+     </tr>
+<tr>
+   <td>
+      <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a4035404">
+        <img width="200px" align="left" src="https://images.nrc.nl/U4c77vKxN-pk8__ncwRp9WcQOHs=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68479023-d3d283.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a4035404"> 
+Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagne</a></h3> 
+      <i>NRC, Handelsblad 13 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+         </td>
+     </tr>
+     <tr>
+   <td>
+      <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a40354041">
         <img width="200px" align="left" src="https://images.nrc.nl/wkVC-fA9GfnWBic4P90EYfI9zok=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/03/data68392921-678269.jpg" />
       </a>
     </td>
