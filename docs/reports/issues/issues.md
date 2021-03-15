@@ -1,6 +1,6 @@
 ---
 title: 'Campagne komt los van Corona: Klimaat en ondernemingsklimaat heroveren de nieuwsagenda'
-author: "Anita van Hoof & Jan Kleinnijenhuis"
+author: "Anita van Hoof, Jan Kleinnijenhuis & Wouter van Atteveldt"
 permalink: reports/issues/
 output: 
   md_document:
