@@ -1,5 +1,5 @@
 ---
-title: 'Campagne komt los van Corona'
+title: 'Campagne komt los van Corona: Klimaat en ondernemingsklimaat heroveren de nieuwsagenda'
 author: "Anita van Hoof & Jan Kleinnijenhuis"
 permalink: reports/issues/
 output: 
@@ -17,8 +17,6 @@ library(tidyverse)
 options(digits = 2)
 fn = here("docs/reports/issues/vu_k21_issues.xlsx")
 ```
-
-## Klimaat en ondernemingsklimaat heroveren de nieuwsagenda
 
 Welke onderwerpen krijgen in de context van de verkiezingscampagne meer of minder aandacht in het nieuws? Deze vraag is belangrijk omdat de meeste mensen hun informatie over wat er speelt en waar partijen voor staan, direct of indirect baseren op het nieuws. Partijen die een sterke reputatie hebben op onderwerpen die in het nieuws centraal komen te staan winnen vaak bij de eerstvolgende verkiezingen winnen. Een partij een sterke reputatie heeft op een onderwerp, is die partij als het ware ‘eigenaar’ van dat onderwerp. Dat geldt voor linkse partijen bij sociale zekerheid, voor rechtse partijen bij het ondernemingsklimaat, en voor anti-immigratiepartijen bij de toestroom van immigranten. 
 
@@ -101,3 +99,4 @@ De VVD komt het vaakst in het nieuws met standpunten. In 25% van de zinnen waari
 
 De thema’s bovenaan de tabel, ‘begrotingssaldo’, ‘sociale zekerheid’, ‘normen en waarden’ en ‘immigratie en integratie’ worden het vaakst door politieke partijen zelf naar voren gebracht (in zo’n 20  tot 25 % van de zinnen over die onderwerpen in de geselecteerde politieke artikelen). Maar het meest opvallende van deze tabel is dat we zien dat als we inzoomen op de standpunten waarmee politieke partijen zelf aan het woord komen in het nieuws, de aloude ‘rechtse’ en ‘linkse’ issues (‘begrotingssaldo’ en ‘sociale zekerheid’) de boventoon voeren, gevolgd door de normen en waarden die christelijke partijen voorop stellen – maar waarmee nu de FvD zich, veelal negatief, in de kijker speelt. De voorzichtige conclusie is dus dat dagbladen, televisie en online media bij veel onderwerpen te rade gaan bij andere bronnen dan de politieke partijen met hun eigen onderwerpen. 
 
+[Download de gegevens](reports/issues/vu_k21_issues.xlsx)
