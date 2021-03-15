@@ -19,20 +19,6 @@ Dutch elections: How COVID-19 salvaged Mark Rutte's bid amid scandal</a></h3>
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
          </td>
      </tr>
-
-<tr>
-   <td>
-      <a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
-        <img width="200px" align="left" src="https://images.fd.nl/qN2riJ4m0ZtKBfrKiZMnlt7HgCk.jpg?auto=format&w=1280&q=45&dpr=2" />
-      </a>
-    </td>
-       <td>
-      <h3><a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker"> 
-Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a></h3> 
-      <i>FD, 13 Maart 2021</i><br/>
-        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
-         </td>
-     </tr>
 <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a4035404">
@@ -94,6 +80,19 @@ Hoe de media onze stem beïnvloeden. Teruggebracht tot tweestrijd</a></h3>
       <i>Propaganda, 04 Maart 2021</i><br/>
         met <a href="https://github.com/vupolcom/about#dr-mariken-van-der-velden">Mariken van der Velden</a>
     </td>
+     </tr>
+     <tr>
+   <td>
+      <a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
+        <img width="200px" align="left" src="https://images.fd.nl/qN2riJ4m0ZtKBfrKiZMnlt7HgCk.jpg?auto=format&w=1280&q=45&dpr=2" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker"> 
+Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a></h3> 
+      <i>FD, 26 Februari 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+         </td>
      </tr>
   <tr>
     <td>
