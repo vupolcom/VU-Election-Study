@@ -8,6 +8,21 @@ permalink: /reports/
 <table class="reports">
 <tr>
    <td>
+      <a href="https://dezwijger.nl/programma/de-weerbare-democratie/">
+        <img width="200px" align="left" src="https://admin.dezwijger.nl/wp-content/uploads/2021/02/Keynote-template-NL-Kiest.001.jpeg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://dezwijger.nl/programma/de-weerbare-democratie"> 
+Verkiezingsavond: de weerbare democratie</a></h3> 
+      <i>VPRO Tegenlicht x Pakhuis de Zwijger, 17 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
+         </td>
+     </tr>
+
+
+<tr>
+   <td>
       <a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/">
         <img width="200px" align="left" src="https://stukroodvlees.nl/wp-content/uploads/2021/03/graph1-1-320x190.png" />
       </a>
