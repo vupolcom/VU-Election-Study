@@ -99,10 +99,11 @@ hpp = d %>% group_by(period, party, mtype) %>% summarize(n=n(), .groups="drop") 
   inner_join(totals) %>%
   mutate(perc=n/ntot, period = as.numeric(as.factor(period)), party=factor(party, levels=parties))
 
-sm = read_csv(here("data/raw/messages-shares-likes-mentions-all-leaders-1jan2021-11march2021.csv"))%>% 
+sm = read_csv(here("data/raw/messages-shares-likes-mentions-all-leaders-1jan2021-11march2021-w-JA21-Volt.csv"))%>% 
   mutate(party=str_match(name, "\\((.*)\\)")[,2],
               variable=str_remove(variable, "Number of ")) %>% 
   select(platform, variable, party, date=day_only, value)
+
 
 sma = sm %>% mutate(period=period(date),
               mtype=ifelse(variable=="Messages", "Social Media (activity)", "Social Media (engagement)")
@@ -112,6 +113,8 @@ sma = sm %>% mutate(period=period(date),
   mutate(period=as.numeric(as.factor(period)), 
          party=case_when(party == "50PLUS" ~ "50Plus", party == "DENK" ~ "Denk", T~ party),
          party=factor(party, levels=parties))
+
+#setdiff(sma$party, hpp$party)
 
 hpp2=bind_rows(hpp, sma)
 mtypes = c("Newspapers"=1,"TV"=1, "Online (nos.nl/nu.nl)"=1, "Social Media (activity)"=2, "Social Media (engagement)"=2)
