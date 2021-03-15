@@ -151,7 +151,9 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
 
 
 ## Analyses / Rapportages
+- [COVID, Child Care Benefit Scandal and Support for Rutte](https://tk2021.vupolcom.nl/reports/deutsche-welle/)
 - [Voters' Use of Politicians' Own Channels](https://tk2021.vupolcom.nl/reports/sm-propaganda/)
 - [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
 - [Media use and Trust in politics](https://tk2021.vupolcom.nl/reports/wave0/)
 - [Wilder and Baudet: Social Media Activity, Followers, and Engagement](https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/)
+
