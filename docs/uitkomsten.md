@@ -173,10 +173,10 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
     </td>
        <td>
       <h3><a href="https://tk2021.vupolcom.nl/reports/issues/"> 
-Campagne komt los van Corona: Klimaat en ondernemingsklimaat heroveren de nieuwsagenda</a></h3> 
+Campagne komt los van Corona: <br/> Klimaat en ondernemingsklimaat heroveren de nieuwsagenda</a></h3> 
       <i><a href="https://github.com/vupolcom/about">Anita van Hoof, Jan Kleinnijenhuis</a>
-         </td>
-     </tr>
+       </td>
+  </tr>
 </table>
 
 - [Media Visibility and Electoral shifts](https://tk2021.vupolcom.nl/reports/wave3/)
