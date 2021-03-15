@@ -219,19 +219,40 @@ Misinformatie op Twitter [in Dutch]</a></h3>
    
    <tr> 
    <td>
-      <a href="https://tk2021.vupolcom.nl/reports/sm-propaganda/">
-        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/sm-propaganda/kiezers%20en%20misinformatie-1.png" />
+      <a href="https://tk2021.vupolcom.nl/reports/SM-report-followers/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-report-followers-shared-by-candidate-on-twitter.jpg" />
       </a>
     </td>
        <td>
-      <h3><a href="https://tk2021.vupolcom.nl/reports/sm-propaganda/"> 
-Misinformatie op Twitter [in Dutch]</a></h3> 
-          <i><a href="https://github.com/vupolcom/about">Mariken van der Velden & Andreu Casas</a></i>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/SM-report-followers/"> 
+Social Media Followers of Dutch candidates</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Andreu Casas</a></i>
+       </td>
+  </tr>
+  
+  <tr> 
+   <td>
+      <a href="https://tk2021.vupolcom.nl/reports/wave0/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/wave0/wave0-democracy-1.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/wave0/"> 
+Media use and Trust in politics: Analysis of first survey results</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Mariken van der Velden, Wouter van Atteveldt, Andreu Casas</a></i>
+       </td>
+  </tr>
+  
+   <tr> 
+   <td>
+      <a href="https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/SM-report02-topfeatures-sharing-UPD.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/"> 
+Wilders and Baudet: Social Media Activity, Followers, and Engagement</a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Andreu Casas</a></i>
        </td>
   </tr>
 </table>
-
-- [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
-- [Media use and Trust in politics](https://tk2021.vupolcom.nl/reports/wave0/)
-- [Wilder and Baudet: Social Media Activity, Followers, and Engagement](https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/)
-
