@@ -9,7 +9,8 @@ Hierbij kijken we uiteraard naar wisselingen van stemvoorkeur, maar ook naar bij
 
 Meer informatie:
 
-+ [Uitkomsten en media-aandacht](uitkomsten.md)
++ [Onze Uitkomsten in de media](uitkomsten.md)
++ [Rapporten](reports/index.md)
 + [Over ons](over.md)
 + [Data en methodes](methode.md)
 
