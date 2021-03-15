@@ -9,7 +9,7 @@ Hierbij kijken we uiteraard naar wisselingen van stemvoorkeur, maar ook naar bij
 
 Meer informatie:
 
-+ [Eerste Uitkomsten](uitkomsten.md)
++ [Uitkomsten en media-aandacht](uitkomsten.md)
 + [Over ons](over.md)
 + [Data en methodes](methode.md)
 
