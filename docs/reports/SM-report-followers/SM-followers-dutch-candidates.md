@@ -1,6 +1,8 @@
-# Social media followers of Dutch candidates to the 2021 Election
-
-#### [Andreu Casas](http://andreucasas.com/) 
+---
+title: "Social media followers of Dutch candidates to the 2021 Election"
+author: "Andreu Casas"
+permalink: /reports/SM-report-followers/
+---
 
 <sup>February 17, 2021 (Last edited: February 18, 2021)</sup>
 
