@@ -163,6 +163,8 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
 
 
 ## Analyses / Rapportages
+- [Campagne komt los van Corona: Klimaat en ondernemingsklimaat heroveren de nieuwsagenda](https://tk2021.vupolcom.nl/reports/issues/)
+- [Media Visibility and Electoral shifts](https://tk2021.vupolcom.nl/reports/wave3/)
 - [COVID, Child Care Benefit Scandal and Support for Rutte](https://tk2021.vupolcom.nl/reports/deutsche-welle/)
 - [Voters' Use of Politicians' Own Channels](https://tk2021.vupolcom.nl/reports/sm-propaganda/)
 - [Social Media Followers of Dutch candidates](https://tk2021.vupolcom.nl/reports/SM-report-followers/SM-followers-dutch-candidates.html)
