@@ -37,12 +37,12 @@ Media-aandacht voor vrouwelijke lijsttrekkers</a></h3>
 
 <tr>
    <td>
-      <a href="https://www.dw.com/en/dutch-elections-how-covid-19-salvaged-mark-ruttes-bid-amid-scandal/a-56812885r">
+      <a href="https://p.dw.com/p/3qNcr">
         <img width="200px" align="left" src="https://static.dw.com/image/56832191_303.jpg" />
       </a>
     </td>
        <td>
-      <h3><a href="https://www.dw.com/en/dutch-elections-how-covid-19-salvaged-mark-ruttes-bid-amid-scandal/a-56812885r"> 
+      <h3><a href="https://p.dw.com/p/3qNcr"> 
 Dutch elections: How COVID-19 salvaged Mark Rutte's bid amid scandal</a></h3> 
       <i>Deutsche Welle, 14 Maart 2021</i><br/>
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
