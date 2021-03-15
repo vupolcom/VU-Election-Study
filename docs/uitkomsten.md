@@ -20,7 +20,19 @@ Verkiezingsavond: de weerbare democratie</a></h3>
          </td>
      </tr>
 
-
+<tr>
+   <td>
+      <a href="https://www.nrc.nl/nieuws/2021/03/15/welke-partijen-waren-het-meest-in-beeld-a4035626">
+        <img width="200px" align="left" src="https://images.nrc.nl/VOJYoSsWXFmcsptR4OP_R771VB8=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68470150-3751fa.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.nrc.nl/nieuws/2021/03/15/welke-partijen-waren-het-meest-in-beeld-a4035626"> 
+Welke partijen waren het meest in beeld?</a></h3> 
+      <i>NRC Handelsblad, 15 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Wouter van Atteveldt, Mariken van der Velden, Andreu Casas</a>
+         </td>
+     </tr>
 <tr>
    <td>
       <a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/">
