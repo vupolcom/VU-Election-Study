@@ -19,7 +19,19 @@ Verkiezingsavond: de weerbare democratie</a></h3>
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
          </td>
      </tr>
-
+<tr>
+   <td>
+      <a href="https://www.youtube.com/watch?v=8dPVk--78AQ">
+        <img width="200px" align="left" src="https://youtu.be/8dPVk--78AQ" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.youtube.com/watch?v=8dPVk--78AQ"> 
+Nabeschouwing van het EenVandaag-debat: 'Wilders is een karikatuur van zichzelf geworden'</a></h3> 
+      <i>EenVandaag, 15 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+         </td>
+     </tr>
 <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/15/welke-partijen-waren-het-meest-in-beeld-a4035626">
