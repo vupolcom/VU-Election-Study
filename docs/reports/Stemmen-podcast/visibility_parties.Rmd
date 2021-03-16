@@ -1,0 +1,129 @@
+---
+title: 'Media Visibility of Parties'
+author: "Wouter van Atteveldt, Mariken van der Velden, Loes Aaldering"
+permalink: reports/Stemmen-podcast/
+output: 
+  md_document:
+    preserve_yaml: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+```{r data}
+library(here)
+library(tidyverse)
+library(amcatr)
+
+source(here("src/lib/data.R"))
+source(here("src/lib/amcatlib.R"))
+data = list(w0 = read_csv(here("data/intermediate/wave0.csv")),
+            w1 = read_csv(here("data/intermediate/wave1.csv")),
+            w2 = read_csv(here("data/intermediate/wave2.csv")),
+            w3 = read_csv(here("data/intermediate/wave3.csv"))
+)
+
+resp = extract_wide(data$w0)
+w = extract_waves(data)
+votes = bind_rows(
+  w %>% filter(variable == "vote") %>% select(wave, iisID, name),
+  #resp %>% select(iisID, vote_2017) %>% rename(name = vote_2017) %>% add_column(wave="k17")
+)
+
+wave_label= function(wave) case_when(wave == "w0" ~ "January", wave == "w1" ~ "Early February", wave =="w2" ~ "Late February", wave=="w3" ~ "Early March")
+
+theme_nrc = function(...) {
+  ggthemes::theme_hc(...) + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+          axis.title.x=element_blank(), 
+          axis.title.y=element_blank(),
+          strip.background = element_rect(fill="white"))
+}
+```
+
+# Visibility of parties
+
+```{r media-data}
+period = function(date) {
+  case_when(date < "2021-01-13" ~ "pre",
+          date < "2021-02-01" ~ "w0",
+          date < "2021-02-16" ~ "w1",
+          date < "2021-03-01" ~ "w2",
+          T ~ "w3")
+}
+
+queries = get_party_queries()
+queries = queries %>% mutate(query = ifelse(partij == "ja21", str_c('nanninga OR ', query), query))
+tmp = here("data/tmp/stemmen_podcast_meta.rmd")
+if (file.exists(tmp)) {
+  meta = read_rds(tmp)
+} else {
+  conn = amcat.connect("https://vu.amcat.nl")
+  meta_print = amcat.articles(conn, project=69, articleset=2562, columns = c("date", "publisher")) %>%
+    as_tibble() %>%  add_column(mtype="Newspapers")
+  meta_online = amcat.articles(conn, project=69, articleset=2564, columns = c("date", "publisher")) %>%
+    as_tibble() %>%  add_column(mtype="Online (nos.nl/nu.nl)") %>% filter(publisher %in% c("NOS nieuws", "NU.nl"))
+  meta_tv = amcat.articles(conn, project=69, articleset=2579, columns = c("date", "publisher")) %>% 
+    as_tibble() %>% add_column(mtype="TV")
+  meta = bind_rows(meta_print, meta_online, meta_tv) %>% mutate(id=as.numeric(id)) %>% mutate(period=period(date))
+  write_rds(meta, tmp)
+}
+
+tmp = here("data/tmp/temmen_podcast_media_visibility.rmd")
+if (file.exists(tmp)) {
+  d = read_rds(tmp)
+} else {
+  conn = amcat.connect("https://vu.amcat.nl")
+  h = amcat.hits(conn, project=69, sets=c(2562, 2564, 2579), queries=queries$query, labels = queries$partij) %>% 
+    as_tibble() %>% rename(party=query)
+  d = left_join(h, meta)
+  write_rds(d, tmp)
+}
+
+totals = meta %>% group_by(period, mtype) %>% summarize(ntot=n())
+parties = d %>% group_by(party) %>% summarize(n=n()) %>% arrange(-n) %>% pull(party)
+```
+
+```{r visibility-newspapers}
+hpp = d %>% group_by(period, party, mtype) %>% summarize(n=n(), .groups="drop") %>% 
+  pivot_wider(names_from = "party", values_from="n", values_fill=0) %>% pivot_longer(-(period:mtype), names_to="party", values_to="n") %>%
+  inner_join(totals) %>%
+  mutate(perc=n/ntot, period = as.numeric(as.factor(period)), party=factor(party, levels=parties))
+
+sm = read_csv(here("data/raw/messages-shares-likes-mentions-all-leaders-1jan2021-11march2021-w-JA21-Volt.csv"))%>% 
+  mutate(party=str_match(name, "\\((.*)\\)")[,2],
+              variable=str_remove(variable, "Number of ")) %>% 
+  select(platform, variable, party, date=day_only, value)
+
+
+sma = sm %>% mutate(period=period(date),
+              mtype=ifelse(variable=="Messages", "Social Media (activity)", "Social Media (engagement)")
+              ) %>%
+  group_by(period, mtype, party) %>% summarize(n=sum(value)) %>% 
+  mutate(perc=n/sum(n)) %>% ungroup() %>% 
+  mutate(period=as.numeric(as.factor(period)), 
+         party=case_when(party == "50PLUS" ~ "50Plus", party == "DENK" ~ "Denk", T~ party),
+         party=factor(party, levels=parties))
+
+#setdiff(sma$party, hpp$party)
+
+hpp2=bind_rows(hpp, sma)
+mtypes = c("Newspapers"=1,"TV"=1, "Online (nos.nl/nu.nl)"=1, "Social Media (activity)"=2, "Social Media (engagement)"=2)
+hpp2 %>% mutate(mtype=fct_relevel(mtype, names(mtypes))) %>% 
+ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() + 
+  facet_wrap("party", nrow = 3, scales = "free") + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave", "(as percentage of all political news, note that Social Media is not avaible for JA21 and Volt)") +
+  scale_x_continuous(breaks=c(1, 3, 4.5), labels=c("Jan", "Feb", "Mar")) + theme_nrc() +
+  #theme(legend.title = element_blank(), legend.position = c(1, 0), legend.justification = c("right", "bottom")) +
+  scale_linetype_manual(values=c("TV"=1, "Newspapers"=1, "Online (nos.nl/nu.nl)"=1, 
+                                 "Social Media (activity)"=2, "Social Media (engagement)"=2))
+```
+
+[Download data: `r export_data(hpp2, "Visibility of parties in the media")`]
+
