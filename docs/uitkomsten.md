@@ -22,7 +22,7 @@ Verkiezingsavond: de weerbare democratie</a></h3>
 <tr>
    <td>
       <a href="https://www.youtube.com/watch?v=8dPVk--78AQ">
-        <img width="200px" align="left" src="https://youtu.be/8dPVk--78AQ" />
+        <img width="200px" align="left" src="https://eenvandaag.assets.avrotros.nl/poms_import/debat-wilders-rutte_1.jpg" />
       </a>
     </td>
        <td>
