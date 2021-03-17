@@ -118,7 +118,7 @@ hpp2 %>% mutate(mtype=fct_relevel(mtype, names(mtypes))) %>%
 ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() + 
   facet_wrap("party", nrow = 3, scales = "free") + 
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
-  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave", "(as percentage of all political news, note that Social Media is not avaible for JA21 and Volt)") +
+  xlab(NULL) + ylab(NULL) + ggtitle("Visibility of parties per wave", "(as percentage of all political news, note that Social Media is not avaible for JA21, Volt, Bij1, Code Oranje)") +
   scale_x_continuous(breaks=c(1, 3, 4.5), labels=c("Jan", "Feb", "Mar")) + theme_nrc() +
   #theme(legend.title = element_blank(), legend.position = c(1, 0), legend.justification = c("right", "bottom")) +
   scale_linetype_manual(values=c("TV"=1, "Newspapers"=1, "Online (nos.nl/nu.nl)"=1, 
@@ -127,3 +127,13 @@ ggplot(aes(x=period, y=perc, color=mtype, lty=mtype)) + geom_line() +
 
 [Download data: `r export_data(hpp2, "Visibility of parties in the media")`]
 
+Opvallend:
+
+- D66 (terwijl even groot en mede in kabinet) had aan begin van de campagne aanzienlijk minder aandacht in media dan CDA, maar is in de loop van de campagne bijgetrokken
+- VVD sowieso heel hoog, maar PM en corona....
+- Forum meer zichtbaar dan kabinetspartner CU, met nota bene staatssecretaris van Onderwijs in tijd waarin Hoger Onderwijs dicht is (en bediscusssieerd) en middelbare scholen en MBO's weer open gaan
+- JA21 heel veel aandacht op TV, meer dan Denk, Bij1 en VOLT
+- PVV vooral sociale media aandacht engagement (likes en shares) maar lage activity. Traditionele media aandacht vergelijkbaar met GL, PvdA en SP
+- PvdD vooral aandacht online en TV, minder social media en kranten
+- FvD sociale media hoog: zowel activiteit zelf als likes en shares (engagement)
+- 50Plus redelijk sociale media aandacht
