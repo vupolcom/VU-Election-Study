@@ -8,6 +8,19 @@ permalink: /media/
 <table class="reports">
 <tr>
    <td>
+      <a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1">
+        <img width="200px" align="left" src="https://images.gids.tv/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1.jpg?w=730&watermark%5Btext%5D=Bron%3A+NOS" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1"> 
+Verkiezingenspecial Nederland kiest: de uitslagen</a></h3> 
+      <i>NPO1, 17 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+         </td>
+     </tr>
+<tr>
+   <td>
       <a href="https://dezwijger.nl/programma/de-weerbare-democratie/">
         <img width="200px" align="left" src="https://admin.dezwijger.nl/wp-content/uploads/2021/02/Keynote-template-NL-Kiest.001.jpeg" />
       </a>
@@ -16,6 +29,20 @@ permalink: /media/
       <h3><a href="https://dezwijger.nl/programma/de-weerbare-democratie"> 
 Verkiezingsavond: de weerbare democratie</a></h3> 
       <i>VPRO Tegenlicht x Pakhuis de Zwijger, 17 Maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
+         </td>
+     </tr>
+<tr>
+<tr>
+   <td>
+      <a href="https://www.vpro.nl/argos/lees/onderwerpen/artikelen/2021/politieke-sociale-mediakanalen.html">
+        <img width="200px" align="left" src="/.imaging/stk/vpronl/image-58/dam/human/programmas/medialogica/2021/Afleveringen/SGP-journaal-klein.jpg/jcr:content/SGP-journaal%2520klein.jpg.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.vpro.nl/argos/lees/onderwerpen/artikelen/2021/politieke-sociale-mediakanalen.html"> 
+Iedere partij een eigen journaal. Welkome stemhulp of bron van desinformatie? </a></h3> 
+      <i>Argos Media Logica, 17 Maart 2021</i><br/>
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
          </td>
      </tr>
