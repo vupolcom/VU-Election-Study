@@ -1,6 +1,6 @@
 ---
 title: 'Media Visibility of Parties'
-author: "Wouter van Atteveldt, Mariken van der Velden, Loes Aaldering"
+author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas en Loes Aaldering"
 permalink: reports/Stemmen-podcast/
 output: 
   md_document:
