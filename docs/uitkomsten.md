@@ -6,6 +6,7 @@ permalink: /media/
 ## Media-aandacht
 
 <table class="reports">
+
 <tr>
    <td>
       <a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1">
