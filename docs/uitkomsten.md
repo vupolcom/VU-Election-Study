@@ -36,7 +36,7 @@ Verkiezingsavond: de weerbare democratie</a></h3>
 <tr>
    <td>
       <a href="https://www.vpro.nl/argos/lees/onderwerpen/artikelen/2021/politieke-sociale-mediakanalen.html">
-        <img width="200px" align="left" src="/.imaging/stk/vpronl/image-58/dam/human/programmas/medialogica/2021/Afleveringen/SGP-journaal-klein.jpg/jcr:content/SGP-journaal%2520klein.jpg.jpg" />
+        <img width="200px" align="left" src="https://i.ytimg.com/vi/9jaORgd9NZg/maxresdefault.jpg" />
       </a>
     </td>
        <td>
