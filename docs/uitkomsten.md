@@ -20,6 +20,7 @@ Verkiezingenspecial Nederland kiest: de uitslagen</a></h3>
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
 </tr>
+
 <tr>
    <td>
       <a href="https://dezwijger.nl/programma/de-weerbare-democratie/">
