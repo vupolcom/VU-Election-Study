@@ -22,20 +22,6 @@ library(amcatr)
 
 source(here("src/lib/data.R"))
 source(here("src/lib/amcatlib.R"))
-data = list(w0 = read_csv(here("data/intermediate/wave0.csv")),
-            w1 = read_csv(here("data/intermediate/wave1.csv")),
-            w2 = read_csv(here("data/intermediate/wave2.csv")),
-            w3 = read_csv(here("data/intermediate/wave3.csv"))
-)
-
-resp = extract_wide(data$w0)
-w = extract_waves(data)
-votes = bind_rows(
-  w %>% filter(variable == "vote") %>% select(wave, iisID, name),
-  #resp %>% select(iisID, vote_2017) %>% rename(name = vote_2017) %>% add_column(wave="k17")
-)
-
-wave_label= function(wave) case_when(wave == "w0" ~ "January", wave == "w1" ~ "Early February", wave =="w2" ~ "Late February", wave=="w3" ~ "Early March")
 
 theme_nrc = function(...) {
   ggthemes::theme_hc(...) + 
@@ -81,7 +67,7 @@ if (file.exists(tmp)) {
   conn = amcat.connect("https://vu.amcat.nl")
   h = amcat.hits(conn, project=69, sets=c(2562, 2564, 2579), queries=queries$query, labels = queries$partij) %>% 
     as_tibble() %>% rename(party=query)
-  d = left_join(h, meta)
+  d = inner_join(h, meta)
   write_rds(d, tmp)
 }
 
@@ -90,6 +76,9 @@ parties = d %>% group_by(party) %>% summarize(n=n()) %>% arrange(-n) %>% pull(pa
 ```
 
 ```{r visibility-newspapers}
+# Count TV only once per show per day (goedermorgen Nederland has multiple 'documents' as the show runs all morning)
+d_tv = filter(d, mtype=="TV") %>% arrange(party, publisher, date) %>% group_by(party, publisher) %>% filter(!duplicated(date)) %>% ungroup()
+d = filter(d, mtype != "TV") %>% bind_rows(d_tv)
 hpp = d %>% group_by(period, party, mtype) %>% summarize(n=n(), .groups="drop") %>% 
   pivot_wider(names_from = "party", values_from="n", values_fill=0) %>% pivot_longer(-(period:mtype), names_to="party", values_to="n") %>%
   inner_join(totals) %>%

@@ -4,21 +4,25 @@ library(here)
 library(glue)
 
 query_party = function(partij, alias) {
-  case_when(partij == "Denk" ~ alias,
+  partij = tolower(partij)
+  alias = tolower(alias)
+  case_when(partij == "denk" ~ alias,
             !is.na(alias) ~ str_c(partij, " OR ", alias),
-            T ~ partij) %>% tolower()
+            T ~ partij) 
 }
 query_lijsttrekker = function(naam, partij) {
+  naam = tolower(naam)
+  partij = tolower(partij)
   an = rsplit(naam)
-  functie_zoek=case_when(an == "Hoekstra" ~ "bewinds* OR minister*",
-                         an == "Rutte"  ~ "premier* OR bewinds* OR minister*",
+  functie_zoek=case_when(an == "hoekstra" ~ "bewinds* OR minister*",
+                         an == "rutte"  ~ "premier* OR bewinds* OR minister*",
                          T ~ "kamerl* OR parlement*")
-  alias = case_when(partij == "CU" ~ " OR christenunie",
-                    partij == "FvD" ~ " OR forum",
-                    partij == "GL" ~ " OR groenlinks",
-                    partij == "PvdD" ~ " OR dieren",
+  alias = case_when(partij == "cu" ~ " OR christenunie",
+                    partij == "fvd" ~ " OR forum",
+                    partij == "gl" ~ " OR groenlinks",
+                    partij == "pvdd" ~ " OR dieren",
                     T ~ "")
-  glue('"{naam}" OR "{an} ({functie_zoek} OR lijsttrek* OR partijleid* OR {partij}{alias})"~10') %>% tolower()
+  glue('"{naam}" OR "{an} ({functie_zoek} OR lijsttrek* OR partijleid* OR {partij}{alias})"~10') 
 }
 clean = function(x) x %>% str_replace_all("[“”]", '"')
 
