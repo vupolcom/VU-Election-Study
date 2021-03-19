@@ -21,6 +21,18 @@ NOS Journaal</a></h3>
     </td>
    </tr>
    <tr>
+    <td>
+      <a href="https://www.nrc.nl/nieuws/2021/03/18/als-je-schaarste-creeert-wil-iedereen-je-hebben-a4036398">
+        <img width="200px" align="left" src="https://i.imgur.com/J7iTtR5.png" />
+      </a>
+    </td>
+    <td>
+      <h3><a href="https://www.nrc.nl/nieuws/2021/03/18/als-je-schaarste-creeert-wil-iedereen-je-hebben-a4036398">Wat de partijen echt helpt, is de talkshowtafel</a></h3>
+      <i>NRC Handelsblad, 19 maart 2021</i><br/>,
+        figuur van <a href="https://github.com/vupolcom/about">Wouter van Atteveldt</a>
+    </td>
+    </tr>
+   <tr>
    <td>
       <a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1">
         <img width="200px" align="left" src="https://images.gids.tv/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1.jpg?w=730&watermark%5Btext%5D=Bron%3A+NOS" />
