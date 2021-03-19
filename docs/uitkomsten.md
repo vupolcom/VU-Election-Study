@@ -8,14 +8,20 @@ permalink: /media/
 <table class="reports">
 
 <tr>
+    
     <td>
-      <a href="https://i.imgur.com/J7iTtR5.png">
-        <img width="200px" align="left" src="https://images.gids.tv/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1.jpg?w=730&watermark%5Btext%5D=Bron%3A+NOS" /><i>NPO1, 18 Maart 2021</i><br/>
-        met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
-        </a>
+      <a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
+        <img width="200px" align="left" src="https://i.imgur.com/J7iTtR5.png" />
+      </a>
     </td>
-    </tr>
-    <tr>
+    <td>
+      <h3><a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
+NOS Journaal</a></h3>
+      <i>NPO1, 18 maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
+    </td>
+   </tr>
+   <tr>
    <td>
       <a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1">
         <img width="200px" align="left" src="https://images.gids.tv/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1.jpg?w=730&watermark%5Btext%5D=Bron%3A+NOS" />
