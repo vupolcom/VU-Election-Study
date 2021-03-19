@@ -33,7 +33,6 @@ Verkiezingenspecial Nederland kiest: de uitslagen</a></h3>
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
 </tr>
-
 <tr>
    <td>
       <a href="https://dezwijger.nl/programma/de-weerbare-democratie/">
@@ -47,7 +46,6 @@ Verkiezingsavond: de weerbare democratie</a></h3>
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
     </td>
 </tr>
-
 <tr>
    <td>
       <a href="https://www.vpro.nl/argos/lees/onderwerpen/artikelen/2021/politieke-sociale-mediakanalen.html">
@@ -61,7 +59,6 @@ Iedere partij een eigen journaal. Welkome stemhulp of bron van desinformatie? </
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
     </td>
 </tr>
-
 <tr>
    <td>
       <a href="https://www.youtube.com/watch?v=8dPVk--78AQ">
@@ -75,7 +72,6 @@ Nabeschouwing van het EenVandaag-debat: 'Wilders is een karikatuur van zichzelf 
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
 </tr>
-
 <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/15/welke-partijen-waren-het-meest-in-beeld-a4035626">
@@ -89,7 +85,6 @@ Welke partijen waren het meest in beeld?</a></h3>
         met <a href="https://github.com/vupolcom/about">Wouter van Atteveldt, Mariken van der Velden, Andreu Casas</a>
     </td>
 </tr>
-
 <tr>
    <td>
       <a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/">
@@ -103,7 +98,6 @@ Media-aandacht voor vrouwelijke lijsttrekkers</a></h3>
         door <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
 </tr>
-
 <tr>
    <td>
       <a href="https://p.dw.com/p/3qNcr">
@@ -117,7 +111,6 @@ Dutch elections: How COVID-19 salvaged Mark Rutte's bid amid scandal</a></h3>
         met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
          </td>
      </tr>
-
 <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a4035404">
@@ -131,7 +124,6 @@ Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagn
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
          </td>
      </tr>
-
      <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a40354041">
@@ -144,7 +136,6 @@ Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagn
         met <a href="https://github.com/vupolcom/about">Andreu Casas en Mariken van der Velden</a>
          </td>
      </tr>
-
   <tr>
    <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/09/aan-de-talkshowtafels-schoven-het-afgelopen-coronajaar-vooral-journalisten-aan-a4034821">
@@ -157,7 +148,6 @@ Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagn
         met <a href="https://github.com/vupolcom/about">Nel Ruigrok</a>
          </td>
      </tr>
-
   <tr>
    <td>
       <a href="https://www.groene.nl/artikel/teruggebracht-tot-tweestrijd?utm_source=De+Groene+Amsterdammer&utm_campaign=0c6464378a-Dagelijks-2021-03-10&utm_medium=email&utm_term=0_853cea572a-0c6464378a-70907053">
@@ -171,7 +161,6 @@ Hoe de media onze stem beïnvloeden. Teruggebracht tot tweestrijd</a></h3>
         met <a href="https://github.com/vupolcom/about">Loes Aaldering en Mariken van der Velden</a>
          </td>
      </tr>
-
   <tr>
    <td>
       <a href="https://www.npo3.nl/propaganda/04-03-2021/KN_1725474/POMS_KN_16454883">
@@ -184,7 +173,6 @@ Hoe de media onze stem beïnvloeden. Teruggebracht tot tweestrijd</a></h3>
         met <a href="https://github.com/vupolcom/about#dr-mariken-van-der-velden">Mariken van der Velden</a>
     </td>
      </tr>
-
      <tr>
    <td>
       <a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
@@ -198,7 +186,6 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
          </td>
      </tr>
-
   <tr>
     <td>
       <a href="https://www.nrc.nl/nieuws/2021/02/22/wat-de-kiezer-leest-volgt-en-kijkt-a4032777">
@@ -211,7 +198,6 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
       met <a href="https://github.com/vupolcom/about">Wouter van Atteveldt, Mariken van der Velden en Andreu Casas</a>
     </td>
   </tr>
-
   <tr>
     <td>
       <a href="https://stukroodvlees.nl/wat-willen-kiezers-na-17-maart/">
@@ -224,5 +210,4 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
   door <a href="https://github.com/vupolcom/about#dr-mariken-van-der-velden">Mariken van der Velden</a>
     </td>
   </tr>
-
 </table>
