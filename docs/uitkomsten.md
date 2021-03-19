@@ -8,7 +8,6 @@ permalink: /media/
 <table class="reports">
 
 <tr>
-    
     <td>
       <a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
         <img width="200px" align="left" src="https://i.imgur.com/J7iTtR5.png" />
