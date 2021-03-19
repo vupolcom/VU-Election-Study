@@ -23,12 +23,12 @@ NOS Journaal</a></h3>
    <tr>
     <td>
       <a href="https://www.nrc.nl/nieuws/2021/03/18/als-je-schaarste-creeert-wil-iedereen-je-hebben-a4036398">
-        <img width="200px" align="left" src="https://i.imgur.com/J7iTtR5.png" />
+        <img width="200px" align="left" src="https://images.nrc.nl/UOBTV0whqnNrPh4mDL46VhTYgs0=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68707597-4ce33e.jpg" />
       </a>
     </td>
     <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/03/18/als-je-schaarste-creeert-wil-iedereen-je-hebben-a4036398">Wat de partijen echt helpt, is de talkshowtafel</a></h3>
-      <i>NRC Handelsblad, 19 maart 2021</i><br/>,
+      <i>NRC Handelsblad, 19 maart 2021</i><br/>
         figuur van <a href="https://github.com/vupolcom/about">Wouter van Atteveldt</a>
     </td>
     </tr>
