@@ -1,0 +1,49 @@
+---
+title: 'Media Visibility and Electoral shifts'
+author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas"
+permalink: reports/nrc3/
+output: 
+  github_document
+  #md_document:
+  #  preserve_yaml: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+```{r data}
+library(here)
+library(tidyverse)
+library(amcatr)
+
+source(here("src/lib/data.R"))
+source(here("src/lib/amcatlib.R"))
+data = list(w0 = read_csv(here("data/intermediate/wave0.csv")),
+            w1 = read_csv(here("data/intermediate/wave1.csv")),
+            w2 = read_csv(here("data/intermediate/wave2.csv")),
+            w3 = read_csv(here("data/intermediate/wave3.csv")),
+            w4 = read_csv(here("data/intermediate/wave4.csv"))
+)
+
+resp = extract_wide(data$w0)
+w = extract_waves(data)
+votes = bind_rows(
+  w %>% filter(variable == "vote") %>% select(wave, iisID, name),
+  #resp %>% select(iisID, vote_2017) %>% rename(name = vote_2017) %>% add_column(wave="k17")
+)
+
+wave_label= function(wave) case_when(wave == "w0" ~ "January", wave == "w1" ~ "Early February", wave =="w2" ~ "Late February", wave=="w3" ~ "Early March")
+
+theme_nrc = function(...) {
+  ggthemes::theme_hc(...) + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+          axis.title.x=element_blank(), 
+          axis.title.y=element_blank(),
+          strip.background = element_rect(fill="white"))
+}
+```
