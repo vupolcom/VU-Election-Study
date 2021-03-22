@@ -29,7 +29,7 @@ de Correspondent - Podcast Stemmen</a></h3>
     </td>
     <td>
       <h3><a href="https://decorrespondent.nl/12219/wij-telden-hoeveel-media-aandacht-lijsttrekkers-kregen-en-de-vrouwen-kwamen-er-bekaaid-vanaf/5339285965530-8b9b1138">
-de Correspondent</a></h3>
+de Correspondent - 'Wij telden hoeveel media-aadacht lijsttrekkers kregen. En de vrouwen kwamen er bekaaid vanaf'</a></h3>
       <i>de Correspondent, 19 maart 2021</i><br/>
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
