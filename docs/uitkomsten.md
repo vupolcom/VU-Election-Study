@@ -10,7 +10,7 @@ permalink: /media/
 <tr>
     <td>
       <a href="https://decorrespondent.nl/12201/populistisch-rechts-is-nu-even-groot-als-links-hoe-kan-dat/5331420579870-a1570699">
-        <img width="200px" align="left" src="https://....png" />
+        <img width="200px" align="left" src="https://useruploads.cdn-decorrespondent.nl/image/oXlWPwFEpyS-Dvi61Pzyr-znnC8=/1920x1080/dc-useruploads-images/ce4e058e267f4983bd078a859b17e8dc.gif" />
       </a>
     </td>
     <td>
@@ -20,11 +20,10 @@ de Correspondent - Podcast Stemmen</a></h3>
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
    </tr>
-   
 <tr>
     <td>
       <a href="https://decorrespondent.nl/12219/wij-telden-hoeveel-media-aandacht-lijsttrekkers-kregen-en-de-vrouwen-kwamen-er-bekaaid-vanaf/5339285965530-8b9b1138">
-        <img width="200px" align="left" src="https://....png" />
+        <img width="200px" align="left" src="https://useruploads.cdn-decorrespondent.nl/svg/329627d446ba48d5948143a1ad9bf773.svg" />
       </a>
     </td>
     <td>
@@ -33,9 +32,7 @@ de Correspondent - 'Wij telden hoeveel media-aadacht lijsttrekkers kregen. En de
       <i>de Correspondent, 19 maart 2021</i><br/>
         met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
     </td>
-   </tr>   
-   
-
+   </tr>  
 <tr>
     <td>
       <a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
