@@ -39,6 +39,10 @@ apply_value_labels = function(values, codebook, column=cur_column()) {
 #' @return A data frame with respondent-level variables and (where applicable) value labels
 extract_wide = function(data) {
   codebook = get_codebook()
+  if (min(data$A2, na.rm=T) > 15) {
+    # Wave 4 used different values for A2 (vote) variable
+    codebook = codebook %>% filter(variable != "A2") %>% mutate(variable=recode(variable, "A2_wave4"="A2"))
+  }
   # Columns to keep and renames to apply
   widecols = c("iisID", codebook %>% filter(!long) %>% pull(variable)) %>% unique()
   renames = codebook %>% filter(!is.na(rename)) %>% select(variable, rename) %>% unique()
@@ -78,8 +82,8 @@ extract_long = function(data) {
 extract_waves = function(data) {
   
   prepare_wave = function(w) {
-    ld = extract_long(w) %>% filter(str_detect(variable, "^I|^B")) %>% select(-option)
-    wd = extract_wide(w) %>% select(iisID, vote) %>% pivot_longer(-iisID, names_to="variable", values_to="name") %>% add_column(value=1)
+    ld = extract_long(w) %>% filter(str_detect(variable, "A3|^I|^B")) %>% select(-option)
+    wd = extract_wide(w) %>% select(iisID, A2) %>% pivot_longer(-iisID, names_to="variable", values_to="name") %>% add_column(value=1)
     bind_rows(ld,wd)
   }
   purrr::map(data, prepare_wave) %>% bind_rows(.id="wave")
@@ -102,7 +106,7 @@ load_survey = function(survey_id) {
                     label = FALSE, convert = FALSE)
   
   if (!"consent1" %in% colnames(d) & "constent1" %in% colnames(d)) d = d %>% rename(consent1=constent1)
-  
+  if (!"consent2" %in% colnames(d)) d = d %>% add_column(consent2=1)
   #only keep people that have given consent, are not admin or 007/009, and have filled in A1
   d <- d %>%
     remove_all_labels() %>% 
