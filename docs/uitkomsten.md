@@ -9,6 +9,35 @@ permalink: /media/
 
 <tr>
     <td>
+      <a href="https://decorrespondent.nl/12201/populistisch-rechts-is-nu-even-groot-als-links-hoe-kan-dat/5331420579870-a1570699">
+        <img width="200px" align="left" src="https://....png" />
+      </a>
+    </td>
+    <td>
+      <h3><a href="https://decorrespondent.nl/12201/populistisch-rechts-is-nu-even-groot-als-links-hoe-kan-dat/5331420579870-a1570699">
+de Correspondent - Podcast Stemmen</a></h3>
+      <i>de Correspondent, 19 maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+    </td>
+   </tr>
+   
+<tr>
+    <td>
+      <a href="https://decorrespondent.nl/12219/wij-telden-hoeveel-media-aandacht-lijsttrekkers-kregen-en-de-vrouwen-kwamen-er-bekaaid-vanaf/5339285965530-8b9b1138">
+        <img width="200px" align="left" src="https://....png" />
+      </a>
+    </td>
+    <td>
+      <h3><a href="https://decorrespondent.nl/12219/wij-telden-hoeveel-media-aandacht-lijsttrekkers-kregen-en-de-vrouwen-kwamen-er-bekaaid-vanaf/5339285965530-8b9b1138">
+de Correspondent</a></h3>
+      <i>de Correspondent, 19 maart 2021</i><br/>
+        met <a href="https://github.com/vupolcom/about">Loes Aaldering</a>
+    </td>
+   </tr>   
+   
+
+<tr>
+    <td>
       <a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
         <img width="200px" align="left" src="https://i.imgur.com/J7iTtR5.png" />
       </a>
