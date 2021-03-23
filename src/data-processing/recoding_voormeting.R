@@ -14,6 +14,8 @@ M = clean_meta(d0) %>% add_column(wave="pre-wave", .after = 'iisID')
 A = clean_A(d0)
 B = clean_B(d0)
 C = clean_C(d0)
+F = clean_F(d0)
+G = clean_G(d0)
 I = clean_I(d0)
 
 ## Recode Block Background Variables
@@ -114,81 +116,6 @@ E <- d0 %>%
   mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
   filter(check == 0) %>% 
   select(iisID, E1, E1_otherparty, order_E1, E2, E3_1:E3_13)
-
-# Recode Block F Trust
-F <- d0 %>%
-  mutate(order_F1 = paste(F1_DO_1, F1_DO_2, F1_DO_3, F1_DO_4,
-                          F1_DO_5, F1_DO_6, F1_DO_7, F1_DO_8,
-                          F1_DO_9, F1_DO_10, sep ="|"),
-         order_F2 = paste(F2_DO_1, F2_DO_2, F2_DO_3, F2_DO_4,
-                          F2_DO_5, F2_DO_6, F2_DO_7, F2_DO_8,
-                          F2_DO_9, F2_DO_10, F2_DO_15, sep = "|")) %>%
-  mutate(check = ifelse(duplicated(iisID) & Progress <= 100, 1, 0)) %>%
-  filter(check == 0) %>% 
-  select(iisID, F1_1:F1_10, order_F1,
-         F2_1:F2_10, F2_11 = F2_15, order_F2)
-
-length(which(duplicated(F$iisID)))
-  
-
-# Recode Block G Evaluation of Government and Political Leaders
-G <- d0 %>%
-  select(iisID, G1_1:G1_5, G1_b, G_eval_leaders_1:G_eval_leaders_14,
-         G2_DO_4:G2_DO_17,
-         G2_1 = G2_4, G2_2 = G2_5, G2_3 = G2_6,
-         G2_4 = G2_7, G2_5 = G2_8, G2_6 = G2_9,
-         G2_7 = G2_10, G2_8 = G2_11, G2_9 = G2_12,
-         G2_10 = G2_13, G2_11 = G2_14, G2_12 = G2_15,
-         G2_13 = G2_16, G2_14 = G2_17,
-         G3_1 = G3_4, G3_2 = G3_5, G3_3 = G3_6,
-         G3_4 = G3_7, G3_5 = G3_8, G3_6 = G3_9,
-         G3_7 = G3_10, G3_8 = G3_11, G3_9 = G3_12,
-         G3_10 = G3_13, G3_11 = G3_14, G3_12 = G3_15,
-         G3_13 = G3_16, G3_14 = G3_17,
-         G4_1 = G4_4, G4_2 = G4_5, G4_3 = G4_6,
-         G4_4 = G4_7, G4_5 = G4_8, G4_6 = G4_9,
-         G4_7 = G4_10, G4_8 = G4_11, G4_9 = G4_12,
-         G4_10 = G4_13, G4_11 = G4_14, G4_12 = G4_15,
-         G4_13 = G4_16, G4_14 = G4_17, progress = Progress) %>%
-  mutate(G_eval_leaders_1 = recode(G_eval_leaders_1, `1` = 1, `4` = 0),
-         G_eval_leaders_2 = recode(G_eval_leaders_2, `1` = 1, `4` = 0),
-         G_eval_leaders_3 = recode(G_eval_leaders_3, `1` = 1, `4` = 0),
-         G_eval_leaders_4 = recode(G_eval_leaders_4, `1` = 1, `4` = 0),
-         G_eval_leaders_5 = recode(G_eval_leaders_5, `1` = 1, `4` = 0),
-         G_eval_leaders_6 = recode(G_eval_leaders_6, `1` = 1, `4` = 0),
-         G_eval_leaders_7 = recode(G_eval_leaders_7, `1` = 1, `4` = 0),
-         G_eval_leaders_8 = recode(G_eval_leaders_8, `1` = 1, `4` = 0),
-         G_eval_leaders_9 = recode(G_eval_leaders_9, `1` = 1, `4` = 0),
-         G_eval_leaders_10 = recode(G_eval_leaders_10, `1` = 1, `4` = 0),
-         G_eval_leaders_11 = recode(G_eval_leaders_11, `1` = 1, `4` = 0),
-         G_eval_leaders_12 = recode(G_eval_leaders_12, `1` = 1, `4` = 0),
-         G_eval_leaders_13 = recode(G_eval_leaders_13, `1` = 1, `4` = 0),
-         G_eval_leaders_14 = recode(G_eval_leaders_14, `1` = 1, `4` = 0),
-         order_G2 = paste(G2_DO_4, G2_DO_5, G2_DO_6, G2_DO_7,
-                          G2_DO_8, G2_DO_9, G2_DO_10, G2_DO_11,
-                          G2_DO_12, G2_DO_13, G2_DO_14, G2_DO_15,
-                          G2_DO_16, G2_DO_17, sep = "|"),
-         G2_1 = G2_1*2, G2_2 = G2_2*2, G2_3 = G2_3*2,
-         G2_4 = G2_4*2, G2_5 = G2_5*2, G2_6 = G2_6*2,
-         G2_7 = G2_7*2, G2_8 = G2_8*2, G2_9 = G2_9*2,
-         G2_10 = G2_10*2, G2_11 = G2_11*2, G2_12 = G2_12*2,
-         G2_13 = G2_13*2, G2_14 = G2_14*2, 
-         G3_1 = G3_1*2, G3_2 = G3_2*2, G3_3 = G3_3*2,
-         G3_4 = G3_4*2, G3_5 = G3_5*2, G3_6 = G3_6*2,
-         G3_7 = G3_7*2, G3_8 = G3_8*2, G3_9 = G3_9*2,
-         G3_10 = G3_10*2, G3_11 = G3_11*2, G3_12 = G3_12*2,
-         G3_13 = G3_13*2, G3_14 = G3_14*2,
-         G4_1 = G4_1*2, G4_2 = G4_2*2, G4_3 = G4_3*2,
-         G4_4 = G4_4*2, G4_5 = G4_5*2, G4_6 = G4_6*2,
-         G4_7 = G4_7*2, G4_8 = G4_8*2, G4_9 = G4_9*2,
-         G4_10 = G4_10*2, G4_11 = G4_11*2, G4_12 = G4_12*2,
-         G4_13 = G4_13*2, G4_14 = G4_14*2) %>%
-  mutate(check = ifelse(duplicated(iisID) & progress <= 100, 1, 0)) %>%
-  filter(check == 0) %>% 
-  select(-G2_DO_4, -G2_DO_5, -G2_DO_6, -G2_DO_7,
-         -G2_DO_8, -G2_DO_9, -G2_DO_10, -G2_DO_11,
-         -G2_DO_12, -G2_DO_13, -G2_DO_14, -G2_DO_15,
-         -G2_DO_16, -G2_DO_17)
 
 # Recode Block H Other Issues
 H <- d0 %>%
