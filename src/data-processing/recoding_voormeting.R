@@ -6,8 +6,8 @@
 
 library(tidyverse)
 library(here)
+source(here("src/lib/datacleaning.R"))
 
-source(here("src/lib/data.R"))
 
 d0 = load_survey(survey_id="SV_39R4hSWxAJNBKHb")
 M = clean_meta(d0) %>% add_column(wave="pre-wave", .after = 'iisID')

@@ -6,7 +6,8 @@
 
 library(tidyverse)
 library(here)
-source(here("src/lib/data.R"))
+source(here("src/lib/datacleaning.R"))
+
 d1 = load_survey(survey_id="SV_1X34g6PWhWjj6hD")
 
 # Regular blocks

@@ -7,7 +7,7 @@
 library(tidyverse)
 library(here)
 
-source(here("src/lib/data.R"))
+source(here("src/lib/datacleaning.R"))
 output_fn = here("data/intermediate/wave3.csv")
 
 d3 = load_survey(survey_id="SV_a92jPqJ9B5EQMSx") %>% select(-I3_14_TEXT)

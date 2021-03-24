@@ -7,7 +7,8 @@
 library(tidyverse)
 library(here)
 
-source(here("src/lib/data.R"))
+source(here("src/lib/datacleaning.R"))
+
 output_fn = here("data/intermediate/wave4.csv")
 
 d4 = load_survey(survey_id="SV_3kfGN9GH4fAJ662") %>% 
