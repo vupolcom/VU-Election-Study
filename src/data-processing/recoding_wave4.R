@@ -31,9 +31,8 @@ df = M %>%
   left_join(G, by="iisID") %>%
   left_join(I, by="iisID") 
 
-# TODO: other issues
 
 message("Writing output file", output_fn)
 write_csv(df, output_fn)
-
+rm(F)
 

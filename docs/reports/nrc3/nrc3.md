@@ -144,10 +144,16 @@ na de perikelen rond de appjes en de afsplitsing van JA21 veel kiezers
 zijn gaan twijfelen, die uiteindelijk vooral bij de PVV zijn uitgekomen.
 Tegelijkertijd zijn veel PVV stemmers juist naar FvD gewisseld.
 
+\[Download data: [Verschuivingen in
+stemvoorkeur](Verschuivingen_in_stemvoorkeur.csv)\]
+
 Institutioneel Vertrouwen
 -------------------------
 
 ![](trust-1.png)
+
+\[Download data: [Institutioneel
+vertrouwen](Institutioneel_vertrouwen.csv)\]
 
 Bovenstaande figuur geeft de verschuiving in institutioneel vertrouwen
 weer. Alhoewel hier geen grote verschuivingen in te verwachten waren,
@@ -156,6 +162,8 @@ valt het toch op dat vertrouwen in de meeste politieke instituties
 bedrijven en individuele politici is juist iets afgenomen.
 
 ![](poltrust-1.png)
+
+\[Download data: [Politiek vertrouwen](Politiek_vertrouwen.csv)\]
 
 Bij de stellingen over politiek vertrouwen zijn de verschuivingen nog
 kleiner. Alleen het gevoel dat politici teveel beloven is iets
@@ -166,6 +174,8 @@ Leiderschap
 -----------
 
 ![](leadershipw4-1.png)
+
+\[Download data: [Leiderschapsevaluaties](Leiderschapsevaluaties.csv)\]
 
 Bovenstaand figuur geeft aan hoe de verschillende lijsttrekkers als
 leider worden geevalueerd. Wellicht opvallende eerste is Marijnissen,
@@ -185,6 +195,9 @@ leiderschap.
 ![](leadershipchange-1.png)
 
 ![](leadership-diff-1.png)
+
+\[Download data: [Verschuiving in
+leiderschapsevaluaties](Verschuiving_in_leiderschapsevaluaties.csv)\]
 
 Bovenstaande figuren geven aan hoe tijdens de campagne
 leiderschapsevaluaties zijn verschoven. Omdat niet aan het begin van de
@@ -213,6 +226,8 @@ Zichtbaarheid van de partijen en lijsttrekkers
 
 ![](visparty-1.png)
 
+\[Download data: [Zichtbaarheid](Zichtbaarheid.csv)\]
+
 Bovenstaande grafieken geven de zichtbaarheid van de meest zichtbare
 partijen weer, uitgedrukt als het percentage van politieke artikelen
 waarbinnen de partij aanwezig was of genoemd werd. VVD domineert hier
@@ -230,6 +245,8 @@ Zichtbaarheid op social media
 -----------------------------
 
 ![](socmed-1.png)
+
+\[Download data: [Social media](Social_media.csv)\]
 
 Bovenstaande figuren geven de activity en engagement van de partijen op
 sociale media (twitter, instagram en Facebook), waarbij activity het
@@ -254,6 +271,9 @@ Mediagebruik van kiezers
 
 ![](mediause-1.png)
 
+\[Download data: [Mediagebruik van
+kiezers](Mediagebruik_van_kiezers.csv)\]
+
 Uit eerdere analyse bleek dat kiezers vooral TV gebruiken om politieke
 informatie te verkrijgen, vooral kiezers boven de 35. Hoogopgeleide
 kiezers gebruiken daarnaast veel kranten, en hoogopgeleidere jongeren
@@ -267,6 +287,9 @@ Zichtbaarheid volgens de kiezers
 --------------------------------
 
 ![](notice-1.png)
+
+\[Download data: [Zijn kandidate
+opgevallen](Zijn_kandidate_opgevallen.csv)\]
 
 Bovenstaande figuur laat aan de linkerkant zien in hoeverre de
 verschillende partijen (en hun lijsttrekkers) de kiezer zijn opgevallen
@@ -287,6 +310,8 @@ Issues
 
 ![](vissues-1.png)
 
+\[Download data: [Aandacht voor issues](Aandacht_voor_issues.csv)\]
+
 De grafiek hierboven geeft de aandacht voor de belangrijkste thema’s in
 het politieke nieuws weer. Het mag niet verbazen dat corona de agenda
 domineert, met daaran gekoppeld de thema’s zorg (vooral op TV) en (de
@@ -301,6 +326,8 @@ Issue ownership
 ---------------
 
 ![](issue-owner-1.png)
+
+\[Download data: [Issue ownership](Issue_ownership.csv)\]
 
 De tabel hierboven laats zien in hoeverre de verchillende issues worden
 geassocieerd met de politieke partijen. De theorie van ‘issue ownership’
