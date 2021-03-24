@@ -3,9 +3,8 @@ title: 'Media Visibility and Electoral shifts'
 author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas"
 permalink: reports/nrc3/
 output: 
-  github_document
-  #md_document:
-  #  preserve_yaml: yes
+  md_document:
+    preserve_yaml: yes
 editor_options: 
   chunk_output_type: console
 ---
@@ -14,12 +13,17 @@ editor_options:
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='', fig.width = 10)
 library(printr)
 options(digits = 2)
+
+#TODO: Social Media
+#TODO: Download
+#TODO: Duiding
 ```
 
 ```{r data}
 library(here)
 library(tidyverse)
 library(amcatr)
+
 
 source(here("src/lib/data.R"))
 source(here("src/lib/amcatlib.R"))
@@ -32,13 +36,6 @@ data = list(w0 = read_csv(here("data/intermediate/wave0.csv")),
 
 resp = extract_wide(data$w0)
 w = extract_waves(data)
-votes = bind_rows(
-  w %>% filter(variable == "vote") %>% select(wave, iisID, name),
-  #resp %>% select(iisID, vote_2017) %>% rename(name = vote_2017) %>% add_column(wave="k17")
-)
-
-wave_label= function(wave) case_when(wave == "w0" ~ "January", wave == "w1" ~ "Early February", wave =="w2" ~ "Late February", wave=="w3" ~ "Early March")
-
 theme_nrc = function(...) {
   ggthemes::theme_hc(...) + 
     theme(axis.text.x = element_text(angle = 45, hjust = 1), 
@@ -47,3 +44,406 @@ theme_nrc = function(...) {
           strip.background = element_rect(fill="white"))
 }
 ```
+
+# Verschuivingen  in de Publieke Opinie
+
+
+```{r }
+colors = c(FvD="brown", PVV="darkblue", VVD="blue", CDA="yellow", D66="lightgreen", PvdA="red", GL="green", SP="darkred", ChristenUnie="Orange", PvdD="yellow", JA21="purple", Other="purple")
+k17 = resp %>% select(iisID, name=vote_2017) %>% add_column(wave="k17")
+votes = w %>% filter(variable=="A2") %>% select(iisID, wave, name) %>% bind_rows(k17) %>%
+  mutate(name=recode(name, "GroenLinks"="GL", "Undecided"="?"))
+library(ggalluvial)
+
+sankey = function(parties, threshold=0) {
+ aggr = votes %>% 
+  filter(name %in% parties) %>%   
+  mutate(name=factor(name, levels=parties)) %>% 
+  pivot_wider(names_from=wave, values_from=name) %>% 
+   group_by(k17, w0, w4) %>% summarize(n=n()) %>% na.omit()
+aggr %>% filter(n>threshold, k17!=w4 | w0 != w4) %>%
+ggplot(aes(y = n,  axis1 = k17, axis2 = w0, axis3 = w4)) +
+  geom_alluvium(aes(fill = w4),
+                width = 0, knot.pos = 0, reverse = FALSE, curve_type = "sine") +
+    geom_stratum(width = 1/8, reverse = FALSE) +
+  geom_text(stat = "stratum", aes(label = after_stat(stratum)),
+            reverse = FALSE) +
+  coord_flip() + theme_void() + 
+  scale_fill_manual(values=colors, guide=F) + ggtitle("Verschuiving tussen partijen", "(Selectie van partijen; kiezers die niet zijn geswitcht zijn weggelaten)")
+}
+```
+
+## De stoelendans op links
+
+```{r sankey-links}
+sankey(c("D66", "?", "PvdA", "GL", "SP", "PvdD"), threshold=1)
+```
+
+De figuur hierboven laat zien hoe kiezers zijn verschoven tussen de verleden verkiezingen (onder), het begin van de campagne (midden), en de stem in 2021 (boven).
+Hierbij is ingezoomd op een selectie van linkse partijen (inclusief D66), en kiezers die niet zijn gewisseld zijn weggelaten. 
+Wat hier goed te zien is dat D66 relatief veel winst heeft behaald ten koste van de linkse partijen,
+en dat die winst vooral tijdens de campagne is behaald. 
+Veel groenlinks stemmers die bij D66 zijn uitgekomen hebben die beslissing pas tijdens de campagne gemaakt.
+Veel D66 stemmers die voorafgaand aan de campagne zijn gaan twijfelen zijn uiteindelijk weer bij D66 terecht gekomen. 
+Verder zijn er vooral veel uitwisselingen tussen de verschillende linkse partijen, maar zonder grote netto verschuivingen. 
+
+## Verschuivingen op rechts
+
+```{r sankey-rechts}
+sankey(c( "FvD","PVV", "JA21", "VVD", "?", "CDA", "D66", "Other"), threshold=1)
+```
+
+Ook op rechts (met wederom ook D66 meegenomen) zijn een aantal beweingen duidelijk zichtbaar. 
+D66 wint kiezers van VVD, en deze winst komt weer pas tijdens de campagne: 
+Deze kiezers dachten aan het begin van de campagne nog VVD te gaan stemmen, terwijl veel D66 kiezers juist waren gaan twijfelen.
+Uiteindelijk zijn deze groepen tijdens de campagne toch bij D66 uitgekomen.
+
+Alhoewel VVD dus kiezers verliest aan D66, winnen ze er nog meer van CDA, zovel voorafgaand als tijdens de campagne. 
+Ook duidelijk is dat FvD na de perikelen rond de appjes en de afsplitsing van JA21 veel kiezers zijn gaan twijfelen, die 
+uiteindelijk vooral bij de PVV zijn uitgekomen. 
+Tegelijkertijd zijn veel PVV stemmers juist naar FvD gewisseld. 
+
+## Institutioneel Vertrouwem
+
+```{r long}
+w0l = extract_long(data$w0)
+w4l = extract_long(data$w4)
+
+w04l = rbind(w0l %>% add_column(wave="w0"),
+        w4l %>% add_column(wave="w4"))
+```
+
+
+
+```{r trust}
+resps = w04l %>% filter(variable == "F2", wave=="w4") %>% pull(iisID) %>% unique()
+w04l %>% filter(variable == "F2") %>% 
+  filter(iisID %in% resps) %>% 
+  group_by(name, wave) %>% 
+  summarize(sd=sd(value, na.rm=T), value=mean(value, na.rm=T)) %>% 
+  arrange(name, desc(wave)) %>% 
+  na.omit() %>% 
+  ggplot(aes(x=fct_reorder(name, value), y=value, ymin=value-sd, ymax=value+sd, color=wave, group=name)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) + 
+  geom_point() + 
+  #geom_errorbar(position=position_dodge(width=1)) + 
+  ylim(c(4, 8)) + 
+  coord_flip() + theme_nrc() + scale_color_discrete(guide=F) + 
+  ggtitle("Institutioneel vertrouwen aan begin (rood) en eind (blauw) van campagne")
+```
+
+Bovenstaande figuur geeft de verschuiving in institutioneel vertrouwen weer.
+Alhoewel hier geen grote verschuivingen in te verwachten waren, 
+valt het toch op dat vertrouwen in de meeste politieke instituties (licht) is toegenomen.
+Vertrouwen in banken en in mindere mate grote bedrijven en individuele politici is juist iets afgenomen.
+
+```{r poltrust}
+resps = w04l %>% filter(variable == "F1", wave=="w4") %>% pull(iisID) %>% unique()
+w04l %>% filter(variable == "F1") %>% 
+  filter(iisID %in% resps) %>% 
+  group_by(name, wave) %>% 
+  summarize(sd=sd(value, na.rm=T), value=mean(value, na.rm=T)) %>% 
+  arrange(name, desc(wave)) %>% 
+  na.omit() %>% 
+  ggplot(aes(x=fct_reorder(name, value), y=value, ymin=value-sd, ymax=value+sd, color=wave, group=name)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) + 
+  geom_point() + 
+  #geom_errorbar(position=position_dodge(width=1)) + 
+  ylim(c(2.5, 4.5)) + 
+  coord_flip() + theme_nrc() + scale_color_discrete(guide=F) + 
+  ggtitle("Politiek vertrouwen aan begin (rood) en eind (blauw) van campagne")
+```
+
+Bij de stellingen over politiek vertrouwen zijn de verschuivingen nog kleiner.
+Alleen het gevoel dat politici teveel beloven is iets toegenomen, 
+terwijl het gevoel goed vertegenwoordigd te zijn juist is afgenomen. 
+
+## Leiderschap 
+
+```{r leadershipw4}
+w04l %>% filter(wave=="w4", str_detect(variable, "^G[234567]"))%>% group_by(name, variable) %>% summarize(value=mean(value, na.rm=T))  %>%
+  mutate(attribute=recode(variable, G2="Integer", G3="Sympathiek", G4="Weet wat er leeft", G5="Daadkrachtig", G6="Competent", G7="Komt beloftes na")) %>%
+  ggplot(aes(y=fct_reorder(name, value), x=fct_rev(fct_reorder(attribute, value)), fill=value, label=round(value, 1))) + 
+  geom_tile() + geom_text(color="white") + 
+  theme_nrc() + 
+  scale_fill_gradient2(midpoint=5, low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=FALSE)
+
+  scale_fill_gradient(guide=FALSE, low="#ddddff", high="#3182bd")
+```
+
+Bovenstaand figuur geeft aan hoe de verschillende lijsttrekkers als leider worden geevalueerd.
+Wellicht opvallende eerste is Marijnissen,  gevolgd door Rutte en Kaag
+Opvallend genoeg scoort Rutte het beste op daadkracht, maar hebben mensen twijfel of hij zijn beloftes wel nakomt
+(een twijfel die ook bij Klaver sterk leeft).
+
+Ook Wilders wordt als daadkrachtig gezien, en men denkt vooral dat hij goed weet wat er leeft,
+maar hij wordt niet integer of sympathiek gevonden. 
+Hij scoort wel oever de hele linie ruim beter dan zijn directe concurrent Baudet.
+
+
+De lijsttrekkers van nieuwe partijen scoren gemiddeld niet heel hoog, mogelijk door onbekendheid.
+Vooral Simons scoort zeer slecht op leiderschap. 
+
+```{r leadershipchange}
+trust = w04l %>% filter(str_detect(variable, "^G[234]")) 
+leaders = intersect(trust %>% filter(wave=="w0") %>% pull(name) %>% as.character() %>% unique(),
+                trust %>% filter(wave=="w4") %>% pull(name) %>% as.character() %>% unique())
+w04l %>% filter(str_detect(variable, "^G[234]"), name %in%  leaders) %>%
+  mutate(attribute=recode(variable, G2="Integer", G3="Sympathiek", G4="Weet wat er leeft")) %>%
+  group_by(wave, name, attribute) %>% summarize(value=mean(value, na.rm=T)) %>%
+  ungroup() %>% arrange(name, attribute, wave) %>% 
+  na.omit() %>%
+  ggplot(aes(x=fct_reorder(name, value), y=value, color=attribute, shape=wave, group=str_c(attribute, name))) + 
+  geom_point(position=position_dodge(width=.5), alpha=.5) + 
+  geom_line(arrow=arrow(ends="last", length=unit(0.25, "cm")), position=position_dodge(width=.5)) + 
+  coord_flip() + theme_nrc() + ggtitle("Leiderschap van de verschillende kandidaten") +
+  scale_shape(guide=F)
+```
+
+```{r leadership-diff}
+d = w04l %>% filter(str_detect(variable, "^G[234]"), name %in%  leaders) %>%
+  mutate(attribute=recode(variable, G2="Integer", G3="Sympathiek", G4="Weet wat er leeft")) %>%
+  group_by(wave, name, attribute) %>% summarize(value=mean(value, na.rm=T)) %>%
+  ungroup() %>% arrange(name, attribute, wave) %>% pivot_wider(names_from=wave) %>% mutate(diff=w4-w0) %>%
+  na.omit() 
+
+ggplot(d, aes(x=fct_reorder(name, diff), y=diff, color=attribute)) + 
+  geom_point(position=position_dodge(width=.5), alpha=.5) + 
+  geom_segment(data=filter(d, attribute=="Weet wat er leeft"), aes(y=0, yend=diff, xend=name), position=position_nudge(x=0.175), arrow=arrow(ends="last", length=unit(0.25, "cm"))) + 
+  geom_segment(data=filter(d, attribute=="Sympathiek"), aes(y=0, yend=diff, xend=name), position=position_nudge(x=0), arrow=arrow(ends="last", length=unit(0.25, "cm"))) + 
+  geom_segment(data=filter(d, attribute=="Integer"), aes(y=0, yend=diff, xend=name), position=position_nudge(x=-0.175), arrow=arrow(ends="last", length=unit(0.25, "cm"))) + 
+  
+  coord_flip() + theme_nrc() + ggtitle("Leiderschap van de verschillende kandidaten (vershuiving)") +
+  geom_hline(yintercept=0, lty=2, color="grey") + ylim(c(-1,1))
+  scale_shape(guide=F)
+```
+
+Bovenstaande figuren geven aan hoe tijdens de campagne leiderschapsevaluaties zijn verschoven.
+Omdat niet aan het begin van de campagne duidelijk was welke partijen in de kamer zouden komen, 
+zijn in de eerste enquete alleen de lijsttrekkers meegenomen van partijen met zetels in de vorige Tweede Kamer. 
+Ook zijn vooraf alleen de eigenschappen integriteit (rood), sympathie (groen) en 'weet wat er leeft' (blauw) gevraagd. 
+
+Bij veel leiders is de vershuiving tijdens de campagne beperkt tot minder dan een half "rapportpunt".
+Grote stijgers zijn de vrouwelijke lijsttrekkers Ouwehand, Kaag, en Marijnissen.
+Ook voor Wilders' beoordeling als leider was de campagne positief, alhoewel hij (evenals Ouwehand) nog steeds relatief laag scoort.
+
+Rutte's leiederschap heeft geen baat gehad bijde campagne, evanals Klaver en Ploemen heeft men vooral weinig vertrouwen dat zij weten wat er leeft.
+Grote verliezer is echter Hoekstra, die op alle eigenschappen een forse veer moet laten. 
+
+# De campagne in de media
+
+## Zichtbaarheid van de partijen en lijsttrekkers
+
+```{r visparty}
+colors = c(FvD="black", PVV="darkblue", VVD="blue", CDA="yellow", D66="lightgreen", PvdA="red", GL="green", SP="darkred", CU="Orange", PvdD="darkgreen", JA21="purple", Other="purple")
+
+hits = read_csv(here("data/intermediate/amcat_hits.csv")) %>% 
+  filter(publisher != "Nieuwsuur", publisher != "NOS liveblog") %>%
+  mutate(week = lubridate::floor_date(date, "week", week_start=4)) %>%
+  filter(date > "2021-01-06") 
+
+meta = read_csv(here("data/intermediate/amcat_meta.csv")) %>% filter(publisher != "Nieuwsuur", publisher != "NOS liveblog") %>%
+  filter(publisher != "Nieuwsuur", publisher != "NOS liveblog") %>%
+  mutate(week = lubridate::floor_date(date, "week", week_start=4)) %>%
+  filter(date > "2021-01-06") 
+
+totals = meta %>% group_by(mtype, week) %>% summarize(total=n())
+
+a = hits %>% filter(cat == "actor") %>% rename(object=subcat) %>% 
+  mutate(week = lubridate::floor_date(date, "week", week_start=4)) %>%
+  filter(date > "2021-01-06") 
+parties = a %>% pull(object) %>% table() %>% sort() %>% rev() %>% names()
+a2 = a %>% group_by(mtype, week, object) %>% summarize(n=n(), .groups="drop") %>% inner_join(totals) %>% mutate(perc=n/total) 
+
+a3 = a2 %>% filter(object %in% head(parties, 9)) 
+ggplot(a3, aes(x=week, y=perc, color=fct_relevel(object, intersect(parties, object)))) + 
+  geom_line() + 
+  ggrepel::geom_label_repel(aes(label=object), data=a3 %>% filter(week=="2021-03-11")) + 
+  scale_color_manual(values=colors, guide=F)  + 
+  facet_wrap("mtype") + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  theme_nrc() + ggtitle("Zichtbaarheid van partijen", "(per week, als percentage binnen al het politieke nieuws)")
+```
+
+Bovenstaande grafieken geven de zichtbaarheid van de meest zichtbare partijen weer,
+uitgedrukt als het percentage van politieke artikelen waarbinnen de partij aanwezig was of genoemd werd.
+VVD domineert hier duidelijk, gevolgd door coalitiepartijen CDA en D66.
+Wat ook opvalt is dat naarmate de verkiezingen dichterbij komen de kleinere partijen aan zichtbaarheid winnen,
+omdat er meer nieuws is waar verschillende partijen genoemd worden. 
+
+Vooral de partijen PVV en FvD lijken hier sterk van te profiteren, vooral op TV doen zij het relatief goed,
+ook al moeten ze hier ook de coalitiepartijen voor laten gaan. 
+Verder is de rangorde aan het eind van de campagne niet wezenlijk anders dan aan het begin. 
+
+## Mediagebruik van kiezers
+
+```{r mediause}
+mediause = 
+w %>% filter(variable == "I1") %>%   
+  mutate(name=case_when(name == "Television" ~ "TV",
+                        name == "Newspapers or opinion magazines (paper or online)" ~ "Kranten (print en digitaal)",
+                        name == "Online news sites (such as nu.nl) or blogs" ~ "Online (bv nu.nl)",
+                        name == "Social media (such as Facebook, Twitter)" ~ "Sociale media",
+                        T ~ "DROP")) %>% 
+  filter(name != "DROP") %>% 
+  group_by(wave, name) %>% summarize(value=mean(value, na.rm=T)) 
+
+
+ggplot(mediause, aes(x=wave, y=value, color=name, group=name)) + 
+  geom_line()  +
+  ggrepel::geom_label_repel(aes(label=name), data=filter(mediause, wave == "w4")) +
+  scale_color_discrete(guide=F) + 
+  theme_nrc() + 
+  ggtitle("Mediagebruik van respondenten over tijd")
+```
+
+Uit eerdere analyse bleek dat kiezers vooral TV gebruiken om politieke informatie te verkrijgen,
+vooral kiezers boven de 35. 
+Hoogopgeleide kiezers gebruiken daarnaast veel kranten, en hoogopgeleidere jongeren ook veel online nieuws.
+
+Wat we zien is dat tijdens de campagne in eerste instantie de hoeveelheid nieuws die wordt gevolgd toeneemt.
+De laatste weken gaat het echter juist omlaag: kennelijk treedt er een zekere campagnemoeheid op.  
+
+## Zichtbaarheid volgens de kiezers
+
+```{r notice}
+d = w %>% filter(variable %in% c("B2", "B3")) %>%  mutate(name=str_remove(name, " *&.*")) %>% 
+  mutate(name = case_when(name == "50Plus Partij" ~ "50+",
+                          name == "Forum voor Democratie" ~ "FvD",
+                          name == "Partij voor de Dieren" ~ "PvdD",
+                          T ~ name),
+         value = case_when(value == 999 & variable == "B2" ~ 0, 
+                           value == 999 & variable == "B3" ~ NA_real_, 
+                           T ~ value),
+         varlabel=case_when(variable == "B2" ~ "Opgevallen",
+                            T ~ "Positief / Negatief"),
+         name=case_when(name == "ChristenUnie" ~ "CU", 
+                        name == "GroenLinks" ~ "GL",
+                        name == "50+" ~ "50Plus",
+                               T~name))
+
+d2 = d %>% group_by(wave, variable, varlabel, name) %>% summarize(value = mean(value, na.rm=T)) %>%
+  mutate(fillcolor = case_when(variable == "B2" ~ 5.5+value,  T ~ value),
+         name=fct_rev(factor(name, levels=parties))) %>% na.omit()
+
+d2 %>% ggplot(aes(x=wave, y=name, fill=fillcolor, label=round(value,1))) + 
+  geom_tile(color="white", lwd=1) + facet_grid(cols=vars(varlabel)) + theme_nrc() + 
+  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + geom_text(color="white") + 
+    #scale_fill_gradient2(low=scales::muted("red"), mid="#e0e0e0", high="#01529d", guide=F) + 
+
+  ggtitle("Did respondents notice the parties / leaders?", "(Opgevallen van 0 tot 3; positef/negatief van 0 to 10")
+```
+
+Bovenstaande figuur laat aan de linkerkant zien in hoeverre de verschillende partijen (en hun lijsttrekkers) de kiezer zijn opgevallen in de media.
+Wat hierin opvalt is dat naast VVD ook PVV en FvD sterk opvallen, meer dan je zou verwachten op basis van hun zichtbaarheid in de media. 
+Daarnaast valt op dat waar VVD en CDA in de laatste periode minder opvallen dan daarvoor,
+D66 juist steeds meer in het oog springt. 
+
+Van de partijen die op zijn gevallen is de kiezer vervolgens gevraagd of dat op een positieve of negatieve manier was. 
+Hier valt direct op dat FvD en Denk extreem slecht scoren, en ook PVV en GroenLinks niet positief in het oog springen.
+CDA gaat over tijd steeds slechter scoren, terwijl D66 vooral in de laatste periode erg goed scoort. 
+Ook SP en CU komen positief over op de kiezer. 
+
+# Issues
+
+```{r vissues}
+onderwerpen = c("Zorg", "Sociale Zekerheid", "Corona", "Bedrijfsleven", "Integratie", "Klimaat", "Onderwijs")
+i = hits %>% filter(cat == "issue") %>% rename(object=subcat) %>% 
+  mutate(object=recode(object, coronaverspreiding="Corona", coronabestrijding="Corona",
+                       bestrijdingCrim="Criminaliteit", ontwikkelingCrim="Criminaliteit",
+                       geZorg="Zorg", socZek="Sociale Zekerheid", integratie="Integratie", "OenW"="Onderwijs",
+                       klimaatMilieu="Klimaat",
+                       ondernemingsklimaat="Bedrijfsleven")) %>% 
+  filter(object %in% onderwerpen)
+
+i2 = i %>% group_by(mtype, week, object) %>% summarize(n=length(unique(id)), .groups="drop") %>% inner_join(totals) %>% mutate(perc=n/total) 
+
+ggplot(i2, aes(x=week, y=n, color=fct_relevel(object, intersect(parties, object)))) + 
+  geom_line() + 
+  ggrepel::geom_label_repel(aes(label=object), data=i2 %>% filter(week=="2021-03-11")) + 
+  #scale_color_manual(values=colors, guide=F)  + 
+  facet_wrap("mtype", scale="free") + 
+  #scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_color_discrete(guide=F) + 
+  theme_nrc() + ggtitle("Aandacht voor issues", "(per week, als aantal items waarin het genoemd wordt)")
+```
+
+De grafiek hierboven geeft de aandacht voor de belangrijkste thema's in het politieke nieuws weer.
+Het mag niet verbazen dat corona de agenda domineert, met daaran gekoppeld de thema's zorg (vooral op TV)
+en (de gevolgen voor) het bedrijfsleven en het onderwijs. 
+
+Wat ook opvalt is dat er naar het eind van de campagne wel iets meer aandacht komt voor andere 
+thema's zoals sociale zekerheid, het klimaat, en integratie, maar die thema's blijven veel minder belangrijk
+dan corona en de direct daaraan gerelateerde thema's.
+
+## Issue ownership
+
+```{r issue-owner}
+issues = get_codebook() %>% filter(variable == "C1") %>% select(C1=value, issue=wording) %>% mutate(issue=str_remove_all(issue, " *\\(.*"))
+parties = get_codebook() %>% filter(variable == "B2") %>% select(partynr=value, party=label) %>% mutate(party=str_remove_all(party, " *&.*"))
+selectedissues = issues$issue[c(1,10, 5, 18, 14, 11, 9, 12, 8, 15, 17, 6)]
+selectedparties = c("SP", "PvdA", "GroenLinks", "D66", "ChristenUnie", "CDA", "VVD", "PVV", "Forum voor Democratie")
+
+C = data$w0 %>% select(iisID, matches("C[12]_[12]_\\d+$")) %>% 
+  pivot_longer(-iisID) %>% 
+  separate(name, into=c("variable", "choice", "partynr")) %>% 
+  filter(!is.na(value), value!=20) %>% 
+  mutate(choice=as.numeric(choice), partynr=as.numeric(partynr)) %>%
+  inner_join(parties) %>% select(-partynr) %>% 
+  pivot_wider(names_from="variable") %>%
+  left_join(issues) %>% arrange(iisID, party, choice)
+
+C = left_join(resp, C) %>% select(-corona_policy, -vaccination) %>%
+  mutate(rile=case_when(is.na(rile_self) ~ NA_character_, rile_self < 5 ~ "links", rile_self > 6 ~ "rechts", T ~ "midden"))
+
+nn = length(C %>% filter(!is.na(C1)) %>% pull(iisID) %>% unique())
+aggr = C %>% group_by(party, issue) %>% summarize(n=n(), score=mean(C2, na.rm=T), perc=n/nn*100) %>% na.omit()
+
+aggr %>% filter(issue %in% selectedissues, party %in% selectedparties) %>% 
+ggplot(aes(x=fct_relevel(party, selectedparties), y=fct_relevel(issue, selectedissues), fill=n, label=round(perc))) + 
+  geom_tile() + geom_text(color="white") + theme_nrc() +
+ scale_fill_gradient(low="#e0e0e0", high="#01529d", guide = F)   + ggtitle("Worden partijen geassocieerd met een issue?", "(Percentage van respondenten die dat issue als eerste of tweede keus opgeeft)")
+```
+
+De tabel hierboven laats zien in hoeverre de verchillende issues worden geassocieerd met de politieke partijen.
+De theorie van 'issue ownership' zegt dat als een partij eigenaar is van een issue, 
+deze partij kan profiteren van nieuws over het issue. 
+Als mensen bijvoorbeeld veel nieuws over klimaatverandering krijgen,
+zullen zij dat onderwerp belangrijk vinden, en geneigd zijn te stemmen op een partij met een goede reputatie op dit thema,
+zoals GroenLinks. 
+
+In de tabel zien we dat SP en PvdA allebei geassocieerd wroden met de klassieke linkse thema's sociale zekerheid en werk en inkomen, en SP profileert zich daarnaast op gezondheidszorg.
+GroenLinks wordt veel minder met deze thema's geassocieerd, en wordt vooral gezien als de klimaatpartij.
+D66 heeft het minst uitgesproken profiel, met een  matige associate met zowel onderwijs als de EU. 
+De ChristenUnie lijkt het thema van Normen en Waarden grotendeels te hebben overgenomen van het CDA,
+die sterker geassocieerd wordt met het meer  klassiek rechtse thema van overheidsuitgaven en belasting.
+VVD heeft nog steeds een sterke associatie met zowel financien als ondernemingsklimaat, 
+maar wordt vooral heel sterk met het coronabeleid geassocieerd.
+
+Dan blijven over de PVV en FvD, die vooral met integratie worden geassocieerrd,
+en in mindere mate met vrijheid en de EU. 
+
+```{r issue-owner-agree}
+aggr %>% filter(issue %in% selectedissues, party %in% selectedparties, perc>10) %>% 
+ggplot(aes(x=fct_relevel(party, selectedparties), 
+           y=fct_relevel(issue, selectedissues), 
+           fill=score, label=round(score,1))) + 
+  geom_tile(aes(color=score), fill="white", color="white") +
+  geom_tile(aes(alpha=.25+4*(perc/100)**2), color="white",lwd=1) + 
+  geom_text(color="white") + theme_nrc() +
+  scale_fill_gradient2(midpoint=5.5, low=scales::muted("red"), mid="#d0d0d0", high="#01529d", guide=F) + 
+  scale_alpha_identity(guide=F) + 
+  ggtitle("Zijn respondenten het eens met de partij?", "(Rapportscores 0-10)")
+```
+
+Als kiezers een partij associeerden met een onderwerp hebben we vervolgens gevraagd of ze het hierop ook eens zijn met de partij.
+Dit is hierboven als rapportcijfer weergegeven, waarbij alleen cellen met een associatie van minimaal 10% worden weergegevn.
+
+Wat we hier zien is dat kiezers het zeer sterk eens zijn met de SP op het gebied van gezondheidszorg,
+terwijl de PVDD en  FvD slecht scoren op hun thema's. 
+De meeste andere partijen scoren voldoende tot ruim voldoende op hun eigen themas.
+
+Opvallend genoeg is met het met de VVD eigenlijk alleen eens op coronabeleid: hun meer 'rechtse' thema's leiden tot meer verdeeldheid, net als het thema EU voor D66.
+Ook opvallend is dat GroenLinks relatief slecht scoort op klimaatbeleid. 
+
+
