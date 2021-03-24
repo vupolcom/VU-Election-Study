@@ -2,7 +2,7 @@
 #DESCRIPTION: AmCAT issue and party counts
 #AUTHOR: Wouter van Atteveldt
 #DEPENDS: data/raw/partijen.csv data/raw/210320_v20.xlsx
-#CREATES: data/intermediate/VUElectionPanel2021_wave4.csv
+#CREATES: data/intermediate/amcat_hits.csv data/intermediate/amcat_meta.csv
 
 
 library(tidyverse)
@@ -39,6 +39,12 @@ rsplit = function(x) str_match(x, ".* (.*)")[,2]
 sets = c(Newspapers=2562, Online=2564, TV=2579)
 
 ## Metadata
+conn = amcatr::amcat.connect("https://vu.amcat.nl")
+
+brieven = amcat.hits(conn, sets=sets, project=69, 
+                     queries = 'title:brieven title:bbc title:"geachte redactie" title:"geachte lezer" title:lezersbrieven title:lezersreacties title:kruiswoord* title:tv-ladder tite:correctie')
+
+
 meta = purrr::map(sets, function(set) amcat.articles(conn, project=69, articleset=set, columns = c("date", "publisher"))) %>% 
   bind_rows(.id="mtype") %>% 
   as_tibble() %>%
@@ -46,6 +52,7 @@ meta = purrr::map(sets, function(set) amcat.articles(conn, project=69, articlese
   filter(date < "2021-03-18", date >= "2021-01-01") %>%
   anti_join(brieven)
 
+write_csv(meta, here("data/intermediate/amcat_meta.csv"))
 
 
 ## Build queries
@@ -60,8 +67,9 @@ queries = bind_rows(
 
 ## Get hits
 
-conn = amcatr::amcat.connect("https://vu.amcat.nl")
+hits = amcat.hits(conn, project=69, sets=c(2562, 2564, 2579), queries=queries$query, labels = queries$label)
+h = h %>% rename(label=query) %>% inner_join(queries) %>% select(id, cat, subcat, label, count) %>% semi_join(meta)
+write_csv(h, here("data/intermediate/amcat_hits_raw.csv"))
 
-h = amcat.hits(conn, project=69, sets=c(2562, 2564, 2579), queries=queries$query, labels = queries$label)
-
-
+cats  = h %>% select(id, cat, subcat) %>% unique() %>% inner_join(meta) 
+write_csv(cats, here("data/intermediate/amcat_hits.csv"))

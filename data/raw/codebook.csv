@@ -184,45 +184,114 @@ G1,1,,2,0,How the VVD has ruled the past 4 years,Hoe de VVD de afgelopen 4 jaar 
 G1,1,,3,0,How the CDA has ruled the past 4 years,Hoe het CDA de afgelopen 4 jaar heeft geregeerd
 G1,1,,4,0,How D66 has ruled the past 4 years,Hoe D66 de afgelopen 4 jaar heeft geregeerd
 G1,1,,5,0,How the Christian Union has ruled in the past 4 years,Hoe de ChristenUnie de afgelopen 4 jaar heeft geregeerd
-G2,1,,1,0,Wopke Hoekstra,Wopke Hoekstra
-G2,1,,2,0,Gert-Jan Segers,Gert-Jan Segers
-G2,1,,3,0,Sigrid Kaag,Sigrid Kaag
-G2,1,,4,0,Farid Azarkan,Farid Azarkan
-G2,1,,5,0,Thierry Baudet,Thierry Baudet
-G2,1,,6,0,Jesse Klaver,Jesse Klaver
-G2,1,,7,0,Lodewijk Asscher,Lodewijk Asscher
-G2,1,,8,0,Esther Ouwehand,Esther Ouwehand
-G2,1,,9,0,Geert Wilders,Geert Wilders
-G2,1,,10,0,Kees van der Staaij,Kees van der Staaij
-G2,1,,11,0,Lilian Marijnissen,Lilian Marijnissen
-G2,1,,12,0,Mark Rutte,Mark Rutte
-G2,1,,13,0,Liane den Haan,Liane den Haan
-G3,1,,1,0,Wopke Hoekstra,Wopke Hoekstra
-G3,1,,2,0,Gert-Jan Segers,Gert-Jan Segers
-G3,1,,3,0,Sigrid Kaag,Sigrid Kaag
-G3,1,,4,0,Farid Azarkan,Farid Azarkan
-G3,1,,5,0,Thierry Baudet,Thierry Baudet
-G3,1,,6,0,Jesse Klaver,Jesse Klaver
-G3,1,,7,0,Lodewijk Asscher,Lodewijk Asscher
-G3,1,,8,0,Esther Ouwehand,Esther Ouwehand
-G3,1,,9,0,Geert Wilders,Geert Wilders
-G3,1,,10,0,Kees van der Staaij,Kees van der Staaij
-G3,1,,11,0,Lilian Marijnissen,Lilian Marijnissen
-G3,1,,12,0,Mark Rutte,Mark Rutte
-G3,1,,13,0,Liane den Haan,Liane den Haan
-G4,1,,1,0,Wopke Hoekstra,Wopke Hoekstra
-G4,1,,2,0,Gert-Jan Segers,Gert-Jan Segers
-G4,1,,3,0,Sigrid Kaag,Sigrid Kaag
-G4,1,,4,0,Farid Azarkan,Farid Azarkan
-G4,1,,5,0,Thierry Baudet,Thierry Baudet
-G4,1,,6,0,Jesse Klaver,Jesse Klaver
-G4,1,,7,0,Lodewijk Asscher,Lodewijk Asscher
-G4,1,,8,0,Esther Ouwehand,Esther Ouwehand
-G4,1,,9,0,Geert Wilders,Geert Wilders
-G4,1,,10,0,Kees van der Staaij,Kees van der Staaij
-G4,1,,11,0,Lilian Marijnissen,Lilian Marijnissen
-G4,1,,12,0,Mark Rutte,Mark Rutte
-G4,1,,13,0,Liane den Haan,Liane den Haan
+G2,1,,1,,Wopke Hoekstra,Wopke Hoekstra
+G2,1,,2,,Lodewijk Asscher,Lodewijk Asscher
+G2,1,,3,,Lilian Marijnissen,Lilian Marijnissen
+G2,1,,4,,Mark Rutte,Mark Rutte
+G2,1,,5,,Geert Wilders,Geert Wilders
+G2,1,,6,,Jesse Klaver,Jesse Klaver
+G2,1,,7,,Gert-Jan Segers,Gert-Jan Segers
+G2,1,,8,,Sigrid Kaag,Sigrid Kaag
+G2,1,,9,,Esther Ouwehand,Esther Ouwehand
+G2,1,,10,,Kees van der Staaij,Kees van der Staaij
+G2,1,,11,,Farid Azarkan,Farid Azarkan
+G2,1,,12,,Liane den Haan,Liane den Haan
+G2,1,,13,,Thierry Baudet,Thierry Baudet
+G2,1,,14,,Lilian Ploumen,Lilian Ploumen
+G2,1,,15,,Sylvana Simons,Sylvana Simons
+G2,1,,16,,Laurens Dassen,Laurens Dassen
+G2,1,,17,,Joost Eerdmans,Joost Eerdmans
+G2,1,,19,,Caroline van der Plas,Caroline van der Plas
+G3,1,,1,,Wopke Hoekstra,Wopke Hoekstra
+G3,1,,2,,Lodewijk Asscher,Lodewijk Asscher
+G3,1,,3,,Lilian Marijnissen,Lilian Marijnissen
+G3,1,,4,,Mark Rutte,Mark Rutte
+G3,1,,5,,Geert Wilders,Geert Wilders
+G3,1,,6,,Jesse Klaver,Jesse Klaver
+G3,1,,7,,Gert-Jan Segers,Gert-Jan Segers
+G3,1,,8,,Sigrid Kaag,Sigrid Kaag
+G3,1,,9,,Esther Ouwehand,Esther Ouwehand
+G3,1,,10,,Kees van der Staaij,Kees van der Staaij
+G3,1,,11,,Farid Azarkan,Farid Azarkan
+G3,1,,12,,Liane den Haan,Liane den Haan
+G3,1,,13,,Thierry Baudet,Thierry Baudet
+G3,1,,14,,Lilian Ploumen,Lilian Ploumen
+G3,1,,15,,Sylvana Simons,Sylvana Simons
+G3,1,,16,,Laurens Dassen,Laurens Dassen
+G3,1,,17,,Joost Eerdmans,Joost Eerdmans
+G3,1,,19,,Caroline van der Plas,Caroline van der Plas
+G4,1,,1,,Wopke Hoekstra,Wopke Hoekstra
+G4,1,,2,,Lodewijk Asscher,Lodewijk Asscher
+G4,1,,3,,Lilian Marijnissen,Lilian Marijnissen
+G4,1,,4,,Mark Rutte,Mark Rutte
+G4,1,,5,,Geert Wilders,Geert Wilders
+G4,1,,6,,Jesse Klaver,Jesse Klaver
+G4,1,,7,,Gert-Jan Segers,Gert-Jan Segers
+G4,1,,8,,Sigrid Kaag,Sigrid Kaag
+G4,1,,9,,Esther Ouwehand,Esther Ouwehand
+G4,1,,10,,Kees van der Staaij,Kees van der Staaij
+G4,1,,11,,Farid Azarkan,Farid Azarkan
+G4,1,,12,,Liane den Haan,Liane den Haan
+G4,1,,13,,Thierry Baudet,Thierry Baudet
+G4,1,,14,,Lilian Ploumen,Lilian Ploumen
+G4,1,,15,,Sylvana Simons,Sylvana Simons
+G4,1,,16,,Laurens Dassen,Laurens Dassen
+G4,1,,17,,Joost Eerdmans,Joost Eerdmans
+G4,1,,19,,Caroline van der Plas,Caroline van der Plas
+G5,1,,1,,Wopke Hoekstra,Wopke Hoekstra
+G5,1,,2,,Lodewijk Asscher,Lodewijk Asscher
+G5,1,,3,,Lilian Marijnissen,Lilian Marijnissen
+G5,1,,4,,Mark Rutte,Mark Rutte
+G5,1,,5,,Geert Wilders,Geert Wilders
+G5,1,,6,,Jesse Klaver,Jesse Klaver
+G5,1,,7,,Gert-Jan Segers,Gert-Jan Segers
+G5,1,,8,,Sigrid Kaag,Sigrid Kaag
+G5,1,,9,,Esther Ouwehand,Esther Ouwehand
+G5,1,,10,,Kees van der Staaij,Kees van der Staaij
+G5,1,,11,,Farid Azarkan,Farid Azarkan
+G5,1,,12,,Liane den Haan,Liane den Haan
+G5,1,,13,,Thierry Baudet,Thierry Baudet
+G5,1,,14,,Lilian Ploumen,Lilian Ploumen
+G5,1,,15,,Sylvana Simons,Sylvana Simons
+G5,1,,16,,Laurens Dassen,Laurens Dassen
+G5,1,,17,,Joost Eerdmans,Joost Eerdmans
+G5,1,,19,,Caroline van der Plas,Caroline van der Plas
+G6,1,,1,,Wopke Hoekstra,Wopke Hoekstra
+G6,1,,2,,Lodewijk Asscher,Lodewijk Asscher
+G6,1,,3,,Lilian Marijnissen,Lilian Marijnissen
+G6,1,,4,,Mark Rutte,Mark Rutte
+G6,1,,5,,Geert Wilders,Geert Wilders
+G6,1,,6,,Jesse Klaver,Jesse Klaver
+G6,1,,7,,Gert-Jan Segers,Gert-Jan Segers
+G6,1,,8,,Sigrid Kaag,Sigrid Kaag
+G6,1,,9,,Esther Ouwehand,Esther Ouwehand
+G6,1,,10,,Kees van der Staaij,Kees van der Staaij
+G6,1,,11,,Farid Azarkan,Farid Azarkan
+G6,1,,12,,Liane den Haan,Liane den Haan
+G6,1,,13,,Thierry Baudet,Thierry Baudet
+G6,1,,14,,Lilian Ploumen,Lilian Ploumen
+G6,1,,15,,Sylvana Simons,Sylvana Simons
+G6,1,,16,,Laurens Dassen,Laurens Dassen
+G6,1,,17,,Joost Eerdmans,Joost Eerdmans
+G6,1,,19,,Caroline van der Plas,Caroline van der Plas
+G7,1,,1,,Wopke Hoekstra,Wopke Hoekstra
+G7,1,,2,,Lodewijk Asscher,Lodewijk Asscher
+G7,1,,3,,Lilian Marijnissen,Lilian Marijnissen
+G7,1,,4,,Mark Rutte,Mark Rutte
+G7,1,,5,,Geert Wilders,Geert Wilders
+G7,1,,6,,Jesse Klaver,Jesse Klaver
+G7,1,,7,,Gert-Jan Segers,Gert-Jan Segers
+G7,1,,8,,Sigrid Kaag,Sigrid Kaag
+G7,1,,9,,Esther Ouwehand,Esther Ouwehand
+G7,1,,10,,Kees van der Staaij,Kees van der Staaij
+G7,1,,11,,Farid Azarkan,Farid Azarkan
+G7,1,,12,,Liane den Haan,Liane den Haan
+G7,1,,13,,Thierry Baudet,Thierry Baudet
+G7,1,,14,,Lilian Ploumen,Lilian Ploumen
+G7,1,,15,,Sylvana Simons,Sylvana Simons
+G7,1,,16,,Laurens Dassen,Laurens Dassen
+G7,1,,17,,Joost Eerdmans,Joost Eerdmans
+G7,1,,19,,Caroline van der Plas,Caroline van der Plas
 H3,0,corona_policy,1,0,"Much stricter measures to combat the virus (curfew, area ban).","Veel strengere maatregelen om het virus tegen te gaan (avondklok, gebiedsverbod)."
 H3,0,,2,0,Slightly stricter measures to prevent viruses.,Iets strengere maatregelen om virus tegen te gaan.
 H3,0,,3,0,The measures chosen by the government.,De maatregelen die de regering gekozen heeft.

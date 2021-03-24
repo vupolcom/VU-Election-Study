@@ -104,7 +104,7 @@ load_survey = function(survey_id) {
   d <- fetch_survey(surveyID = survey_id, 
                     verbose = TRUE, force_request = T,
                     label = FALSE, convert = FALSE)
-  
+  column_map = attributes(d)$column_map
   if (!"consent1" %in% colnames(d) & "constent1" %in% colnames(d)) d = d %>% rename(consent1=constent1)
   if (!"consent2" %in% colnames(d)) d = d %>% add_column(consent2=1)
   #only keep people that have given consent, are not admin or 007/009, and have filled in A1
@@ -129,6 +129,7 @@ load_survey = function(survey_id) {
     d = d %>% arrange(iisID, desc(RecordedDate)) %>% group_by(iisID) %>% 
       group_by(iisID) %>% summarize(across(everything(), first_non_missing))
   }
+  attr(d,"column_map") = column_map
   d
 }
 
@@ -257,14 +258,12 @@ clean_F = function(d) {
 
 #' Clean block G: Leader evaluations
 clean_G = function(d) {
-  rename_G = function(x){
-    names = str_split_fixed(x, "_", 2)
-    names[,2] = as.numeric(names[,2]) - 3
-    str_c(names[,1], names[,2], sep="_")
-  }  
+  #' Replace Gn_4 ... Gn_17 by Gn_1..Gn_14
+  rename_G = function(x) str_replace(x, '([0-9]+)$', function(x) as.numeric(x)-3)
+  
   G_eval = d %>% select(iisID, matches("^G_eval")) %>% mutate(across(-iisID, ~recode(., `1` = 1, `4` = 0)))
   G2_order = d %>% select(iisID, matches("^G2_DO_")) %>% unite(order_G2, -iisID, sep="|")
-  G234 = d %>% select(iisID, matches("^G[234]_\\d+$")) %>% rename_with(rename_G, .cols=-iisID) %>%  mutate(across(-iisID, ~.*2)) 
+  G234 = d %>% select(iisID, matches("^G[234567]_\\d+$")) %>% rename_with(rename_G, .cols=-iisID) %>%  mutate(across(-iisID, ~.*2)) 
   d %>% select(iisID, matches("^G1_b$|^G1_\\d")) %>%  # only present in first wave
     full_join(G_eval, by="iisID") %>% 
     full_join(G2_order, by="iisID") %>% 
