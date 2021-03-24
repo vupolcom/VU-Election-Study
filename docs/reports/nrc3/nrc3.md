@@ -1,6 +1,6 @@
 ---
 title: 'Media Visibility and Electoral shifts'
-author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas"
+author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas, Anita van Hoof, Jan Kleinnijenhuis, Loes Aaldering"
 permalink: reports/nrc3/
 output: 
   md_document:
@@ -71,10 +71,6 @@ Leiderschap
 
 ![](leadershipw4-1.png)
 
-    ## <ScaleContinuous>
-    ##  Range:  
-    ##  Limits:    0 --    1
-
 Bovenstaand figuur geeft aan hoe de verschillende lijsttrekkers als
 leider worden geevalueerd. Wellicht opvallende eerste is Marijnissen,
 gevolgd door Rutte en Kaag Opvallend genoeg scoort Rutte het beste op
@@ -93,51 +89,6 @@ leiderschap.
 ![](leadershipchange-1.png)
 
 ![](leadership-diff-1.png)
-
-    ## <ggproto object: Class ScaleDiscrete, Scale, gg>
-    ##     aesthetics: shape
-    ##     axis_order: function
-    ##     break_info: function
-    ##     break_positions: function
-    ##     breaks: waiver
-    ##     call: call
-    ##     clone: function
-    ##     dimension: function
-    ##     drop: TRUE
-    ##     expand: waiver
-    ##     get_breaks: function
-    ##     get_breaks_minor: function
-    ##     get_labels: function
-    ##     get_limits: function
-    ##     guide: FALSE
-    ##     is_discrete: function
-    ##     is_empty: function
-    ##     labels: waiver
-    ##     limits: NULL
-    ##     make_sec_title: function
-    ##     make_title: function
-    ##     map: function
-    ##     map_df: function
-    ##     n.breaks.cache: NULL
-    ##     na.translate: TRUE
-    ##     na.value: NA
-    ##     name: waiver
-    ##     palette: function
-    ##     palette.cache: NULL
-    ##     position: left
-    ##     range: <ggproto object: Class RangeDiscrete, Range, gg>
-    ##         range: NULL
-    ##         reset: function
-    ##         train: function
-    ##         super:  <ggproto object: Class RangeDiscrete, Range, gg>
-    ##     rescale: function
-    ##     reset: function
-    ##     scale_name: shape_d
-    ##     train: function
-    ##     train_df: function
-    ##     transform: function
-    ##     transform_df: function
-    ##     super:  <ggproto object: Class ScaleDiscrete, Scale, gg>
 
 Bovenstaande figuren geven aan hoe tijdens de campagne
 leiderschapsevaluaties zijn verschoven. Omdat niet aan het begin van de
