@@ -1,5 +1,5 @@
 ---
-title: 'Media Visibility and Electoral shifts'
+title: 'Tweede Kamerverkiezingen 2021: Analyse'
 author: "Wouter van Atteveldt, Mariken van der Velden, Andreu Casas, Anita van Hoof, Jan Kleinnijenhuis, Loes Aaldering"
 permalink: reports/nrc3/
 output: 
