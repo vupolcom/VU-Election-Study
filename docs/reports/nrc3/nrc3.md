@@ -9,6 +9,92 @@ editor_options:
   chunk_output_type: console
 ---
 
+Onze analyse van de verkiezingen van 2021
+=========================================
+
+Als we naar de uitslag van de Tweede Kamerverkiezingen van 2021 kijken
+dan vallen drie zaken op: de winst van het ‘liberale midden’ van D66 en
+VVD; tegelijkertijd de winst van het ‘radicaal rechts’ van PVV, FvD, en
+JA21; en het verlies van de linkse partijen PvdA, SP, en GroenLinks.
+
+De oorzaak hiervan kan voor een groot deel gevonden worden in de
+effecten van de coronacrisis op de politiek en campagne. Uit onze
+analyse van [aandacht voor issues]() blijkt dat tot vlak voor de
+verkiezingen de coronacrisis zelf en de gevolgen voor economie en zorg
+de agenda domineren. VVD is [blijkens onze respondenten]() duidelijk
+issue-eigenaar van zowel de bestrijding van de pandemie, en kan hierdoor
+sterk profiteren van de premiersbonus.
+
+Hierin kan ook een verklaring gevonden worden voor het verlies van de
+linkse partijen: vergeleken met eerdere jaren was er in deze campagne
+relatief weinig politiek conflict. Vooraf had men kunnen verwachten dat
+de toeslagenaffaire een groot issue zou worden, maar het is de oppositie
+niet gelukt om de VVD hierop effectief aan te vallen, wellicht ook deels
+omdat de PvdA zelf ook betrokken was bij de affaire. Ook op het vlak van
+de coronamaatregelen of het eerdere zorgbeleid waardoor Nederland minder
+goed leek voorbereid op de crisis dan bijvoorbeeld Duitsland is het de
+oppositie niet gelukt om een vuist te maken tegen de VVD.
+
+In zekere zin leek SP aan het begin van de campagne sterke kaarten te
+hebben, met een duidelijk profiel op zowel zorg als sociale zekerheid,
+zonder zelf verantwoordelijkheid te hebben gedragen voor die thema’s.
+Ook de [leider van de SP wordt door onze respondent het meest positief
+beoordeeld](). Het is echter niet gelukt deze kaarten uit te spelen
+omdat VVD op geen enkel moment gedwongen werd om het conflict aan te
+gaan. Dit komt deels omdat het versnipperde links geen duidelijk gedeeld
+programma neer kon zetten, en deels omdat de campagne beheerst werd door
+een consensus over het primarire probleem (corona) en de primaire
+oplossingen (lockdown, vaccinatie, en steun). Hierdoor kwam er nooit een
+echte politieke strijd tussen een liberale en sociaaldemocratische visie
+op de problemen in het verleden (toeslagenaffaire, corona) en hoe
+Nederland nu sterk uit de crisis kan komen.
+
+Een ander gevolg van deze haast gedepolitiseerde campagne was een
+afkalvende aandacht van het electoraat. Waar het [mediagebruik van
+kiezers]() in de eerste weken nog toenam, zakte dat vanaf begin maart
+in. Kennelijk waren kiezers uitgekeken op deze campagne, wat koploper
+VVD ook ten goede kwam.
+
+Als we naar het midden kijken, dan is het opvallend dat naast VVD ook
+D66 kon winnen, terwijl CDA juist behoorlijk sterk achteruit ging.
+Hiervoor zijn twee oorzaken aan te wijzen. Ten eerste slaagde D66 erin
+om zich als een progressiever altenatief voor de VVD neer te zetten,
+waardoor het zowel (centrum)rechtse als linkse kiezers kon aantrekken.
+Deze winst is eigenlijk geheel tijdens de campagne geboekt, zoals blijkt
+uit onze analyse van de [vershuivingen van
+stemvoorkeur](#verschuivingen-in-de-publieke-opinie) tussen 2017, het
+begin van de campagne, en de uiteindelijke stem.
+
+Ten tweede was er het verschil tussen de lijsttrekkers. Waar Hoekstra
+vanaf het begin kritiek kreeg vanwege onhandige uitspraken en slechte
+dossierkennis, kwam Kaag juist heel positief voor het voetlicht. Dat
+zien we ook duidelijk terug in de [leidserschapsevaluaties](), waar
+Hoekstra aan het begin van de campagne ruim voorstaat op Kaag, maar
+uiteindelijk overtuigend door haar wordt overtroffen.
+
+Dan blijft over de opkomst van radicaal rechts, vooral de winst van FvD
+na de eerdere problemen in die partij en de afsplitsing van JA21.
+Alhoewel deze partij relatief zeer zichtbaar is vergeleken met hun
+zetelaantal, blijven ze in [onze analyse van zichtbarheid van
+partijen]() toch ruim achter op de coalitieparijten VVD, CDA en D66. Ook
+de thema’s waar PVV en FvD het traditioneel goed op doen (immigratie en
+de EU) komen nauwelijks aan bod. Ten slotte wordt Baudet als leider zeer
+slecht geevalueerd, is de gemiddelde kiezer het grotendeels oneens met
+zijn standpunten, en worden ook zijn media-optredens heel slecht
+gewaardeerd.
+
+De oplossing van dit raadsel zit er vermoedelijk in dat hij zich niet
+richt op de ‘gemiddelde’ kiezer, die relatief mainstream politiek nieuws
+volgt en nog relatief veel [vertrouwen in de democratie, rechtstaat en
+wetenschap]() heeft. We zien dat juist [op social media]() FvD en in
+mindere mate PVV het heel goed doet. Ook deelt FvD bijna als enige
+partij niet in de algemene consensus van de gedepolitiseerde campagne,
+maar zijn zij juist tegen de huidige maatregelen en twijfelen ze aan de
+wetenschap achter corona an vaccinatie. Hierdoor waren zij toch in staat
+succes te boeken ondanks de ogenschijnlijk slechte uitgangspositie.
+
+Lees hieronder onze uitgebreide rapportage:
+
 Verschuivingen in de Publieke Opinie
 ====================================
 
