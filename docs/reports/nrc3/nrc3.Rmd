@@ -51,9 +51,9 @@ Als we naar de uitslag van de Tweede Kamerverkiezingen van 2021 kijken dan valle
 tegelijkertijd de winst van het 'radicaal rechts' van PVV, FvD, en JA21; en het verlies van de linkse partijen PvdA, SP, en GroenLinks. 
 
 De oorzaak hiervan kan voor een groot deel gevonden worden in de effecten van de coronacrisis op de politiek en campagne.
-Uit onze analyse van [aandacht voor issues]() blijkt dat tot vlak voor de verkiezingen de coronacrisis zelf en de 
+Uit onze analyse van [aandacht voor issues](#issues) blijkt dat tot vlak voor de verkiezingen de coronacrisis zelf en de 
 gevolgen voor economie en zorg de agenda domineren. 
-VVD is [blijkens onze respondenten]() duidelijk issue-eigenaar van zowel de bestrijding van de pandemie, 
+VVD is [blijkens onze respondenten](#issue-ownership) duidelijk issue-eigenaar van zowel de bestrijding van de pandemie, 
 en kan hierdoor sterk profiteren van de premiersbonus. 
 
 Hierin kan ook een verklaring gevonden worden voor het verlies van de linkse partijen:
@@ -67,7 +67,7 @@ is het de oppositie niet gelukt om een vuist te maken tegen de VVD.
 In zekere zin leek SP aan het begin van de campagne sterke kaarten te hebben,
 met een duidelijk profiel op zowel zorg als sociale zekerheid,
 zonder zelf verantwoordelijkheid te hebben gedragen voor die thema's.
-Ook de [leider van de SP wordt door onze respondent het meest positief beoordeeld]().
+Ook de [leider van de SP wordt door onze respondent het meest positief beoordeeld](#leiderschap).
 Het is echter niet gelukt deze kaarten uit te spelen omdat VVD op geen enkel moment gedwongen werd 
 om het conflict aan te gaan.
 Dit komt deels omdat het versnipperde links geen duidelijk gedeeld programma neer kon zetten,
@@ -76,7 +76,7 @@ Hierdoor kwam er nooit een echte politieke strijd tussen een liberale en sociaal
 en hoe Nederland nu sterk uit de crisis kan komen.
 
 Een ander gevolg van deze haast gedepolitiseerde campagne was een afkalvende aandacht van het electoraat. 
-Waar het [mediagebruik van kiezers]() in de eerste weken nog toenam, 
+Waar het [mediagebruik van kiezers](#mediagebruik-van-kiezers) in de eerste weken nog toenam, 
 zakte dat vanaf begin maart in. 
 Kennelijk waren kiezers uitgekeken op deze campagne, wat koploper VVD ook ten goede kwam. 
 
@@ -91,25 +91,24 @@ Deze winst is eigenlijk geheel tijdens de campagne geboekt, zoals blijkt uit onz
 Ten tweede was er het verschil tussen de lijsttrekkers.
 Waar Hoekstra vanaf het begin kritiek kreeg vanwege onhandige uitspraken en slechte dossierkennis,
 kwam Kaag juist heel positief voor het voetlicht.
-Dat zien we ook duidelijk terug in de [leidserschapsevaluaties](), waar 
+Dat zien we ook duidelijk terug in de [leidserschapsevaluaties](#leiderschap), waar 
 Hoekstra aan het begin van de campagne ruim voorstaat op Kaag, maar uiteindelijk overtuigend door haar wordt overtroffen. 
 
 Dan blijft over de opkomst van radicaal rechts, vooral de winst van FvD na de eerdere problemen in die partij en de afsplitsing van JA21.
-Alhoewel deze partij relatief zeer zichtbaar is vergeleken met hun zetelaantal, blijven ze in [onze analyse van zichtbarheid van partijen]() 
+Alhoewel deze partij relatief zeer zichtbaar is vergeleken met hun zetelaantal, blijven ze in [onze analyse van zichtbarheid van partijen](#zichtbaarheid-van-de-partijen-en-lijsttrekkers) 
 toch ruim achter op de coalitieparijten VVD, CDA en D66. 
 Ook de thema's waar PVV en FvD het traditioneel goed op doen (immigratie en de EU) komen nauwelijks aan bod. 
 Ten slotte wordt Baudet als leider zeer slecht geevalueerd, is de gemiddelde kiezer het grotendeels oneens met zijn standpunten,
 en worden ook zijn media-optredens heel slecht gewaardeerd. 
 
 De oplossing van dit raadsel zit er vermoedelijk in dat hij zich niet richt op de 'gemiddelde' kiezer,
-die relatief mainstream politiek nieuws volgt en nog relatief veel [vertrouwen in de democratie, rechtstaat en wetenschap]() heeft.
-We zien dat juist [op social media]() FvD en in mindere mate PVV het heel goed doet.
+die relatief mainstream politiek nieuws volgt en nog relatief veel [vertrouwen in de democratie, rechtstaat en wetenschap](#institutioneel-vertrouwen) heeft.
+We zien dat juist [op social media](#zichtbaarheid-op-social-media) FvD en in mindere mate PVV het heel goed doet.
 Ook deelt FvD bijna als enige partij niet in de algemene consensus van de gedepolitiseerde campagne, 
 maar zijn zij juist tegen de huidige maatregelen en twijfelen ze aan de wetenschap achter corona an vaccinatie.
 Hierdoor waren zij toch in staat succes te boeken ondanks de ogenschijnlijk slechte uitgangspositie. 
 
-Lees hieronder onze uitgebreide rapportage:
-
+Lees hieronder onze uitgebreide rapportage.
 
 # Verschuivingen  in de Publieke Opinie
 
@@ -142,7 +141,7 @@ ggplot(aes(y = n,  axis1 = k17, axis2 = w0, axis3 = w4)) +
 ## De stoelendans op links
 
 ```{r sankey-links}
-sankey(c("D66", "?", "PvdA", "GL", "SP", "PvdD"), threshold=1)
+sankey(c("D66", "?", "PvdA", "GL", "SP", "PvdD"), threshold=2)
 ```
 
 De figuur hierboven laat zien hoe kiezers zijn verschoven tussen de verleden verkiezingen (onder), het begin van de campagne (midden), en de stem in 2021 (boven).
@@ -156,7 +155,7 @@ Verder zijn er vooral veel uitwisselingen tussen de verschillende linkse partije
 ## Verschuivingen op rechts
 
 ```{r sankey-rechts}
-sankey(c( "FvD","PVV", "JA21", "VVD", "?", "CDA", "D66", "Other"), threshold=1)
+sankey(c( "FvD","PVV", "JA21", "VVD", "?", "CDA", "D66", "Other"), threshold=2)
 ```
 
 Ook op rechts (met wederom ook D66 meegenomen) zijn een aantal beweingen duidelijk zichtbaar. 
@@ -169,7 +168,7 @@ Ook duidelijk is dat FvD na de perikelen rond de appjes en de afsplitsing van JA
 uiteindelijk vooral bij de PVV zijn uitgekomen. 
 Tegelijkertijd zijn veel PVV stemmers juist naar FvD gewisseld. 
 
-## Institutioneel Vertrouwem
+## Institutioneel Vertrouwen
 
 ```{r long}
 w0l = extract_long(data$w0)
@@ -338,6 +337,44 @@ omdat er meer nieuws is waar verschillende partijen genoemd worden.
 Vooral de partijen PVV en FvD lijken hier sterk van te profiteren, vooral op TV doen zij het relatief goed,
 ook al moeten ze hier ook de coalitiepartijen voor laten gaan. 
 Verder is de rangorde aan het eind van de campagne niet wezenlijk anders dan aan het begin. 
+
+## Zichtbaarheid op social media
+
+```{r socmed}
+smparties = c(FvD="black", PVV="darkblue", VVD="blue", GL="green", SP="darkred", BBB="#bbbb00", BIJ1="yellow", DENK="#3ac0c3")
+            #d66="lightgreen", CDA="darkgreen")
+
+
+sm = read_csv(here("data/raw/socialmedia.csv"))%>% 
+  mutate(party=str_match(name, "\\((.*)\\)")[,2],
+              variable=str_remove(variable, "Number of ")) %>% 
+  select(platform, variable, party, date=day_only, value) %>% 
+  mutate(week = lubridate::floor_date(date, "week", week_start=4),
+         mtype=ifelse(variable=="Messages", "Activity", "Engagement")) %>%
+  filter(date < "2021-03-18", date > "2021-01-06")
+sma = sm %>% group_by(week, party, mtype) %>% summarize(value=sum(value)) 
+sma2 = sma %>% filter(party %in% names(smparties)) 
+ggplot(sma2, aes(x=week, y=value, color=party, label=party)) + 
+  geom_line() +
+  ggrepel::geom_label_repel(data=filter(sma2, week=="2021-03-11")) + 
+  facet_wrap("mtype", scale="free") + 
+  scale_color_manual(values=smparties, guide=F) + 
+  theme_nrc()
+```
+
+Bovenstaande figuren geven de activity en engagement van de partijen op sociale media (twitter, instagram en Facebook),
+waarbij activity het aantal eigen posts van de offiele accounts van de partij en lijsttrekker zijn,
+en engagement de hoeveelheid share, likes, en mentions. 
+Hierbij zijn alleen de partijen meegenomen die in de top-5 van ofwel activity of engagement staan.
+
+Wat we hier zien is dat de aandacht totaal anders is dan op traditionele media. 
+Alhoewel alle partijen aandacht besteden aan sociale media, zijn FvD en de nieuwe partijen BBB en BIJ1
+veel actiever. 
+Bij VVD zien we zelfs een afname tijdes de campagne. 
+
+Op egagement zien we dat de inspanningen van BIJ1 en BB1 wellicht niet het gewenste effect hebben gehad:
+PVV en FvD zijn veel succesvoller in het aanzetten van hun volgers tot het liken, sharen, of noemen van posts.
+Alleen VVD slaagt er in het begin nog in om een zekere reuring te krijgen, maar in de campagne zelf zijn ze eigenlijk onzichtbaar. 
 
 ## Mediagebruik van kiezers
 
