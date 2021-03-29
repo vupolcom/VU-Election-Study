@@ -213,7 +213,7 @@ lijsttrekkers Ouwehand, Kaag, en Marijnissen. Ook voor Wilders’
 beoordeling als leider was de campagne positief, alhoewel hij (evenals
 Ouwehand) nog steeds relatief laag scoort.
 
-Rutte’s leiederschap heeft geen baat gehad bijde campagne, evanals
+Rutte’s leiederschap heeft geen baat gehad bijde campagne, evenals
 Klaver en Ploemen heeft men vooral weinig vertrouwen dat zij weten wat
 er leeft. Grote verliezer is echter Hoekstra, die op alle eigenschappen
 een forse veer moet laten.
@@ -288,8 +288,8 @@ Zichtbaarheid volgens de kiezers
 
 ![](notice-1.png)
 
-\[Download data: [Zijn kandidate
-opgevallen](Zijn_kandidate_opgevallen.csv)\]
+\[Download data: [Zijn kandidaten
+opgevallen](Zijn_kandidaten_opgevallen.csv)\]
 
 Bovenstaande figuur laat aan de linkerkant zien in hoeverre de
 verschillende partijen (en hun lijsttrekkers) de kiezer zijn opgevallen
@@ -350,7 +350,7 @@ associatie met zowel financien als ondernemingsklimaat, maar wordt
 vooral heel sterk met het coronabeleid geassocieerd.
 
 Dan blijven over de PVV en FvD, die vooral met integratie worden
-geassocieerrd, en in mindere mate met vrijheid en de EU.
+geassocieerd, en in mindere mate met vrijheid en de EU.
 
 ![](issue-owner-agree-1.png)
 
