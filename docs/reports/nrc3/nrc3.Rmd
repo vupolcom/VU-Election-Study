@@ -83,7 +83,7 @@ Hiervoor zijn twee oorzaken aan te wijzen.
 Ten eerste slaagde D66 erin om zich als een progressiever altenatief voor de VVD neer te zetten,
 waardoor het zowel (centrum)rechtse als linkse kiezers kon aantrekken.
 Deze winst is eigenlijk geheel tijdens de campagne geboekt, zoals blijkt uit onze analyse van de 
-[vershuivingen van stemvoorkeur](#verschuivingen-in-de-publieke-opinie) tussen 2017, het begin van de campagne, en de uiteindelijke stem. 
+[verschuivingen van stemvoorkeur](#verschuivingen-in-de-publieke-opinie) tussen 2017, het begin van de campagne, en de uiteindelijke stem. 
 
 Ten tweede was er het verschil tussen de lijsttrekkers.
 Waar Hoekstra vanaf het begin kritiek kreeg vanwege onhandige uitspraken en slechte dossierkennis,
@@ -291,7 +291,7 @@ ggplot(d, aes(x=fct_reorder(name, diff), y=diff, color=attribute)) +
   geom_segment(data=filter(d, attribute=="Sympathiek"), aes(y=0, yend=diff, xend=name), position=position_nudge(x=0), arrow=arrow(ends="last", length=unit(0.25, "cm"))) + 
   geom_segment(data=filter(d, attribute=="Integer"), aes(y=0, yend=diff, xend=name), position=position_nudge(x=-0.175), arrow=arrow(ends="last", length=unit(0.25, "cm"))) + 
   
-  coord_flip() + theme_nrc() + ggtitle("Leiderschap van de verschillende kandidaten (vershuiving)") +
+  coord_flip() + theme_nrc() + ggtitle("Leiderschap van de verschillende kandidaten (verschuiving)") +
   geom_hline(yintercept=0, lty=2, color="grey") + ylim(c(-1,1))
 
 ```
@@ -304,11 +304,11 @@ Omdat niet aan het begin van de campagne duidelijk was welke partijen in de kame
 zijn in de eerste enquete alleen de lijsttrekkers meegenomen van partijen met zetels in de vorige Tweede Kamer. 
 Ook zijn vooraf alleen de eigenschappen integriteit (rood), sympathie (groen) en 'weet wat er leeft' (blauw) gevraagd. 
 
-Bij veel leiders is de vershuiving tijdens de campagne beperkt tot minder dan een half "rapportpunt".
+Bij veel leiders is de verschuiving tijdens de campagne beperkt tot minder dan een half "rapportpunt".
 Grote stijgers zijn de vrouwelijke lijsttrekkers Ouwehand, Kaag, en Marijnissen.
 Ook voor Wilders' beoordeling als leider was de campagne positief, alhoewel hij (evenals Ouwehand) nog steeds relatief laag scoort.
 
-Rutte's leiederschap heeft geen baat gehad bijde campagne, evanals Klaver en Ploemen heeft men vooral weinig vertrouwen dat zij weten wat er leeft.
+Rutte's leiederschap heeft geen baat gehad bijde campagne, evenals Klaver en Ploemen heeft men vooral weinig vertrouwen dat zij weten wat er leeft.
 Grote verliezer is echter Hoekstra, die op alle eigenschappen een forse veer moet laten. 
 
 # De campagne in de media
@@ -462,7 +462,7 @@ d2 %>% ggplot(aes(x=wave, y=name, fill=fillcolor, label=round(value,1))) +
   ggtitle("Zijn de kandidaten de kiezer opgevallen?", "(Opgevallen van 0 tot 3; positef/negatief van 0 to 10")
 ```
 
-[Download data: `r export_data(d2, "Zijn kandidate opgevallen")`]
+[Download data: `r export_data(d2, "Zijn kandidaten opgevallen")`]
 
 
 Bovenstaande figuur laat aan de linkerkant zien in hoeverre de verschillende partijen (en hun lijsttrekkers) de kiezer zijn opgevallen in de media.
@@ -556,7 +556,7 @@ die sterker geassocieerd wordt met het meer  klassiek rechtse thema van overheid
 VVD heeft nog steeds een sterke associatie met zowel financien als ondernemingsklimaat, 
 maar wordt vooral heel sterk met het coronabeleid geassocieerd.
 
-Dan blijven over de PVV en FvD, die vooral met integratie worden geassocieerrd,
+Dan blijven over de PVV en FvD, die vooral met integratie worden geassocieerd,
 en in mindere mate met vrijheid en de EU. 
 
 ```{r issue-owner-agree}

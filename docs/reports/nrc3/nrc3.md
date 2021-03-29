@@ -65,7 +65,7 @@ Hiervoor zijn twee oorzaken aan te wijzen. Ten eerste slaagde D66 erin
 om zich als een progressiever altenatief voor de VVD neer te zetten,
 waardoor het zowel (centrum)rechtse als linkse kiezers kon aantrekken.
 Deze winst is eigenlijk geheel tijdens de campagne geboekt, zoals blijkt
-uit onze analyse van de [vershuivingen van
+uit onze analyse van de [verschuivingen van
 stemvoorkeur](#verschuivingen-in-de-publieke-opinie) tussen 2017, het
 begin van de campagne, en de uiteindelijke stem.
 
@@ -207,7 +207,7 @@ zetels in de vorige Tweede Kamer. Ook zijn vooraf alleen de
 eigenschappen integriteit (rood), sympathie (groen) en ‘weet wat er
 leeft’ (blauw) gevraagd.
 
-Bij veel leiders is de vershuiving tijdens de campagne beperkt tot
+Bij veel leiders is de verschuiving tijdens de campagne beperkt tot
 minder dan een half “rapportpunt”. Grote stijgers zijn de vrouwelijke
 lijsttrekkers Ouwehand, Kaag, en Marijnissen. Ook voor Wilders’
 beoordeling als leider was de campagne positief, alhoewel hij (evenals
