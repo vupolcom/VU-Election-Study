@@ -42,14 +42,17 @@ Voorkeuren voor coalities
 ![](stabiliteit%20coalitievoorkeuren-1.png) \[Download data:
 [Stabiliteit Coalitievoorkeuren](Stabiliteit_Coalitievoorkeuren.csv)\]
 
-*Opvallend*: - *Rechterblok*: voor CDA stemmers is D66 een populaire
-coalitiepartner geworden sinds eind-februari; voor VVD-stemmers is de
-populariteit van D66 als partner sterk gestegen na de verkiezigen, en
-die van het CDA sterk gedaald; de populariteit van de VVD als
-coalitiepartner is alleen bij het CDA en 50Plus partij gestegen over de
-duur van de campagne; voor de PVV was tijdens de campagne de FvD de
-enige grote coalitiepartner waarmee de stemmers wilden dat de partij zou
-gaan regeren, maar na de uitslag, is dit gewisseld voor CDA, D66 en VVD.
-- *Linkerblok* : Voor GL stemmers is de populariteit van de PvdA als
-coalitie partner na de verkiezingsuitslag sterk gedaald, dit geldt ook
-voor de SP-stemmers en de D66 stemmers
+*Opvallend*:
+
+-   *Rechterblok*: voor CDA stemmers is D66 een populaire
+    coalitiepartner geworden sinds eind-februari; voor VVD-stemmers is
+    de populariteit van D66 als partner sterk gestegen na de
+    verkiezigen, en die van het CDA sterk gedaald; de populariteit van
+    de VVD als coalitiepartner is alleen bij het CDA en 50Plus partij
+    gestegen over de duur van de campagne; voor de PVV was tijdens de
+    campagne de FvD de enige grote coalitiepartner waarmee de stemmers
+    wilden dat de partij zou gaan regeren, maar na de uitslag, is dit
+    gewisseld voor CDA, D66 en VVD.
+-   *Linkerblok* : Voor GL stemmers is de populariteit van de PvdA als
+    coalitie partner na de verkiezingsuitslag sterk gedaald, dit geldt
+    ook voor de SP-stemmers en de D66 stemmers
