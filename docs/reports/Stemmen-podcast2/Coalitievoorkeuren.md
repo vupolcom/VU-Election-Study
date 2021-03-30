@@ -1,7 +1,7 @@
 ---
 title: 'Coalitievoorkeuren'
 author: "Mariken van der Velden"
-permalink: reports/Stemmen-podcast/
+permalink: reports/Stemmen-podcast2/
 output: 
   md_document:
     preserve_yaml: yes
