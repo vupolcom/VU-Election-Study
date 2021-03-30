@@ -243,7 +243,7 @@ Opvallend:
 - FvD sociale media hoog: zowel activiteit zelf als likes en shares (engagement)
 - 50Plus redelijk sociale media aandacht
 
-```{r "stabiliteit coalitievoorkeuren", fig.height=10, fig.width=8}
+```{r "stabiliteit coalitievoorkeuren", fig.height=8, fig.width=12}
 df2 <- d %>%
   filter(A2 != "BBB", A2 != "Bij1", A2 != "JA21", A2 != "VOLT") %>%
   select(wave, A2:A3_5) %>%
@@ -257,7 +257,7 @@ df2 <- d %>%
 ggplot(df2, aes(x = wave, y = perc, color = value, group = value)) +
   geom_point() + geom_line() + 
   theme_minimal() +
-  facet_wrap(.~A2, nrow = 3, scales = "free") +
+  facet_wrap(.~A2, nrow = 2, scales = "free") +
   labs(x = "", y ="",
        title = "Wie zouden er volgens de kiezer in de regering moeten komen?") +
 geom_dl(aes(label = value), method = list(dl.combine("first.points", "last.points")), cex = 0.2) +
