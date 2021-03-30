@@ -1,0 +1,273 @@
+---
+title: 'Coalitievoorkeuren'
+author: "Mariken van der Velden"
+permalink: reports/Stemmen-podcast/
+output: 
+  md_document:
+    preserve_yaml: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+```{r data}
+rm(list = ls())
+library(here)
+library(tidyverse)
+library(viridis)
+library(directlabels)
+source(here("src/lib/data.R"))
+
+```
+
+# Voorkeuren voor coalities
+
+```{r get data}
+w0 <- read_csv(here("data/intermediate/wave0.csv")) %>%
+  select(iisID, wave, A2, A3_1:A3_5, E2, E3_1:E3_13) %>%
+  mutate(A2 = recode(A2, 
+                     `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `14` = "Don't Know", 
+                     `15` = "Don't Know",
+                     `999` = "Don't Know")) %>%
+  mutate_at(vars(A3_1:A3_5), funs(recode(., `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+")))
+
+w1 <- read_csv(here("data/intermediate/wave1.csv")) %>%
+  select(iisID, wave, A2, A3_1:A3_5) %>%
+  mutate(A2 = recode(A2, 
+                     `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `14` = "Don't Know", 
+                     `15` = "Don't Know",
+                     `999` = "Don't Know")) %>%
+  mutate_at(vars(A3_1:A3_5), funs(recode(., `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+")))
+
+w2 <- read_csv(here("data/intermediate/wave2.csv")) %>%
+  select(iisID, wave, A2, A3_1:A3_5) %>%
+  mutate(A2 = recode(A2, 
+                     `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `14` = "Don't Know", 
+                     `15` = "Don't Know",
+                     `999` = "Don't Know")) %>%
+  mutate_at(vars(A3_1:A3_5), funs(recode(., `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+")))
+
+w3 <- read_csv(here("data/intermediate/wave3.csv")) %>%
+  select(iisID, wave, A2, A3_1:A3_5) %>%
+  mutate(A2 = recode(A2, 
+                     `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `14` = "Don't Know", 
+                     `15` = "Don't Know",
+                     `999` = "Don't Know")) %>%
+  mutate_at(vars(A3_1:A3_5), funs(recode(., `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+")))
+
+w4 <- read_csv(here("data/intermediate/wave4.csv")) %>%
+  select(iisID, wave, A2, A3_1:A3_5) %>%
+  mutate(A2 = recode(A2, 
+                     `17` = "Bij1",
+                     `18` = "BBB",
+                     `19` = "CDA",
+                     `20` = "CU",
+                     `21` = "D66",
+                     `22` = "Denk",
+                     `23` = "FvD",
+                     `24` = "GL",
+                     `25` = "JA21",
+                     `26` = "PvdA",
+                     `27` = "PvDD",
+                     `28` = "PVV",
+                     `29` = "SGP",
+                     `30` = "SP",
+                     `31` = "VOLT",
+                     `32` = "VVD",
+                     `33` = "50+",.default = "Don't Know")) %>%
+  mutate_at(vars(A3_1:A3_5), funs(recode(., `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `15` = "Bij1",
+                     `16` = "BBB",
+                     `17` = "JA21",
+                     `18` = "VOLT")))
+
+d <- w0 %>%
+  add_case(w1) %>%
+  add_case(w2) %>%
+  add_case(w3) %>%
+  add_case(w4)
+```
+
+```{r "coalitievoorkeuren"}
+df <- d %>%
+  select(wave, A2:A3_5) %>%
+  pivot_longer(cols = A3_1:A3_5) %>%
+  group_by(A2, value) %>%
+  summarise(n = n()) %>%
+  mutate(perc = round(n/ sum(n),2),
+         per = paste(round(n/ sum(n),2)*100, "%"),
+         check = ifelse(A2 == value, 1,0)) %>%
+  filter(check == 0, A2 != "Don't Know") 
+
+ggplot(df, aes(x = A2, y = value, fill = perc, label = per)) +
+  geom_tile() +
+  geom_text(color="white") + 
+  theme_minimal() +
+  scale_fill_gradient(low="lightblue", high="dodgerblue4", guide=F) +
+  labs(x = "Partijvoorkeur", y ="Coalitievoorkeur",
+       title = "Wie zouden er volgens de kiezer in de regering moeten komen?") +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="none",
+        legend.title = element_blank()) 
+
+```
+
+[Download data: `r export_data(df, "Coalitievoorkeuren")`]
+
+Opvallend:
+
+- D66 (terwijl even groot en mede in kabinet) had aan begin van de campagne aanzienlijk minder aandacht in media dan CDA, maar is in de loop van de campagne bijgetrokken
+- VVD sowieso heel hoog, maar PM en corona....
+- Forum meer zichtbaar dan kabinetspartner CU, met nota bene staatssecretaris van Onderwijs in tijd waarin Hoger Onderwijs dicht is (en bediscusssieerd) en middelbare scholen en MBO's weer open gaan
+- JA21 heel veel aandacht op TV, meer dan Denk, Bij1 en VOLT
+- PVV vooral sociale media aandacht engagement (likes en shares) maar lage activity. Traditionele media aandacht vergelijkbaar met GL, PvdA en SP
+- PvdD vooral aandacht online en TV, minder social media en kranten
+- FvD sociale media hoog: zowel activiteit zelf als likes en shares (engagement)
+- 50Plus redelijk sociale media aandacht
+
+```{r "stabiliteit coalitievoorkeuren", fig.height=10, fig.width=8}
+df2 <- d %>%
+  filter(A2 != "BBB", A2 != "Bij1", A2 != "JA21", A2 != "VOLT") %>%
+  select(wave, A2:A3_5) %>%
+  pivot_longer(cols = A3_1:A3_5) %>%
+  group_by(wave, A2, value) %>%
+  summarise(n = n()) %>%
+  mutate(perc = round(n/ sum(n),2),
+         check = ifelse(A2 == value, 1,0)) %>%
+  filter(check == 0, A2 != "Don't Know") 
+
+ggplot(df2, aes(x = wave, y = perc, color = value, group = value)) +
+  geom_point() + geom_line() + 
+  theme_minimal() +
+  facet_wrap(.~A2, nrow = 3, scales = "free") +
+  labs(x = "", y ="",
+       title = "Wie zouden er volgens de kiezer in de regering moeten komen?") +
+geom_dl(aes(label = value), method = list(dl.combine("first.points", "last.points")), cex = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  scale_color_viridis_d() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="none",
+        legend.title = element_blank(),
+        axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1)) 
+
+```
+[Download data: `r export_data(df2, "Stabiliteit Coalitievoorkeuren")`]

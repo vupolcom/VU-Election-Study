@@ -1,0 +1,737 @@
+wave,A2,value,n,perc,check
+pre-wave,50+,CDA,12,0.06,0
+pre-wave,50+,CU,5,0.03,0
+pre-wave,50+,D66,3,0.02,0
+pre-wave,50+,Denk,1,0.01,0
+pre-wave,50+,FvD,4,0.02,0
+pre-wave,50+,GL,4,0.02,0
+pre-wave,50+,PvdA,9,0.05,0
+pre-wave,50+,PvDD,5,0.03,0
+pre-wave,50+,PVV,8,0.04,0
+pre-wave,50+,SP,5,0.03,0
+pre-wave,50+,VVD,13,0.07,0
+pre-wave,CDA,50+,10,0.02,0
+pre-wave,CDA,CU,30,0.05,0
+pre-wave,CDA,D66,25,0.04,0
+pre-wave,CDA,Denk,1,0,0
+pre-wave,CDA,FvD,2,0,0
+pre-wave,CDA,GL,10,0.02,0
+pre-wave,CDA,PvdA,31,0.05,0
+pre-wave,CDA,PvDD,4,0.01,0
+pre-wave,CDA,PVV,8,0.01,0
+pre-wave,CDA,SGP,5,0.01,0
+pre-wave,CDA,SP,11,0.02,0
+pre-wave,CDA,VVD,76,0.12,0
+pre-wave,CU,50+,3,0.01,0
+pre-wave,CU,CDA,52,0.13,0
+pre-wave,CU,D66,6,0.01,0
+pre-wave,CU,Denk,1,0,0
+pre-wave,CU,FvD,3,0.01,0
+pre-wave,CU,GL,10,0.02,0
+pre-wave,CU,PvdA,18,0.04,0
+pre-wave,CU,PvDD,1,0,0
+pre-wave,CU,PVV,1,0,0
+pre-wave,CU,SGP,13,0.03,0
+pre-wave,CU,SP,9,0.02,0
+pre-wave,CU,VVD,20,0.05,0
+pre-wave,D66,CDA,24,0.05,0
+pre-wave,D66,CU,6,0.01,0
+pre-wave,D66,FvD,1,0,0
+pre-wave,D66,GL,44,0.09,0
+pre-wave,D66,PvdA,44,0.09,0
+pre-wave,D66,PvDD,8,0.02,0
+pre-wave,D66,PVV,2,0,0
+pre-wave,D66,SP,17,0.04,0
+pre-wave,D66,VVD,27,0.06,0
+pre-wave,Denk,50+,1,0.01,0
+pre-wave,Denk,CDA,2,0.02,0
+pre-wave,Denk,CU,5,0.06,0
+pre-wave,Denk,D66,4,0.05,0
+pre-wave,Denk,FvD,3,0.04,0
+pre-wave,Denk,GL,6,0.08,0
+pre-wave,Denk,PvdA,2,0.02,0
+pre-wave,Denk,PvDD,1,0.01,0
+pre-wave,Denk,SGP,1,0.01,0
+pre-wave,Denk,SP,3,0.04,0
+pre-wave,Denk,VVD,2,0.02,0
+pre-wave,FvD,50+,5,0.02,0
+pre-wave,FvD,CDA,5,0.02,0
+pre-wave,FvD,CU,5,0.02,0
+pre-wave,FvD,D66,1,0,0
+pre-wave,FvD,Denk,3,0.01,0
+pre-wave,FvD,GL,1,0,0
+pre-wave,FvD,PvdA,3,0.01,0
+pre-wave,FvD,PvDD,7,0.03,0
+pre-wave,FvD,PVV,35,0.13,0
+pre-wave,FvD,SGP,3,0.01,0
+pre-wave,FvD,SP,6,0.02,0
+pre-wave,FvD,VVD,8,0.03,0
+pre-wave,GL,50+,2,0,0
+pre-wave,GL,CDA,13,0.02,0
+pre-wave,GL,CU,8,0.01,0
+pre-wave,GL,D66,56,0.09,0
+pre-wave,GL,Denk,2,0,0
+pre-wave,GL,FvD,4,0.01,0
+pre-wave,GL,PvdA,63,0.1,0
+pre-wave,GL,PvDD,27,0.04,0
+pre-wave,GL,PVV,6,0.01,0
+pre-wave,GL,SGP,2,0,0
+pre-wave,GL,SP,37,0.06,0
+pre-wave,GL,VVD,22,0.04,0
+pre-wave,PvdA,50+,3,0,0
+pre-wave,PvdA,CDA,29,0.04,0
+pre-wave,PvdA,CU,12,0.02,0
+pre-wave,PvdA,D66,52,0.07,0
+pre-wave,PvdA,Denk,2,0,0
+pre-wave,PvdA,FvD,1,0,0
+pre-wave,PvdA,GL,69,0.1,0
+pre-wave,PvdA,PvDD,13,0.02,0
+pre-wave,PvdA,PVV,9,0.01,0
+pre-wave,PvdA,SGP,2,0,0
+pre-wave,PvdA,SP,47,0.07,0
+pre-wave,PvdA,VVD,23,0.03,0
+pre-wave,PvDD,50+,5,0.02,0
+pre-wave,PvDD,CDA,7,0.02,0
+pre-wave,PvDD,CU,7,0.02,0
+pre-wave,PvDD,D66,10,0.03,0
+pre-wave,PvDD,Denk,3,0.01,0
+pre-wave,PvDD,FvD,6,0.02,0
+pre-wave,PvDD,GL,25,0.08,0
+pre-wave,PvDD,PvdA,15,0.05,0
+pre-wave,PvDD,PVV,8,0.02,0
+pre-wave,PvDD,SGP,2,0.01,0
+pre-wave,PvDD,SP,11,0.03,0
+pre-wave,PvDD,VVD,6,0.02,0
+pre-wave,PVV,50+,42,0.03,0
+pre-wave,PVV,CDA,28,0.02,0
+pre-wave,PVV,CU,14,0.01,0
+pre-wave,PVV,D66,11,0.01,0
+pre-wave,PVV,Denk,4,0,0
+pre-wave,PVV,FvD,121,0.08,0
+pre-wave,PVV,GL,13,0.01,0
+pre-wave,PVV,PvdA,30,0.02,0
+pre-wave,PVV,PvDD,22,0.02,0
+pre-wave,PVV,SGP,7,0,0
+pre-wave,PVV,SP,49,0.03,0
+pre-wave,PVV,VVD,60,0.04,0
+pre-wave,SGP,CDA,16,0.09,0
+pre-wave,SGP,CU,25,0.14,0
+pre-wave,SGP,Denk,1,0.01,0
+pre-wave,SGP,FvD,4,0.02,0
+pre-wave,SGP,GL,1,0.01,0
+pre-wave,SGP,PvDD,1,0.01,0
+pre-wave,SGP,PVV,4,0.02,0
+pre-wave,SGP,VVD,13,0.07,0
+pre-wave,SP,50+,11,0.01,0
+pre-wave,SP,CDA,32,0.04,0
+pre-wave,SP,CU,8,0.01,0
+pre-wave,SP,D66,35,0.04,0
+pre-wave,SP,FvD,7,0.01,0
+pre-wave,SP,GL,53,0.06,0
+pre-wave,SP,PvdA,93,0.1,0
+pre-wave,SP,PvDD,29,0.03,0
+pre-wave,SP,PVV,23,0.03,0
+pre-wave,SP,SGP,4,0,0
+pre-wave,SP,VVD,16,0.02,0
+pre-wave,VVD,50+,15,0.01,0
+pre-wave,VVD,CDA,229,0.13,0
+pre-wave,VVD,CU,33,0.02,0
+pre-wave,VVD,D66,108,0.06,0
+pre-wave,VVD,Denk,2,0,0
+pre-wave,VVD,FvD,15,0.01,0
+pre-wave,VVD,GL,32,0.02,0
+pre-wave,VVD,PvdA,62,0.03,0
+pre-wave,VVD,PvDD,10,0.01,0
+pre-wave,VVD,PVV,31,0.02,0
+pre-wave,VVD,SGP,5,0,0
+pre-wave,VVD,SP,9,0,0
+wave 1,50+,CDA,6,0.05,0
+wave 1,50+,CU,2,0.02,0
+wave 1,50+,D66,7,0.06,0
+wave 1,50+,Denk,2,0.02,0
+wave 1,50+,GL,8,0.07,0
+wave 1,50+,PvdA,8,0.07,0
+wave 1,50+,PvDD,5,0.05,0
+wave 1,50+,PVV,4,0.04,0
+wave 1,50+,SP,5,0.05,0
+wave 1,50+,VVD,8,0.07,0
+wave 1,CDA,50+,11,0.02,0
+wave 1,CDA,CU,33,0.06,0
+wave 1,CDA,D66,28,0.05,0
+wave 1,CDA,FvD,2,0,0
+wave 1,CDA,GL,16,0.03,0
+wave 1,CDA,PvdA,29,0.06,0
+wave 1,CDA,PvDD,5,0.01,0
+wave 1,CDA,PVV,13,0.02,0
+wave 1,CDA,SGP,4,0.01,0
+wave 1,CDA,SP,8,0.02,0
+wave 1,CDA,VVD,60,0.11,0
+wave 1,CU,50+,5,0.01,0
+wave 1,CU,CDA,55,0.16,0
+wave 1,CU,D66,11,0.03,0
+wave 1,CU,GL,10,0.03,0
+wave 1,CU,PvdA,19,0.05,0
+wave 1,CU,PvDD,2,0.01,0
+wave 1,CU,PVV,2,0.01,0
+wave 1,CU,SGP,16,0.05,0
+wave 1,CU,SP,9,0.03,0
+wave 1,CU,VVD,21,0.06,0
+wave 1,D66,50+,4,0.01,0
+wave 1,D66,CDA,28,0.08,0
+wave 1,D66,CU,7,0.02,0
+wave 1,D66,GL,39,0.12,0
+wave 1,D66,PvdA,34,0.1,0
+wave 1,D66,PvDD,5,0.01,0
+wave 1,D66,PVV,2,0.01,0
+wave 1,D66,SGP,1,0,0
+wave 1,D66,SP,15,0.04,0
+wave 1,D66,VVD,26,0.08,0
+wave 1,Denk,CDA,2,0.04,0
+wave 1,Denk,D66,4,0.07,0
+wave 1,Denk,FvD,3,0.05,0
+wave 1,Denk,GL,4,0.07,0
+wave 1,Denk,PvdA,4,0.07,0
+wave 1,Denk,PvDD,1,0.02,0
+wave 1,Denk,SGP,2,0.04,0
+wave 1,Denk,SP,2,0.04,0
+wave 1,Denk,VVD,2,0.04,0
+wave 1,FvD,50+,5,0.03,0
+wave 1,FvD,CDA,6,0.03,0
+wave 1,FvD,CU,3,0.02,0
+wave 1,FvD,D66,1,0.01,0
+wave 1,FvD,Denk,1,0.01,0
+wave 1,FvD,GL,3,0.02,0
+wave 1,FvD,PvdA,3,0.02,0
+wave 1,FvD,PvDD,5,0.03,0
+wave 1,FvD,PVV,22,0.12,0
+wave 1,FvD,SGP,5,0.03,0
+wave 1,FvD,SP,8,0.04,0
+wave 1,FvD,VVD,5,0.03,0
+wave 1,GL,50+,1,0,0
+wave 1,GL,CDA,12,0.03,0
+wave 1,GL,CU,10,0.02,0
+wave 1,GL,D66,55,0.12,0
+wave 1,GL,Denk,3,0.01,0
+wave 1,GL,FvD,1,0,0
+wave 1,GL,PvdA,69,0.15,0
+wave 1,GL,PvDD,27,0.06,0
+wave 1,GL,PVV,2,0,0
+wave 1,GL,SGP,3,0.01,0
+wave 1,GL,SP,39,0.08,0
+wave 1,GL,VVD,18,0.04,0
+wave 1,PvdA,50+,6,0.01,0
+wave 1,PvdA,CDA,31,0.05,0
+wave 1,PvdA,CU,11,0.02,0
+wave 1,PvdA,D66,50,0.08,0
+wave 1,PvdA,Denk,5,0.01,0
+wave 1,PvdA,FvD,2,0,0
+wave 1,PvdA,GL,63,0.11,0
+wave 1,PvdA,PvDD,21,0.04,0
+wave 1,PvdA,PVV,5,0.01,0
+wave 1,PvdA,SGP,2,0,0
+wave 1,PvdA,SP,49,0.08,0
+wave 1,PvdA,VVD,23,0.04,0
+wave 1,PvDD,50+,3,0.01,0
+wave 1,PvDD,CDA,6,0.02,0
+wave 1,PvDD,CU,6,0.02,0
+wave 1,PvDD,D66,18,0.07,0
+wave 1,PvDD,Denk,1,0,0
+wave 1,PvDD,FvD,2,0.01,0
+wave 1,PvDD,GL,23,0.09,0
+wave 1,PvDD,PvdA,18,0.07,0
+wave 1,PvDD,PVV,6,0.02,0
+wave 1,PvDD,SP,15,0.06,0
+wave 1,PvDD,VVD,7,0.03,0
+wave 1,PVV,50+,28,0.03,0
+wave 1,PVV,CDA,26,0.03,0
+wave 1,PVV,CU,6,0.01,0
+wave 1,PVV,D66,11,0.01,0
+wave 1,PVV,Denk,2,0,0
+wave 1,PVV,FvD,84,0.09,0
+wave 1,PVV,GL,6,0.01,0
+wave 1,PVV,PvdA,18,0.02,0
+wave 1,PVV,PvDD,16,0.02,0
+wave 1,PVV,SGP,8,0.01,0
+wave 1,PVV,SP,37,0.04,0
+wave 1,PVV,VVD,36,0.04,0
+wave 1,SGP,CDA,12,0.1,0
+wave 1,SGP,CU,21,0.17,0
+wave 1,SGP,Denk,1,0.01,0
+wave 1,SGP,PvdA,1,0.01,0
+wave 1,SGP,PVV,3,0.02,0
+wave 1,SGP,SP,2,0.02,0
+wave 1,SGP,VVD,9,0.07,0
+wave 1,SP,50+,17,0.03,0
+wave 1,SP,CDA,27,0.04,0
+wave 1,SP,CU,9,0.01,0
+wave 1,SP,D66,39,0.06,0
+wave 1,SP,Denk,3,0,0
+wave 1,SP,FvD,7,0.01,0
+wave 1,SP,GL,55,0.08,0
+wave 1,SP,PvdA,76,0.12,0
+wave 1,SP,PvDD,23,0.03,0
+wave 1,SP,PVV,19,0.03,0
+wave 1,SP,SGP,1,0,0
+wave 1,SP,VVD,19,0.03,0
+wave 1,VVD,50+,17,0.01,0
+wave 1,VVD,CDA,185,0.14,0
+wave 1,VVD,CU,49,0.04,0
+wave 1,VVD,D66,89,0.07,0
+wave 1,VVD,Denk,3,0,0
+wave 1,VVD,FvD,11,0.01,0
+wave 1,VVD,GL,16,0.01,0
+wave 1,VVD,PvdA,49,0.04,0
+wave 1,VVD,PvDD,10,0.01,0
+wave 1,VVD,PVV,35,0.03,0
+wave 1,VVD,SGP,8,0.01,0
+wave 1,VVD,SP,16,0.01,0
+wave 2,50+,CDA,10,0.08,0
+wave 2,50+,CU,2,0.02,0
+wave 2,50+,D66,4,0.03,0
+wave 2,50+,FvD,2,0.02,0
+wave 2,50+,GL,3,0.02,0
+wave 2,50+,PvdA,6,0.05,0
+wave 2,50+,PvDD,4,0.03,0
+wave 2,50+,PVV,5,0.04,0
+wave 2,50+,SGP,1,0.01,0
+wave 2,50+,SP,8,0.07,0
+wave 2,50+,VVD,11,0.09,0
+wave 2,CDA,50+,6,0.01,0
+wave 2,CDA,CU,42,0.08,0
+wave 2,CDA,D66,29,0.06,0
+wave 2,CDA,Denk,1,0,0
+wave 2,CDA,FvD,2,0,0
+wave 2,CDA,GL,7,0.01,0
+wave 2,CDA,PvdA,40,0.08,0
+wave 2,CDA,PvDD,4,0.01,0
+wave 2,CDA,PVV,7,0.01,0
+wave 2,CDA,SGP,6,0.01,0
+wave 2,CDA,SP,5,0.01,0
+wave 2,CDA,VVD,70,0.13,0
+wave 2,CU,50+,5,0.01,0
+wave 2,CU,CDA,45,0.13,0
+wave 2,CU,D66,8,0.02,0
+wave 2,CU,Denk,1,0,0
+wave 2,CU,FvD,2,0.01,0
+wave 2,CU,GL,13,0.04,0
+wave 2,CU,PvdA,22,0.07,0
+wave 2,CU,PvDD,2,0.01,0
+wave 2,CU,PVV,3,0.01,0
+wave 2,CU,SGP,17,0.05,0
+wave 2,CU,SP,8,0.02,0
+wave 2,CU,VVD,20,0.06,0
+wave 2,D66,50+,4,0.01,0
+wave 2,D66,CDA,15,0.05,0
+wave 2,D66,CU,9,0.03,0
+wave 2,D66,Denk,1,0,0
+wave 2,D66,FvD,1,0,0
+wave 2,D66,GL,37,0.12,0
+wave 2,D66,PvdA,33,0.1,0
+wave 2,D66,PvDD,9,0.03,0
+wave 2,D66,PVV,3,0.01,0
+wave 2,D66,SGP,1,0,0
+wave 2,D66,SP,22,0.07,0
+wave 2,D66,VVD,24,0.08,0
+wave 2,Denk,CDA,1,0.02,0
+wave 2,Denk,CU,1,0.02,0
+wave 2,Denk,D66,5,0.09,0
+wave 2,Denk,FvD,2,0.04,0
+wave 2,Denk,GL,6,0.11,0
+wave 2,Denk,PvdA,2,0.04,0
+wave 2,Denk,PvDD,1,0.02,0
+wave 2,Denk,PVV,2,0.04,0
+wave 2,Denk,SGP,2,0.04,0
+wave 2,Denk,SP,2,0.04,0
+wave 2,Denk,VVD,2,0.04,0
+wave 2,FvD,50+,2,0.01,0
+wave 2,FvD,CDA,4,0.02,0
+wave 2,FvD,CU,3,0.02,0
+wave 2,FvD,Denk,2,0.01,0
+wave 2,FvD,GL,1,0.01,0
+wave 2,FvD,PvdA,1,0.01,0
+wave 2,FvD,PvDD,6,0.04,0
+wave 2,FvD,PVV,27,0.16,0
+wave 2,FvD,SGP,5,0.03,0
+wave 2,FvD,SP,2,0.01,0
+wave 2,FvD,VVD,3,0.02,0
+wave 2,GL,50+,2,0.01,0
+wave 2,GL,CDA,6,0.02,0
+wave 2,GL,CU,4,0.01,0
+wave 2,GL,D66,47,0.13,0
+wave 2,GL,PvdA,51,0.14,0
+wave 2,GL,PvDD,28,0.07,0
+wave 2,GL,PVV,5,0.01,0
+wave 2,GL,SGP,1,0,0
+wave 2,GL,SP,28,0.07,0
+wave 2,GL,VVD,16,0.04,0
+wave 2,PvdA,50+,6,0.01,0
+wave 2,PvdA,CDA,29,0.06,0
+wave 2,PvdA,CU,6,0.01,0
+wave 2,PvdA,D66,41,0.09,0
+wave 2,PvdA,Denk,2,0,0
+wave 2,PvdA,FvD,2,0,0
+wave 2,PvdA,GL,55,0.12,0
+wave 2,PvdA,PvDD,17,0.04,0
+wave 2,PvdA,PVV,4,0.01,0
+wave 2,PvdA,SP,44,0.09,0
+wave 2,PvdA,VVD,14,0.03,0
+wave 2,PvDD,50+,6,0.03,0
+wave 2,PvDD,CDA,5,0.02,0
+wave 2,PvDD,CU,3,0.01,0
+wave 2,PvDD,D66,15,0.07,0
+wave 2,PvDD,FvD,2,0.01,0
+wave 2,PvDD,GL,24,0.11,0
+wave 2,PvDD,PvdA,16,0.07,0
+wave 2,PvDD,PVV,4,0.02,0
+wave 2,PvDD,SP,16,0.07,0
+wave 2,PvDD,VVD,5,0.02,0
+wave 2,PVV,50+,40,0.05,0
+wave 2,PVV,CDA,22,0.03,0
+wave 2,PVV,CU,12,0.01,0
+wave 2,PVV,D66,8,0.01,0
+wave 2,PVV,Denk,5,0.01,0
+wave 2,PVV,FvD,80,0.1,0
+wave 2,PVV,GL,3,0,0
+wave 2,PVV,PvdA,14,0.02,0
+wave 2,PVV,PvDD,20,0.02,0
+wave 2,PVV,SGP,14,0.02,0
+wave 2,PVV,SP,30,0.04,0
+wave 2,PVV,VVD,32,0.04,0
+wave 2,SGP,CDA,12,0.09,0
+wave 2,SGP,CU,23,0.17,0
+wave 2,SGP,D66,1,0.01,0
+wave 2,SGP,Denk,1,0.01,0
+wave 2,SGP,FvD,2,0.01,0
+wave 2,SGP,PvdA,1,0.01,0
+wave 2,SGP,PvDD,2,0.01,0
+wave 2,SGP,PVV,3,0.02,0
+wave 2,SGP,SP,2,0.01,0
+wave 2,SGP,VVD,12,0.09,0
+wave 2,SP,50+,16,0.03,0
+wave 2,SP,CDA,25,0.04,0
+wave 2,SP,CU,10,0.02,0
+wave 2,SP,D66,37,0.06,0
+wave 2,SP,Denk,1,0,0
+wave 2,SP,FvD,4,0.01,0
+wave 2,SP,GL,43,0.07,0
+wave 2,SP,PvdA,66,0.11,0
+wave 2,SP,PvDD,20,0.03,0
+wave 2,SP,PVV,20,0.03,0
+wave 2,SP,SGP,2,0,0
+wave 2,SP,VVD,17,0.03,0
+wave 2,VVD,50+,22,0.02,0
+wave 2,VVD,CDA,168,0.15,0
+wave 2,VVD,CU,45,0.04,0
+wave 2,VVD,D66,81,0.07,0
+wave 2,VVD,FvD,4,0,0
+wave 2,VVD,GL,18,0.02,0
+wave 2,VVD,PvdA,51,0.04,0
+wave 2,VVD,PvDD,3,0,0
+wave 2,VVD,PVV,26,0.02,0
+wave 2,VVD,SGP,9,0.01,0
+wave 2,VVD,SP,21,0.02,0
+wave 3,50+,CDA,8,0.07,0
+wave 3,50+,CU,1,0.01,0
+wave 3,50+,D66,4,0.04,0
+wave 3,50+,Denk,1,0.01,0
+wave 3,50+,FvD,2,0.02,0
+wave 3,50+,GL,2,0.02,0
+wave 3,50+,PvdA,4,0.04,0
+wave 3,50+,PvDD,3,0.03,0
+wave 3,50+,PVV,9,0.08,0
+wave 3,50+,SP,1,0.01,0
+wave 3,50+,VVD,9,0.08,0
+wave 3,CDA,50+,8,0.02,0
+wave 3,CDA,CU,34,0.07,0
+wave 3,CDA,D66,25,0.05,0
+wave 3,CDA,FvD,3,0.01,0
+wave 3,CDA,GL,10,0.02,0
+wave 3,CDA,PvdA,31,0.07,0
+wave 3,CDA,PvDD,1,0,0
+wave 3,CDA,PVV,8,0.02,0
+wave 3,CDA,SGP,6,0.01,0
+wave 3,CDA,SP,6,0.01,0
+wave 3,CDA,VVD,59,0.13,0
+wave 3,CU,50+,2,0.01,0
+wave 3,CU,CDA,53,0.16,0
+wave 3,CU,D66,7,0.02,0
+wave 3,CU,Denk,3,0.01,0
+wave 3,CU,GL,14,0.04,0
+wave 3,CU,PvdA,20,0.06,0
+wave 3,CU,PvDD,5,0.01,0
+wave 3,CU,PVV,3,0.01,0
+wave 3,CU,SGP,19,0.06,0
+wave 3,CU,SP,11,0.03,0
+wave 3,CU,VVD,24,0.07,0
+wave 3,D66,50+,3,0.01,0
+wave 3,D66,CDA,17,0.05,0
+wave 3,D66,CU,18,0.05,0
+wave 3,D66,FvD,1,0,0
+wave 3,D66,GL,38,0.1,0
+wave 3,D66,PvdA,39,0.11,0
+wave 3,D66,PvDD,12,0.03,0
+wave 3,D66,PVV,1,0,0
+wave 3,D66,SP,11,0.03,0
+wave 3,D66,VVD,29,0.08,0
+wave 3,Denk,CU,1,0.02,0
+wave 3,Denk,D66,4,0.08,0
+wave 3,Denk,GL,6,0.12,0
+wave 3,Denk,PvdA,4,0.08,0
+wave 3,Denk,PvDD,1,0.02,0
+wave 3,Denk,PVV,1,0.02,0
+wave 3,Denk,SP,4,0.08,0
+wave 3,FvD,50+,5,0.02,0
+wave 3,FvD,CDA,5,0.02,0
+wave 3,FvD,CU,4,0.02,0
+wave 3,FvD,Denk,4,0.02,0
+wave 3,FvD,PvdA,4,0.02,0
+wave 3,FvD,PvDD,6,0.03,0
+wave 3,FvD,PVV,35,0.16,0
+wave 3,FvD,SGP,5,0.02,0
+wave 3,FvD,SP,8,0.04,0
+wave 3,FvD,VVD,2,0.01,0
+wave 3,GL,50+,1,0,0
+wave 3,GL,CDA,6,0.01,0
+wave 3,GL,CU,11,0.03,0
+wave 3,GL,D66,48,0.12,0
+wave 3,GL,Denk,3,0.01,0
+wave 3,GL,FvD,4,0.01,0
+wave 3,GL,PvdA,58,0.14,0
+wave 3,GL,PvDD,24,0.06,0
+wave 3,GL,PVV,3,0.01,0
+wave 3,GL,SGP,1,0,0
+wave 3,GL,SP,35,0.08,0
+wave 3,GL,VVD,14,0.03,0
+wave 3,PvdA,50+,6,0.01,0
+wave 3,PvdA,CDA,20,0.04,0
+wave 3,PvdA,CU,8,0.01,0
+wave 3,PvdA,D66,53,0.1,0
+wave 3,PvdA,Denk,3,0.01,0
+wave 3,PvdA,FvD,1,0,0
+wave 3,PvdA,GL,66,0.12,0
+wave 3,PvdA,PvDD,21,0.04,0
+wave 3,PvdA,PVV,4,0.01,0
+wave 3,PvdA,SGP,3,0.01,0
+wave 3,PvdA,SP,52,0.1,0
+wave 3,PvdA,VVD,21,0.04,0
+wave 3,PvDD,50+,4,0.02,0
+wave 3,PvDD,CDA,5,0.02,0
+wave 3,PvDD,CU,5,0.02,0
+wave 3,PvDD,D66,14,0.07,0
+wave 3,PvDD,Denk,1,0,0
+wave 3,PvDD,FvD,2,0.01,0
+wave 3,PvDD,GL,21,0.1,0
+wave 3,PvDD,PvdA,16,0.08,0
+wave 3,PvDD,PVV,6,0.03,0
+wave 3,PvDD,SGP,1,0,0
+wave 3,PvDD,SP,16,0.08,0
+wave 3,PvDD,VVD,8,0.04,0
+wave 3,PVV,50+,36,0.04,0
+wave 3,PVV,CDA,26,0.03,0
+wave 3,PVV,CU,14,0.02,0
+wave 3,PVV,D66,4,0,0
+wave 3,PVV,Denk,3,0,0
+wave 3,PVV,FvD,73,0.08,0
+wave 3,PVV,GL,3,0,0
+wave 3,PVV,PvdA,18,0.02,0
+wave 3,PVV,PvDD,23,0.03,0
+wave 3,PVV,SGP,13,0.01,0
+wave 3,PVV,SP,32,0.04,0
+wave 3,PVV,VVD,37,0.04,0
+wave 3,SGP,CDA,10,0.08,0
+wave 3,SGP,CU,21,0.18,0
+wave 3,SGP,D66,1,0.01,0
+wave 3,SGP,PvdA,1,0.01,0
+wave 3,SGP,PvDD,1,0.01,0
+wave 3,SGP,PVV,1,0.01,0
+wave 3,SGP,SP,1,0.01,0
+wave 3,SGP,VVD,10,0.08,0
+wave 3,SP,50+,23,0.03,0
+wave 3,SP,CDA,25,0.04,0
+wave 3,SP,CU,11,0.02,0
+wave 3,SP,D66,39,0.06,0
+wave 3,SP,Denk,2,0,0
+wave 3,SP,FvD,3,0,0
+wave 3,SP,GL,54,0.08,0
+wave 3,SP,PvdA,72,0.1,0
+wave 3,SP,PvDD,38,0.06,0
+wave 3,SP,PVV,20,0.03,0
+wave 3,SP,SGP,7,0.01,0
+wave 3,SP,VVD,23,0.03,0
+wave 3,VVD,50+,13,0.01,0
+wave 3,VVD,CDA,181,0.16,0
+wave 3,VVD,CU,42,0.04,0
+wave 3,VVD,D66,91,0.08,0
+wave 3,VVD,FvD,3,0,0
+wave 3,VVD,GL,15,0.01,0
+wave 3,VVD,PvdA,39,0.03,0
+wave 3,VVD,PvDD,5,0,0
+wave 3,VVD,PVV,26,0.02,0
+wave 3,VVD,SGP,7,0.01,0
+wave 3,VVD,SP,14,0.01,0
+wave 4,50+,BBB,9,0.16,0
+wave 4,50+,Bij1,1,0.02,0
+wave 4,50+,CDA,5,0.09,0
+wave 4,50+,CU,2,0.04,0
+wave 4,50+,D66,9,0.16,0
+wave 4,50+,GL,1,0.02,0
+wave 4,50+,PvdA,1,0.02,0
+wave 4,50+,VVD,8,0.15,0
+wave 4,CDA,50+,2,0,0
+wave 4,CDA,BBB,31,0.05,0
+wave 4,CDA,Bij1,2,0,0
+wave 4,CDA,CU,14,0.02,0
+wave 4,CDA,D66,127,0.19,0
+wave 4,CDA,Denk,3,0,0
+wave 4,CDA,FvD,1,0,0
+wave 4,CDA,GL,50,0.08,0
+wave 4,CDA,JA21,3,0,0
+wave 4,CDA,PvdA,44,0.07,0
+wave 4,CDA,PvDD,20,0.03,0
+wave 4,CDA,PVV,6,0.01,0
+wave 4,CDA,SGP,1,0,0
+wave 4,CDA,SP,19,0.03,0
+wave 4,CDA,VOLT,2,0,0
+wave 4,CDA,VVD,97,0.15,0
+wave 4,CU,50+,1,0.02,0
+wave 4,CU,CDA,1,0.02,0
+wave 4,CU,D66,5,0.11,0
+wave 4,CU,Denk,8,0.18,0
+wave 4,CU,GL,6,0.13,0
+wave 4,CU,JA21,1,0.02,0
+wave 4,CU,PvdA,2,0.04,0
+wave 4,CU,PvDD,2,0.04,0
+wave 4,CU,SP,2,0.04,0
+wave 4,CU,VOLT,1,0.02,0
+wave 4,CU,VVD,3,0.07,0
+wave 4,D66,50+,1,0,0
+wave 4,D66,BBB,2,0.01,0
+wave 4,D66,Bij1,18,0.07,0
+wave 4,D66,CDA,5,0.02,0
+wave 4,D66,CU,2,0.01,0
+wave 4,D66,Denk,4,0.02,0
+wave 4,D66,FvD,48,0.18,0
+wave 4,D66,PvdA,1,0,0
+wave 4,D66,PvDD,8,0.03,0
+wave 4,D66,PVV,38,0.15,0
+wave 4,D66,SGP,5,0.02,0
+wave 4,D66,SP,5,0.02,0
+wave 4,D66,VOLT,12,0.05,0
+wave 4,D66,VVD,12,0.05,0
+wave 4,Denk,50+,1,0,0
+wave 4,Denk,BBB,15,0.04,0
+wave 4,Denk,CDA,12,0.03,0
+wave 4,Denk,CU,4,0.01,0
+wave 4,Denk,D66,60,0.17,0
+wave 4,Denk,FvD,2,0.01,0
+wave 4,Denk,GL,62,0.18,0
+wave 4,Denk,JA21,4,0.01,0
+wave 4,Denk,PvdA,34,0.1,0
+wave 4,Denk,PvDD,19,0.06,0
+wave 4,Denk,PVV,1,0,0
+wave 4,Denk,SGP,1,0,0
+wave 4,Denk,SP,18,0.05,0
+wave 4,Denk,VOLT,1,0,0
+wave 4,Denk,VVD,28,0.08,0
+wave 4,FvD,BBB,4,0.01,0
+wave 4,FvD,Bij1,3,0.01,0
+wave 4,FvD,CDA,44,0.09,0
+wave 4,FvD,CU,7,0.01,0
+wave 4,FvD,D66,79,0.17,0
+wave 4,FvD,Denk,2,0,0
+wave 4,FvD,GL,37,0.08,0
+wave 4,FvD,PvdA,81,0.17,0
+wave 4,FvD,PvDD,11,0.02,0
+wave 4,FvD,PVV,2,0,0
+wave 4,FvD,SP,30,0.06,0
+wave 4,FvD,VOLT,2,0,0
+wave 4,FvD,VVD,62,0.13,0
+wave 4,GL,50+,2,0.01,0
+wave 4,GL,BBB,6,0.03,0
+wave 4,GL,Bij1,3,0.02,0
+wave 4,GL,CDA,7,0.04,0
+wave 4,GL,CU,8,0.04,0
+wave 4,GL,D66,23,0.12,0
+wave 4,GL,FvD,3,0.02,0
+wave 4,GL,JA21,1,0.01,0
+wave 4,GL,PvdA,11,0.06,0
+wave 4,GL,PvDD,30,0.15,0
+wave 4,GL,PVV,7,0.04,0
+wave 4,GL,SP,10,0.05,0
+wave 4,GL,VOLT,3,0.02,0
+wave 4,GL,VVD,18,0.09,0
+wave 4,PvdA,Bij1,2,0.02,0
+wave 4,PvdA,CDA,17,0.15,0
+wave 4,PvdA,CU,20,0.18,0
+wave 4,PvdA,D66,3,0.03,0
+wave 4,PvdA,FvD,2,0.02,0
+wave 4,PvdA,PVV,2,0.02,0
+wave 4,PvdA,SGP,15,0.14,0
+wave 4,PvdA,SP,1,0.01,0
+wave 4,PvdA,VOLT,1,0.01,0
+wave 4,PvdA,VVD,12,0.11,0
+wave 4,PvDD,50+,11,0.02,0
+wave 4,PvDD,BBB,10,0.01,0
+wave 4,PvDD,Bij1,11,0.02,0
+wave 4,PvDD,CDA,34,0.05,0
+wave 4,PvDD,CU,8,0.01,0
+wave 4,PvDD,D66,81,0.11,0
+wave 4,PvDD,Denk,2,0,0
+wave 4,PvDD,FvD,3,0,0
+wave 4,PvDD,GL,46,0.06,0
+wave 4,PvDD,JA21,3,0,0
+wave 4,PvDD,PvdA,75,0.1,0
+wave 4,PvDD,PVV,25,0.03,0
+wave 4,PvDD,SGP,2,0,0
+wave 4,PvDD,SP,130,0.18,0
+wave 4,PvDD,VOLT,4,0.01,0
+wave 4,PvDD,VVD,53,0.07,0
+wave 4,PVV,50+,6,0.01,0
+wave 4,PVV,BBB,27,0.02,0
+wave 4,PVV,Bij1,37,0.03,0
+wave 4,PVV,CDA,157,0.14,0
+wave 4,PVV,CU,34,0.03,0
+wave 4,PVV,D66,166,0.15,0
+wave 4,PVV,Denk,2,0,0
+wave 4,PVV,FvD,6,0.01,0
+wave 4,PVV,GL,7,0.01,0
+wave 4,PVV,JA21,1,0,0
+wave 4,PVV,PvdA,36,0.03,0
+wave 4,PVV,PvDD,4,0,0
+wave 4,PVV,SGP,5,0,0
+wave 4,PVV,SP,13,0.01,0
+wave 4,PVV,VOLT,6,0.01,0
+wave 4,PVV,VVD,182,0.17,0
+wave 4,SGP,50+,6,0.08,0
+wave 4,SGP,Bij1,1,0.01,0
+wave 4,SGP,CDA,10,0.12,0
+wave 4,SGP,D66,8,0.1,0
+wave 4,SGP,FvD,2,0.02,0
+wave 4,SGP,GL,1,0.01,0
+wave 4,SGP,PvdA,2,0.02,0
+wave 4,SGP,PvDD,1,0.01,0
+wave 4,SGP,PVV,6,0.08,0
+wave 4,SGP,SP,4,0.05,0
+wave 4,SGP,VOLT,1,0.01,0
+wave 4,SGP,VVD,10,0.12,0
+wave 4,SP,50+,1,0.01,0
+wave 4,SP,BBB,4,0.03,0
+wave 4,SP,Bij1,1,0.01,0
+wave 4,SP,CDA,6,0.05,0
+wave 4,SP,D66,11,0.08,0
+wave 4,SP,Denk,1,0.01,0
+wave 4,SP,FvD,7,0.05,0
+wave 4,SP,GL,6,0.05,0
+wave 4,SP,PvdA,5,0.04,0
+wave 4,SP,PvDD,2,0.02,0
+wave 4,SP,PVV,9,0.07,0
+wave 4,SP,VOLT,6,0.05,0
+wave 4,SP,VVD,14,0.11,0
+wave 4,VVD,50+,1,0.01,0
+wave 4,VVD,Bij1,22,0.18,0
+wave 4,VVD,CDA,13,0.1,0
+wave 4,VVD,D66,17,0.14,0
+wave 4,VVD,FvD,3,0.02,0
+wave 4,VVD,PvDD,1,0.01,0
+wave 4,VVD,PVV,9,0.07,0
+wave 4,VVD,SP,3,0.02,0
