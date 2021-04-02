@@ -14,8 +14,8 @@ permalink: /media/
     </td>
        <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350"> 
-Vrouwelijke lijsttrekkers krijgen minder media-aandacht </a></h3> 
-          <i><a href="https://github.com/vupolcom/about">Loes Aaldering & Wouter van Atteveldt</a></i>
+Vrouwelijke lijsttrekkers krijgen minder media-aandacht </a></h3>  <i>NRC Handelsblad, 2 april 2021</i><br/>
+          met <a href="https://github.com/vupolcom/about">Loes Aaldering & Wouter van Atteveldt</a>
        </td>
   </tr>
 <tr>
