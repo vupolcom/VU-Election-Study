@@ -6,7 +6,18 @@ permalink: /media/
 ## Media-aandacht
 
 <table class="reports">
-
+   <tr> 
+   <td>
+      <a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350">
+        <img width="200px" align="left" src="https://images.nrc.nl/aSS03WYHYLkamUQTtkmYaL56JsI=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data69274442-d678c6.jpg" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350"> 
+Vrouwelijke lijsttrekkers krijgen minder media-aandacht </a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Loes Aaldering & Wouter van Atteveldt</a></i>
+       </td>
+  </tr>
 <tr>
     <td>
       <a href="https://decorrespondent.nl/12201/populistisch-rechts-is-nu-even-groot-als-links-hoe-kan-dat/5331420579870-a1570699">
