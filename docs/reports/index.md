@@ -6,6 +6,19 @@ permalink: /reports/
 <table class="reports">
    <tr> 
    <td>
+      <a href="https://tk2021.vupolcom.nl/reports/nrc3/">
+        <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/nrc3/leadershipchange-1.png" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://tk2021.vupolcom.nl/reports/nrc3/"> 
+Tweede Kamerverkiezingen 2021: Analyse </a></h3> 
+          <i><a href="https://github.com/vupolcom/about">Wouter van Atteveldt, Mariken van der Velden, Andreu Casas, Anita van Hoof, Jan Kleinnijenhuis & Loes Aaldering</a></i>
+       </td>
+  </tr>
+
+<tr> 
+   <td>
       <a href="https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/">
         <img width="200px" align="left" src="https://tk2021.vupolcom.nl/reports/SM-report02-wilders-baudet/SM-report02-topfeatures-sharing-UPD.jpg" />
       </a>
