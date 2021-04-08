@@ -32,7 +32,7 @@ other = a %>% filter(mtype != "TV") %>% select(mtype, publisher, party, id) %>% 
   group_by(mtype, publisher, party) %>% summarize(n=n())
 
 
-gasten = read_csv("~/Downloads/gasten_20210317.csv") %>% 
+gasten = read_csv(here("docs/reports/visibility/gasten_20210317.csv")) %>% 
   filter(date > "2021-01-01", !is.na(partij)) %>% 
   select(party=partij, date, show) %>% 
   mutate(party=case_when(tolower(party) == "groenlinks" ~ "GL",
@@ -42,7 +42,7 @@ gasten = read_csv("~/Downloads/gasten_20210317.csv") %>%
                          T ~ party)) %>% 
   group_by(show, party) %>% summarize(n=n())%>% add_column(mtype="guest")
 
-zetels = read_csv("~/Documents/zetels.csv") %>% 
+zetels = read_csv(here("docs/reports/visibility/zetels.csv")) %>% 
   select(party=partij, regering, rechts, tk2017, polls=`2021-02-17`) %>% 
   replace_na(list(polls=0)) %>% 
   mutate(tk2017p=tk2017/sum(tk2017), 
@@ -52,7 +52,7 @@ zetels = read_csv("~/Documents/zetels.csv") %>%
                          party == "VOLT" ~ "Volt",
                          T ~ party))
   
-https://vu-live.zoom.us/j/98572542426?pwd=WGZzcFFDUFF5NUN6SitxNHlCQzZlZz09 = bind_rows(tv, other, gasten)
+visibility = bind_rows(tv, other, gasten)
 
 d = visibility %>% select(-n) %>% pivot_wider(names_from=mtype, values_from=perc) %>% inner_join(zetels) 
 
