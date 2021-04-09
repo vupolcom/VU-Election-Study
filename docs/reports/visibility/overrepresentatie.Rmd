@@ -80,10 +80,10 @@ zetels = read_csv(here("docs/reports/visibility/zetels.csv")) %>%
 
 # Zichtbaarheid per kanaal
 
-Onderstaande grafieken geven de zichtbaarheid van de partijen weer bij NPO vergeleken met de stand in de peilingen een maand voor de verkiezingen 
+Onderstaande grafieken geven de zichtbaarheid van de partijen weer vergeleken met de stand in de peilingen een maand voor de verkiezingen 
 (peilingwijzer van 17 februari). 
-Bij de eerste twee grafieken wordt weergegeven hoe vaak een partij of lijsttrekker genoemd wordt in nieuws en actualiteitenprogramma's van de NPO (inclusief talkshows),
-respectievelijk op `nos.nl`.  
+Bij de eerste twee grafieken wordt weergegeven hoe vaak een partij of lijsttrekker genoemd wordt in nieuws- en actualiteitenprogramma's van de NPO (inclusief talkshows),
+respectievelijk online op `nos.nl`.  
 De derde grafiek geeft weer hoe vaak een kandidaat van de partij te gast was bij een van de talkshows van NPO. 
 Ter vergelijking geeft de laatste grafiek de zichtbaarheid van de partijen en lijsttrekkers in de landelijke kranten.  
 
@@ -130,9 +130,9 @@ ggplot(dtv, aes(x=fct_relevel(publisher, "NOS Journaal 20h", "Goedemorgen NL", "
 
 [Download data: `r export_data(dtv, "Zichtbaarheid in verschillende programmas")`]
 
-De tabel hierboven laat zien hoe vaak de verschillende partijen en lijsstrekkers 
+De tabel hierboven laat zien hoe vaak de partijen en lijsttrekkers genoemd worden in de verschillende nieuws- en actualiteitenprogramma's. 
 Hierin valt vooral op dat de agenda's van de verschillende nieuws- en actualiteitenprogramma's niet ver van elkaar afwijken.
-Grootste uitzndering lijkt Goedemorgen NL, die de aandacht meer gelijkmatig verspreid over de verschillende partijen. 
+Grootste uitzondering lijkt Goedemorgen NL, die de aandacht meer gelijkmatig verspreidt over de verschillende partijen. 
 
 # Talkshows
 
@@ -173,4 +173,4 @@ Voor alle kanalen zijn de gegevens vanaf 1 januari 2021 meegenomen.
 De peilingen zijn afkomstig van de Politieke Barometer zoals gepubliceerd op de site van Ipsos. Hierbij is gebruik gemaakt van de peilingen van 27 februari omdat dit een goede graadmeter is van de stand in de peilingen aan het begin van de campagne. 
 
 Alle tekst, figuren en gegevens uit dit rapport zijn (c) [CC-BY](https://creativecommons.org/licenses/by/4.0/nl/) 
-en mogen worden gedeeld en hergebruikt, ook voor commerciele doeleinden, zolang de brond duidelijk wordt vermeld. 
+en mogen worden gedeeld en hergebruikt, ook voor commerciele doeleinden, zolang de bron duidelijk wordt vermeld. 

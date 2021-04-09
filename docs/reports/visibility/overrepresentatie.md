@@ -12,12 +12,12 @@ editor_options:
 Zichtbaarheid per kanaal
 ========================
 
-Onderstaande grafieken geven de zichtbaarheid van de partijen weer bij
-NPO vergeleken met de stand in de peilingen een maand voor de
-verkiezingen (peilingwijzer van 17 februari). Bij de eerste twee
-grafieken wordt weergegeven hoe vaak een partij of lijsttrekker genoemd
-wordt in nieuws en actualiteitenprogramma’s van de NPO (inclusief
-talkshows), respectievelijk op `nos.nl`.  
+Onderstaande grafieken geven de zichtbaarheid van de partijen weer
+vergeleken met de stand in de peilingen een maand voor de verkiezingen
+(peilingwijzer van 17 februari). Bij de eerste twee grafieken wordt
+weergegeven hoe vaak een partij of lijsttrekker genoemd wordt in nieuws-
+en actualiteitenprogramma’s van de NPO (inclusief talkshows),
+respectievelijk online op `nos.nl`.  
 De derde grafiek geeft weer hoe vaak een kandidaat van de partij te gast
 was bij een van de talkshows van NPO. Ter vergelijking geeft de laatste
 grafiek de zichtbaarheid van de partijen en lijsttrekkers in de
@@ -55,11 +55,12 @@ Zichtbaarheid in verschillende programma’s
 \[Download data: [Zichtbaarheid in verschillende
 programmas](Zichtbaarheid_in_verschillende_programmas.csv)\]
 
-De tabel hierboven laat zien hoe vaak de verschillende partijen en
-lijsstrekkers Hierin valt vooral op dat de agenda’s van de verschillende
-nieuws- en actualiteitenprogramma’s niet ver van elkaar afwijken.
-Grootste uitzndering lijkt Goedemorgen NL, die de aandacht meer
-gelijkmatig verspreid over de verschillende partijen.
+De tabel hierboven laat zien hoe vaak de partijen en lijsttrekkers
+genoemd worden in de verschillende nieuws- en actualiteitenprogramma’s.
+Hierin valt vooral op dat de agenda’s van de verschillende nieuws- en
+actualiteitenprogramma’s niet ver van elkaar afwijken. Grootste
+uitzondering lijkt Goedemorgen NL, die de aandacht meer gelijkmatig
+verspreidt over de verschillende partijen.
 
 Talkshows
 =========
@@ -109,5 +110,5 @@ aan het begin van de campagne.
 
 Alle tekst, figuren en gegevens uit dit rapport zijn (c)
 [CC-BY](https://creativecommons.org/licenses/by/4.0/nl/) en mogen worden
-gedeeld en hergebruikt, ook voor commerciele doeleinden, zolang de brond
+gedeeld en hergebruikt, ook voor commerciele doeleinden, zolang de bron
 duidelijk wordt vermeld.
