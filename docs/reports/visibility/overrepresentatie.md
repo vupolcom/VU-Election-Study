@@ -1,5 +1,5 @@
 ---
-title: 'Tweede Kamerverkiezingen 2021: Zichtbaarheid en representatie'
+title: 'Tweede Kamerverkiezingen 2021: Zichtbaarheid van partijen op NPO'
 author: "Wouter van Atteveldt & Nel Ruigrok"
 permalink: reports/visibility/
 output: 
