@@ -1,0 +1,176 @@
+---
+title: 'Tweede Kamerverkiezingen 2021: Zichtbaarheid en representatie'
+author: "Wouter van Atteveldt & Nel Ruigrok"
+permalink: reports/visibility/
+output: 
+  md_document:
+    preserve_yaml: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo=F, fig.path='', fig.width = 10)
+library(printr)
+options(digits = 2)
+```
+
+```{r data}
+library(here)
+library(tidyverse)
+source(here("src/lib/data.R"))
+
+theme_nrc = function(...) {
+  ggthemes::theme_hc(...) + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+          axis.title.x=element_blank(), 
+          axis.title.y=element_blank(),
+          strip.background = element_rect(fill="white"))
+}
+hits = read_csv(here("data/intermediate/amcat_hits.csv")) %>% 
+  filter(publisher != "Nieuwsuur", publisher != "NOS liveblog") %>%
+  mutate(week = lubridate::floor_date(date, "week", week_start=4)) %>%
+  filter(date > "2021-01-06") 
+
+meta = read_csv(here("data/intermediate/amcat_meta.csv")) %>% filter(publisher != "Nieuwsuur", publisher != "NOS liveblog") %>%
+  filter(publisher != "Nieuwsuur", publisher != "NOS liveblog") %>%
+  mutate(week = lubridate::floor_date(date, "week", week_start=4)) %>%
+  filter(date > "2021-01-06") 
+
+a = hits %>% filter(cat == "actor") %>% rename(party=subcat) %>% 
+  mutate(week = lubridate::floor_date(date, "week", week_start=4)) %>%
+  filter(date > "2021-01-06") 
+tv = a %>% filter(mtype == "TV") %>% select(mtype, party, publisher, date) %>% unique() %>%
+ group_by(mtype, party, publisher) %>% summarize(n=n()) 
+other = a %>% filter(mtype != "TV") %>% select(mtype, publisher, party, id) %>% unique() %>% 
+  group_by(mtype, publisher, party) %>% summarize(n=n())
+
+lijsttrekkers = c("mark rutte","wopke hoekstra","geert wilders","sigrid kaag","jesse klaver","lilianne ploumen","lilian marijnissen","gert jan segers","thierry baudet","liane den haan","esther ouwehand","kees van der staaij","farid azarkan","joost eerdmans","sylvana simons","richard de mos","laurens dassen","nourdin el ouali","henk krol", "ronald sorensen","senna maatoug","nilufer gundogan")
+gasten = read_csv(here("docs/reports/visibility/gasten_20210317.csv")) %>% 
+  mutate(partij=ifelse(naam=='annabel nanninga', 'JA21', partij)) %>% 
+  filter(date > "2021-01-01", !is.na(partij), naam!="geert wilders") %>% 
+  filter(polfunctie %in% c("Minister-President","Staatssecretaris","Tweede Kamerlid","Minister") | naam %in% lijsttrekkers) %>% 
+  select(party=partij, date, publisher=show) %>% 
+  mutate(party=case_when(tolower(party) == "groenlinks" ~ "GL",
+                         party == "ChristenUnie" ~ "CU",
+                         party == "50PLUS" ~ "50Plus",
+                         party == "volt" ~ "Volt",
+                         T ~ party),
+         mtype=ifelse(publisher=="Jinek", "RTL", "Talkshow")) %>% 
+  group_by(mtype, publisher, party) %>% summarize(n=n()) %>% ungroup()
+
+visibility = bind_rows(tv, other, gasten) %>% 
+  filter(#mtype != "Newspapers", 
+         publisher!="Humberto", publisher != "NU.nl") %>% 
+  mutate(publisher = case_when(publisher == "NOS nieuws" ~ "nos.nl",
+                               T ~ publisher))
+  
+
+zetels = read_csv(here("docs/reports/visibility/zetels.csv")) %>% 
+  select(party=partij, regering, rechts, tk2017, polls=`2021-02-17`) %>% 
+  replace_na(list(polls=0)) %>% 
+  mutate(tk2017p=tk2017/sum(tk2017), 
+         pollsp=polls/sum(polls),
+         party=case_when(party=="50+" ~ "50Plus", 
+                         party=="DENK" ~ "Denk",
+                         party == "VOLT" ~ "Volt",
+                         T ~ party))
+
+```
+
+# Zichtbaarheid per kanaal
+
+Onderstaande grafieken geven de zichtbaarheid van de partijen weer bij NPO vergeleken met de stand in de peilingen een maand voor de verkiezingen 
+(peilingwijzer van 17 februari). 
+Bij de eerste twee grafieken wordt weergegeven hoe vaak een partij of lijsttrekker genoemd wordt in nieuws en actualiteitenprogramma's van de NPO (inclusief talkshows),
+respectievelijk op `nos.nl`.  
+De derde grafiek geeft weer hoe vaak een kandidaat van de partij te gast was bij een van de talkshows van NPO. 
+Ter vergelijking geeft de laatste grafiek de zichtbaarheid van de partijen en lijsttrekkers in de landelijke kranten.  
+
+De zichtbaarheid is hier uitgedrukt als kolompercentage, dus per grafiek telt het op tot 100%.
+Leesvoorbeeld: Van alle keren dat op TV in een programma een partij of lijsttrekker genoemd werd, was dat in 17% van de gevallen de VVD. Dit wordt vergeleken met hun percentage in de peilingen van 25% (38 van de 150 zetels).
+
+
+```{r zichtbaarheid}
+d = visibility %>% group_by(mtype, party) %>% summarize(n=sum(n)) %>% mutate(perc=n/sum(n)) %>% 
+  inner_join(zetels) %>% 
+  mutate(kanaal=recode(mtype, Talkshow="Talkshows NPO (gasten)", RTL="Jinek (gasten)", Online="NOS.nl (online)", TV="TV (nieuws & actualiteiten)", Newspapers="Kranten"),
+         kanaal=factor(kanaal, levels=c("TV (nieuws & actualiteiten)", "NOS.nl (online)", "Talkshows NPO (gasten)", "Jinek (gasten)", "Kranten")))
+ggplot(d %>% filter(mtype != "RTL"), 
+       aes(y=fct_reorder(party, pollsp))) + 
+  geom_col(aes(x=pollsp)) + geom_col(aes(x=perc), width=.5, fill="blue") + 
+  ggtitle("Zichtbaarheid vergeleken met stand in de peilingen", "(kolompercentages)")+ 
+  theme_nrc() +facet_grid(cols = vars(kanaal)) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) 
+```
+
+[Download data: `r export_data(d, "Zichtbaarheid van partijen")`]
+
+Opvallend is dat VVD op TV en online wel het meest zichtbaar was, maar dat de zichtbaarheid toch relatief laag was vergeleken met de peilingen.
+Ook PVV is relatief weinig zichtbaar geweest op TV tijdens de campagne. 
+PvdA, Christenunie en de kleine/nieuwe partijen FvD, Volt en JA21 kregen daarentegen percentueel meer aandacht dan hun stand in de peilingen. 
+Hierin maakt de NPO keuzes die redelijk lijken op die van de kranten: ook daar was er relatief weinig aandacht voor PVV en VVD, en meer voor de kleinere partijen. 
+
+Als we kijken naar talkshows vallen daar twee dingen nog sterk op: 
+de PVV is vrijwel afwezig, terwijl het CDA juist heel sterk vertegenwoordigd is. 
+
+# Zichtbaarheid in verschillende programma's
+
+```{r tv}
+dtv = visibility %>% filter(mtype == "TV") %>% group_by(publisher, party) %>% summarize(n=sum(n)) %>% mutate(perc=n/sum(n)) %>% 
+  select(-n)
+dtv = bind_rows(dtv, zetels %>% select(party, perc=pollsp) %>% add_column(publisher="Peilingen"))
+dtv = dtv %>% pivot_wider(names_from=party, values_from=perc, values_fill=0) %>% pivot_longer(-publisher, names_to="party", values_to="perc")
+ggplot(dtv, aes(x=fct_relevel(publisher, "NOS Journaal 20h", "Goedemorgen NL", "EenVandaag", "M", "De Vooravond", "Op1", "Peilingen"), 
+             y=fct_reorder(party, perc, .fun = function(x) x[7]), fill=perc, label=str_c(round(perc*100), "%"))) + 
+  geom_tile() + 
+  scale_fill_gradient(low="white", high="#01529d", guide = F, na.value="green")  + 
+  geom_text(data=dtv %>% filter(perc>0)) + theme_nrc() + ggtitle("Zichtbaarheid per programma", "(Kolompercentages)")
+```
+
+[Download data: `r export_data(dtv, "Zichtbaarheid in verschillende programmas")`]
+
+De tabel hierboven laat zien hoe vaak de verschillende partijen en lijsstrekkers 
+Hierin valt vooral op dat de agenda's van de verschillende nieuws- en actualiteitenprogramma's niet ver van elkaar afwijken.
+Grootste uitzndering lijkt Goedemorgen NL, die de aandacht meer gelijkmatig verspreid over de verschillende partijen. 
+
+# Talkshows
+
+Hieronder staat weergegeven hoe vaak een kandidaat van elke partij per talkshow is aangeschoven. 
+Ter vergelijking is hier ook Jinek weergegeven in de laatste kolom.
+
+```{r talkshows}
+dtalk = visibility %>% ungroup() %>% filter(mtype %in%  c("Talkshow", "RTL"), party %in% zetels$party) %>% select(-mtype) %>% pivot_wider(values_from=n, names_from=publisher, values_fill=0)%>% pivot_longer(-party, names_to="publisher", values_to="n")
+
+ggplot(dtalk, aes(x=fct_relevel(publisher, "Op1", "M", "Vooravond", "Jinek"), 
+             y=fct_reorder(party, n, .fun = function(x) sum(x[2:4])), fill=n, label=n)) + 
+  geom_tile() + 
+  scale_fill_gradient(low="white", high="#01529d", guide = F, na.value="green")  + 
+  geom_text(data=dtalk %>% filter(n>0)) + theme_nrc() + ggtitle("Gasten per talkshow", "(aantal keer dat een kandidaat van de partij is aangeschoven)")
+```
+
+[Download data: `r export_data(d, "Talkshowgasten")`]
+
+Duidelijk te zien hier dat de talkshows wel andere keuzes maken in wie ze uitnodigen,
+of dat gasten andere keuzes maken in welke uitnodigingen ze accepteren.
+Waar kandidaten van CDA relatief vaak in alle talkshows zaten, 
+was VVD eigenlijk alleen bij Op1 sterk vertegenwoordigd.
+Bij M kwam VVD uberhaubt niet voor, terwijl SP er heel vaak aan is geschoven. 
+Zie voor meer duiding ook het artikel [Wie het beeld heeft heeft de macht](https://www.groene.nl/artikel/wie-het-beeld-heeft-heeft-de-macht) in de Groene.
+
+# Data en verantwoording
+
+De zichtbaarheid op TV, NOS.nl en kranten is gebaseerd op het noemen van de partij of lijsttrekker in de inhoud van het item.
+Voor TV is hiervan gebruik gemaakt van de ondertitels van TT888, voor nos.nl en de kranten is dit gebaseerd op de inhoud zoals gepubliceerd op de website.
+Voor elke partij is gezocht naar de partijnaam of (waar van toepassing) afkorting, dus bijvoorbeeld `pvda` of `partij van de arbeid`. 
+Alleen bij Denk is hierop een uitzondering gemaakt, daar is gezocht naar het woord `denk` binnen 5 woorden van het woord `partij`.
+Voor de lijsttrekker is gekeken naar de volledige naam (bv. `Wopke Hoekstra`) of de achternaam met daarin binnen 10 woorden de functie (b.v. `bewindspersoon`, `lijsttrekker`, etc).
+
+Voor de talkshows is de lijst met gasten verkregen via de sites van Beeld en Geluid en de afzonderlijke programma's.
+Deze lijst is vervolgens door Nel Ruigrok en studenten van de EUR handmatig gecontroleerd en opgeschoond. 
+
+Voor alle kanalen zijn de gegevens vanaf 1 januari 2021 meegenomen. 
+De peilingen zijn afkomstig van de Politieke Barometer zoals gepubliceerd op de site van Ipsos. Hierbij is gebruik gemaakt van de peilingen van 27 februari omdat dit een goede graadmeter is van de stand in de peilingen aan het begin van de campagne. 
+
+Alle tekst, figuren en gegevens uit dit rapport zijn (c) [CC-BY](https://creativecommons.org/licenses/by/4.0/nl/) 
+en mogen worden gedeeld en hergebruikt, ook voor commerciele doeleinden, zolang de brond duidelijk wordt vermeld. 
