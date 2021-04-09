@@ -8,6 +8,18 @@ permalink: /media/
 <table class="reports">
    <tr> 
    <td>
+      <a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren">
+        <img width="200px" align="left" src="https://www.rtlnieuws.nl/sites/default/files/content/images/2021/04/08/ANP-423443640.jpg?itok=XuqBRWC_&offsetX=0&offsetY=92&cropWidth=1022&cropHeight=575&width=1024&height=576&impolicy=dynamic" />
+      </a>
+    </td>
+       <td>
+      <h3><a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren"> 
+Coalitie onmogelijk? In deze landen leek dat ook zo, maar lukte het toch </a></h3>  <i>RTL Nieuws, 8 april 2021</i><br/>
+          met <a href="https://github.com/vupolcom/about">Mariken van der Velden</a>
+       </td>
+  </tr>
+  <tr> 
+   <td>
       <a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350">
         <img width="200px" align="left" src="https://images.nrc.nl/aSS03WYHYLkamUQTtkmYaL56JsI=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data69274442-d678c6.jpg" />
       </a>
