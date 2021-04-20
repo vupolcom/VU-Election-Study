@@ -1,6 +1,6 @@
 ---
 title: 'Codebook VU Panel Survey: Dutch Parliamentary Elections 2021'
-author: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Nicolas Mathis, and Kasper Welbers"
+author: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Marloes Jansen, Dirck de Kleer, Jan Kleinnijenhuis, Nicolas Mathis, and Kasper Welbers"
 output: 
   md_document:
     toc: yes
@@ -403,6 +403,36 @@ d %>%
 
 &nbsp;
 
+```{r}
+values = c("next_coalition", 
+         "Which parties do you prefer to form the government after the Lower House elections? Please select at least 2 parties. Multiple answers are possible.",
+         "Welke partijen hebben uw voorkeur om de regering te gaan vormen na de Tweede Kamerverkiezingen? Selecteer minimaal 2 partijen. Er zijn meerdere antwoorden mogelijk.")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
 
 ### Block B: Performance Politics in the Media
 ```{r}
@@ -442,8 +472,8 @@ d %>%
   column_spec(2, width = "60em") %>%
   column_spec(3, width = "60em")
 
-d <- tibble(`B2_suffix` = c(1:13),
-            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d <- tibble(`B2_suffix` = c(1:14),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan", "PvdA & Lilianne Ploumen"))
 d %>%
   kbl() %>%
     kable_classic_2(bootstrap_options = "striped", 
@@ -485,8 +515,8 @@ d %>%
   column_spec(2, width = "60em") %>%
   column_spec(3, width = "60em")
 
-d <- tibble(`B3_suffix` = c(1:13),
-            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d <- tibble(`B3_suffix` = c(1:14),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan", "PvdA & Liliane Ploumen"))
 d %>%
   kbl() %>%
     kable_classic_2(bootstrap_options = "striped", 
@@ -956,6 +986,82 @@ d %>%
 &nbsp;
 
 ```{r}
+values = c("gov_termination", 
+           "Some said the government should resign, for example, because of the benefits affair. Others said that the government should stay on, for example, because without a government there is no support for coronation measures. What do you think?",
+         "Sommigen zeiden dat de regering moest aftreden, bijvoorbeeld vanwege de toeslagenaffaire. Anderen zeiden dat de regering moest aanblijven, bijvoorbeeld omdat zonder regering er geen draagvlak is voor coronamaatregelen. Wat vindt u?")
+d <- tibble(Variable = Variable, G1_b = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Government certainly had to resign", 1:9, "Government certainly had to stay on"), 
+          `Response Wording` = c("Rergering moest zeker aftreden", 1:9, "Regering moest zeker aanblijven"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("leader_selection", 
+           "You will now be shown 3 statements that have to do with Dutch party leaders. We would like to know from you to what extent the statement applies to the party leader. Below you can indicate whether a party leader is unknown to you.",
+         "U krijgt nu 3 stellingen te zien die te maken hebben met de Nederlandse partijleiders. Wij willen graag van u weten in hoeverre de uitspraak van toepassing is op de partijleider. Hieronder kunt u aangeven of een partijleider onbekend is bij u.")
+d <- tibble(Variable = Variable, G_eval_leaders = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:14),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
 values = c("leader_integrity", 
            "He/she has integrity",
          "Hij/zij is integer")
@@ -983,9 +1089,9 @@ d %>%
   column_spec(2, width = "60em") %>%
   column_spec(3, width = "60em")
 
-d <- tibble(`G2_suffix` = c(1:13),
-            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan"),
-            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan"))
+d <- tibble(`G2_suffix` = c(1:14),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"))
 d %>%
   kbl() %>%
     kable_classic_2(bootstrap_options = "striped", 
@@ -1028,9 +1134,9 @@ d %>%
   column_spec(2, width = "60em") %>%
   column_spec(3, width = "60em")
 
-d <- tibble(`G3_suffix` = c(1:13),
-            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan"),
-            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan"))
+d <- tibble(`G2_suffix` = c(1:14),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"))
 d %>%
   kbl() %>%
     kable_classic_2(bootstrap_options = "striped", 
@@ -1073,9 +1179,9 @@ d %>%
   column_spec(2, width = "60em") %>%
   column_spec(3, width = "60em")
 
-d <- tibble(`G4_suffix` = c(1:13),
-            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan"),
-            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan"))
+d <- tibble(`G2_suffix` = c(1:14),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Lodewijk Asscher", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen"))
 d %>%
   kbl() %>%
     kable_classic_2(bootstrap_options = "striped", 
@@ -1595,12 +1701,3236 @@ d %>%
 
 ## Wave 1
 
+### Block A: Voting Behavior
+
+```{r}
+values = c("gotv_intention", 
+         "On March 17, 2021 there are parliamentary elections. Do you think you will vote then?",
+         "Op 17 maart 2021 zijn er Tweede Kamerverkiezingen. Denkt u dan te gaan stemmen?")
+d <- tibble(Variable = Variable, A1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1,0, 998:999), 
+          `Response Label` = c("Yes, I will vote", "No, I will not vote", "I don't know yet", "I'm not eligble to vote"), 
+          `Response Wording` = c("Ja, ik ga stemmen", "Nee ik ga niet stemmen", "Ik weet het nog niet", "Ik mag niet stemmen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+
+```{r}
+values = c("vote_not_open", 
+         "Can you state in a few words why you will not vote?",
+         "Kunt u in enkele woorden aangeven waarom u niet gaat stemmen?")
+d <- tibble(Variable = Variable, A1_not = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_open", 
+         "Can you state in a few words why you will vote?",
+         "Kunt u in enkele woorden aangeven waarom u gaat stemmen?")
+d <- tibble(Variable = Variable, A1_vote = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_intention", 
+         "Which political party would you vote for if there were parliamentary elections today? ",
+         "Op welke politieke partij zou u stemmen als er vandaag Tweede Kamerverkiezingen zouden zijn? ")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:15,999), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party", "Other party", "I vote blanco","I don't know yet"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij", "Andere partij", "Ik stem blanco","Weet ik niet nog niet"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("next_coalition", 
+         "Which parties do you prefer to form the government after the Lower House elections? Please select at least 2 parties. Multiple answers are possible.",
+         "Welke partijen hebben uw voorkeur om de regering te gaan vormen na de Tweede Kamerverkiezingen? Selecteer minimaal 2 partijen. Er zijn meerdere antwoorden mogelijk.")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block B: Performance Politics in the Media
+
+```{r}
+values = c("party_news", 
+         "Were the following parties and their leaders inconspicuous or conspicuous in the news over the past two weeks?",
+         "Waren de onderstaande partijen en hun leiders onopvallend of opvallend in het nieuws van de afgelopen twee weken?")
+d <- tibble(Variable = Variable, B2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:3,999), 
+          `Response Label` = c("Inconspicuous", "Conspiciuous", "Very conspiciuous","Never heard of"), 
+          `Response Wording` = c("Onopvallend", "Opvallend", "Zeer opvallend", "Nooit iets van vernomen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B2_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("direction_news", 
+         "What you noticed about [party & party leader], did you find positive or negative?",
+         "Wat u opviel over [partij & partijleider], vond u dat positief of negatief?")
+d <- tibble(Variable = Variable, B3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Very negative", 1:9, "Very positive"), 
+          `Response Wording` = c("Erg negatief", 1:9, "Zeer positief"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B3_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+### Block H: Other Issues
+
+```{r}
+values = c("spiral_silence1", 
+           "Which statement is most applicable to you when it comes to sensitive topics, such as the reception of refugees in the Netherlands and measures against the coronavirus?",
+         "Welke uitspraak is het meeste op u van toepassing als het gaat om gevoelige onderwerpen, zoals de opvang van vluchtelingen in Nederland en maatregelen tegen het coronavirus?")
+d <- tibble(Variable = Variable, H1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:3), 
+          `Response Label` = c("I keep my opinions to myself", "I only speak up for my opinion in front of family, friends and colleagues", "I always stand up for my opinions, also in front of strangers, for example on the street and in the train"), 
+          `Response Wording` = c("Ik houd mijn mening voor me", "Ik kom alleen voor mijn mening uit tegenover familie, vrienden en collega’s", "Ik kom altijd voor mijn mening uit, ook tegenover onbekenden, bijvoorbeeld op straat en in de trein"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("spiral_silence2", 
+           "When you expressed your opinion on sensitive political issues, did others usually agree?",
+         "Als u uw mening gaf over gevoelige politieke onderwerpen, waren anderen het dan meestal…")
+d <- tibble(Variable = Variable, H2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:5), 
+          `Response Label` = c("all agree with you", "mostly agree with yout", "agree and disagree with you as often", "mostly disagree with yout", "all disagree with you"), 
+          `Response Wording` = c("allemaal met u eens", "overwegend met u eens", "evenvaak met u eens als oneens", "overwegend met u oneens", "allemaal met u oneens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vaccination", 
+           "If I were able to get vaccinated against Corona (COVID-19) in the next week, I would:",
+         "Als ik me in de komende week zou kunnen laten vaccineren tegen Corona (COVID-19), dan zou ik dat:")
+d <- tibble(Variable = Variable, H7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:4), 
+          `Response Label` = c("Definitely do it", "Do it", "Don't do it", "Definitely don't do it"), 
+          `Response Wording` = c("Zeer zeker doen", "Doen", "Niet doen", "Zeer zeker niet doen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vaccination_protest1", 
+           "In general, what is your position on movements that oppose the Corona measures?",
+         "Hoe staat u in het algemeen ten aanzien van bewegingen die zich verzetten tegen de Corona maatregelen?")
+d <- tibble(Variable = Variable, H7_a = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Very negative", 1:9, "Very positive"), 
+          `Response Wording` = c("Heel negatief", 1:9, "Heel positief"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vaccination_protest2", 
+           "To what extent do you agree with the following statement: The nonviolent way in which the movements opposing the Corona measures are protesting appeals to me.",
+         "In welke mate bent u het eens met de volgende stelling: De geweldloze manier waarop de bewegingen die zich verzetten tegen de Corona maatregelenprotesteren spreekt mij aan.")
+d <- tibble(Variable = Variable, H7_b = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Very much disagree", 1:9, "Very much abgree"), 
+          `Response Wording` = c("Helemaal mee oneens", 1:9, "Helemaal mee eens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("event_history", 
+           "What do you think is the most important or defining thing that has occurred in the history of the Netherlands?",
+         "Wat is volgens u het meest belangrijke of meest bepalende wat zich in de geschiedenis van Nederland heeft voorgedaan?")
+d <- tibble(Variable = Variable, H8 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+```
+
+&nbsp;
+
+```{r}
+values = c("person_history", 
+           "What do you think has been the most important or defining person for the Netherlands from its early history to today?",
+         "Wat is volgens u de meest belangrijke of meest bepalende persoon geweest voor Nederland vanaf de vroege geschiedenis tot vandaag?")
+d <- tibble(Variable = Variable, H9 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+```
+
+&nbsp;
+
+```{r}
+values = c("future_nl", 
+           "When you think about the future of the Netherlands and the Dutch, what future development would you wish for?",
+         "Als u denkt aan de toekomst van Nederland en de Nederlanders, welke toekomstige ontwikkeling zou u zich dan wensen?")
+d <- tibble(Variable = Variable, H10 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+```
+
+&nbsp;
+
+### Block I: News Consumption
+```{r}
+values = c("newscons_freq", 
+           "How many days in the past two weeks have you followed the following sources to learn something about politics and current affairs?",
+         "Hoeveel dagen in de afgelopen twee weken heeft  u de volgende bronnen gevolgd om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:7), 
+          `Response Label` = c(0:7), 
+          `Response Wording` = c(0:7))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:9),
+            `Statements ENG` = c("Television", "Newspapers or opinion magazines (paper or online)", "Radio (including podcast and online)", "Online news sites (such as nu.nl) or blogs", "Social media (such as Facebook, Twitter)", "Messaging apps (such as Whatsapp, messenger)", "(Offline) conversations with people", "News apps or push messages on your phone", "Search engines (such as Google or Bing)"),
+            `Statements NL` = c("Televisie", "Kranten of opiniebladen (op papier of online)", "Radio (inclusief podcast en online)", "Online nieuwssites (zoals nu.nl) of blogs", "Social media (bijvoorbeeld Facebook, Twitter)", "Messaging apps (bijvoorbeeld Whatsapp, messenger)", "(Offline) gesprekken met mensen", "Nieuwsapps of pushberichten op uw telefoon", "Zoekmachines (zoals Google of Bing)"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_papers", 
+           "Have you read one of the following newspapers in the past week?",
+         "Heeft u de afgelopen week één van de volgende kranten gelezen?")
+d <- tibble(Variable = Variable, I2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "A regional or local newspaper", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Other, namely:"), 
+          `Response Wording` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "Een regionale of lokale krant", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_tv", 
+           "Have you watch one of the following tv shows in the past week?",
+         "Heeft u afgelopen week naar één van de volgende televisie nieuwsprogramma’s gekeken?")
+d <- tibble(Variable = Variable, I3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:16), 
+          `Response Label` = c("Press comnference of Rutte and De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Own channels of politicians and opinion makers", "Other, namely:"), 
+          `Response Wording` = c("Persconferentie Rutte en De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Eigen kanalen van politici en opiniemakers", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+```{r}
+values = c("newscons_websites", 
+           "Did you visit one of the following websites last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende websites bezocht om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:9), 
+          `Response Label` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Political blogs, namely:", "Other, namely:"), 
+          `Response Wording` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Politieke blogs, namelijk:", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_socialmedia", 
+           "Did you use one of the following social media last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende sociale media gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Other, namely:"), 
+          `Response Wording` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_messagingapps", 
+           "Did you use one of the following messaging apps last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende messaging-apps gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I6 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:6), 
+          `Response Label` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Other, namely:"), 
+          `Response Wording` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_apps", 
+           "Did you use one of the following apps on your mobile phone last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende apps op uw mobiele telefoon gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:2,11,3:10), 
+          `Response Label` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator like feedly or flipboard", "Apple News", "Google News", "Other, namely:"), 
+          `Response Wording` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator zoals feedly of flipboard", "Apple News", "Google News",  "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
 ## Wave 2
+
+### Block A: Voting Behavior
+
+```{r}
+values = c("gotv_intention", 
+         "On March 17, 2021 there are parliamentary elections. Do you think you will vote then?",
+         "Op 17 maart 2021 zijn er Tweede Kamerverkiezingen. Denkt u dan te gaan stemmen?")
+d <- tibble(Variable = Variable, A1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1,0, 998:999), 
+          `Response Label` = c("Yes, I will vote", "No, I will not vote", "I don't know yet", "I'm not eligble to vote"), 
+          `Response Wording` = c("Ja, ik ga stemmen", "Nee ik ga niet stemmen", "Ik weet het nog niet", "Ik mag niet stemmen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_intention", 
+         "Which political party would you vote for if there were parliamentary elections today? ",
+         "Op welke politieke partij zou u stemmen als er vandaag Tweede Kamerverkiezingen zouden zijn? ")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:15,999), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party", "Other party", "I vote blanco","I don't know yet"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij", "Andere partij", "Ik stem blanco","Weet ik niet nog niet"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("next_coalition", 
+         "Which parties do you prefer to form the government after the Lower House elections? Please select at least 2 parties. Multiple answers are possible.",
+         "Welke partijen hebben uw voorkeur om de regering te gaan vormen na de Tweede Kamerverkiezingen? Selecteer minimaal 2 partijen. Er zijn meerdere antwoorden mogelijk.")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block B: Performance Politics in the Media
+
+```{r}
+values = c("party_news", 
+         "Were the following parties and their leaders inconspicuous or conspicuous in the news over the past two weeks?",
+         "Waren de onderstaande partijen en hun leiders onopvallend of opvallend in het nieuws van de afgelopen twee weken?")
+d <- tibble(Variable = Variable, B2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:3,999), 
+          `Response Label` = c("Inconspicuous", "Conspiciuous", "Very conspiciuous","Never heard of"), 
+          `Response Wording` = c("Onopvallend", "Opvallend", "Zeer opvallend", "Nooit iets van vernomen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B2_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("direction_news", 
+         "What you noticed about [party & party leader], did you find positive or negative?",
+         "Wat u opviel over [partij & partijleider], vond u dat positief of negatief?")
+d <- tibble(Variable = Variable, B3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Very negative", 1:9, "Very positive"), 
+          `Response Wording` = c("Erg negatief", 1:9, "Zeer positief"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B3_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+### Block H: Other Issues
+
+```{r}
+values = c("eval_dejonge", 
+           "You are now presented with 4 statements related to Hugo de Jonge's ability as Minister of Health. Hugo de Jonge has...",
+         "U krijgt nu 4 stellingen te zien die te maken hebben met de de kundigheid van Hugo de Jonge als minister van Volksgezondheid. Hugo de Jonge is...")
+d <- tibble(Variable = Variable, H_deJonge = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`H_deJonge_suffix` = c(1:4),
+            `Statements ENG` = c("Integrity", "Decisiveness", "Competent", "Sympathetic"),
+            `Statements NL` = c("Integer", "Daadkrachtig", "Competent", "Sympatiek"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("sexism_scale", 
+           "We would like to ask you for your opinion about men and women in politics. To what extent do you agree with the following statements:",
+         "Wij willen u vragen naar uw mening over mannen en vrouwen in de politiek. In hoeverre bent u het eens met de volgende uitspraken:")
+d <- tibble(Variable = Variable, H5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Very much disagree", 1:9, "Very much agree"), 
+          `Response Wording` = c("Helemaal mee oneeens", 1:9, "Helemaal mee eens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`H56_suffix` = c(1:5),
+            `Statements ENG` = c("I hope that in the next ten years the Netherlands will have a female prime minister", "Men are better at making political decisions than women.", "It is easier in the Netherlands for a man to become a minister than for a woman.", "Political parties must do more to ensure that the number of women in the House of Representatives increases.", "Women have fewer opportunities in politics in the Netherlands than men."),
+            `Statements NL` = c("Ik hoop dat Nederland in de komende tien jaar een vrouwelijke minister-president krijgt", "Mannen zijn beter in staat om politieke beslissingen te nemen dan vrouwen.", "Het is in Nederland voor een man makkelijker om minister te worden dan voor een vrouw.", "Politieke partijen moeten meer doen om te zorgen dat het aantal vrouwen in de Tweede Kamer toeneemt.", "Vrouwen krijgen in Nederland minder kansen in de politiek dan mannen."))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("corona_policies", 
+           "We would like to ask you for your opinion on the measures chosen by the government to combat the coronavirus. Overall, are you in favor of:",
+         "We willen u vragen naar uw mening over de maatregelen die de regering kiest om het coronavirus tegen te gaan. Bent u al met al een voorstander van:")
+d <- tibble(Variable = Variable, H_corona = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Very much disagree", 1:9, "Very much agree"), 
+          `Response Wording` = c("Helemaal mee oneeens", 1:9, "Helemaal mee eens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`H56_suffix` = c(1:9),
+            `Statements ENG` = c("Work at home, unless there is no other way", "Wash your hands often", "Keep 1.5 meters away from others", "Wear a mask where it is mandatory", "Get tested and stay home with symptoms", "Stay home if you or someone in your household tests positive", "Mandatory quarantine when traveling from abroad", "Curfew", "Closure of bars & restaurants/shops/contact professions"),
+            `Statements NL` = c("Werk thuis, tenzij het niet anders kan", "Was vaak uw handen", "Houd 1,5 meter afstand van anderen", "Draag een mondkapje waar dat verplicht is", "Laat u testen en blijf thuis bij klachten", "Blijf thuis bij een positieve testuitslag van u of iemand in uw huishouden", "Verplichte quarantaine bij reizen vanuit het buitenland", "Avondklok", "Sluiting horeca/ winkels/ contactberoepen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("compliance", 
+           "Have you been adhering to the Corona measures set by the government over the past two weeks?",
+         "Heeft u zich aan de door de overheid gestelde Corona maatregelen gehouden de afgelopen twee weken?")
+d <- tibble(Variable = Variable, H_Corona2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:5), 
+          `Response Label` = c("Never", "Almost never", "Regularly", "Almost always", "Always"), 
+          `Response Wording` = c("Nooit", "Bijna nooit", "Regelmatig", "Bijna altijd", "Altijd"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vaccination", 
+           "If I were able to get vaccinated against Corona (COVID-19) in the next week, I would:",
+         "Als ik me in de komende week zou kunnen laten vaccineren tegen Corona (COVID-19), dan zou ik dat:")
+d <- tibble(Variable = Variable, H7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:4), 
+          `Response Label` = c("Definitely do it", "Do it", "Don't do it", "Definitely don't do it"), 
+          `Response Wording` = c("Zeer zeker doen", "Doen", "Niet doen", "Zeer zeker niet doen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block I: News Consumption
+```{r}
+values = c("newscons_freq", 
+           "How many days in the past two weeks have you followed the following sources to learn something about politics and current affairs?",
+         "Hoeveel dagen in de afgelopen twee weken heeft  u de volgende bronnen gevolgd om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:7), 
+          `Response Label` = c(0:7), 
+          `Response Wording` = c(0:7))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:9),
+            `Statements ENG` = c("Television", "Newspapers or opinion magazines (paper or online)", "Radio (including podcast and online)", "Online news sites (such as nu.nl) or blogs", "Social media (such as Facebook, Twitter)", "Messaging apps (such as Whatsapp, messenger)", "(Offline) conversations with people", "News apps or push messages on your phone", "Search engines (such as Google or Bing)"),
+            `Statements NL` = c("Televisie", "Kranten of opiniebladen (op papier of online)", "Radio (inclusief podcast en online)", "Online nieuwssites (zoals nu.nl) of blogs", "Social media (bijvoorbeeld Facebook, Twitter)", "Messaging apps (bijvoorbeeld Whatsapp, messenger)", "(Offline) gesprekken met mensen", "Nieuwsapps of pushberichten op uw telefoon", "Zoekmachines (zoals Google of Bing)"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_papers", 
+           "Have you read one of the following newspapers in the past week?",
+         "Heeft u de afgelopen week één van de volgende kranten gelezen?")
+d <- tibble(Variable = Variable, I2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "A regional or local newspaper", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Other, namely:"), 
+          `Response Wording` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "Een regionale of lokale krant", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_tv", 
+           "Have you watch one of the following tv shows in the past week?",
+         "Heeft u afgelopen week naar één van de volgende televisie nieuwsprogramma’s gekeken?")
+d <- tibble(Variable = Variable, I3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:16), 
+          `Response Label` = c("Press comnference of Rutte and De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Own channels of politicians and opinion makers", "Other, namely:"), 
+          `Response Wording` = c("Persconferentie Rutte en De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Eigen kanalen van politici en opiniemakers", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+```{r}
+values = c("newscons_websites", 
+           "Did you visit one of the following websites last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende websites bezocht om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:9), 
+          `Response Label` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Political blogs, namely:", "Other, namely:"), 
+          `Response Wording` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Politieke blogs, namelijk:", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_socialmedia", 
+           "Did you use one of the following social media last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende sociale media gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Other, namely:"), 
+          `Response Wording` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_messagingapps", 
+           "Did you use one of the following messaging apps last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende messaging-apps gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I6 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:6), 
+          `Response Label` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Other, namely:"), 
+          `Response Wording` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_apps", 
+           "Did you use one of the following apps on your mobile phone last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende apps op uw mobiele telefoon gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:2,11,3:10), 
+          `Response Label` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator like feedly or flipboard", "Apple News", "Google News", "Other, namely:"), 
+          `Response Wording` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator zoals feedly of flipboard", "Apple News", "Google News",  "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
 
 ## Wave 3
 
-## Wave 4
+### Block A: Voting Behavior
 
-## Wave 5
+```{r}
+values = c("gotv_intention", 
+         "On March 17, 2021 there are parliamentary elections. Do you think you will vote then?",
+         "Op 17 maart 2021 zijn er Tweede Kamerverkiezingen. Denkt u dan te gaan stemmen?")
+d <- tibble(Variable = Variable, A1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1,0, 998:999), 
+          `Response Label` = c("Yes, I will vote", "No, I will not vote", "I don't know yet", "I'm not eligble to vote"), 
+          `Response Wording` = c("Ja, ik ga stemmen", "Nee ik ga niet stemmen", "Ik weet het nog niet", "Ik mag niet stemmen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_intention", 
+         "Which political party would you vote for if there were parliamentary elections today? ",
+         "Op welke politieke partij zou u stemmen als er vandaag Tweede Kamerverkiezingen zouden zijn? ")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:15,999), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party", "Other party", "I vote blanco","I don't know yet"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij", "Andere partij", "Ik stem blanco","Weet ik niet nog niet"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("next_coalition", 
+         "Which parties do you prefer to form the government after the Lower House elections? Please select at least 2 parties. Multiple answers are possible.",
+         "Welke partijen hebben uw voorkeur om de regering te gaan vormen na de Tweede Kamerverkiezingen? Selecteer minimaal 2 partijen. Er zijn meerdere antwoorden mogelijk.")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block B: Performance Politics in the Media
+
+```{r}
+values = c("party_news", 
+         "Were the following parties and their leaders inconspicuous or conspicuous in the news over the past two weeks?",
+         "Waren de onderstaande partijen en hun leiders onopvallend of opvallend in het nieuws van de afgelopen twee weken?")
+d <- tibble(Variable = Variable, B2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:3,999), 
+          `Response Label` = c("Inconspicuous", "Conspiciuous", "Very conspiciuous","Never heard of"), 
+          `Response Wording` = c("Onopvallend", "Opvallend", "Zeer opvallend", "Nooit iets van vernomen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B2_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("direction_news", 
+         "What you noticed about [party & party leader], did you find positive or negative?",
+         "Wat u opviel over [partij & partijleider], vond u dat positief of negatief?")
+d <- tibble(Variable = Variable, B3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Very negative", 1:9, "Very positive"), 
+          `Response Wording` = c("Erg negatief", 1:9, "Zeer positief"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B3_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+### Block H: Other Issues
+
+```{r}
+values = c("vaccination", 
+           "If I were able to get vaccinated against Corona (COVID-19) in the next week, I would:",
+         "Als ik me in de komende week zou kunnen laten vaccineren tegen Corona (COVID-19), dan zou ik dat:")
+d <- tibble(Variable = Variable, H7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:4), 
+          `Response Label` = c("Definitely do it", "Do it", "Don't do it", "Definitely don't do it"), 
+          `Response Wording` = c("Zeer zeker doen", "Doen", "Niet doen", "Zeer zeker niet doen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("intro", 
+           "To what extent do you think the following characteristics apply to describe news from newspapers or opinion magazines, television, radio, online news sites, social media, and professional journalists?",
+         "In hoeverre denkt u dat de volgende kenmerken van toepassing zijn om nieuws van kranten of opiniebladen, televisie, radio, online nieuwssites, sociale media, en professionele journalisten te beschrijven?")
+d <- tibble(Variable = Variable, H11_intro = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("media_honest", 
+           "They are honest when they cover the news.",
+         "Zij zijn eerlijk wanneer zij het nieuws verslaan.")
+d <- tibble(Variable = Variable, H11_1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:6),
+            `Statements ENG` = c("newspapers or opinion magazines", "television", "radio or podcasts", "online news sites", "sociale media", "profesional journalists"),
+            `Statements NL` = c("kranten of opiniebladen", "televisie", "radio of podcasts", "online nieuwssites", "sociale media", "professionele journalisten"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("media_accuracy", 
+           "They are accurate when they cover the news.",
+         "Zij zijn accuraat wanneer zij het nieuws verslaan.")
+d <- tibble(Variable = Variable, H11_2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:6),
+            `Statements ENG` = c("newspapers or opinion magazines", "television", "radio or podcasts", "online news sites", "sociale media", "profesional journalists"),
+            `Statements NL` = c("kranten of opiniebladen", "televisie", "radio of podcasts", "online nieuwssites", "sociale media", "professionele journalisten"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("media_impartial", 
+           "They are impartial when covering the news.",
+         "Zij zijn onpartijdig wanneer zij het nieuws verslaan.")
+d <- tibble(Variable = Variable, H11_3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:6),
+            `Statements ENG` = c("newspapers or opinion magazines", "television", "radio or podcasts", "online news sites", "sociale media", "profesional journalists"),
+            `Statements NL` = c("kranten of opiniebladen", "televisie", "radio of podcasts", "online nieuwssites", "sociale media", "professionele journalisten"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("media_whole_story", 
+           "They tell the whole story when covering the news.",
+         "Zij vertellen het hele verhaal wanneer zij het nieuws verslaan.")
+d <- tibble(Variable = Variable, H11_4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:6),
+            `Statements ENG` = c("newspapers or opinion magazines", "television", "radio or podcasts", "online news sites", "sociale media", "profesional journalists"),
+            `Statements NL` = c("kranten of opiniebladen", "televisie", "radio of podcasts", "online nieuwssites", "sociale media", "professionele journalisten"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("media_facts_vs_opinions", 
+           "They distinguish facts from opinions when covering the news.",
+         "Zij onderscheiden feiten van meningen wanneer zij het nieuws verslaan.")
+d <- tibble(Variable = Variable, H11_5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:6),
+            `Statements ENG` = c("newspapers or opinion magazines", "television", "radio or podcasts", "online news sites", "sociale media", "profesional journalists"),
+            `Statements NL` = c("kranten of opiniebladen", "televisie", "radio of podcasts", "online nieuwssites", "sociale media", "professionele journalisten"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+### Block I: News Consumption
+```{r}
+values = c("newscons_freq", 
+           "How many days in the past two weeks have you followed the following sources to learn something about politics and current affairs?",
+         "Hoeveel dagen in de afgelopen twee weken heeft  u de volgende bronnen gevolgd om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:7), 
+          `Response Label` = c(0:7), 
+          `Response Wording` = c(0:7))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:9),
+            `Statements ENG` = c("Television", "Newspapers or opinion magazines (paper or online)", "Radio (including podcast and online)", "Online news sites (such as nu.nl) or blogs", "Social media (such as Facebook, Twitter)", "Messaging apps (such as Whatsapp, messenger)", "(Offline) conversations with people", "News apps or push messages on your phone", "Search engines (such as Google or Bing)"),
+            `Statements NL` = c("Televisie", "Kranten of opiniebladen (op papier of online)", "Radio (inclusief podcast en online)", "Online nieuwssites (zoals nu.nl) of blogs", "Social media (bijvoorbeeld Facebook, Twitter)", "Messaging apps (bijvoorbeeld Whatsapp, messenger)", "(Offline) gesprekken met mensen", "Nieuwsapps of pushberichten op uw telefoon", "Zoekmachines (zoals Google of Bing)"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_papers", 
+           "Have you read one of the following newspapers in the past week?",
+         "Heeft u de afgelopen week één van de volgende kranten gelezen?")
+d <- tibble(Variable = Variable, I2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "A regional or local newspaper", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Other, namely:"), 
+          `Response Wording` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "Een regionale of lokale krant", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_tv", 
+           "Have you watch one of the following tv shows in the past week?",
+         "Heeft u afgelopen week naar één van de volgende televisie nieuwsprogramma’s gekeken?")
+d <- tibble(Variable = Variable, I3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:16), 
+          `Response Label` = c("Press comnference of Rutte and De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Own channels of politicians and opinion makers", "Other, namely:"), 
+          `Response Wording` = c("Persconferentie Rutte en De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Eigen kanalen van politici en opiniemakers", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+```{r}
+values = c("newscons_websites", 
+           "Did you visit one of the following websites last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende websites bezocht om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:9), 
+          `Response Label` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Political blogs, namely:", "Other, namely:"), 
+          `Response Wording` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Politieke blogs, namelijk:", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_socialmedia", 
+           "Did you use one of the following social media last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende sociale media gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Other, namely:"), 
+          `Response Wording` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_messagingapps", 
+           "Did you use one of the following messaging apps last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende messaging-apps gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I6 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:6), 
+          `Response Label` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Other, namely:"), 
+          `Response Wording` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_apps", 
+           "Did you use one of the following apps on your mobile phone last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende apps op uw mobiele telefoon gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:2,11,3:10), 
+          `Response Label` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator like feedly or flipboard", "Apple News", "Google News", "Other, namely:"), 
+          `Response Wording` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator zoals feedly of flipboard", "Apple News", "Google News",  "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
 
 ## Post-Election Wave
+
+### Background Variables
+
+```{r}
+values = c("income", 
+         "Can you indicate which income groups your net monthly household income falls into?",
+         "Kunt u aangeven in welke inkomensgroepen uw netto maandelijks huishoudinkomen valt?")
+d <- tibble(Variable = Variable, Income = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:10,998,999), 
+          `Response Label` = c("€500 or less", "€501-€1000", "€1001-€1500", "€1501-€2000", "€2001-€2500", "€2501-€3000", "€3001-€3500","€3501-€4000","€4501-€7500", "€7501 or more", "don't know", "won't say"), 
+          `Response Wording` = c("€500 of minder", "€501-€1000", "€1001-€1500", "€1501-€2000", "€2001-€2500", "€2501-€3000", "€3001-€3500","€3501-€4000","€4501-€7500", "€7501 of meer", "weet ik niet", "wil ik niet zeggen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("religion", 
+         "Do you consider yourself to belong to a particular church denomination or philosophical group, and if so, to which one?",
+         "Rekent u zichzelf tot een bepaalde kerkelijke gezindte of levensbeschouwelijke groepering en zo ja: tot welke?")
+d <- tibble(Variable = Variable, Religion = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:7,998,999), 
+          `Response Label` = c("No church affiliation or philosophical group", "Roman Catholic", "Dutch Reformed", "Reformed Churches", "Protestant Church Netherlands", "Islam", "Other church affiliation or philosophical group", "Don't know", "Won't say"), 
+          `Response Wording` = c("Geen kerkelijke gezindte of levensbeschouwelijke groepering", "Rooms-Katholiek","Nederlands Hervormd", "Gereformeerde kerken", "Protestantse Kerk Nederland", "Islam", "Andere kerkelijke gezindte of levensbeschouwelijke groepering", "Weet niet", "Wil ik niet zeggen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block A: Voting Behavior
+
+```{r}
+values = c("gotv_intention", 
+         "On March 17, 2021 there were parliamentary elections. Did you vote?",
+         "Op 17 maart 2021 zijn er Tweede Kamerverkiezingen geweest. Bent u gaan stemmen?")
+d <- tibble(Variable = Variable, A1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1,0, 998:999), 
+          `Response Label` = c("Yes, I  voted", "No, I did not vote", "I don't know", "I'm not eligble to vote"), 
+          `Response Wording` = c("Ja, ik heb gestemd stemmen", "Nee ik heb niet gestemd", "Ik weet het niet", "Ik mag niet stemmen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_intention", 
+         "Which political party would you vote for if there were parliamentary elections today? ",
+         "Op welke politieke partij zou u stemmen als er vandaag Tweede Kamerverkiezingen zouden zijn? ")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:15,999), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party", "Other party", "I vote blanco","I don't know yet"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij", "Andere partij", "Ik stem blanco","Weet ik niet nog niet"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_why", 
+         "Can you briefly state in your own words why you voted for [PARTY]:",
+         "Kunt u kort in uw eigen woorden aangeven waarom u op [PARTY] heeft gestemd:")
+d <- tibble(Variable = Variable, A2_followup1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("vote_blanco", 
+         "Can you briefly state in your own words why you voted blanco:",
+         "Kunt u kort in uw eigen woorden aangeven waarom u blanco heeft gestemd:")
+d <- tibble(Variable = Variable, A2_followup2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("next_coalition", 
+         "Which parties do you prefer to form the government after the Lower House elections? Please select at least 2 parties. Multiple answers are possible.",
+         "Welke partijen hebben uw voorkeur om de regering te gaan vormen na de Tweede Kamerverkiezingen? Selecteer minimaal 2 partijen. Er zijn meerdere antwoorden mogelijk.")
+d <- tibble(Variable = Variable, A2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum for Democracy", "GroenLinks", "PvdA", "Animal Rights Party", "PVV", "SGP", "SP", "VVD", "50Plus Party"), 
+          `Response Wording` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("coal_form", 
+         "Do you think that the explorers Annemarie Jorritsma (VVD) and Kajsa Ollongren (D66) will propose a cabinet formation that does justice to the results of the elections?",
+         "Denkt u dat de verkenners Annemarie Jorritsma (VVD) en Kajsa Ollongren (D66) een kabinetsformatie zullen voorstellen dat recht doet aan de uitslag van de verkiezingen?")
+d <- tibble(Variable = Variable, A4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:5), 
+          `Response Label` = c("Very much disagree", "Disagree", "Neutral", "Agree", "Very much agree"), 
+          `Response Wording` = c("Zeker niet", "Waarschijnlijk niet", "Misschien", "Waarschijnlijk wel", "Zeer zeker"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+
+### Block B: Performance Politics in the Media
+
+```{r}
+values = c("party_news", 
+         "Were the following parties and their leaders inconspicuous or conspicuous in the news over the past two weeks?",
+         "Waren de onderstaande partijen en hun leiders onopvallend of opvallend in het nieuws van de afgelopen twee weken?")
+d <- tibble(Variable = Variable, B2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:3,999), 
+          `Response Label` = c("Inconspicuous", "Conspiciuous", "Very conspiciuous","Never heard of"), 
+          `Response Wording` = c("Onopvallend", "Opvallend", "Zeer opvallend", "Nooit iets van vernomen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B2_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("direction_news", 
+         "What you noticed about [party & party leader], did you find positive or negative?",
+         "Wat u opviel over [partij & partijleider], vond u dat positief of negatief?")
+d <- tibble(Variable = Variable, B3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Very negative", 1:9, "Very positive"), 
+          `Response Wording` = c("Erg negatief", 1:9, "Zeer positief"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`B3_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+### Block C: Issue Association
+
+```{r}
+values = c("Issue_association1", 
+         "Political parties take positions on various subjects. We ask you what subject you think of each party's views below. Which subject comes to mind first at [party & party leader]?",
+         "Politieke partijen nemen over verschillende onderwerpen standpunten in. We vragen u aan welk onderwerp u bij de standpunten van elke partij hieronder denkt. Welk onderwerp komt als eerste bij u op bij [partij & partijleider]?")
+d <- tibble(Variable = Variable, C1_1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:20), 
+          `Response Label` = c("Asylum seekers and migrants",
+                               "Mobility and infrastructure (e.g. air traffic, road network, Netherlands distribution country)", 
+                               "Administrative renewal (e.g. elected prime minister, referendums)", 
+                               "Crime fighting (e.g. drug labs, threats, possession of weapons)", 
+                               "European Union and Euro", 
+                               "Health care (e.g. reward care, waiting lists, deductible)", 
+                               "Housing (e.g. starter homes, rent, mortgage interest)", 
+                               "Climate, nature, and environment (including biodiversity, nitrogen precipitation, recycled agriculture)", 
+                               "Norms and values (e.g. respect, togetherness, protection of life)", 
+                               "Freedom rights (e.g. freedom of expression, prohibition of discrimination, tolerance)", 
+                               "Business environment (including export promotion, intensive agriculture, support measures)", 
+                               "Education and science (a.o. level of arithmetic and language, the Netherlands knowledge country)", 
+                               "Development aid", 
+                               "Government spending and taxes (including affordability, increase or austerity)", 
+                               "Social security (e.g. livelihood security, benefits, pension accrual)", 
+                               "Counter-terrorism", 
+                               "Work and income (e.g. rights flex workers, income equality)","Corona policy", "Different issue", "No (second) important issue" ), 
+          `Response Wording` = c("Asielzoekers en migranten", "Mobiliteit en infrastructuur (o.a. vliegverkeer, wegennet, Nederland distributieland)", "Bestuurlijke vernieuwing (o.a. gekozen premier, referenda)", "Criminaliteitsbestrijding (o.a. drugslabs, bedreigingen, wapenbezit)", "Europese Unie en de Euro", "Gezondheidszorg (o.a. beloning zorg, wachtlijsten, eigen risico)", "Woningen (o.a. starterswoningen, huurprijs, hypotheekrente)", "Klimaat, natuur, en milieu (o.a. biodiversiteit, stikstofneerslag, kringlooplandbouw)", "Normen en waarden (o.a. respect, saamhorigheid, bescherming leven)", "Vrijheidsrechten (o.a. vrijheid van meningsuiting, discriminatieverbod, tolerantie)", "Ondernemingsklimaat (o.a. exportbevordering, intensieve landbouw, steunmaatregelen)", "Onderwijs en wetenschap (o.a. niveau rekenen en taal, Nederland kennisland)", "Ontwikkelingshulp", "Overheidsuitgaven en belastingen (o.a. betaalbaarheid, stijging of bezuiniging)", "Sociale zekerheid (o.a. bestaanszekerheid, uitkeringen, pensioenopbouw)", "Terreurbestrijding", "Werk en inkomen (o.a. rechten flexwerkers, inkomensgelijkheid)","Coronabeleid", "Een ander onderwerp", "Geen belangrijkste (tweede) onderwerp"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`C1_1_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("Issue_association2", 
+         "And which subject comes to you second at [party & party leader]?",
+         "En welk onderwerp komt als tweede bij u op bij [partij & partijleider]?")
+d <- tibble(Variable = Variable, C1_2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:20), 
+          `Response Label` = c("Asylum seekers and migrants", "Mobility and infrastructure (e.g. air traffic, road network, Netherlands distribution country)", "Administrative renewal (e.g. elected prime minister, referendums)", "Crime fighting (e.g. drug labs, threats, possession of weapons)", "European Union and Euro", "Health care (e.g. reward care, waiting lists, deductible)", "Housing (e.g. starter homes, rent, mortgage interest)", "Climate, nature, and environment (including biodiversity, nitrogen precipitation, recycled agriculture)", "Norms and values (e.g. respect, togetherness, protection of life)", "Freedom rights (e.g. freedom of expression, prohibition of discrimination, tolerance)", "Business environment (including export promotion, intensive agriculture, support measures)", "Education and science (a.o. level of arithmetic and language, the Netherlands knowledge country)", "Development aid", "Government spending and taxes (including affordability, increase or austerity)", "Social security (e.g. livelihood security, benefits, pension accrual)", "Counter-terrorism", "Work and income (e.g. rights flex workers, income equality)","Corona policy", "Different issue", "No (second) important issue" ), 
+          `Response Wording` = c("Asielzoekers en migranten", "Mobiliteit en infrastructuur (o.a. vliegverkeer, wegennet, Nederland distributieland)", "Bestuurlijke vernieuwing (o.a. gekozen premier, referenda)", "Criminaliteitsbestrijding (o.a. drugslabs, bedreigingen, wapenbezit)", "Europese Unie en de Euro", "Gezondheidszorg (o.a. beloning zorg, wachtlijsten, eigen risico)", "Woningen (o.a. starterswoningen, huurprijs, hypotheekrente)", "Klimaat, natuur, en milieu (o.a. biodiversiteit, stikstofneerslag, kringlooplandbouw)", "Normen en waarden (o.a. respect, saamhorigheid, bescherming leven)", "Vrijheidsrechten (o.a. vrijheid van meningsuiting, discriminatieverbod, tolerantie)", "Ondernemingsklimaat (o.a. exportbevordering, intensieve landbouw, steunmaatregelen)", "Onderwijs en wetenschap (o.a. niveau rekenen en taal, Nederland kennisland)", "Ontwikkelingshulp", "Overheidsuitgaven en belastingen (o.a. betaalbaarheid, stijging of bezuiniging)", "Sociale zekerheid (o.a. bestaanszekerheid, uitkeringen, pensioenopbouw)", "Terreurbestrijding", "Werk en inkomen (o.a. rechten flexwerkers, inkomensgelijkheid)","Coronabeleid", "Een ander onderwerp", "Geen belangrijkste (tweede) onderwerp"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`C1_2_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("position_1", 
+         "To what extent do you agree with the parties and their leaders on their key issues? [Party & party leader] on [subject selected in issue_association1]",
+         "In welke mate bent u het eens met de partijen en hun leiders op hun belangrijkste onderwerpen? [Partij & partijleider] over [onderwerp geselecteerd in issue_associatie1]")
+d <- tibble(Variable = Variable, C2_1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Very much disagree", 1:9, "Very much agree"), 
+          `Response Wording` = c("Helemaal mee oneeens", 1:9, "Helemaal mee eens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`C2_1_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+```{r}
+values = c("position_2", 
+           "[Party & party leader] on [subject selected in issue_association2]",
+         "[Partij & partijleider] over [onderwerp geselecteerd in issue_associatie2]")
+d <- tibble(Variable = Variable, C2_2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Very much disagree", 1:9, "Very much agree"), 
+          `Response Wording` = c("Helemaal mee oneeens", 1:9, "Helemaal mee eens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`C2_2_suffix` = c(1:13),
+            `Party and its leaders` = c("CDA & Wopke Hoekstra", "ChristenUnie & Gert-Jan Segers", "D66 & Sigrid Kaag", "Denk & Farid Azarkan", "Forum voor Democratie & Thierry Baudet", "GroenLinks & Jesse Klaver", "PvdA & Lodewijk Asscher", "Partij voor de Dieren & Esther Ouwehand", "PVV & Geert Wilders", "SGP  & Kees van der Staaij", "SP & Lilian Marijnissen", "VVD & Mark Rutte", "50Plus Partij & Liane den Haan"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+
+### Block E: Political Background
+
+```{r}
+values = c("rile_self", 
+           "In politics there is often talk about left and right. Where would you put yourself on this scale?",
+         "In de politiek wordt vaak gesproken over links en rechts. Waar zou u uzelf op deze schaal plaatsen?")
+d <- tibble(Variable = Variable, E2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Left", 1:9, "Right"), 
+          `Response Wording` = c("Links", 1:9, "Rechts"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("rile_parties", 
+           "And where would you put the following parties on this scale?",
+         "En waar zou u de volgende partijen op deze schaal plaatsen?")
+d <- tibble(Variable = Variable, E3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Left", 1:9, "Right"), 
+          `Response Wording` = c("Links", 1:9, "Rechts"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`E3_suffix` = c(1:13),
+            `Party` = c("CDA", "ChristenUnie", "D66", "Denk", "Forum voor Democratie", "GroenLinks", "PvdA", "Partij voor de Dieren", "PVV", "SGP", "SP", "VVD", "50Plus Partij"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+```
+
+&nbsp;
+
+### Block F: Trust
+```{r}
+values = c("trust_statements", 
+           "You will now get to see a number of theses about Dutch politics. To what extent do you agree or disagree with these statements?",
+         "U krijgt nu een aantal stellingen te zien over de Nederlandse politiek. In welke mate bent u het eens of oneens met die stellingen?")
+d <- tibble(Variable = Variable, F1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:5), 
+          `Response Label` = c("Very much disagree", 2:4, "Very much agree"), 
+          `Response Wording` = c("Helemaal mee oneens", 2:4, "Helemaal mee eens"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`F1_suffix` = c(1:10),
+            `Statements ENG` = c("Politicians don't care about the opinions of people like me.", 
+                                 "The political parties are only interested in my vote and not in my opinion.", 
+                                 "Against their better judgment, politicians promise more than they can deliver.", 
+                                 "You become a member of parliament more by your political friends than by your skills.", 
+                                 "Most politicians are skilled people who know what they are doing.", 
+                                 "Politicians are able to solve the most important problems.", 
+                                 "I feel well represented by Dutch politicians.", 
+                                 "What in politics is called 'making compromises' is actually just betraying your principles.", 
+                                 "A strong head of government is good for the Netherlands, even if he stretches the rules a bit to get things done.", 
+                                 "The most important political decisions should be made by the people and not by politicians."),
+            `Statements NL` = c("Politici maken zich niet  druk om de mening van mensen zoals ik.", 
+                                "De politieke partijen zijn alleen maar geïnteresseerd in mijn stem en niet in mijn mening.",
+                                "Tegen beter weten in beloven politici meer dan ze kunnen waarmaken.", 
+                                "Kamerlid word je eerder door je politieke vrienden dan door je bekwaamheden.", 
+                                "De meeste politici zijn bekwame mensen die weten wat ze doen.", 
+                                "Politici zijn in staat om de belangrijkste problemen op te lossen.", 
+                                "Ik voel mij goed vertegenwoordigd door Nederlandse politici.", 
+                                "Wat men in de politiek ‘het sluiten van compromissen’ noemt, is eigenlijk gewoon het verraden van je principes.", 
+                                "Een sterke regeringsleider is goed voor Nederland, ook als deze de regels wat oprekt om dingen voor elkaar te krijgen.",
+                                "De belangrijkste politieke beslissingen moeten worden genomen door het volk en niet door politici."))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("trust_institutions", 
+           "To what extent do you trust:",
+         "In welke mate hebt u vertrouwen in:")
+d <- tibble(Variable = Variable, F2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very much"), 
+          `Response Wording` = c("Helemaal geen", 1:9, "Zeer veel"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`F2_suffix` = c(1:11),
+            `Statements ENG` = c("the jurisprudence", "journalism", "the government", "the House of Representatives", "the European Union", "political parties", "politicians", "Dutch democracy", "science", "big corporations", "banks"),
+            `Statements NL` = c("de rechtspraak","de journalistiek", "de regering", "de Tweede Kamer", "de Europese Unie", "politieke partijen", "politici", "de Nederlandse democratie", "de wetenschap", "grote bedrijven", "banken"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block G: Evaluation of Government and Political Leaders
+
+
+```{r}
+values = c("leader_selection", 
+           "You will now be shown 6 statements that have to do with Dutch party leaders. We would like to know from you to what extent the statement applies to the party leader. Below you can indicate whether a party leader is unknown to you.",
+         "U krijgt nu 6 stellingen te zien die te maken hebben met de Nederlandse partijleiders. Wij willen graag van u weten in hoeverre de uitspraak van toepassing is op de partijleider. Hieronder kunt u aangeven of een partijleider onbekend is bij u.")
+d <- tibble(Variable = Variable, G_eval_leaders = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("leader_integrity", 
+           "He/she has integrity",
+         "Hij/zij is integer")
+d <- tibble(Variable = Variable, G2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("leader_sympathy", 
+           "He/she has sympathy",
+         "Hij/zij is sympathiek")
+d <- tibble(Variable = Variable, G3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("leader_daadkrachtig", 
+           "He/she is decisive",
+         "Hij/zij is daadkrachtig")
+d <- tibble(Variable = Variable, G5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+```{r}
+values = c("leader_sympathy", 
+           "Hij/zij is competent ",
+         "Hij/zij is competent")
+d <- tibble(Variable = Variable, G6 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("leader_knows_society", 
+           "He/she knows whats going on in society",
+         "Hij/zij weet goed wat er speelt in de sameleving")
+d <- tibble(Variable = Variable, G4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("leader_promises", 
+           "He/she keeps his/her promises",
+         "Hij/zij komt zijn/haar beloftes na")
+d <- tibble(Variable = Variable, G7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:10), 
+          `Response Label` = c("Not at all", 1:9, "Very mucht"), 
+          `Response Wording` = c("Helemaal niet", 1:9, "Zeer"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`G2_suffix` = c(1:17),
+            `Statements ENG` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"),
+            `Statements NL` = c("Wopke Hoekstra", "Gert-Jan Segers", "Sigrid Kaag", "Farid Azarkan",  "Thierry Baudet","Jesse Klaver", "Esther Ouwehand", "Geert Wilders", "Kees van der Staaij","Lilian Marijnissen", "Mark Rutte", "Liane den Haan", "Liliane Ploemen", "Sylvana Simons", "Laurens Dassen", "Joost Eerdmans", "Caroline van der Plas"))
+
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block H: Other Issues
+
+```{r}
+values = c("vaccination", 
+           "If I were able to get vaccinated against Corona (COVID-19) in the next week, I would:",
+         "Als ik me in de komende week zou kunnen laten vaccineren tegen Corona (COVID-19), dan zou ik dat:")
+d <- tibble(Variable = Variable, H7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:4), 
+          `Response Label` = c("Definitely do it", "Do it", "Don't do it", "Definitely don't do it"), 
+          `Response Wording` = c("Zeer zeker doen", "Doen", "Niet doen", "Zeer zeker niet doen"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+### Block I: News Consumption
+```{r}
+values = c("newscons_freq", 
+           "How many days in the past two weeks have you followed the following sources to learn something about politics and current affairs?",
+         "Hoeveel dagen in de afgelopen twee weken heeft  u de volgende bronnen gevolgd om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I1 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(0:7), 
+          `Response Label` = c(0:7), 
+          `Response Wording` = c(0:7))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+
+d <- tibble(`I1_suffix` = c(1:9),
+            `Statements ENG` = c("Television", "Newspapers or opinion magazines (paper or online)", "Radio (including podcast and online)", "Online news sites (such as nu.nl) or blogs", "Social media (such as Facebook, Twitter)", "Messaging apps (such as Whatsapp, messenger)", "(Offline) conversations with people", "News apps or push messages on your phone", "Search engines (such as Google or Bing)"),
+            `Statements NL` = c("Televisie", "Kranten of opiniebladen (op papier of online)", "Radio (inclusief podcast en online)", "Online nieuwssites (zoals nu.nl) of blogs", "Social media (bijvoorbeeld Facebook, Twitter)", "Messaging apps (bijvoorbeeld Whatsapp, messenger)", "(Offline) gesprekken met mensen", "Nieuwsapps of pushberichten op uw telefoon", "Zoekmachines (zoals Google of Bing)"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_papers", 
+           "Have you read one of the following newspapers in the past week?",
+         "Heeft u de afgelopen week één van de volgende kranten gelezen?")
+d <- tibble(Variable = Variable, I2 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:13), 
+          `Response Label` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "A regional or local newspaper", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Other, namely:"), 
+          `Response Wording` = c("de Telegraaf", "NRC Handelsblad", "Nrc.Next", "Algemeen Dagblad (AD)", "Trouw", "de Volkskrant", "Metro", "Een regionale of lokale krant", "De Groene Amsterdammer", "HP/de Tijd", "Elsevier", "Vrij Nederland", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+&nbsp;
+
+```{r}
+values = c("newscons_tv", 
+           "Have you watch one of the following tv shows in the past week?",
+         "Heeft u afgelopen week naar één van de volgende televisie nieuwsprogramma’s gekeken?")
+d <- tibble(Variable = Variable, I3 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:16), 
+          `Response Label` = c("Press comnference of Rutte and De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Own channels of politicians and opinion makers", "Other, namely:"), 
+          `Response Wording` = c("Persconferentie Rutte en De Jonge", "NOS Journaal", "RTL Nieuws", "Hart van Nederland", "De Vooravond", "M", "Nieuwsuur", "EenVandaag", "Op Eén", "Jinek", "Beau", "WNL Opiniemakers", "Zondag met Lubach", "Dit was het nieuws", "Eigen kanalen van politici en opiniemakers", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+
+```{r}
+values = c("newscons_websites", 
+           "Did you visit one of the following websites last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende websites bezocht om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I4 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:9), 
+          `Response Label` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Political blogs, namely:", "Other, namely:"), 
+          `Response Wording` = c("Nu.nl", "Geenstijl.nl", "GoogleNews", "Blendle.com", "Decorrespondent.nl",  "Tpo.nl", "Joop.nl", "Politieke blogs, namelijk:", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_socialmedia", 
+           "Did you use one of the following social media last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende sociale media gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I5 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:11), 
+          `Response Label` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Other, namely:"), 
+          `Response Wording` = c("Twitter", "Facebook", "Youtube", "Instagram", "Snapchat", "Viber", "Telegram", "Google Hangouts", "Tumblr", "Reddit", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_messagingapps", 
+           "Did you use one of the following messaging apps last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende messaging-apps gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I6 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:6), 
+          `Response Label` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Other, namely:"), 
+          `Response Wording` = c("Whatsapp", "Viber", "Telegram", "Signal", "Google Hangouts", "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
+
+```{r}
+values = c("newscons_apps", 
+           "Did you use one of the following apps on your mobile phone last week to learn something about politics and current affairs?",
+         "Heeft u afgelopen week naar één van de volgende apps op uw mobiele telefoon gebruikt om iets te weten te komen over politiek en actualiteiten?")
+d <- tibble(Variable = Variable, I7 = values) 
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+    kable_styling(fixed_thead = T) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "65em")
+
+d <- tibble(`Response Code` = c(1:2,11,3:10), 
+          `Response Label` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator like feedly or flipboard", "Apple News", "Google News", "Other, namely:"), 
+          `Response Wording` = c("Nu", "NOS", "Teletekst", "Telegraaf", "AD", "NRC", "Volkskrant", "News aggregator zoals feedly of flipboard", "Apple News", "Google News",  "Anders, namelijk:"))
+d %>%
+  kbl() %>%
+    kable_classic_2(bootstrap_options = "striped", 
+                    full_width = F, 
+                    position = "center",
+                    font_size = 13) %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "60em") %>%
+  column_spec(3, width = "60em")
+```
+&nbsp;
