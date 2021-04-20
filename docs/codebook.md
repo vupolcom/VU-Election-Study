@@ -65,23 +65,6 @@ always_allow_html: true
         -   [Block H: Other Issues](#block-h-other-issues-4)
         -   [Block I: News Consumption](#block-i-news-consumption-4)
 
--   [Research Description](#research-description)
-    -   [How was the survey put
-        together?](#how-was-the-survey-put-together?)
-    -   [How were the data collected?](#how-were-the-data-collected?)
-    -   [Quality of the data](#quality-of-the-data)
-    -   [Construction of weigths](#construction-of-weigths)
--   [Survey Variables](#survey-variables)
--   [Variables from the
-    Questionnaires](#variables-from-the-questionnaire)
-    -   [Pre-Wave](#pre-wave)
-    -   [Wave 1](#wave-1)
-    -   [Wave 2](#wave-2)
-    -   [Wave 3](#wave-3)
-    -   [Wave 4](#wave-4)
-    -   [Wave 5](#wave-5)
-    -   [Post-Election Wave](#post-election-wave)
-
 Research Description
 ====================
 
