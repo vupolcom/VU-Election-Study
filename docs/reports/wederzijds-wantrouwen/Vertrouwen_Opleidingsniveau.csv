@@ -1,13 +1,13 @@
 wave,education,name,value,id
-0,Hoog opgeleid,Politici maken zich niet druk om mensen zoals ik,7.033175355450237,Legitimiteit van Politiek
-0,Hoog opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,7.184834123222749,Legitimiteit van Politiek
-0,Hoog opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.38388625592417,Legitimiteit van Politiek
-0,Hoog opgeleid,Kamerlid word je door je politieke vrienden,6.454976303317536,Legitimiteit van Politiek
-0,Hoog opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,5.800947867298579,Legitimiteit van Politiek
-0,Hoog opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.232227488151659,Legitimiteit van Politiek
-0,Hoog opgeleid,Het sluiten van compromissen is het verraden van je principes,6.8246445497630335,Legitimiteit van Politiek
-0,Hoog opgeleid,Een sterke regeringsleider is goed voor Nederland,7.1753554502369665,Legitimiteit van Politiek
-0,Hoog opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.729857819905213,Legitimiteit van Politiek
+0,Hoog opgeleid,Politici maken zich niet druk om mensen zoals ik,7.033175355450237,Politiek Cynisme
+0,Hoog opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,7.184834123222749,Politiek Cynisme
+0,Hoog opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.38388625592417,Politiek Cynisme
+0,Hoog opgeleid,Kamerlid word je door je politieke vrienden,6.454976303317536,Politiek Cynisme
+0,Hoog opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,5.800947867298579,Politiek Cynisme
+0,Hoog opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.232227488151659,Politiek Cynisme
+0,Hoog opgeleid,Het sluiten van compromissen is het verraden van je principes,6.8246445497630335,Politiek Cynisme
+0,Hoog opgeleid,Een sterke regeringsleider is goed voor Nederland,7.1753554502369665,Politiek Cynisme
+0,Hoog opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.729857819905213,Politiek Cynisme
 0,Hoog opgeleid,Rechtspraak,4.990521327014218,Vertrouwen in Instituties
 0,Hoog opgeleid,Journalistiek,4.672985781990521,Vertrouwen in Instituties
 0,Hoog opgeleid,Regering,4.530805687203792,Vertrouwen in Instituties
@@ -19,15 +19,15 @@ wave,education,name,value,id
 0,Hoog opgeleid,Wetenschap,6,Vertrouwen in Instituties
 0,Hoog opgeleid,Grote Bedrijven,4.246445497630332,Vertrouwen in Instituties
 0,Hoog opgeleid,Banken,4.469194312796208,Vertrouwen in Instituties
-0,Laag opgeleid,Politici maken zich niet druk om mensen zoals ik,6.1236872812135354,Legitimiteit van Politiek
-0,Laag opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,6.392065344224037,Legitimiteit van Politiek
-0,Laag opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.4912485414235706,Legitimiteit van Politiek
-0,Laag opgeleid,Kamerlid word je door je politieke vrienden,6.179696616102683,Legitimiteit van Politiek
-0,Laag opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,6.4527421236872815,Legitimiteit van Politiek
-0,Laag opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.904317386231038,Legitimiteit van Politiek
-0,Laag opgeleid,Het sluiten van compromissen is het verraden van je principes,5.460910151691949,Legitimiteit van Politiek
-0,Laag opgeleid,Een sterke regeringsleider is goed voor Nederland,6.499416569428238,Legitimiteit van Politiek
-0,Laag opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.575262543757293,Legitimiteit van Politiek
+0,Laag opgeleid,Politici maken zich niet druk om mensen zoals ik,6.1236872812135354,Politiek Cynisme
+0,Laag opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,6.392065344224037,Politiek Cynisme
+0,Laag opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.4912485414235706,Politiek Cynisme
+0,Laag opgeleid,Kamerlid word je door je politieke vrienden,6.179696616102683,Politiek Cynisme
+0,Laag opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,6.4527421236872815,Politiek Cynisme
+0,Laag opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.904317386231038,Politiek Cynisme
+0,Laag opgeleid,Het sluiten van compromissen is het verraden van je principes,5.460910151691949,Politiek Cynisme
+0,Laag opgeleid,Een sterke regeringsleider is goed voor Nederland,6.499416569428238,Politiek Cynisme
+0,Laag opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.575262543757293,Politiek Cynisme
 0,Laag opgeleid,Rechtspraak,6.618266978922716,Vertrouwen in Instituties
 0,Laag opgeleid,Journalistiek,5.598360655737705,Vertrouwen in Instituties
 0,Laag opgeleid,Regering,5.660421545667448,Vertrouwen in Instituties
@@ -39,15 +39,15 @@ wave,education,name,value,id
 0,Laag opgeleid,Wetenschap,7.557377049180328,Vertrouwen in Instituties
 0,Laag opgeleid,Grote Bedrijven,4.599531615925058,Vertrouwen in Instituties
 0,Laag opgeleid,Banken,4.756440281030445,Vertrouwen in Instituties
-0,Middel opgeleid,Politici maken zich niet druk om mensen zoals ik,6.761904761904762,Legitimiteit van Politiek
-0,Middel opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,6.943089430894309,Legitimiteit van Politiek
-0,Middel opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.695702671312428,Legitimiteit van Politiek
-0,Middel opgeleid,Kamerlid word je door je politieke vrienden,6.4018583042973285,Legitimiteit van Politiek
-0,Middel opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,6.023228803716608,Legitimiteit van Politiek
-0,Middel opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.444831591173054,Legitimiteit van Politiek
-0,Middel opgeleid,Het sluiten van compromissen is het verraden van je principes,6.313588850174216,Legitimiteit van Politiek
-0,Middel opgeleid,Een sterke regeringsleider is goed voor Nederland,7.0754936120789775,Legitimiteit van Politiek
-0,Middel opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.2578397212543555,Legitimiteit van Politiek
+0,Middel opgeleid,Politici maken zich niet druk om mensen zoals ik,6.761904761904762,Politiek Cynisme
+0,Middel opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,6.943089430894309,Politiek Cynisme
+0,Middel opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.695702671312428,Politiek Cynisme
+0,Middel opgeleid,Kamerlid word je door je politieke vrienden,6.4018583042973285,Politiek Cynisme
+0,Middel opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,6.023228803716608,Politiek Cynisme
+0,Middel opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.444831591173054,Politiek Cynisme
+0,Middel opgeleid,Het sluiten van compromissen is het verraden van je principes,6.313588850174216,Politiek Cynisme
+0,Middel opgeleid,Een sterke regeringsleider is goed voor Nederland,7.0754936120789775,Politiek Cynisme
+0,Middel opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.2578397212543555,Politiek Cynisme
 0,Middel opgeleid,Rechtspraak,5.715948777648428,Vertrouwen in Instituties
 0,Middel opgeleid,Journalistiek,5.10360884749709,Vertrouwen in Instituties
 0,Middel opgeleid,Regering,4.889406286379511,Vertrouwen in Instituties
@@ -59,15 +59,15 @@ wave,education,name,value,id
 0,Middel opgeleid,Wetenschap,6.653084982537835,Vertrouwen in Instituties
 0,Middel opgeleid,Grote Bedrijven,4.6542491268917345,Vertrouwen in Instituties
 0,Middel opgeleid,Banken,4.6670547147846335,Vertrouwen in Instituties
-1,Hoog opgeleid,Politici maken zich niet druk om mensen zoals ik,7.118881118881119,Legitimiteit van Politiek
-1,Hoog opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,7.174825174825175,Legitimiteit van Politiek
-1,Hoog opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.93006993006993,Legitimiteit van Politiek
-1,Hoog opgeleid,Kamerlid word je door je politieke vrienden,6.5874125874125875,Legitimiteit van Politiek
-1,Hoog opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,5.846153846153846,Legitimiteit van Politiek
-1,Hoog opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.118881118881119,Legitimiteit van Politiek
-1,Hoog opgeleid,Het sluiten van compromissen is het verraden van je principes,6.825174825174825,Legitimiteit van Politiek
-1,Hoog opgeleid,Een sterke regeringsleider is goed voor Nederland,7.048951048951049,Legitimiteit van Politiek
-1,Hoog opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.783216783216783,Legitimiteit van Politiek
+1,Hoog opgeleid,Politici maken zich niet druk om mensen zoals ik,7.118881118881119,Politiek Cynisme
+1,Hoog opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,7.174825174825175,Politiek Cynisme
+1,Hoog opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.93006993006993,Politiek Cynisme
+1,Hoog opgeleid,Kamerlid word je door je politieke vrienden,6.5874125874125875,Politiek Cynisme
+1,Hoog opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,5.846153846153846,Politiek Cynisme
+1,Hoog opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.118881118881119,Politiek Cynisme
+1,Hoog opgeleid,Het sluiten van compromissen is het verraden van je principes,6.825174825174825,Politiek Cynisme
+1,Hoog opgeleid,Een sterke regeringsleider is goed voor Nederland,7.048951048951049,Politiek Cynisme
+1,Hoog opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.783216783216783,Politiek Cynisme
 1,Hoog opgeleid,Rechtspraak,5.160839160839161,Vertrouwen in Instituties
 1,Hoog opgeleid,Journalistiek,5.083916083916084,Vertrouwen in Instituties
 1,Hoog opgeleid,Regering,4.4825174825174825,Vertrouwen in Instituties
@@ -79,15 +79,15 @@ wave,education,name,value,id
 1,Hoog opgeleid,Wetenschap,5.972027972027972,Vertrouwen in Instituties
 1,Hoog opgeleid,Grote Bedrijven,4.433566433566433,Vertrouwen in Instituties
 1,Hoog opgeleid,Banken,4.594405594405594,Vertrouwen in Instituties
-1,Laag opgeleid,Politici maken zich niet druk om mensen zoals ik,6.1242718446601945,Legitimiteit van Politiek
-1,Laag opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,6.4310679611650485,Legitimiteit van Politiek
-1,Laag opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.677669902912621,Legitimiteit van Politiek
-1,Laag opgeleid,Kamerlid word je door je politieke vrienden,6.14757281553398,Legitimiteit van Politiek
-1,Laag opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,6.438834951456311,Legitimiteit van Politiek
-1,Laag opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.860194174757281,Legitimiteit van Politiek
-1,Laag opgeleid,Het sluiten van compromissen is het verraden van je principes,5.530097087378641,Legitimiteit van Politiek
-1,Laag opgeleid,Een sterke regeringsleider is goed voor Nederland,6.512621359223301,Legitimiteit van Politiek
-1,Laag opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.588349514563107,Legitimiteit van Politiek
+1,Laag opgeleid,Politici maken zich niet druk om mensen zoals ik,6.1242718446601945,Politiek Cynisme
+1,Laag opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,6.4310679611650485,Politiek Cynisme
+1,Laag opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.677669902912621,Politiek Cynisme
+1,Laag opgeleid,Kamerlid word je door je politieke vrienden,6.14757281553398,Politiek Cynisme
+1,Laag opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,6.438834951456311,Politiek Cynisme
+1,Laag opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.860194174757281,Politiek Cynisme
+1,Laag opgeleid,Het sluiten van compromissen is het verraden van je principes,5.530097087378641,Politiek Cynisme
+1,Laag opgeleid,Een sterke regeringsleider is goed voor Nederland,6.512621359223301,Politiek Cynisme
+1,Laag opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.588349514563107,Politiek Cynisme
 1,Laag opgeleid,Rechtspraak,6.916504854368932,Vertrouwen in Instituties
 1,Laag opgeleid,Journalistiek,5.963106796116505,Vertrouwen in Instituties
 1,Laag opgeleid,Regering,5.745631067961165,Vertrouwen in Instituties
@@ -99,15 +99,15 @@ wave,education,name,value,id
 1,Laag opgeleid,Wetenschap,7.739805825242718,Vertrouwen in Instituties
 1,Laag opgeleid,Grote Bedrijven,4.58252427184466,Vertrouwen in Instituties
 1,Laag opgeleid,Banken,4.633009708737864,Vertrouwen in Instituties
-1,Middel opgeleid,Politici maken zich niet druk om mensen zoals ik,6.783687943262412,Legitimiteit van Politiek
-1,Middel opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,7.031914893617022,Legitimiteit van Politiek
-1,Middel opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.75531914893617,Legitimiteit van Politiek
-1,Middel opgeleid,Kamerlid word je door je politieke vrienden,6.666666666666667,Legitimiteit van Politiek
-1,Middel opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,5.960992907801418,Legitimiteit van Politiek
-1,Middel opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.432624113475177,Legitimiteit van Politiek
-1,Middel opgeleid,Het sluiten van compromissen is het verraden van je principes,6.468085106382978,Legitimiteit van Politiek
-1,Middel opgeleid,Een sterke regeringsleider is goed voor Nederland,7.00709219858156,Legitimiteit van Politiek
-1,Middel opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.351063829787234,Legitimiteit van Politiek
+1,Middel opgeleid,Politici maken zich niet druk om mensen zoals ik,6.783687943262412,Politiek Cynisme
+1,Middel opgeleid,Politici zijn alleen maar geïnteresseerd in mijn stem,7.031914893617022,Politiek Cynisme
+1,Middel opgeleid,Politici beloven meer dan ze kunnen waarmaken,7.75531914893617,Politiek Cynisme
+1,Middel opgeleid,Kamerlid word je door je politieke vrienden,6.666666666666667,Politiek Cynisme
+1,Middel opgeleid,De meeste politici zijn bekwame mensen die weten wat ze doen,5.960992907801418,Politiek Cynisme
+1,Middel opgeleid,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.432624113475177,Politiek Cynisme
+1,Middel opgeleid,Het sluiten van compromissen is het verraden van je principes,6.468085106382978,Politiek Cynisme
+1,Middel opgeleid,Een sterke regeringsleider is goed voor Nederland,7.00709219858156,Politiek Cynisme
+1,Middel opgeleid,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.351063829787234,Politiek Cynisme
 1,Middel opgeleid,Rechtspraak,5.824468085106383,Vertrouwen in Instituties
 1,Middel opgeleid,Journalistiek,5.225177304964539,Vertrouwen in Instituties
 1,Middel opgeleid,Regering,5.093971631205674,Vertrouwen in Instituties

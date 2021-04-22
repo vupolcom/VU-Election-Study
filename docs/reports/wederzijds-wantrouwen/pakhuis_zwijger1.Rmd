@@ -122,15 +122,16 @@ d <- d %>%
 
 # Vertrouwen: Mannen en Vrouwen
 
-Instituties hoger gewaardeerd dan de legitimeit van democractie.
+Instituties hoog gewaardeerd ondanks (sterk) gevoel van politiek cynisme bij zowel mannen en vrouwen -- geen grote verschillen.
 
 Instituties:
 - Nederlandse democratie krijgt een 6 van de vrouw, en een 6- van de man -- allebei hebben de democratie een beetje hoger gescoord na de verkiezingen.
 - Tweede Kamer krijgt een hogere score dan de regering, politieke partijen en politici: 5.5 voor de verkiezingen en een 6- na de verkiezingen van zowel mannen als vrouwen.
 
-Legitimiteit
-- Zeer laag gevoel van vertegenwoordiging: een rapportcijfer van 3.
-- Toch groot gevoel dat politici
+Cynisme
+- Net voldoende gevoel van vertegenwoordiging: een rapportcijfer van 5.5.
+- Groot gevoel dat politici corrupt zijn: vriendjespolitiek (rapportcijfer 6 (m)/ 6.5 (v) -- toegenomen na de verkiezingen), en politici beloven meer dan ze waar kunnen maken (rapportcijfer 7.5)
+- Volk moet meer voor het zeggen hebben (rapportcijfer 6), terwijl we ook een sterkere leider willen (rapportcijfer van 7)
 
 ```{r vertrouwen-gender,fig.height=10,fig.width=10}
 dg <- d %>%
@@ -162,8 +163,7 @@ dg <- d %>%
   arrange(wave) %>%
   na.omit() %>%
   pivot_longer(cols = F1_1:F2_11) %>%
-  mutate(across(matches("F1_"), ),
-         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
          name = recode(name,
                        `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
                        `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
@@ -199,6 +199,18 @@ ggplot(dg, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(dg, "Vertrouwen-Gender")`]
 
+# Vertrouwen: Leeftijdsgroepen
+
+Instituties:
+- Nederlandse democratie hoogst gewaardeerd door 70 jarige en ouder (rapport cijfer van 7), en het laagst gewaardeerd door 31-50 jarige voor de verkiezingen (rapportcijfer van 5.5) en door 51-70 jarige na de verkiezingen (6-).
+- De 70 jarigen en ouder zin ook positiiefst over de regering, en positiever na dan voor de verkeizingen.
+- Jongeren (18-30) meest positief over EU en politieke partijen
+- "Boomers" minste vertrouwen in instituties in het algemeen
+
+Cynisme
+- Jongeren laagste niveau van poltiek cynisme, boomers hoogste vorm
+- Hoe oudeer, hoe liever je een sterke leider wil, hoe meer je een sterkere stem voor het volk wil, hoe negatiever over compromissen, en hoe meer je denkt dat kamerlid worden door vriendjespolitiek bepaald wordt: kortom hoe meer populistisch attitudes
+
 ```{r vertrouwen-age,fig.height=10, fig.width=10}
 da <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, age) %>%
@@ -229,8 +241,7 @@ da <- d %>%
   arrange(wave) %>%
   na.omit() %>%
   pivot_longer(cols = F1_1:F2_11) %>%
-  mutate(across(matches("F1_"), ),
-         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
          name = recode(name,
                        `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
                        `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
@@ -266,6 +277,11 @@ ggplot(da, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(da, "Vertrouwen-Leeftijd")`]
 
+# Vertrouwen: Opleidingsniveau
+
+- Laagopgeleiden: hoogste vertrouwen in de instituties en minst politiek cynisch
+- Hoogopgeleiden: minste vertrouwen in de instituties en meest politiek cynisch
+
 ```{r vertrouwen-education,fig.height=10,fig.width=10}
 de <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, education) %>%
@@ -296,8 +312,7 @@ de <- d %>%
   arrange(wave) %>%
   na.omit() %>%
   pivot_longer(cols = F1_1:F2_11) %>%
-  mutate(across(matches("F1_"), ),
-         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
          name = recode(name,
                        `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
                        `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
@@ -330,8 +345,9 @@ ggplot(de, aes(x = value, y = reorder(name, value),
   theme_nrc() +
   scale_color_brewer(palette = "Set1")
 ```
-
 Download data: [`r export_data(de, "Vertrouwen-Opleidingsniveau")`]
+
+# Vertrouwen: Werkzame en Werkloze Bevolking
 
 ```{r vertrouwen-job,fig.height=10, fig.width=10}
 dj <- d %>%
@@ -363,8 +379,7 @@ dj <- d %>%
   arrange(wave) %>%
   na.omit() %>%
   pivot_longer(cols = F1_1:F2_11) %>%
-  mutate(across(matches("F1_"), ),
-         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
          name = recode(name,
                        `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
                        `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
@@ -431,8 +446,7 @@ dr <- d %>%
   arrange(wave) %>%
   na.omit() %>%
   pivot_longer(cols = F1_1:F2_11) %>%
-  mutate(across(matches("F1_"), ),
-         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
          name = recode(name,
                        `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
                        `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",

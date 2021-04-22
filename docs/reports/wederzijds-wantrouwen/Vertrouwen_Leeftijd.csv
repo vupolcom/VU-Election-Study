@@ -1,13 +1,13 @@
 wave,age,name,value,id
-0,18-30,Politici maken zich niet druk om mensen zoals ik,6.082815734989648,Legitimiteit van Politiek
-0,18-30,Politici zijn alleen maar geïnteresseerd in mijn stem,6.215320910973085,Legitimiteit van Politiek
-0,18-30,Politici beloven meer dan ze kunnen waarmaken,7.233954451345756,Legitimiteit van Politiek
-0,18-30,Kamerlid word je door je politieke vrienden,6.136645962732919,Legitimiteit van Politiek
-0,18-30,De meeste politici zijn bekwame mensen die weten wat ze doen,6.3146997929606625,Legitimiteit van Politiek
-0,18-30,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.805383022774327,Legitimiteit van Politiek
-0,18-30,Het sluiten van compromissen is het verraden van je principes,5.337474120082816,Legitimiteit van Politiek
-0,18-30,Een sterke regeringsleider is goed voor Nederland,6.409937888198757,Legitimiteit van Politiek
-0,18-30,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.739130434782608,Legitimiteit van Politiek
+0,18-30,Politici maken zich niet druk om mensen zoals ik,6.082815734989648,Politiek Cynisme
+0,18-30,Politici zijn alleen maar geïnteresseerd in mijn stem,6.215320910973085,Politiek Cynisme
+0,18-30,Politici beloven meer dan ze kunnen waarmaken,7.233954451345756,Politiek Cynisme
+0,18-30,Kamerlid word je door je politieke vrienden,6.136645962732919,Politiek Cynisme
+0,18-30,De meeste politici zijn bekwame mensen die weten wat ze doen,6.3146997929606625,Politiek Cynisme
+0,18-30,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.805383022774327,Politiek Cynisme
+0,18-30,Het sluiten van compromissen is het verraden van je principes,5.337474120082816,Politiek Cynisme
+0,18-30,Een sterke regeringsleider is goed voor Nederland,6.409937888198757,Politiek Cynisme
+0,18-30,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.739130434782608,Politiek Cynisme
 0,18-30,Rechtspraak,6.186721991701245,Vertrouwen in Instituties
 0,18-30,Journalistiek,5.058091286307054,Vertrouwen in Instituties
 0,18-30,Regering,5.441908713692946,Vertrouwen in Instituties
@@ -19,15 +19,15 @@ wave,age,name,value,id
 0,18-30,Wetenschap,7.253112033195021,Vertrouwen in Instituties
 0,18-30,Grote Bedrijven,4.668049792531121,Vertrouwen in Instituties
 0,18-30,Banken,5.089211618257261,Vertrouwen in Instituties
-0,31-50,Politici maken zich niet druk om mensen zoals ik,6.501779359430605,Legitimiteit van Politiek
-0,31-50,Politici zijn alleen maar geïnteresseerd in mijn stem,6.661921708185053,Legitimiteit van Politiek
-0,31-50,Politici beloven meer dan ze kunnen waarmaken,7.3487544483985765,Legitimiteit van Politiek
-0,31-50,Kamerlid word je door je politieke vrienden,6.284697508896797,Legitimiteit van Politiek
-0,31-50,De meeste politici zijn bekwame mensen die weten wat ze doen,6.160142348754448,Legitimiteit van Politiek
-0,31-50,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.629893238434164,Legitimiteit van Politiek
-0,31-50,Het sluiten van compromissen is het verraden van je principes,6.064056939501779,Legitimiteit van Politiek
-0,31-50,Een sterke regeringsleider is goed voor Nederland,6.622775800711744,Legitimiteit van Politiek
-0,31-50,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.907473309608541,Legitimiteit van Politiek
+0,31-50,Politici maken zich niet druk om mensen zoals ik,6.501779359430605,Politiek Cynisme
+0,31-50,Politici zijn alleen maar geïnteresseerd in mijn stem,6.661921708185053,Politiek Cynisme
+0,31-50,Politici beloven meer dan ze kunnen waarmaken,7.3487544483985765,Politiek Cynisme
+0,31-50,Kamerlid word je door je politieke vrienden,6.284697508896797,Politiek Cynisme
+0,31-50,De meeste politici zijn bekwame mensen die weten wat ze doen,6.160142348754448,Politiek Cynisme
+0,31-50,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.629893238434164,Politiek Cynisme
+0,31-50,Het sluiten van compromissen is het verraden van je principes,6.064056939501779,Politiek Cynisme
+0,31-50,Een sterke regeringsleider is goed voor Nederland,6.622775800711744,Politiek Cynisme
+0,31-50,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.907473309608541,Politiek Cynisme
 0,31-50,Rechtspraak,6.016042780748663,Vertrouwen in Instituties
 0,31-50,Journalistiek,5.222816399286987,Vertrouwen in Instituties
 0,31-50,Regering,5.163992869875223,Vertrouwen in Instituties
@@ -39,15 +39,15 @@ wave,age,name,value,id
 0,31-50,Wetenschap,6.7825311942959,Vertrouwen in Instituties
 0,31-50,Grote Bedrijven,4.606060606060606,Vertrouwen in Instituties
 0,31-50,Banken,4.647058823529412,Vertrouwen in Instituties
-0,51-70,Politici maken zich niet druk om mensen zoals ik,6.764607679465776,Legitimiteit van Politiek
-0,51-70,Politici zijn alleen maar geïnteresseerd in mijn stem,7.038397328881469,Legitimiteit van Politiek
-0,51-70,Politici beloven meer dan ze kunnen waarmaken,7.936560934891486,Legitimiteit van Politiek
-0,51-70,Kamerlid word je door je politieke vrienden,6.397328881469115,Legitimiteit van Politiek
-0,51-70,De meeste politici zijn bekwame mensen die weten wat ze doen,6.143572621035059,Legitimiteit van Politiek
-0,51-70,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.435726210350584,Legitimiteit van Politiek
-0,51-70,Het sluiten van compromissen is het verraden van je principes,6.347245409015025,Legitimiteit van Politiek
-0,51-70,Een sterke regeringsleider is goed voor Nederland,7.041736227045075,Legitimiteit van Politiek
-0,51-70,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.227045075125209,Legitimiteit van Politiek
+0,51-70,Politici maken zich niet druk om mensen zoals ik,6.764607679465776,Politiek Cynisme
+0,51-70,Politici zijn alleen maar geïnteresseerd in mijn stem,7.038397328881469,Politiek Cynisme
+0,51-70,Politici beloven meer dan ze kunnen waarmaken,7.936560934891486,Politiek Cynisme
+0,51-70,Kamerlid word je door je politieke vrienden,6.397328881469115,Politiek Cynisme
+0,51-70,De meeste politici zijn bekwame mensen die weten wat ze doen,6.143572621035059,Politiek Cynisme
+0,51-70,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.435726210350584,Politiek Cynisme
+0,51-70,Het sluiten van compromissen is het verraden van je principes,6.347245409015025,Politiek Cynisme
+0,51-70,Een sterke regeringsleider is goed voor Nederland,7.041736227045075,Politiek Cynisme
+0,51-70,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.227045075125209,Politiek Cynisme
 0,51-70,Rechtspraak,5.889261744966443,Vertrouwen in Instituties
 0,51-70,Journalistiek,5.37248322147651,Vertrouwen in Instituties
 0,51-70,Regering,4.917785234899329,Vertrouwen in Instituties
@@ -59,15 +59,15 @@ wave,age,name,value,id
 0,51-70,Wetenschap,6.8389261744966445,Vertrouwen in Instituties
 0,51-70,Grote Bedrijven,4.374161073825503,Vertrouwen in Instituties
 0,51-70,Banken,4.424496644295302,Vertrouwen in Instituties
-0,70 en ouder,Politici maken zich niet druk om mensen zoals ik,6.70383275261324,Legitimiteit van Politiek
-0,70 en ouder,Politici zijn alleen maar geïnteresseerd in mijn stem,7.066202090592334,Legitimiteit van Politiek
-0,70 en ouder,Politici beloven meer dan ze kunnen waarmaken,7.811846689895471,Legitimiteit van Politiek
-0,70 en ouder,Kamerlid word je door je politieke vrienden,6.480836236933798,Legitimiteit van Politiek
-0,70 en ouder,De meeste politici zijn bekwame mensen die weten wat ze doen,6.132404181184669,Legitimiteit van Politiek
-0,70 en ouder,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.714285714285714,Legitimiteit van Politiek
-0,70 en ouder,Het sluiten van compromissen is het verraden van je principes,6.209059233449477,Legitimiteit van Politiek
-0,70 en ouder,Een sterke regeringsleider is goed voor Nederland,7.498257839721254,Legitimiteit van Politiek
-0,70 en ouder,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.2020905923344944,Legitimiteit van Politiek
+0,70 en ouder,Politici maken zich niet druk om mensen zoals ik,6.70383275261324,Politiek Cynisme
+0,70 en ouder,Politici zijn alleen maar geïnteresseerd in mijn stem,7.066202090592334,Politiek Cynisme
+0,70 en ouder,Politici beloven meer dan ze kunnen waarmaken,7.811846689895471,Politiek Cynisme
+0,70 en ouder,Kamerlid word je door je politieke vrienden,6.480836236933798,Politiek Cynisme
+0,70 en ouder,De meeste politici zijn bekwame mensen die weten wat ze doen,6.132404181184669,Politiek Cynisme
+0,70 en ouder,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.714285714285714,Politiek Cynisme
+0,70 en ouder,Het sluiten van compromissen is het verraden van je principes,6.209059233449477,Politiek Cynisme
+0,70 en ouder,Een sterke regeringsleider is goed voor Nederland,7.498257839721254,Politiek Cynisme
+0,70 en ouder,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.2020905923344944,Politiek Cynisme
 0,70 en ouder,Rechtspraak,6.132404181184669,Vertrouwen in Instituties
 0,70 en ouder,Journalistiek,5.547038327526132,Vertrouwen in Instituties
 0,70 en ouder,Regering,5.390243902439025,Vertrouwen in Instituties
@@ -79,15 +79,15 @@ wave,age,name,value,id
 0,70 en ouder,Wetenschap,7.2160278745644595,Vertrouwen in Instituties
 0,70 en ouder,Grote Bedrijven,4.850174216027875,Vertrouwen in Instituties
 0,70 en ouder,Banken,4.613240418118467,Vertrouwen in Instituties
-1,18-30,Politici maken zich niet druk om mensen zoals ik,6.170616113744076,Legitimiteit van Politiek
-1,18-30,Politici zijn alleen maar geïnteresseerd in mijn stem,6.2559241706161135,Legitimiteit van Politiek
-1,18-30,Politici beloven meer dan ze kunnen waarmaken,7.488151658767772,Legitimiteit van Politiek
-1,18-30,Kamerlid word je door je politieke vrienden,6.208530805687204,Legitimiteit van Politiek
-1,18-30,De meeste politici zijn bekwame mensen die weten wat ze doen,6.274881516587678,Legitimiteit van Politiek
-1,18-30,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.478672985781991,Legitimiteit van Politiek
-1,18-30,Het sluiten van compromissen is het verraden van je principes,5.639810426540285,Legitimiteit van Politiek
-1,18-30,Een sterke regeringsleider is goed voor Nederland,6.4454976303317535,Legitimiteit van Politiek
-1,18-30,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.781990521327014,Legitimiteit van Politiek
+1,18-30,Politici maken zich niet druk om mensen zoals ik,6.170616113744076,Politiek Cynisme
+1,18-30,Politici zijn alleen maar geïnteresseerd in mijn stem,6.2559241706161135,Politiek Cynisme
+1,18-30,Politici beloven meer dan ze kunnen waarmaken,7.488151658767772,Politiek Cynisme
+1,18-30,Kamerlid word je door je politieke vrienden,6.208530805687204,Politiek Cynisme
+1,18-30,De meeste politici zijn bekwame mensen die weten wat ze doen,6.274881516587678,Politiek Cynisme
+1,18-30,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.478672985781991,Politiek Cynisme
+1,18-30,Het sluiten van compromissen is het verraden van je principes,5.639810426540285,Politiek Cynisme
+1,18-30,Een sterke regeringsleider is goed voor Nederland,6.4454976303317535,Politiek Cynisme
+1,18-30,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.781990521327014,Politiek Cynisme
 1,18-30,Rechtspraak,6.360189573459715,Vertrouwen in Instituties
 1,18-30,Journalistiek,5.398104265402844,Vertrouwen in Instituties
 1,18-30,Regering,5.293838862559242,Vertrouwen in Instituties
@@ -99,15 +99,15 @@ wave,age,name,value,id
 1,18-30,Wetenschap,7.213270142180095,Vertrouwen in Instituties
 1,18-30,Grote Bedrijven,4.61611374407583,Vertrouwen in Instituties
 1,18-30,Banken,4.729857819905213,Vertrouwen in Instituties
-1,31-50,Politici maken zich niet druk om mensen zoals ik,6.58282208588957,Legitimiteit van Politiek
-1,31-50,Politici zijn alleen maar geïnteresseerd in mijn stem,6.558282208588957,Legitimiteit van Politiek
-1,31-50,Politici beloven meer dan ze kunnen waarmaken,7.521472392638037,Legitimiteit van Politiek
-1,31-50,Kamerlid word je door je politieke vrienden,6.337423312883436,Legitimiteit van Politiek
-1,31-50,De meeste politici zijn bekwame mensen die weten wat ze doen,6.171779141104294,Legitimiteit van Politiek
-1,31-50,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.680981595092025,Legitimiteit van Politiek
-1,31-50,Het sluiten van compromissen is het verraden van je principes,5.938650306748467,Legitimiteit van Politiek
-1,31-50,Een sterke regeringsleider is goed voor Nederland,6.49079754601227,Legitimiteit van Politiek
-1,31-50,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.96319018404908,Legitimiteit van Politiek
+1,31-50,Politici maken zich niet druk om mensen zoals ik,6.58282208588957,Politiek Cynisme
+1,31-50,Politici zijn alleen maar geïnteresseerd in mijn stem,6.558282208588957,Politiek Cynisme
+1,31-50,Politici beloven meer dan ze kunnen waarmaken,7.521472392638037,Politiek Cynisme
+1,31-50,Kamerlid word je door je politieke vrienden,6.337423312883436,Politiek Cynisme
+1,31-50,De meeste politici zijn bekwame mensen die weten wat ze doen,6.171779141104294,Politiek Cynisme
+1,31-50,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.680981595092025,Politiek Cynisme
+1,31-50,Het sluiten van compromissen is het verraden van je principes,5.938650306748467,Politiek Cynisme
+1,31-50,Een sterke regeringsleider is goed voor Nederland,6.49079754601227,Politiek Cynisme
+1,31-50,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.96319018404908,Politiek Cynisme
 1,31-50,Rechtspraak,6.343558282208589,Vertrouwen in Instituties
 1,31-50,Journalistiek,5.705521472392638,Vertrouwen in Instituties
 1,31-50,Regering,5.276073619631902,Vertrouwen in Instituties
@@ -119,15 +119,15 @@ wave,age,name,value,id
 1,31-50,Wetenschap,6.91717791411043,Vertrouwen in Instituties
 1,31-50,Grote Bedrijven,4.690184049079755,Vertrouwen in Instituties
 1,31-50,Banken,4.684049079754601,Vertrouwen in Instituties
-1,51-70,Politici maken zich niet druk om mensen zoals ik,6.659528907922912,Legitimiteit van Politiek
-1,51-70,Politici zijn alleen maar geïnteresseerd in mijn stem,7.092077087794433,Legitimiteit van Politiek
-1,51-70,Politici beloven meer dan ze kunnen waarmaken,7.9486081370449675,Legitimiteit van Politiek
-1,51-70,Kamerlid word je door je politieke vrienden,6.492505353319058,Legitimiteit van Politiek
-1,51-70,De meeste politici zijn bekwame mensen die weten wat ze doen,5.987152034261242,Legitimiteit van Politiek
-1,51-70,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.370449678800856,Legitimiteit van Politiek
-1,51-70,Het sluiten van compromissen is het verraden van je principes,6.402569593147752,Legitimiteit van Politiek
-1,51-70,Een sterke regeringsleider is goed voor Nederland,6.925053533190578,Legitimiteit van Politiek
-1,51-70,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.188436830835117,Legitimiteit van Politiek
+1,51-70,Politici maken zich niet druk om mensen zoals ik,6.659528907922912,Politiek Cynisme
+1,51-70,Politici zijn alleen maar geïnteresseerd in mijn stem,7.092077087794433,Politiek Cynisme
+1,51-70,Politici beloven meer dan ze kunnen waarmaken,7.9486081370449675,Politiek Cynisme
+1,51-70,Kamerlid word je door je politieke vrienden,6.492505353319058,Politiek Cynisme
+1,51-70,De meeste politici zijn bekwame mensen die weten wat ze doen,5.987152034261242,Politiek Cynisme
+1,51-70,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.370449678800856,Politiek Cynisme
+1,51-70,Het sluiten van compromissen is het verraden van je principes,6.402569593147752,Politiek Cynisme
+1,51-70,Een sterke regeringsleider is goed voor Nederland,6.925053533190578,Politiek Cynisme
+1,51-70,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.188436830835117,Politiek Cynisme
 1,51-70,Rechtspraak,5.955032119914347,Vertrouwen in Instituties
 1,51-70,Journalistiek,5.32762312633833,Vertrouwen in Instituties
 1,51-70,Regering,5.06423982869379,Vertrouwen in Instituties
@@ -139,15 +139,15 @@ wave,age,name,value,id
 1,51-70,Wetenschap,6.805139186295503,Vertrouwen in Instituties
 1,51-70,Grote Bedrijven,4.209850107066381,Vertrouwen in Instituties
 1,51-70,Banken,4.256959314775161,Vertrouwen in Instituties
-1,70 en ouder,Politici maken zich niet druk om mensen zoals ik,6.621004566210046,Legitimiteit van Politiek
-1,70 en ouder,Politici zijn alleen maar geïnteresseerd in mijn stem,7.041095890410959,Legitimiteit van Politiek
-1,70 en ouder,Politici beloven meer dan ze kunnen waarmaken,7.872146118721461,Legitimiteit van Politiek
-1,70 en ouder,Kamerlid word je door je politieke vrienden,6.69406392694064,Legitimiteit van Politiek
-1,70 en ouder,De meeste politici zijn bekwame mensen die weten wat ze doen,6.319634703196347,Legitimiteit van Politiek
-1,70 en ouder,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.936073059360731,Legitimiteit van Politiek
-1,70 en ouder,Het sluiten van compromissen is het verraden van je principes,6.228310502283105,Legitimiteit van Politiek
-1,70 en ouder,Een sterke regeringsleider is goed voor Nederland,7.351598173515982,Legitimiteit van Politiek
-1,70 en ouder,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.310502283105023,Legitimiteit van Politiek
+1,70 en ouder,Politici maken zich niet druk om mensen zoals ik,6.621004566210046,Politiek Cynisme
+1,70 en ouder,Politici zijn alleen maar geïnteresseerd in mijn stem,7.041095890410959,Politiek Cynisme
+1,70 en ouder,Politici beloven meer dan ze kunnen waarmaken,7.872146118721461,Politiek Cynisme
+1,70 en ouder,Kamerlid word je door je politieke vrienden,6.69406392694064,Politiek Cynisme
+1,70 en ouder,De meeste politici zijn bekwame mensen die weten wat ze doen,6.319634703196347,Politiek Cynisme
+1,70 en ouder,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.936073059360731,Politiek Cynisme
+1,70 en ouder,Het sluiten van compromissen is het verraden van je principes,6.228310502283105,Politiek Cynisme
+1,70 en ouder,Een sterke regeringsleider is goed voor Nederland,7.351598173515982,Politiek Cynisme
+1,70 en ouder,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.310502283105023,Politiek Cynisme
 1,70 en ouder,Rechtspraak,6.3881278538812785,Vertrouwen in Instituties
 1,70 en ouder,Journalistiek,5.767123287671233,Vertrouwen in Instituties
 1,70 en ouder,Regering,5.821917808219178,Vertrouwen in Instituties

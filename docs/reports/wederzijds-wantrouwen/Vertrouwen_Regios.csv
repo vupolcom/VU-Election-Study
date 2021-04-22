@@ -1,13 +1,13 @@
 wave,region,name,value,id
-0,Drie grote steden,Politici maken zich niet druk om mensen zoals ik,6.335714285714285,Legitimiteit van Politiek
-0,Drie grote steden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.535714285714286,Legitimiteit van Politiek
-0,Drie grote steden,Politici beloven meer dan ze kunnen waarmaken,7.557142857142857,Legitimiteit van Politiek
-0,Drie grote steden,Kamerlid word je door je politieke vrienden,6.585714285714285,Legitimiteit van Politiek
-0,Drie grote steden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.307142857142857,Legitimiteit van Politiek
-0,Drie grote steden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.714285714285714,Legitimiteit van Politiek
-0,Drie grote steden,Het sluiten van compromissen is het verraden van je principes,6.078571428571428,Legitimiteit van Politiek
-0,Drie grote steden,Een sterke regeringsleider is goed voor Nederland,6.75,Legitimiteit van Politiek
-0,Drie grote steden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.142857142857143,Legitimiteit van Politiek
+0,Drie grote steden,Politici maken zich niet druk om mensen zoals ik,6.335714285714285,Politiek Cynisme
+0,Drie grote steden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.535714285714286,Politiek Cynisme
+0,Drie grote steden,Politici beloven meer dan ze kunnen waarmaken,7.557142857142857,Politiek Cynisme
+0,Drie grote steden,Kamerlid word je door je politieke vrienden,6.585714285714285,Politiek Cynisme
+0,Drie grote steden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.307142857142857,Politiek Cynisme
+0,Drie grote steden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.714285714285714,Politiek Cynisme
+0,Drie grote steden,Het sluiten van compromissen is het verraden van je principes,6.078571428571428,Politiek Cynisme
+0,Drie grote steden,Een sterke regeringsleider is goed voor Nederland,6.75,Politiek Cynisme
+0,Drie grote steden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.142857142857143,Politiek Cynisme
 0,Drie grote steden,Rechtspraak,6.122302158273381,Vertrouwen in Instituties
 0,Drie grote steden,Journalistiek,5.5359712230215825,Vertrouwen in Instituties
 0,Drie grote steden,Regering,5.205035971223022,Vertrouwen in Instituties
@@ -19,15 +19,15 @@ wave,region,name,value,id
 0,Drie grote steden,Wetenschap,7.100719424460432,Vertrouwen in Instituties
 0,Drie grote steden,Grote Bedrijven,4.683453237410072,Vertrouwen in Instituties
 0,Drie grote steden,Banken,4.726618705035971,Vertrouwen in Instituties
-0,Noorden,Politici maken zich niet druk om mensen zoals ik,7.018691588785047,Legitimiteit van Politiek
-0,Noorden,Politici zijn alleen maar geïnteresseerd in mijn stem,7.121495327102804,Legitimiteit van Politiek
-0,Noorden,Politici beloven meer dan ze kunnen waarmaken,7.775700934579439,Legitimiteit van Politiek
-0,Noorden,Kamerlid word je door je politieke vrienden,6.364485981308412,Legitimiteit van Politiek
-0,Noorden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.037383177570093,Legitimiteit van Politiek
-0,Noorden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.485981308411215,Legitimiteit van Politiek
-0,Noorden,Het sluiten van compromissen is het verraden van je principes,6.289719626168225,Legitimiteit van Politiek
-0,Noorden,Een sterke regeringsleider is goed voor Nederland,6.757009345794392,Legitimiteit van Politiek
-0,Noorden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.317757009345795,Legitimiteit van Politiek
+0,Noorden,Politici maken zich niet druk om mensen zoals ik,7.018691588785047,Politiek Cynisme
+0,Noorden,Politici zijn alleen maar geïnteresseerd in mijn stem,7.121495327102804,Politiek Cynisme
+0,Noorden,Politici beloven meer dan ze kunnen waarmaken,7.775700934579439,Politiek Cynisme
+0,Noorden,Kamerlid word je door je politieke vrienden,6.364485981308412,Politiek Cynisme
+0,Noorden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.037383177570093,Politiek Cynisme
+0,Noorden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.485981308411215,Politiek Cynisme
+0,Noorden,Het sluiten van compromissen is het verraden van je principes,6.289719626168225,Politiek Cynisme
+0,Noorden,Een sterke regeringsleider is goed voor Nederland,6.757009345794392,Politiek Cynisme
+0,Noorden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.317757009345795,Politiek Cynisme
 0,Noorden,Rechtspraak,5.981308411214953,Vertrouwen in Instituties
 0,Noorden,Journalistiek,5.121495327102804,Vertrouwen in Instituties
 0,Noorden,Regering,4.962616822429907,Vertrouwen in Instituties
@@ -39,15 +39,15 @@ wave,region,name,value,id
 0,Noorden,Wetenschap,6.789719626168225,Vertrouwen in Instituties
 0,Noorden,Grote Bedrijven,4.579439252336448,Vertrouwen in Instituties
 0,Noorden,Banken,4.766355140186916,Vertrouwen in Instituties
-0,Oosten,Politici maken zich niet druk om mensen zoals ik,6.300578034682081,Legitimiteit van Politiek
-0,Oosten,Politici zijn alleen maar geïnteresseerd in mijn stem,6.710982658959537,Legitimiteit van Politiek
-0,Oosten,Politici beloven meer dan ze kunnen waarmaken,7.687861271676301,Legitimiteit van Politiek
-0,Oosten,Kamerlid word je door je politieke vrienden,6.121387283236994,Legitimiteit van Politiek
-0,Oosten,De meeste politici zijn bekwame mensen die weten wat ze doen,6.184971098265896,Legitimiteit van Politiek
-0,Oosten,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.520231213872832,Legitimiteit van Politiek
-0,Oosten,Het sluiten van compromissen is het verraden van je principes,5.797687861271676,Legitimiteit van Politiek
-0,Oosten,Een sterke regeringsleider is goed voor Nederland,6.722543352601156,Legitimiteit van Politiek
-0,Oosten,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.942196531791907,Legitimiteit van Politiek
+0,Oosten,Politici maken zich niet druk om mensen zoals ik,6.300578034682081,Politiek Cynisme
+0,Oosten,Politici zijn alleen maar geïnteresseerd in mijn stem,6.710982658959537,Politiek Cynisme
+0,Oosten,Politici beloven meer dan ze kunnen waarmaken,7.687861271676301,Politiek Cynisme
+0,Oosten,Kamerlid word je door je politieke vrienden,6.121387283236994,Politiek Cynisme
+0,Oosten,De meeste politici zijn bekwame mensen die weten wat ze doen,6.184971098265896,Politiek Cynisme
+0,Oosten,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.520231213872832,Politiek Cynisme
+0,Oosten,Het sluiten van compromissen is het verraden van je principes,5.797687861271676,Politiek Cynisme
+0,Oosten,Een sterke regeringsleider is goed voor Nederland,6.722543352601156,Politiek Cynisme
+0,Oosten,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.942196531791907,Politiek Cynisme
 0,Oosten,Rechtspraak,6.098265895953757,Vertrouwen in Instituties
 0,Oosten,Journalistiek,5.213872832369942,Vertrouwen in Instituties
 0,Oosten,Regering,5.066473988439307,Vertrouwen in Instituties
@@ -59,15 +59,15 @@ wave,region,name,value,id
 0,Oosten,Wetenschap,6.942196531791907,Vertrouwen in Instituties
 0,Oosten,Grote Bedrijven,4.320809248554913,Vertrouwen in Instituties
 0,Oosten,Banken,4.598265895953757,Vertrouwen in Instituties
-0,Westen,Politici maken zich niet druk om mensen zoals ik,6.456486042692939,Legitimiteit van Politiek
-0,Westen,Politici zijn alleen maar geïnteresseerd in mijn stem,6.633825944170772,Legitimiteit van Politiek
-0,Westen,Politici beloven meer dan ze kunnen waarmaken,7.435139573070607,Legitimiteit van Politiek
-0,Westen,Kamerlid word je door je politieke vrienden,6.25615763546798,Legitimiteit van Politiek
-0,Westen,De meeste politici zijn bekwame mensen die weten wat ze doen,6.213464696223317,Legitimiteit van Politiek
-0,Westen,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.802955665024631,Legitimiteit van Politiek
-0,Westen,Het sluiten van compromissen is het verraden van je principes,5.842364532019705,Legitimiteit van Politiek
-0,Westen,Een sterke regeringsleider is goed voor Nederland,6.811165845648604,Legitimiteit van Politiek
-0,Westen,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.898193760262726,Legitimiteit van Politiek
+0,Westen,Politici maken zich niet druk om mensen zoals ik,6.456486042692939,Politiek Cynisme
+0,Westen,Politici zijn alleen maar geïnteresseerd in mijn stem,6.633825944170772,Politiek Cynisme
+0,Westen,Politici beloven meer dan ze kunnen waarmaken,7.435139573070607,Politiek Cynisme
+0,Westen,Kamerlid word je door je politieke vrienden,6.25615763546798,Politiek Cynisme
+0,Westen,De meeste politici zijn bekwame mensen die weten wat ze doen,6.213464696223317,Politiek Cynisme
+0,Westen,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.802955665024631,Politiek Cynisme
+0,Westen,Het sluiten van compromissen is het verraden van je principes,5.842364532019705,Politiek Cynisme
+0,Westen,Een sterke regeringsleider is goed voor Nederland,6.811165845648604,Politiek Cynisme
+0,Westen,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.898193760262726,Politiek Cynisme
 0,Westen,Rechtspraak,6.016447368421052,Vertrouwen in Instituties
 0,Westen,Journalistiek,5.34375,Vertrouwen in Instituties
 0,Westen,Regering,5.3256578947368425,Vertrouwen in Instituties
@@ -79,15 +79,15 @@ wave,region,name,value,id
 0,Westen,Wetenschap,6.980263157894737,Vertrouwen in Instituties
 0,Westen,Grote Bedrijven,4.503289473684211,Vertrouwen in Instituties
 0,Westen,Banken,4.559210526315789,Vertrouwen in Instituties
-0,Zuiden,Politici maken zich niet druk om mensen zoals ik,6.597510373443983,Legitimiteit van Politiek
-0,Zuiden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.79253112033195,Legitimiteit van Politiek
-0,Zuiden,Politici beloven meer dan ze kunnen waarmaken,7.576763485477178,Legitimiteit van Politiek
-0,Zuiden,Kamerlid word je door je politieke vrienden,6.33609958506224,Legitimiteit van Politiek
-0,Zuiden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.161825726141079,Legitimiteit van Politiek
-0,Zuiden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.4896265560165975,Legitimiteit van Politiek
-0,Zuiden,Het sluiten van compromissen is het verraden van je principes,6.136929460580913,Legitimiteit van Politiek
-0,Zuiden,Een sterke regeringsleider is goed voor Nederland,7.008298755186722,Legitimiteit van Politiek
-0,Zuiden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.979253112033195,Legitimiteit van Politiek
+0,Zuiden,Politici maken zich niet druk om mensen zoals ik,6.597510373443983,Politiek Cynisme
+0,Zuiden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.79253112033195,Politiek Cynisme
+0,Zuiden,Politici beloven meer dan ze kunnen waarmaken,7.576763485477178,Politiek Cynisme
+0,Zuiden,Kamerlid word je door je politieke vrienden,6.33609958506224,Politiek Cynisme
+0,Zuiden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.161825726141079,Politiek Cynisme
+0,Zuiden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.4896265560165975,Politiek Cynisme
+0,Zuiden,Het sluiten van compromissen is het verraden van je principes,6.136929460580913,Politiek Cynisme
+0,Zuiden,Een sterke regeringsleider is goed voor Nederland,7.008298755186722,Politiek Cynisme
+0,Zuiden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.979253112033195,Politiek Cynisme
 0,Zuiden,Rechtspraak,5.99375,Vertrouwen in Instituties
 0,Zuiden,Journalistiek,5.154166666666667,Vertrouwen in Instituties
 0,Zuiden,Regering,5.204166666666667,Vertrouwen in Instituties
@@ -99,15 +99,15 @@ wave,region,name,value,id
 0,Zuiden,Wetenschap,7.03125,Vertrouwen in Instituties
 0,Zuiden,Grote Bedrijven,4.829166666666667,Vertrouwen in Instituties
 0,Zuiden,Banken,4.841666666666667,Vertrouwen in Instituties
-1,Drie grote steden,Politici maken zich niet druk om mensen zoals ik,6.795321637426901,Legitimiteit van Politiek
-1,Drie grote steden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.795321637426901,Legitimiteit van Politiek
-1,Drie grote steden,Politici beloven meer dan ze kunnen waarmaken,7.6608187134502925,Legitimiteit van Politiek
-1,Drie grote steden,Kamerlid word je door je politieke vrienden,6.502923976608187,Legitimiteit van Politiek
-1,Drie grote steden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.304093567251462,Legitimiteit van Politiek
-1,Drie grote steden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.637426900584796,Legitimiteit van Politiek
-1,Drie grote steden,Het sluiten van compromissen is het verraden van je principes,6.280701754385965,Legitimiteit van Politiek
-1,Drie grote steden,Een sterke regeringsleider is goed voor Nederland,6.912280701754386,Legitimiteit van Politiek
-1,Drie grote steden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.16374269005848,Legitimiteit van Politiek
+1,Drie grote steden,Politici maken zich niet druk om mensen zoals ik,6.795321637426901,Politiek Cynisme
+1,Drie grote steden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.795321637426901,Politiek Cynisme
+1,Drie grote steden,Politici beloven meer dan ze kunnen waarmaken,7.6608187134502925,Politiek Cynisme
+1,Drie grote steden,Kamerlid word je door je politieke vrienden,6.502923976608187,Politiek Cynisme
+1,Drie grote steden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.304093567251462,Politiek Cynisme
+1,Drie grote steden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.637426900584796,Politiek Cynisme
+1,Drie grote steden,Het sluiten van compromissen is het verraden van je principes,6.280701754385965,Politiek Cynisme
+1,Drie grote steden,Een sterke regeringsleider is goed voor Nederland,6.912280701754386,Politiek Cynisme
+1,Drie grote steden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.16374269005848,Politiek Cynisme
 1,Drie grote steden,Rechtspraak,6.216374269005848,Vertrouwen in Instituties
 1,Drie grote steden,Journalistiek,5.678362573099415,Vertrouwen in Instituties
 1,Drie grote steden,Regering,5.146198830409356,Vertrouwen in Instituties
@@ -119,15 +119,15 @@ wave,region,name,value,id
 1,Drie grote steden,Wetenschap,7.192982456140351,Vertrouwen in Instituties
 1,Drie grote steden,Grote Bedrijven,4.491228070175438,Vertrouwen in Instituties
 1,Drie grote steden,Banken,4.444444444444445,Vertrouwen in Instituties
-1,Noorden,Politici maken zich niet druk om mensen zoals ik,6.621212121212121,Legitimiteit van Politiek
-1,Noorden,Politici zijn alleen maar geïnteresseerd in mijn stem,7.045454545454546,Legitimiteit van Politiek
-1,Noorden,Politici beloven meer dan ze kunnen waarmaken,7.818181818181818,Legitimiteit van Politiek
-1,Noorden,Kamerlid word je door je politieke vrienden,6.5606060606060606,Legitimiteit van Politiek
-1,Noorden,De meeste politici zijn bekwame mensen die weten wat ze doen,6,Legitimiteit van Politiek
-1,Noorden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.393939393939394,Legitimiteit van Politiek
-1,Noorden,Het sluiten van compromissen is het verraden van je principes,6.136363636363637,Legitimiteit van Politiek
-1,Noorden,Een sterke regeringsleider is goed voor Nederland,6.681818181818182,Legitimiteit van Politiek
-1,Noorden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.515151515151516,Legitimiteit van Politiek
+1,Noorden,Politici maken zich niet druk om mensen zoals ik,6.621212121212121,Politiek Cynisme
+1,Noorden,Politici zijn alleen maar geïnteresseerd in mijn stem,7.045454545454546,Politiek Cynisme
+1,Noorden,Politici beloven meer dan ze kunnen waarmaken,7.818181818181818,Politiek Cynisme
+1,Noorden,Kamerlid word je door je politieke vrienden,6.5606060606060606,Politiek Cynisme
+1,Noorden,De meeste politici zijn bekwame mensen die weten wat ze doen,6,Politiek Cynisme
+1,Noorden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.393939393939394,Politiek Cynisme
+1,Noorden,Het sluiten van compromissen is het verraden van je principes,6.136363636363637,Politiek Cynisme
+1,Noorden,Een sterke regeringsleider is goed voor Nederland,6.681818181818182,Politiek Cynisme
+1,Noorden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.515151515151516,Politiek Cynisme
 1,Noorden,Rechtspraak,6.075757575757576,Vertrouwen in Instituties
 1,Noorden,Journalistiek,5.613636363636363,Vertrouwen in Instituties
 1,Noorden,Regering,5.037878787878788,Vertrouwen in Instituties
@@ -139,15 +139,15 @@ wave,region,name,value,id
 1,Noorden,Wetenschap,6.7727272727272725,Vertrouwen in Instituties
 1,Noorden,Grote Bedrijven,4.378787878787879,Vertrouwen in Instituties
 1,Noorden,Banken,4.5227272727272725,Vertrouwen in Instituties
-1,Oosten,Politici maken zich niet druk om mensen zoals ik,6.393305439330544,Legitimiteit van Politiek
-1,Oosten,Politici zijn alleen maar geïnteresseerd in mijn stem,6.794979079497908,Legitimiteit van Politiek
-1,Oosten,Politici beloven meer dan ze kunnen waarmaken,7.807531380753138,Legitimiteit van Politiek
-1,Oosten,Kamerlid word je door je politieke vrienden,6.527196652719665,Legitimiteit van Politiek
-1,Oosten,De meeste politici zijn bekwame mensen die weten wat ze doen,6.117154811715481,Legitimiteit van Politiek
-1,Oosten,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.405857740585774,Legitimiteit van Politiek
-1,Oosten,Het sluiten van compromissen is het verraden van je principes,6.050209205020921,Legitimiteit van Politiek
-1,Oosten,Een sterke regeringsleider is goed voor Nederland,6.7280334728033475,Legitimiteit van Politiek
-1,Oosten,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.824267782426778,Legitimiteit van Politiek
+1,Oosten,Politici maken zich niet druk om mensen zoals ik,6.393305439330544,Politiek Cynisme
+1,Oosten,Politici zijn alleen maar geïnteresseerd in mijn stem,6.794979079497908,Politiek Cynisme
+1,Oosten,Politici beloven meer dan ze kunnen waarmaken,7.807531380753138,Politiek Cynisme
+1,Oosten,Kamerlid word je door je politieke vrienden,6.527196652719665,Politiek Cynisme
+1,Oosten,De meeste politici zijn bekwame mensen die weten wat ze doen,6.117154811715481,Politiek Cynisme
+1,Oosten,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.405857740585774,Politiek Cynisme
+1,Oosten,Het sluiten van compromissen is het verraden van je principes,6.050209205020921,Politiek Cynisme
+1,Oosten,Een sterke regeringsleider is goed voor Nederland,6.7280334728033475,Politiek Cynisme
+1,Oosten,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.824267782426778,Politiek Cynisme
 1,Oosten,Rechtspraak,6.380753138075314,Vertrouwen in Instituties
 1,Oosten,Journalistiek,5.384937238493724,Vertrouwen in Instituties
 1,Oosten,Regering,5.188284518828452,Vertrouwen in Instituties
@@ -159,15 +159,15 @@ wave,region,name,value,id
 1,Oosten,Wetenschap,7.054393305439331,Vertrouwen in Instituties
 1,Oosten,Grote Bedrijven,4.502092050209205,Vertrouwen in Instituties
 1,Oosten,Banken,4.644351464435147,Vertrouwen in Instituties
-1,Westen,Politici maken zich niet druk om mensen zoals ik,6.385786802030457,Legitimiteit van Politiek
-1,Westen,Politici zijn alleen maar geïnteresseerd in mijn stem,6.619289340101523,Legitimiteit van Politiek
-1,Westen,Politici beloven meer dan ze kunnen waarmaken,7.67005076142132,Legitimiteit van Politiek
-1,Westen,Kamerlid word je door je politieke vrienden,6.274111675126903,Legitimiteit van Politiek
-1,Westen,De meeste politici zijn bekwame mensen die weten wat ze doen,6.208121827411167,Legitimiteit van Politiek
-1,Westen,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.7360406091370555,Legitimiteit van Politiek
-1,Westen,Het sluiten van compromissen is het verraden van je principes,5.959390862944162,Legitimiteit van Politiek
-1,Westen,Een sterke regeringsleider is goed voor Nederland,6.761421319796955,Legitimiteit van Politiek
-1,Westen,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.807106598984771,Legitimiteit van Politiek
+1,Westen,Politici maken zich niet druk om mensen zoals ik,6.385786802030457,Politiek Cynisme
+1,Westen,Politici zijn alleen maar geïnteresseerd in mijn stem,6.619289340101523,Politiek Cynisme
+1,Westen,Politici beloven meer dan ze kunnen waarmaken,7.67005076142132,Politiek Cynisme
+1,Westen,Kamerlid word je door je politieke vrienden,6.274111675126903,Politiek Cynisme
+1,Westen,De meeste politici zijn bekwame mensen die weten wat ze doen,6.208121827411167,Politiek Cynisme
+1,Westen,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.7360406091370555,Politiek Cynisme
+1,Westen,Het sluiten van compromissen is het verraden van je principes,5.959390862944162,Politiek Cynisme
+1,Westen,Een sterke regeringsleider is goed voor Nederland,6.761421319796955,Politiek Cynisme
+1,Westen,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,5.807106598984771,Politiek Cynisme
 1,Westen,Rechtspraak,6.241116751269035,Vertrouwen in Instituties
 1,Westen,Journalistiek,5.568527918781726,Vertrouwen in Instituties
 1,Westen,Regering,5.49238578680203,Vertrouwen in Instituties
@@ -179,15 +179,15 @@ wave,region,name,value,id
 1,Westen,Wetenschap,7.048223350253807,Vertrouwen in Instituties
 1,Westen,Grote Bedrijven,4.51015228426396,Vertrouwen in Instituties
 1,Westen,Banken,4.51015228426396,Vertrouwen in Instituties
-1,Zuiden,Politici maken zich niet druk om mensen zoals ik,6.7177700348432055,Legitimiteit van Politiek
-1,Zuiden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.926829268292683,Legitimiteit van Politiek
-1,Zuiden,Politici beloven meer dan ze kunnen waarmaken,7.7979094076655056,Legitimiteit van Politiek
-1,Zuiden,Kamerlid word je door je politieke vrienden,6.494773519163763,Legitimiteit van Politiek
-1,Zuiden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.055749128919861,Legitimiteit van Politiek
-1,Zuiden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.533101045296167,Legitimiteit van Politiek
-1,Zuiden,Het sluiten van compromissen is het verraden van je principes,6.2787456445993035,Legitimiteit van Politiek
-1,Zuiden,Een sterke regeringsleider is goed voor Nederland,6.912891986062718,Legitimiteit van Politiek
-1,Zuiden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.418118466898955,Legitimiteit van Politiek
+1,Zuiden,Politici maken zich niet druk om mensen zoals ik,6.7177700348432055,Politiek Cynisme
+1,Zuiden,Politici zijn alleen maar geïnteresseerd in mijn stem,6.926829268292683,Politiek Cynisme
+1,Zuiden,Politici beloven meer dan ze kunnen waarmaken,7.7979094076655056,Politiek Cynisme
+1,Zuiden,Kamerlid word je door je politieke vrienden,6.494773519163763,Politiek Cynisme
+1,Zuiden,De meeste politici zijn bekwame mensen die weten wat ze doen,6.055749128919861,Politiek Cynisme
+1,Zuiden,Ik voel mij goed vertegenwoordigd door Nederlandse politici,5.533101045296167,Politiek Cynisme
+1,Zuiden,Het sluiten van compromissen is het verraden van je principes,6.2787456445993035,Politiek Cynisme
+1,Zuiden,Een sterke regeringsleider is goed voor Nederland,6.912891986062718,Politiek Cynisme
+1,Zuiden,De belangrijkste politieke beslissingen moeten door het volk worden genoemen,6.418118466898955,Politiek Cynisme
 1,Zuiden,Rechtspraak,6.066202090592334,Vertrouwen in Instituties
 1,Zuiden,Journalistiek,5.425087108013937,Vertrouwen in Instituties
 1,Zuiden,Regering,5.32404181184669,Vertrouwen in Instituties
