@@ -65,8 +65,8 @@ w0 <- read_csv(here("data/intermediate/wave0.csv")) %>%
 bg <- read_csv(here("data/intermediate/wave0.csv")) %>%
   select(iisID, age, gender, education, region, job)
 w1 <- read_csv(here("data/intermediate/wave4.csv")) %>%
-  select(wave, iisID, A2, matches("F[0-9]"), matches("G4_[0-9]"),
-         -order_F1, -order_F2, -G4_15, -G4_16, -G4_17, -G4_19)
+  select(wave, iisID, A2, matches("F[0-9]"),
+         matches("G4_[0-9]"), -order_F1, -order_F2, -G4_15, -G4_16, -G4_17, -G4_19)
 
 w1 <- left_join(w1, bg, by = "iisID") %>%
   mutate(A2 = recode(A2,
@@ -120,20 +120,22 @@ d <- d %>%
  
 ```
 
-# Vertrouwen: Mannen en Vrouwen
+## Vertrouwen: Mannen en Vrouwen
 
 Instituties hoog gewaardeerd ondanks (sterk) gevoel van politiek cynisme bij zowel mannen en vrouwen -- geen grote verschillen.
 
 Instituties:
+
 - Nederlandse democratie krijgt een 6 van de vrouw, en een 6- van de man -- allebei hebben de democratie een beetje hoger gescoord na de verkiezingen.
 - Tweede Kamer krijgt een hogere score dan de regering, politieke partijen en politici: 5.5 voor de verkiezingen en een 6- na de verkiezingen van zowel mannen als vrouwen.
 
-Cynisme
+Cynisme:
+
 - Net voldoende gevoel van vertegenwoordiging: een rapportcijfer van 5.5.
 - Groot gevoel dat politici corrupt zijn: vriendjespolitiek (rapportcijfer 6 (m)/ 6.5 (v) -- toegenomen na de verkiezingen), en politici beloven meer dan ze waar kunnen maken (rapportcijfer 7.5)
 - Volk moet meer voor het zeggen hebben (rapportcijfer 6), terwijl we ook een sterkere leider willen (rapportcijfer van 7)
 
-```{r vertrouwen-gender,fig.height=10,fig.width=10}
+```{r vertrouwen-gender,fig.height=7,fig.width=12}
 dg <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, gender) %>%
   group_by(wave, gender) %>%
@@ -199,19 +201,21 @@ ggplot(dg, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(dg, "Vertrouwen-Gender")`]
 
-# Vertrouwen: Leeftijdsgroepen
+## Vertrouwen: Leeftijdsgroepen
 
 Instituties:
+
 - Nederlandse democratie hoogst gewaardeerd door 70 jarige en ouder (rapport cijfer van 7), en het laagst gewaardeerd door 31-50 jarige voor de verkiezingen (rapportcijfer van 5.5) en door 51-70 jarige na de verkiezingen (6-).
 - De 70 jarigen en ouder zin ook positiiefst over de regering, en positiever na dan voor de verkeizingen.
 - Jongeren (18-30) meest positief over EU en politieke partijen
 - "Boomers" minste vertrouwen in instituties in het algemeen
 
-Cynisme
+Cynisme:
+
 - Jongeren laagste niveau van poltiek cynisme, boomers hoogste vorm
 - Hoe oudeer, hoe liever je een sterke leider wil, hoe meer je een sterkere stem voor het volk wil, hoe negatiever over compromissen, en hoe meer je denkt dat kamerlid worden door vriendjespolitiek bepaald wordt: kortom hoe meer populistisch attitudes
 
-```{r vertrouwen-age,fig.height=10, fig.width=10}
+```{r vertrouwen-age,fig.height=7,fig.width=12}
 da <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, age) %>%
   group_by(wave, age) %>%
@@ -277,12 +281,12 @@ ggplot(da, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(da, "Vertrouwen-Leeftijd")`]
 
-# Vertrouwen: Opleidingsniveau
+## Vertrouwen: Opleidingsniveau
 
 - Laagopgeleiden: hoogste vertrouwen in de instituties en minst politiek cynisch
 - Hoogopgeleiden: minste vertrouwen in de instituties en meest politiek cynisch
 
-```{r vertrouwen-education,fig.height=10,fig.width=10}
+```{r vertrouwen-education,fig.height=7,fig.width=12}
 de <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, education) %>%
   group_by(wave, education) %>%
@@ -347,9 +351,12 @@ ggplot(de, aes(x = value, y = reorder(name, value),
 ```
 Download data: [`r export_data(de, "Vertrouwen-Opleidingsniveau")`]
 
-# Vertrouwen: Werkzame en Werkloze Bevolking
+## Vertrouwen: Werkzame en Werkloze Bevolking
 
-```{r vertrouwen-job,fig.height=10, fig.width=10}
+- Werklozen hebben het minste vertrouwen in instituties, maar zijn niet het meest politiek cynisch.
+- Huismannen en -vrouwen hebben zowel laag vertrouwen in instituties en hoog niveau van politiek cynisme
+
+```{r vertrouwen-job,fig.height=7,fig.width=12}
 dj <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, job) %>%
   group_by(wave, job) %>%
@@ -416,7 +423,11 @@ ggplot(dj, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(dj, "Vertrouwen-Werk")`]
 
-```{r vertrouwen-region,fig.height=10,fig.width=10}
+## Vertrouwen: Regio's
+
+- Noorden hoogste gevoel dat politici alleen maar bezig zijn met "zieltjes winnen", verder geen grote regionale verschillen
+
+```{r vertrouwen-region,fig.height=7,fig.width=12}
 dr <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, region) %>%
   group_by(wave, region) %>%
@@ -484,3 +495,164 @@ ggplot(dr, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(dr, "Vertrouwen-Regios")`]
 
+
+## Vertrouwen: Links en Rechts
+
+- Links meeste vertrouwen in politieke instituties, midden het laagste
+- Rechts sterkste voorkeur voor sterke leider, ook sterkste idee dat er vriendjespolitiek, minst voor compromissen sluiten, voelen zich best vertegenwoordigd
+
+```{r vertrouwen-ideology}
+w <- read_csv(here("data/intermediate/wave0.csv")) %>%
+  select(E2, matches("F[0-9]"),
+         -order_F1, -order_F2) %>%
+  mutate(E2 = if_else(E2 <4, "Links",
+              if_else(E2>3 & E2<7, "Midden", "Rechts"))) %>%
+  select(E2, F1_1:F2_11) %>%
+  mutate(across(matches("F1_[0-9]"), ~recode(., `1` = 2, `2` = 4,
+                                             `3` = 6,
+                                             `4` = 8, `5` = 10))) %>%
+  group_by(E2) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"),
+         E2 = factor(E2,
+                                 level = c("Links", "Midden", "Rechts"))) 
+  
+
+ggplot(w, aes(x = value, y = reorder(name, value), 
+                     color = E2)) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+```
+
+Download data: [`r export_data(w, "Vertrouwen-Ideologie")`]
+
+
+## Vertrouwen: News Avoidance
+
+- Nieuwsontwijkers minste vertrouen en meest cynisch
+
+```{r vertrouwen-newsavoid}
+w0 <- read_csv(here("data/intermediate/wave0.csv")) %>%
+  select(matches("I9_[0-9]"), matches("F[0-9]"),
+         -order_F1, -order_F2) %>%
+  mutate(news_avoidance = round((I9_1 + I9_2 + I9_3 + I9_4 + 
+                                   I9_5 + I9_6 + I9_7 + I9_8 +
+                                   I9_9)/9,0)) %>%
+  select(news_avoidance, F1_1:F2_11) %>%
+  mutate(across(matches("F1_[0-9]"), ~recode(., `1` = 2, `2` = 4,
+                                             `3` = 6, `4` = 8, 
+                                             `5` = 10))) %>%
+  filter(news_avoidance>0) %>%
+  mutate(news_avoidance = recode(news_avoidance,
+                                 `1` = "Intensieve nieuwsvolger",
+                                 `2` = "Intensieve nieuwsvolger",
+                                 `3` = "Niewsvolger",
+                                 `4` = "Nieuwsontwijker",
+                                 `5` = "Nieuwsontwijker"),
+         news_avoidance = factor(news_avoidance,
+                                 level = c("Intensieve nieuwsvolger", "Niewsvolger", "Nieuwsontwijker"))) %>%
+  group_by(news_avoidance) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(id = if_else(str_detect(name, "F1_[0-9]"), "Politiek Cynisme", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"))  
+
+ggplot(w0, aes(x = value, y = reorder(name, value), 
+                     color = news_avoidance)) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+```
+
+Download data: [`r export_data(w0, "Vertrouwen-Nieuwsvolgers")`]
