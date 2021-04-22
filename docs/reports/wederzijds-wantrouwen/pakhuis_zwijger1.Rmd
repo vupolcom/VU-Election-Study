@@ -1,0 +1,458 @@
+---
+title: 'Pakhuis de Zwijger: Wederzijds Wantrouwen'
+author: "Mariken van der Velden"
+permalink: reports/wederzijds-wantrouwen/
+output: 
+  md_document:
+    toc: yes
+    preserve_yaml: yes
+--- 
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+rm(list = ls())
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      echo = FALSE, fig.align = "center",
+                        fig.path='')
+library(printr)
+options(digits = 2)
+library(here)
+library(tidyverse)
+library(viridis)
+source(here("src/lib/data.R"))
+
+theme_nrc = function(...) {
+  ggthemes::theme_hc(...) + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+          axis.title.x=element_blank(), 
+          axis.title.y=element_blank(),
+          strip.background = element_rect(fill="white"),
+          panel.background = element_rect(fill = "#F2F2F2"),
+          plot.background = element_rect(fill = "#F2F2F2"),
+          plot.title = element_text(hjust = 0.5),
+          plot.subtitle = element_text(hjust = 0.5),
+          legend.position="bottom",
+          legend.title = element_blank()
+)
+}
+```
+
+```{r "data"}
+w0 <- read_csv(here("data/intermediate/wave0.csv")) %>%
+  select(wave, iisID, age, gender, education, region, job, A2,
+         matches("F[0-9]"), matches("G4_[0-9]"),
+         -order_F1, -order_F2, -G4_2) %>%
+  mutate(F1_11 = NA,
+         A2 = recode(A2, 
+                     `1` = "CDA",
+                     `2` = "CU",
+                     `3` = "D66",
+                     `4` = "Denk",
+                     `5` = "FvD",
+                     `6` = "GL",
+                     `7` = "PvdA",
+                     `8` = "PvDD",
+                     `9` = "PVV",
+                     `10` = "SGP",
+                     `11` = "SP",
+                     `12` = "VVD",
+                     `13` = "50+",
+                     `14` = "Don't Know", 
+                     `15` = "Don't Know",
+                     `999` = "Don't Know"))
+
+bg <- read_csv(here("data/intermediate/wave0.csv")) %>%
+  select(iisID, age, gender, education, region, job)
+w1 <- read_csv(here("data/intermediate/wave4.csv")) %>%
+  select(wave, iisID, A2, matches("F[0-9]"), matches("G4_[0-9]"),
+         -order_F1, -order_F2, -G4_15, -G4_16, -G4_17, -G4_19)
+
+w1 <- left_join(w1, bg, by = "iisID") %>%
+  mutate(A2 = recode(A2,
+                     `17` = "CDA",
+                     `18` = "CU",
+                     `19` = "D66",
+                     `20` = "Denk",
+                     `21` = "FvD",
+                     `22` = "GL",
+                     `23` = "PvdA",
+                     `24` = "PvDD",
+                     `25` = "PVV",
+                     `26` = "SGP",
+                     `27` = "SP",
+                     `28` = "VVD",
+                     `29` = "50+",
+                     `30` = "Don't Know", 
+                     `31` = "Don't Know",
+                     `32` = "JA21",
+                     `33` = "VOLT",
+                     `34` = "Bij1",
+                     `35` = "BBB"))
+
+d <- w0 %>%
+  add_case(w1)
+rm(w0,w1,bg)
+
+d <- d %>%
+  mutate(wave = recode(wave,
+                       `pre-wave` = 0,
+                       `wave 4` = 1),
+         gender = recode(gender, 
+                         `0` = "Man", `1` = "Vrouw"),
+         age = if_else(age <31, "18-30",
+               if_else(age >30 & age < 50, "31-50",
+               if_else(age >50 & age < 70, "51-70","70 en ouder"))),
+         education = recode(education, 
+                            `1` = "Hoog opgeleid", `2` = "Hoog opgeleid",
+                            `3` = "Middel opgeleid", `4` = "Middel opgeleid",
+                            `5` = "Laag opgeleid", `6` = "Laag opgeleid", `7` = "Laag opgeleid"),
+         region = recode(region, 
+                         `1` = "Drie grote steden", `2` = "Westen", `3` = "Noorden",
+                         `4` = "Oosten", `5` = "Zuiden"),
+         job = recode(job, 
+                      `1` = "Werkzaam", `2` = "Werkzaam",
+                      `3` = "Werkzaam", `4` = "Werkloos", `5` = "Werkloos",
+                      `6` = "Huisvrouw/man", `7` = "Gepensioneerd", 
+                      `8` = "Fulltime opleiding")) 
+ 
+```
+
+```{r vertrouwen-gender,fig.height=10,fig.width=10}
+dg <- d %>%
+  select(F1_1:F1_11, F2_1:F2_11, wave, gender) %>%
+  group_by(wave, gender) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  arrange(wave) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(across(matches("F1_"), ),
+         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"),
+         gender = factor(gender,
+                            levels = c("Man", "Vrouw")))
+
+ggplot(dg, aes(x = value, y = reorder(name, value), 
+                     color = gender)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+```
+
+Download data: [`r export_data(dg, "Vertrouwen-Gender")`]
+
+```{r vertrouwen-age,fig.height=10,}
+da <- d %>%
+  select(F1_1:F1_11, F2_1:F2_11, wave, age) %>%
+  group_by(wave, age) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  arrange(wave) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(across(matches("F1_"), ),
+         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"),
+         age = factor(age,
+                      levels = c("18-30", "31-50", "51-70", "70 en ouder")))
+
+ggplot(da, aes(x = value, y = reorder(name, value), 
+                     color = age)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+```
+
+Download data: [`r export_data(da, "Vertrouwen-Leeftijd")`]
+
+```{r vertrouwen-education,fig.height=10,fig.width=10}
+de <- d %>%
+  select(F1_1:F1_11, F2_1:F2_11, wave, education) %>%
+  group_by(wave, education) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  arrange(wave) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(across(matches("F1_"), ),
+         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"),
+         education = factor(education,
+                            levels = c("Laag opgeleid", "Middel opgeleid", "Hoog opgeleid")))
+
+ggplot(de, aes(x = value, y = reorder(name, value), 
+                     color = education)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+```
+
+Download data: [`r export_data(de, "Vertrouwen-Opleidingsniveau")`]
+
+```{r vertrouwen-job,fig.height=10, fig.width=10}
+dj <- d %>%
+  select(F1_1:F1_11, F2_1:F2_11, wave, job) %>%
+  group_by(wave, job) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  arrange(wave) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(across(matches("F1_"), ),
+         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"),
+         job = factor(job,
+                      levels = c("Werkzaam", "Werkloos", "Huisvrouw/man", "Gepensioneerd",
+                                 "Fulltime opleiding")))
+
+ggplot(dj, aes(x = value, y = reorder(name, value), 
+                     color = job)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+```
+
+Download data: [`r export_data(dj, "Vertrouwen-Werk")`]
+
+```{r vertrouwen-region,fig.height=10,fig.width=10}
+dr <- d %>%
+  select(F1_1:F1_11, F2_1:F2_11, wave, region) %>%
+  group_by(wave, region) %>%
+  summarise(
+    F1_1 = mean(F1_1, na.rm = T),
+    F1_2 = mean(F1_2, na.rm = T),
+    F1_3 = mean(F1_3, na.rm = T),
+    F1_4 = mean(F1_4, na.rm = T),
+    F1_5 = mean(F1_5, na.rm = T),
+    #F1_6 = mean(F1_6, na.rm = T),
+    F1_7 = mean(F1_7, na.rm = T),
+    F1_8 = mean(F1_8, na.rm = T),
+    F1_9 = mean(F1_9, na.rm = T),
+    F1_10 = mean(F1_10, na.rm = T),
+    F2_1 = mean(F2_1, na.rm = T),
+    F2_2 = mean(F2_2, na.rm = T),
+    F2_3 = mean(F2_3, na.rm = T),
+    F2_4 = mean(F2_4, na.rm = T),
+    F2_5 = mean(F2_5, na.rm = T),
+    F2_6 = mean(F2_6, na.rm = T),
+    F2_7 = mean(F2_7, na.rm = T),
+    F2_8 = mean(F2_8, na.rm = T),
+    F2_9 = mean(F2_9, na.rm = T),
+    F2_10 = mean(F2_10, na.rm = T),
+    F2_11 = mean(F2_11, na.rm = T)
+    ) %>%
+  arrange(wave) %>%
+  na.omit() %>%
+  pivot_longer(cols = F1_1:F2_11) %>%
+  mutate(across(matches("F1_"), ),
+         id = if_else(str_detect(name, "F1_[0-9]"), "Legitimiteit van Politiek", "Vertrouwen in Instituties"),
+         name = recode(name,
+                       `F1_1` = "Politici maken zich niet druk om mensen zoals ik",
+                       `F1_2` = "Politici zijn alleen maar geïnteresseerd in mijn stem",
+                       `F1_3` = "Politici beloven meer dan ze kunnen waarmaken",
+                       `F1_4` = "Kamerlid word je door je politieke vrienden",
+                       `F1_5` = "De meeste politici zijn bekwame mensen die weten wat ze doen",
+                       `F1_7` = "Ik voel mij goed vertegenwoordigd door Nederlandse politici",
+                       `F1_8` = "Het sluiten van compromissen is het verraden van je principes",
+                       `F1_9` = "Een sterke regeringsleider is goed voor Nederland",
+                       `F1_10` = "De belangrijkste politieke beslissingen moeten door het volk worden genoemen",
+                       `F2_1` = "Rechtspraak",
+                       `F2_2` = "Journalistiek",
+                       `F2_3` = "Regering",
+                       `F2_4` = "Tweede Kamer",
+                       `F2_5` = "Europese Unie",
+                       `F2_6` = "Politieke Partijen",
+                       `F2_7` = "Politici",
+                       `F2_8` = "Nederlandse Democratie",
+                       `F2_9` = "Wetenschap",
+                       `F2_10` = "Grote Bedrijven",
+                       `F2_11` = "Banken"),
+         region = factor(region,
+                      levels = c("Drie grote steden", "Westen", "Noorden", "Oosten",
+                                 "Zuiden")))
+
+ggplot(dr, aes(x = value, y = reorder(name, value), 
+                     color = region)) +
+  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_point() +
+  facet_wrap(vars(id), ncol = 2, scales = "free") +
+  theme_nrc() +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+Download data: [`r export_data(dr, "Vertrouwen-Regios")`]
+
