@@ -501,7 +501,7 @@ Download data: [`r export_data(dr, "Vertrouwen-Regios")`]
 - Links meeste vertrouwen in politieke instituties, midden het laagste
 - Rechts sterkste voorkeur voor sterke leider, ook sterkste idee dat er vriendjespolitiek, minst voor compromissen sluiten, voelen zich best vertegenwoordigd
 
-```{r vertrouwen-ideology}
+```{r vertrouwen-ideology, fig.width=12, fig.height=7}
 w <- read_csv(here("data/intermediate/wave0.csv")) %>%
   select(E2, matches("F[0-9]"),
          -order_F1, -order_F2) %>%
@@ -574,11 +574,11 @@ ggplot(w, aes(x = value, y = reorder(name, value),
 Download data: [`r export_data(w, "Vertrouwen-Ideologie")`]
 
 
-## Vertrouwen: News Avoidance
+## Vertrouwen: Nieuwsgebruik
 
 - Nieuwsontwijkers minste vertrouen en meest cynisch
 
-```{r vertrouwen-newsavoid}
+```{r vertrouwen-newsavoid, fig.width=12, fig.height=7}
 w0 <- read_csv(here("data/intermediate/wave0.csv")) %>%
   select(matches("I9_[0-9]"), matches("F[0-9]"),
          -order_F1, -order_F2) %>%

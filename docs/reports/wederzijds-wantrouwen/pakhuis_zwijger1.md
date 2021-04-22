@@ -15,7 +15,7 @@ output:
     Bevolking](#vertrouwen-werkzame-en-werkloze-bevolking)
 -   [Vertrouwen: Regio’s](#vertrouwen-regios)
 -   [Vertrouwen: Links en Rechts](#vertrouwen-links-en-rechts)
--   [Vertrouwen: News Avoidance](#vertrouwen-news-avoidance)
+-   [Vertrouwen: Nieuwsgebruik](#vertrouwen-nieuwsgebruik)
 
 Vertrouwen: Mannen en Vrouwen
 -----------------------------
@@ -118,8 +118,8 @@ Vertrouwen: Links en Rechts
 
 Download data: \[[Vertrouwen-Ideologie](Vertrouwen_Ideologie.csv)\]
 
-Vertrouwen: News Avoidance
---------------------------
+Vertrouwen: Nieuwsgebruik
+-------------------------
 
 -   Nieuwsontwijkers minste vertrouen en meest cynisch
 
