@@ -185,7 +185,7 @@ ggplot(dg, aes(x = value, y = reorder(name, value),
 
 Download data: [`r export_data(dg, "Vertrouwen-Gender")`]
 
-```{r vertrouwen-age,fig.height=10,}
+```{r vertrouwen-age,fig.height=10, fig.width=10}
 da <- d %>%
   select(F1_1:F1_11, F2_1:F2_11, wave, age) %>%
   group_by(wave, age) %>%
