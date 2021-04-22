@@ -114,9 +114,23 @@ d <- d %>%
                       `1` = "Werkzaam", `2` = "Werkzaam",
                       `3` = "Werkzaam", `4` = "Werkloos", `5` = "Werkloos",
                       `6` = "Huisvrouw/man", `7` = "Gepensioneerd", 
-                      `8` = "Fulltime opleiding")) 
+                      `8` = "Fulltime opleiding")) %>%
+  mutate(across(matches("F1_[0-9]"), ~recode(., `1` = 2, `2` = 4, `3` = 6,
+                                             `4` = 8, `5` = 10)))
  
 ```
+
+# Vertrouwen: Mannen en Vrouwen
+
+Instituties hoger gewaardeerd dan de legitimeit van democractie.
+
+Instituties:
+- Nederlandse democratie krijgt een 6 van de vrouw, en een 6- van de man -- allebei hebben de democratie een beetje hoger gescoord na de verkiezingen.
+- Tweede Kamer krijgt een hogere score dan de regering, politieke partijen en politici: 5.5 voor de verkiezingen en een 6- na de verkiezingen van zowel mannen als vrouwen.
+
+Legitimiteit
+- Zeer laag gevoel van vertegenwoordiging: een rapportcijfer van 3.
+- Toch groot gevoel dat politici
 
 ```{r vertrouwen-gender,fig.height=10,fig.width=10}
 dg <- d %>%
@@ -176,7 +190,7 @@ dg <- d %>%
 
 ggplot(dg, aes(x = value, y = reorder(name, value), 
                      color = gender)) +
-  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_line(arrow=arrow(ends="last", length=unit(0.25, "cm"))) +
   geom_point() +
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
@@ -243,7 +257,7 @@ da <- d %>%
 
 ggplot(da, aes(x = value, y = reorder(name, value), 
                      color = age)) +
-  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_line(arrow=arrow(ends="last", length=unit(0.25, "cm"))) +
   geom_point() +
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
@@ -310,7 +324,7 @@ de <- d %>%
 
 ggplot(de, aes(x = value, y = reorder(name, value), 
                      color = education)) +
-  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_line(arrow=arrow(ends="last", length=unit(0.25, "cm"))) +
   geom_point() +
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
@@ -378,7 +392,7 @@ dj <- d %>%
 
 ggplot(dj, aes(x = value, y = reorder(name, value), 
                      color = job)) +
-  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_line(arrow=arrow(ends="last", length=unit(0.25, "cm"))) +
   geom_point() +
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
@@ -446,7 +460,7 @@ dr <- d %>%
 
 ggplot(dr, aes(x = value, y = reorder(name, value), 
                      color = region)) +
-  geom_line(arrow=arrow(ends="first", length=unit(0.25, "cm"))) +
+  geom_line(arrow=arrow(ends="last", length=unit(0.25, "cm"))) +
   geom_point() +
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
