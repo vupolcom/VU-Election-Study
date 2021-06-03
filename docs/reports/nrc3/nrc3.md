@@ -9,8 +9,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-Onze analyse van de verkiezingen van 2021
-=========================================
+# Onze analyse van de verkiezingen van 2021
 
 Als we naar de uitslag van de Tweede Kamerverkiezingen van 2021 kijken
 dan vallen drie zaken op: de winst van de liberale parijen D66 en VVD;
@@ -105,11 +104,9 @@ ondanks de ogenschijnlijk slechte uitgangspositie.
 
 Lees hieronder onze uitgebreide rapportage.
 
-Verschuivingen in de Publieke Opinie
-====================================
+# Verschuivingen in de Publieke Opinie
 
-De stoelendans op links
------------------------
+## De stoelendans op links
 
 ![](sankey-links-1.png)
 
@@ -126,8 +123,7 @@ zijn uiteindelijk weer bij D66 terecht gekomen. Verder zijn er vooral
 veel uitwisselingen tussen de verschillende linkse partijen, maar zonder
 grote netto verschuivingen.
 
-Verschuivingen op rechts
-------------------------
+## Verschuivingen op rechts
 
 ![](sankey-rechts-1.png)
 
@@ -147,8 +143,7 @@ Tegelijkertijd zijn veel PVV stemmers juist naar FvD gewisseld.
 \[Download data: [Verschuivingen in
 stemvoorkeur](Verschuivingen_in_stemvoorkeur.csv)\]
 
-Institutioneel Vertrouwen
--------------------------
+## Institutioneel Vertrouwen
 
 ![](trust-1.png)
 
@@ -170,8 +165,7 @@ kleiner. Alleen het gevoel dat politici teveel beloven is iets
 toegenomen, terwijl het gevoel goed vertegenwoordigd te zijn juist is
 afgenomen.
 
-Leiderschap
------------
+## Leiderschap
 
 ![](leadershipw4-1.png)
 
@@ -218,11 +212,9 @@ Klaver en Ploemen heeft men vooral weinig vertrouwen dat zij weten wat
 er leeft. Grote verliezer is echter Hoekstra, die op alle eigenschappen
 een forse veer moet laten.
 
-De campagne in de media
-=======================
+# De campagne in de media
 
-Zichtbaarheid van de partijen en lijsttrekkers
-----------------------------------------------
+## Zichtbaarheid van de partijen en lijsttrekkers
 
 ![](visparty-1.png)
 
@@ -241,33 +233,40 @@ vooral op TV doen zij het relatief goed, ook al moeten ze hier ook de
 coalitiepartijen voor laten gaan. Verder is de rangorde aan het eind van
 de campagne niet wezenlijk anders dan aan het begin.
 
-Zichtbaarheid op social media
------------------------------
+## Zichtbaarheid lijsttrekkers op social media
 
 ![](socmed-1.png)
 
 \[Download data: [Social media](Social_media.csv)\]
 
-Bovenstaande figuren geven de activity en engagement van de partijen op
-sociale media (twitter, instagram en Facebook), waarbij activity het
-aantal eigen posts van de offiele accounts van de partij en lijsttrekker
-zijn, en engagement de hoeveelheid share, likes, en mentions. Hierbij
-zijn alleen de partijen meegenomen die in de top-5 van ofwel activity of
-engagement staan.
+*Erratum* (2021-06-03): *In een eerdere versie van dit rapport stond dat
+bovenstaande gegevens ook de officiele accounts van de partijen bevatte.
+Dit is niet correct, het gaat uitsluitend om de accounts van de
+lijsttrekkers, waarbij voor Mark Rutte het officiele account (@minpres)
+is gebruikt. Deze beschrijving is hieronder aangepast.*
+
+Bovenstaande figuren geven de activity en engagement van de
+lijsttrekkers op sociale media (twitter, instagram en Facebook), waarbij
+activity het aantal eigen posts van de lijsttrekker zijn, en engagement
+de hoeveelheid share, likes, en mentions. Hierbij zijn alleen de
+partijen meegenomen die in de top-5 van ofwel activity of engagement
+staan.
 
 Wat we hier zien is dat de aandacht totaal anders is dan op traditionele
-media. Alhoewel alle partijen aandacht besteden aan sociale media, zijn
-FvD en de nieuwe partijen BBB en BIJ1 veel actiever. Bij VVD zien we
-zelfs een afname tijdes de campagne.
+media. Alhoewel alle lijsttrekkers aandacht besteden aan sociale media,
+zijn Baudet (FvD) en de nieuwe lijsttrekkers Van der Plas (BBB) en
+Simons (BIJ1) veel actiever. Omdat Rutte (VVD) zijn persoonlijke
+accounts amper gebruikte, hebben we hiervoor de officiële accounts van
+de premier meegenomen (i.e. @minpres op twitter). Naarmate de
+verkiezingen dichterbij komen zien we dat deze (niet-politieke) accounts
+steeds minder gebruikt worden.
 
-Op egagement zien we dat de inspanningen van BIJ1 en BB1 wellicht niet
-het gewenste effect hebben gehad: PVV en FvD zijn veel succesvoller in
-het aanzetten van hun volgers tot het liken, sharen, of noemen van
-posts. Alleen VVD slaagt er in het begin nog in om een zekere reuring te
-krijgen, maar in de campagne zelf zijn ze eigenlijk onzichtbaar.
+Op engagement zien we dat de inspanningen van Simons en Van der Plas
+wellicht niet het gewenste effect hebben gehad: Wilders en Baudet zijn
+veel succesvoller in het aanzetten van hun volgers tot het liken,
+sharen, of noemen van posts.
 
-Mediagebruik van kiezers
-------------------------
+## Mediagebruik van kiezers
 
 ![](mediause-1.png)
 
@@ -283,8 +282,7 @@ Wat we zien is dat tijdens de campagne in eerste instantie de
 hoeveelheid nieuws die wordt gevolgd toeneemt. De laatste weken gaat het
 echter juist omlaag: kennelijk treedt er een zekere campagnemoeheid op.
 
-Zichtbaarheid volgens de kiezers
---------------------------------
+## Zichtbaarheid volgens de kiezers
 
 ![](notice-1.png)
 
@@ -305,8 +303,7 @@ positief in het oog springen. CDA gaat over tijd steeds slechter scoren,
 terwijl D66 vooral in de laatste periode erg goed scoort. Ook SP en CU
 komen positief over op de kiezer.
 
-Issues
-======
+# Issues
 
 ![](vissues-1.png)
 
@@ -322,8 +319,7 @@ aandacht komt voor andere thema’s zoals sociale zekerheid, het klimaat,
 en integratie, maar die thema’s blijven veel minder belangrijk dan
 corona en de direct daaraan gerelateerde thema’s.
 
-Issue ownership
----------------
+## Issue ownership
 
 ![](issue-owner-1.png)
 

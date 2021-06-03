@@ -359,7 +359,7 @@ Vooral de partijen PVV en FvD lijken hier sterk van te profiteren, vooral op TV 
 ook al moeten ze hier ook de coalitiepartijen voor laten gaan. 
 Verder is de rangorde aan het eind van de campagne niet wezenlijk anders dan aan het begin. 
 
-## Zichtbaarheid op social media
+## Zichtbaarheid lijsttrekkers op social media
 
 ```{r socmed}
 smparties = c(FvD="black", PVV="darkblue", VVD="blue", GL="green", SP="darkred", BBB="#bbbb00", BIJ1="yellow", DENK="#3ac0c3")
@@ -368,16 +368,17 @@ smparties = c(FvD="black", PVV="darkblue", VVD="blue", GL="green", SP="darkred",
 
 sm = read_csv(here("data/raw/socialmedia.csv"))%>% 
   mutate(party=str_match(name, "\\((.*)\\)")[,2],
-              variable=str_remove(variable, "Number of ")) %>% 
-  select(platform, variable, party, date=day_only, value) %>% 
+         name=str_remove(name, ".*? ") %>% str_replace("\n", " ") %>% str_replace("VVD", "VVD/@minpres"),
+         variable=str_remove(variable, "Number of ")) %>% 
+  select(platform, variable, party, date=day_only, name, value) %>% 
   mutate(week = lubridate::floor_date(date, "week", week_start=4),
          mtype=ifelse(variable=="Messages", "Activity", "Engagement")) %>%
   filter(date < "2021-03-18", date > "2021-01-06")
-sma = sm %>% group_by(week, party, mtype) %>% summarize(value=sum(value)) 
-sma2 = sma %>% filter(party %in% names(smparties)) 
-ggplot(sma2, aes(x=week, y=value, color=party, label=party)) + 
+sma = sm %>% filter(party %in% names(smparties)) %>% 
+  group_by(week, name, party, mtype) %>% summarize(value=sum(value)) 
+ggplot(sma, aes(x=week, y=value, color=party, label=name)) + 
   geom_line() +
-  ggrepel::geom_label_repel(data=filter(sma2, week=="2021-03-11")) + 
+  ggrepel::geom_label_repel(data=filter(sma, week=="2021-03-11"), segment.colour=NA, max.overlaps = 5) + 
   facet_wrap("mtype", scale="free") + 
   scale_color_manual(values=smparties, guide=F) + 
   theme_nrc()
@@ -385,20 +386,22 @@ ggplot(sma2, aes(x=week, y=value, color=party, label=party)) +
 
 [Download data: `r export_data(sma, "Social media")`]
 
+*Erratum* (2021-06-03): _In een eerdere versie van dit rapport stond dat bovenstaande gegevens ook de officiele accounts van de partijen bevatte. Dit is niet correct, het gaat uitsluitend om de accounts van de lijsttrekkers, waarbij voor Mark Rutte het officiele account (@minpres) is gebruikt. Deze beschrijving is hieronder aangepast._
 
-Bovenstaande figuren geven de activity en engagement van de partijen op sociale media (twitter, instagram en Facebook),
-waarbij activity het aantal eigen posts van de offiele accounts van de partij en lijsttrekker zijn,
+Bovenstaande figuren geven de activity en engagement van de lijsttrekkers op sociale media (twitter, instagram en Facebook),
+waarbij activity het aantal eigen posts van de lijsttrekker zijn,
 en engagement de hoeveelheid share, likes, en mentions. 
 Hierbij zijn alleen de partijen meegenomen die in de top-5 van ofwel activity of engagement staan.
 
 Wat we hier zien is dat de aandacht totaal anders is dan op traditionele media. 
-Alhoewel alle partijen aandacht besteden aan sociale media, zijn FvD en de nieuwe partijen BBB en BIJ1
+Alhoewel alle lijsttrekkers aandacht besteden aan sociale media, zijn Baudet (FvD) en de nieuwe lijsttrekkers Van der Plas (BBB) en Simons (BIJ1)
 veel actiever. 
-Bij VVD zien we zelfs een afname tijdes de campagne. 
+Omdat Rutte (VVD) zijn persoonlijke accounts amper gebruikte, 
+hebben we hiervoor de officiële accounts van de premier meegenomen (i.e. @minpres op twitter).
+Naarmate de verkiezingen dichterbij komen zien we dat deze (niet-politieke) accounts steeds minder gebruikt worden. 
 
-Op egagement zien we dat de inspanningen van BIJ1 en BB1 wellicht niet het gewenste effect hebben gehad:
-PVV en FvD zijn veel succesvoller in het aanzetten van hun volgers tot het liken, sharen, of noemen van posts.
-Alleen VVD slaagt er in het begin nog in om een zekere reuring te krijgen, maar in de campagne zelf zijn ze eigenlijk onzichtbaar. 
+Op engagement zien we dat de inspanningen van Simons en Van der Plas wellicht niet het gewenste effect hebben gehad:
+Wilders en Baudet zijn veel succesvoller in het aanzetten van hun volgers tot het liken, sharen, of noemen van posts.
 
 ## Mediagebruik van kiezers
 
