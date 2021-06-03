@@ -246,7 +246,7 @@ lijsttrekkers, waarbij voor Mark Rutte het officiele account (@minpres)
 is gebruikt. Deze beschrijving is hieronder aangepast.*
 
 Bovenstaande figuren geven de activity en engagement van de
-lijsttrekkers op sociale media (twitter, instagram en Facebook), waarbij
+lijsttrekkers op sociale media (Twitter, Instagram en Facebook), waarbij
 activity het aantal eigen posts van de lijsttrekker zijn, en engagement
 de hoeveelheid share, likes, en mentions. Hierbij zijn alleen de
 partijen meegenomen die in de top-5 van ofwel activity of engagement
@@ -254,17 +254,18 @@ staan.
 
 Wat we hier zien is dat de aandacht totaal anders is dan op traditionele
 media. Alhoewel alle lijsttrekkers aandacht besteden aan sociale media,
-zijn Baudet (FvD) en de nieuwe lijsttrekkers Van der Plas (BBB) en
-Simons (BIJ1) veel actiever. Omdat Rutte (VVD) zijn persoonlijke
-accounts amper gebruikte, hebben we hiervoor de officiële accounts van
-de premier meegenomen (i.e. @minpres op twitter). Naarmate de
-verkiezingen dichterbij komen zien we dat deze (niet-politieke) accounts
-steeds minder gebruikt worden.
+zijn Baudet (FvD) en de nieuwe lijsttrekkers Caroline van der Plas (BBB)
+en Sylvana Simons (BIJ1) veel actiever. Omdat Rutte (VVD) zijn
+persoonlijke accounts amper heeft gebruikt, hebben we hiervoor de
+officiële account van de premier gebruikt (i.e. @minpres op Twitter).
+Naarmate de verkiezingen dichterbij komen zien we wel dat deze
+(niet-politieke) account steeds minder gebruikt wordt.
 
-Op engagement zien we dat de inspanningen van Simons en Van der Plas
-wellicht niet het gewenste effect hebben gehad: Wilders en Baudet zijn
-veel succesvoller in het aanzetten van hun volgers tot het liken,
-sharen, of noemen van posts.
+Op engagement zien we vooral dat de inspanningen van Simons en Van der
+Plas wellicht niet het gewenste effect hebben gehad: Baudet en vooral
+Wilders zijn veel succesvoller in het aanzetten van hun volgers tot
+interactie met hun posts en accounts in de vorm van likes, shares,
+comments en mentions.
 
 ## Mediagebruik van kiezers
 
