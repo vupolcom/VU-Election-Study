@@ -368,16 +368,17 @@ smparties = c(FvD="black", PVV="darkblue", VVD="blue", GL="green", SP="darkred",
 
 sm = read_csv(here("data/raw/socialmedia.csv"))%>% 
   mutate(party=str_match(name, "\\((.*)\\)")[,2],
-              variable=str_remove(variable, "Number of ")) %>% 
-  select(platform, variable, party, date=day_only, value) %>% 
+              variable=str_remove(variable, "Number of "),
+         name=str_replace_all(name, "\n", " ")) %>% 
+  select(platform, variable, party, name, date=day_only, value) %>% 
   mutate(week = lubridate::floor_date(date, "week", week_start=4),
          mtype=ifelse(variable=="Messages", "Activity", "Engagement")) %>%
   filter(date < "2021-03-18", date > "2021-01-06")
-sma = sm %>% group_by(week, party, mtype) %>% summarize(value=sum(value)) 
+sma = sm %>% group_by(week, party, name, mtype) %>% summarize(value=sum(value)) 
 sma2 = sma %>% filter(party %in% names(smparties)) 
-ggplot(sma2, aes(x=week, y=value, color=party, label=party)) + 
+ggplot(sma2, aes(x=week, y=value, color=party, label=name)) + 
   geom_line() +
-  ggrepel::geom_label_repel(data=filter(sma2, week=="2021-03-11")) + 
+  ggrepel::geom_label_repel(data=filter(sma2, week=="2021-03-11"), min.segment.length=1000, max.overlaps=6) + 
   facet_wrap("mtype", scale="free") + 
   scale_color_manual(values=smparties, guide=F) + 
   theme_nrc()

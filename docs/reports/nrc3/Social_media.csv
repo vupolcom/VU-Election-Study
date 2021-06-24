@@ -1,338 +1,358 @@
-week,party,mtype,value
-2021-01-07,50PLUS,Activity,35
-2021-01-07,50PLUS,Engagement,193
-2021-01-07,BBB,Activity,262
-2021-01-07,BBB,Engagement,2186
-2021-01-07,BIJ1,Activity,219
-2021-01-07,BIJ1,Engagement,3469
-2021-01-07,CDA,Activity,2
-2021-01-07,CDA,Engagement,165
-2021-01-07,CU,Activity,33
-2021-01-07,CU,Engagement,6969
-2021-01-07,D66,Activity,10
-2021-01-07,D66,Engagement,14637
-2021-01-07,DENK,Activity,43
-2021-01-07,DENK,Engagement,2374
-2021-01-07,FvD,Activity,110
-2021-01-07,FvD,Engagement,39809
-2021-01-07,GL,Activity,17
-2021-01-07,GL,Engagement,7425
-2021-01-07,JA21,Activity,40
-2021-01-07,JA21,Engagement,4672
-2021-01-07,PvdA,Activity,20
-2021-01-07,PvdA,Engagement,1842
-2021-01-07,PvdD,Activity,0
-2021-01-07,PvdD,Engagement,0
-2021-01-07,PVV,Activity,66
-2021-01-07,PVV,Engagement,148889
-2021-01-07,SGP,Activity,20
-2021-01-07,SGP,Engagement,2313
-2021-01-07,SP,Activity,28
-2021-01-07,SP,Engagement,7015
-2021-01-07,Volt,Activity,29
-2021-01-07,Volt,Engagement,342
-2021-01-07,VVD,Activity,28
-2021-01-07,VVD,Engagement,13364
-2021-01-14,50PLUS,Activity,37
-2021-01-14,50PLUS,Engagement,263
-2021-01-14,BBB,Activity,309
-2021-01-14,BBB,Engagement,2177
-2021-01-14,BIJ1,Activity,191
-2021-01-14,BIJ1,Engagement,4536
-2021-01-14,CDA,Activity,13
-2021-01-14,CDA,Engagement,3260
-2021-01-14,CU,Activity,22
-2021-01-14,CU,Engagement,3169
-2021-01-14,D66,Activity,10
-2021-01-14,D66,Engagement,6090
-2021-01-14,DENK,Activity,74
-2021-01-14,DENK,Engagement,5660
-2021-01-14,FvD,Activity,126
-2021-01-14,FvD,Engagement,83596
-2021-01-14,GL,Activity,29
-2021-01-14,GL,Engagement,12045
-2021-01-14,JA21,Activity,57
-2021-01-14,JA21,Engagement,3802
-2021-01-14,PvdA,Activity,10
-2021-01-14,PvdA,Engagement,6121
-2021-01-14,PvdD,Activity,0
-2021-01-14,PvdD,Engagement,0
-2021-01-14,PVV,Activity,55
-2021-01-14,PVV,Engagement,164636
-2021-01-14,SGP,Activity,21
-2021-01-14,SGP,Engagement,893
-2021-01-14,SP,Activity,33
-2021-01-14,SP,Engagement,16959
-2021-01-14,Volt,Activity,23
-2021-01-14,Volt,Engagement,216
-2021-01-14,VVD,Activity,40
-2021-01-14,VVD,Engagement,40613
-2021-01-21,50PLUS,Activity,33
-2021-01-21,50PLUS,Engagement,183
-2021-01-21,BBB,Activity,453
-2021-01-21,BBB,Engagement,3455
-2021-01-21,BIJ1,Activity,293
-2021-01-21,BIJ1,Engagement,5835
-2021-01-21,CDA,Activity,22
-2021-01-21,CDA,Engagement,2876
-2021-01-21,CU,Activity,34
-2021-01-21,CU,Engagement,10267
-2021-01-21,D66,Activity,20
-2021-01-21,D66,Engagement,5574
-2021-01-21,DENK,Activity,100
-2021-01-21,DENK,Engagement,5534
-2021-01-21,FvD,Activity,132
-2021-01-21,FvD,Engagement,100220
-2021-01-21,GL,Activity,40
-2021-01-21,GL,Engagement,24339
-2021-01-21,JA21,Activity,36
-2021-01-21,JA21,Engagement,1791
-2021-01-21,PvdA,Activity,13
-2021-01-21,PvdA,Engagement,4960
-2021-01-21,PvdD,Activity,0
-2021-01-21,PvdD,Engagement,136
-2021-01-21,PVV,Activity,85
-2021-01-21,PVV,Engagement,233034
-2021-01-21,SGP,Activity,16
-2021-01-21,SGP,Engagement,2743
-2021-01-21,SP,Activity,25
-2021-01-21,SP,Engagement,12512
-2021-01-21,Volt,Activity,13
-2021-01-21,Volt,Engagement,296
-2021-01-21,VVD,Activity,65
-2021-01-21,VVD,Engagement,58297
-2021-01-28,50PLUS,Activity,42
-2021-01-28,50PLUS,Engagement,295
-2021-01-28,BBB,Activity,378
-2021-01-28,BBB,Engagement,3754
-2021-01-28,BIJ1,Activity,266
-2021-01-28,BIJ1,Engagement,5923
-2021-01-28,CDA,Activity,12
-2021-01-28,CDA,Engagement,2872
-2021-01-28,CU,Activity,36
-2021-01-28,CU,Engagement,5628
-2021-01-28,D66,Activity,10
-2021-01-28,D66,Engagement,4756
-2021-01-28,DENK,Activity,79
-2021-01-28,DENK,Engagement,4864
-2021-01-28,FvD,Activity,146
-2021-01-28,FvD,Engagement,95444
-2021-01-28,GL,Activity,21
-2021-01-28,GL,Engagement,11001
-2021-01-28,JA21,Activity,29
-2021-01-28,JA21,Engagement,623
-2021-01-28,PvdA,Activity,27
-2021-01-28,PvdA,Engagement,10774
-2021-01-28,PvdD,Activity,0
-2021-01-28,PvdD,Engagement,417
-2021-01-28,PVV,Activity,39
-2021-01-28,PVV,Engagement,82632
-2021-01-28,SGP,Activity,8
-2021-01-28,SGP,Engagement,594
-2021-01-28,SP,Activity,42
-2021-01-28,SP,Engagement,14718
-2021-01-28,Volt,Activity,18
-2021-01-28,Volt,Engagement,439
-2021-01-28,VVD,Activity,57
-2021-01-28,VVD,Engagement,62093
-2021-02-04,50PLUS,Activity,21
-2021-02-04,50PLUS,Engagement,86
-2021-02-04,BBB,Activity,368
-2021-02-04,BBB,Engagement,6317
-2021-02-04,BIJ1,Activity,178
-2021-02-04,BIJ1,Engagement,4300
-2021-02-04,CDA,Activity,13
-2021-02-04,CDA,Engagement,2893
-2021-02-04,CU,Activity,32
-2021-02-04,CU,Engagement,2806
-2021-02-04,D66,Activity,19
-2021-02-04,D66,Engagement,8776
-2021-02-04,DENK,Activity,53
-2021-02-04,DENK,Engagement,4150
-2021-02-04,FvD,Activity,262
-2021-02-04,FvD,Engagement,168187
-2021-02-04,GL,Activity,32
-2021-02-04,GL,Engagement,12223
-2021-02-04,JA21,Activity,37
-2021-02-04,JA21,Engagement,1062
-2021-02-04,PvdA,Activity,24
-2021-02-04,PvdA,Engagement,5716
-2021-02-04,PvdD,Activity,0
-2021-02-04,PvdD,Engagement,594
-2021-02-04,PVV,Activity,70
-2021-02-04,PVV,Engagement,148234
-2021-02-04,SGP,Activity,5
-2021-02-04,SGP,Engagement,1325
-2021-02-04,SP,Activity,40
-2021-02-04,SP,Engagement,18861
-2021-02-04,Volt,Activity,14
-2021-02-04,Volt,Engagement,162
-2021-02-04,VVD,Activity,32
-2021-02-04,VVD,Engagement,20759
-2021-02-11,50PLUS,Activity,37
-2021-02-11,50PLUS,Engagement,251
-2021-02-11,BBB,Activity,303
-2021-02-11,BBB,Engagement,4075
-2021-02-11,BIJ1,Activity,189
-2021-02-11,BIJ1,Engagement,6367
-2021-02-11,CDA,Activity,11
-2021-02-11,CDA,Engagement,3589
-2021-02-11,CU,Activity,43
-2021-02-11,CU,Engagement,8921
-2021-02-11,D66,Activity,10
-2021-02-11,D66,Engagement,5610
-2021-02-11,DENK,Activity,58
-2021-02-11,DENK,Engagement,2534
-2021-02-11,FvD,Activity,225
-2021-02-11,FvD,Engagement,114537
-2021-02-11,GL,Activity,35
-2021-02-11,GL,Engagement,13698
-2021-02-11,JA21,Activity,50
-2021-02-11,JA21,Engagement,2397
-2021-02-11,PvdA,Activity,24
-2021-02-11,PvdA,Engagement,7242
-2021-02-11,PvdD,Activity,0
-2021-02-11,PvdD,Engagement,978
-2021-02-11,PVV,Activity,77
-2021-02-11,PVV,Engagement,268037
-2021-02-11,SGP,Activity,25
-2021-02-11,SGP,Engagement,3547
-2021-02-11,SP,Activity,45
-2021-02-11,SP,Engagement,11061
-2021-02-11,Volt,Activity,22
-2021-02-11,Volt,Engagement,278
-2021-02-11,VVD,Activity,40
-2021-02-11,VVD,Engagement,33358
-2021-02-18,50PLUS,Activity,23
-2021-02-18,50PLUS,Engagement,96
-2021-02-18,BBB,Activity,329
-2021-02-18,BBB,Engagement,4922
-2021-02-18,BIJ1,Activity,198
-2021-02-18,BIJ1,Engagement,9671
-2021-02-18,CDA,Activity,14
-2021-02-18,CDA,Engagement,5364
-2021-02-18,CU,Activity,62
-2021-02-18,CU,Engagement,4868
-2021-02-18,D66,Activity,12
-2021-02-18,D66,Engagement,5648
-2021-02-18,DENK,Activity,55
-2021-02-18,DENK,Engagement,3511
-2021-02-18,FvD,Activity,389
-2021-02-18,FvD,Engagement,207025
-2021-02-18,GL,Activity,41
-2021-02-18,GL,Engagement,17640
-2021-02-18,JA21,Activity,69
-2021-02-18,JA21,Engagement,2941
-2021-02-18,PvdA,Activity,19
-2021-02-18,PvdA,Engagement,12116
-2021-02-18,PvdD,Activity,0
-2021-02-18,PvdD,Engagement,910
-2021-02-18,PVV,Activity,92
-2021-02-18,PVV,Engagement,255211
-2021-02-18,SGP,Activity,5
-2021-02-18,SGP,Engagement,582
-2021-02-18,SP,Activity,34
-2021-02-18,SP,Engagement,13653
-2021-02-18,Volt,Activity,29
-2021-02-18,Volt,Engagement,1056
-2021-02-18,VVD,Activity,16
-2021-02-18,VVD,Engagement,13488
-2021-02-25,50PLUS,Activity,41
-2021-02-25,50PLUS,Engagement,96
-2021-02-25,BBB,Activity,325
-2021-02-25,BBB,Engagement,4819
-2021-02-25,BIJ1,Activity,240
-2021-02-25,BIJ1,Engagement,11346
-2021-02-25,CDA,Activity,18
-2021-02-25,CDA,Engagement,3135
-2021-02-25,CU,Activity,78
-2021-02-25,CU,Engagement,10636
-2021-02-25,D66,Activity,20
-2021-02-25,D66,Engagement,16847
-2021-02-25,DENK,Activity,61
-2021-02-25,DENK,Engagement,8880
-2021-02-25,FvD,Activity,363
-2021-02-25,FvD,Engagement,213946
-2021-02-25,GL,Activity,55
-2021-02-25,GL,Engagement,16561
-2021-02-25,JA21,Activity,40
-2021-02-25,JA21,Engagement,4523
-2021-02-25,PvdA,Activity,30
-2021-02-25,PvdA,Engagement,13241
-2021-02-25,PvdD,Engagement,974
-2021-02-25,PVV,Activity,95
-2021-02-25,PVV,Engagement,211099
-2021-02-25,SGP,Activity,22
-2021-02-25,SGP,Engagement,4644
-2021-02-25,SP,Activity,67
-2021-02-25,SP,Engagement,16241
-2021-02-25,Volt,Activity,35
-2021-02-25,Volt,Engagement,2971
-2021-02-25,VVD,Activity,13
-2021-02-25,VVD,Engagement,5918
-2021-03-04,50PLUS,Activity,17
-2021-03-04,50PLUS,Engagement,194
-2021-03-04,BBB,Activity,381
-2021-03-04,BBB,Engagement,7030
-2021-03-04,BIJ1,Activity,198
-2021-03-04,BIJ1,Engagement,12502
-2021-03-04,CDA,Activity,26
-2021-03-04,CDA,Engagement,6731
-2021-03-04,CU,Activity,78
-2021-03-04,CU,Engagement,18272
-2021-03-04,D66,Activity,26
-2021-03-04,D66,Engagement,19755
-2021-03-04,DENK,Activity,92
-2021-03-04,DENK,Engagement,9336
-2021-03-04,FvD,Activity,459
-2021-03-04,FvD,Engagement,219064
-2021-03-04,GL,Activity,42
-2021-03-04,GL,Engagement,19998
-2021-03-04,JA21,Activity,92
-2021-03-04,JA21,Engagement,4881
-2021-03-04,PvdA,Activity,42
-2021-03-04,PvdA,Engagement,24677
-2021-03-04,PvdD,Engagement,1260
-2021-03-04,PVV,Activity,120
-2021-03-04,PVV,Engagement,203058
-2021-03-04,SGP,Activity,22
-2021-03-04,SGP,Engagement,10056
-2021-03-04,SP,Activity,55
-2021-03-04,SP,Engagement,14411
-2021-03-04,Volt,Activity,30
-2021-03-04,Volt,Engagement,4034
-2021-03-04,VVD,Activity,18
-2021-03-04,VVD,Engagement,10403
-2021-03-11,50PLUS,Activity,48
-2021-03-11,50PLUS,Engagement,343
-2021-03-11,BBB,Activity,615
-2021-03-11,BBB,Engagement,13124
-2021-03-11,BIJ1,Activity,305
-2021-03-11,BIJ1,Engagement,22505
-2021-03-11,CDA,Activity,29
-2021-03-11,CDA,Engagement,5893
-2021-03-11,CU,Activity,72
-2021-03-11,CU,Engagement,20796
-2021-03-11,D66,Activity,28
-2021-03-11,D66,Engagement,48185
-2021-03-11,DENK,Activity,69
-2021-03-11,DENK,Engagement,19603
-2021-03-11,FvD,Activity,528
-2021-03-11,FvD,Engagement,344980
-2021-03-11,GL,Activity,96
-2021-03-11,GL,Engagement,26553
-2021-03-11,JA21,Activity,74
-2021-03-11,JA21,Engagement,6922
-2021-03-11,PvdA,Activity,71
-2021-03-11,PvdA,Engagement,42783
-2021-03-11,PvdD,Engagement,1767
-2021-03-11,PVV,Activity,136
-2021-03-11,PVV,Engagement,350491
-2021-03-11,SGP,Activity,40
-2021-03-11,SGP,Engagement,8953
-2021-03-11,SP,Activity,86
-2021-03-11,SP,Engagement,32252
-2021-03-11,Volt,Activity,29
-2021-03-11,Volt,Engagement,7018
-2021-03-11,VVD,Activity,5
-2021-03-11,VVD,Engagement,4800
+week,party,name,mtype,value
+2021-01-07,50PLUS,Liane den Haan (50PLUS),Activity,35
+2021-01-07,50PLUS,Liane den Haan (50PLUS),Engagement,193
+2021-01-07,BBB,Caroline van der Plas (BBB),Activity,262
+2021-01-07,BBB,Caroline van der Plas (BBB),Engagement,2186
+2021-01-07,BIJ1,Sylvana Simons (BIJ1),Activity,219
+2021-01-07,BIJ1,Sylvana Simons (BIJ1),Engagement,3469
+2021-01-07,CDA,Wopke Hoekstra (CDA),Activity,2
+2021-01-07,CDA,Wopke Hoekstra (CDA),Engagement,165
+2021-01-07,CU,Gert-Jan Segers (CU),Activity,33
+2021-01-07,CU,Gert-Jan Segers (CU),Engagement,6969
+2021-01-07,D66,Sigird Kaag (D66),Activity,10
+2021-01-07,D66,Sigird Kaag (D66),Engagement,14637
+2021-01-07,DENK,Farid Azarkan (DENK),Activity,43
+2021-01-07,DENK,Farid Azarkan (DENK),Engagement,2374
+2021-01-07,FvD,Thierry Baudet (FvD),Activity,110
+2021-01-07,FvD,Thierry Baudet (FvD),Engagement,39809
+2021-01-07,GL,Jesse Klaver (GL),Activity,17
+2021-01-07,GL,Jesse Klaver (GL),Engagement,7425
+2021-01-07,JA21,Annabel Nanninga (JA21),Activity,33
+2021-01-07,JA21,Annabel Nanninga (JA21),Engagement,3879
+2021-01-07,JA21,Joost Eerdmans (JA21),Activity,7
+2021-01-07,JA21,Joost Eerdmans (JA21),Engagement,793
+2021-01-07,PvdA,Lilianne Ploumen (PvdA),Activity,20
+2021-01-07,PvdA,Lilianne Ploumen (PvdA),Engagement,1842
+2021-01-07,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-01-07,PvdD,Esther Ouwehand (PvdD),Engagement,0
+2021-01-07,PVV,Geert Wilders (PVV),Activity,66
+2021-01-07,PVV,Geert Wilders (PVV),Engagement,148889
+2021-01-07,SGP,Kees van der Staaij (SGP),Activity,20
+2021-01-07,SGP,Kees van der Staaij (SGP),Engagement,2313
+2021-01-07,SP,Lilian Marijnissen (SP),Activity,28
+2021-01-07,SP,Lilian Marijnissen (SP),Engagement,7015
+2021-01-07,Volt,Laurens Dassen (Volt),Activity,29
+2021-01-07,Volt,Laurens Dassen (Volt),Engagement,342
+2021-01-07,VVD,Mark Rutte (VVD),Activity,28
+2021-01-07,VVD,Mark Rutte (VVD),Engagement,13364
+2021-01-14,50PLUS,Liane den Haan (50PLUS),Activity,37
+2021-01-14,50PLUS,Liane den Haan (50PLUS),Engagement,263
+2021-01-14,BBB,Caroline van der Plas (BBB),Activity,309
+2021-01-14,BBB,Caroline van der Plas (BBB),Engagement,2177
+2021-01-14,BIJ1,Sylvana Simons (BIJ1),Activity,191
+2021-01-14,BIJ1,Sylvana Simons (BIJ1),Engagement,4536
+2021-01-14,CDA,Wopke Hoekstra (CDA),Activity,13
+2021-01-14,CDA,Wopke Hoekstra (CDA),Engagement,3260
+2021-01-14,CU,Gert-Jan Segers (CU),Activity,22
+2021-01-14,CU,Gert-Jan Segers (CU),Engagement,3169
+2021-01-14,D66,Sigird Kaag (D66),Activity,10
+2021-01-14,D66,Sigird Kaag (D66),Engagement,6090
+2021-01-14,DENK,Farid Azarkan (DENK),Activity,74
+2021-01-14,DENK,Farid Azarkan (DENK),Engagement,5660
+2021-01-14,FvD,Thierry Baudet (FvD),Activity,126
+2021-01-14,FvD,Thierry Baudet (FvD),Engagement,83596
+2021-01-14,GL,Jesse Klaver (GL),Activity,29
+2021-01-14,GL,Jesse Klaver (GL),Engagement,12045
+2021-01-14,JA21,Annabel Nanninga (JA21),Activity,46
+2021-01-14,JA21,Annabel Nanninga (JA21),Engagement,2504
+2021-01-14,JA21,Joost Eerdmans (JA21),Activity,11
+2021-01-14,JA21,Joost Eerdmans (JA21),Engagement,1298
+2021-01-14,PvdA,Lilianne Ploumen (PvdA),Activity,10
+2021-01-14,PvdA,Lilianne Ploumen (PvdA),Engagement,6121
+2021-01-14,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-01-14,PvdD,Esther Ouwehand (PvdD),Engagement,0
+2021-01-14,PVV,Geert Wilders (PVV),Activity,55
+2021-01-14,PVV,Geert Wilders (PVV),Engagement,164636
+2021-01-14,SGP,Kees van der Staaij (SGP),Activity,21
+2021-01-14,SGP,Kees van der Staaij (SGP),Engagement,893
+2021-01-14,SP,Lilian Marijnissen (SP),Activity,33
+2021-01-14,SP,Lilian Marijnissen (SP),Engagement,16959
+2021-01-14,Volt,Laurens Dassen (Volt),Activity,23
+2021-01-14,Volt,Laurens Dassen (Volt),Engagement,216
+2021-01-14,VVD,Mark Rutte (VVD),Activity,40
+2021-01-14,VVD,Mark Rutte (VVD),Engagement,40613
+2021-01-21,50PLUS,Liane den Haan (50PLUS),Activity,33
+2021-01-21,50PLUS,Liane den Haan (50PLUS),Engagement,183
+2021-01-21,BBB,Caroline van der Plas (BBB),Activity,453
+2021-01-21,BBB,Caroline van der Plas (BBB),Engagement,3455
+2021-01-21,BIJ1,Sylvana Simons (BIJ1),Activity,293
+2021-01-21,BIJ1,Sylvana Simons (BIJ1),Engagement,5835
+2021-01-21,CDA,Wopke Hoekstra (CDA),Activity,22
+2021-01-21,CDA,Wopke Hoekstra (CDA),Engagement,2876
+2021-01-21,CU,Gert-Jan Segers (CU),Activity,34
+2021-01-21,CU,Gert-Jan Segers (CU),Engagement,10267
+2021-01-21,D66,Sigird Kaag (D66),Activity,20
+2021-01-21,D66,Sigird Kaag (D66),Engagement,5574
+2021-01-21,DENK,Farid Azarkan (DENK),Activity,100
+2021-01-21,DENK,Farid Azarkan (DENK),Engagement,5534
+2021-01-21,FvD,Thierry Baudet (FvD),Activity,132
+2021-01-21,FvD,Thierry Baudet (FvD),Engagement,100220
+2021-01-21,GL,Jesse Klaver (GL),Activity,40
+2021-01-21,GL,Jesse Klaver (GL),Engagement,24339
+2021-01-21,JA21,Annabel Nanninga (JA21),Activity,24
+2021-01-21,JA21,Annabel Nanninga (JA21),Engagement,1381
+2021-01-21,JA21,Joost Eerdmans (JA21),Activity,12
+2021-01-21,JA21,Joost Eerdmans (JA21),Engagement,410
+2021-01-21,PvdA,Lilianne Ploumen (PvdA),Activity,13
+2021-01-21,PvdA,Lilianne Ploumen (PvdA),Engagement,4960
+2021-01-21,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-01-21,PvdD,Esther Ouwehand (PvdD),Engagement,136
+2021-01-21,PVV,Geert Wilders (PVV),Activity,85
+2021-01-21,PVV,Geert Wilders (PVV),Engagement,233034
+2021-01-21,SGP,Kees van der Staaij (SGP),Activity,16
+2021-01-21,SGP,Kees van der Staaij (SGP),Engagement,2743
+2021-01-21,SP,Lilian Marijnissen (SP),Activity,25
+2021-01-21,SP,Lilian Marijnissen (SP),Engagement,12512
+2021-01-21,Volt,Laurens Dassen (Volt),Activity,13
+2021-01-21,Volt,Laurens Dassen (Volt),Engagement,296
+2021-01-21,VVD,Mark Rutte (VVD),Activity,65
+2021-01-21,VVD,Mark Rutte (VVD),Engagement,58297
+2021-01-28,50PLUS,Liane den Haan (50PLUS),Activity,42
+2021-01-28,50PLUS,Liane den Haan (50PLUS),Engagement,295
+2021-01-28,BBB,Caroline van der Plas (BBB),Activity,378
+2021-01-28,BBB,Caroline van der Plas (BBB),Engagement,3754
+2021-01-28,BIJ1,Sylvana Simons (BIJ1),Activity,266
+2021-01-28,BIJ1,Sylvana Simons (BIJ1),Engagement,5923
+2021-01-28,CDA,Wopke Hoekstra (CDA),Activity,12
+2021-01-28,CDA,Wopke Hoekstra (CDA),Engagement,2872
+2021-01-28,CU,Gert-Jan Segers (CU),Activity,36
+2021-01-28,CU,Gert-Jan Segers (CU),Engagement,5628
+2021-01-28,D66,Sigird Kaag (D66),Activity,10
+2021-01-28,D66,Sigird Kaag (D66),Engagement,4756
+2021-01-28,DENK,Farid Azarkan (DENK),Activity,79
+2021-01-28,DENK,Farid Azarkan (DENK),Engagement,4864
+2021-01-28,FvD,Thierry Baudet (FvD),Activity,146
+2021-01-28,FvD,Thierry Baudet (FvD),Engagement,95444
+2021-01-28,GL,Jesse Klaver (GL),Activity,21
+2021-01-28,GL,Jesse Klaver (GL),Engagement,11001
+2021-01-28,JA21,Annabel Nanninga (JA21),Activity,19
+2021-01-28,JA21,Annabel Nanninga (JA21),Engagement,140
+2021-01-28,JA21,Joost Eerdmans (JA21),Activity,10
+2021-01-28,JA21,Joost Eerdmans (JA21),Engagement,483
+2021-01-28,PvdA,Lilianne Ploumen (PvdA),Activity,27
+2021-01-28,PvdA,Lilianne Ploumen (PvdA),Engagement,10774
+2021-01-28,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-01-28,PvdD,Esther Ouwehand (PvdD),Engagement,417
+2021-01-28,PVV,Geert Wilders (PVV),Activity,39
+2021-01-28,PVV,Geert Wilders (PVV),Engagement,82632
+2021-01-28,SGP,Kees van der Staaij (SGP),Activity,8
+2021-01-28,SGP,Kees van der Staaij (SGP),Engagement,594
+2021-01-28,SP,Lilian Marijnissen (SP),Activity,42
+2021-01-28,SP,Lilian Marijnissen (SP),Engagement,14718
+2021-01-28,Volt,Laurens Dassen (Volt),Activity,18
+2021-01-28,Volt,Laurens Dassen (Volt),Engagement,439
+2021-01-28,VVD,Mark Rutte (VVD),Activity,57
+2021-01-28,VVD,Mark Rutte (VVD),Engagement,62093
+2021-02-04,50PLUS,Liane den Haan (50PLUS),Activity,21
+2021-02-04,50PLUS,Liane den Haan (50PLUS),Engagement,86
+2021-02-04,BBB,Caroline van der Plas (BBB),Activity,368
+2021-02-04,BBB,Caroline van der Plas (BBB),Engagement,6317
+2021-02-04,BIJ1,Sylvana Simons (BIJ1),Activity,178
+2021-02-04,BIJ1,Sylvana Simons (BIJ1),Engagement,4300
+2021-02-04,CDA,Wopke Hoekstra (CDA),Activity,13
+2021-02-04,CDA,Wopke Hoekstra (CDA),Engagement,2893
+2021-02-04,CU,Gert-Jan Segers (CU),Activity,32
+2021-02-04,CU,Gert-Jan Segers (CU),Engagement,2806
+2021-02-04,D66,Sigird Kaag (D66),Activity,19
+2021-02-04,D66,Sigird Kaag (D66),Engagement,8776
+2021-02-04,DENK,Farid Azarkan (DENK),Activity,53
+2021-02-04,DENK,Farid Azarkan (DENK),Engagement,4150
+2021-02-04,FvD,Thierry Baudet (FvD),Activity,262
+2021-02-04,FvD,Thierry Baudet (FvD),Engagement,168187
+2021-02-04,GL,Jesse Klaver (GL),Activity,32
+2021-02-04,GL,Jesse Klaver (GL),Engagement,12223
+2021-02-04,JA21,Annabel Nanninga (JA21),Activity,30
+2021-02-04,JA21,Annabel Nanninga (JA21),Engagement,890
+2021-02-04,JA21,Joost Eerdmans (JA21),Activity,7
+2021-02-04,JA21,Joost Eerdmans (JA21),Engagement,172
+2021-02-04,PvdA,Lilianne Ploumen (PvdA),Activity,24
+2021-02-04,PvdA,Lilianne Ploumen (PvdA),Engagement,5716
+2021-02-04,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-02-04,PvdD,Esther Ouwehand (PvdD),Engagement,594
+2021-02-04,PVV,Geert Wilders (PVV),Activity,70
+2021-02-04,PVV,Geert Wilders (PVV),Engagement,148234
+2021-02-04,SGP,Kees van der Staaij (SGP),Activity,5
+2021-02-04,SGP,Kees van der Staaij (SGP),Engagement,1325
+2021-02-04,SP,Lilian Marijnissen (SP),Activity,40
+2021-02-04,SP,Lilian Marijnissen (SP),Engagement,18861
+2021-02-04,Volt,Laurens Dassen (Volt),Activity,14
+2021-02-04,Volt,Laurens Dassen (Volt),Engagement,162
+2021-02-04,VVD,Mark Rutte (VVD),Activity,32
+2021-02-04,VVD,Mark Rutte (VVD),Engagement,20759
+2021-02-11,50PLUS,Liane den Haan (50PLUS),Activity,37
+2021-02-11,50PLUS,Liane den Haan (50PLUS),Engagement,251
+2021-02-11,BBB,Caroline van der Plas (BBB),Activity,303
+2021-02-11,BBB,Caroline van der Plas (BBB),Engagement,4075
+2021-02-11,BIJ1,Sylvana Simons (BIJ1),Activity,189
+2021-02-11,BIJ1,Sylvana Simons (BIJ1),Engagement,6367
+2021-02-11,CDA,Wopke Hoekstra (CDA),Activity,11
+2021-02-11,CDA,Wopke Hoekstra (CDA),Engagement,3589
+2021-02-11,CU,Gert-Jan Segers (CU),Activity,43
+2021-02-11,CU,Gert-Jan Segers (CU),Engagement,8921
+2021-02-11,D66,Sigird Kaag (D66),Activity,10
+2021-02-11,D66,Sigird Kaag (D66),Engagement,5610
+2021-02-11,DENK,Farid Azarkan (DENK),Activity,58
+2021-02-11,DENK,Farid Azarkan (DENK),Engagement,2534
+2021-02-11,FvD,Thierry Baudet (FvD),Activity,225
+2021-02-11,FvD,Thierry Baudet (FvD),Engagement,114537
+2021-02-11,GL,Jesse Klaver (GL),Activity,35
+2021-02-11,GL,Jesse Klaver (GL),Engagement,13698
+2021-02-11,JA21,Annabel Nanninga (JA21),Activity,36
+2021-02-11,JA21,Annabel Nanninga (JA21),Engagement,2231
+2021-02-11,JA21,Joost Eerdmans (JA21),Activity,14
+2021-02-11,JA21,Joost Eerdmans (JA21),Engagement,166
+2021-02-11,PvdA,Lilianne Ploumen (PvdA),Activity,24
+2021-02-11,PvdA,Lilianne Ploumen (PvdA),Engagement,7242
+2021-02-11,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-02-11,PvdD,Esther Ouwehand (PvdD),Engagement,978
+2021-02-11,PVV,Geert Wilders (PVV),Activity,77
+2021-02-11,PVV,Geert Wilders (PVV),Engagement,268037
+2021-02-11,SGP,Kees van der Staaij (SGP),Activity,25
+2021-02-11,SGP,Kees van der Staaij (SGP),Engagement,3547
+2021-02-11,SP,Lilian Marijnissen (SP),Activity,45
+2021-02-11,SP,Lilian Marijnissen (SP),Engagement,11061
+2021-02-11,Volt,Laurens Dassen (Volt),Activity,22
+2021-02-11,Volt,Laurens Dassen (Volt),Engagement,278
+2021-02-11,VVD,Mark Rutte (VVD),Activity,40
+2021-02-11,VVD,Mark Rutte (VVD),Engagement,33358
+2021-02-18,50PLUS,Liane den Haan (50PLUS),Activity,23
+2021-02-18,50PLUS,Liane den Haan (50PLUS),Engagement,96
+2021-02-18,BBB,Caroline van der Plas (BBB),Activity,329
+2021-02-18,BBB,Caroline van der Plas (BBB),Engagement,4922
+2021-02-18,BIJ1,Sylvana Simons (BIJ1),Activity,198
+2021-02-18,BIJ1,Sylvana Simons (BIJ1),Engagement,9671
+2021-02-18,CDA,Wopke Hoekstra (CDA),Activity,14
+2021-02-18,CDA,Wopke Hoekstra (CDA),Engagement,5364
+2021-02-18,CU,Gert-Jan Segers (CU),Activity,62
+2021-02-18,CU,Gert-Jan Segers (CU),Engagement,4868
+2021-02-18,D66,Sigird Kaag (D66),Activity,12
+2021-02-18,D66,Sigird Kaag (D66),Engagement,5648
+2021-02-18,DENK,Farid Azarkan (DENK),Activity,55
+2021-02-18,DENK,Farid Azarkan (DENK),Engagement,3511
+2021-02-18,FvD,Thierry Baudet (FvD),Activity,389
+2021-02-18,FvD,Thierry Baudet (FvD),Engagement,207025
+2021-02-18,GL,Jesse Klaver (GL),Activity,41
+2021-02-18,GL,Jesse Klaver (GL),Engagement,17640
+2021-02-18,JA21,Annabel Nanninga (JA21),Activity,53
+2021-02-18,JA21,Annabel Nanninga (JA21),Engagement,1457
+2021-02-18,JA21,Joost Eerdmans (JA21),Activity,16
+2021-02-18,JA21,Joost Eerdmans (JA21),Engagement,1484
+2021-02-18,PvdA,Lilianne Ploumen (PvdA),Activity,19
+2021-02-18,PvdA,Lilianne Ploumen (PvdA),Engagement,12116
+2021-02-18,PvdD,Esther Ouwehand (PvdD),Activity,0
+2021-02-18,PvdD,Esther Ouwehand (PvdD),Engagement,910
+2021-02-18,PVV,Geert Wilders (PVV),Activity,92
+2021-02-18,PVV,Geert Wilders (PVV),Engagement,255211
+2021-02-18,SGP,Kees van der Staaij (SGP),Activity,5
+2021-02-18,SGP,Kees van der Staaij (SGP),Engagement,582
+2021-02-18,SP,Lilian Marijnissen (SP),Activity,34
+2021-02-18,SP,Lilian Marijnissen (SP),Engagement,13653
+2021-02-18,Volt,Laurens Dassen (Volt),Activity,29
+2021-02-18,Volt,Laurens Dassen (Volt),Engagement,1056
+2021-02-18,VVD,Mark Rutte (VVD),Activity,16
+2021-02-18,VVD,Mark Rutte (VVD),Engagement,13488
+2021-02-25,50PLUS,Liane den Haan (50PLUS),Activity,41
+2021-02-25,50PLUS,Liane den Haan (50PLUS),Engagement,96
+2021-02-25,BBB,Caroline van der Plas (BBB),Activity,325
+2021-02-25,BBB,Caroline van der Plas (BBB),Engagement,4819
+2021-02-25,BIJ1,Sylvana Simons (BIJ1),Activity,240
+2021-02-25,BIJ1,Sylvana Simons (BIJ1),Engagement,11346
+2021-02-25,CDA,Wopke Hoekstra (CDA),Activity,18
+2021-02-25,CDA,Wopke Hoekstra (CDA),Engagement,3135
+2021-02-25,CU,Gert-Jan Segers (CU),Activity,78
+2021-02-25,CU,Gert-Jan Segers (CU),Engagement,10636
+2021-02-25,D66,Sigird Kaag (D66),Activity,20
+2021-02-25,D66,Sigird Kaag (D66),Engagement,16847
+2021-02-25,DENK,Farid Azarkan (DENK),Activity,61
+2021-02-25,DENK,Farid Azarkan (DENK),Engagement,8880
+2021-02-25,FvD,Thierry Baudet (FvD),Activity,363
+2021-02-25,FvD,Thierry Baudet (FvD),Engagement,213946
+2021-02-25,GL,Jesse Klaver (GL),Activity,55
+2021-02-25,GL,Jesse Klaver (GL),Engagement,16561
+2021-02-25,JA21,Annabel Nanninga (JA21),Activity,31
+2021-02-25,JA21,Annabel Nanninga (JA21),Engagement,4140
+2021-02-25,JA21,Joost Eerdmans (JA21),Activity,9
+2021-02-25,JA21,Joost Eerdmans (JA21),Engagement,383
+2021-02-25,PvdA,Lilianne Ploumen (PvdA),Activity,30
+2021-02-25,PvdA,Lilianne Ploumen (PvdA),Engagement,13241
+2021-02-25,PvdD,Esther Ouwehand (PvdD),Engagement,974
+2021-02-25,PVV,Geert Wilders (PVV),Activity,95
+2021-02-25,PVV,Geert Wilders (PVV),Engagement,211099
+2021-02-25,SGP,Kees van der Staaij (SGP),Activity,22
+2021-02-25,SGP,Kees van der Staaij (SGP),Engagement,4644
+2021-02-25,SP,Lilian Marijnissen (SP),Activity,67
+2021-02-25,SP,Lilian Marijnissen (SP),Engagement,16241
+2021-02-25,Volt,Laurens Dassen (Volt),Activity,35
+2021-02-25,Volt,Laurens Dassen (Volt),Engagement,2971
+2021-02-25,VVD,Mark Rutte (VVD),Activity,13
+2021-02-25,VVD,Mark Rutte (VVD),Engagement,5918
+2021-03-04,50PLUS,Liane den Haan (50PLUS),Activity,17
+2021-03-04,50PLUS,Liane den Haan (50PLUS),Engagement,194
+2021-03-04,BBB,Caroline van der Plas (BBB),Activity,381
+2021-03-04,BBB,Caroline van der Plas (BBB),Engagement,7030
+2021-03-04,BIJ1,Sylvana Simons (BIJ1),Activity,198
+2021-03-04,BIJ1,Sylvana Simons (BIJ1),Engagement,12502
+2021-03-04,CDA,Wopke Hoekstra (CDA),Activity,26
+2021-03-04,CDA,Wopke Hoekstra (CDA),Engagement,6731
+2021-03-04,CU,Gert-Jan Segers (CU),Activity,78
+2021-03-04,CU,Gert-Jan Segers (CU),Engagement,18272
+2021-03-04,D66,Sigird Kaag (D66),Activity,26
+2021-03-04,D66,Sigird Kaag (D66),Engagement,19755
+2021-03-04,DENK,Farid Azarkan (DENK),Activity,92
+2021-03-04,DENK,Farid Azarkan (DENK),Engagement,9336
+2021-03-04,FvD,Thierry Baudet (FvD),Activity,459
+2021-03-04,FvD,Thierry Baudet (FvD),Engagement,219064
+2021-03-04,GL,Jesse Klaver (GL),Activity,42
+2021-03-04,GL,Jesse Klaver (GL),Engagement,19998
+2021-03-04,JA21,Annabel Nanninga (JA21),Activity,82
+2021-03-04,JA21,Annabel Nanninga (JA21),Engagement,4239
+2021-03-04,JA21,Joost Eerdmans (JA21),Activity,10
+2021-03-04,JA21,Joost Eerdmans (JA21),Engagement,642
+2021-03-04,PvdA,Lilianne Ploumen (PvdA),Activity,42
+2021-03-04,PvdA,Lilianne Ploumen (PvdA),Engagement,24677
+2021-03-04,PvdD,Esther Ouwehand (PvdD),Engagement,1260
+2021-03-04,PVV,Geert Wilders (PVV),Activity,120
+2021-03-04,PVV,Geert Wilders (PVV),Engagement,203058
+2021-03-04,SGP,Kees van der Staaij (SGP),Activity,22
+2021-03-04,SGP,Kees van der Staaij (SGP),Engagement,10056
+2021-03-04,SP,Lilian Marijnissen (SP),Activity,55
+2021-03-04,SP,Lilian Marijnissen (SP),Engagement,14411
+2021-03-04,Volt,Laurens Dassen (Volt),Activity,30
+2021-03-04,Volt,Laurens Dassen (Volt),Engagement,4034
+2021-03-04,VVD,Mark Rutte (VVD),Activity,18
+2021-03-04,VVD,Mark Rutte (VVD),Engagement,10403
+2021-03-11,50PLUS,Liane den Haan (50PLUS),Activity,48
+2021-03-11,50PLUS,Liane den Haan (50PLUS),Engagement,343
+2021-03-11,BBB,Caroline van der Plas (BBB),Activity,615
+2021-03-11,BBB,Caroline van der Plas (BBB),Engagement,13124
+2021-03-11,BIJ1,Sylvana Simons (BIJ1),Activity,305
+2021-03-11,BIJ1,Sylvana Simons (BIJ1),Engagement,22505
+2021-03-11,CDA,Wopke Hoekstra (CDA),Activity,29
+2021-03-11,CDA,Wopke Hoekstra (CDA),Engagement,5893
+2021-03-11,CU,Gert-Jan Segers (CU),Activity,72
+2021-03-11,CU,Gert-Jan Segers (CU),Engagement,20796
+2021-03-11,D66,Sigird Kaag (D66),Activity,28
+2021-03-11,D66,Sigird Kaag (D66),Engagement,48185
+2021-03-11,DENK,Farid Azarkan (DENK),Activity,69
+2021-03-11,DENK,Farid Azarkan (DENK),Engagement,19603
+2021-03-11,FvD,Thierry Baudet (FvD),Activity,528
+2021-03-11,FvD,Thierry Baudet (FvD),Engagement,344980
+2021-03-11,GL,Jesse Klaver (GL),Activity,96
+2021-03-11,GL,Jesse Klaver (GL),Engagement,26553
+2021-03-11,JA21,Annabel Nanninga (JA21),Activity,61
+2021-03-11,JA21,Annabel Nanninga (JA21),Engagement,5225
+2021-03-11,JA21,Joost Eerdmans (JA21),Activity,13
+2021-03-11,JA21,Joost Eerdmans (JA21),Engagement,1697
+2021-03-11,PvdA,Lilianne Ploumen (PvdA),Activity,71
+2021-03-11,PvdA,Lilianne Ploumen (PvdA),Engagement,42783
+2021-03-11,PvdD,Esther Ouwehand (PvdD),Engagement,1767
+2021-03-11,PVV,Geert Wilders (PVV),Activity,136
+2021-03-11,PVV,Geert Wilders (PVV),Engagement,350491
+2021-03-11,SGP,Kees van der Staaij (SGP),Activity,40
+2021-03-11,SGP,Kees van der Staaij (SGP),Engagement,8953
+2021-03-11,SP,Lilian Marijnissen (SP),Activity,86
+2021-03-11,SP,Lilian Marijnissen (SP),Engagement,32252
+2021-03-11,Volt,Laurens Dassen (Volt),Activity,29
+2021-03-11,Volt,Laurens Dassen (Volt),Engagement,7018
+2021-03-11,VVD,Mark Rutte (VVD),Activity,5
+2021-03-11,VVD,Mark Rutte (VVD),Engagement,4800
