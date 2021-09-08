@@ -348,6 +348,7 @@ ggplot(de, aes(x = value, y = reorder(name, value),
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
   scale_color_brewer(palette = "Set1")
+
 ```
 Download data: [`r export_data(de, "Vertrouwen-Opleidingsniveau")`]
 
@@ -490,7 +491,6 @@ ggplot(dr, aes(x = value, y = reorder(name, value),
   facet_wrap(vars(id), ncol = 2, scales = "free") +
   theme_nrc() +
   scale_color_brewer(palette = "Set1")
-
 ```
 
 Download data: [`r export_data(dr, "Vertrouwen-Regios")`]

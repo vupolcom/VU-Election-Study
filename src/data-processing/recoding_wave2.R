@@ -3,7 +3,7 @@
 #AUTHOR: "VU Political Communication Group: Mariken van der Velden (coordinator), Loes Aaldering, Wouter van Atteveldt, Andreu Casas Salleras, Felicia Loecherbach, Anita van Hoof, Dirck de Kleer, Jan Kleinnijenhuis, Marloes Jansen, Nicolas Matthis, Kasper Welbers and Nienke Wolfers"
 #DEPENDS: data/raw-private/qualtrics_api_key.txt
 #CREATES: data/intermediate/wave2.csv
-
+rm(list=ls())
 
 library(tidyverse)
 library(here)
@@ -14,7 +14,7 @@ d2 = load_survey(survey_id="SV_byf8IHLmuTHe00l")
 # Regular blocks
 M = clean_meta(d2) %>% add_column(wave="wave 2", .after = 'iisID')
 A = clean_A(d2)
-B = clean_B(d2)
+B = clean_B2(d2)
 I = clean_I(d2)
 
 # Other issues
