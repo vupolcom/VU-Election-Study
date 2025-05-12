@@ -8,7 +8,6 @@ permalink: /media/
 <table class="reports">
    <tr> 
    <td>&nbsp;</td>
-      
        <td>
       <h3><a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren"> 
 Coalitie onmogelijk? In deze landen leek dat ook zo, maar lukte het toch </a></h3>  <i>RTL Nieuws, 8 april 2021</i><br/>
@@ -16,9 +15,7 @@ Coalitie onmogelijk? In deze landen leek dat ook zo, maar lukte het toch </a></h
        </td>
   </tr>
   <tr> 
-   <td>
-    
-    </td>
+   <td>&nbsp;</td>
        <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350"> 
 Vrouwelijke lijsttrekkers krijgen minder media-aandacht </a></h3>  <i>NRC Handelsblad, 2 april 2021</i><br/>
