@@ -8,9 +8,7 @@ permalink: /media/
 <table class="reports">
    <tr> 
    <td>
-      <a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren">
-        <img width="200px" align="left" src="https://www.rtlnieuws.nl/sites/default/files/content/images/2021/04/08/ANP-423443640.jpg?itok=XuqBRWC_&offsetX=0&offsetY=92&cropWidth=1022&cropHeight=575&width=1024&height=576&impolicy=dynamic" />
-      </a>
+      
     </td>
        <td>
       <h3><a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren"> 
@@ -20,9 +18,7 @@ Coalitie onmogelijk? In deze landen leek dat ook zo, maar lukte het toch </a></h
   </tr>
   <tr> 
    <td>
-      <a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350">
-        <img width="200px" align="left" src="https://images.nrc.nl/aSS03WYHYLkamUQTtkmYaL56JsI=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data69274442-d678c6.jpg" />
-      </a>
+    
     </td>
        <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/04/02/vrouwelijke-lijsttrekkers-krijgen-minder-media-aandacht-a4038350"> 
@@ -32,9 +28,6 @@ Vrouwelijke lijsttrekkers krijgen minder media-aandacht </a></h3>  <i>NRC Handel
   </tr>
 <tr>
     <td>
-      <a href="https://decorrespondent.nl/12201/populistisch-rechts-is-nu-even-groot-als-links-hoe-kan-dat/5331420579870-a1570699">
-        <img width="200px" align="left" src="https://useruploads.cdn-decorrespondent.nl/image/oXlWPwFEpyS-Dvi61Pzyr-znnC8=/1920x1080/dc-useruploads-images/ce4e058e267f4983bd078a859b17e8dc.gif" />
-      </a>
     </td>
     <td>
       <h3><a href="https://decorrespondent.nl/12201/populistisch-rechts-is-nu-even-groot-als-links-hoe-kan-dat/5331420579870-a1570699">
@@ -45,9 +38,6 @@ de Correspondent - Podcast Stemmen</a></h3>
    </tr>
 <tr>
     <td>
-      <a href="https://decorrespondent.nl/12219/wij-telden-hoeveel-media-aandacht-lijsttrekkers-kregen-en-de-vrouwen-kwamen-er-bekaaid-vanaf/5339285965530-8b9b1138">
-        <img width="200px" align="left" src="https://useruploads.cdn-decorrespondent.nl/svg/329627d446ba48d5948143a1ad9bf773.svg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://decorrespondent.nl/12219/wij-telden-hoeveel-media-aandacht-lijsttrekkers-kregen-en-de-vrouwen-kwamen-er-bekaaid-vanaf/5339285965530-8b9b1138">
@@ -58,9 +48,6 @@ de Correspondent - 'Wij telden hoeveel media-aadacht lijsttrekkers kregen. En de
    </tr>  
 <tr>
     <td>
-      <a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
-        <img width="200px" align="left" src="https://i.imgur.com/J7iTtR5.png" />
-      </a>
     </td>
     <td>
       <h3><a href="https://www.npostart.nl/nos-journaal/18-03-2021/POW_04816939">
@@ -71,9 +58,6 @@ NOS Journaal</a></h3>
    </tr>
    <tr>
     <td>
-      <a href="https://www.nrc.nl/nieuws/2021/03/18/als-je-schaarste-creeert-wil-iedereen-je-hebben-a4036398">
-        <img width="200px" align="left" src="https://images.nrc.nl/UOBTV0whqnNrPh4mDL46VhTYgs0=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68707597-4ce33e.jpg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/03/18/als-je-schaarste-creeert-wil-iedereen-je-hebben-a4036398">Wat de partijen echt helpt, is de talkshowtafel</a></h3>
@@ -83,9 +67,6 @@ NOS Journaal</a></h3>
     </tr>
    <tr>
    <td>
-      <a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1">
-        <img width="200px" align="left" src="https://images.gids.tv/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1.jpg?w=730&watermark%5Btext%5D=Bron%3A+NOS" />
-        </a>
     </td>
     <td>
       <h3><a href="https://www.gids.tv/artikel/13343/verkiezingsprogramma-nederland-kiest-de-uitslagen-woensdag-te-zien-op-npo-1">
@@ -96,9 +77,6 @@ Verkiezingenspecial Nederland kiest: de uitslagen</a></h3>
 </tr>
 <tr>
    <td>
-      <a href="https://dezwijger.nl/programma/de-weerbare-democratie/">
-        <img width="200px" align="left" src="https://admin.dezwijger.nl/wp-content/uploads/2021/02/Keynote-template-NL-Kiest.001.jpeg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://dezwijger.nl/programma/de-weerbare-democratie">
@@ -109,9 +87,6 @@ Verkiezingsavond: de weerbare democratie</a></h3>
 </tr>
 <tr>
    <td>
-      <a href="https://www.vpro.nl/argos/lees/onderwerpen/artikelen/2021/politieke-sociale-mediakanalen.html">
-        <img width="200px" align="left" src="https://i.ytimg.com/vi/9jaORgd9NZg/maxresdefault.jpg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://www.vpro.nl/argos/lees/onderwerpen/artikelen/2021/politieke-sociale-mediakanalen.html">
@@ -122,9 +97,6 @@ Iedere partij een eigen journaal. Welkome stemhulp of bron van desinformatie? </
 </tr>
 <tr>
    <td>
-      <a href="https://www.youtube.com/watch?v=8dPVk--78AQ">
-        <img width="200px" align="left" src="https://eenvandaag.assets.avrotros.nl/poms_import/debat-wilders-rutte_1.jpg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://www.youtube.com/watch?v=8dPVk--78AQ">
@@ -135,9 +107,6 @@ Nabeschouwing van het EenVandaag-debat: 'Wilders is een karikatuur van zichzelf 
 </tr>
 <tr>
    <td>
-      <a href="https://www.nrc.nl/nieuws/2021/03/15/welke-partijen-waren-het-meest-in-beeld-a4035626">
-        <img width="200px" align="left" src="https://images.nrc.nl/VOJYoSsWXFmcsptR4OP_R771VB8=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68470150-3751fa.jpg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/03/15/welke-partijen-waren-het-meest-in-beeld-a4035626">
@@ -148,9 +117,6 @@ Welke partijen waren het meest in beeld?</a></h3>
 </tr>
 <tr>
    <td>
-      <a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/">
-        <img width="200px" align="left" src="https://stukroodvlees.nl/wp-content/uploads/2021/03/graph1-1-320x190.png" />
-      </a>
     </td>
        <td>
       <h3><a href="https://stukroodvlees.nl/media-aandacht-voor-vrouwelijke-lijsttrekkers/">
@@ -161,9 +127,6 @@ Media-aandacht voor vrouwelijke lijsttrekkers</a></h3>
 </tr>
 <tr>
    <td>
-      <a href="https://p.dw.com/p/3qNcr">
-        <img width="200px" align="left" src="https://static.dw.com/image/56832191_303.jpg" />
-      </a>
     </td>
        <td>
       <h3><a href="https://p.dw.com/p/3qNcr">
@@ -174,9 +137,6 @@ Dutch elections: How COVID-19 salvaged Mark Rutte's bid amid scandal</a></h3>
      </tr>
 <tr>
    <td>
-      <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a4035404">
-        <img width="200px" align="left" src="https://images.nrc.nl/U4c77vKxN-pk8__ncwRp9WcQOHs=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/images/gn4/stripped/data68479023-d3d283.jpg" />
-      </a>
     </td>
        <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a4035404">
@@ -187,9 +147,6 @@ Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagn
      </tr>
      <tr>
    <td>
-      <a href="https://www.nrc.nl/nieuws/2021/03/13/de-campagne-waarin-niets-mark-rutte-in-de-weg-zit-a40354041">
-        <img width="200px" align="left" src="https://images.nrc.nl/wkVC-fA9GfnWBic4P90EYfI9zok=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/03/data68392921-678269.jpg" />
-      </a>
     </td>
       <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/03/10/wilders-en-baudet-groot-op-sociale-media-dankzij-harde-kern-van-fans-a4035031"> Wilders en Baudet groot op sociale media dankzij harde kern van fans</a></h3>
@@ -199,9 +156,6 @@ Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagn
      </tr>
   <tr>
    <td>
-      <a href="https://www.nrc.nl/nieuws/2021/03/09/aan-de-talkshowtafels-schoven-het-afgelopen-coronajaar-vooral-journalisten-aan-a4034821">
-        <img width="200px" align="left" src="https://images.nrc.nl/_YPc_wwDHjM6zzqugt_zYbW_Aiw=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/03/data68359411-bc4b0d.jpg" />
-      </a>
     </td>
       <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/03/09/aan-de-talkshowtafels-schoven-het-afgelopen-coronajaar-vooral-journalisten-aan-a4034821"> Aan de talkshowtafels schoven het afgelopen coronajaar vooral journalisten aan</a></h3>
@@ -211,9 +165,6 @@ Voor Rutte is Wilders de ideale tegenstander in deze laatste fase van de campagn
      </tr>
   <tr>
    <td>
-      <a href="https://www.groene.nl/artikel/teruggebracht-tot-tweestrijd?utm_source=De+Groene+Amsterdammer&utm_campaign=0c6464378a-Dagelijks-2021-03-10&utm_medium=email&utm_term=0_853cea572a-0c6464378a-70907053">
-        <img width="200px" align="left" src="https://www.groene.nl/uploads/image/file/000/027/018/large_ANP-428740944.jpg" />
-      </a>
     </td>
       <td>
       <h3><a href="https://www.groene.nl/artikel/teruggebracht-tot-tweestrijd?utm_source=De+Groene+Amsterdammer&utm_campaign=0c6464378a-Dagelijks-2021-03-10&utm_medium=email&utm_term=0_853cea572a-0c6464378a-70907053">
@@ -224,9 +175,6 @@ Hoe de media onze stem beïnvloeden. Teruggebracht tot tweestrijd</a></h3>
      </tr>
   <tr>
    <td>
-      <a href="https://www.npo3.nl/propaganda/04-03-2021/KN_1725474/POMS_KN_16454883">
-        <img width="200px" align="left" src="https://pbs.twimg.com/profile_images/1351497342516649984/_IC68I6H.jpg" />
-      </a>
     </td>
       <td>
       <h3><a href="ttps://www.npo3.nl/propaganda/04-03-2021/KN_1725474/POMS_KN_16454883">Propaganda in partij-journaals?</a></h3>
@@ -236,9 +184,6 @@ Hoe de media onze stem beïnvloeden. Teruggebracht tot tweestrijd</a></h3>
      </tr>
      <tr>
    <td>
-      <a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
-        <img width="200px" align="left" src="https://images.fd.nl/qN2riJ4m0ZtKBfrKiZMnlt7HgCk.jpg?auto=format&w=1280&q=45&dpr=2" />
-      </a>
     </td>
        <td>
       <h3><a href="https://fd.nl/economie-politiek/1375131/belangrijk-maar-niet-bepalend-kiezer-laat-zich-niet-leiden-door-lijsttrekker">
@@ -249,9 +194,6 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
      </tr>
   <tr>
     <td>
-      <a href="https://www.nrc.nl/nieuws/2021/02/22/wat-de-kiezer-leest-volgt-en-kijkt-a4032777">
-        <img width="200px" align="left" src="https://images.nrc.nl/kVf3c0AxIUWCtOgA5HP2-lbfrrc=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2021/02/data67813076-249536.jpg" />
-      </a>
     </td>
     <td>
       <h3><a href="https://www.nrc.nl/nieuws/2021/02/22/wat-de-kiezer-leest-volgt-en-kijkt-a4032777">Wat de kiezer leest, volgt, en kijkt</a></h3>
@@ -261,9 +203,6 @@ Belangrijk maar niet bepalend. Kiezer laat zich niet leiden door lijsttrekker</a
   </tr>
   <tr>
     <td>
-      <a href="https://stukroodvlees.nl/wat-willen-kiezers-na-17-maart/">
-        <img width="200px" align="left" src="https://stukroodvlees.nl/wp-content/uploads/2021/02/unnamed-chunk-5-1.png" />
-      </a>
     </td>
     <td>
   <h3><a href="https://stukroodvlees.nl/wat-willen-kiezers-na-17-maart/">Wat willen kiezers na 17 maart?</a></h3>
