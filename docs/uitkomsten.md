@@ -9,7 +9,6 @@ permalink: /media/
    <tr> 
    <td>
       
-    </td>
        <td>
       <h3><a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren"> 
 Coalitie onmogelijk? In deze landen leek dat ook zo, maar lukte het toch </a></h3>  <i>RTL Nieuws, 8 april 2021</i><br/>
