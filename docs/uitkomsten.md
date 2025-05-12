@@ -7,7 +7,7 @@ permalink: /media/
 
 <table class="reports">
    <tr> 
-   <td>
+   <td>&nbsp;</td>
       
        <td>
       <h3><a href="https://www.rtlnieuws.nl/nieuws/buitenland/artikel/5224207/coalitie-formatie-mark-rutte-belgie-record-partijen-formeren"> 
